@@ -8,7 +8,7 @@
 			<default>591</default>
 		</key>
 		<key name="autostart" type="b">
-			<default>true</default>
+			<default>false</default>
 		</key>
 		<key name="priority" type="b">
 			<default>false</default>
