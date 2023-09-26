@@ -1,15 +1,15 @@
 @import './card-colors.css';
 
-@define-color dosefy_blue_1 #2D207A;
-@define-color dosefy_blue_2 #443992;
-@define-color dosefy_blue_3 #5C52AB;
-@define-color dosefy_blue_4 #756BC6;
+@define-color dosage_blue_1 #2D207A;
+@define-color dosage_blue_2 #443992;
+@define-color dosage_blue_3 #5C52AB;
+@define-color dosage_blue_4 #756BC6;
 
 @define-color window_bg_color #FAFAFC;
 @define-color window_fg_color #211D40;
 @define-color dialog_bg_color @window_bg_color;
-@define-color accent_color @dosefy_blue_2;
-@define-color accent_bg_color @dosefy_blue_3;
+@define-color accent_color @dosage_blue_2;
+@define-color accent_bg_color @dosage_blue_3;
 @define-color popover_bg_color @window_bg_color;
 @define-color popover_fg_color @window_fg_color;
 @define-color card_bg_color alpha(#DBD8E8, 0.7);
@@ -75,13 +75,13 @@ list > row.activatable:active {
 	);
 }
 
-#dosefy-med-window
+#dosage-med-window
 	button:not(.circular):not(.image-button):not(.arrow-button):not(.toggle):not(.am-pm) {
 	border-radius: 9px;
 	min-width: 60px;
 }
 
-#dosefy-med-window.one-time list > row:only-child button.remove-row {
+#dosage-med-window.one-time list > row:only-child button.remove-row {
 	color: transparent;
 	background-color: transparent;
 	padding: 0;
@@ -91,11 +91,11 @@ list > row.activatable:active {
 	-gtk-icon-size: 1px;
 }
 
-#dosefy-med-window.one-time .arrow-button {
+#dosage-med-window.one-time .arrow-button {
 	margin-left: -11px;
 }
 
-#dosefy-med-window {
+#dosage-med-window {
 	border-radius: 14px;
 }
 
@@ -293,8 +293,8 @@ button.pill.skip {
 
 button.pill:not(.suggested-action) {
 	background-color: #efeeff;
-	box-shadow: 0 1px 6px 0px alpha(@dosefy_blue_4, 0.15),
-		inset 0 0 0 1px alpha(@dosefy_blue_4, 0.2);
+	box-shadow: 0 1px 6px 0px alpha(@dosage_blue_4, 0.15),
+		inset 0 0 0 1px alpha(@dosage_blue_4, 0.2);
 }
 
 button.pill:not(.suggested-action):hover {
@@ -306,24 +306,24 @@ button.pill:not(.suggested-action):active {
 }
 
 button.suggested-action {
-	background: linear-gradient(45deg, @dosefy_blue_4 0%, @dosefy_blue_2 75%);
-	box-shadow: 0 1px 7px 0px alpha(@dosefy_blue_4, 0.6);
+	background: linear-gradient(45deg, @dosage_blue_4 0%, @dosage_blue_2 75%);
+	box-shadow: 0 1px 7px 0px alpha(@dosage_blue_4, 0.6);
 	color: white;
 }
 
 button.suggested-action:hover {
 	background: linear-gradient(
 		45deg,
-		lighter(@dosefy_blue_4) 0%,
-		lighter(@dosefy_blue_2) 55%
+		lighter(@dosage_blue_4) 0%,
+		lighter(@dosage_blue_2) 55%
 	);
 }
 
 button.suggested-action:active {
 	background: linear-gradient(
 		45deg,
-		darker(@dosefy_blue_4) 0%,
-		darker(@dosefy_blue_2) 55%
+		darker(@dosage_blue_4) 0%,
+		darker(@dosage_blue_2) 55%
 	);
 }
 
@@ -331,8 +331,8 @@ button.suggested-action:focus {
 	outline-offset: 1px;
 }
 
-#dosefy-med-window button.suggested-action {
-	box-shadow: 0 1px 4px 0px alpha(@dosefy_blue_4, 0.35);
+#dosage-med-window button.suggested-action {
+	box-shadow: 0 1px 4px 0px alpha(@dosage_blue_4, 0.35);
 }
 
 .time-box spinbutton button {

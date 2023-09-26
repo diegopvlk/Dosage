@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=Dosefy
-Exec=com.github.diegopvlk.Dosefy
-Icon=com.github.diegopvlk.Dosefy
+Name=Dosage
+Exec=com.github.diegopvlk.Dosage
+Icon=com.github.diegopvlk.Dosage
 Terminal=false
 Type=Application
 Categories=GTK;

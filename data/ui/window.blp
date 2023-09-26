@@ -1,13 +1,13 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $DosefyWindow : Adw.ApplicationWindow {
-  name: 'dosefy-window';
+template $DosageWindow : Adw.ApplicationWindow {
+  name: 'dosage-window';
   // default-width: 800;
   // default-height: 591;
   width-request: 320;
   height-request: 280;
-  title: 'Dosefy';
+  title: 'Dosage';
 
   Adw.Breakpoint {
     condition ('max-width: 512sp')
@@ -180,7 +180,7 @@ menu appMenu {
     action: 'app.preferences';
   }
   item {
-    label: _('About Dosefy');
+    label: _('About Dosage');
     action: 'app.about';
   }
   item {

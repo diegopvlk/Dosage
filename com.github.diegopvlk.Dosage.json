@@ -1,9 +1,9 @@
 {
-    "app-id" : "com.github.diegopvlk.Dosefy",
+    "app-id" : "com.github.diegopvlk.Dosage",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
-    "command" : "com.github.diegopvlk.Dosefy",
+    "command" : "com.github.diegopvlk.Dosage",
     "finish-args" : [
         "--share=network",
         "--share=ipc",
@@ -41,12 +41,12 @@
             ]
         },
         {
-            "name" : "dosefy",
+            "name" : "dosage",
             "buildsystem" : "meson",
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://github.com/diegopvlk/Dosefy"
+                    "url" : "https://github.com/diegopvlk/Dosage"
                 }
             ]
         }

@@ -24,16 +24,16 @@ import {
 const historyLS = Gio.ListStore.new(HistoryMedication);
 const treatmentsLS = Gio.ListStore.new(Medication);
 
-export const DosefyWindow = GObject.registerClass({
-	GTypeName: 'DosefyWindow',
-	Template: 'resource:///com/github/diegopvlk/Dosefy/ui/window.ui',
+export const DosageWindow = GObject.registerClass({
+	GTypeName: 'DosageWindow',
+	Template: 'resource:///com/github/diegopvlk/Dosage/ui/window.ui',
 	InternalChildren: [
 		'todayList', 'historyList', 'treatmentsList', 'treatmentsPage',
 		'skipBtn', 'entryBtn', 'unselectBtn', 
 		'emptyToday', 'emptyHistory', 'emptyTreatments'
 	],
 },
-class DosefyWindow extends Adw.ApplicationWindow {
+class DosageWindow extends Adw.ApplicationWindow {
 	constructor(application) {
 		super({ application });
 		this.#loadSettings();
@@ -57,8 +57,8 @@ class DosefyWindow extends Adw.ApplicationWindow {
 	}
 	
 	#start() {
-		const treatmentsFile = DataDir.get_child('dosefy-treatments.json');
-		const historyFile = DataDir.get_child('dosefy-history.json');
+		const treatmentsFile = DataDir.get_child('dosage-treatments.json');
+		const historyFile = DataDir.get_child('dosage-history.json');
 
 		this._createLoadJsonFile('treatments', treatmentsFile);
 		this._createLoadJsonFile('history', historyFile);
@@ -81,7 +81,7 @@ class DosefyWindow extends Adw.ApplicationWindow {
 			: Gio.NotificationPriority.NORMAL;
 		notification.set_priority(priority);
 
-		notification.set_title(_("Dosefy reminder"));
+		notification.set_title(_("Dosage reminder"));
 		notification.set_body(_("You have treatments low in stock"));
 
 		this._treatmentsPage.set_needs_attention(false);
@@ -387,7 +387,7 @@ class DosefyWindow extends Adw.ApplicationWindow {
 			(itemMin - minutes) * 60000 - (seconds * 1000);
 		
 		setTimeout(() => {
-			notification.set_title(_("Dosefy reminder"));
+			notification.set_title(_("Dosage reminder"));
 			notification.set_body(
 				`${item.name}  ⦁  ${item.info.dosage.dose} ${item.unit}`
 			);
@@ -566,7 +566,7 @@ class DosefyWindow extends Adw.ApplicationWindow {
 	}
 
 	_updateJsonFile(type, listStore) {
-		const fileName = `dosefy-${type}.json`
+		const fileName = `dosage-${type}.json`
 		const file = DataDir.get_child(fileName);
 		const tempFile = createTempFile(listStore);
 
@@ -604,7 +604,7 @@ class DosefyWindow extends Adw.ApplicationWindow {
 
 	_openMedWindow(list, position, oneTime) {
 		const builder = Gtk.Builder.new_from_resource(
-			'/com/github/diegopvlk/Dosefy/ui/med-window.ui'
+			'/com/github/diegopvlk/Dosage/ui/med-window.ui'
 		);
 		const medWindow = builder.get_object('medWindow');
 		medWindow.set_modal(true);

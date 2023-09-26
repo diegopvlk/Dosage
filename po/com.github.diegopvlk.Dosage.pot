@@ -62,7 +62,7 @@ msgid "Preferences"
 msgstr ""
 
 #: data/ui/window.blp:183
-msgid "About Dosefy"
+msgid "About Dosage"
 msgstr ""
 
 #: data/ui/window.blp:187
@@ -319,11 +319,11 @@ msgid "Thanks to these projects!"
 msgstr ""
 
 #: src/main.js:105
-msgid "Allow Dosefy to run in background."
+msgid "Allow Dosage to run in background."
 msgstr ""
 
 #: src/window.js:84 src/window.js:390
-msgid "Dosefy reminder"
+msgid "Dosage reminder"
 msgstr ""
 
 #: src/window.js:85

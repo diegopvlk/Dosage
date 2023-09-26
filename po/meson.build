@@ -1,1 +1,1 @@
-i18n.gettext('dosefy', preset: 'glib')
+i18n.gettext('dosage', preset: 'glib')
