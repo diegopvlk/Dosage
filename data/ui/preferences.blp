@@ -1,0 +1,34 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.PreferencesWindow prefWindow {
+	name: 'dosefy-pref-window';
+	default-width: 300;
+	default-height: 220;
+	search-enabled: false;
+	title: _("Preferences");
+
+	Adw.PreferencesPage{
+		valign: center;
+		Adw.PreferencesGroup {
+			Adw.ActionRow {
+				title: _("Autostart at login");
+				activatable-widget: autostartSwitch;
+				[suffix]
+				Switch autostartSwitch {
+					halign: center;
+					valign: center;
+				}
+			}
+			Adw.ActionRow {
+				title: _("Increase notification priority");
+				activatable-widget: prioritySwitch;
+				[suffix]
+				Switch prioritySwitch {
+					halign: center;
+					valign: center;
+				}
+			}
+		}	
+	} 
+}

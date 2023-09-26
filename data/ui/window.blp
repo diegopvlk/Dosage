@@ -1,0 +1,190 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $DosefyWindow : Adw.ApplicationWindow {
+  name: 'dosefy-window';
+  // default-width: 800;
+  // default-height: 591;
+  width-request: 320;
+  height-request: 280;
+  title: 'Dosefy';
+
+  Adw.Breakpoint {
+    condition ('max-width: 512sp')
+    setters {
+      switcherBar.reveal: true;
+      headerBar.title-widget: null;
+    }
+  }
+
+  content:
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar headerBar {
+      [end]
+      MenuButton buttonMenu {
+        menu-model: appMenu;
+        icon-name: 'open-menu-symbolic';
+        primary: true;
+        tooltip-text: _("Menu");
+      }
+      title-widget: Adw.ViewSwitcher {
+        stack: stack;
+        policy: wide;
+      };
+    }
+    content:
+    Adw.ViewStack stack {
+      vexpand: true;
+      Adw.ViewStackPage todayPage {
+        name: 'page1';
+        title: _('Today');
+        icon-name: 'today-symbolic';
+        child:
+          Overlay {
+            ScrolledWindow {
+              Adw.ClampScrollable {
+                ListView todayList {
+                  styles [ 'custom-list' ]
+                  activate => $_selectTodayItems();
+                  single-click-activate: true;
+                }
+              }
+            }
+            [overlay]
+            Box {
+              halign: center;
+              valign: end;
+              margin-bottom: 16;
+              spacing: 8;
+              Button unselectBtn {
+                styles [ 'pill', 'skip' ]
+                tooltip-text: _('Unselect');
+                visible: false;
+                icon-name: 'unselect-meds-symbolic';
+              }
+              Button entryBtn {
+                styles [ 'pill' ]
+                clicked => $_addToHistory();
+                name: 'yes';
+                label: _('One-time entry');
+              }
+              Button skipBtn {
+                styles [ 'pill', 'skip' ]
+                clicked => $_addToHistory();
+                name: 'no';
+                tooltip-text: _('Skip');
+                visible: false;
+                icon-name: 'skip-med-symbolic';
+              }
+            }
+            [overlay]
+            Label emptyToday {
+                styles [ 'empty-today' ]
+                visible: false;
+                margin-start: 30;
+                margin-end: 30;
+                margin-bottom: 64;
+            }
+          }
+        ;
+      }
+
+      Adw.ViewStackPage historyPage {
+        name: 'page2';
+        title: _('History');
+        icon-name: 'history-symbolic';
+        child:
+          Overlay {
+            ScrolledWindow {
+              Adw.ClampScrollable {
+                ListView historyList {
+                  styles [ 'custom-list', 'history' ]
+                }
+              }
+            }
+            [overlay]
+            Label emptyHistory {
+              styles [ 'empty-history' ]
+              visible: false;
+              label: _("Empty history");
+              margin-start: 30;
+              margin-end: 30;
+              margin-bottom: 64;
+            }
+          }
+        ;
+      }
+
+      Adw.ViewStackPage treatmentsPage {
+        name: 'page3';
+        title: _('Treatments');
+        icon-name: 'treatments-symbolic';
+        child:
+          Overlay {
+            ScrolledWindow {
+              Adw.ClampScrollable {
+                vexpand: true;
+                ListView treatmentsList {
+                  styles [ 'custom-list' ]
+                  activate => $_openMedWindow();
+                  single-click-activate: true;
+                }
+              }
+            }
+            [overlay]
+            Box {
+              halign: center;
+              valign: end;
+              Button addNewMedication {
+                halign: center;
+                valign: end;
+                margin-bottom: 16;
+                clicked => $_openMedWindow();
+                styles [ 'pill', 'suggested-action' ]
+                child: Adw.ButtonContent {
+                  icon-name: 'list-add-symbolic';
+                  label: _('Add');
+                };
+              }
+            }
+            [overlay]
+            Label emptyTreatments {
+                styles [ 'empty-treatments' ]
+                label: _("Add some clicking the button bellow");
+                visible: false;
+                margin-start: 30;
+                margin-end: 30;
+                margin-bottom: 64;
+            }
+          }
+        ;
+      }
+    }
+
+    ;
+
+    [bottom]
+    Adw.ViewSwitcherBar switcherBar {
+      stack: stack;
+    }
+  }
+
+  ;
+
+}
+
+menu appMenu {
+  item {
+    label: _('Preferences');
+    action: 'app.preferences';
+  }
+  item {
+    label: _('About Dosefy');
+    action: 'app.about';
+  }
+  item {
+    label: _('Quit');
+    action: 'app.quit';
+  }
+}

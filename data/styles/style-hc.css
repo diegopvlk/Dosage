@@ -1,0 +1,41 @@
+popover contents {
+	border: 1px solid alpha(currentColor, 0.6);
+}
+
+.taken-label,
+.stock-label {
+	background-color: alpha(currentColor, 0.18);
+	opacity: 1;
+}
+
+.boxed-list > row,
+.custom-list > row > box,
+.time-box spinbutton button,
+spinbutton.every-x button,
+button.pill:not(.suggested-action) {
+	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.6);
+}
+
+.button-left > button,
+.button-right > button {
+	box-shadow: none;
+}
+
+.button-left > button:hover,
+.button-right > button:hover {
+	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.5);
+}
+
+row.error {
+	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.85);
+}
+
+.red-clr,
+.orange-clr,
+.yellow-clr,
+.green-clr,
+.cyan-clr,
+.blue-clr,
+.purple-clr {
+	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.85);
+}

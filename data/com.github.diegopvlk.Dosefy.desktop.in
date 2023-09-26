@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Dosefy
+Exec=com.github.diegopvlk.Dosefy
+Icon=com.github.diegopvlk.Dosefy
+Terminal=false
+Type=Application
+Categories=GTK;
+X-GNOME-UsesNotifications=true

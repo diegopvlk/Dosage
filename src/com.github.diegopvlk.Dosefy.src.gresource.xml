@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/github/diegopvlk/Dosefy/js">
+    <file>main.js</file>
+    <file>utils.js</file>
+    <file>window.js</file>
+    <file>medication.js</file>
+    <file>todayFactory.js</file>
+    <file>historyFactory.js</file>
+    <file>treatmentsFactory.js</file>
+  </gresource>
+</gresources>

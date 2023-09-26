@@ -1,0 +1,390 @@
+@import './card-colors.css';
+
+@define-color dosefy_blue_1 #2D207A;
+@define-color dosefy_blue_2 #443992;
+@define-color dosefy_blue_3 #5C52AB;
+@define-color dosefy_blue_4 #756BC6;
+
+@define-color window_bg_color #FAFAFC;
+@define-color window_fg_color #211D40;
+@define-color dialog_bg_color @window_bg_color;
+@define-color accent_color @dosefy_blue_2;
+@define-color accent_bg_color @dosefy_blue_3;
+@define-color popover_bg_color @window_bg_color;
+@define-color popover_fg_color @window_fg_color;
+@define-color card_bg_color alpha(#DBD8E8, 0.7);
+@define-color card_fg_color @window_fg_color;
+
+.empty-history,
+.empty-today,
+.empty-treatments {
+  font-size: 24px;
+  font-weight: 700;
+}
+.needs-attention > indicator {
+	opacity: 0.75;
+}
+
+listview > header {
+	padding-top: 21px;
+	padding-bottom: 3px;
+	margin-left: 1px;
+}
+
+listview > header label {
+	opacity: 0.7;
+}
+
+list.nested,
+list > row.header {
+	background: transparent;
+}
+
+list.nested > row.activatable:hover,
+list > row.activatable.header:hover {
+	background: alpha(@accent_color, 0.09);
+}
+
+list.nested > row.activatable:active,
+list > row.activatable.header:active {
+	background: alpha(@accent_color, 0.11);
+}
+
+list > row.activatable:hover {
+	background: alpha(@accent_color, 0.19);
+}
+
+list > row.activatable:active {
+	background: alpha(@accent_color, 0.21);
+}
+
+.button-right > button:hover,
+.button-right > button:checked {
+	background: linear-gradient(
+		-90deg,
+		alpha(darker(@card_bg_color), 0.18) 70%,
+		transparent 100%
+	);
+}
+
+.button-right > button:active {
+	background: linear-gradient(
+		-90deg,
+		alpha(darker(@card_bg_color), 0.3) 70%,
+		transparent 100%
+	);
+}
+
+#dosefy-med-window
+	button:not(.circular):not(.image-button):not(.arrow-button):not(.toggle):not(.am-pm) {
+	border-radius: 9px;
+	min-width: 60px;
+}
+
+#dosefy-med-window.one-time list > row:only-child button.remove-row {
+	color: transparent;
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+	min-width: 0;
+	min-height: 0;
+	-gtk-icon-size: 1px;
+}
+
+#dosefy-med-window.one-time .arrow-button {
+	margin-left: -11px;
+}
+
+#dosefy-med-window {
+	border-radius: 14px;
+}
+
+headerbar button,
+viewswitcher > button {
+	border-radius: 99px;
+}
+
+popover.menu > contents modelbutton {
+	border-radius: 9px;
+}
+
+actionbar viewswitcher.narrow indicatorbin {
+	margin-bottom: -2px;
+}
+
+actionbar viewswitcher.narrow label {
+	/* font-size: 0; */
+	padding: 0 8px;
+}
+
+.boxed-list > row,
+.custom-list > row > box {
+	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.05);
+}
+
+.card,
+.boxed-list {
+	box-shadow: none;
+}
+
+.boxed-list {
+	background-color: transparent;
+}
+
+.boxed-list > row {
+	background-color: @card_bg_color;
+	border: none;
+}
+
+.boxed-list > row:not(:last-child) {
+	margin-bottom: 3px;
+}
+
+.custom-list row {
+	padding-bottom: 1px;
+}
+
+.custom-list {
+	margin: 0px 10px;
+	padding-bottom: 20px;
+	background-color: transparent;
+}
+
+.custom-list:not(.history) {
+	padding-bottom: 70px;
+}
+
+.custom-list > row {
+	background: none;
+}
+
+list.boxed-list row {
+	border-bottom-width: 0;
+}
+
+list > row,
+.custom-list > row > box,
+row:focus {
+	border-radius: 6px;
+}
+
+.taken-label,
+.inventory-label {
+	background-color: alpha(currentColor, 0.2);
+	border: 1px solid alpha(currentColor, 0.4);
+	padding: 3px 8px;
+	border-radius: 99px;
+	text-transform: uppercase;
+	font-size: 90%;
+	opacity: 0.72;
+}
+
+.ampm-row .suffixes spinbutton text {
+	margin-left: -20px;
+	padding: 0;
+}
+
+button.am-pm {
+	font-weight: 400;
+	font-size: 83%;
+	padding: 0px;
+	min-height: 26px;
+	min-width: 26px;
+}
+
+.button-left > button,
+.button-right > button,
+menubutton button.arrow-button {
+	font-weight: 400;
+}
+
+.button-left > button,
+.button-right > button {
+	margin: -2px;
+	background-color: transparent;
+}
+
+.button-left > button {
+	margin-left: -14px;
+	border-radius: 5px;
+	padding: 0 14px;
+	padding-right: 32px;
+}
+
+.button-right > button {
+	margin-right: -14px;
+	border-radius: 5px;
+	padding: 0 18px;
+	padding-left: 32px;
+}
+
+.button-right.cycle > button {
+	min-width: 90px;
+}
+
+.button-right popover button.circular {
+	border-radius: 10px;
+}
+
+.button-left popover {
+	margin-top: -5px;
+	margin-left: -15px;
+}
+
+popover > contents {
+	border-radius: 16px;
+}
+
+.button-left popover > contents listview row {
+	border-radius: 10px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.button-left > button:hover,
+.button-left > button:checked {
+	background: linear-gradient(
+		90deg,
+		alpha(darker(@card_bg_color), 0.3) 70%,
+		transparent 100%
+	);
+}
+
+.button-left > button:active {
+	background: linear-gradient(
+		90deg,
+		alpha(darker(@card_bg_color), 0.45) 70%,
+		transparent 100%
+	);
+}
+
+.button-right > button:hover,
+.button-right > button:checked {
+	background: linear-gradient(
+		-90deg,
+		alpha(darker(@card_bg_color), 0.3) 70%,
+		transparent 100%
+	);
+}
+
+.button-right > button:active {
+	background: linear-gradient(
+		-90deg,
+		alpha(darker(@card_bg_color), 0.45) 70%,
+		transparent 100%
+	);
+}
+
+menubutton.numeric button {
+	border-radius: 10px;
+	padding: 4px 6px;
+	padding-right: 4px;
+	margin-left: 3px;
+}
+
+list > row:only-child button.remove-row {
+	opacity: 0.5;
+}
+
+button.pill.skip {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+button.pill:not(.suggested-action) {
+	background-color: #efeeff;
+	box-shadow: 0 1px 6px 0px alpha(@dosefy_blue_4, 0.15),
+		inset 0 0 0 1px alpha(@dosefy_blue_4, 0.2);
+}
+
+button.pill:not(.suggested-action):hover {
+	background-color: #e4e3f6;
+}
+
+button.pill:not(.suggested-action):active {
+	background-color: #dbdaf2;
+}
+
+button.suggested-action {
+	background: linear-gradient(45deg, @dosefy_blue_4 0%, @dosefy_blue_2 75%);
+	box-shadow: 0 1px 7px 0px alpha(@dosefy_blue_4, 0.6);
+	color: white;
+}
+
+button.suggested-action:hover {
+	background: linear-gradient(
+		45deg,
+		lighter(@dosefy_blue_4) 0%,
+		lighter(@dosefy_blue_2) 55%
+	);
+}
+
+button.suggested-action:active {
+	background: linear-gradient(
+		45deg,
+		darker(@dosefy_blue_4) 0%,
+		darker(@dosefy_blue_2) 55%
+	);
+}
+
+button.suggested-action:focus {
+	outline-offset: 1px;
+}
+
+#dosefy-med-window button.suggested-action {
+	box-shadow: 0 1px 4px 0px alpha(@dosefy_blue_4, 0.35);
+}
+
+.time-box spinbutton button {
+	padding: 0;
+	margin: 0;
+	min-height: 30px;
+	min-width: 30px;
+	border-radius: 99px;
+	border-bottom: none;
+	background-color: alpha(currentColor, 0.1);
+}
+
+.time-box spinbutton button:hover {
+	background-color: alpha(currentColor, 0.15);
+}
+
+.time-box spinbutton button:active {
+	background-color: alpha(currentColor, 0.2);
+}
+
+.time-box spinbutton text {
+	min-height: 24px;
+}
+
+.cycle-box > row.spin > box {
+	margin: -3px 4px -3px 8px;
+}
+
+.cycle-box row.spin {
+	outline: none;
+}
+
+row.error {
+	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.5);
+}
+
+.time-error {
+	animation: flashTime 0.7s ease-in-out 2;
+}
+
+@keyframes flashTime {
+	0% {
+		background-color: transparent;
+		border-radius: 99px;
+	}
+
+	10% {
+		background-color: alpha(@red_2, 0.5);
+	}
+}
+
+.calendar-error {
+	border-radius: 10px;
+	box-shadow: 0 0 8px 1px alpha(@red_4, 0.15);
+}

@@ -1,0 +1,14 @@
+data/com.github.diegopvlk.Dosefy.desktop.in
+data/com.github.diegopvlk.Dosefy.appdata.xml.in
+data/com.github.diegopvlk.Dosefy.gschema.xml
+
+data/ui/window.blp
+data/ui/med-window.blp
+data/ui/preferences.blp
+
+src/main.js
+src/window.js
+src/medication.js
+src/todayFactory.js
+src/historyFactory.js
+src/treatmentsFactory.js

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="dosefy">
+	<schema id="com.github.diegopvlk.Dosefy" path="/com/github/diegopvlk/Dosefy/">
+		<key name="window-width" type="i">
+			<default>800</default>
+		</key>
+		<key name="window-height" type="i">
+			<default>591</default>
+		</key>
+		<key name="autostart" type="b">
+			<default>true</default>
+		</key>
+		<key name="priority" type="b">
+			<default>false</default>
+		</key>
+	</schema>
+</schemalist>
