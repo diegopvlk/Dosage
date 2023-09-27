@@ -185,7 +185,7 @@ button.suggested-action:active {
 	background: linear-gradient(
 		90deg,
 		alpha(lighter(@card_bg_color), 0.6) 70%,
-		transparent 100%
+		alpha(lighter(@card_bg_color), 0.01) 100%
 	);
 }
 
@@ -193,7 +193,7 @@ button.suggested-action:active {
 	background: linear-gradient(
 		90deg,
 		alpha(lighter(@card_bg_color), 0.8) 70%,
-		transparent 100%
+		alpha(lighter(@card_bg_color), 0.01) 100%
 	);
 }
 
@@ -202,7 +202,7 @@ button.suggested-action:active {
 	background: linear-gradient(
 		-90deg,
 		alpha(lighter(@card_bg_color), 0.6) 70%,
-		transparent 100%
+		alpha(lighter(@card_bg_color), 0.01) 100%
 	);
 }
 
@@ -210,6 +210,6 @@ button.suggested-action:active {
 	background: linear-gradient(
 		-90deg,
 		alpha(lighter(@card_bg_color), 0.8) 70%,
-		transparent 100%
+		alpha(lighter(@card_bg_color), 0.01) 100%
 	);
 }
