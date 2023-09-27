@@ -505,28 +505,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 					const today = formatDate(new Date());
 					const lastUpdated = formatDate(dateLastUp);
 
-					const histNotEmpty = this._historyModel.get_n_items() > 0;
-					const lastHtSecItems = this._sortedHistoryModel.get_section(0)[1];
-
-					const timeInLastSection = () => {
-						if (histNotEmpty) {
-							for (let i = 0; i < lastHtSecItems; i++) {
-								const name = this._historyModel.get_item(i).name;
-								const time = this._historyModel.get_item(i).info.time;
-	
-								if (item.name === name) {
-									if (String(timeDose.time) == String(time)){
-										return true;
-									}
-								}
-							}
-						}						
-					}
-
-					if (lastUpdated < today && !timeInLastSection()) {
+					if (lastUpdated < today) {
 						const datesPassed = dateDifference(lastUpdated, today);
-						datesPassed.forEach(date => {
-							
+						datesPassed.forEach(date => {	
 							if (
 								new Date(date) < new Date() &&
 								new Date(date) > dateLastUp &&
