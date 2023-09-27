@@ -1,7 +1,7 @@
 {
     "app-id" : "com.github.diegopvlk.Dosage",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "master",
+    "runtime-version" : "45",
     "sdk" : "org.gnome.Sdk",
     "command" : "com.github.diegopvlk.Dosage",
     "finish-args" : [
