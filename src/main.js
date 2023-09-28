@@ -126,6 +126,7 @@ export const DosageApplication = GObject.registerClass(
 
 			if (this._hidden) {
 				active_window.hide();
+				active_window.set_state_flags(Gtk.StateFlags.BACKDROP, true);
 				this._hidden = false;
 			} else {
 				active_window.present();
