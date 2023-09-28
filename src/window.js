@@ -222,29 +222,31 @@ class DosageWindow extends Adw.ApplicationWindow {
 					);
 				});
 			}
-		} catch (err) {
-			console.error('Error loading history...', err)
-		}
-
-		try {
+			
 			this._sortedHistoryModel = new Gtk.SortListModel({
 				model: historyLS,
 				section_sorter: new HistorySectionSorter(),
 				sorter: new HistorySorter(),
 			});
-	
+
+		} catch (err) {
+			console.error('Error loading history...', err)
+		}
+		
+		try {
+			
 			this._historyModel = new Gtk.NoSelection({
 				model: this._sortedHistoryModel,
 			});
 
 			this._historyList.model = this._historyModel;
-	
+
 			this._historyList.remove_css_class('view');
 			this._historyList.add_css_class('background');
 	
 			this._historyList.set_header_factory(historyHeaderFactory);
 			this._historyList.set_factory(historyItemFactory);
-			
+
 			historyLS.connect('items-changed', (model, pos, removed, added) => {
 				if (added) {
 					const itemAdded = model.get_item(pos);
@@ -282,6 +284,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		} catch (err) {
 			console.error("_loadHistory error... ", err)
 		}
+		
 		this._setEmptyHistLabel();
 	}
 
@@ -583,22 +586,37 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_updateJsonFile(type, listStore) {
-		const fileName = `dosage-${type}.json`
+		const fileName = `dosage-${type}.json`;
 		const file = DataDir.get_child(fileName);
 		const tempFile = createTempFile(listStore);
 
-		try {
-			file.replace_contents(
-				JSON.stringify(tempFile),
-				null,
-				false,
-				Gio.FileCreateFlags.REPLACE_DESTINATION,
-				null
-			);
-			log(`${fileName} updated`);
-		} catch (err) {
-			console.error(`Update of ${fileName} file failed... ${err}`);
-		}
+		const updateFile = () => {
+			return new Promise((resolve, reject) => {
+				const byteArray = new TextEncoder().encode(JSON.stringify(tempFile));
+				const jsonBytes = GLib.Bytes.new(byteArray);
+				file.replace_contents_async(
+					jsonBytes,
+					null,
+					true,
+					Gio.FileCreateFlags.REPLACE_DESTINATION,
+					null,
+					(file, result, userData) => {
+						try {
+							file.replace_contents_finish(result);
+							resolve(`${fileName} updated`);
+						} catch (err) {
+							console.error(`Update of ${fileName} failed... ${err}`);
+							reject(err);
+						}
+					},
+					null
+				);
+			});
+		};
+
+		updateFile()
+			.then((result) => log(result))
+			.catch((err) => console.error('Update failed...', err));
 	}
 
 	_updateEverything() {
