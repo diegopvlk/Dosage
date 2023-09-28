@@ -76,17 +76,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	#checkInventory() {
-		const app = this.get_application();
-		const notification = new Gio.Notification();
-		const priorityState = settings.get_boolean('priority');
-		const priority = priorityState
-			? Gio.NotificationPriority.URGENT
-			: Gio.NotificationPriority.NORMAL;
-		notification.set_priority(priority);
-
-		notification.set_title(_("Dosage reminder"));
-		notification.set_body(_("You have treatments low in stock"));
-
 		this._treatmentsPage.set_needs_attention(false);
 
 		let count = 0;
@@ -97,8 +86,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 				this._treatmentsPage.set_needs_attention(true);
 				this._treatmentsPage.badge_number = count;
 
-				if (!this.get_visible())
+				if (!this.get_visible()) {
+					const [ notification, app ] = this._getNotification();
+					notification.set_body(_("You have treatments low in stock"));
 					app.send_notification('low-stock', notification);	
+				}	
 			}
 		}
 	}
@@ -376,36 +368,44 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const seconds = now.getSeconds();
 		const itemHour = item.info.dosage.time[0];
 		const itemMin = item.info.dosage.time[1];
-		const app = this.get_application();
-		const notifyItem = { name: item.name, dosage: item.info.dosage };
-		const pseudoId = JSON.stringify(notifyItem);
-		const notification = new Gio.Notification();
-		const priorityState = settings.get_boolean('priority');
-		const priority = priorityState
-			? Gio.NotificationPriority.URGENT
-			: Gio.NotificationPriority.NORMAL;
-		notification.set_priority(priority);
 
 		// milliseconds
 		let timeDifference =
 			(itemHour - hours) * 3600000 +
-			(itemMin - minutes) * 60000 - (seconds * 1000);
-		
-		setTimeout(() => {
-			notification.set_title(_("Dosage reminder"));
-			notification.set_body(
-				`${item.name}  ⦁  ${item.info.dosage.dose} ${item.unit}`
-			);
+			(itemMin - minutes) * 60000 -
+			seconds * 1000;
 
+		setTimeout(() => {
 			/* 
 			using backdrop instead of .is_active, because .is_active is false 
 			if there is a modal showing and true after the window closes
 			and for some reason .is_suspended always returns false
 			*/
 			let stateFlags = this.get_state_flags();
-			if (stateFlags & Gtk.StateFlags.BACKDROP)
+			if (stateFlags & Gtk.StateFlags.BACKDROP) {
+				const pseudoId = JSON.stringify({
+					name: item.name, dosage: item.info.dosage,
+				});
+				const [notification, app] = this._getNotification();
+				notification.set_body(
+					`${item.name}  ⦁  ${item.info.dosage.dose} ${item.unit}`
+				);
 				app.send_notification(`${pseudoId}`, notification);
+			}
 		}, timeDifference);
+	}
+
+	_getNotification() {
+		const app = this.get_application();
+		const notification = new Gio.Notification();
+		const priorityState = settings.get_boolean('priority');
+		const priority = priorityState
+			? Gio.NotificationPriority.URGENT
+			: Gio.NotificationPriority.NORMAL;
+		notification.set_priority(priority);
+		notification.set_title(_("Dosage reminder"));
+
+		return [ notification, app ]
 	}
 
 	_selectTodayItems(list, position) {
