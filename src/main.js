@@ -127,6 +127,7 @@ export const DosageApplication = GObject.registerClass(
 
 			if (this._hidden) {
 				active_window.hide();
+				// set backdrop to send background notifications
 				active_window.set_state_flags(Gtk.StateFlags.BACKDROP, true);
 				this._hidden = false;
 			} else {

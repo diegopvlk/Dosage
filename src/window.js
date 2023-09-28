@@ -71,9 +71,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			console.error('Error loading treatments/history/today... ', err);
 		}
 
-		// using backdrop instead of .is_active, because .is_active is false 
-		// if there is a modal showing and true after the window closes
-		// and for some reason .is_suspended always returns false
+		// set backdrop to send background notifications
 		this.connect('hide', () => this.set_state_flags(Gtk.StateFlags.BACKDROP, true));
 	}
 
@@ -398,6 +396,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 			notification.set_body(
 				`${item.name}  ⦁  ${item.info.dosage.dose} ${item.unit}`
 			);
+
+			/* 
+			using backdrop instead of .is_active, because .is_active is false 
+			if there is a modal showing and true after the window closes
+			and for some reason .is_suspended always returns false
+			*/
 			let stateFlags = this.get_state_flags();
 			if (stateFlags & Gtk.StateFlags.BACKDROP)
 				app.send_notification(`${pseudoId}`, notification);
