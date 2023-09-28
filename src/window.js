@@ -70,6 +70,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 		} catch (err) {
 			console.error('Error loading treatments/history/today... ', err);
 		}
+
+		this.connect('hide', () => {
+			this.set_state_flags(Gtk.StateFlags.BACKDROP, true)
+		})
 	}
 
 	#checkInventory() {
@@ -93,7 +97,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 				count++;
 				this._treatmentsPage.set_needs_attention(true);
 				this._treatmentsPage.badge_number = count;
-				app.send_notification('low-stock', notification);
+
+				let stateFlags = this.get_state_flags();
+				if (stateFlags & Gtk.StateFlags.BACKDROP)
+					app.send_notification('low-stock', notification);	
 			}
 		}
 	}
@@ -391,7 +398,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 			notification.set_body(
 				`${item.name}  ⦁  ${item.info.dosage.dose} ${item.unit}`
 			);
-			app.send_notification(`${pseudoId}`, notification);
+			let stateFlags = this.get_state_flags();
+			if (stateFlags & Gtk.StateFlags.BACKDROP)
+				app.send_notification(`${pseudoId}`, notification);
 		}, timeDifference);
 	}
 
