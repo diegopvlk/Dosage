@@ -77,14 +77,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 	#checkInventory() {
 		this._treatmentsPage.set_needs_attention(false);
+		this._treatmentsPage.badge_number = 0;
 
-		let count = 0;
 		for (const item of treatmentsLS) {
 			const inv = item.info.inventory;
 			if (inv.enabled && inv.current <= inv.reminder) {
-				count++;
 				this._treatmentsPage.set_needs_attention(true);
-				this._treatmentsPage.badge_number = count;
+				this._treatmentsPage.badge_number += 1;
 
 				if (!this.get_visible()) {
 					const [ notification, app ] = this._getNotification();
