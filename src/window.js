@@ -71,6 +71,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 			console.error('Error loading treatments/history/today... ', err);
 		}
 
+		// using backdrop instead of .is_active, because .is_active is false 
+		// if there is a modal showing and true after the window closes
+		// and for some reason .is_suspended always returns false
 		this.connect('hide', () => this.set_state_flags(Gtk.StateFlags.BACKDROP, true));
 	}
 
@@ -96,8 +99,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				this._treatmentsPage.set_needs_attention(true);
 				this._treatmentsPage.badge_number = count;
 
-				const stateFlags = this.get_state_flags();
-				if (stateFlags & Gtk.StateFlags.BACKDROP)
+				if (!this.get_visible())
 					app.send_notification('low-stock', notification);	
 			}
 		}
