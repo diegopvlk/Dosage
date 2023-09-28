@@ -66,11 +66,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 		try {
 			this._loadTreatments();
 			this._loadHistory();
+			this._addMissedItems();
 			this._loadToday();
+			this._setEmptyHistLabel();
+			this._emptyHistory.ellipsize = Pango.EllipsizeMode.END;
 		} catch (err) {
 			console.error('Error loading treatments/history/today... ', err);
 		}
-
 		// set backdrop to send background notifications
 		this.connect('hide', () => this.set_state_flags(Gtk.StateFlags.BACKDROP, true));
 	}
@@ -106,7 +108,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const timeUntilMidnight = midnight - now;
 
 		setTimeout(() => {
-			this._addMissedItems();
+			this._addMissedMidnight();
+			this._loadHistory();
 			this._updateEverything();
 			this.#checkInventory();
 			this.#scheduleNextMidnight();
@@ -234,8 +237,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 				model: this._sortedHistoryModel,
 			});
 
-			this._addMissedItems();
-	
 			this._historyList.model = this._historyModel;
 	
 			this._historyList.remove_css_class('view');
@@ -281,7 +282,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 		} catch (err) {
 			console.error("_loadHistory error... ", err)
 		}
-
 		this._setEmptyHistLabel();
 	}
 
@@ -483,7 +483,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				);
 			});
 
-			// also update the date of treatments for each dose taken/skipped
+			// also update the date of treatments for each dose taken or skipped
 			for (const item of treatmentsLS) {
 				item.info.dosage.forEach(timeDose => {
 					const tempObj = { ...timeDose, updated: undefined };
@@ -513,7 +513,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 			for (const item of treatmentsLS) {
 				item.info.dosage.forEach(timeDose => {
 					const dateLastUp = new Date(timeDose.updated);
-					dateLastUp.setDate(dateLastUp.getDate() + 1);		
+					/* 
+					don't add at the same day that it was last updated
+					because this day was taken or skipped
+					 */
+					dateLastUp.setDate(dateLastUp.getDate() + 1);
+
 					const today = formatDate(new Date());
 					const lastUpdated = formatDate(dateLastUp);
 
@@ -558,6 +563,25 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 	}
 
+	_addMissedMidnight() {
+		const missedAmount = this._todayModel.get_n_items();
+		for (let i = 0; i < missedAmount; i++) {
+			const item = this._todayModel.get_item(i);
+			const yesterday = new Date();
+			yesterday.setDate(yesterday.getDate() - 1);	
+			historyLS.append(
+				new HistoryMedication({
+					name: item.name,
+					unit: item.unit,
+					color: item.info.color,
+					taken: 'miss',
+					info: item.info.dosage,
+					date: yesterday.toJSON(),
+				})
+			);
+		}
+	}
+
 	_updateJsonFile(type, listStore) {
 		const fileName = `dosage-${type}.json`
 		const file = DataDir.get_child(fileName);
@@ -588,7 +612,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_setEmptyHistLabel() {
-		this._emptyHistory.ellipsize = Pango.EllipsizeMode.END;
 		if (historyLS.get_n_items() === 0)
 			this._emptyHistory.set_visible(true);
 		else
@@ -901,7 +924,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 			cycle[2] = cycleCurrent.adjustment.value;
 			color = dosageColorButton.get_name();
 			icon = dosageIconButton.get_icon_name();
-			log(icon)
 			current = medCurrrentInv.value;
 			reminder = medReminderInv.value;
 
