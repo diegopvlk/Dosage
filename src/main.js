@@ -79,7 +79,8 @@ export const DosageApplication = GObject.registerClass(
 					"Libadwaita https://gnome.pages.gitlab.gnome.org/libadwaita/", 
 					"Workbench https://apps.gnome.org/Workbench/", 
 					"Blueprint https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/index.html",
-					"GTK4 + GJS Book https://rmnvgr.gitlab.io/gtk4-gjs-book/"
+					"GTK4 + GJS Book https://rmnvgr.gitlab.io/gtk4-gjs-book/",
+					"GJS Guide https://gjs.guide/"
 				]);
 				aboutWindow.present();
 			});
