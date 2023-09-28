@@ -71,9 +71,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			console.error('Error loading treatments/history/today... ', err);
 		}
 
-		this.connect('hide', () => {
-			this.set_state_flags(Gtk.StateFlags.BACKDROP, true)
-		})
+		this.connect('hide', () => this.set_state_flags(Gtk.StateFlags.BACKDROP, true));
 	}
 
 	#checkInventory() {
@@ -98,7 +96,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				this._treatmentsPage.set_needs_attention(true);
 				this._treatmentsPage.badge_number = count;
 
-				let stateFlags = this.get_state_flags();
+				const stateFlags = this.get_state_flags();
 				if (stateFlags & Gtk.StateFlags.BACKDROP)
 					app.send_notification('low-stock', notification);	
 			}
@@ -256,7 +254,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._historyList.set_factory(historyItemFactory);
 			
 			historyLS.connect('items-changed', (model, pos, removed, added) => {
-				if(added) {
+				if (added) {
 					const itemAdded = model.get_item(pos);
 					for (const item of treatmentsLS) {
 						if (
@@ -995,7 +993,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 
 		function getSpecificDays() {
-			const days = []
+			const days = [];
 			const specificDaysBox = builder.get_object('specificDaysBox');
 
 			let day = 0;
@@ -1038,8 +1036,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		function isValidInput(isUpdate) {
 			const toastOverlay = builder.get_object('toastOverlay');
-			medName.connect('changed', () => medName.remove_css_class('error'))
-			medUnit.connect('changed', () => medUnit.remove_css_class('error'))
+			medName.connect('changed', () => medName.remove_css_class('error'));
+			medUnit.connect('changed', () => medUnit.remove_css_class('error'));
 			
 			const emptyName = medName.text.trim() == '';
 			const emptyUnit = medUnit.text.trim() == '';
