@@ -16,7 +16,7 @@ import { historyHeaderFactory, historyItemFactory } from './historyFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
 
 import {
-	HistorySectionSorter, HistorySorter, TodaySectionSorter,
+	HistorySectionSorter, TodaySectionSorter,
 	DataDir, addLeadZero, doseRow, getTimeBtnInput, formatDate,
 	createTempFile, handleCalendarSelect, isMedDay, dateDifference, 
 } from './utils.js';
@@ -170,8 +170,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_loadTreatments() {
-		if (treatmentsLS.get_n_items() === 0) {
-			try {
+		try {
+			if (treatmentsLS.get_n_items() === 0) {
 				this._treatmentsJson.meds.forEach(med => {
 					treatmentsLS.insert_sorted(
 						new Medication({
@@ -186,22 +186,21 @@ class DosageWindow extends Adw.ApplicationWindow {
 				});	
 				this._treatmentsList.set_factory(treatmentsFactory);	
 				this._treatmentsList.remove_css_class('view');
-				this._treatmentsList.add_css_class('background');	
-			} catch (err) {
-				console.error('Error loading treatments...', err)
-			}
+				this._treatmentsList.add_css_class('background');
 
-			this._treatmentsModel = new Gtk.NoSelection({
-				model: treatmentsLS,
-			});
-			
-			this._treatmentsList.model = this._treatmentsModel;
+				this._treatmentsModel = new Gtk.NoSelection({
+					model: treatmentsLS,
+				});
+				this._treatmentsList.model = this._treatmentsModel;
+			}
+		} catch (err) {
+			console.error('Error loading treatments...', err)
 		}
 	}
 
 	_loadHistory() {
-		if (historyLS.get_n_items() === 0) {
-			try {
+		try {
+			if (historyLS.get_n_items() === 0) {
 				this._historyJson.meds.forEach(med => {
 					historyLS.insert_sorted(
 						new HistoryMedication({
@@ -261,16 +260,14 @@ class DosageWindow extends Adw.ApplicationWindow {
 								}
 							}
 						}
-
 						this._updateEverything();
 					}				
 				});
 				this._setEmptyHistLabel();
 				this._emptyHistory.ellipsize = Pango.EllipsizeMode.END;
 			}
-			catch (err) {
-				console.error('Error loading history...', err)
-			}
+		} catch (err) {
+			console.error('Error loading history...', err)
 		}
 	}
 
