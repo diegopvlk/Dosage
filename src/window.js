@@ -16,7 +16,7 @@ import { historyHeaderFactory, historyItemFactory } from './historyFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
 
 import {
-	AtoZSorter,	HistorySectionSorter, HistorySorter, TodaySectionSorter,
+	HistorySectionSorter, HistorySorter, TodaySectionSorter,
 	DataDir, addLeadZero, doseRow, getTimeBtnInput, formatDate,
 	createTempFile, handleCalendarSelect, isMedDay, dateDifference, 
 } from './utils.js';
@@ -68,8 +68,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._loadHistory();
 			this._addMissedItems();
 			this._loadToday();
-			this._setEmptyHistLabel();
-			this._emptyHistory.ellipsize = Pango.EllipsizeMode.END;
 		} catch (err) {
 			console.error('Error loading treatments/history/today... ', err);
 		}
@@ -109,7 +107,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		setTimeout(() => {
 			this._addMissedMidnight();
-			this._loadHistory();
 			this._updateEverything();
 			this.#checkInventory();
 			this.#scheduleNextMidnight();
@@ -172,45 +169,41 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 	}
 
-	_loadTreatments() {	
-		try {
-			if (treatmentsLS.get_n_items() === 0) {
+	_loadTreatments() {
+		if (treatmentsLS.get_n_items() === 0) {
+			try {
 				this._treatmentsJson.meds.forEach(med => {
-					treatmentsLS.append(
+					treatmentsLS.insert_sorted(
 						new Medication({
 							name: med._name,
 							unit: med._unit,
 							info: med._info,
-						})
-					);
+						}), (obj1, obj2) => {
+							const name1 = obj1.name;
+							const name2 = obj2.name;
+							return name1.localeCompare(name2);
+					});
 				});	
+				this._treatmentsList.set_factory(treatmentsFactory);	
+				this._treatmentsList.remove_css_class('view');
+				this._treatmentsList.add_css_class('background');	
+			} catch (err) {
+				console.error('Error loading treatments...', err)
 			}
-		} catch (err) {
-			console.error('Error loading treatments...', err)
+
+			this._treatmentsModel = new Gtk.NoSelection({
+				model: treatmentsLS,
+			});
+			
+			this._treatmentsList.model = this._treatmentsModel;
 		}
-
-		this._sortedTreatmentsModel = new Gtk.SortListModel({
-			model: treatmentsLS,
-			sorter: new AtoZSorter(),
-		});
-
-		this._treatmentsModel = new Gtk.NoSelection({
-			model: this._sortedTreatmentsModel,
-		});
-
-		this._treatmentsList.model = this._treatmentsModel;
-
-		this._treatmentsList.remove_css_class('view');
-		this._treatmentsList.add_css_class('background');
-
-		this._treatmentsList.set_factory(treatmentsFactory);
 	}
 
 	_loadHistory() {
-		try {
-			if (historyLS.get_n_items() === 0) {
+		if (historyLS.get_n_items() === 0) {
+			try {
 				this._historyJson.meds.forEach(med => {
-					historyLS.append(
+					historyLS.insert_sorted(
 						new HistoryMedication({
 							name: med._name,
 							unit: med._unit,
@@ -218,74 +211,67 @@ class DosageWindow extends Adw.ApplicationWindow {
 							info: med._info,
 							taken: med._taken,
 							date: med._date,
-						})
-					);
+						}), (obj1, obj2) => {
+							return obj1.date > obj2.date ? -1 : 0;
+					});
 				});
-			}
-			
-			this._sortedHistoryModel = new Gtk.SortListModel({
-				model: historyLS,
-				section_sorter: new HistorySectionSorter(),
-				sorter: new HistorySorter(),
-			});
-
-		} catch (err) {
-			console.error('Error loading history...', err)
-		}
-		
-		try {
-			
-			this._historyModel = new Gtk.NoSelection({
-				model: this._sortedHistoryModel,
-			});
-
-			this._historyList.model = this._historyModel;
-
-			this._historyList.remove_css_class('view');
-			this._historyList.add_css_class('background');
+				this._sortedHistoryModel = new Gtk.SortListModel({
+					model: historyLS,
+					section_sorter: new HistorySectionSorter(),
+				});
+				this._historyModel = new Gtk.NoSelection({
+					model: this._sortedHistoryModel,
+				});
 	
-			this._historyList.set_header_factory(historyHeaderFactory);
-			this._historyList.set_factory(historyItemFactory);
+				this._historyList.model = this._historyModel;
+	
+				this._historyList.remove_css_class('view');
+				this._historyList.add_css_class('background');
+		
+				this._historyList.set_header_factory(historyHeaderFactory);
+				this._historyList.set_factory(historyItemFactory);
 
-			historyLS.connect('items-changed', (model, pos, removed, added) => {
-				if (added) {
-					const itemAdded = model.get_item(pos);
-					for (const item of treatmentsLS) {
-						if (
-							item.name === itemAdded.name &&
-							item.info.inventory.enabled &&
-							itemAdded.taken === "yes"
-						) {
-							item.info.inventory.current -= itemAdded.info.dose;
-						}
-					}
-				}
-
-				if (removed) {
-					const itemRmDt = new Date(itemRemoved.date);
-					const date = formatDate(itemRmDt);
-					const today = formatDate(new Date());
-
-					if (date === today) {
+				historyLS.connect('items-changed', (model, pos, removed, added) => {
+					if (added) {
+						const itemAdded = model.get_item(pos);
 						for (const item of treatmentsLS) {
 							if (
-								item.name === itemRemoved.name &&
+								item.name === itemAdded.name &&
 								item.info.inventory.enabled &&
-								itemRemoved.taken === 'yes'
+								itemAdded.taken === "yes"
 							) {
-								item.info.inventory.current += itemRemoved.info.dose;
+								item.info.inventory.current -= itemAdded.info.dose;
 							}
 						}
 					}
 
-					this._updateEverything();
-				}				
-			});
-		} catch (err) {
-			console.error("_loadHistory error... ", err)
+					if (removed) {
+						const itemRmDt = new Date(itemRemoved.date);
+						const date = formatDate(itemRmDt);
+						const today = formatDate(new Date());
+
+						if (date === today) {
+							for (const item of treatmentsLS) {
+								if (
+									item.name === itemRemoved.name &&
+									item.info.inventory.enabled &&
+									itemRemoved.taken === 'yes'
+								) {
+									item.info.inventory.current += itemRemoved.info.dose;
+								}
+							}
+						}
+
+						this._updateEverything();
+					}				
+				});
+				this._setEmptyHistLabel();
+				this._emptyHistory.ellipsize = Pango.EllipsizeMode.END;
+			}
+			catch (err) {
+				console.error('Error loading history...', err)
+			}
 		}
-		
-		this._setEmptyHistLabel();
 	}
 
 	_loadToday() {
@@ -345,7 +331,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._addToBeNotified(this._todayModel.get_item(i));
 			
 		const noItems = this._sortedTodayModel.get_n_items() === 0;
-		const noTreatments = this._sortedTreatmentsModel.get_n_items() === 0;
+		const noTreatments = this._treatmentsModel.get_n_items() === 0;
 
 		this._emptyTreatments.ellipsize = Pango.EllipsizeMode.END;
 		this._emptyToday.ellipsize = Pango.EllipsizeMode.END;
@@ -372,7 +358,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const itemMin = item.info.dosage.time[1];
 
 		// milliseconds
-		let timeDifference =
+		const timeDifference =
 			(itemHour - hours) * 3600000 +
 			(itemMin - minutes) * 60000 -
 			seconds * 1000;
@@ -383,7 +369,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			if there is a modal showing and true after the window closes
 			and for some reason .is_suspended always returns false
 			*/
-			let stateFlags = this.get_state_flags();
+			const stateFlags = this.get_state_flags();
 			if (stateFlags & Gtk.StateFlags.BACKDROP) {
 				const pseudoId = JSON.stringify({
 					name: item.name, dosage: item.info.dosage,
@@ -474,7 +460,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		if (this._todayItems.length > 0) {
 			this._todayItems.forEach(item => {
-				historyLS.append(
+				historyLS.insert_sorted(
 					new HistoryMedication({
 						name: item.name,
 						unit: item.unit,
@@ -482,8 +468,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 						taken: taken,
 						info: item.info.dosage,
 						date: new Date().toJSON(),
-					})
-				);
+					}), (obj1, obj2) => {
+						return obj1.date > obj2.date ? -1 : 0;
+				});
 			});
 
 			// also update the date of treatments for each dose taken or skipped
@@ -537,7 +524,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 									time: [timeDose.time[0], timeDose.time[1]],
 									dose: timeDose.dose
 								};
-								historyLS.append(
+								historyLS.insert_sorted(
 									new HistoryMedication({
 										name: item.name,
 										unit: item.unit,
@@ -545,8 +532,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 										taken: 'miss',
 										info: info,
 										date: date.toJSON(),
-									})
-								);
+									}), (obj1, obj2) => {
+										return obj1.date > obj2.date ? -1 : 0;
+								});
 								itemsAdded = true;
 							}
 						});
@@ -571,8 +559,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 		for (let i = 0; i < missedAmount; i++) {
 			const item = this._todayModel.get_item(i);
 			const yesterday = new Date();
-			yesterday.setDate(yesterday.getDate() - 1);	
-			historyLS.append(
+			yesterday.setDate(yesterday.getDate() - 1);
+			yesterday.setHours(23);
+			yesterday.setMinutes(59);
+			yesterday.setSeconds(59);
+			historyLS.insert_sorted(
 				new HistoryMedication({
 					name: item.name,
 					unit: item.unit,
@@ -580,8 +571,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 					taken: 'miss',
 					info: item.info.dosage,
 					date: yesterday.toJSON(),
-				})
-			);
+				}), (obj1, obj2) => {
+					return obj1.date > obj2.date ? -1 : 0;
+			});
 		}
 	}
 
@@ -593,9 +585,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const updateFile = () => {
 			return new Promise((resolve, reject) => {
 				const byteArray = new TextEncoder().encode(JSON.stringify(tempFile));
-				const jsonBytes = GLib.Bytes.new(byteArray);
 				file.replace_contents_async(
-					jsonBytes,
+					GLib.Bytes.new(byteArray),
 					null,
 					true,
 					Gio.FileCreateFlags.REPLACE_DESTINATION,
@@ -622,7 +613,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 	_updateEverything() {
 		this._updateJsonFile('history', historyLS);
 		this._updateJsonFile('treatments', treatmentsLS);
-		this._loadTreatments();
 		this._loadToday();
 		this._setEmptyHistLabel();
 		this._updateEntryBtn(false);
@@ -833,7 +823,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 			if (h == 24) h = 0;
 			dosage.add_row(doseRow({ time: [h++, 30], dose: 1 }));
 		});
-		
 
 		const dosageBox = dosage.get_first_child();
 		const listBox = dosageBox.get_first_child();
@@ -890,7 +879,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			dialog.connect('response', (_self, response) => {
 				if (response === 'yes') {
-					const it = this._sortedTreatmentsModel.get_item(position);
+					const it = this._treatmentsModel.get_item(position);
 					const deletePos = treatmentsLS.find(it)[1];
 					treatmentsLS.remove(deletePos);
 					this._updateEverything();
@@ -902,7 +891,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		function addItemToHistory() {
 			let info = getDoses()[0];
 			delete info.updated;
-			historyLS.append(
+			historyLS.insert_sorted(
 				new HistoryMedication({
 					name: medName.text.trim(),
 					unit: medUnit.text.trim(),
@@ -910,8 +899,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 					taken: 'yes',
 					info: info,
 					date: new Date().toJSON(),
-				})
-			);
+				}), (obj1, obj2) => {
+					return obj1.date > obj2.date ? -1 : 0;
+			});
 		}
 
 		function addItem() {
@@ -953,7 +943,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			if (frequencyMenu.get_selected() === 2) freq = 'cycle';
 			if (frequencyMenu.get_selected() === 3) freq = 'when-needed';
 
-			treatmentsLS.append(
+			treatmentsLS.insert_sorted(
 				new Medication({
 					name: name,
 					unit: unit,
@@ -968,8 +958,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 						inventory: inventory,
 						duration: duration,
 					},
-				})
-			);
+				}), (obj1, obj2) => {
+					const name1 = obj1.name;
+					const name2 = obj2.name;
+					return name1.localeCompare(name2);
+			});
 		}
 
 		function updateItem() {

@@ -43,84 +43,92 @@ export function handleCalendarSelect(calendarWidget, calendarBtn) {
 }
 
 export function isMedDay(item, compareDt, loadToday, histModel, sortedHist) {
-	const info = item.info;
-	const oneDay = 86400000; // one day in milliseconds
-	const startDate = new Date(info.duration.start * 1000);
-	const endDate = new Date(info.duration.end * 1000);
-	const compareDate = new Date(compareDt).getTime();
-	const timeDiff = compareDate - startDate;
-	const daysSinceStart = Math.floor(timeDiff / oneDay);
-	const today = formatDate(new Date());
+	try {
+		const info = item.info;
+		const oneDay = 86400000; // one day in milliseconds
+		const startDate = new Date(info.duration.start * 1000);
+		const endDate = new Date(info.duration.end * 1000);
+		const compareDate = new Date(compareDt).getTime();
+		const timeDiff = compareDate - startDate;
+		const daysSinceStart = Math.floor(timeDiff / oneDay);
+		const today = formatDate(new Date());
 
-	if (info.duration.enabled) {
-		const start = formatDate(startDate);
-		const end = formatDate(endDate);
-
-		if (start > today || end < today) {
-			return false;
+		if (info.duration.enabled) {
+			const start = formatDate(startDate);
+			const end = formatDate(endDate);
+	
+			if (start > today || end < today) {
+				return false;
+			}
 		}
-	}
-
-	if (loadToday) {
-		const histNotEmpty = histModel.get_n_items() > 0;
-		const lastSectionAmount = sortedHist.get_section(0)[1];
-
-		if (histNotEmpty) {
-			for (let i = 0; i < lastSectionAmount; i++) {
-				const name = histModel.get_item(i).name;
-				const time = histModel.get_item(i).info.time;
-				const histDt = new Date(histModel.get_item(i).date);
-
-				const date = formatDate(histDt);
-
-				if (date === today && item.name === name) {
-					if (String(info.dosage.time) == String(time)) 
-						return false;
+	
+		if (loadToday) {
+			const histNotEmpty = histModel.get_n_items() > 0;
+			const lastSectionAmount = sortedHist.get_section(0)[1];
+	
+			if (histNotEmpty) {
+				for (let i = 0; i < lastSectionAmount; i++) {
+					const name = histModel.get_item(i).name;
+					const time = histModel.get_item(i).info.time;
+					const histDt = new Date(histModel.get_item(i).date);
+	
+					const date = formatDate(histDt);
+	
+					if (date === today && item.name === name) {
+						if (String(info.dosage.time) == String(time)) 
+							return false;
+					}
 				}
 			}
 		}
-	}
+		
+		if (info.frequency === 'daily') {
+			return true;
+		}
+		else if (info.frequency === 'specific-days') {
+			let todayOfWeek = new Date().getDay();
+			if (!loadToday) todayOfWeek = compareDt.getDay();
 	
-	if (info.frequency === 'daily') {
-		return true;
-	}
-	else if (info.frequency === 'specific-days') {
-		let todayOfWeek = new Date().getDay();
-		if (!loadToday) todayOfWeek = compareDt.getDay();
-
-		const isToday = info.days.includes(todayOfWeek);
-
-		return isToday ? true : false;
-	} 
-	else if (info.frequency === 'cycle') {
-		const [active, inactive, current] = info.cycle;
-		const totalCycleDays = active + inactive;
-		const currentCycleDay =
-			((daysSinceStart + current - 1) % totalCycleDays) + 1;
-
-		return currentCycleDay <= active ? true : false;
-	} 
-	else if (info.frequency === 'when-needed') {
-		return false;
+			const isToday = info.days.includes(todayOfWeek);
+	
+			return isToday ? true : false;
+		} 
+		else if (info.frequency === 'cycle') {
+			const [active, inactive, current] = info.cycle;
+			const totalCycleDays = active + inactive;
+			const currentCycleDay =
+				((daysSinceStart + current - 1) % totalCycleDays) + 1;
+	
+			return currentCycleDay <= active ? true : false;
+		} 
+		else if (info.frequency === 'when-needed') {
+			return false;
+		}
+	} catch (err) {
+		console.err(err)
 	}
 }
 
 export function dateDifference(startDate, endDate) {
-	const oneDay = 86400000;
-	const start = new Date(startDate);
-	const end = new Date(endDate);
-	// const timeDifference = Math.abs(end - start);
-	const timeDifference = end - start;
-	const daysDifference = Math.floor(timeDifference / oneDay); // number of days
-	const datesPassed = [];
+	try {
+		const oneDay = 86400000;
+		const start = new Date(startDate);
+		const end = new Date(endDate);
+		// const timeDifference = Math.abs(end - start);
+		const timeDifference = end - start;
+		const daysDifference = Math.floor(timeDifference / oneDay); // number of days
+		const datesPassed = [];
 
-	for (let i = 0; i <= daysDifference; i++) {
-		const currentDate = new Date(startDate);
-		currentDate.setDate(currentDate.getDate() + i);
-		datesPassed.push(currentDate);
+		for (let i = 0; i <= daysDifference; i++) {
+			const currentDate = new Date(startDate);
+			currentDate.setDate(currentDate.getDate() + i);
+			datesPassed.push(currentDate);
+		}
+
+		return datesPassed;
+	} catch (err) {
+		console.error(err)
 	}
-
-	return datesPassed;
 }
 
 export function doseRow(info) {
@@ -273,21 +281,6 @@ export function getTimeBtnInput(currentDoseRow) {
 
 	return [hours, minutes, ampm, timeButton];
 }
-
-export const AtoZSorter = GObject.registerClass(
-	{},
-	class AtoZSorter extends Gtk.Sorter {
-		_init(params) {
-			super._init(params);
-		}
-		vfunc_compare(obj1, obj2) {
-			const name1 = obj1.name.toLowerCase();
-			const name2 = obj2.name.toLowerCase();
-
-			return name1 > name2 ? 0 : -1;
-		}
-	}
-);
 
 export const HistorySectionSorter = GObject.registerClass(
 	{},
