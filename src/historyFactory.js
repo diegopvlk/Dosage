@@ -81,7 +81,6 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 historyItemFactory.connect('bind', (factory, listItem) => {
 	const item = listItem.get_item();
 	const box = listItem.get_child();
-	const deleteButton = box.get_first_child();
 	const row = box.get_parent();
 	const labelsBox = box.get_first_child().get_next_sibling();
 	const nameLabel = labelsBox.get_first_child();
@@ -109,7 +108,6 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const localTZ = GLib.TimeZone.new_local();
 	const dateTime = GLib.DateTime.new_from_iso8601(item.date, null);
 	const localDT = dateTime.to_timezone(localTZ);
-	const dateNow = GLib.DateTime.new_now_local();
 
 	let takenTime = localDT.format('%X').replace(':', '∶');
 	let parts = takenTime.split(' ');
@@ -123,11 +121,6 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 		takenLabel.label = _("Skipped");
 	else if (item.taken === 'miss')
 		takenLabel.label = _("Missed");
-
-	if (localDT.format('%F') == dateNow.format('%F')) {
-		deleteButton.icon_name = 'edit-undo-symbolic';
-		deleteButton.tooltip_text = _("Restore");
-	}
 
 	const colors = [
 		'default', 'red', 'orange', 'yellow', 
