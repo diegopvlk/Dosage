@@ -16,7 +16,7 @@ import { historyHeaderFactory, historyItemFactory } from './historyFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
 
 import {
-	HistorySectionSorter, TodaySectionSorter,
+	HistorySorter, HistorySectionSorter, TodaySectionSorter,
 	DataDir, addLeadZero, doseRow, getTimeBtnInput, formatDate,
 	createTempFile, handleCalendarSelect, isMedDay, dateDifference, 
 } from './utils.js';
@@ -202,7 +202,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		try {
 			if (historyLS.get_n_items() === 0) {
 				this._historyJson.meds.forEach(med => {
-					historyLS.insert_sorted(
+					historyLS.append(
 						new HistoryMedication({
 							name: med._name,
 							unit: med._unit,
@@ -210,13 +210,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 							info: med._info,
 							taken: med._taken,
 							date: med._date,
-						}), (obj1, obj2) => {
-							return obj1.date > obj2.date ? -1 : 0;
-					});
+						})
+					);
 				});
 				this._sortedHistoryModel = new Gtk.SortListModel({
 					model: historyLS,
 					section_sorter: new HistorySectionSorter(),
+					sorter: new HistorySorter(),
 				});
 				this._historyModel = new Gtk.NoSelection({
 					model: this._sortedHistoryModel,
@@ -467,7 +467,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 						date: new Date().toJSON(),
 					}), (obj1, obj2) => {
 						return obj1.date > obj2.date ? -1 : 0;
-				});
+					}
+				);
 			});
 
 			// also update the date of treatments for each dose taken or skipped
@@ -531,7 +532,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 										date: date.toJSON(),
 									}), (obj1, obj2) => {
 										return obj1.date > obj2.date ? -1 : 0;
-								});
+									}
+								);
 								itemsAdded = true;
 							}
 						});
@@ -570,7 +572,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 					date: yesterday.toJSON(),
 				}), (obj1, obj2) => {
 					return obj1.date > obj2.date ? -1 : 0;
-			});
+				}
+			);
 		}
 	}
 
@@ -897,7 +900,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 					date: new Date().toJSON(),
 				}), (obj1, obj2) => {
 					return obj1.date > obj2.date ? -1 : 0;
-			});
+				}
+			);
 		}
 
 		function addItem() {

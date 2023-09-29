@@ -275,11 +275,9 @@ export function getTimeBtnInput(currentDoseRow) {
 }
 
 export const HistorySectionSorter = GObject.registerClass(
-	{},
-	class HistorySectionSorter extends Gtk.Sorter {
-		_init(params) {
-			super._init(params);
-		}
+{},	class HistorySectionSorter extends Gtk.Sorter {
+		_init(params) {	super._init(params); }
+
 		vfunc_compare(obj1, obj2) {
 			const dt1 = formatDate(new Date(obj1.date));
 			const dt2 = formatDate(new Date(obj2.date));
@@ -290,11 +288,9 @@ export const HistorySectionSorter = GObject.registerClass(
 );
 
 export const HistorySorter = GObject.registerClass(
-	{},
-	class HistorySorter extends Gtk.Sorter {
-		_init(params) {
-			super._init(params);
-		}
+{},	class HistorySorter extends Gtk.Sorter {
+		_init(params) {	super._init(params); }
+
 		vfunc_compare(obj1, obj2) {
 			return obj1.date > obj2.date ? -1 : 0;
 		}
@@ -302,11 +298,9 @@ export const HistorySorter = GObject.registerClass(
 );
 
 export const TodaySectionSorter = GObject.registerClass(
-	{},
-	class TodaySectionSorter extends Gtk.Sorter {
-		_init(params) {
-			super._init(params);
-		}
+{},	class TodaySectionSorter extends Gtk.Sorter {
+		_init(params) { super._init(params); }
+
 		vfunc_compare(obj1, obj2) {
 			const [h1, m1] = obj1.info.dosage.time;
 			const [h2, m2] = obj2.info.dosage.time;
