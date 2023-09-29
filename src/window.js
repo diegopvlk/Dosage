@@ -585,7 +585,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				file.replace_contents_async(
 					GLib.Bytes.new(byteArray),
 					null,
-					true,
+					false,
 					Gio.FileCreateFlags.REPLACE_DESTINATION,
 					null,
 					(file, result, userData) => {
@@ -854,8 +854,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			if (!isValidInput(isUpdate)) return;
 
-			if (isUpdate) updateItem();
-			else if (oneTime) addItemToHistory();
+			if (oneTime) addItemToHistory();
 			else addItem();
 
 			this._updateEverything();
@@ -902,18 +901,21 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 
 		function addItem() {
+			const isUpdate = list && position >= 0;
 			const today = new GLib.DateTime;
 
 			let days, doses, cycle = [];
-			let invOnOff, durOnOff = false;
+			let invEnabled, durEnabled = false;
 			let name, unit, notes, color, freq, icon, 
 				inventory, current, reminder, duration, start, end;
 
+			if (isUpdate) treatmentsLS.remove(position);
+
 			if (medInventory.get_enable_expansion())
-				invOnOff = true;
+				invEnabled = true;
 
 			if (medDuration.get_enable_expansion()) {
-				durOnOff = true;
+				durEnabled = true;
 				start = calendarStart.get_date().format('%s');
 				end = calendarEnd.get_date().format('%s');
 			} else
@@ -932,13 +934,21 @@ class DosageWindow extends Adw.ApplicationWindow {
 			current = medCurrrentInv.value;
 			reminder = medReminderInv.value;
 
-			inventory = { enabled: invOnOff, current: current, reminder: reminder };
-			duration = { enabled: durOnOff, start: start, end: end };
+			inventory = { enabled: invEnabled, current: current, reminder: reminder };
+			duration = { enabled: durEnabled, start: start, end: end };
 
 			if (frequencyMenu.get_selected() === 0) freq = 'daily';
 			if (frequencyMenu.get_selected() === 1) freq = 'specific-days';
 			if (frequencyMenu.get_selected() === 2) freq = 'cycle';
 			if (frequencyMenu.get_selected() === 3) freq = 'when-needed';
+
+			doses.sort((obj1, obj2) => {
+				const [h1, m1] = obj1.time;
+				const [h2, m2] = obj2.time;
+				const hm1 = `${addLeadZero(h1)}${addLeadZero(m1)}`;
+				const hm2 = `${addLeadZero(h2)}${addLeadZero(m2)}`;
+				return hm1 === hm2 ? 0 : hm1 > hm2 ? 1 : -1;
+			});
 
 			treatmentsLS.insert_sorted(
 				new Medication({
@@ -960,54 +970,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 					const name2 = obj2.name;
 					return name1.localeCompare(name2);
 			});
-		}
-
-		function updateItem() {
-			const item = list.get_model().get_item(position);
-			const today = new GLib.DateTime;
-			const info = item.info;
-			
-			item.name = medName.text.trim();
-			item.unit = medUnit.text.trim();
-			info.notes = medNotes.text.trim();
-			info.days = getSpecificDays();
-			info.dosage = getDoses();
-			info.cycle[0] = cycleActive.adjustment.value;
-			info.cycle[1] = cycleInactive.adjustment.value;
-			info.cycle[2] = cycleCurrent.adjustment.value;
-			info.color = dosageColorButton.get_name();
-			info.icon = dosageIconButton.get_icon_name();
-			info.inventory.current = medCurrrentInv.value;
-			info.inventory.reminder = medReminderInv.value;
-
-			info.dosage.sort((obj1, obj2) => {
-				const [ h1, m1 ] = obj1.time;
-				const [ h2, m2 ] = obj2.time;
-				const hm1 = `${addLeadZero(h1)}:${addLeadZero(m1)}`;
-				const hm2 = `${addLeadZero(h2)}:${addLeadZero(m2)}`;
-				return hm1 === hm2 ? 0 : hm1 > hm2 ? 1 : -1;
-			});
-			
-			if (frequencyMenu.get_selected() === 0) info.frequency = 'daily';
-			if (frequencyMenu.get_selected() === 1)	info.frequency = 'specific-days';
-			if (frequencyMenu.get_selected() === 2) info.frequency = 'cycle';
-			if (frequencyMenu.get_selected() === 3)	info.frequency = 'when-needed';
-
-			
-			if (medInventory.get_enable_expansion())
-				info.inventory.enabled = true;
-			else
-				info.inventory.enabled = false;
-			
-
-			if (medDuration.get_enable_expansion()) {
-				info.duration.enabled = true;
-				info.duration.start = calendarStart.get_date().format('%s');
-				info.duration.end = calendarEnd.get_date().format('%s');
-			} else {	
-				info.duration.start = today.format('%s');
-				info.duration.enabled = false;
-			}
 		}
 
 		function getDoses() {
