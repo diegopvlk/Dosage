@@ -18,7 +18,8 @@ import { treatmentsFactory } from './treatmentsFactory.js';
 import {
 	HistorySorter, HistorySectionSorter, TodaySectionSorter,
 	DataDir, addLeadZero, doseRow, getTimeBtnInput, formatDate,
-	createTempFile, handleCalendarSelect, isMedDay, dateDifference, 
+	createTempFile, handleCalendarSelect, isMedDay, dateDifference,
+	removeCssColors,
 } from './utils.js';
 
 const historyLS = Gio.ListStore.new(HistoryMedication);
@@ -632,6 +633,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const builder = Gtk.Builder.new_from_resource(
 			'/com/github/diegopvlk/Dosage/ui/med-window.ui'
 		);
+
+		const dateOneEntry = builder.get_object('dateOneEntry');
+		const calOneEntry = builder.get_object('calOneEntry');
+		const calOneEntryBtn = builder.get_object('calOneEntryBtn');
+		const oneTimeMenuRow = builder.get_object('oneTimeMenu').get_parent();
+		oneTimeMenuRow.set_visible(false);
+
 		const medWindow = builder.get_object('medWindow');
 		medWindow.set_modal(true);
 		medWindow.set_transient_for(this);
@@ -651,20 +659,16 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		for (const clr of dosageColorBox) {
 			clr.connect('clicked', () => {
-				dosageColorBox.get_parent().get_parent().popdown();
-				const colors = dosageColorButton.get_css_classes();
-				for (const c of colors) {
-					if (c.includes('-clr'))
-						dosageColorButton.remove_css_class(c);
-				}
+				removeCssColors(dosageColorButton);
 				dosageColorButton.add_css_class(clr.get_name() + '-clr')
 				dosageColorButton.name = clr.get_name();
+				dosageColorBox.get_parent().get_parent().popdown();
 			});
 		}
 		for (const icn of dosageIconBox) {
 			icn.connect('clicked', () => {
-				dosageIconBox.get_parent().get_parent().popdown();
 				dosageIconButton.set_icon_name(icn.get_icon_name());
+				dosageIconBox.get_parent().get_parent().popdown();
 			});
 		}
 
@@ -781,18 +785,76 @@ class DosageWindow extends Adw.ApplicationWindow {
 			}
 		}
 
+		let existingEntry = false;
 		if (oneTime) {
-			medWindow.title = _("New one-time entry");
 			const frequency = builder.get_object('frequency');
 			const colorIcon = builder.get_object('colorIcon');
+
+			const oneTimeEntries = builder.get_object('oneTimeEntries');
+
+			const btnNew = new Gtk.Button({
+				css_classes: ['flat'],
+				label: _('New'),
+			});
+
+			btnNew.remove_css_class('text-button');
+			btnNew.get_first_child().set_halign(Gtk.Align.START);
+			oneTimeEntries.append(btnNew);
+
+			btnNew.connect('clicked', () => {
+				oneTimeEntries.get_parent().get_parent().popdown();
+				medName.text = '';
+				medUnit.text = _('Pill(s)');
+				removeCssColors(dosageColorButton);
+				dosageColorButton.name = 'default';
+				medName.sensitive = true;
+				medUnit.sensitive = true;
+				colorIcon.sensitive = true;
+				existingEntry = false;
+			});
+
+			calOneEntryBtn.label = GLib.DateTime.new_now_local().format('%x');
+			handleCalendarSelect(calOneEntry, calOneEntryBtn, true);
+
+			if (this._treatmentsList.model.get_n_items() > 0) {
+				oneTimeMenuRow.set_visible(true);
+				for (const item of treatmentsLS) {
+					const btn = new Gtk.Button({
+						css_classes: ['flat', 'one-time-name'],
+						label: item.name,
+					});
+					btn.remove_css_class('text-button');
+					btn.get_first_child().set_halign(Gtk.Align.START);
+
+					btn.connect('clicked', () => {
+						removeCssColors(dosageColorButton);
+						dosageColorButton.add_css_class(item.info.color + '-clr');
+						oneTimeEntries.get_parent().get_parent().popdown();
+
+						medName.text = item.name;
+						medUnit.text = item.unit;
+						dosageColorButton.name = item.info.color;
+
+						medName.sensitive = false;
+						medUnit.sensitive = false;
+						colorIcon.sensitive = false;
+						existingEntry = true;
+					});
+					oneTimeEntries.append(btn);	
+				}
+			}
+
+			medWindow.title = _('New entry');
+			saveButton.label = _('Add to history');
+			colorIcon.title = _('Color');
 			medWindow.add_css_class('one-time');
-			colorIcon.title = _("Color");
+
+			dateOneEntry.set_visible(true);
 			medNotes.set_visible(false);
 			dosageIconButton.set_visible(false);
 			frequency.set_visible(false);
 			medDuration.set_visible(false);
 			dosageAddButton.get_parent().get_parent().set_visible(false);
-			
 			medInventory.set_visible(false);
 		}
 
@@ -890,8 +952,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 		});
 
 		function addItemToHistory() {
-			let info = getDoses()[0];
+			const calOneEntry = builder.get_object('calOneEntry');
+			const dt = calOneEntry.get_date().format('%s') * 1000;
+			const entryDate = new Date(dt);
+			const info = getDoses()[0];
 			delete info.updated;
+			entryDate.setHours(info.time[0]);
+			entryDate.setMinutes(info.time[1]);
 			historyLS.insert_sorted(
 				new HistoryMedication({
 					name: medName.text.trim(),
@@ -899,7 +966,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					color: dosageColorButton.get_name(),
 					taken: 'yes',
 					info: info,
-					date: new Date().toJSON(),
+					date: entryDate.toJSON(),
 				}), (obj1, obj2) => {
 					return obj1.date > obj2.date ? -1 : 0;
 				}
@@ -1038,6 +1105,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 
 		function isValidInput(isUpdate) {
+			if (existingEntry) return true;
+
 			const toastOverlay = builder.get_object('toastOverlay');
 			medName.connect('changed', () => medName.remove_css_class('error'));
 			medUnit.connect('changed', () => medUnit.remove_css_class('error'));

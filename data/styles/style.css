@@ -91,7 +91,7 @@ list > row.activatable:active {
 	-gtk-icon-size: 1px;
 }
 
-#dosage-med-window.one-time .arrow-button {
+#dosage-med-window.one-time .time > .arrow-button {
 	margin-left: -11px;
 }
 
@@ -192,9 +192,16 @@ button.am-pm {
 	min-width: 26px;
 }
 
+.one-time-menu > button {
+	background-color: transparent;
+	padding-left: 36px;
+	padding-right: 21px;
+}
+
 .button-left > button,
 .button-right > button,
-menubutton button.arrow-button {
+menubutton button.arrow-button,
+button.one-time-name {
 	font-weight: 400;
 }
 
@@ -386,5 +393,5 @@ row.error {
 
 .calendar-error {
 	border-radius: 10px;
-	box-shadow: 0 0 8px 1px alpha(@red_4, 0.15);
+	box-shadow: 0 0 8px 1px alpha(@red_2, 0.33);
 }

@@ -12,6 +12,14 @@ export function addLeadZero(input) {
 	return String(input).padStart(2, 0);
 }
 
+export function removeCssColors(colorBtn) {
+	const colors = colorBtn.get_css_classes();
+	for (const c of colors) {
+		if (c.includes('-clr'))
+			colorBtn.remove_css_class(c);
+	}
+}
+
 export function createTempFile(listStore) {
 	const tempFile = { meds: [] };
 	for (const item of listStore) {
@@ -29,15 +37,21 @@ export function formatDate(date, utc) {
 	return `${year}-${addLeadZero(month)}-${addLeadZero(day)}`;
 }
 
-export function handleCalendarSelect(calendarWidget, calendarBtn) {
+export function handleCalendarSelect(calendarWidget, calendarBtn, oneTime) {
 	const today = GLib.DateTime.new_now_local().format('%F');
 	calendarWidget.connect('day-selected', () => {
 		const selectedDate = calendarWidget.get_date().format('%F');
 		calendarBtn.label = calendarWidget.get_date().format('%x');
-		if (selectedDate >= today) {
-			calendarWidget.remove_css_class('calendar-error');
-		} else {
+		
+		if (!oneTime && selectedDate < today) {
 			calendarWidget.add_css_class('calendar-error');
+		} 
+		else if (oneTime && selectedDate > today) {
+			calendarWidget.add_css_class('calendar-error');
+			calendarBtn.label = GLib.DateTime.new_now_local().format('%x');
+		}
+		else {
+			calendarWidget.remove_css_class('calendar-error');
 		}
 	});
 }

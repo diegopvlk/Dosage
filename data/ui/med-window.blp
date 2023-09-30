@@ -39,7 +39,17 @@ Adw.Window medWindow {
             ListBox {
               styles ['boxed-list']
               selection-mode: none;
-              Adw.EntryRow name {
+              MenuButton oneTimeMenu {
+                styles [ 'flat', 'one-time-menu' ]
+                label: _("From treatments list");
+                popover: Popover {
+                  Box oneTimeEntries {
+                    orientation: vertical;
+                    halign: start;
+                  }
+                };
+              }
+              Adw.EntryRow name { 
                 title: _('Name');
               }
               Adw.EntryRow unit {
@@ -472,6 +482,23 @@ Adw.Window medWindow {
                       }
                     };
                   }
+                }
+              }
+              Adw.ActionRow dateOneEntry {
+                visible: false;
+                title: _("Date");
+                activatable-widget: calOneEntry;
+                [suffix]
+                MenuButton calOneEntryBtn {
+                  styles [ 'flat', 'button-right' ]
+                  label: _("Choose");
+                  popover: Popover {
+                    Calendar calOneEntry {
+                      show-day-names: true;
+                      show-week-numbers: false;
+                      show-heading: true;
+                    }
+                  };
                 }
               }
             }
