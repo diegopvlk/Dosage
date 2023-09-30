@@ -42,7 +42,7 @@ export function handleCalendarSelect(calendarWidget, calendarBtn) {
 	});
 }
 
-export function isMedDay(item, compareDt, loadToday, histModel, sortedHist) {
+export function isMedDay(item, compareDt, loadToday, histModel) {
 	const info = item.info;
 	const oneDay = 86400000; // one day in milliseconds
 	const startDate = new Date(info.duration.start * 1000);
@@ -63,14 +63,13 @@ export function isMedDay(item, compareDt, loadToday, histModel, sortedHist) {
 
 	if (loadToday) {
 		const histNotEmpty = histModel.get_n_items() > 0;
-		const lastSectionAmount = sortedHist.get_section(0)[1];
+		const lastSectionAmount = histModel.get_section(0)[1];
 
 		if (histNotEmpty) {
 			for (let i = 0; i < lastSectionAmount; i++) {
 				const name = histModel.get_item(i).name;
 				const time = histModel.get_item(i).info.time;
 				const histDt = new Date(histModel.get_item(i).date);
-
 				const date = formatDate(histDt);
 
 				if (date === today && item.name === name) {

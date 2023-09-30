@@ -71,7 +71,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		} catch (err) {
 			console.error('Error loading treatments/history/today... ', err);
 		}
-		// set backdrop to send background notifications
+		// set backdrop to send notifications only when the window is inactive
 		this.connect('hide', () => this.set_state_flags(Gtk.StateFlags.BACKDROP, true));
 	}
 
@@ -188,10 +188,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 				this._treatmentsList.remove_css_class('view');
 				this._treatmentsList.add_css_class('background');
 
-				this._treatmentsModel = new Gtk.NoSelection({
+				this._treatmentsList.model = new Gtk.NoSelection({
 					model: treatmentsLS,
 				});
-				this._treatmentsList.model = this._treatmentsModel;
 			}
 		} catch (err) {
 			console.error('Error loading treatments...', err)
@@ -218,11 +217,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 					section_sorter: new HistorySectionSorter(),
 					sorter: new HistorySorter(),
 				});
-				this._historyModel = new Gtk.NoSelection({
+
+				this._historyList.model = new Gtk.NoSelection({
 					model: this._sortedHistoryModel,
 				});
-	
-				this._historyList.model = this._historyModel;
 	
 				this._historyList.remove_css_class('view');
 				this._historyList.add_css_class('background');
@@ -300,8 +298,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					item, 
 					todayDate, 
 					true, 
-					this._historyModel,
-					this._sortedHistoryModel
+					this._historyList.model,
 				)
 			}),
 		});
@@ -312,7 +309,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 		});
 
 		this._todayModel = new Gtk.NoSelection({ model: this._sortedTodayModel });
-
 		this._todayList.model = this._todayModel;
 
 		this._todayList.remove_css_class('view');
@@ -328,7 +324,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._addToBeNotified(this._todayModel.get_item(i));
 			
 		const noItems = this._sortedTodayModel.get_n_items() === 0;
-		const noTreatments = this._treatmentsModel.get_n_items() === 0;
+		const noTreatments = this._treatmentsList.model.get_n_items() === 0;
 
 		this._emptyTreatments.ellipsize = Pango.EllipsizeMode.END;
 		this._emptyToday.ellipsize = Pango.EllipsizeMode.END;
@@ -617,6 +613,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 		this._setEmptyHistLabel();
 		this._updateEntryBtn(false);
 		this.#checkInventory();
+
+		// reload-ish of treatments list
+		// necessary for updating low stock label
+		this._treatmentsList.model = new Gtk.NoSelection({
+			model: treatmentsLS,
+		});
 	}
 
 	_setEmptyHistLabel() {
@@ -878,7 +880,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			dialog.connect('response', (_self, response) => {
 				if (response === 'yes') {
-					const it = this._treatmentsModel.get_item(position);
+					const it = this._treatmentsList.model.get_item(position);
 					const deletePos = treatmentsLS.find(it)[1];
 					treatmentsLS.remove(deletePos);
 					this._updateEverything();
@@ -990,7 +992,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				doses.push(ds);
 				currentDoseRow = currentDoseRow.get_next_sibling();
 			}
-			return(doses);
+			return doses;
 		}
 
 		function getSpecificDays() {
