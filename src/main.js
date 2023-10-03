@@ -63,7 +63,7 @@ export const DosageApplication = GObject.registerClass(
 			showAboutAction.connect("activate", (action) => {
 				let aboutParams = {
 					transient_for: this.active_window,
-					application_name: 'Dosage',
+					application_name: _('Dosage'),
 					application_icon: 'com.github.diegopvlk.Dosage',
 					developer_name: "Diego Povliuk",
 					version: "1.0.0",
