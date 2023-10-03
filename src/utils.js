@@ -29,105 +29,106 @@ export function createTempFile(listStore) {
 	return tempFile;
 }
 
-export function formatDate(date, utc) {
-	let day = date.getDate();
-	let month = date.getMonth() + 1;
-	let year = date.getFullYear();
+export function formatDate(date) {
+	const day = date.getDate();
+	const month = date.getMonth() + 1;
+	const year = date.getFullYear();
 
 	return `${year}-${addLeadZero(month)}-${addLeadZero(day)}`;
 }
 
-export function handleCalendarSelect(calendarWidget, calendarBtn, oneTime) {
+export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
 	const today = GLib.DateTime.new_now_local().format('%F');
-	calendarWidget.connect('day-selected', () => {
-		const selectedDate = calendarWidget.get_date().format('%F');
-		calendarBtn.label = calendarWidget.get_date().format('%x');
-		
-		if (!oneTime && selectedDate < today) {
-			calendarWidget.add_css_class('calendar-error');
-		} 
-		else if (oneTime && selectedDate > today) {
-			calendarWidget.add_css_class('calendar-error');
-			calendarBtn.label = GLib.DateTime.new_now_local().format('%x');
+	calendar.connect('day-selected', cal => {
+		const selectedDate = cal.get_date().format('%F');
+
+		if (
+			(oneTime && selectedDate > today) ||
+			(!oneTime && selectedDate < today)
+		) {
+			(async function () {
+				cal.add_css_class('calendar-error');
+				await new Promise((res) => setTimeout(res, 400));
+				cal.remove_css_class('calendar-error');
+			})();
+			cal.select_day(GLib.DateTime.new_now_local());
 		}
-		else {
-			calendarWidget.remove_css_class('calendar-error');
-		}
+
+		calendarBtn.label = cal.get_date().format('%x');
 	});
 }
 
-export function isMedDay(item, compareDt, loadToday, histModel) {
+export function isMissedDay(item, compareDt) {
 	const info = item.info;
-	const oneDay = 86400000; // one day in milliseconds
 	const startDate = new Date(info.duration.start * 1000);
 	const endDate = new Date(info.duration.end * 1000);
-	const compareDate = new Date(compareDt).getTime();
-	const timeDiff = compareDate - startDate;
-	const daysSinceStart = Math.floor(timeDiff / oneDay);
 	const today = formatDate(new Date());
+	const start = formatDate(startDate);
+	const end = formatDate(endDate);
 
-	if (info.duration.enabled) {
-		const start = formatDate(startDate);
-		const end = formatDate(endDate);
-
-		if (start > today || end < today) {
-			return false;
-		}
-	}
-
-	if (loadToday) {
-		const histNotEmpty = histModel.get_n_items() > 0;
-		const lastSectionAmount = histModel.get_section(0)[1];
-
-		if (histNotEmpty) {
-			for (let i = 0; i < lastSectionAmount; i++) {
-				const name = histModel.get_item(i).name;
-				const time = histModel.get_item(i).info.time;
-				const histDt = new Date(histModel.get_item(i).date);
-				const date = formatDate(histDt);
-
-				if (date === today && item.name === name) {
-					if (String(info.dosage.time) == String(time)) 
-						return false;
-				}
-			}
-		}
-	}
-	
-	if (info.frequency === 'daily') {
-		return true;
-	}
-	else if (info.frequency === 'specific-days') {
-		let todayOfWeek = new Date().getDay();
-		if (!loadToday) todayOfWeek = compareDt.getDay();
-
-		const isToday = info.days.includes(todayOfWeek);
-
-		return isToday ? true : false;
-	} 
-	else if (info.frequency === 'cycle') {
-		const [active, inactive, current] = info.cycle;
-		const totalCycleDays = active + inactive;
-		const currentCycleDay =
-			((daysSinceStart + current - 1) % totalCycleDays) + 1;
-
-		return currentCycleDay <= active ? true : false;
-	} 
-	else if (info.frequency === 'when-needed') {
+	if (info.duration.enabled && start > today || end < today)
 		return false;
+	
+	switch (info.frequency) {
+		case 'daily':
+			return true;
+		case 'specific-days':
+			return info.days.includes(compareDt.getDay());
+		case 'cycle':
+			const [ active, inactive, current ] = info.cycle;
+			const compareDate = new Date(compareDt);
+			const timeDiff = compareDate - startDate;
+			const daysSinceStart = Math.floor(timeDiff / 86400000);
+			const totalCycleDays = active + inactive;
+			const currentCycleDay = ((daysSinceStart + current - 1) % totalCycleDays) + 1;
+			return currentCycleDay <= active;
+		case 'when-needed':
+			return false;
 	}
 }
 
-export function dateDifference(startDate, endDate) {
-	const oneDay = 86400000;
+export function isTodayMedDay(item, histModel) {
+	const info = item.info;
+	const today = formatDate(new Date());
+	const start = formatDate(new Date(info.duration.start * 1000));
+	const end = formatDate(new Date(info.duration.end * 1000));
+	const lastSectionAmount = histModel.get_section(0)[1];
+
+	if (info.duration.enabled && start > today || end < today)
+		return false;
+	
+	if (histModel.get_n_items() > 0) {
+		for (let i = 0; i < lastSectionAmount; i++) {
+			const name = histModel.get_item(i).name;
+			const time = histModel.get_item(i).info.time;
+			const date = formatDate(new Date(histModel.get_item(i).date));
+
+			if (date === today && item.name === name)
+				if (String(info.dosage.time) == String(time))
+					return false;
+		}
+	}
+
+	switch (info.frequency) {
+		case 'daily':
+			return true;
+		case 'specific-days':
+			return info.days.includes(new Date().getDay());	
+		case 'cycle':
+			const [ active, inactive, current ] = info.cycle;
+			return current <= active;
+		case 'when-needed':
+			return false;
+	}	
+}
+
+export function datesPassedDiff(startDate, endDate) {
 	const start = new Date(startDate);
 	const end = new Date(endDate);
-	// const timeDifference = Math.abs(end - start);
-	const timeDifference = end - start;
-	const daysDifference = Math.floor(timeDifference / oneDay); // number of days
+	const daysDiff = Math.floor((end - start) / 86400000);
 	const datesPassed = [];
 
-	for (let i = 0; i <= daysDifference; i++) {
+	for (let i = 1; i <= daysDiff; i++) {
 		const currentDate = new Date(startDate);
 		currentDate.setDate(currentDate.getDate() + i);
 		datesPassed.push(currentDate);
@@ -168,7 +169,7 @@ export function doseRow(info) {
 	const doseTimeBox = new Gtk.Box({
 		css_classes: ['time-box'],
 	});
-	const adjustmentHours = new Gtk.Adjustment({
+	const adjHours = new Gtk.Adjustment({
 		lower: 0,
 		upper: 23,
 		step_increment: 1,
@@ -179,9 +180,9 @@ export function doseRow(info) {
 		valign: Gtk.Align.CENTER,
 		numeric: true,
 		wrap: true,
-		adjustment: adjustmentHours,
+		adjustment: adjHours,
 	});
-	const adjustmentMinutes = new Gtk.Adjustment({
+	const adjMinutes = new Gtk.Adjustment({
 		lower: 0,
 		upper: 59,
 		step_increment: 5,
@@ -192,7 +193,7 @@ export function doseRow(info) {
 		valign: Gtk.Align.CENTER,
 		numeric: true,
 		wrap: true,
-		adjustment: adjustmentMinutes,
+		adjustment: adjMinutes,
 	});
 	const spinButtonSeparator = new Gtk.Label({
 		label: ' : ',
@@ -202,23 +203,23 @@ export function doseRow(info) {
 	doseTimeBox.append(spinButtonSeparator);
 	doseTimeBox.append(spinButtonMinutes);
 
-	const leadingZeroHours = addLeadZero(adjustmentHours.value);
-	const leadingZeroMinutes = addLeadZero(adjustmentMinutes.value);
+	const leadZeroHours = addLeadZero(adjHours.value);
+	const leadZeroMinutes = addLeadZero(adjMinutes.value);
 	const doseTimeButton = new Gtk.MenuButton({
 		css_classes: ['flat', 'numeric', 'time'],
-		label: `${leadingZeroHours}∶${leadingZeroMinutes}`,
+		label: `${leadZeroHours}∶${leadZeroMinutes}`,
 		valign: Gtk.Align.CENTER,
 		popover: new Gtk.Popover({
 			child: doseTimeBox,
 		}),
 	});
 
-	spinButtonHours.connect('output', (h) => {
+	spinButtonHours.connect('output', h => {
 		spinButtonHours.text = addLeadZero(h.adjustment.value);
 		doseTimeButton.label = `${spinButtonHours.text}∶${spinButtonMinutes.text}`;
 		return true;
 	});
-	spinButtonMinutes.connect('output', (m) => {
+	spinButtonMinutes.connect('output', m => {
 		spinButtonMinutes.text = addLeadZero(m.adjustment.value);
 		doseTimeButton.label = `${spinButtonHours.text}∶${spinButtonMinutes.text}`;
 		return true;
@@ -230,13 +231,13 @@ export function doseRow(info) {
 		label: period,
 		visible: clockIs12,
 	});
-	amPmButton.connect('clicked', (btn) => {
+	amPmButton.connect('clicked', btn => {
 		btn.label = btn.label === 'AM' ? 'PM' : 'AM';
 	});
 
 	if (clockIs12) {
-		adjustmentHours.lower = 1;
-		adjustmentHours.upper = 12;
+		adjHours.lower = 1;
+		adjHours.upper = 12;
 	}
 
 	doseBox.append(removeDoseButton);
@@ -246,7 +247,7 @@ export function doseRow(info) {
 
 	doseRow.add_css_class('ampm-row');
 
-	removeDoseButton.connect('clicked', (btn) => {
+	removeDoseButton.connect('clicked', () => {
 		removeRow(doseRow);
 	});
 
@@ -318,8 +319,8 @@ export const TodaySectionSorter = GObject.registerClass(
 			const [h1, m1] = obj1.info.dosage.time;
 			const [h2, m2] = obj2.info.dosage.time;
 
-			const hm1 = `${addLeadZero(h1)}:${addLeadZero(m1)}`;
-			const hm2 = `${addLeadZero(h2)}:${addLeadZero(m2)}`;
+			const hm1 = `${addLeadZero(h1)}${addLeadZero(m1)}`;
+			const hm2 = `${addLeadZero(h2)}${addLeadZero(m2)}`;
 
 			return hm1 === hm2 ? 0 : hm1 > hm2 ? 1 : -1;
 		}

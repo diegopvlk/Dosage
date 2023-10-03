@@ -112,11 +112,6 @@ actionbar viewswitcher.narrow indicatorbin {
 	margin-bottom: -2px;
 }
 
-actionbar viewswitcher.narrow label {
-	/* font-size: 0; */
-	padding: 0 8px;
-}
-
 .boxed-list > row,
 .custom-list > row > box {
 	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.05);
@@ -200,7 +195,7 @@ button.am-pm {
 
 .button-left > button,
 .button-right > button,
-menubutton button.arrow-button,
+menubutton:not(.one-time-menu) button.arrow-button,
 button.one-time-name {
 	font-weight: 400;
 }
@@ -299,6 +294,7 @@ button.pill.skip {
 }
 
 button.pill:not(.suggested-action) {
+	filter: grayscale(0.25);
 	background-color: #efeeff;
 	box-shadow: 0 1px 6px 0px alpha(@dosage_blue_4, 0.15),
 		inset 0 0 0 1px alpha(@dosage_blue_4, 0.2);
@@ -385,7 +381,6 @@ row.error {
 		background-color: transparent;
 		border-radius: 99px;
 	}
-
 	10% {
 		background-color: alpha(@red_2, 0.5);
 	}
@@ -393,5 +388,14 @@ row.error {
 
 .calendar-error {
 	border-radius: 10px;
-	box-shadow: 0 0 8px 1px alpha(@red_2, 0.33);
+	animation: flashCalendar 0.4s ease-in-out;
+}
+
+@keyframes flashCalendar {
+	0% {
+		box-shadow: none;
+	}
+	10% {
+		box-shadow: 0 0 8px 1px alpha(@red_2, 0.7);
+	}
 }
