@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-26 15:15-0300\n"
+"POT-Creation-Date: 2023-10-03 10:36-0300\n"
 "PO-Revision-Date: 2023-09-25 17:48-0300\n"
 "Last-Translator: Diego <diegopvlk@gmail.com>\n"
 "Language-Team: Brazilian Portuguese\n"
@@ -30,7 +30,7 @@ msgstr "Hoje"
 msgid "Unselect"
 msgstr "Desmarcar"
 
-#: data/ui/window.blp:70 src/window.js:445
+#: data/ui/window.blp:70 src/window.js:451
 msgid "One-time entry"
 msgstr "Registro único"
 
@@ -74,236 +74,244 @@ msgstr "Sair"
 msgid "New treatment"
 msgstr "Novo tratamento"
 
-#: data/ui/med-window.blp:19 src/window.js:854
+#: data/ui/med-window.blp:19 src/window.js:924
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: data/ui/med-window.blp:43
+#: data/ui/med-window.blp:44
+msgid "From treatments list"
+msgstr "Da lista de tratamentos"
+
+#: data/ui/med-window.blp:53
 msgid "Name"
 msgstr "Nome"
 
-#: data/ui/med-window.blp:46
+#: data/ui/med-window.blp:56
 msgid "Unit"
 msgstr "Unidade"
 
-#: data/ui/med-window.blp:47
+#: data/ui/med-window.blp:57 src/window.js:812
 msgid "Pill(s)"
 msgstr "Comprimido(s)"
 
-#: data/ui/med-window.blp:50
+#: data/ui/med-window.blp:60
 msgid "Notes"
 msgstr "Notas"
 
-#: data/ui/med-window.blp:51
+#: data/ui/med-window.blp:61
 msgid "After meal"
 msgstr "Após refeição"
 
-#: data/ui/med-window.blp:55
+#: data/ui/med-window.blp:65
 msgid "Color and icon"
 msgstr "Cor e ícone"
 
-#: data/ui/med-window.blp:60 src/window.js:765
+#: data/ui/med-window.blp:70 src/window.js:854
 msgid "Color"
 msgstr "Cor"
 
-#: data/ui/med-window.blp:70
+#: data/ui/med-window.blp:80
 msgid "Default"
 msgstr "Padrão"
 
-#: data/ui/med-window.blp:77
+#: data/ui/med-window.blp:87
 msgid "Red"
 msgstr "Vermelho"
 
-#: data/ui/med-window.blp:84
+#: data/ui/med-window.blp:94
 msgid "Orange"
 msgstr "Laranja"
 
-#: data/ui/med-window.blp:91
+#: data/ui/med-window.blp:101
 msgid "Yellow"
 msgstr "Amarelo"
 
-#: data/ui/med-window.blp:98
+#: data/ui/med-window.blp:108
 msgid "Green"
 msgstr "Verde"
 
-#: data/ui/med-window.blp:105
+#: data/ui/med-window.blp:115
 msgid "Cyan"
 msgstr "Ciano"
 
-#: data/ui/med-window.blp:112
+#: data/ui/med-window.blp:122
 msgid "Blue"
 msgstr "Azul"
 
-#: data/ui/med-window.blp:119
+#: data/ui/med-window.blp:129
 msgid "Purple"
 msgstr "Roxo"
 
-#: data/ui/med-window.blp:128
+#: data/ui/med-window.blp:138
 msgid "Icon"
 msgstr "Ícone"
 
-#: data/ui/med-window.blp:140
+#: data/ui/med-window.blp:150
 msgid "Pill"
 msgstr "Comprimido"
 
-#: data/ui/med-window.blp:150
+#: data/ui/med-window.blp:160
 msgid "Alternative pill"
 msgstr "Comprimido Alt."
 
-#: data/ui/med-window.blp:160
+#: data/ui/med-window.blp:170
 msgid "Capsule"
 msgstr "Cápsula"
 
-#: data/ui/med-window.blp:170
+#: data/ui/med-window.blp:180
 msgid "Round pill"
 msgstr "Comprimido redondo"
 
-#: data/ui/med-window.blp:180
+#: data/ui/med-window.blp:190
 msgid "Alternative round pill"
 msgstr "Comprimido redondo alt."
 
-#: data/ui/med-window.blp:190
+#: data/ui/med-window.blp:200
 msgid "Ampoule"
 msgstr "Ampola"
 
-#: data/ui/med-window.blp:200
+#: data/ui/med-window.blp:210
 msgid "Injection"
 msgstr "Injeção"
 
-#: data/ui/med-window.blp:211
+#: data/ui/med-window.blp:221
 msgid "Square pill"
 msgstr "Comprimido quadrado"
 
-#: data/ui/med-window.blp:221
+#: data/ui/med-window.blp:231
 msgid "Alternative square pill"
 msgstr "Comprimido quadrado alt."
 
-#: data/ui/med-window.blp:231
+#: data/ui/med-window.blp:241
 msgid "Triangle pill"
 msgstr "Comprimido retangular"
 
-#: data/ui/med-window.blp:241
+#: data/ui/med-window.blp:251
 msgid "Alternative triangle pill"
 msgstr "Comprimido retangular alt."
 
-#: data/ui/med-window.blp:251
+#: data/ui/med-window.blp:261
 msgid "Bottle"
 msgstr "Frasco"
 
-#: data/ui/med-window.blp:261
+#: data/ui/med-window.blp:271
 msgid "Drop"
 msgstr "Gota"
 
-#: data/ui/med-window.blp:271
+#: data/ui/med-window.blp:281
 msgid "Potion"
 msgstr "Poção"
 
-#: data/ui/med-window.blp:285
+#: data/ui/med-window.blp:295
 msgid "Every day"
 msgstr "Todos os dias"
 
-#: data/ui/med-window.blp:286
+#: data/ui/med-window.blp:296
 msgid "Specific days"
 msgstr "Dias específicos"
 
-#: data/ui/med-window.blp:287
+#: data/ui/med-window.blp:297
 msgid "Cycle"
 msgstr "Ciclo"
 
-#: data/ui/med-window.blp:288
+#: data/ui/med-window.blp:298
 msgid "When needed"
 msgstr "Quando necessário"
 
-#: data/ui/med-window.blp:296 data/ui/med-window.blp:450
-#: data/ui/med-window.blp:466
+#: data/ui/med-window.blp:306 data/ui/med-window.blp:460
+#: data/ui/med-window.blp:476 data/ui/med-window.blp:494
 msgid "Choose"
 msgstr "Escolha"
 
-#: data/ui/med-window.blp:304
+#: data/ui/med-window.blp:314
 msgid "Su"
 msgstr "Do"
 
-#: data/ui/med-window.blp:310
+#: data/ui/med-window.blp:320
 msgid "Mo"
 msgstr "Se"
 
-#: data/ui/med-window.blp:316
+#: data/ui/med-window.blp:326
 msgid "Tu"
 msgstr "Te"
 
-#: data/ui/med-window.blp:322
+#: data/ui/med-window.blp:332
 msgid "We"
 msgstr "Qa"
 
-#: data/ui/med-window.blp:328
+#: data/ui/med-window.blp:338
 msgid "Th"
 msgstr "Qi"
 
-#: data/ui/med-window.blp:334
+#: data/ui/med-window.blp:344
 msgid "Fr"
 msgstr "Se"
 
-#: data/ui/med-window.blp:340
+#: data/ui/med-window.blp:350
 msgid "Sa"
 msgstr "Sa"
 
-#: data/ui/med-window.blp:357
+#: data/ui/med-window.blp:367
 msgid "Days active"
 msgstr "Dias ativos"
 
-#: data/ui/med-window.blp:369
+#: data/ui/med-window.blp:379
 msgid "Days inactive"
 msgstr "Dias inativos"
 
-#: data/ui/med-window.blp:381
-msgid "Cycle start day"
-msgstr "Dia de início do ciclo"
+#: data/ui/med-window.blp:391
+msgid "Today is cycle day..."
+msgstr "Hoje é o dia..."
 
-#: data/ui/med-window.blp:396
+#: data/ui/med-window.blp:406
 msgid "Dosage"
 msgstr "Dosagem"
 
-#: data/ui/med-window.blp:397
+#: data/ui/med-window.blp:407
 msgid "Time and amount"
 msgstr "Hora e quantidade"
 
-#: data/ui/med-window.blp:405
+#: data/ui/med-window.blp:415
 msgid "Add dose"
 msgstr "Adicionar dose"
 
-#: data/ui/med-window.blp:410
+#: data/ui/med-window.blp:420
 msgid "Inventory"
 msgstr "Inventário"
 
-#: data/ui/med-window.blp:411
+#: data/ui/med-window.blp:421
 msgid "Manage your stock"
 msgstr "Gerencie seu estoque"
 
-#: data/ui/med-window.blp:416
+#: data/ui/med-window.blp:426
 msgid "Current"
 msgstr "Atual"
 
-#: data/ui/med-window.blp:427
+#: data/ui/med-window.blp:437
 msgid "Remind me at"
 msgstr "Lembrar na quantidade"
 
-#: data/ui/med-window.blp:440
+#: data/ui/med-window.blp:450
 msgid "Duration"
 msgstr "Duração"
 
-#: data/ui/med-window.blp:441
+#: data/ui/med-window.blp:451
 msgid "Set a start and end date"
 msgstr "Defina datas para começar e terminar"
 
-#: data/ui/med-window.blp:445
+#: data/ui/med-window.blp:455
 msgid "Start on"
 msgstr "Começa em"
 
-#: data/ui/med-window.blp:461
+#: data/ui/med-window.blp:471
 msgid "Ends on"
 msgstr "Termina em"
 
-#: data/ui/med-window.blp:486 src/window.js:855 src/historyFactory.js:39
+#: data/ui/med-window.blp:489
+msgid "Date"
+msgstr "Data"
+
+#: data/ui/med-window.blp:513 src/window.js:925 src/historyFactory.js:39
 msgid "Delete"
 msgstr "Excluir"
 
@@ -319,77 +327,81 @@ msgstr "Aumentar a prioridade da notificação"
 msgid "Thanks to these projects!"
 msgstr "Obrigado à esses projetos!"
 
-#: src/main.js:105
+#: src/main.js:106
 msgid "Allow Dosage to run in background."
 msgstr "Permitir o Dosage executar em segundo plano."
 
-#: src/window.js:84 src/window.js:390
-msgid "Dosage reminder"
-msgstr "Lembrete do Dosage"
-
-#: src/window.js:85
+#: src/window.js:91
 msgid "You have treatments low in stock"
 msgstr "Você tem tratamentos em baixo estoque"
 
-#: src/window.js:358
+#: src/window.js:348
 msgid "No treatments added yet!"
 msgstr "Nenhum tratamento adicionado ainda!"
 
-#: src/window.js:361
+#: src/window.js:351
 msgid "All done for today!"
 msgstr "Tudo feito por hoje!"
 
-#: src/window.js:445
+#: src/window.js:399
+msgid "Dosage reminder"
+msgstr "Lembrete do Dosage"
+
+#: src/window.js:451
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: src/window.js:691
+#: src/window.js:717
 msgid "Edit treatment"
 msgstr "Editar tratamento"
 
-#: src/window.js:692
+#: src/window.js:718
 msgid "Save"
 msgstr "Salvar"
 
-#: src/window.js:761
-msgid "New one-time entry"
-msgstr "Novo registro único"
+#: src/window.js:802
+msgid "New"
+msgstr "Novo"
 
-#: src/window.js:849
+#: src/window.js:852
+msgid "New entry"
+msgstr "Novo registro"
+
+#: src/window.js:853
+msgid "Add to history"
+msgstr "Adc. ao histórico"
+
+#: src/window.js:919
 msgid "Are you sure?"
 msgstr "Tem certeza?"
 
-#: src/window.js:1060
+#: src/window.js:1125
 msgid "Empty name"
 msgstr "Nome vazio"
 
-#: src/window.js:1065
+#: src/window.js:1130
 msgid "Empty unit"
 msgstr "Unidade vazia"
 
-#: src/window.js:1076
+#: src/window.js:1141
 msgid "Name already exists"
 msgstr "Nome já existe"
 
-#: src/window.js:1091
+#: src/window.js:1155
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 
-#: src/historyFactory.js:121
+#: src/historyFactory.js:119
 msgid "Confirmed"
 msgstr "Confirmado"
 
-#: src/historyFactory.js:123
+#: src/historyFactory.js:121
 msgid "Skipped"
 msgstr "Pulado"
 
-#: src/historyFactory.js:125
+#: src/historyFactory.js:123
 msgid "Missed"
 msgstr "Perdido"
-
-#: src/historyFactory.js:129
-msgid "Restore"
-msgstr "Restaurar"
 
 #: src/treatmentsFactory.js:86 src/treatmentsFactory.js:88
 msgid "Low stock"
@@ -398,3 +410,4 @@ msgstr "Estoque Baixo"
 #: src/treatmentsFactory.js:95
 msgid "Until"
 msgstr "Até"
+
