@@ -64,7 +64,7 @@ msgstr "Preferências"
 
 #: data/ui/window.blp:183
 msgid "About Dosage"
-msgstr "Sobre o Dosage"
+msgstr "Sobre o Dosagem"
 
 #: data/ui/window.blp:187
 msgid "Quit"
@@ -329,7 +329,7 @@ msgstr "Obrigado à esses projetos!"
 
 #: src/main.js:106
 msgid "Allow Dosage to run in background."
-msgstr "Permitir o Dosage executar em segundo plano."
+msgstr "Permitir o Dosagem executar em segundo plano."
 
 #: src/window.js:91
 msgid "You have treatments low in stock"
@@ -345,7 +345,7 @@ msgstr "Tudo feito por hoje!"
 
 #: src/window.js:399
 msgid "Dosage reminder"
-msgstr "Lembrete do Dosage"
+msgstr "Lembrete do Dosagem"
 
 #: src/window.js:451
 msgid "Confirm"
