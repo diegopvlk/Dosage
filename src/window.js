@@ -907,7 +907,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			if (!isValidInput(isUpdate)) return;
 
-			if (oneTime) addItemToHistory();
+			if (oneTime) addItemToHistory(this._historyList, this._sortedHistoryModel);
 			else addItemToTreatments();
 
 			this._updateEverything();
@@ -937,7 +937,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			});
 		});
 
-		function addItemToHistory() {
+		function addItemToHistory(histList, sortedHist) {
 			const calOneEntry = builder.get_object('calOneEntry');
 			const dt = calOneEntry.get_date().format('%s') * 1000;
 			const entryDate = new Date(dt);
@@ -957,6 +957,15 @@ class DosageWindow extends Adw.ApplicationWindow {
 					return obj1.date > obj2.date ? -1 : 0;
 				}
 			);
+
+			/* 
+			reload-ish of history, so the item don't get inserted 
+			on a separate section (with the same day) when the time is less 
+			than the first one of same section
+			*/
+			histList.model = new Gtk.NoSelection({
+				model: sortedHist,
+			});
 		}
 
 		function addItemToTreatments() {

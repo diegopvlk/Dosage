@@ -40,12 +40,9 @@ export function formatDate(date) {
 export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
 	const today = GLib.DateTime.new_now_local().format('%F');
 	calendar.connect('day-selected', cal => {
-		const selectedDate = cal.get_date().format('%F');
+		const selDate = cal.get_date().format('%F');
 
-		if (
-			(oneTime && selectedDate > today) ||
-			(!oneTime && selectedDate < today)
-		) {
+		if (oneTime && selDate > today || !oneTime && selDate < today) {
 			(async function () {
 				cal.add_css_class('calendar-error');
 				await new Promise((res) => setTimeout(res, 400));
