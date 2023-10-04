@@ -36,7 +36,7 @@ msgstr "Registro único"
 
 #: data/ui/window.blp:76
 msgid "Skip"
-msgstr "Pular"
+msgstr "Ignorar"
 
 #: data/ui/window.blp:95
 msgid "History"
@@ -397,7 +397,7 @@ msgstr "Confirmado"
 
 #: src/historyFactory.js:121
 msgid "Skipped"
-msgstr "Pulado"
+msgstr "Ignorado"
 
 #: src/historyFactory.js:123
 msgid "Missed"
