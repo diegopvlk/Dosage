@@ -3,7 +3,7 @@ popover contents {
 }
 
 .taken-label,
-.stock-label {
+.inventory-label {
 	background-color: alpha(currentColor, 0.18);
 	opacity: 1;
 }

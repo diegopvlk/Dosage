@@ -18,7 +18,7 @@ import { treatmentsFactory } from './treatmentsFactory.js';
 import {
 	HistorySorter, HistorySectionSorter, TodaySectionSorter,
 	DataDir, addLeadZero, doseRow, getTimeBtnInput, formatDate,
-	createTempFile, handleCalendarSelect, isMissedDay, isTodayMedDay,
+	createTempFile, handleCalendarSelect, isTodayMedDay,
 	datesPassedDiff, removeCssColors
 } from './utils.js';
 
@@ -67,7 +67,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 		try {
 			this._loadTreatments();
 			this._loadHistory();
-			this._addMissedItems();
 			this._loadToday();
 		} catch (err) {
 			console.error('Error loading treatments/history/today... ', err);
@@ -113,7 +112,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const timeUntilMidnight = midnight - now;
 
 		setTimeout(() => {
-			this._addMissedItems();
 			this._updateEverything(true);
 			this.#checkInventory();
 			this.#scheduleNextMidnight();
@@ -219,6 +217,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 						})
 					);
 				});
+				
 				this._sortedHistoryModel = new Gtk.SortListModel({
 					model: historyLS,
 					section_sorter: new HistorySectionSorter(),
@@ -265,7 +264,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 										const sameInfo = 
 											JSON.stringify(td) === JSON.stringify(itemRemoved.info);
 
-										// new date so it can be added as missed the next day
 										if (sameInfo)
 											timeDose.updated = new Date().toJSON();
 									});
@@ -282,6 +280,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 		} catch (err) {
 			console.error('Error loading history...', err)
 		}
+
+		this._updateItemsCycle();
+		this._setEmptyHistLabel();
+		this._emptyHistory.ellipsize = Pango.EllipsizeMode.END;
 	}
 
 	_loadToday() {
@@ -486,11 +488,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 					const treatDose = JSON.stringify(tempObj);
 					this._todayItems.forEach(i => {
 						const todayDose = JSON.stringify(i.info.dosage);
-						if (treatDose === todayDose){
-							// +1 day here so addMissedItems don't add this as missed
-							const date = new Date();
-							date.setDate(date.getDate() + 1);
-							timeDose.updated = date.toJSON();
+						if (treatDose === todayDose) {
+							timeDose.updated = new Date().toJSON();
 						}
 					});	
 				});
@@ -502,61 +501,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._openMedWindow(null, null, true);
 
 		this._updateEntryBtn(false);
-	}
-
-	_addMissedItems() {
-		let itemsAdded = false;
-		try {	
-			for (const item of treatmentsLS) {
-				item.info.dosage.forEach(timeDose => {
-					const dateLastUp = new Date(timeDose.updated);
-					const today = formatDate(new Date());
-					const lastUpdated = formatDate(dateLastUp);
-
-					if (lastUpdated < today) {
-						const datesPassed = datesPassedDiff(lastUpdated, today);
-						datesPassed.forEach(date => {	
-							if (isMissedDay(item, date)) {
-								const info = { ...timeDose, updated: undefined };
-								date.setHours(23);
-								date.setMinutes(59);
-								date.setSeconds(59);
-								historyLS.insert_sorted(
-									new HistoryMedication({
-										name: item.name,
-										unit: item.unit,
-										color: item.info.color,
-										taken: 'miss',
-										info: info,
-										date: date.toJSON(),
-									}), (obj1, obj2) => {
-										return obj1.date > obj2.date ? -1 : 0;
-									}
-								);
-								itemsAdded = true;
-							}
-						});
-						timeDose.updated = new Date().toJSON();
-					}
-				});
-			}
-		} catch (err) {
-			console.error('Error adding missed items...', err);
-		}
-
-		this._updateItemsCycle();
-		this._setEmptyHistLabel();
-		this._emptyHistory.ellipsize = Pango.EllipsizeMode.END;
-		this._updateJsonFile('treatments', treatmentsLS);
-
-		if (itemsAdded) {
-			// reload-ish of history
-			this._historyList.model = new Gtk.NoSelection({
-				model: this._sortedHistoryModel,
-			});
-			this._updateJsonFile('history', historyLS);
-			this._updateEntryBtn(false);
-		}
 	}
 
 	_updateJsonFile(type, listStore) {

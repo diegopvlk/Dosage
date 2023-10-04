@@ -34,7 +34,7 @@ export function formatDate(date) {
 	const month = date.getMonth() + 1;
 	const year = date.getFullYear();
 
-	return `${year}-${addLeadZero(month)}-${addLeadZero(day)}`;
+	return `${year}${addLeadZero(month)}${addLeadZero(day)}`;
 }
 
 export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
@@ -53,35 +53,6 @@ export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
 
 		calendarBtn.label = cal.get_date().format('%x');
 	});
-}
-
-export function isMissedDay(item, compareDt) {
-	const info = item.info;
-	const startDate = new Date(info.duration.start * 1000);
-	const endDate = new Date(info.duration.end * 1000);
-	const today = formatDate(new Date());
-	const start = formatDate(startDate);
-	const end = formatDate(endDate);
-
-	if (info.duration.enabled && start > today || end < today)
-		return false;
-	
-	switch (info.frequency) {
-		case 'daily':
-			return true;
-		case 'specific-days':
-			return info.days.includes(compareDt.getDay());
-		case 'cycle':
-			const [ active, inactive, current ] = info.cycle;
-			const compareDate = new Date(compareDt);
-			const timeDiff = compareDate - startDate;
-			const daysSinceStart = Math.floor(timeDiff / 86400000);
-			const totalCycleDays = active + inactive;
-			const currentCycleDay = ((daysSinceStart + current - 1) % totalCycleDays) + 1;
-			return currentCycleDay <= active;
-		case 'when-needed':
-			return false;
-	}
 }
 
 export function isTodayMedDay(item, histModel) {
