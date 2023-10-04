@@ -506,7 +506,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 	_addMissedItems() {
 		let itemsAdded = false;
-		try {		
+		try {	
 			for (const item of treatmentsLS) {
 				item.info.dosage.forEach(timeDose => {
 					const dateLastUp = new Date(timeDose.updated);
@@ -544,12 +544,16 @@ class DosageWindow extends Adw.ApplicationWindow {
 			console.error('Error adding missed items...', err);
 		}
 
-		this._updateCycleDay();
+		this._updateItemsCycle();
 		this._setEmptyHistLabel();
 		this._emptyHistory.ellipsize = Pango.EllipsizeMode.END;
 		this._updateJsonFile('treatments', treatmentsLS);
 
 		if (itemsAdded) {
+			// reload-ish of history
+			this._historyList.model = new Gtk.NoSelection({
+				model: this._sortedHistoryModel,
+			});
 			this._updateJsonFile('history', historyLS);
 			this._updateEntryBtn(false);
 		}
@@ -588,7 +592,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			.catch(err => console.error('Update failed...', err));
 	}
 
-	_updateCycleDay(midnight) {
+	_updateItemsCycle(midnight) {
 		for (const it of treatmentsLS) {
 			if(it.info.frequency == 'cycle') {
 				const startDate = new Date(it.info.duration.start * 1000);
@@ -597,8 +601,15 @@ class DosageWindow extends Adw.ApplicationWindow {
 				const today = formatDate(new Date());
 				let [ active, inactive, current ] = it.info.cycle;
 				
-				if (midnight || datesPassed.length > 0)
-					current = (current % (active + inactive)) + 1;
+				if (midnight) {
+					current += 1;
+					if (current > active + inactive) current = 1;	
+				} else {
+					for (let i = 0; i < datesPassed.length; i++) {
+						current += 1;
+						if (current > active + inactive) current = 1;
+					}
+				}
 
 				it.info.cycle[2] = current;
 
@@ -619,7 +630,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 	_updateEverything(midnight) {
 		this._updateJsonFile('history', historyLS);
-		this._updateCycleDay(midnight);
+		this._updateItemsCycle(midnight);
 		this._updateJsonFile('treatments', treatmentsLS);
 		this._loadToday();
 		this._setEmptyHistLabel();
