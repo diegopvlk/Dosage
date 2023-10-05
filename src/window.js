@@ -67,6 +67,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		try {
 			this._loadTreatments();
 			this._loadHistory();
+			this._updateItemsCycle();
 			this._loadToday();
 		} catch (err) {
 			console.error('Error loading treatments/history/today... ', err);
@@ -270,7 +271,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 			console.error('Error loading history...', err)
 		}
 
-		this._updateItemsCycle();
 		this._setEmptyHistLabel();
 		this._emptyHistory.ellipsize = Pango.EllipsizeMode.END;
 	}
@@ -619,11 +619,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 			.get_first_child()
 			.get_first_child()
 			.get_first_child();
-		const dosageExpanderButton = dosageHeader
+		const dosageExpanderBtn = dosageHeader
 			.get_first_child()
 			.get_last_child();
 		dosageHeader.set_activatable(false);
-		dosageExpanderButton.set_visible(false);
+		dosageExpanderBtn.set_visible(false);
 
 		const medInventory = builder.get_object('inventory');
 		const medCurrrentInv = builder.get_object('currentInventory');
@@ -1018,13 +1018,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 				frequencySpecificDays.set_visible(selectedItemPos === 1);
 				frequencyCycle.set_visible(selectedItemPos === 2);
 
-				// if when-needed is selected, hide the dosage and duration rows
 				if (selectedItemPos != 3) {
 					dosage.set_visible(true);
 					medDuration.set_visible(true);
 					return;
 				}
-
+				
+				// if when-needed is selected, hide the dosage and duration rows
 				dosage.set_visible(false);
 				medDuration.set_visible(false);
 			});
