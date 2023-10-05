@@ -1,4 +1,4 @@
-application_id = 'com.github.diegopvlk.Dosage'
+application_id = 'io.github.diegopvlk.Dosage'
 
 scalable_dir = join_paths('hicolor', 'scalable', 'apps')
 install_data(

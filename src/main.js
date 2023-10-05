@@ -19,7 +19,7 @@ export const DosageApplication = GObject.registerClass(
 	class DosageApplication extends Adw.Application {
 		constructor() {
 			super({
-				application_id: 'com.github.diegopvlk.Dosage',
+				application_id: 'io.github.diegopvlk.Dosage',
 				flags: Gio.ApplicationFlags.DEFAULT_FLAGS,
 			});
 
@@ -35,7 +35,7 @@ export const DosageApplication = GObject.registerClass(
 			const showPrefAction = new Gio.SimpleAction({ name: "preferences" });
 			showPrefAction.connect("activate", (action) => {
 				const builder = Gtk.Builder.new_from_resource(
-					'/com/github/diegopvlk/Dosage/ui/preferences.ui'
+					'/io/github/diegopvlk/Dosage/ui/preferences.ui'
 				);
 				const prefWindow = builder.get_object('prefWindow');
 				const autostartSwitch = builder.get_object('autostartSwitch');
@@ -64,7 +64,7 @@ export const DosageApplication = GObject.registerClass(
 				let aboutParams = {
 					transient_for: this.active_window,
 					application_name: _('Dosage'),
-					application_icon: 'com.github.diegopvlk.Dosage',
+					application_icon: 'io.github.diegopvlk.Dosage',
 					developer_name: "Diego Povliuk",
 					version: "1.0.0",
 					issue_url: 'https://github.com/diegopvlk/Dosage/issues',
@@ -104,7 +104,7 @@ export const DosageApplication = GObject.registerClass(
 			portal.request_background(
 				null,
 				_("Allow Dosage to run in background."),
-				['com.github.diegopvlk.Dosage', '--startup'],
+				['io.github.diegopvlk.Dosage', '--startup'],
 				setAutostart,
 				null,
 				null

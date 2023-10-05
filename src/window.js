@@ -27,7 +27,7 @@ const treatmentsLS = Gio.ListStore.new(Medication);
 
 export const DosageWindow = GObject.registerClass({
 	GTypeName: 'DosageWindow',
-	Template: 'resource:///com/github/diegopvlk/Dosage/ui/window.ui',
+	Template: 'resource:///io/github/diegopvlk/Dosage/ui/window.ui',
 	InternalChildren: [
 		'todayList', 'historyList', 'treatmentsList', 'treatmentsPage',
 		'skipBtn', 'entryBtn', 'unselectBtn', 
@@ -558,7 +558,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 	_openMedWindow(list, position, oneTime) {
 		const builder = Gtk.Builder.new_from_resource(
-			'/com/github/diegopvlk/Dosage/ui/med-window.ui'
+			'/io/github/diegopvlk/Dosage/ui/med-window.ui'
 		);
 
 		const dateOneEntry = builder.get_object('dateOneEntry');

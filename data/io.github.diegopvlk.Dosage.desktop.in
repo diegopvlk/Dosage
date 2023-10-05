@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Dosage
-Exec=com.github.diegopvlk.Dosage
-Icon=com.github.diegopvlk.Dosage
+Exec=io.github.diegopvlk.Dosage
+Icon=io.github.diegopvlk.Dosage
 Terminal=false
 Type=Application
 Categories=GTK;GNOME;Utility;MedicalSoftware;History;Calendar;Database

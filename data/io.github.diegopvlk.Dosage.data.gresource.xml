@@ -3,7 +3,7 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/com/github/diegopvlk/Dosage">
+  <gresource prefix="/io/github/diegopvlk/Dosage">
     <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
     <file alias="style.css">styles/style.css</file>
     <file alias="style-hc.css">styles/style-hc.css</file>
@@ -13,7 +13,7 @@
     <file>ui/med-window.ui</file>
     <file>ui/preferences.ui</file>
   </gresource>
-  <gresource prefix="/com/github/diegopvlk/Dosage/icons/scalable/actions">
+  <gresource prefix="/io/github/diegopvlk/Dosage/icons/scalable/actions">
     <file alias="today-symbolic.svg">icons/ui/today-symbolic.svg</file>
     <file alias="history-symbolic.svg">icons/ui/history-symbolic.svg</file>
     <file alias="treatments-symbolic.svg">icons/ui/treatments-symbolic.svg</file>

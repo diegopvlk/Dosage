@@ -12,8 +12,8 @@ blueprints = custom_target('blueprints',
 	command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
 )
 
-data_res = gnome.compile_resources('com.github.diegopvlk.Dosage.data',
-	'com.github.diegopvlk.Dosage.data.gresource.xml',
+data_res = gnome.compile_resources('io.github.diegopvlk.Dosage.data',
+	'io.github.diegopvlk.Dosage.data.gresource.xml',
 	gresource_bundle: true,
 	install: true,
 	install_dir: pkgdatadir,
@@ -21,8 +21,8 @@ data_res = gnome.compile_resources('com.github.diegopvlk.Dosage.data',
 )
 
 desktop_file = i18n.merge_file(
-	input: 'com.github.diegopvlk.Dosage.desktop.in',
-	output: 'com.github.diegopvlk.Dosage.desktop',
+	input: 'io.github.diegopvlk.Dosage.desktop.in',
+	output: 'io.github.diegopvlk.Dosage.desktop',
 	type: 'desktop',
 	po_dir: '../po',
 	install: true,
@@ -35,8 +35,8 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-	input: 'com.github.diegopvlk.Dosage.appdata.xml.in',
-	output: 'com.github.diegopvlk.Dosage.appdata.xml',
+	input: 'io.github.diegopvlk.Dosage.appdata.xml.in',
+	output: 'io.github.diegopvlk.Dosage.appdata.xml',
 	po_dir: '../po',
 	install: true,
 	install_dir: join_paths(get_option('datadir'), 'appdata')
@@ -47,7 +47,7 @@ if appstream_util.found()
 	test('Validate appstream file', appstream_util, args: ['validate', appstream_file])
 endif
 
-install_data('com.github.diegopvlk.Dosage.gschema.xml',
+install_data('io.github.diegopvlk.Dosage.gschema.xml',
 	install_dir: join_paths(get_option('datadir'), 'glib-2.0/schemas')
 )
 

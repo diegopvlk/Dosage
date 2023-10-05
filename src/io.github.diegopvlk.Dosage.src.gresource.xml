@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/com/github/diegopvlk/Dosage/js">
+  <gresource prefix="/io/github/diegopvlk/Dosage/js">
     <file>main.js</file>
     <file>utils.js</file>
     <file>window.js</file>

@@ -1,9 +1,9 @@
 {
-    "app-id" : "com.github.diegopvlk.Dosage",
+    "app-id" : "io.github.diegopvlk.Dosage",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "45",
     "sdk" : "org.gnome.Sdk",
-    "command" : "com.github.diegopvlk.Dosage",
+    "command" : "io.github.diegopvlk.Dosage",
     "finish-args" : [
         "--share=network",
         "--share=ipc",
@@ -46,7 +46,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://github.com/diegopvlk/Dosage"
+                    "url" : "https://github.com/diegopvlk/Dosage",
+                    "tag": "1.0.0"
                 }
             ]
         }

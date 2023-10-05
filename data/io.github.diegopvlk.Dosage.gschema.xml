@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="dosage">
-	<schema id="com.github.diegopvlk.Dosage" path="/com/github/diegopvlk/Dosage/">
+	<schema id="io.github.diegopvlk.Dosage" path="/io/github/diegopvlk/Dosage/">
 		<key name="window-width" type="i">
 			<default>800</default>
 		</key>

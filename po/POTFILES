@@ -1,6 +1,6 @@
-data/com.github.diegopvlk.Dosage.desktop.in
-data/com.github.diegopvlk.Dosage.appdata.xml.in
-data/com.github.diegopvlk.Dosage.gschema.xml
+data/io.github.diegopvlk.Dosage.desktop.in
+data/io.github.diegopvlk.Dosage.appdata.xml.in
+data/io.github.diegopvlk.Dosage.gschema.xml
 
 data/ui/window.blp
 data/ui/med-window.blp
