@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-04 21:22-0300\n"
+"POT-Creation-Date: 2023-10-05 11:30-0300\n"
 "PO-Revision-Date: 2023-09-25 17:48-0300\n"
 "Last-Translator: Diego <diegopvlk@gmail.com>\n"
 "Language-Team: Brazilian Portuguese\n"
@@ -30,7 +30,7 @@ msgstr "Hoje"
 msgid "Unselect"
 msgstr "Desmarcar"
 
-#: data/ui/window.blp:70 src/window.js:453
+#: data/ui/window.blp:70 src/window.js:442
 msgid "One-time entry"
 msgstr "Registro único"
 
@@ -74,7 +74,7 @@ msgstr "Sair"
 msgid "New treatment"
 msgstr "Novo tratamento"
 
-#: data/ui/med-window.blp:19 src/window.js:878
+#: data/ui/med-window.blp:19 src/window.js:853
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -90,7 +90,7 @@ msgstr "Nome"
 msgid "Unit"
 msgstr "Unidade"
 
-#: data/ui/med-window.blp:57 src/window.js:766
+#: data/ui/med-window.blp:57 src/window.js:741
 msgid "Pill(s)"
 msgstr "Comprimido(s)"
 
@@ -106,7 +106,7 @@ msgstr "Após refeição"
 msgid "Color and icon"
 msgstr "Cor e ícone"
 
-#: data/ui/med-window.blp:70 src/window.js:808
+#: data/ui/med-window.blp:70 src/window.js:783
 msgid "Color"
 msgstr "Cor"
 
@@ -311,7 +311,7 @@ msgstr "Termina em"
 msgid "Date"
 msgstr "Data"
 
-#: data/ui/med-window.blp:513 src/window.js:879 src/historyFactory.js:39
+#: data/ui/med-window.blp:513 src/window.js:854 src/historyFactory.js:39
 msgid "Delete"
 msgstr "Excluir"
 
@@ -329,65 +329,65 @@ msgstr "Obrigado à esses projetos!"
 
 #: src/main.js:106
 msgid "Allow Dosage to run in background."
-msgstr "Permitir o Dosagem executar em segundo plano."
+msgstr "Permitir que o Dosagem seja executado em segundo plano."
 
-#: src/window.js:90
+#: src/window.js:91
 msgid "You have treatments low in stock"
 msgstr "Você tem tratamentos em baixo estoque"
 
-#: src/window.js:350
+#: src/window.js:339
 msgid "No treatments added yet!"
 msgstr "Nenhum tratamento adicionado ainda!"
 
-#: src/window.js:353
+#: src/window.js:342
 msgid "All done for today!"
 msgstr "Tudo feito por hoje!"
 
-#: src/window.js:401
+#: src/window.js:390
 msgid "Dosage reminder"
 msgstr "Lembrete do Dosagem"
 
-#: src/window.js:453
+#: src/window.js:442
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: src/window.js:671
+#: src/window.js:646
 msgid "Edit treatment"
 msgstr "Editar tratamento"
 
-#: src/window.js:672
+#: src/window.js:647
 msgid "Save"
 msgstr "Salvar"
 
-#: src/window.js:756
+#: src/window.js:731
 msgid "New"
 msgstr "Novo"
 
-#: src/window.js:806
+#: src/window.js:781
 msgid "New entry"
 msgstr "Novo registro"
 
-#: src/window.js:807
+#: src/window.js:782
 msgid "Add to history"
 msgstr "Adc. ao histórico"
 
-#: src/window.js:873
+#: src/window.js:848
 msgid "Are you sure?"
 msgstr "Tem certeza?"
 
-#: src/window.js:1079
+#: src/window.js:1052
 msgid "Empty name"
 msgstr "Nome vazio"
 
-#: src/window.js:1084
+#: src/window.js:1057
 msgid "Empty unit"
 msgstr "Unidade vazia"
 
-#: src/window.js:1095
+#: src/window.js:1068
 msgid "Name already exists"
 msgstr "Nome já existe"
 
-#: src/window.js:1109
+#: src/window.js:1082
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 
