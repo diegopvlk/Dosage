@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-03 11:27-0300\n"
+"POT-Creation-Date: 2023-10-04 21:22-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Unselect"
 msgstr ""
 
-#: data/ui/window.blp:70 src/window.js:451
+#: data/ui/window.blp:70 src/window.js:453
 msgid "One-time entry"
 msgstr ""
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "New treatment"
 msgstr ""
 
-#: data/ui/med-window.blp:19 src/window.js:924
+#: data/ui/med-window.blp:19 src/window.js:878
 msgid "Cancel"
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Unit"
 msgstr ""
 
-#: data/ui/med-window.blp:57 src/window.js:812
+#: data/ui/med-window.blp:57 src/window.js:766
 msgid "Pill(s)"
 msgstr ""
 
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Color and icon"
 msgstr ""
 
-#: data/ui/med-window.blp:70 src/window.js:854
+#: data/ui/med-window.blp:70 src/window.js:808
 msgid "Color"
 msgstr ""
 
@@ -310,7 +310,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: data/ui/med-window.blp:513 src/window.js:925 src/historyFactory.js:39
+#: data/ui/med-window.blp:513 src/window.js:879 src/historyFactory.js:39
 msgid "Delete"
 msgstr ""
 
@@ -330,63 +330,63 @@ msgstr ""
 msgid "Allow Dosage to run in background."
 msgstr ""
 
-#: src/window.js:91
+#: src/window.js:90
 msgid "You have treatments low in stock"
 msgstr ""
 
-#: src/window.js:348
+#: src/window.js:350
 msgid "No treatments added yet!"
 msgstr ""
 
-#: src/window.js:351
+#: src/window.js:353
 msgid "All done for today!"
 msgstr ""
 
-#: src/window.js:399
+#: src/window.js:401
 msgid "Dosage reminder"
 msgstr ""
 
-#: src/window.js:451
+#: src/window.js:453
 msgid "Confirm"
 msgstr ""
 
-#: src/window.js:717
+#: src/window.js:671
 msgid "Edit treatment"
 msgstr ""
 
-#: src/window.js:718
+#: src/window.js:672
 msgid "Save"
 msgstr ""
 
-#: src/window.js:802
+#: src/window.js:756
 msgid "New"
 msgstr ""
 
-#: src/window.js:852
+#: src/window.js:806
 msgid "New entry"
 msgstr ""
 
-#: src/window.js:853
+#: src/window.js:807
 msgid "Add to history"
 msgstr ""
 
-#: src/window.js:919
+#: src/window.js:873
 msgid "Are you sure?"
 msgstr ""
 
-#: src/window.js:1125
+#: src/window.js:1079
 msgid "Empty name"
 msgstr ""
 
-#: src/window.js:1130
+#: src/window.js:1084
 msgid "Empty unit"
 msgstr ""
 
-#: src/window.js:1141
+#: src/window.js:1095
 msgid "Name already exists"
 msgstr ""
 
-#: src/window.js:1155
+#: src/window.js:1109
 msgid "Duplicated time"
 msgstr ""
 
