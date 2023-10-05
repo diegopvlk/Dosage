@@ -258,19 +258,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 								const sameItem =
 									item.name === itemRemoved.name && itemRemoved.taken === 'yes';
 
-								if (sameItem) {
-									item.info.dosage.forEach((timeDose) => {
-										const td = { ...timeDose, updated: undefined };
-										const sameInfo = 
-											JSON.stringify(td) === JSON.stringify(itemRemoved.info);
-
-										if (sameInfo)
-											timeDose.updated = new Date().toJSON();
-									});
-
-									if (item.info.inventory.enabled)
-										item.info.inventory.current += itemRemoved.info.dose;
-								}
+								if (sameItem && item.info.inventory.enabled)
+									item.info.inventory.current += itemRemoved.info.dose;
 							}
 						}
 						this._updateEverything();
@@ -292,7 +281,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		tempFile.meds.forEach(med => {
 			med._info.dosage.forEach(timeDose => {
-				const info = { ...med._info, updated: undefined };
+				const info = { ...med._info };
 				info.dosage = {
 					time: [timeDose.time[0], timeDose.time[1]],
 					dose: timeDose.dose,
@@ -479,20 +468,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 					})
 				);
 			});
-
-			// also update the date of treatments for each dose taken or skipped
-			for (const item of treatmentsLS) {
-				item.info.dosage.forEach(timeDose => {
-					const tempObj = { ...timeDose, updated: undefined };
-					const treatDose = JSON.stringify(tempObj);
-					this._todayItems.forEach(i => {
-						const todayDose = JSON.stringify(i.info.dosage);
-						if (treatDose === todayDose) {
-							timeDose.updated = new Date().toJSON();
-						}
-					});	
-				});
-			}
 
 			this._updateEverything();
 		} 
@@ -896,7 +871,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 			const dt = calOneEntry.get_date().format('%s') * 1000;
 			const entryDate = new Date(dt);
 			const info = getDoses()[0];
-			delete info.updated;
 			entryDate.setHours(info.time[0]);
 			entryDate.setMinutes(info.time[1]);
 			historyLS.insert_sorted(
@@ -1007,7 +981,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 				const ds = {
 					time: [hours, minutes],
 					dose: currentDoseRow.get_value(),
-					updated: new Date().toJSON(),
 				};
 				doses.push(ds);
 				currentDoseRow = currentDoseRow.get_next_sibling();
