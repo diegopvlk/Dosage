@@ -467,7 +467,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		if (this._todayItems.length > 0) {
 			this._todayItems.forEach(item => {
-				historyLS.insert_sorted(
+				historyLS.insert(
+					0,
 					new HistoryMedication({
 						name: item.name,
 						unit: item.unit,
@@ -475,9 +476,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 						taken: taken,
 						info: item.info.dosage,
 						date: new Date().toJSON(),
-					}), (obj1, obj2) => {
-						return obj1.date > obj2.date ? -1 : 0;
-					}
+					})
 				);
 			});
 
