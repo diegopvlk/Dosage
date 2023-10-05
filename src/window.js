@@ -464,7 +464,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 						color: item.info.color,
 						taken: taken,
 						info: item.info.dosage,
-						date: new Date().toJSON(),
+						date: new Date().toISOString(),
 					})
 				);
 			});
@@ -880,7 +880,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					color: dosageColorButton.get_name(),
 					taken: 'yes',
 					info: info,
-					date: entryDate.toJSON(),
+					date: entryDate.toISOString(),
 				}), (obj1, obj2) => {
 					return obj1.date > obj2.date ? -1 : 0;
 				}
