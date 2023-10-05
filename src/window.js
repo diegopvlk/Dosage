@@ -546,8 +546,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._emptyHistory.set_visible(false);
 	}
 
-	_updateEverything(midnight) {
-		this._updateJsonFile('history', historyLS);
+	_updateEverything(midnight, isItemUpdate) {
+		if (!isItemUpdate) this._updateJsonFile('history', historyLS);
 		this._updateItemsCycle(midnight);
 		this._updateJsonFile('treatments', treatmentsLS);
 		this._loadToday();
@@ -839,7 +839,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			if (oneTime) addItemToHistory(this._historyList, this._sortedHistoryModel);
 			else addItemToTreatments();
 
-			this._updateEverything();
+			this._updateEverything(null, isUpdate);
 			closeWindow();		
 		});
 
