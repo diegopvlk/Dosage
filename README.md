@@ -7,7 +7,7 @@ Keep track of your treatments!
 - **Dosage management** — Multiple doses with different times
 - **Frequency modes** — Every day, selected days, cycle or just when needed    
 - **Color and icon** — Give a shape for your treatment    
-- **Inventory tracking** — Keep track of your stock and get reminded when it's low
+- **Inventory tracking** — Monitor your stock and get reminded when it's low
 - **Duration** — Define the start and end dates
 
 <p align="center"><img src="https://raw.githubusercontent.com/diegopvlk/Dosage/275470b2d2b38300461a99b1922a36ac40058bfe/screenshots/today-light.png"/></p>
