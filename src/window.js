@@ -322,10 +322,18 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		this._todayItems = [];
 
+		for (const id in this._scheduledItems) {
+			clearTimeout(this._scheduledItems[id])
+		};
+
+		this._scheduledItems = {};
+		
 		const todayLength = this._todayModel.get_n_items();
-		for (let i = 0; i < todayLength; i++)
+		
+		for (let i = 0; i < todayLength; i++) {
 			this._addToBeNotified(this._todayModel.get_item(i));
-			
+		}
+		
 		const noItems = this._sortedTodayModel.get_n_items() === 0;
 		const noTreatments = this._treatmentsList.model.get_n_items() === 0;
 
@@ -358,23 +366,24 @@ class DosageWindow extends Adw.ApplicationWindow {
 			(itemHour - hours) * 3600000 +
 			(itemMin - minutes) * 60000 -
 			seconds * 1000;
+		
+		const pseudoId = JSON.stringify({
+			name: item.name, dosage: item.info.dosage,
+		});
 
-		setTimeout(() => {
+		this._scheduledItems[pseudoId] = setTimeout(() => {
 			/* 
 			using backdrop instead of .is_active, because .is_active is false 
 			if there is a modal showing and true after the window closes
 			and for some reason .is_suspended always returns false
 			*/
 			const stateFlags = this.get_state_flags();
-			if (stateFlags & Gtk.StateFlags.BACKDROP) {
-				const pseudoId = JSON.stringify({
-					name: item.name, dosage: item.info.dosage,
-				});
+			if (stateFlags & Gtk.StateFlags.BACKDROP) {	
 				const [notification, app] = this._getNotification();
 				notification.set_body(
 					`${item.name}  ⦁  ${item.info.dosage.dose} ${item.unit}`
 				);
-				app.send_notification(`${pseudoId}`, notification);
+				app.send_notification(pseudoId, notification);
 			}
 		}, timeDifference);
 	}
