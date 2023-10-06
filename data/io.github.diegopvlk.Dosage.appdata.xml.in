@@ -30,9 +30,11 @@
 		</screenshot>
 	</screenshots>
 	<content_rating type="oars-1.1" />
-	<release version="1.0.0" date="2023-10-05">
-		<description>
-			<p>Initial Release</p>
-		</description>
-	</release>
+	<releases>
+		<release version="1.0.0" date="2023-10-05">
+			<description>
+				<p>Initial Release</p>
+			</description>
+		</release>
+	</releases>
 </component>
