@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-05 11:30-0300\n"
-"PO-Revision-Date: 2023-09-25 17:48-0300\n"
+"POT-Creation-Date: 2023-10-07 13:48-0300\n"
+"PO-Revision-Date: 2023-10-07 13:48-0300\n"
 "Last-Translator: Diego <diegopvlk@gmail.com>\n"
 "Language-Team: Brazilian Portuguese\n"
 "Language: pt_BR\n"
@@ -30,7 +30,7 @@ msgstr "Hoje"
 msgid "Unselect"
 msgstr "Desmarcar"
 
-#: data/ui/window.blp:70 src/window.js:442
+#: data/ui/window.blp:70 src/window.js:451
 msgid "One-time entry"
 msgstr "Registro único"
 
@@ -74,7 +74,7 @@ msgstr "Sair"
 msgid "New treatment"
 msgstr "Novo tratamento"
 
-#: data/ui/med-window.blp:19 src/window.js:853
+#: data/ui/med-window.blp:19 src/window.js:862
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -90,7 +90,7 @@ msgstr "Nome"
 msgid "Unit"
 msgstr "Unidade"
 
-#: data/ui/med-window.blp:57 src/window.js:741
+#: data/ui/med-window.blp:57 src/window.js:750
 msgid "Pill(s)"
 msgstr "Comprimido(s)"
 
@@ -106,7 +106,7 @@ msgstr "Após refeição"
 msgid "Color and icon"
 msgstr "Cor e ícone"
 
-#: data/ui/med-window.blp:70 src/window.js:783
+#: data/ui/med-window.blp:70 src/window.js:792
 msgid "Color"
 msgstr "Cor"
 
@@ -263,7 +263,9 @@ msgstr "Dias inativos"
 msgid "Today is cycle day..."
 msgstr "Hoje é o dia..."
 
-#: data/ui/med-window.blp:406 src/main.js:66
+#: data/ui/med-window.blp:406 src/main.js:66 src/window.js:399
+#: data/io.github.diegopvlk.Dosage.desktop.in:3
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 msgid "Dosage"
 msgstr "Dosagem"
 
@@ -311,7 +313,7 @@ msgstr "Termina em"
 msgid "Date"
 msgstr "Data"
 
-#: data/ui/med-window.blp:513 src/window.js:854 src/historyFactory.js:39
+#: data/ui/med-window.blp:513 src/window.js:863 src/historyFactory.js:39
 msgid "Delete"
 msgstr "Excluir"
 
@@ -333,61 +335,57 @@ msgstr "Permitir que o Dosagem seja executado em segundo plano."
 
 #: src/window.js:91
 msgid "You have treatments low in stock"
-msgstr "Você tem tratamentos em baixo estoque"
+msgstr "Você tem tratamentos com pouco estoque"
 
-#: src/window.js:339
+#: src/window.js:347
 msgid "No treatments added yet!"
 msgstr "Nenhum tratamento adicionado ainda!"
 
-#: src/window.js:342
+#: src/window.js:350
 msgid "All done for today!"
 msgstr "Tudo feito por hoje!"
 
-#: src/window.js:390
-msgid "Dosage reminder"
-msgstr "Lembrete do Dosagem"
-
-#: src/window.js:442
+#: src/window.js:451
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: src/window.js:646
+#: src/window.js:655
 msgid "Edit treatment"
 msgstr "Editar tratamento"
 
-#: src/window.js:647
+#: src/window.js:656
 msgid "Save"
 msgstr "Salvar"
 
-#: src/window.js:731
+#: src/window.js:740
 msgid "New"
 msgstr "Novo"
 
-#: src/window.js:781
+#: src/window.js:790
 msgid "New entry"
 msgstr "Novo registro"
 
-#: src/window.js:782
+#: src/window.js:791
 msgid "Add to history"
 msgstr "Adc. ao histórico"
 
-#: src/window.js:848
+#: src/window.js:857
 msgid "Are you sure?"
 msgstr "Tem certeza?"
 
-#: src/window.js:1052
+#: src/window.js:1061
 msgid "Empty name"
 msgstr "Nome vazio"
 
-#: src/window.js:1057
+#: src/window.js:1066
 msgid "Empty unit"
 msgstr "Unidade vazia"
 
-#: src/window.js:1068
+#: src/window.js:1077
 msgid "Name already exists"
 msgstr "Nome já existe"
 
-#: src/window.js:1082
+#: src/window.js:1091
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 
@@ -410,3 +408,47 @@ msgstr "Estoque Baixo"
 #: src/treatmentsFactory.js:95
 msgid "Until"
 msgstr "Até"
+
+#: data/io.github.diegopvlk.Dosage.desktop.in:9
+msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy"
+msgstr "Medicação;Rastreador;Lembrete;Hoje;Histórico;Tratamentos;Pílula;Droga;Remédio"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
+msgid "Keep track of your treatments!"
+msgstr "Acompanhe seus tratamentos!"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
+msgid "Features:"
+msgstr "Recursos:"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
+msgid "Notifications — Get reminders on the right time"
+msgstr "Notificações — Receba lembretes na hora certa"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
+msgid "History — See which medications you took or skipped"
+msgstr "Histórico — Veja quais medicamentos você confirmou ou ignorou"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
+msgid "Dosage management — Multiple doses with different times"
+msgstr "Gerenciamento de dosagem — Múltiplas doses com horários diferentes"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
+msgid "Frequency modes — Every day, specific days, cycle or just when needed"
+msgstr "Frequência — Todos os dias, dias específicos, ciclo ou apenas quando necessário"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
+msgid "Color and icon — Give a shape for your treatment"
+msgstr "Cor e ícone — Dê uma forma ao seu tratamento"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
+msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
+msgstr "Estoque — Monitore e seja lembrado quando estiver baixo"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
+msgid "Duration — Define the start and end dates"
+msgstr "Duração — Defina datas para começar e terminar"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
+msgid "Initial Release"
+msgstr "Lançamento Inicial "

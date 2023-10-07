@@ -396,7 +396,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			? Gio.NotificationPriority.URGENT
 			: Gio.NotificationPriority.NORMAL;
 		notification.set_priority(priority);
-		notification.set_title(_("Dosage reminder"));
+		notification.set_title(_("Dosage"));
 
 		return [ notification, app ]
 	}

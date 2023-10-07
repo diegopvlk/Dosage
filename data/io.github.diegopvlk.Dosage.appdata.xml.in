@@ -9,7 +9,7 @@
 			<li>Notifications — Get reminders on the right time</li>
 			<li>History — See which medications you took or skipped</li>
 			<li>Dosage management — Multiple doses with different times</li>
-			<li>Frequency modes — Every day, selected days, cycle or just when needed</li>
+			<li>Frequency modes — Every day, specific days, cycle or just when needed</li>
 			<li>Color and icon — Give a shape for your treatment</li>
 			<li>Inventory tracking — Monitor your stock and get reminded when it's low</li>
 			<li>Duration — Define the start and end dates</li>
@@ -36,7 +36,7 @@
 	<content_rating type="oars-1.1" />
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-only</project_license>
-	<developer_name>Diego Povliuk</developer_name>
+	<developer_name translatable="no">Diego Povliuk</developer_name>
 	<update_contact>diego.pvlk@gmail.com</update_contact>
 	<url type="homepage">https://github.com/diegopvlk/Dosage</url>
 	<url type="bugtracker">https://github.com/diegopvlk/Dosage/issues</url>

@@ -8,13 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-05 11:30-0300\n"
+"POT-Creation-Date: 2023-10-07 13:53-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/ui/window.blp:29
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Unselect"
 msgstr ""
 
-#: data/ui/window.blp:70 src/window.js:442
+#: data/ui/window.blp:70 src/window.js:451
 msgid "One-time entry"
 msgstr ""
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "New treatment"
 msgstr ""
 
-#: data/ui/med-window.blp:19 src/window.js:853
+#: data/ui/med-window.blp:19 src/window.js:862
 msgid "Cancel"
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Unit"
 msgstr ""
 
-#: data/ui/med-window.blp:57 src/window.js:741
+#: data/ui/med-window.blp:57 src/window.js:750
 msgid "Pill(s)"
 msgstr ""
 
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Color and icon"
 msgstr ""
 
-#: data/ui/med-window.blp:70 src/window.js:783
+#: data/ui/med-window.blp:70 src/window.js:792
 msgid "Color"
 msgstr ""
 
@@ -262,7 +262,9 @@ msgstr ""
 msgid "Today is cycle day..."
 msgstr ""
 
-#: data/ui/med-window.blp:406 src/main.js:66
+#: data/ui/med-window.blp:406 src/main.js:66 src/window.js:399
+#: data/io.github.diegopvlk.Dosage.desktop.in:3
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 msgid "Dosage"
 msgstr ""
 
@@ -310,7 +312,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: data/ui/med-window.blp:513 src/window.js:854 src/historyFactory.js:39
+#: data/ui/med-window.blp:513 src/window.js:863 src/historyFactory.js:39
 msgid "Delete"
 msgstr ""
 
@@ -334,59 +336,55 @@ msgstr ""
 msgid "You have treatments low in stock"
 msgstr ""
 
-#: src/window.js:339
+#: src/window.js:347
 msgid "No treatments added yet!"
 msgstr ""
 
-#: src/window.js:342
+#: src/window.js:350
 msgid "All done for today!"
 msgstr ""
 
-#: src/window.js:390
-msgid "Dosage reminder"
-msgstr ""
-
-#: src/window.js:442
+#: src/window.js:451
 msgid "Confirm"
 msgstr ""
 
-#: src/window.js:646
+#: src/window.js:655
 msgid "Edit treatment"
 msgstr ""
 
-#: src/window.js:647
+#: src/window.js:656
 msgid "Save"
 msgstr ""
 
-#: src/window.js:731
+#: src/window.js:740
 msgid "New"
 msgstr ""
 
-#: src/window.js:781
+#: src/window.js:790
 msgid "New entry"
 msgstr ""
 
-#: src/window.js:782
+#: src/window.js:791
 msgid "Add to history"
 msgstr ""
 
-#: src/window.js:848
+#: src/window.js:857
 msgid "Are you sure?"
 msgstr ""
 
-#: src/window.js:1052
+#: src/window.js:1061
 msgid "Empty name"
 msgstr ""
 
-#: src/window.js:1057
+#: src/window.js:1066
 msgid "Empty unit"
 msgstr ""
 
-#: src/window.js:1068
+#: src/window.js:1077
 msgid "Name already exists"
 msgstr ""
 
-#: src/window.js:1082
+#: src/window.js:1091
 msgid "Duplicated time"
 msgstr ""
 
@@ -408,4 +406,48 @@ msgstr ""
 
 #: src/treatmentsFactory.js:95
 msgid "Until"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.desktop.in:9
+msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
+msgid "Keep track of your treatments!"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
+msgid "Features:"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
+msgid "Notifications — Get reminders on the right time"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
+msgid "History — See which medications you took or skipped"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
+msgid "Dosage management — Multiple doses with different times"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
+msgid "Frequency modes — Every day, specific days, cycle or just when needed"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
+msgid "Color and icon — Give a shape for your treatment"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
+msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
+msgid "Duration — Define the start and end dates"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
+msgid "Initial Release"
 msgstr ""
