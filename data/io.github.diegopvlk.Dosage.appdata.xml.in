@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-	<id>io.github.diegopvlk.Dosage.desktop</id>
-	<metadata_license>CC0-1.0</metadata_license>
-	<project_license>GPL-3.0-only</project_license>
-	<translation type="gettext">dosage</translation>
 	<name>Dosage</name>
-	<summary>Keep track of your treatments</summary>
-	<developer_name>Diego Povliuk</developer_name>
-	<update_contact>diego.pvlk@gmail.com</update_contact>
-	<url type="homepage">https://github.com/diegopvlk/Dosage</url>
+	<summary>Keep track of your treatments!</summary>
+
 	<description>
-		<p>Remember to take your medications!</p>
 		<p>Features:</p>
 		<ul>
-			<li>Notifications: get reminders on time</li>
-			<li>History: keep track of which medications you took or skipped</li>
-			<li>Dosages: multiple doses with different times</li>
-			<li>Frequency modes: every day, selected days, cycle or when needed</li>
-			<li>Color and icon: give a form for your treatment</li>
-			<li>Inventory: keep track of your stock and get reminded when it's low</li>
-			<li>Duration: set a date to start and end</li>
+			<li>Notifications — Get reminders on the right time</li>
+			<li>History — See which medications you took or skipped</li>
+			<li>Dosage management — Multiple doses with different times</li>
+			<li>Frequency modes — Every day, selected days, cycle or just when needed</li>
+			<li>Color and icon — Give a shape for your treatment</li>
+			<li>Inventory tracking — Monitor your stock and get reminded when it's low</li>
+			<li>Duration — Define the start and end dates</li>
 		</ul>
 	</description>
+
 	<screenshots>
 		<screenshot>
 			<image>https://raw.githubusercontent.com/diegopvlk/Dosage/275470b2d2b38300461a99b1922a36ac40058bfe/screenshots/today-light.png</image>
@@ -29,7 +23,7 @@
 			<image>https://raw.githubusercontent.com/diegopvlk/Dosage/275470b2d2b38300461a99b1922a36ac40058bfe/screenshots/today-dark.png</image>
 		</screenshot>
 	</screenshots>
-	<content_rating type="oars-1.1" />
+
 	<releases>
 		<release version="1.0.0" date="2023-10-05">
 			<description>
@@ -37,4 +31,13 @@
 			</description>
 		</release>
 	</releases>
+
+	<id>io.github.diegopvlk.Dosage.desktop</id>
+	<content_rating type="oars-1.1" />
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0-only</project_license>
+	<developer_name>Diego Povliuk</developer_name>
+	<update_contact>diego.pvlk@gmail.com</update_contact>
+	<url type="homepage">https://github.com/diegopvlk/Dosage</url>
+	<url type="bugtracker">https://github.com/diegopvlk/Dosage/issues</url>
 </component>
