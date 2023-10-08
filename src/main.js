@@ -68,7 +68,6 @@ export const DosageApplication = GObject.registerClass(
 					developer_name: "Diego Povliuk",
 					version: "1.0.0",
 					issue_url: 'https://github.com/diegopvlk/Dosage/issues',
-					website: 'https://github.com/diegopvlk/Dosage',
 					license_type: Gtk.License.GPL_3_0_ONLY,
 					copyright: "© 2023 Diego Povliuk",
 				};
@@ -80,7 +79,8 @@ export const DosageApplication = GObject.registerClass(
 					"Workbench https://apps.gnome.org/Workbench/", 
 					"Blueprint https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/index.html",
 					"GTK4 + GJS Book https://rmnvgr.gitlab.io/gtk4-gjs-book/",
-					"GJS Guide https://gjs.guide/"
+					"GJS Guide https://gjs.guide/",
+					"Flatpak https://github.com/flatpak/",
 				]);
 				aboutWindow.present();
 			});
