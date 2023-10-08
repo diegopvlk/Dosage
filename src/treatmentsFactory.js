@@ -1,3 +1,5 @@
+'use strict';
+
 import Gdk from 'gi://Gdk';
 import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';

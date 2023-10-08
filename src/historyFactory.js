@@ -1,3 +1,5 @@
+'use strict';
+
 import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
