@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 13:48-0300\n"
+"POT-Creation-Date: 2023-10-09 10:42-0300\n"
 "PO-Revision-Date: 2023-10-07 13:48-0300\n"
 "Last-Translator: Diego <diegopvlk@gmail.com>\n"
 "Language-Team: Brazilian Portuguese\n"
@@ -30,7 +30,7 @@ msgstr "Hoje"
 msgid "Unselect"
 msgstr "Desmarcar"
 
-#: data/ui/window.blp:70 src/window.js:451
+#: data/ui/window.blp:70 src/window.js:452
 msgid "One-time entry"
 msgstr "Registro único"
 
@@ -74,7 +74,7 @@ msgstr "Sair"
 msgid "New treatment"
 msgstr "Novo tratamento"
 
-#: data/ui/med-window.blp:19 src/window.js:862
+#: data/ui/med-window.blp:19 src/window.js:863
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -90,7 +90,7 @@ msgstr "Nome"
 msgid "Unit"
 msgstr "Unidade"
 
-#: data/ui/med-window.blp:57 src/window.js:750
+#: data/ui/med-window.blp:57 src/window.js:751
 msgid "Pill(s)"
 msgstr "Comprimido(s)"
 
@@ -106,7 +106,7 @@ msgstr "Após refeição"
 msgid "Color and icon"
 msgstr "Cor e ícone"
 
-#: data/ui/med-window.blp:70 src/window.js:792
+#: data/ui/med-window.blp:70 src/window.js:793
 msgid "Color"
 msgstr "Cor"
 
@@ -214,7 +214,7 @@ msgstr "Dias específicos"
 msgid "Cycle"
 msgstr "Ciclo"
 
-#: data/ui/med-window.blp:298
+#: data/ui/med-window.blp:298 src/treatmentsFactory.js:144
 msgid "When needed"
 msgstr "Quando necessário"
 
@@ -223,31 +223,31 @@ msgstr "Quando necessário"
 msgid "Choose"
 msgstr "Escolha"
 
-#: data/ui/med-window.blp:314
+#: data/ui/med-window.blp:314 src/treatmentsFactory.js:129
 msgid "Su"
 msgstr "Do"
 
-#: data/ui/med-window.blp:320
+#: data/ui/med-window.blp:320 src/treatmentsFactory.js:130
 msgid "Mo"
 msgstr "Se"
 
-#: data/ui/med-window.blp:326
+#: data/ui/med-window.blp:326 src/treatmentsFactory.js:131
 msgid "Tu"
 msgstr "Te"
 
-#: data/ui/med-window.blp:332
+#: data/ui/med-window.blp:332 src/treatmentsFactory.js:132
 msgid "We"
 msgstr "Qa"
 
-#: data/ui/med-window.blp:338
+#: data/ui/med-window.blp:338 src/treatmentsFactory.js:133
 msgid "Th"
 msgstr "Qi"
 
-#: data/ui/med-window.blp:344
+#: data/ui/med-window.blp:344 src/treatmentsFactory.js:134
 msgid "Fr"
 msgstr "Se"
 
-#: data/ui/med-window.blp:350
+#: data/ui/med-window.blp:350 src/treatmentsFactory.js:135
 msgid "Sa"
 msgstr "Sa"
 
@@ -263,7 +263,7 @@ msgstr "Dias inativos"
 msgid "Today is cycle day..."
 msgstr "Hoje é o dia..."
 
-#: data/ui/med-window.blp:406 src/main.js:66 src/window.js:399
+#: data/ui/med-window.blp:406 src/main.js:67 src/window.js:400
 #: data/io.github.diegopvlk.Dosage.desktop.in:3
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 msgid "Dosage"
@@ -313,7 +313,7 @@ msgstr "Termina em"
 msgid "Date"
 msgstr "Data"
 
-#: data/ui/med-window.blp:513 src/window.js:863 src/historyFactory.js:39
+#: data/ui/med-window.blp:513 src/window.js:864 src/historyFactory.js:41
 msgid "Delete"
 msgstr "Excluir"
 
@@ -329,89 +329,102 @@ msgstr "Aumentar a prioridade da notificação"
 msgid "Thanks to these projects!"
 msgstr "Obrigado à esses projetos!"
 
-#: src/main.js:106
+#: src/main.js:107
 msgid "Allow Dosage to run in background."
 msgstr "Permitir que o Dosagem seja executado em segundo plano."
 
-#: src/window.js:91
+#: src/window.js:92
 msgid "You have treatments low in stock"
 msgstr "Você tem tratamentos com pouco estoque"
 
-#: src/window.js:347
+#: src/window.js:348
 msgid "No treatments added yet!"
 msgstr "Nenhum tratamento adicionado ainda!"
 
-#: src/window.js:350
+#: src/window.js:351
 msgid "All done for today!"
 msgstr "Tudo feito por hoje!"
 
-#: src/window.js:451
+#: src/window.js:452
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: src/window.js:655
+#: src/window.js:656
 msgid "Edit treatment"
 msgstr "Editar tratamento"
 
-#: src/window.js:656
+#: src/window.js:657
 msgid "Save"
 msgstr "Salvar"
 
-#: src/window.js:740
+#: src/window.js:741
 msgid "New"
 msgstr "Novo"
 
-#: src/window.js:790
+#: src/window.js:791
 msgid "New entry"
 msgstr "Novo registro"
 
-#: src/window.js:791
+#: src/window.js:792
 msgid "Add to history"
 msgstr "Adc. ao histórico"
 
-#: src/window.js:857
+#: src/window.js:858
 msgid "Are you sure?"
 msgstr "Tem certeza?"
 
-#: src/window.js:1061
+#: src/window.js:1062
 msgid "Empty name"
 msgstr "Nome vazio"
 
-#: src/window.js:1066
+#: src/window.js:1067
 msgid "Empty unit"
 msgstr "Unidade vazia"
 
-#: src/window.js:1077
+#: src/window.js:1078
 msgid "Name already exists"
 msgstr "Nome já existe"
 
-#: src/window.js:1091
+#: src/window.js:1092
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 
-#: src/historyFactory.js:119
+#: src/historyFactory.js:121
 msgid "Confirmed"
 msgstr "Confirmado"
 
-#: src/historyFactory.js:121
+#: src/historyFactory.js:123
 msgid "Skipped"
 msgstr "Ignorado"
 
-#: src/historyFactory.js:123
+#: src/historyFactory.js:125
 msgid "Missed"
 msgstr "Perdido"
 
-#: src/treatmentsFactory.js:86 src/treatmentsFactory.js:88
+#: src/treatmentsFactory.js:89 src/treatmentsFactory.js:91
 msgid "Low stock"
 msgstr "Estoque Baixo"
 
-#: src/treatmentsFactory.js:95
+#: src/treatmentsFactory.js:98
 msgid "Until"
 msgstr "Até"
 
+#: src/treatmentsFactory.js:109 src/treatmentsFactory.js:120
+msgid "Daily"
+msgstr "Diariamente"
+
+#: src/treatmentsFactory.js:116
+msgid "Weekend"
+msgstr "Fim de semana"
+
+#: src/treatmentsFactory.js:118
+msgid "Weekdays"
+msgstr "Dias da semana"
+
 #: data/io.github.diegopvlk.Dosage.desktop.in:9
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy"
-msgstr "Medicação;Rastreador;Lembrete;Hoje;Histórico;Tratamentos;Pílula;Droga;Remédio"
+msgstr ""
+"Medicação;Rastreador;Lembrete;Hoje;Histórico;Tratamentos;Pílula;Droga;Remédio"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
 msgid "Keep track of your treatments!"
@@ -435,7 +448,9 @@ msgstr "Gerenciamento de dosagem — Múltiplas doses com horários diferentes"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
-msgstr "Frequência — Todos os dias, dias específicos, ciclo ou apenas quando necessário"
+msgstr ""
+"Frequência — Todos os dias, dias específicos, ciclo ou apenas quando "
+"necessário"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Color and icon — Give a shape for your treatment"

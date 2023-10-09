@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 13:53-0300\n"
+"POT-Creation-Date: 2023-10-09 10:42-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Unselect"
 msgstr ""
 
-#: data/ui/window.blp:70 src/window.js:451
+#: data/ui/window.blp:70 src/window.js:452
 msgid "One-time entry"
 msgstr ""
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "New treatment"
 msgstr ""
 
-#: data/ui/med-window.blp:19 src/window.js:862
+#: data/ui/med-window.blp:19 src/window.js:863
 msgid "Cancel"
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Unit"
 msgstr ""
 
-#: data/ui/med-window.blp:57 src/window.js:750
+#: data/ui/med-window.blp:57 src/window.js:751
 msgid "Pill(s)"
 msgstr ""
 
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Color and icon"
 msgstr ""
 
-#: data/ui/med-window.blp:70 src/window.js:792
+#: data/ui/med-window.blp:70 src/window.js:793
 msgid "Color"
 msgstr ""
 
@@ -213,7 +213,7 @@ msgstr ""
 msgid "Cycle"
 msgstr ""
 
-#: data/ui/med-window.blp:298
+#: data/ui/med-window.blp:298 src/treatmentsFactory.js:144
 msgid "When needed"
 msgstr ""
 
@@ -222,31 +222,31 @@ msgstr ""
 msgid "Choose"
 msgstr ""
 
-#: data/ui/med-window.blp:314
+#: data/ui/med-window.blp:314 src/treatmentsFactory.js:129
 msgid "Su"
 msgstr ""
 
-#: data/ui/med-window.blp:320
+#: data/ui/med-window.blp:320 src/treatmentsFactory.js:130
 msgid "Mo"
 msgstr ""
 
-#: data/ui/med-window.blp:326
+#: data/ui/med-window.blp:326 src/treatmentsFactory.js:131
 msgid "Tu"
 msgstr ""
 
-#: data/ui/med-window.blp:332
+#: data/ui/med-window.blp:332 src/treatmentsFactory.js:132
 msgid "We"
 msgstr ""
 
-#: data/ui/med-window.blp:338
+#: data/ui/med-window.blp:338 src/treatmentsFactory.js:133
 msgid "Th"
 msgstr ""
 
-#: data/ui/med-window.blp:344
+#: data/ui/med-window.blp:344 src/treatmentsFactory.js:134
 msgid "Fr"
 msgstr ""
 
-#: data/ui/med-window.blp:350
+#: data/ui/med-window.blp:350 src/treatmentsFactory.js:135
 msgid "Sa"
 msgstr ""
 
@@ -262,7 +262,7 @@ msgstr ""
 msgid "Today is cycle day..."
 msgstr ""
 
-#: data/ui/med-window.blp:406 src/main.js:66 src/window.js:399
+#: data/ui/med-window.blp:406 src/main.js:67 src/window.js:400
 #: data/io.github.diegopvlk.Dosage.desktop.in:3
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 msgid "Dosage"
@@ -312,7 +312,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: data/ui/med-window.blp:513 src/window.js:863 src/historyFactory.js:39
+#: data/ui/med-window.blp:513 src/window.js:864 src/historyFactory.js:41
 msgid "Delete"
 msgstr ""
 
@@ -328,84 +328,96 @@ msgstr ""
 msgid "Thanks to these projects!"
 msgstr ""
 
-#: src/main.js:106
+#: src/main.js:107
 msgid "Allow Dosage to run in background."
 msgstr ""
 
-#: src/window.js:91
+#: src/window.js:92
 msgid "You have treatments low in stock"
 msgstr ""
 
-#: src/window.js:347
+#: src/window.js:348
 msgid "No treatments added yet!"
 msgstr ""
 
-#: src/window.js:350
+#: src/window.js:351
 msgid "All done for today!"
 msgstr ""
 
-#: src/window.js:451
+#: src/window.js:452
 msgid "Confirm"
 msgstr ""
 
-#: src/window.js:655
+#: src/window.js:656
 msgid "Edit treatment"
 msgstr ""
 
-#: src/window.js:656
+#: src/window.js:657
 msgid "Save"
 msgstr ""
 
-#: src/window.js:740
+#: src/window.js:741
 msgid "New"
 msgstr ""
 
-#: src/window.js:790
+#: src/window.js:791
 msgid "New entry"
 msgstr ""
 
-#: src/window.js:791
+#: src/window.js:792
 msgid "Add to history"
 msgstr ""
 
-#: src/window.js:857
+#: src/window.js:858
 msgid "Are you sure?"
 msgstr ""
 
-#: src/window.js:1061
+#: src/window.js:1062
 msgid "Empty name"
 msgstr ""
 
-#: src/window.js:1066
+#: src/window.js:1067
 msgid "Empty unit"
 msgstr ""
 
-#: src/window.js:1077
+#: src/window.js:1078
 msgid "Name already exists"
 msgstr ""
 
-#: src/window.js:1091
+#: src/window.js:1092
 msgid "Duplicated time"
 msgstr ""
 
-#: src/historyFactory.js:119
+#: src/historyFactory.js:121
 msgid "Confirmed"
 msgstr ""
 
-#: src/historyFactory.js:121
+#: src/historyFactory.js:123
 msgid "Skipped"
 msgstr ""
 
-#: src/historyFactory.js:123
+#: src/historyFactory.js:125
 msgid "Missed"
 msgstr ""
 
-#: src/treatmentsFactory.js:86 src/treatmentsFactory.js:88
+#: src/treatmentsFactory.js:89 src/treatmentsFactory.js:91
 msgid "Low stock"
 msgstr ""
 
-#: src/treatmentsFactory.js:95
+#: src/treatmentsFactory.js:98
 msgid "Until"
+msgstr ""
+
+#: src/treatmentsFactory.js:109 src/treatmentsFactory.js:120
+msgid "Daily"
+msgstr ""
+
+#: src/treatmentsFactory.js:116
+msgid "Weekend"
+msgstr ""
+
+#: src/treatmentsFactory.js:118
+msgid "Weekdays"
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.desktop.in:9
