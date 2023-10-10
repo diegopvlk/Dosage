@@ -25,6 +25,13 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.0.1" date="2023-10-10">
+			<description>
+				<p>Fixed notifications being sent more than once after saving an existing treatment</p>
+				<p>Added a label to show the frequency on treatments list</p>
+				<p>Brazilian translation updated</p>
+			</description>
+		</release>
 		<release version="1.0.0" date="2023-10-05">
 			<description>
 				<p>Initial Release</p>
