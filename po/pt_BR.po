@@ -245,7 +245,7 @@ msgstr "Qi"
 
 #: data/ui/med-window.blp:344 src/treatmentsFactory.js:134
 msgid "Fr"
-msgstr "Se"
+msgstr "Sx"
 
 #: data/ui/med-window.blp:350 src/treatmentsFactory.js:135
 msgid "Sa"
