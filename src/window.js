@@ -70,6 +70,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._loadHistory();
 			this._updateItemsCycle();
 			this._loadToday();
+			this._handleSuspension();
 		} catch (err) {
 			console.error('Error loading treatments/history/today... ', err);
 		}
@@ -118,6 +119,20 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this.#checkInventory();
 			this.#scheduleNextMidnight();
 		}, timeUntilMidnight);
+	}
+
+	_handleSuspension() {
+		const onWakingUp = () => this._scheduleNotification();
+		this._connection = Gio.bus_get_sync(Gio.BusType.SYSTEM, null)
+        this._connection.signal_subscribe(
+            'org.freedesktop.login1',
+            'org.freedesktop.login1.Manager',
+            'PrepareForSleep',
+            '/org/freedesktop/login1',
+            null,
+            Gio.DBusSignalFlags.NONE,
+            onWakingUp,
+        );
 	}
 
 	_createLoadJsonFile(fileType, file) {
@@ -323,17 +338,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		this._todayItems = [];
 
-		for (const id in this._scheduledItems) {
-			clearTimeout(this._scheduledItems[id])
-		};
-
-		this._scheduledItems = {};
-		
-		const todayLength = this._todayModel.get_n_items();
-		
-		for (let i = 0; i < todayLength; i++) {
-			this._addToBeNotified(this._todayModel.get_item(i));
-		}
+		this._scheduleNotification();
 		
 		const noItems = this._sortedTodayModel.get_n_items() === 0;
 		const noTreatments = this._treatmentsList.model.get_n_items() === 0;
@@ -352,6 +357,18 @@ class DosageWindow extends Adw.ApplicationWindow {
 		} else {		
 			this._emptyToday.set_visible(false);
 		}
+	}
+
+	_scheduleNotification() {
+		for (const id in this._scheduledItems)
+			clearTimeout(this._scheduledItems[id]);
+
+		this._scheduledItems = {};
+		
+		const todayLength = this._todayModel.get_n_items();
+		
+		for (let i = 0; i < todayLength; i++)
+			this._addToBeNotified(this._todayModel.get_item(i));
 	}
 
 	_addToBeNotified(item) {
