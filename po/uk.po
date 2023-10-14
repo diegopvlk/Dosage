@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
+# Ukrainian tranlsation for Dosage.
 # Copyright (C) 2023 Diego Povliuk
 # This file is distributed under the same license as the io.github.diegopvlk.Dosage package.
-# Diego Povliuk <diego.pvlk@gmail.com>, 2023.
+# volkov <volkovissocool@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
