@@ -573,8 +573,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._emptyHistory.set_visible(false);
 	}
 
-	_updateEverything(midnight, isItemUpdate) {
-		if (!isItemUpdate) this._updateJsonFile('history', historyLS);
+	_updateEverything(midnight, skipHistUp) {
+		if (!skipHistUp) this._updateJsonFile('history', historyLS);
 		this._updateItemsCycle(midnight);
 		this._updateJsonFile('treatments', treatmentsLS);
 		this._loadToday();
@@ -863,10 +863,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			if (!isValidInput(isUpdate)) return;
 
-			if (oneTime) addItemToHistory(this._historyList, this._sortedHistoryModel);
+			if (oneTime) {
+				addItemToHistory(this._historyList, this._sortedHistoryModel);
+				this._updateJsonFile('history', historyLS);
+			}
 			else addItemToTreatments();
 
-			this._updateEverything(null, isUpdate);
+			this._updateEverything(null, true);
 			closeWindow();		
 		});
 
@@ -887,7 +890,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					const it = this._treatmentsList.model.get_item(position);
 					const deletePos = treatmentsLS.find(it)[1];
 					treatmentsLS.remove(deletePos);
-					this._updateEverything();
+					this._updateEverything(null, true);
 					closeWindow();
 				}
 			});
