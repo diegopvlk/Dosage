@@ -25,6 +25,11 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.0.3" date="2023-10-14">
+			<description>
+				<p>Added Italian translation (by Albano Battistella)</p>
+			</description>
+		</release>
 		<release version="1.0.2" date="2023-10-13">
 			<description>
 				<p>Fixed notifications being delayed after suspension</p>
