@@ -469,9 +469,7 @@ msgid "Fixed notifications being delayed after suspension"
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:35
-msgid ""
-"Fixed notifications being sent more than once after saving an existing "
-"treatment"
+msgid "Fixed notifications being sent more than once after saving an existing treatment"
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:36

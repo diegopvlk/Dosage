@@ -325,7 +325,7 @@ msgstr "Aumentar a prioridade da notificação"
 
 #: src/main.js:74
 msgid "translator-credits"
-msgstr ""
+msgstr "Diego Povliuk <diego.pvlk@gmail.com>"
 
 #: src/main.js:77
 msgid "Thanks to these projects!"
@@ -450,9 +450,7 @@ msgstr "Gerenciamento de dosagem — Múltiplas doses com horários diferentes"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
-msgstr ""
-"Frequência — Todos os dias, dias específicos, ciclo ou apenas quando "
-"necessário"
+msgstr "Frequência — Todos os dias, dias específicos, ciclo ou apenas quando necessário"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Color and icon — Give a shape for your treatment"
@@ -468,22 +466,20 @@ msgstr "Duração — Defina datas para começar e terminar"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid "Fixed notifications being delayed after suspension"
-msgstr ""
+msgstr "Corrigido: notificações atrasadas após suspensão"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:35
-msgid ""
-"Fixed notifications being sent more than once after saving an existing "
-"treatment"
-msgstr ""
+msgid "Fixed notifications being sent more than once after saving an existing treatment"
+msgstr "Corrigido: notificações enviadas mais de uma vez após salvar um tratamento existente"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:36
 msgid "Added a label to show the frequency on treatments list"
-msgstr ""
+msgstr "Adicionado um rótulo para mostrar a frequência na lista de tratamentos"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:37
 msgid "Brazilian translation updated"
-msgstr ""
+msgstr "Tradução brasileira atualizada"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
 msgid "Initial Release"
-msgstr ""
+msgstr "Lançamento inicial"

@@ -425,8 +425,7 @@ msgstr "Giorni della settimana"
 
 #: data/io.github.diegopvlk.Dosage.desktop.in:9
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy"
-msgstr ""
-"Farmaco;Tracciatore;Promemoria;Oggi;Storia;Trattamenti;Pillola;Droga;Rimedio"
+msgstr "Farmaco;Tracciatore;Promemoria;Oggi;Storia;Trattamenti;Pillola;Droga;Rimedio"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
 msgid "Keep track of your treatments!"
@@ -450,9 +449,7 @@ msgstr "Gestione del dosaggio — Dosi multiple con tempi diversi"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
-msgstr ""
-"Modalità di frequenza — ogni giorno, giorni specifici, ciclicamente o solo "
-"quando necessario"
+msgstr "Modalità di frequenza — ogni giorno, giorni specifici, ciclicamente o solo quando necessario"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Color and icon — Give a shape for your treatment"
@@ -460,9 +457,7 @@ msgstr "Colore e icona — dai una forma al tuo trattamento"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
-msgstr ""
-"Monitoraggio dell'inventario — monitora le tue scorte e ricevi un promemoria "
-"quando sono in esaurimento"
+msgstr "Monitoraggio dell'inventario — monitora le tue scorte e ricevi un promemoria quando sono in esaurimento"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Duration — Define the start and end dates"
@@ -473,17 +468,12 @@ msgid "Fixed notifications being delayed after suspension"
 msgstr "Risolto il problema con il ritardo delle notifiche dopo la sospensione"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:35
-msgid ""
-"Fixed notifications being sent more than once after saving an existing "
-"treatment"
-msgstr ""
-"Risolto il problema con cui le notifiche venivano inviate più di una volta "
-"dopo aver salvato una trattamentoesistente"
+msgid "Fixed notifications being sent more than once after saving an existing treatment"
+msgstr "Risolto il problema con cui le notifiche venivano inviate più di una volta dopo aver salvato una trattamento esistente"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:36
 msgid "Added a label to show the frequency on treatments list"
-msgstr ""
-"Aggiunta un'etichetta per mostrare la frequenza nell'elenco dei trattamenti"
+msgstr "Aggiunta un'etichetta per mostrare la frequenza nell'elenco dei trattamenti"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:37
 msgid "Brazilian translation updated"
