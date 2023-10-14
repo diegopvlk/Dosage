@@ -71,6 +71,7 @@ export const DosageApplication = GObject.registerClass(
 					issue_url: 'https://github.com/diegopvlk/Dosage/issues',
 					license_type: Gtk.License.GPL_3_0_ONLY,
 					copyright: "© 2023 Diego Povliuk",
+					translator_credits: _("translator-credits"),
 				};
 				const aboutWindow = new Adw.AboutWindow(aboutParams);
 				aboutWindow.add_acknowledgement_section(_("Thanks to these projects!"), [

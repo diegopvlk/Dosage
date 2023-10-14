@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0.2\n"
+"Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-13 21:13-0300\n"
-"PO-Revision-Date: 2023-10-13 21:13-0300\n"
+"POT-Creation-Date: 2023-10-14 11:32-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -324,11 +324,15 @@ msgstr ""
 msgid "Increase notification priority"
 msgstr ""
 
-#: src/main.js:76
+#: src/main.js:74
+msgid "translator-credits"
+msgstr ""
+
+#: src/main.js:77
 msgid "Thanks to these projects!"
 msgstr ""
 
-#: src/main.js:107
+#: src/main.js:108
 msgid "Allow Dosage to run in background."
 msgstr ""
 
