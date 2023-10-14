@@ -1,5 +1,9 @@
+<img style="vertical-align: middle;" src="data/icons/hicolor/scalable/apps/io.github.diegopvlk.Dosage.svg" width="128" height="128" align="left">
+
 ## Dosage
-Keep track of your treatments!
+Keep track of your treatments
+
+<br>
 
 <a href='https://flathub.org/apps/io.github.diegopvlk.Dosage'><img width='240' alt='Download on Flathub' src='https://dl.flathub.org/assets/badges/flathub-badge-i-en.svg'/></a>
 
