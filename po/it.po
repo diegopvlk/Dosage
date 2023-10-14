@@ -154,7 +154,7 @@ msgstr "Pillole alternative"
 
 #: data/ui/med-window.blp:170
 msgid "Capsule"
-msgstr "Capsule"
+msgstr "Capsula"
 
 #: data/ui/med-window.blp:180
 msgid "Round pill"
