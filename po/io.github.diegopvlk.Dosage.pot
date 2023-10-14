@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0.1\n"
+"Project-Id-Version: 1.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-10 08:54-0300\n"
+"POT-Creation-Date: 2023-10-13 21:13-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Unselect"
 msgstr ""
 
-#: data/ui/window.blp:70 src/window.js:452
+#: data/ui/window.blp:70 src/window.js:469
 msgid "One-time entry"
 msgstr ""
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "New treatment"
 msgstr ""
 
-#: data/ui/med-window.blp:19 src/window.js:863
+#: data/ui/med-window.blp:19 src/window.js:883
 msgid "Cancel"
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Unit"
 msgstr ""
 
-#: data/ui/med-window.blp:57 src/window.js:751
+#: data/ui/med-window.blp:57 src/window.js:768
 msgid "Pill(s)"
 msgstr ""
 
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Color and icon"
 msgstr ""
 
-#: data/ui/med-window.blp:70 src/window.js:793
+#: data/ui/med-window.blp:70 src/window.js:810
 msgid "Color"
 msgstr ""
 
@@ -262,7 +262,7 @@ msgstr ""
 msgid "Today is cycle day..."
 msgstr ""
 
-#: data/ui/med-window.blp:406 src/main.js:67 src/window.js:400
+#: data/ui/med-window.blp:406 src/main.js:67 src/window.js:417
 #: data/io.github.diegopvlk.Dosage.desktop.in:3
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 msgid "Dosage"
@@ -312,7 +312,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: data/ui/med-window.blp:513 src/window.js:864 src/historyFactory.js:41
+#: data/ui/med-window.blp:513 src/window.js:884 src/historyFactory.js:41
 msgid "Delete"
 msgstr ""
 
@@ -332,59 +332,59 @@ msgstr ""
 msgid "Allow Dosage to run in background."
 msgstr ""
 
-#: src/window.js:92
+#: src/window.js:93
 msgid "You have treatments low in stock"
 msgstr ""
 
-#: src/window.js:348
+#: src/window.js:353
 msgid "No treatments added yet!"
 msgstr ""
 
-#: src/window.js:351
+#: src/window.js:356
 msgid "All done for today!"
 msgstr ""
 
-#: src/window.js:452
+#: src/window.js:469
 msgid "Confirm"
 msgstr ""
 
-#: src/window.js:656
+#: src/window.js:673
 msgid "Edit treatment"
 msgstr ""
 
-#: src/window.js:657
+#: src/window.js:674
 msgid "Save"
 msgstr ""
 
-#: src/window.js:741
+#: src/window.js:758
 msgid "New"
 msgstr ""
 
-#: src/window.js:791
+#: src/window.js:808
 msgid "New entry"
 msgstr ""
 
-#: src/window.js:792
+#: src/window.js:809
 msgid "Add to history"
 msgstr ""
 
-#: src/window.js:858
+#: src/window.js:878
 msgid "Are you sure?"
 msgstr ""
 
-#: src/window.js:1062
+#: src/window.js:1082
 msgid "Empty name"
 msgstr ""
 
-#: src/window.js:1067
+#: src/window.js:1087
 msgid "Empty unit"
 msgstr ""
 
-#: src/window.js:1078
+#: src/window.js:1098
 msgid "Name already exists"
 msgstr ""
 
-#: src/window.js:1092
+#: src/window.js:1112
 msgid "Duplicated time"
 msgstr ""
 
@@ -461,5 +461,23 @@ msgid "Duration — Define the start and end dates"
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
+msgid "Fixed notifications being delayed after suspension"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:35
+msgid ""
+"Fixed notifications being sent more than once after saving an existing "
+"treatment"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:36
+msgid "Added a label to show the frequency on treatments list"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:37
+msgid "Brazilian translation updated"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
 msgid "Initial Release"
 msgstr ""

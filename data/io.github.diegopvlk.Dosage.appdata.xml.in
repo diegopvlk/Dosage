@@ -25,6 +25,11 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.0.2" date="2023-10-13">
+			<description>
+				<p>Fixed notifications being delayed after suspension</p>
+			</description>
+		</release>
 		<release version="1.0.1" date="2023-10-10">
 			<description>
 				<p>Fixed notifications being sent more than once after saving an existing treatment</p>
