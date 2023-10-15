@@ -118,10 +118,13 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	if (parts.length > 1) takenTime += ' ' + parts[1];
 
 	if (item.taken === 'yes')
+		// TRANSLATORS: Keep it short
 		takenLabel.label = `${takenTime} │ ` +  _("Confirmed");
 	else if (item.taken === 'no')
+		// TRANSLATORS: Keep it short
 		takenLabel.label = _("Skipped");
 	else if (item.taken === 'miss')
+		// TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
 		takenLabel.label = _("Missed");
 
 	const colors = [

@@ -90,6 +90,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 				if (!this.get_visible()) {
 					const [ notification, app ] = this._getNotification();
+					// TRANSLATORS: Notification text for for when the inventory is low 
 					notification.set_body(_("You have treatments low in stock"));
 					app.send_notification('low-stock', notification);	
 				}
@@ -806,6 +807,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			}
 
 			medWindow.title = _('New entry');
+			// TRANSLATORS: Keep it short (add one-time entry to history)
 			saveButton.label = _('Add to history');
 			colorIcon.title = _('Color');
 			medWindow.add_css_class('one-time');
@@ -875,6 +877,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		deleteButton.connect('clicked', () => {
 			const dialog = new Adw.MessageDialog({
+				// TRANSLATORS: Message for confirmation when deleting an item
 				heading: _("Are you sure?"),
 				modal: true,
 				transient_for: medWindow,

@@ -71,6 +71,7 @@ export const DosageApplication = GObject.registerClass(
 					issue_url: 'https://github.com/diegopvlk/Dosage/issues',
 					license_type: Gtk.License.GPL_3_0_ONLY,
 					copyright: "© 2023 Diego Povliuk",
+					// TRANSLATORS: "Your Name <your@email.com>"
 					translator_credits: _("translator-credits"),
 				};
 				const aboutWindow = new Adw.AboutWindow(aboutParams);
@@ -105,7 +106,8 @@ export const DosageApplication = GObject.registerClass(
 				: Xdp.BackgroundFlags.NONE;
 			portal.request_background(
 				null,
-				_("Allow Dosage to run in background."),
+				// TRANSLATORS: Confirmation message to allow background permission
+				_("Accept to allow running in the background and receive notifications"),
 				['io.github.diegopvlk.Dosage', '--startup'],
 				setAutostart,
 				null,

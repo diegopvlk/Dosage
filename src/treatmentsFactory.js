@@ -86,6 +86,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	if (inv.enabled && inv.current <= inv.reminder) {
 		inventoryLabel.set_visible(true);
 		if (inv.current < 0)
+			// TRANSLATORS: Keep it short (label for when the inventory is low)
 			inventoryLabel.label = _("Low stock") + ` │ 0`;
 		else
 			inventoryLabel.label = _("Low stock") + ` │ ${inv.current}`;
@@ -94,7 +95,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	if (info.duration.enabled) {
 		durationLabel.set_visible(true);
 		const dt = GLib.DateTime.new_from_unix_utc(info.duration.end);
-
+		// TRANSLATORS: Keep it short (label for when duration is enabled)
 		durationLabel.label = _("Until") + ` ${dt.format('%d %B %Y')}`;
 	}
 

@@ -77,6 +77,7 @@ Adw.Window medWindow {
                         styles ['circular', 'default-clr']
                         valign: center;
                         name: 'default';
+                        // TRANSLATORS: Tooltip for the colors (from Default until Purple)
                         tooltip-text: _("Default");
                         icon-name: 'cross-large-symbolic';
                       }
@@ -147,6 +148,7 @@ Adw.Window medWindow {
                         styles ['flat', 'circular']
                         valign: center;
                         icon-name: 'pill-symbolic';
+                        // TRANSLATORS: Tooltip for the icons (from Pill until Potion)
                         tooltip-text: _("Pill");
                       }
                       Button {
@@ -311,6 +313,7 @@ Adw.Window medWindow {
                         styles ['flat', 'circular']
                         valign: center;
                         active: false;
+                        // TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa) 
                         label: _('Su');
                       }
                       ToggleButton {
@@ -388,6 +391,7 @@ Adw.Window medWindow {
                       Adw.SpinRow cycleCurrent {
                         activatable: false;
                         selectable: false;
+                        // TRANSLATORS: Day in cycle, try to keep it short
                         title: _('Today is cycle day...');
                         climb-rate: 0.2;
                         adjustment: Adjustment {
