@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-14 11:32-0300\n"
-"PO-Revision-Date: 2023-10-15 17:10+0000\n"
+"PO-Revision-Date: 2023-10-15 22:56+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
 "dosage/nb_NO/>\n"
@@ -56,16 +56,18 @@ msgid "Add"
 msgstr "Legg til"
 
 #: data/ui/window.blp:154
+#, fuzzy
 msgid "Add some clicking the button bellow"
-msgstr ""
+msgstr "Legg til noen ved å klikke på knappen nedenfor"
 
 #: data/ui/window.blp:179 data/ui/preferences.blp:9
 msgid "Preferences"
 msgstr "Innstillinger"
 
 #: data/ui/window.blp:183
+#, fuzzy
 msgid "About Dosage"
-msgstr ""
+msgstr "Om"
 
 #: data/ui/window.blp:187
 msgid "Quit"
@@ -90,11 +92,11 @@ msgstr "Navn"
 
 #: data/ui/med-window.blp:56
 msgid "Unit"
-msgstr ""
+msgstr "Enhet"
 
 #: data/ui/med-window.blp:57 src/window.js:768
 msgid "Pill(s)"
-msgstr ""
+msgstr "Pille(r)"
 
 #: data/ui/med-window.blp:60
 msgid "Notes"
@@ -134,7 +136,7 @@ msgstr "Grønn"
 
 #: data/ui/med-window.blp:115
 msgid "Cyan"
-msgstr ""
+msgstr "Cyanblå"
 
 #: data/ui/med-window.blp:122
 msgid "Blue"
@@ -142,7 +144,7 @@ msgstr "Blå"
 
 #: data/ui/med-window.blp:129
 msgid "Purple"
-msgstr ""
+msgstr "Lilla"
 
 #: data/ui/med-window.blp:138
 msgid "Icon"
@@ -197,12 +199,14 @@ msgid "Bottle"
 msgstr "Flaske"
 
 #: data/ui/med-window.blp:271
+#, fuzzy
 msgid "Drop"
-msgstr ""
+msgstr "Pipette"
 
 #: data/ui/med-window.blp:281
+#, fuzzy
 msgid "Potion"
-msgstr ""
+msgstr "Krukke"
 
 #: data/ui/med-window.blp:295
 msgid "Every day"
@@ -213,17 +217,18 @@ msgid "Specific days"
 msgstr "Spesifikke dager"
 
 #: data/ui/med-window.blp:297
+#, fuzzy
 msgid "Cycle"
-msgstr ""
+msgstr "Syklus"
 
 #: data/ui/med-window.blp:298 src/treatmentsFactory.js:144
 msgid "When needed"
-msgstr ""
+msgstr "Ved behov"
 
 #: data/ui/med-window.blp:306 data/ui/med-window.blp:460
 #: data/ui/med-window.blp:476 data/ui/med-window.blp:494
 msgid "Choose"
-msgstr ""
+msgstr "Velg"
 
 #: data/ui/med-window.blp:314 src/treatmentsFactory.js:129
 msgid "Su"
@@ -254,86 +259,89 @@ msgid "Sa"
 msgstr "Lø"
 
 #: data/ui/med-window.blp:367
+#, fuzzy
 msgid "Days active"
-msgstr ""
+msgstr "Dager aktiv"
 
 #: data/ui/med-window.blp:379
+#, fuzzy
 msgid "Days inactive"
-msgstr ""
+msgstr "Dager inaktiv"
 
 #: data/ui/med-window.blp:391
+#, fuzzy
 msgid "Today is cycle day..."
-msgstr ""
+msgstr "I dag er det syklusdag …"
 
 #: data/ui/med-window.blp:406 src/main.js:67 src/window.js:417
 #: data/io.github.diegopvlk.Dosage.desktop.in:3
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 msgid "Dosage"
-msgstr ""
+msgstr "Dosering"
 
 #: data/ui/med-window.blp:407
 msgid "Time and amount"
-msgstr ""
+msgstr "Tid og mengde"
 
 #: data/ui/med-window.blp:415
 msgid "Add dose"
-msgstr ""
+msgstr "Legg til dose"
 
 #: data/ui/med-window.blp:420
 msgid "Inventory"
-msgstr ""
+msgstr "Inventar"
 
 #: data/ui/med-window.blp:421
 msgid "Manage your stock"
-msgstr ""
+msgstr "Håndter din beholdning"
 
 #: data/ui/med-window.blp:426
 msgid "Current"
-msgstr ""
+msgstr "Nåværende"
 
 #: data/ui/med-window.blp:437
 msgid "Remind me at"
-msgstr ""
+msgstr "Minn meg på dette"
 
 #: data/ui/med-window.blp:450
 msgid "Duration"
-msgstr ""
+msgstr "Varighet"
 
 #: data/ui/med-window.blp:451
 msgid "Set a start and end date"
-msgstr ""
+msgstr "Sett start- og sluttdato"
 
 #: data/ui/med-window.blp:455
 msgid "Starts on"
-msgstr ""
+msgstr "Starter"
 
 #: data/ui/med-window.blp:471
 msgid "Ends on"
-msgstr ""
+msgstr "Slutter"
 
 #: data/ui/med-window.blp:489
 msgid "Date"
-msgstr ""
+msgstr "Dato"
 
 #: data/ui/med-window.blp:513 src/window.js:884 src/historyFactory.js:41
 msgid "Delete"
-msgstr ""
+msgstr "Slett"
 
 #: data/ui/preferences.blp:15
 msgid "Autostart at login"
-msgstr ""
+msgstr "Autostart ved innlogging"
 
 #: data/ui/preferences.blp:24
 msgid "Increase notification priority"
-msgstr ""
+msgstr "Øk merknadsprioritet"
 
 #: src/main.js:74
 msgid "translator-credits"
-msgstr ""
+msgstr "Allan Nordhøy <epost@anotheragency.no>"
 
 #: src/main.js:77
 msgid "Thanks to these projects!"
-msgstr ""
+msgstr "Takk til disse prosjektene."
 
 #: src/main.js:108
 msgid "Allow Dosage to run in background."
@@ -341,79 +349,79 @@ msgstr ""
 
 #: src/window.js:93
 msgid "You have treatments low in stock"
-msgstr ""
+msgstr "Du har behandlinger med manko på beholdning"
 
 #: src/window.js:353
 msgid "No treatments added yet!"
-msgstr ""
+msgstr "Ingen behandlinger lagt til enda."
 
 #: src/window.js:356
 msgid "All done for today!"
-msgstr ""
+msgstr "Ferdig for i dag."
 
 #: src/window.js:469
 msgid "Confirm"
-msgstr ""
+msgstr "Bekreft"
 
 #: src/window.js:673
 msgid "Edit treatment"
-msgstr ""
+msgstr "Rediger behandling"
 
 #: src/window.js:674
 msgid "Save"
-msgstr ""
+msgstr "Lagre"
 
 #: src/window.js:758
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 #: src/window.js:808
 msgid "New entry"
-msgstr ""
+msgstr "Ny oppføring"
 
 #: src/window.js:809
 msgid "Add to history"
-msgstr ""
+msgstr "Legg til i historikk"
 
 #: src/window.js:878
 msgid "Are you sure?"
-msgstr ""
+msgstr "Er du sikker?"
 
 #: src/window.js:1082
 msgid "Empty name"
-msgstr ""
+msgstr "Tomt navn"
 
 #: src/window.js:1087
 msgid "Empty unit"
-msgstr ""
+msgstr "Tom enhet"
 
 #: src/window.js:1098
 msgid "Name already exists"
-msgstr ""
+msgstr "Navnet finnes allerede"
 
 #: src/window.js:1112
 msgid "Duplicated time"
-msgstr ""
+msgstr "Duplisert tid"
 
 #: src/historyFactory.js:121
 msgid "Confirmed"
-msgstr ""
+msgstr "Bekreftet"
 
 #: src/historyFactory.js:123
 msgid "Skipped"
-msgstr ""
+msgstr "Hoppet over"
 
 #: src/historyFactory.js:125
 msgid "Missed"
-msgstr ""
+msgstr "Glemt"
 
 #: src/treatmentsFactory.js:89 src/treatmentsFactory.js:91
 msgid "Low stock"
-msgstr ""
+msgstr "Lav beholdning"
 
 #: src/treatmentsFactory.js:98
 msgid "Until"
-msgstr ""
+msgstr "Til"
 
 #: src/treatmentsFactory.js:109 src/treatmentsFactory.js:120
 msgid "Daily"
@@ -433,7 +441,7 @@ msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
 msgid "Keep track of your treatments!"
-msgstr ""
+msgstr "Hold øye med behandlingene dine."
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
 msgid "Features:"
@@ -441,31 +449,32 @@ msgstr "Funksjoner:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
 msgid "Notifications — Get reminders on the right time"
-msgstr ""
+msgstr "Merknader — få påminnelser til rett tid"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
 msgid "History — See which medications you took or skipped"
-msgstr ""
+msgstr "Historikk — ta rede på hvilken medisin du har tatt eller hoppet over"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
 msgid "Dosage management — Multiple doses with different times"
-msgstr ""
+msgstr "Dosehåndtering — flere doser med forskjellige tider"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
-msgstr ""
+msgstr "Frekvensmodus — hver dag, spesifikke dager, eller syklus ved behov"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Color and icon — Give a shape for your treatment"
-msgstr ""
+msgstr "Farge og ikon — gi behandlingen din en form"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
+"Inventar og sporing — hold øye med beholdning og få påminnelse når den er lav"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Duration — Define the start and end dates"
-msgstr ""
+msgstr "Varighet — definer start- og sluttdatoer"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid "Fixed notifications being delayed after suspension"
