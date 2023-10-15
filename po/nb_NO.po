@@ -8,49 +8,52 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-14 11:32-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-10-15 17:10+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
+"dosage/nb_NO/>\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.1-dev\n"
 
 #: data/ui/window.blp:29
 msgid "Menu"
-msgstr ""
+msgstr "Meny"
 
 #: data/ui/window.blp:41
 msgid "Today"
-msgstr ""
+msgstr "I dag"
 
 #: data/ui/window.blp:62
 msgid "Unselect"
-msgstr ""
+msgstr "Fravelg"
 
 #: data/ui/window.blp:70 src/window.js:469
 msgid "One-time entry"
-msgstr ""
+msgstr "Engangsoppføring"
 
 #: data/ui/window.blp:76
 msgid "Skip"
-msgstr ""
+msgstr "Hopp over"
 
 #: data/ui/window.blp:95
 msgid "History"
-msgstr ""
+msgstr "Historikk"
 
 #: data/ui/window.blp:110
 msgid "Empty history"
-msgstr ""
+msgstr "Tøm historikk"
 
 #: data/ui/window.blp:121
 msgid "Treatments"
-msgstr ""
+msgstr "Behandlinger"
 
 #: data/ui/window.blp:147 data/ui/med-window.blp:25
 msgid "Add"
-msgstr ""
+msgstr "Legg til"
 
 #: data/ui/window.blp:154
 msgid "Add some clicking the button bellow"
@@ -58,7 +61,7 @@ msgstr ""
 
 #: data/ui/window.blp:179 data/ui/preferences.blp:9
 msgid "Preferences"
-msgstr ""
+msgstr "Innstillinger"
 
 #: data/ui/window.blp:183
 msgid "About Dosage"
@@ -66,23 +69,24 @@ msgstr ""
 
 #: data/ui/window.blp:187
 msgid "Quit"
-msgstr ""
+msgstr "Avslutt"
 
 #: data/ui/med-window.blp:11
 msgid "New treatment"
-msgstr ""
+msgstr "Ny behandling"
 
 #: data/ui/med-window.blp:19 src/window.js:883
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: data/ui/med-window.blp:44
+#, fuzzy
 msgid "From treatments list"
-msgstr ""
+msgstr "Fra behandlingsliste"
 
 #: data/ui/med-window.blp:53
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 #: data/ui/med-window.blp:56
 msgid "Unit"
@@ -94,39 +98,39 @@ msgstr ""
 
 #: data/ui/med-window.blp:60
 msgid "Notes"
-msgstr ""
+msgstr "Notater"
 
 #: data/ui/med-window.blp:61
 msgid "After meal"
-msgstr ""
+msgstr "Etter måltid"
 
 #: data/ui/med-window.blp:65
 msgid "Color and icon"
-msgstr ""
+msgstr "Farge og ikon"
 
 #: data/ui/med-window.blp:70 src/window.js:810
 msgid "Color"
-msgstr ""
+msgstr "Farge"
 
 #: data/ui/med-window.blp:80
 msgid "Default"
-msgstr ""
+msgstr "Forvalg"
 
 #: data/ui/med-window.blp:87
 msgid "Red"
-msgstr ""
+msgstr "Rød"
 
 #: data/ui/med-window.blp:94
 msgid "Orange"
-msgstr ""
+msgstr "Oransje"
 
 #: data/ui/med-window.blp:101
 msgid "Yellow"
-msgstr ""
+msgstr "Gul"
 
 #: data/ui/med-window.blp:108
 msgid "Green"
-msgstr ""
+msgstr "Grønn"
 
 #: data/ui/med-window.blp:115
 msgid "Cyan"
@@ -134,7 +138,7 @@ msgstr ""
 
 #: data/ui/med-window.blp:122
 msgid "Blue"
-msgstr ""
+msgstr "Blå"
 
 #: data/ui/med-window.blp:129
 msgid "Purple"
@@ -142,55 +146,55 @@ msgstr ""
 
 #: data/ui/med-window.blp:138
 msgid "Icon"
-msgstr ""
+msgstr "Ikon"
 
 #: data/ui/med-window.blp:150
 msgid "Pill"
-msgstr ""
+msgstr "Pille"
 
 #: data/ui/med-window.blp:160
 msgid "Alternative pill"
-msgstr ""
+msgstr "Alternativ pille"
 
 #: data/ui/med-window.blp:170
 msgid "Capsule"
-msgstr ""
+msgstr "Kapsel"
 
 #: data/ui/med-window.blp:180
 msgid "Round pill"
-msgstr ""
+msgstr "Rund pille"
 
 #: data/ui/med-window.blp:190
 msgid "Alternative round pill"
-msgstr ""
+msgstr "Alternativ rund pille"
 
 #: data/ui/med-window.blp:200
 msgid "Ampoule"
-msgstr ""
+msgstr "Ampull"
 
 #: data/ui/med-window.blp:210
 msgid "Injection"
-msgstr ""
+msgstr "Injeksjon"
 
 #: data/ui/med-window.blp:221
 msgid "Square pill"
-msgstr ""
+msgstr "Firkantig pille"
 
 #: data/ui/med-window.blp:231
 msgid "Alternative square pill"
-msgstr ""
+msgstr "Alternativ firkantig pille"
 
 #: data/ui/med-window.blp:241
 msgid "Triangle pill"
-msgstr ""
+msgstr "Trekantet pille"
 
 #: data/ui/med-window.blp:251
 msgid "Alternative triangle pill"
-msgstr ""
+msgstr "Alternativ trekantet pille"
 
 #: data/ui/med-window.blp:261
 msgid "Bottle"
-msgstr ""
+msgstr "Flaske"
 
 #: data/ui/med-window.blp:271
 msgid "Drop"
@@ -202,11 +206,11 @@ msgstr ""
 
 #: data/ui/med-window.blp:295
 msgid "Every day"
-msgstr ""
+msgstr "Hver dag"
 
 #: data/ui/med-window.blp:296
 msgid "Specific days"
-msgstr ""
+msgstr "Spesifikke dager"
 
 #: data/ui/med-window.blp:297
 msgid "Cycle"
@@ -223,31 +227,31 @@ msgstr ""
 
 #: data/ui/med-window.blp:314 src/treatmentsFactory.js:129
 msgid "Su"
-msgstr ""
+msgstr "Sø"
 
 #: data/ui/med-window.blp:320 src/treatmentsFactory.js:130
 msgid "Mo"
-msgstr ""
+msgstr "Ma"
 
 #: data/ui/med-window.blp:326 src/treatmentsFactory.js:131
 msgid "Tu"
-msgstr ""
+msgstr "Ti"
 
 #: data/ui/med-window.blp:332 src/treatmentsFactory.js:132
 msgid "We"
-msgstr ""
+msgstr "On"
 
 #: data/ui/med-window.blp:338 src/treatmentsFactory.js:133
 msgid "Th"
-msgstr ""
+msgstr "To"
 
 #: data/ui/med-window.blp:344 src/treatmentsFactory.js:134
 msgid "Fr"
-msgstr ""
+msgstr "Fr"
 
 #: data/ui/med-window.blp:350 src/treatmentsFactory.js:135
 msgid "Sa"
-msgstr ""
+msgstr "Lø"
 
 #: data/ui/med-window.blp:367
 msgid "Days active"
@@ -413,15 +417,15 @@ msgstr ""
 
 #: src/treatmentsFactory.js:109 src/treatmentsFactory.js:120
 msgid "Daily"
-msgstr ""
+msgstr "Daglig"
 
 #: src/treatmentsFactory.js:116
 msgid "Weekend"
-msgstr ""
+msgstr "Helg"
 
 #: src/treatmentsFactory.js:118
 msgid "Weekdays"
-msgstr ""
+msgstr "Ukedager"
 
 #: data/io.github.diegopvlk.Dosage.desktop.in:9
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy"
@@ -433,7 +437,7 @@ msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
 msgid "Features:"
-msgstr ""
+msgstr "Funksjoner:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
 msgid "Notifications — Get reminders on the right time"
