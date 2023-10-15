@@ -26,24 +26,24 @@
 
 	<releases>
 		<release version="1.0.3" date="2023-10-14">
-			<description>
+			<description translatable="no">
 				<p>Added Italian translation (by Albano Battistella)</p>
 			</description>
 		</release>
 		<release version="1.0.2" date="2023-10-13">
-			<description>
+			<description translatable="no">
 				<p>Fixed notifications being delayed after suspension</p>
 			</description>
 		</release>
 		<release version="1.0.1" date="2023-10-10">
-			<description>
+			<description translatable="no">
 				<p>Fixed notifications being sent more than once after saving an existing treatment</p>
 				<p>Added a label to show the frequency on treatments list</p>
 				<p>Brazilian translation updated</p>
 			</description>
 		</release>
 		<release version="1.0.0" date="2023-10-05">
-			<description>
+			<description translatable="no">
 				<p>Initial Release</p>
 			</description>
 		</release>
