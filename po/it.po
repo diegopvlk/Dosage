@@ -33,11 +33,11 @@ msgstr "Funzionalità:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
 msgid "Notifications — Get reminders on the right time"
-msgstr "Notifiche — ricevi promemoria al momento giusto"
+msgstr "Notifiche — Ricevi promemoria al momento giusto"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
 msgid "History — See which medications you took or skipped"
-msgstr "Cronologia — controlla quali farmaci hai preso o saltato"
+msgstr "Cronologia — Controlla quali farmaci hai preso o saltato"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
 msgid "Dosage management — Multiple doses with different times"
@@ -45,19 +45,19 @@ msgstr "Gestione del dosaggio — Dosi multiple con tempi diversi"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
-msgstr "Modalità di frequenza — ogni giorno, giorni specifici, ciclicamente o solo quando necessario"
+msgstr "Modalità di frequenza — Ogni giorno, giorni specifici, ciclicamente o solo quando necessario"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Color and icon — Give a shape for your treatment"
-msgstr "Colore e icona — dai una forma al tuo trattamento"
+msgstr "Colore e icona — Dai una forma al tuo trattamento"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
-msgstr "Monitoraggio dell'inventario — monitora le tue scorte e ricevi un promemoria quando sono in esaurimento"
+msgstr "Monitoraggio dell'inventario — Monitora le tue scorte e ricevi un promemoria quando sono in esaurimento"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Duration — Define the start and end dates"
-msgstr "Durata — definisci le date di inizio e di fine"
+msgstr "Durata — Definisci le date di inizio e di fine"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
@@ -95,7 +95,7 @@ msgstr "Grazie a questi progetti!"
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:110
 msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
+msgstr "Accetta per consentire l'esecuzione in background e ricevere notifiche"
 
 #. TRANSLATORS: Keep it short (label for when the inventory is low)
 #: src/treatmentsFactory.js:90 src/treatmentsFactory.js:92
@@ -154,7 +154,7 @@ msgstr "Quando necessario"
 
 #: src/utils.js:137
 msgid "Delete dose"
-msgstr ""
+msgstr "Cancella dose"
 
 #. TRANSLATORS: Notification text for for when the inventory is low
 #: src/window.js:94
@@ -445,7 +445,7 @@ msgstr "Aumenta la priorità delle notifiche"
 
 #: data/ui/preferences.blp:25
 msgid "On GNOME this will make the notification show on fullscreen mode or even if 'Do Not Disturb' is enabled"
-msgstr ""
+msgstr "In GNOME questo farà sì che la notifica venga visualizzata in modalità a schermo intero o anche se è abilitata la modalità 'Non disturbare'"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
