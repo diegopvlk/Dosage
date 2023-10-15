@@ -1,0 +1,484 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023 Diego Povliuk
+# This file is distributed under the same license as the io.github.diegopvlk.Dosage package.
+# Diego Povliuk <diego.pvlk@gmail.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.diegopvlk.Dosage\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-14 11:32-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: nb_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/ui/window.blp:29
+msgid "Menu"
+msgstr ""
+
+#: data/ui/window.blp:41
+msgid "Today"
+msgstr ""
+
+#: data/ui/window.blp:62
+msgid "Unselect"
+msgstr ""
+
+#: data/ui/window.blp:70 src/window.js:469
+msgid "One-time entry"
+msgstr ""
+
+#: data/ui/window.blp:76
+msgid "Skip"
+msgstr ""
+
+#: data/ui/window.blp:95
+msgid "History"
+msgstr ""
+
+#: data/ui/window.blp:110
+msgid "Empty history"
+msgstr ""
+
+#: data/ui/window.blp:121
+msgid "Treatments"
+msgstr ""
+
+#: data/ui/window.blp:147 data/ui/med-window.blp:25
+msgid "Add"
+msgstr ""
+
+#: data/ui/window.blp:154
+msgid "Add some clicking the button bellow"
+msgstr ""
+
+#: data/ui/window.blp:179 data/ui/preferences.blp:9
+msgid "Preferences"
+msgstr ""
+
+#: data/ui/window.blp:183
+msgid "About Dosage"
+msgstr ""
+
+#: data/ui/window.blp:187
+msgid "Quit"
+msgstr ""
+
+#: data/ui/med-window.blp:11
+msgid "New treatment"
+msgstr ""
+
+#: data/ui/med-window.blp:19 src/window.js:883
+msgid "Cancel"
+msgstr ""
+
+#: data/ui/med-window.blp:44
+msgid "From treatments list"
+msgstr ""
+
+#: data/ui/med-window.blp:53
+msgid "Name"
+msgstr ""
+
+#: data/ui/med-window.blp:56
+msgid "Unit"
+msgstr ""
+
+#: data/ui/med-window.blp:57 src/window.js:768
+msgid "Pill(s)"
+msgstr ""
+
+#: data/ui/med-window.blp:60
+msgid "Notes"
+msgstr ""
+
+#: data/ui/med-window.blp:61
+msgid "After meal"
+msgstr ""
+
+#: data/ui/med-window.blp:65
+msgid "Color and icon"
+msgstr ""
+
+#: data/ui/med-window.blp:70 src/window.js:810
+msgid "Color"
+msgstr ""
+
+#: data/ui/med-window.blp:80
+msgid "Default"
+msgstr ""
+
+#: data/ui/med-window.blp:87
+msgid "Red"
+msgstr ""
+
+#: data/ui/med-window.blp:94
+msgid "Orange"
+msgstr ""
+
+#: data/ui/med-window.blp:101
+msgid "Yellow"
+msgstr ""
+
+#: data/ui/med-window.blp:108
+msgid "Green"
+msgstr ""
+
+#: data/ui/med-window.blp:115
+msgid "Cyan"
+msgstr ""
+
+#: data/ui/med-window.blp:122
+msgid "Blue"
+msgstr ""
+
+#: data/ui/med-window.blp:129
+msgid "Purple"
+msgstr ""
+
+#: data/ui/med-window.blp:138
+msgid "Icon"
+msgstr ""
+
+#: data/ui/med-window.blp:150
+msgid "Pill"
+msgstr ""
+
+#: data/ui/med-window.blp:160
+msgid "Alternative pill"
+msgstr ""
+
+#: data/ui/med-window.blp:170
+msgid "Capsule"
+msgstr ""
+
+#: data/ui/med-window.blp:180
+msgid "Round pill"
+msgstr ""
+
+#: data/ui/med-window.blp:190
+msgid "Alternative round pill"
+msgstr ""
+
+#: data/ui/med-window.blp:200
+msgid "Ampoule"
+msgstr ""
+
+#: data/ui/med-window.blp:210
+msgid "Injection"
+msgstr ""
+
+#: data/ui/med-window.blp:221
+msgid "Square pill"
+msgstr ""
+
+#: data/ui/med-window.blp:231
+msgid "Alternative square pill"
+msgstr ""
+
+#: data/ui/med-window.blp:241
+msgid "Triangle pill"
+msgstr ""
+
+#: data/ui/med-window.blp:251
+msgid "Alternative triangle pill"
+msgstr ""
+
+#: data/ui/med-window.blp:261
+msgid "Bottle"
+msgstr ""
+
+#: data/ui/med-window.blp:271
+msgid "Drop"
+msgstr ""
+
+#: data/ui/med-window.blp:281
+msgid "Potion"
+msgstr ""
+
+#: data/ui/med-window.blp:295
+msgid "Every day"
+msgstr ""
+
+#: data/ui/med-window.blp:296
+msgid "Specific days"
+msgstr ""
+
+#: data/ui/med-window.blp:297
+msgid "Cycle"
+msgstr ""
+
+#: data/ui/med-window.blp:298 src/treatmentsFactory.js:144
+msgid "When needed"
+msgstr ""
+
+#: data/ui/med-window.blp:306 data/ui/med-window.blp:460
+#: data/ui/med-window.blp:476 data/ui/med-window.blp:494
+msgid "Choose"
+msgstr ""
+
+#: data/ui/med-window.blp:314 src/treatmentsFactory.js:129
+msgid "Su"
+msgstr ""
+
+#: data/ui/med-window.blp:320 src/treatmentsFactory.js:130
+msgid "Mo"
+msgstr ""
+
+#: data/ui/med-window.blp:326 src/treatmentsFactory.js:131
+msgid "Tu"
+msgstr ""
+
+#: data/ui/med-window.blp:332 src/treatmentsFactory.js:132
+msgid "We"
+msgstr ""
+
+#: data/ui/med-window.blp:338 src/treatmentsFactory.js:133
+msgid "Th"
+msgstr ""
+
+#: data/ui/med-window.blp:344 src/treatmentsFactory.js:134
+msgid "Fr"
+msgstr ""
+
+#: data/ui/med-window.blp:350 src/treatmentsFactory.js:135
+msgid "Sa"
+msgstr ""
+
+#: data/ui/med-window.blp:367
+msgid "Days active"
+msgstr ""
+
+#: data/ui/med-window.blp:379
+msgid "Days inactive"
+msgstr ""
+
+#: data/ui/med-window.blp:391
+msgid "Today is cycle day..."
+msgstr ""
+
+#: data/ui/med-window.blp:406 src/main.js:67 src/window.js:417
+#: data/io.github.diegopvlk.Dosage.desktop.in:3
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
+msgid "Dosage"
+msgstr ""
+
+#: data/ui/med-window.blp:407
+msgid "Time and amount"
+msgstr ""
+
+#: data/ui/med-window.blp:415
+msgid "Add dose"
+msgstr ""
+
+#: data/ui/med-window.blp:420
+msgid "Inventory"
+msgstr ""
+
+#: data/ui/med-window.blp:421
+msgid "Manage your stock"
+msgstr ""
+
+#: data/ui/med-window.blp:426
+msgid "Current"
+msgstr ""
+
+#: data/ui/med-window.blp:437
+msgid "Remind me at"
+msgstr ""
+
+#: data/ui/med-window.blp:450
+msgid "Duration"
+msgstr ""
+
+#: data/ui/med-window.blp:451
+msgid "Set a start and end date"
+msgstr ""
+
+#: data/ui/med-window.blp:455
+msgid "Starts on"
+msgstr ""
+
+#: data/ui/med-window.blp:471
+msgid "Ends on"
+msgstr ""
+
+#: data/ui/med-window.blp:489
+msgid "Date"
+msgstr ""
+
+#: data/ui/med-window.blp:513 src/window.js:884 src/historyFactory.js:41
+msgid "Delete"
+msgstr ""
+
+#: data/ui/preferences.blp:15
+msgid "Autostart at login"
+msgstr ""
+
+#: data/ui/preferences.blp:24
+msgid "Increase notification priority"
+msgstr ""
+
+#: src/main.js:74
+msgid "translator-credits"
+msgstr ""
+
+#: src/main.js:77
+msgid "Thanks to these projects!"
+msgstr ""
+
+#: src/main.js:108
+msgid "Allow Dosage to run in background."
+msgstr ""
+
+#: src/window.js:93
+msgid "You have treatments low in stock"
+msgstr ""
+
+#: src/window.js:353
+msgid "No treatments added yet!"
+msgstr ""
+
+#: src/window.js:356
+msgid "All done for today!"
+msgstr ""
+
+#: src/window.js:469
+msgid "Confirm"
+msgstr ""
+
+#: src/window.js:673
+msgid "Edit treatment"
+msgstr ""
+
+#: src/window.js:674
+msgid "Save"
+msgstr ""
+
+#: src/window.js:758
+msgid "New"
+msgstr ""
+
+#: src/window.js:808
+msgid "New entry"
+msgstr ""
+
+#: src/window.js:809
+msgid "Add to history"
+msgstr ""
+
+#: src/window.js:878
+msgid "Are you sure?"
+msgstr ""
+
+#: src/window.js:1082
+msgid "Empty name"
+msgstr ""
+
+#: src/window.js:1087
+msgid "Empty unit"
+msgstr ""
+
+#: src/window.js:1098
+msgid "Name already exists"
+msgstr ""
+
+#: src/window.js:1112
+msgid "Duplicated time"
+msgstr ""
+
+#: src/historyFactory.js:121
+msgid "Confirmed"
+msgstr ""
+
+#: src/historyFactory.js:123
+msgid "Skipped"
+msgstr ""
+
+#: src/historyFactory.js:125
+msgid "Missed"
+msgstr ""
+
+#: src/treatmentsFactory.js:89 src/treatmentsFactory.js:91
+msgid "Low stock"
+msgstr ""
+
+#: src/treatmentsFactory.js:98
+msgid "Until"
+msgstr ""
+
+#: src/treatmentsFactory.js:109 src/treatmentsFactory.js:120
+msgid "Daily"
+msgstr ""
+
+#: src/treatmentsFactory.js:116
+msgid "Weekend"
+msgstr ""
+
+#: src/treatmentsFactory.js:118
+msgid "Weekdays"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.desktop.in:9
+msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
+msgid "Keep track of your treatments!"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
+msgid "Features:"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
+msgid "Notifications — Get reminders on the right time"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
+msgid "History — See which medications you took or skipped"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
+msgid "Dosage management — Multiple doses with different times"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
+msgid "Frequency modes — Every day, specific days, cycle or just when needed"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
+msgid "Color and icon — Give a shape for your treatment"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
+msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
+msgid "Duration — Define the start and end dates"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
+msgid "Fixed notifications being delayed after suspension"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:35
+msgid "Fixed notifications being sent more than once after saving an existing treatment"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:36
+msgid "Added a label to show the frequency on treatments list"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:37
+msgid "Brazilian translation updated"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
+msgid "Initial Release"
+msgstr ""
