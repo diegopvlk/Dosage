@@ -25,8 +25,8 @@ msgid "Dosage"
 msgstr "Дозування"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
-msgid "Keep track of your treatments!"
-msgstr "Слідкуйте за вашими курсами лікування!"
+msgid "Keep track of your treatments"
+msgstr "Слідкуйте за вашими курсами лікування"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
 msgid "Features:"

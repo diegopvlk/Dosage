@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
 	<name>Dosage</name>
-	<summary>Keep track of your treatments!</summary>
+	<summary>Keep track of your treatments</summary>
 
 	<description>
 		<p>Features:</p>
 		<ul>
-			<li>Notifications — Get reminders on the right time</li>
+			<li>Notifications — Get reminders at the right time</li>
 			<li>History — See which medications you took or skipped</li>
 			<li>Dosage management — Multiple doses with different times</li>
 			<li>Frequency modes — Every day, specific days, cycle or just when needed</li>

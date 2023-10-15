@@ -24,8 +24,8 @@ msgid "Dosage"
 msgstr "Dosagem"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
-msgid "Keep track of your treatments!"
-msgstr "Acompanhe seus tratamentos!"
+msgid "Keep track of your treatments"
+msgstr "Acompanhe seus tratamentos"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
 msgid "Features:"
@@ -86,7 +86,7 @@ msgstr "Perdido"
 #. TRANSLATORS: "Your Name <your@email.com>"
 #: src/main.js:75
 msgid "translator-credits"
-msgstr "Diego Povliuk <diego.pvlk@gmail.com>"
+msgstr ""
 
 #: src/main.js:78
 msgid "Thanks to these projects!"
