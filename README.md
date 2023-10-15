@@ -8,7 +8,7 @@ Keep track of your treatments
 <a href='https://flathub.org/apps/io.github.diegopvlk.Dosage'><img width='240' alt='Download on Flathub' src='https://dl.flathub.org/assets/badges/flathub-badge-i-en.svg'/></a>
 
 ### Features
-- **Notifications** — Get reminders on the right time  
+- **Notifications** — Get reminders at the right time  
 - **History** — See which medications you took or skipped   
 - **Dosage management** — Multiple doses with different times
 - **Frequency modes** — Every day, selected days, cycle or just when needed    
