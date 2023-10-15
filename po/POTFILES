@@ -1,14 +1,15 @@
-data/io.github.diegopvlk.Dosage.desktop.in
 data/io.github.diegopvlk.Dosage.appdata.xml.in
+data/io.github.diegopvlk.Dosage.desktop.in
 data/io.github.diegopvlk.Dosage.gschema.xml
 
-data/ui/window.blp
 data/ui/med-window.blp
 data/ui/preferences.blp
+data/ui/window.blp
 
+src/historyFactory.js
 src/main.js
-src/window.js
 src/medication.js
 src/todayFactory.js
-src/historyFactory.js
 src/treatmentsFactory.js
+src/utils.js
+src/window.js
