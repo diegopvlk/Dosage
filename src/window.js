@@ -74,8 +74,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 		} catch (err) {
 			console.error('Error loading treatments/history/today... ', err);
 		}
-		// set backdrop to send notifications only when the window is inactive
-		this.connect('hide', () => this.set_state_flags(Gtk.StateFlags.BACKDROP, true));
 	}
 
 	#checkInventory() {
@@ -391,19 +389,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 		});
 
 		this._scheduledItems[pseudoId] = setTimeout(() => {
-			/* 
-			using backdrop instead of .is_active, because .is_active is false 
-			if there is a modal showing and true after the window closes
-			and for some reason .is_suspended always returns false
-			*/
-			const stateFlags = this.get_state_flags();
-			if (stateFlags & Gtk.StateFlags.BACKDROP) {	
-				const [notification, app] = this._getNotification();
-				notification.set_body(
-					`${item.name}  ⦁  ${item.info.dosage.dose} ${item.unit}`
-				);
-				app.send_notification(pseudoId, notification);
-			}
+			const [notification, app] = this._getNotification();
+			notification.set_body(
+				`${item.name}  ⦁  ${item.info.dosage.dose} ${item.unit}`
+			);
+			app.send_notification(pseudoId, notification);
 		}, timeDifference);
 	}
 
