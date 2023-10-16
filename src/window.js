@@ -966,13 +966,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 			} else
 				start = today.format('%s');
 
-			recurring = recurringNotif.get_active();
-
 			name = medName.text.trim(),
 			unit = medUnit.text.trim(),
 			notes = medNotes.text.trim(),
 			days = getSpecificDays();
 			doses = getDoses();
+			recurring = recurringNotif.get_active();
 			cycle[0] = cycleActive.adjustment.value;
 			cycle[1] = cycleInactive.adjustment.value;
 			cycle[2] = cycleCurrent.adjustment.value;
@@ -1010,12 +1009,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 					info: {
 						notes: notes,
 						frequency: freq,
-						recurring: recurring,
 						color: color,
 						icon: icon,
 						days: days,
 						cycle: cycle,
 						dosage: doses,
+						recurring: recurring,
 						inventory: inventory,
 						duration: duration,
 					},
