@@ -240,8 +240,6 @@ msgid "Add"
 msgstr "Adicionar"
 
 #: data/ui/med-window.blp:44
-#, fuzzy
-#| msgid "From treatments list"
 msgid "From treatment list"
 msgstr "Da lista de tratamentos"
 
@@ -478,8 +476,6 @@ msgid "Treatments"
 msgstr "Tratamentos"
 
 #: data/ui/window.blp:154
-#, fuzzy
-#| msgid "Add some clicking the button bellow"
 msgid "Click the button below to add some"
 msgstr "Adicione algum clicando no botão abaixo"
 
