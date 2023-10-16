@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-16 15:14-0300\n"
+"POT-Creation-Date: 2023-10-16 16:23-0300\n"
 "PO-Revision-Date: 2023-10-16 15:14-0300\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Brazilian Portuguese\n"
@@ -19,7 +19,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:67
-#: src/window.js:431 data/ui/med-window.blp:410
+#: src/window.js:442 data/ui/med-window.blp:410
 msgid "Dosage"
 msgstr "Dosagem"
 
@@ -64,7 +64,7 @@ msgstr "Duração — Defina datas para começar e terminar"
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
 msgstr "Medicação;Rastreador;Lembrete;Hoje;Histórico;Tratamentos;Pílula;Droga;Remédio;"
 
-#: src/historyFactory.js:41 src/window.js:905 data/ui/med-window.blp:522
+#: src/historyFactory.js:41 src/window.js:916 data/ui/med-window.blp:522
 msgid "Delete"
 msgstr "Excluir"
 
@@ -169,65 +169,65 @@ msgstr "Nenhum tratamento adicionado ainda!"
 msgid "All done for today!"
 msgstr "Tudo feito por hoje!"
 
-#: src/window.js:483
+#: src/window.js:494
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: src/window.js:483 data/ui/window.blp:70
+#: src/window.js:494 data/ui/window.blp:70
 msgid "One-time entry"
 msgstr "Registro único"
 
-#: src/window.js:689
+#: src/window.js:700
 msgid "Edit treatment"
 msgstr "Editar tratamento"
 
-#: src/window.js:690
+#: src/window.js:701
 msgid "Save"
 msgstr "Salvar"
 
-#: src/window.js:776
+#: src/window.js:787
 msgid "New"
 msgstr "Novo"
 
-#: src/window.js:786 data/ui/med-window.blp:57
+#: src/window.js:797 data/ui/med-window.blp:57
 msgid "Pill(s)"
 msgstr "Comprimido(s)"
 
-#: src/window.js:826
+#: src/window.js:837
 msgid "New entry"
 msgstr "Novo registro"
 
 #. TRANSLATORS: Keep it short (add one-time entry to history)
-#: src/window.js:828
+#: src/window.js:839
 msgid "Add to history"
 msgstr "Adc. ao histórico"
 
-#: src/window.js:829 data/ui/med-window.blp:70
+#: src/window.js:840 data/ui/med-window.blp:70
 msgid "Color"
 msgstr "Cor"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:899
+#: src/window.js:910
 msgid "Are you sure?"
 msgstr "Tem certeza?"
 
-#: src/window.js:904 data/ui/med-window.blp:19
+#: src/window.js:915 data/ui/med-window.blp:19
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/window.js:1107
+#: src/window.js:1117
 msgid "Empty name"
 msgstr "Nome vazio"
 
-#: src/window.js:1112
+#: src/window.js:1122
 msgid "Empty unit"
 msgstr "Unidade vazia"
 
-#: src/window.js:1123
+#: src/window.js:1133
 msgid "Name already exists"
 msgstr "Nome já existe"
 
-#: src/window.js:1137
+#: src/window.js:1147
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 
