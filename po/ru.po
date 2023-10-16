@@ -1,13 +1,13 @@
 # Russian translation for Dosage.
 # Copyright (C) 2023 Diego Povliuk
-# This file is distributed under the same license as the io.github.diegopvlk.Dosage package.
+# This file is distributed under the license GPLv3-or-later.
 # volkov <volkovissocool@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-15 13:34-0300\n"
+"POT-Creation-Date: 2023-10-16 10:48-0300\n"
 "PO-Revision-Date: 2023-10-15 23:53+0300\n"
 "Last-Translator: volkov <volkovissocool@gmail.com>\n"
 "Language-Team: \n"
@@ -20,7 +20,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:67
-#: src/window.js:418 data/ui/med-window.blp:410
+#: src/window.js:408 data/ui/med-window.blp:410
 msgid "Dosage"
 msgstr "Дозировка"
 
@@ -33,13 +33,14 @@ msgid "Features:"
 msgstr "Функции:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
-msgid "Notifications — Get reminders on the right time"
+#, fuzzy
+#| msgid "Notifications — Get reminders on the right time"
+msgid "Notifications — Get reminders at the right time"
 msgstr "Уведомления — вовремя получайте уведомления"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
 msgid "History — See which medications you took or skipped"
-msgstr ""
-"История — просматривайте список лекарств которые вы приняли или пропустили"
+msgstr "История — просматривайте список лекарств которые вы приняли или пропустили"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
 msgid "Dosage management — Multiple doses with different times"
@@ -47,20 +48,15 @@ msgstr "Управление дозами — несколько доз в ра�
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
-msgstr ""
-"Частота приема — каждый день, выбранные дни, циклы или просто когда нужно"
+msgstr "Частота приема — каждый день, выбранные дни, циклы или просто когда нужно"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Color and icon — Give a shape for your treatment"
-msgstr ""
-"Цвет и иконка — чтобы выбрать иконку и цвет для записи в списке курсов "
-"лечения"
+msgstr "Цвет и иконка — чтобы выбрать иконку и цвет для записи в списке курсов лечения"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
-msgstr ""
-"Мониторинг инвентаря — мониторьте ваш запас и получайте уведомления, когда "
-"он будет иссякать"
+msgstr "Мониторинг инвентаря — мониторьте ваш запас и получайте уведомления, когда он будет иссякать"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Duration — Define the start and end dates"
@@ -69,11 +65,9 @@ msgstr "Длительность — определите начальную и 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
-msgstr ""
-"Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
-"таблетки;лечение;курс;напомнить;принять;история;процедура;доза;"
+msgstr "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;таблетки;лечение;курс;напомнить;принять;история;процедура;доза;"
 
-#: src/historyFactory.js:41 src/window.js:887 data/ui/med-window.blp:517
+#: src/historyFactory.js:41 src/window.js:877 data/ui/med-window.blp:517
 msgid "Delete"
 msgstr "Удалить"
 
@@ -104,9 +98,7 @@ msgstr "Огромное спасибо этим проектам!"
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:110
 msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
-"Примите, чтобы приложение могло работать в фоновом режиме и отправлять "
-"уведомления"
+msgstr "Примите, чтобы приложение могло работать в фоновом режиме и отправлять уведомления"
 
 #. TRANSLATORS: Keep it short (label for when the inventory is low)
 #: src/treatmentsFactory.js:90 src/treatmentsFactory.js:92
@@ -168,77 +160,77 @@ msgid "Delete dose"
 msgstr "Удалить дозу"
 
 #. TRANSLATORS: Notification text for for when the inventory is low
-#: src/window.js:94
+#: src/window.js:92
 msgid "You have treatments low in stock"
 msgstr "У вас осталось мало лекарств в запасе"
 
-#: src/window.js:354
+#: src/window.js:352
 msgid "No treatments added yet!"
 msgstr "Ни одного курса лечения еще не было добавлено!"
 
-#: src/window.js:357
+#: src/window.js:355
 msgid "All done for today!"
 msgstr "Вы приняли все лекарства на сегодня!"
 
-#: src/window.js:470
+#: src/window.js:460
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: src/window.js:470 data/ui/window.blp:70
+#: src/window.js:460 data/ui/window.blp:70
 msgid "One-time entry"
 msgstr "Одноразовый прием"
 
-#: src/window.js:674
+#: src/window.js:664
 msgid "Edit treatment"
 msgstr "Редактировать курс лечения"
 
-#: src/window.js:675
+#: src/window.js:665
 msgid "Save"
 msgstr "Сохранить"
 
-#: src/window.js:759
+#: src/window.js:749
 msgid "New"
 msgstr "Новая"
 
-#: src/window.js:769 data/ui/med-window.blp:57
+#: src/window.js:759 data/ui/med-window.blp:57
 msgid "Pill(s)"
 msgstr "Таблетка(и)"
 
-#: src/window.js:809
+#: src/window.js:799
 msgid "New entry"
 msgstr "Новая запись"
 
 #. TRANSLATORS: Keep it short (add one-time entry to history)
-#: src/window.js:811
+#: src/window.js:801
 msgid "Add to history"
 msgstr "Добавить в историю"
 
-#: src/window.js:812 data/ui/med-window.blp:70
+#: src/window.js:802 data/ui/med-window.blp:70
 msgid "Color"
 msgstr "Цвет"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:881
+#: src/window.js:871
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
-#: src/window.js:886 data/ui/med-window.blp:19
+#: src/window.js:876 data/ui/med-window.blp:19
 msgid "Cancel"
 msgstr "Отменить"
 
-#: src/window.js:1085
+#: src/window.js:1075
 msgid "Empty name"
 msgstr "Отсутствует название записи"
 
-#: src/window.js:1090
+#: src/window.js:1080
 msgid "Empty unit"
 msgstr "Пустая единица измерения"
 
-#: src/window.js:1101
+#: src/window.js:1091
 msgid "Name already exists"
 msgstr "Это название уже занято"
 
-#: src/window.js:1115
+#: src/window.js:1105
 msgid "Duplicated time"
 msgstr "Одинаковое время у приемов доз"
 
@@ -251,7 +243,9 @@ msgid "Add"
 msgstr "Добавить"
 
 #: data/ui/med-window.blp:44
-msgid "From treatments list"
+#, fuzzy
+#| msgid "From treatments list"
+msgid "From treatment list"
 msgstr "Из списка курсов лечения"
 
 #: data/ui/med-window.blp:53
@@ -395,8 +389,8 @@ msgstr "Неактивных дней"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-window.blp:395
-msgid "Today is cycle day..."
-msgstr "Сегодня день цикла..."
+msgid "Today is cycle day…"
+msgstr "Сегодня день цикла…"
 
 #: data/ui/med-window.blp:411
 msgid "Time and amount"
@@ -455,12 +449,8 @@ msgid "Increase notification priority"
 msgstr "Увеличить приоритет уведомлений"
 
 #: data/ui/preferences.blp:25
-msgid ""
-"On GNOME this will make the notification show on fullscreen mode or even if "
-"'Do Not Disturb' is enabled"
-msgstr ""
-"В GNOME, эта опция разрежить отоброжать уведомления даже если в фокусе "
-"программа в полноэкранном режиме или активирован режим 'Не тревожить'"
+msgid "On GNOME this will make the notification show on fullscreen mode or even if 'Do Not Disturb' is enabled"
+msgstr "В GNOME, эта опция разрежить отоброжать уведомления даже если в фокусе программа в полноэкранном режиме или активирован режим 'Не тревожить'"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
@@ -491,34 +481,33 @@ msgid "Treatments"
 msgstr "Курсы лечения"
 
 #: data/ui/window.blp:154
-msgid "Add some clicking the button bellow"
+#, fuzzy
+#| msgid "Add some clicking the button below"
+msgid "Click the button below to add some"
 msgstr "Чтобы добавить курс лечения — нажмите на кнопку внизу"
 
 #: data/ui/window.blp:183
-msgid "About Dosage"
-msgstr "Про Дозировка"
+msgid "About"
+msgstr ""
 
 #: data/ui/window.blp:187
 msgid "Quit"
 msgstr "Выйти"
 
+#~ msgid "About Dosage"
+#~ msgstr "Про Дозировка"
+
 #~ msgid "Allow Dosage to run in background."
 #~ msgstr "Разрешить 'Дозировка' работать в фоновом режиме."
 
 #~ msgid "Fixed notifications being delayed after suspension"
-#~ msgstr ""
-#~ "Исправлены оповещения, который задерживались после выхода из режима сна"
+#~ msgstr "Исправлены оповещения, который задерживались после выхода из режима сна"
 
-#~ msgid ""
-#~ "Fixed notifications being sent more than once after saving an existing "
-#~ "treatment"
-#~ msgstr ""
-#~ "Исправлены уведомления, которые отправлялись больше одного разу после "
-#~ "сохранения существующих курсов лечения"
+#~ msgid "Fixed notifications being sent more than once after saving an existing treatment"
+#~ msgstr "Исправлены уведомления, которые отправлялись больше одного разу после сохранения существующих курсов лечения"
 
 #~ msgid "Added a label to show the frequency on treatments list"
-#~ msgstr ""
-#~ "Добавлено надпись, которая показывает частоту приема в списке лечения"
+#~ msgstr "Добавлено надпись, которая показывает частоту приема в списке лечения"
 
 #~ msgid "Brazilian translation updated"
 #~ msgstr "Обновлен бразильский перевод"

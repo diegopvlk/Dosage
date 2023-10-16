@@ -1,13 +1,13 @@
 # Tradução em português brasileiro.
 # Copyright (C) 2023 Diego Povliuk
-# This file is distributed under the same license as the io.github.diegopvlk.Dosage package.
+# This file is distributed under the license GPLv3-or-later.
 # Diego Povliuk <diego.pvlk@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-15 13:34-0300\n"
+"POT-Creation-Date: 2023-10-16 10:48-0300\n"
 "PO-Revision-Date: 2023-10-14 11:32-0300\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Brazilian Portuguese\n"
@@ -19,7 +19,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:67
-#: src/window.js:418 data/ui/med-window.blp:410
+#: src/window.js:408 data/ui/med-window.blp:410
 msgid "Dosage"
 msgstr "Dosagem"
 
@@ -32,7 +32,7 @@ msgid "Features:"
 msgstr "Recursos:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
-msgid "Notifications — Get reminders on the right time"
+msgid "Notifications — Get reminders at the right time"
 msgstr "Notificações — Receba lembretes na hora certa"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
@@ -64,7 +64,7 @@ msgstr "Duração — Defina datas para começar e terminar"
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
 msgstr "Medicação;Rastreador;Lembrete;Hoje;Histórico;Tratamentos;Pílula;Droga;Remédio;"
 
-#: src/historyFactory.js:41 src/window.js:887 data/ui/med-window.blp:517
+#: src/historyFactory.js:41 src/window.js:877 data/ui/med-window.blp:517
 msgid "Delete"
 msgstr "Excluir"
 
@@ -157,77 +157,77 @@ msgid "Delete dose"
 msgstr "Excluir dose"
 
 #. TRANSLATORS: Notification text for for when the inventory is low
-#: src/window.js:94
+#: src/window.js:92
 msgid "You have treatments low in stock"
 msgstr "Você tem tratamentos com pouco estoque"
 
-#: src/window.js:354
+#: src/window.js:352
 msgid "No treatments added yet!"
 msgstr "Nenhum tratamento adicionado ainda!"
 
-#: src/window.js:357
+#: src/window.js:355
 msgid "All done for today!"
 msgstr "Tudo feito por hoje!"
 
-#: src/window.js:470
+#: src/window.js:460
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: src/window.js:470 data/ui/window.blp:70
+#: src/window.js:460 data/ui/window.blp:70
 msgid "One-time entry"
 msgstr "Registro único"
 
-#: src/window.js:674
+#: src/window.js:664
 msgid "Edit treatment"
 msgstr "Editar tratamento"
 
-#: src/window.js:675
+#: src/window.js:665
 msgid "Save"
 msgstr "Salvar"
 
-#: src/window.js:759
+#: src/window.js:749
 msgid "New"
 msgstr "Novo"
 
-#: src/window.js:769 data/ui/med-window.blp:57
+#: src/window.js:759 data/ui/med-window.blp:57
 msgid "Pill(s)"
 msgstr "Comprimido(s)"
 
-#: src/window.js:809
+#: src/window.js:799
 msgid "New entry"
 msgstr "Novo registro"
 
 #. TRANSLATORS: Keep it short (add one-time entry to history)
-#: src/window.js:811
+#: src/window.js:801
 msgid "Add to history"
 msgstr "Adc. ao histórico"
 
-#: src/window.js:812 data/ui/med-window.blp:70
+#: src/window.js:802 data/ui/med-window.blp:70
 msgid "Color"
 msgstr "Cor"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:881
+#: src/window.js:871
 msgid "Are you sure?"
 msgstr "Tem certeza?"
 
-#: src/window.js:886 data/ui/med-window.blp:19
+#: src/window.js:876 data/ui/med-window.blp:19
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/window.js:1085
+#: src/window.js:1075
 msgid "Empty name"
 msgstr "Nome vazio"
 
-#: src/window.js:1090
+#: src/window.js:1080
 msgid "Empty unit"
 msgstr "Unidade vazia"
 
-#: src/window.js:1101
+#: src/window.js:1091
 msgid "Name already exists"
 msgstr "Nome já existe"
 
-#: src/window.js:1115
+#: src/window.js:1105
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 
@@ -240,7 +240,9 @@ msgid "Add"
 msgstr "Adicionar"
 
 #: data/ui/med-window.blp:44
-msgid "From treatments list"
+#, fuzzy
+#| msgid "From treatments list"
+msgid "From treatment list"
 msgstr "Da lista de tratamentos"
 
 #: data/ui/med-window.blp:53
@@ -384,8 +386,8 @@ msgstr "Dias inativos"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-window.blp:395
-msgid "Today is cycle day..."
-msgstr "Hoje é o dia..."
+msgid "Today is cycle day…"
+msgstr "Hoje é o dia…"
 
 #: data/ui/med-window.blp:411
 msgid "Time and amount"
@@ -476,16 +478,21 @@ msgid "Treatments"
 msgstr "Tratamentos"
 
 #: data/ui/window.blp:154
-msgid "Add some clicking the button bellow"
+#, fuzzy
+#| msgid "Add some clicking the button bellow"
+msgid "Click the button below to add some"
 msgstr "Adicione algum clicando no botão abaixo"
 
 #: data/ui/window.blp:183
-msgid "About Dosage"
-msgstr "Sobre o Dosagem"
+msgid "About"
+msgstr ""
 
 #: data/ui/window.blp:187
 msgid "Quit"
 msgstr "Sair"
+
+#~ msgid "About Dosage"
+#~ msgstr "Sobre o Dosagem"
 
 #~ msgid "Allow Dosage to run in background."
 #~ msgstr "Permitir que o Dosagem seja executado em segundo plano."

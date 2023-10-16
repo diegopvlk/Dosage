@@ -1,13 +1,13 @@
 # Ukrainian translation for Dosage.
 # Copyright (C) 2023 Diego Povliuk
-# This file is distributed under the same license as the io.github.diegopvlk.Dosage package.
+# This file is distributed under the license GPLv3-or-later.
 # volkov <volkovissocool@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-15 13:34-0300\n"
+"POT-Creation-Date: 2023-10-16 10:48-0300\n"
 "PO-Revision-Date: 2023-10-15 23:53+0300\n"
 "Last-Translator: volkov <volkovissocool@gmail.com>\n"
 "Language-Team: \n"
@@ -20,7 +20,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:67
-#: src/window.js:418 data/ui/med-window.blp:410
+#: src/window.js:408 data/ui/med-window.blp:410
 msgid "Dosage"
 msgstr "Дозування"
 
@@ -33,7 +33,9 @@ msgid "Features:"
 msgstr "Можливості:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
-msgid "Notifications — Get reminders on the right time"
+#, fuzzy
+#| msgid "Notifications — Get reminders on the right time"
+msgid "Notifications — Get reminders at the right time"
 msgstr "Сповіщення — вчасно отримуйте сповіщення"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
@@ -46,21 +48,15 @@ msgstr "Керування дозами - кілька доз у різний ч
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
-msgstr ""
-"Частота прийомів — кожного дня, конкретні дні, цикли або просто коли треба "
-"прийняти"
+msgstr "Частота прийомів — кожного дня, конкретні дні, цикли або просто коли треба прийняти"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Color and icon — Give a shape for your treatment"
-msgstr ""
-"Колір та піктограма — щоб обрати колір і піктограму для запису в курсах "
-"лікування"
+msgstr "Колір та піктограма — щоб обрати колір і піктограму для запису в курсах лікування"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
-msgstr ""
-"Відкорковування запасу — моніторинг запасу і сповіщення, якщо запас буде "
-"закінчуватися"
+msgstr "Відкорковування запасу — моніторинг запасу і сповіщення, якщо запас буде закінчуватися"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Duration — Define the start and end dates"
@@ -69,12 +65,9 @@ msgstr "Тривалість — визначте початкову та кін
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
-msgstr ""
-"Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
-"лікування;курс;аптечка;пігулка;таблетка;нагадати;згадати;прийом;пігулка;"
-"доза;дозування;процедура;"
+msgstr "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;лікування;курс;аптечка;пігулка;таблетка;нагадати;згадати;прийом;пігулка;доза;дозування;процедура;"
 
-#: src/historyFactory.js:41 src/window.js:887 data/ui/med-window.blp:517
+#: src/historyFactory.js:41 src/window.js:877 data/ui/med-window.blp:517
 msgid "Delete"
 msgstr "Видалити"
 
@@ -105,9 +98,7 @@ msgstr "Велике спасибі цим проектам!"
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:110
 msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
-"Прийміть, щоб додаток міг працювати у фоновому режимі і відправляти "
-"сповіщення"
+msgstr "Прийміть, щоб додаток міг працювати у фоновому режимі і відправляти сповіщення"
 
 #. TRANSLATORS: Keep it short (label for when the inventory is low)
 #: src/treatmentsFactory.js:90 src/treatmentsFactory.js:92
@@ -169,77 +160,77 @@ msgid "Delete dose"
 msgstr "Видалити дозу"
 
 #. TRANSLATORS: Notification text for for when the inventory is low
-#: src/window.js:94
+#: src/window.js:92
 msgid "You have treatments low in stock"
 msgstr "У вас залишилося мало ліків у запасі"
 
-#: src/window.js:354
+#: src/window.js:352
 msgid "No treatments added yet!"
 msgstr "Ще не було додано жодного курсу лікування!"
 
-#: src/window.js:357
+#: src/window.js:355
 msgid "All done for today!"
 msgstr "Ви прийняли усі ліки на сьогодні!"
 
-#: src/window.js:470
+#: src/window.js:460
 msgid "Confirm"
 msgstr "Підтвердити"
 
-#: src/window.js:470 data/ui/window.blp:70
+#: src/window.js:460 data/ui/window.blp:70
 msgid "One-time entry"
 msgstr "Одноразовий прийом"
 
-#: src/window.js:674
+#: src/window.js:664
 msgid "Edit treatment"
 msgstr "Редагувати курс лікування"
 
-#: src/window.js:675
+#: src/window.js:665
 msgid "Save"
 msgstr "Зберегти"
 
-#: src/window.js:759
+#: src/window.js:749
 msgid "New"
 msgstr "Новий"
 
-#: src/window.js:769 data/ui/med-window.blp:57
+#: src/window.js:759 data/ui/med-window.blp:57
 msgid "Pill(s)"
 msgstr "Пігулка(и)"
 
-#: src/window.js:809
+#: src/window.js:799
 msgid "New entry"
 msgstr "Новий запис"
 
 #. TRANSLATORS: Keep it short (add one-time entry to history)
-#: src/window.js:811
+#: src/window.js:801
 msgid "Add to history"
 msgstr "Додати до історії"
 
-#: src/window.js:812 data/ui/med-window.blp:70
+#: src/window.js:802 data/ui/med-window.blp:70
 msgid "Color"
 msgstr "Колір"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:881
+#: src/window.js:871
 msgid "Are you sure?"
 msgstr "Ви впевнені?"
 
-#: src/window.js:886 data/ui/med-window.blp:19
+#: src/window.js:876 data/ui/med-window.blp:19
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: src/window.js:1085
+#: src/window.js:1075
 msgid "Empty name"
 msgstr "Відсутня назва запису"
 
-#: src/window.js:1090
+#: src/window.js:1080
 msgid "Empty unit"
 msgstr "Відсутня одиниця виміру"
 
-#: src/window.js:1101
+#: src/window.js:1091
 msgid "Name already exists"
 msgstr "Ця назва вже зайнята"
 
-#: src/window.js:1115
+#: src/window.js:1105
 msgid "Duplicated time"
 msgstr "Однакові часи у прийомів доз"
 
@@ -252,7 +243,7 @@ msgid "Add"
 msgstr "Додати"
 
 #: data/ui/med-window.blp:44
-msgid "From treatments list"
+msgid "From treatment list"
 msgstr "Із списку курсів лікування"
 
 #: data/ui/med-window.blp:53
@@ -396,8 +387,8 @@ msgstr "Неактивних днів"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-window.blp:395
-msgid "Today is cycle day..."
-msgstr "Сьогодні день циклу..."
+msgid "Today is cycle day…"
+msgstr "Сьогодні день циклу…"
 
 #: data/ui/med-window.blp:411
 msgid "Time and amount"
@@ -456,12 +447,8 @@ msgid "Increase notification priority"
 msgstr "Збільшити пріорітет сповіщень"
 
 #: data/ui/preferences.blp:25
-msgid ""
-"On GNOME this will make the notification show on fullscreen mode or even if "
-"'Do Not Disturb' is enabled"
-msgstr ""
-"У GNOME, ця опція дозволить відображати сповіщення навіть якщо у фокусі "
-"програма у повноекранному режимі або активовано режим 'Не турбувати'"
+msgid "On GNOME this will make the notification show on fullscreen mode or even if 'Do Not Disturb' is enabled"
+msgstr "У GNOME, ця опція дозволить відображати сповіщення навіть якщо у фокусі програма у повноекранному режимі або активовано режим 'Не турбувати'"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
@@ -492,35 +479,33 @@ msgid "Treatments"
 msgstr "Курси лікування"
 
 #: data/ui/window.blp:154
-msgid "Add some clicking the button bellow"
+#, fuzzy
+#| msgid "Add some clicking the button below"
+msgid "Click the button below to add some"
 msgstr "Щоб додати новий курс лікування — натисніть на кнопку внизу"
 
 #: data/ui/window.blp:183
-msgid "About Dosage"
-msgstr "Про Дозування"
+msgid "About"
+msgstr ""
 
 #: data/ui/window.blp:187
 msgid "Quit"
 msgstr "Вийти"
 
+#~ msgid "About Dosage"
+#~ msgstr "Про Дозування"
+
 #~ msgid "Allow Dosage to run in background."
 #~ msgstr "Дозволити 'Дозування' працювати у фоновому режимі."
 
 #~ msgid "Fixed notifications being delayed after suspension"
-#~ msgstr ""
-#~ "Виправлено сповіщення, які затримувались після виходу із призупиненого "
-#~ "стану системи"
+#~ msgstr "Виправлено сповіщення, які затримувались після виходу із призупиненого стану системи"
 
-#~ msgid ""
-#~ "Fixed notifications being sent more than once after saving an existing "
-#~ "treatment"
-#~ msgstr ""
-#~ "Виправлено сповіщення, які відправлялись частіше ніж один раз після "
-#~ "збереження існуючого курсу лікування"
+#~ msgid "Fixed notifications being sent more than once after saving an existing treatment"
+#~ msgstr "Виправлено сповіщення, які відправлялись частіше ніж один раз після збереження існуючого курсу лікування"
 
 #~ msgid "Added a label to show the frequency on treatments list"
-#~ msgstr ""
-#~ "Додано напис, який показує частоту прийому у списку курсів лікування"
+#~ msgstr "Додано напис, який показує частоту прийому у списку курсів лікування"
 
 #~ msgid "Brazilian translation updated"
 #~ msgstr "Оновлено бразильський переклад"
