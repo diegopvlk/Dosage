@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-16 10:48-0300\n"
-"PO-Revision-Date: 2023-10-14 11:32-0300\n"
+"PO-Revision-Date: 2023-10-16 11:32-0300\n"
 "Last-Translator: Albano Battistella <albanobattistella@gmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -476,10 +476,9 @@ msgid "Treatments"
 msgstr "Trattamenti"
 
 #: data/ui/window.blp:154
-#, fuzzy
 #| msgid "Add some clicking the button below"
 msgid "Click the button below to add some"
-msgstr "Aggiungine alcuni facendo clic sul pulsante qui sotto"
+msgstr "Fai clic sul pulsante qui sotto per aggiungerne alcuni"
 
 #: data/ui/window.blp:183
 msgid "About"
