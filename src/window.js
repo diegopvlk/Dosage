@@ -367,34 +367,57 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const todayLength = this._todayModel.get_n_items();
 		
 		for (let i = 0; i < todayLength; i++)
-			this._addToBeNotified(this._todayModel.get_item(i));
+			this._addToBeNotified(this._todayModel.get_item(i), todayLength);
 	}
 
-	_addToBeNotified(item) {
+	_addToBeNotified(item, todayLength) {
 		const now = new Date();
 		const hours = now.getHours();
 		const minutes = now.getMinutes();
 		const seconds = now.getSeconds();
 		const itemHour = item.info.dosage.time[0];
 		const itemMin = item.info.dosage.time[1];
+		const fiveMin = 5 * 60 * 1000;
 
 		// milliseconds
-		const timeDifference =
+		let timeDiff =
 			(itemHour - hours) * 3600000 +
 			(itemMin - minutes) * 60000 -
 			seconds * 1000;
-		
+
+		if (timeDiff < 0) timeDiff = 0;
+
 		const pseudoId = JSON.stringify({
 			name: item.name, dosage: item.info.dosage,
 		});
 
-		this._scheduledItems[pseudoId] = setTimeout(() => {
+		const notify = () => {
 			const [notification, app] = this._getNotification();
 			notification.set_body(
 				`${item.name}  ⦁  ${item.info.dosage.dose} ${item.unit}`
 			);
 			app.send_notification(pseudoId, notification);
-		}, timeDifference);
+		}
+
+		// send every 5 minutes
+		if (item.info.recurring) {
+			for (let i = 0; i < todayLength; i++) {
+				if (item === this._todayModel.get_item(i)) {
+
+					const recurringNotify = (pseudoId, timeDiff) => {
+						this._scheduledItems[pseudoId] = setTimeout(() => {
+							notify();
+							recurringNotify(pseudoId, fiveMin);
+						}, timeDiff);
+					};
+
+					recurringNotify(pseudoId, timeDiff);
+				}
+			}
+			return
+		}
+		
+		this._scheduledItems[pseudoId] = setTimeout(notify, timeDiff);
 	}
 
 	_getNotification() {
@@ -643,6 +666,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 		dosageHeader.set_activatable(false);
 		dosageExpanderBtn.set_visible(false);
 
+		const recurringNotif = builder.get_object('recurringNotif');
+
 		const medInventory = builder.get_object('inventory');
 		const medCurrrentInv = builder.get_object('currentInventory');
 		const medReminderInv = builder.get_object('reminderInventory');
@@ -688,6 +713,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 			info.dosage.forEach(timeDose => {
 				dosage.add_row(doseRow(timeDose));
 			});
+
+			recurringNotif.set_active(info.recurring);
 
 			if (info.days && info.days.length !== 0) {
 				const specificDaysBox = builder.get_object('specificDaysBox');
@@ -809,6 +836,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			medDuration.set_visible(false);
 			dosageAddButton.get_parent().get_parent().set_visible(false);
 			medInventory.set_visible(false);
+			recurringNotif.set_visible(false);
 		}
 
 		setFreqMenuVisibility();
@@ -925,7 +953,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			let days, doses, cycle = [];
 			let invEnabled, durEnabled = false;
-			let name, unit, notes, color, freq, icon, 
+			let name, unit, notes, color, freq, icon, recurring,
 				inventory, current, reminder, duration, start, end;
 
 			if (medInventory.get_enable_expansion())
@@ -937,6 +965,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 				end = calendarEnd.get_date().format('%s');
 			} else
 				start = today.format('%s');
+
+			recurring = recurringNotif.get_active();
 
 			name = medName.text.trim(),
 			unit = medUnit.text.trim(),
@@ -980,6 +1010,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					info: {
 						notes: notes,
 						frequency: freq,
+						recurring: recurring,
 						color: color,
 						icon: icon,
 						days: days,
@@ -1050,6 +1081,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				// if when-needed is selected, hide the dosage and duration rows
 				dosage.set_visible(false);
 				medDuration.set_visible(false);
+				recurringNotif.set_visible(false);
 			});
 
 			if (item) {
