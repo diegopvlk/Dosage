@@ -485,7 +485,7 @@ msgstr "Adicione algum clicando no botão abaixo"
 
 #: data/ui/window.blp:183
 msgid "About"
-msgstr ""
+msgstr "Sobre"
 
 #: data/ui/window.blp:187
 msgid "Quit"

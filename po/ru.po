@@ -488,7 +488,7 @@ msgstr "Чтобы добавить курс лечения — нажмите �
 
 #: data/ui/window.blp:183
 msgid "About"
-msgstr ""
+msgstr "Про"
 
 #: data/ui/window.blp:187
 msgid "Quit"
