@@ -393,8 +393,19 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		const notify = () => {
 			const [notification, app] = this._getNotification();
+			let h = item.info.dosage.time[0];
+			let m = item.info.dosage.time[1];
+			let period = '';
+			if (clockIs12) {
+				period = ' AM';
+				if (h >= 12) period = ' PM';
+				if (h > 12) h -= 12;
+				if (h === 0) h = 12;
+			}
+			notification.set_title(item.name);
 			notification.set_body(
-				`${item.name}  ⦁  ${item.info.dosage.dose} ${item.unit}`
+				`${item.info.dosage.dose} ${item.unit}  •  ` +
+				`${addLeadZero(h)}:${addLeadZero(m)}` + period
 			);
 			app.send_notification(pseudoId, notification);
 		}
