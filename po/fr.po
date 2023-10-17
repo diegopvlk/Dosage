@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-16 21:31-0300\n"
-"PO-Revision-Date: 2023-10-16 22:34+0000\n"
-"Last-Translator: Xenelio <thomas.colonna.d@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/dosage/dosage/fr/"
-">\n"
+"PO-Revision-Date: 2023-10-17 14:02+0000\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/dosage/dosage/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +32,7 @@ msgstr "Suivre vos traitements"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
 msgid "Features:"
-msgstr "Fonctionnalités :"
+msgstr "Fonctionnalités:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
 msgid "Notifications — Get reminders at the right time"
@@ -94,7 +94,7 @@ msgstr "Xenelio <xenelio@gmail.com>"
 
 #: src/main.js:76
 msgid "Thanks to these projects!"
-msgstr "Merci pour ces projets !"
+msgstr "Merci pour ces projets!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:108
@@ -126,31 +126,31 @@ msgstr "Jours de la semaine"
 #. TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa)
 #: src/treatmentsFactory.js:130 data/ui/med-window.blp:317
 msgid "Su"
-msgstr "Dim"
+msgstr "Di"
 
 #: src/treatmentsFactory.js:131 data/ui/med-window.blp:323
 msgid "Mo"
-msgstr "Lun"
+msgstr "Lu"
 
 #: src/treatmentsFactory.js:132 data/ui/med-window.blp:329
 msgid "Tu"
-msgstr "Mar"
+msgstr "Ma"
 
 #: src/treatmentsFactory.js:133 data/ui/med-window.blp:335
 msgid "We"
-msgstr "Mer"
+msgstr "Me"
 
 #: src/treatmentsFactory.js:134 data/ui/med-window.blp:341
 msgid "Th"
-msgstr "Jeu"
+msgstr "Je"
 
 #: src/treatmentsFactory.js:135 data/ui/med-window.blp:347
 msgid "Fr"
-msgstr "Ven"
+msgstr "Ve"
 
 #: src/treatmentsFactory.js:136 data/ui/med-window.blp:353
 msgid "Sa"
-msgstr "Sam"
+msgstr "Sa"
 
 #: src/treatmentsFactory.js:145 data/ui/med-window.blp:300
 msgid "When needed"
@@ -167,11 +167,11 @@ msgstr "Certains de vos médicaments sont presque épuisés"
 
 #: src/window.js:352
 msgid "No treatments added yet!"
-msgstr "Pas encore de traitements configurés !"
+msgstr "Pas encore de traitements configurés!"
 
 #: src/window.js:355
 msgid "All done for today!"
-msgstr "C'est bon pour aujourd'hui !"
+msgstr "C'est bon pour aujourd'hui!"
 
 #: src/window.js:494
 msgid "Confirm"
@@ -204,7 +204,7 @@ msgstr "Nouvelle entrée"
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
 #: src/window.js:839
 msgid "Add to history"
-msgstr "Ajouter à l'historique"
+msgstr "Ajt à l'historique"
 
 #: src/window.js:840 data/ui/med-window.blp:70
 msgid "Color"
@@ -213,7 +213,7 @@ msgstr "Couleur"
 #. TRANSLATORS: Message for confirmation when deleting an item
 #: src/window.js:910
 msgid "Are you sure?"
-msgstr "Êtes-vous sûrs ?"
+msgstr "Êtes-vous sûrs?"
 
 #: src/window.js:915 data/ui/med-window.blp:19
 msgid "Cancel"
