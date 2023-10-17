@@ -25,16 +25,14 @@ export const DosageApplication = GObject.registerClass(
 			});
 
 			const quitAction = new Gio.SimpleAction({ name: "quit" });
-			quitAction.connect("activate", (action) => {
-				this.quit();
-			});
+			quitAction.connect("activate", () => this.quit());
 			this.add_action(quitAction);
 			this.set_accels_for_action('app.quit', ["<primary>q"]);
 
 			this._hidden = false;
 
 			const showPrefAction = new Gio.SimpleAction({ name: "preferences" });
-			showPrefAction.connect("activate", (action) => {
+			showPrefAction.connect("activate", () => {
 				const builder = Gtk.Builder.new_from_resource(
 					'/io/github/diegopvlk/Dosage/ui/preferences.ui'
 				);
@@ -61,7 +59,7 @@ export const DosageApplication = GObject.registerClass(
 			this.add_action(showPrefAction);
 			
 			const showAboutAction = new Gio.SimpleAction({ name: "about" });
-			showAboutAction.connect("activate", (action) => {
+			showAboutAction.connect("activate", () => {
 				let aboutParams = {
 					transient_for: this.active_window,
 					application_name: _('Dosage'),
@@ -116,7 +114,8 @@ export const DosageApplication = GObject.registerClass(
 		}
 
 		vfunc_handle_local_options(options) {
-			if (options.contains('startup')) this._hidden = true;
+			if (options.contains('startup')) 
+				this._hidden = true;
 
 			return -1; // continue execution
 		}

@@ -121,7 +121,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_handleSuspension() {
-		const onWakingUp = () => this._scheduleNotification();
+		const onWakingUp = () => this._scheduleNotifications();
 		this._connection = Gio.bus_get_sync(Gio.BusType.SYSTEM, null)
         this._connection.signal_subscribe(
             'org.freedesktop.login1',
@@ -337,7 +337,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		this._todayItems = [];
 
-		this._scheduleNotification();
+		this._scheduleNotifications();
 		
 		const noItems = this._sortedTodayModel.get_n_items() === 0;
 		const noTreatments = this._treatmentsList.model.get_n_items() === 0;
@@ -358,7 +358,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 	}
 
-	_scheduleNotification() {
+	_scheduleNotifications() {
 		for (const id in this._scheduledItems)
 			clearTimeout(this._scheduledItems[id]);
 
@@ -423,9 +423,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 					};
 
 					recurringNotify(pseudoId, timeDiff);
+					return
 				}
 			}
-			return
 		}
 		
 		this._scheduledItems[pseudoId] = setTimeout(notify, timeDiff);
@@ -948,10 +948,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 				}
 			);
 
-			/* 
-			reload-ish of history, so the item don't get inserted 
-			on a separate section (with the same day) when the time is less 
-			than the first one of same section
+			/*
+			* reload-ish of history, so the item don't get inserted 
+			* on a separate section (with the same day) 
+			* when the time is less than the first one of same section
 			*/
 			histList.model = new Gtk.NoSelection({
 				model: sortedHist,
@@ -1085,10 +1085,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 				if (selectedItemPos != 3) {
 					dosage.set_visible(true);
 					medDuration.set_visible(true);
+					recurringNotif.set_visible(true);
 					return;
 				}
 				
-				// if when-needed is selected, hide the dosage and duration rows
+				// if when-needed is selected, hide the dosage, duration and recurring rows
 				dosage.set_visible(false);
 				medDuration.set_visible(false);
 				recurringNotif.set_visible(false);
