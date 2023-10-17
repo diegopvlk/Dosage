@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-16 16:23-0300\n"
+"POT-Creation-Date: 2023-10-16 21:31-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
-#: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:67
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:65
 #: src/window.js:442 data/ui/med-window.blp:410
 msgid "Dosage"
 msgstr ""
@@ -85,16 +85,16 @@ msgid "Missed"
 msgstr ""
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:75
+#: src/main.js:73
 msgid "translator-credits"
 msgstr ""
 
-#: src/main.js:78
+#: src/main.js:76
 msgid "Thanks to these projects!"
 msgstr ""
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:110
+#: src/main.js:108
 msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 
@@ -198,7 +198,7 @@ msgstr ""
 msgid "New entry"
 msgstr ""
 
-#. TRANSLATORS: Keep it short (add one-time entry to history)
+#. TRANSLATORS: Keep it short (button to add one-time entry to history)
 #: src/window.js:839
 msgid "Add to history"
 msgstr ""
@@ -216,19 +216,19 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: src/window.js:1117
+#: src/window.js:1118
 msgid "Empty name"
 msgstr ""
 
-#: src/window.js:1122
+#: src/window.js:1123
 msgid "Empty unit"
 msgstr ""
 
-#: src/window.js:1133
+#: src/window.js:1134
 msgid "Name already exists"
 msgstr ""
 
-#: src/window.js:1147
+#: src/window.js:1148
 msgid "Duplicated time"
 msgstr ""
 

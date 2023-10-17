@@ -835,7 +835,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			}
 
 			medWindow.title = _('New entry');
-			// TRANSLATORS: Keep it short (add one-time entry to history)
+			// TRANSLATORS: Keep it short (button to add one-time entry to history)
 			saveButton.label = _('Add to history');
 			colorIcon.title = _('Color');
 			medWindow.add_css_class('one-time');
