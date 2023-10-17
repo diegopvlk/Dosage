@@ -367,10 +367,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const todayLength = this._todayModel.get_n_items();
 		
 		for (let i = 0; i < todayLength; i++)
-			this._addToBeNotified(this._todayModel.get_item(i), todayLength);
+			this._addToBeNotified(this._todayModel.get_item(i));
 	}
 
-	_addToBeNotified(item, todayLength) {
+	_addToBeNotified(item) {
 		const now = new Date();
 		const hours = now.getHours();
 		const minutes = now.getMinutes();
@@ -409,23 +409,18 @@ class DosageWindow extends Adw.ApplicationWindow {
 			);
 			app.send_notification(pseudoId, notification);
 		}
-
-		// send every 5 minutes
+	
 		if (item.info.recurring) {
-			for (let i = 0; i < todayLength; i++) {
-				if (item === this._todayModel.get_item(i)) {
+			// send every 5 minutes
+			const recurringNotify = (pseudoId, timeDiff) => {
+				this._scheduledItems[pseudoId] = setTimeout(() => {
+					notify();
+					recurringNotify(pseudoId, fiveMin);
+				}, timeDiff);
+			};
 
-					const recurringNotify = (pseudoId, timeDiff) => {
-						this._scheduledItems[pseudoId] = setTimeout(() => {
-							notify();
-							recurringNotify(pseudoId, fiveMin);
-						}, timeDiff);
-					};
-
-					recurringNotify(pseudoId, timeDiff);
-					return
-				}
-			}
+			recurringNotify(pseudoId, timeDiff);
+			return
 		}
 		
 		this._scheduledItems[pseudoId] = setTimeout(notify, timeDiff);
