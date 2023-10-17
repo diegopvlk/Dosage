@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-16 21:31-0300\n"
-"PO-Revision-Date: 2023-10-17 12:45+0000\n"
+"PO-Revision-Date: 2023-10-17 14:12+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "dosage/dosage/pt_BR/>\n"
@@ -497,7 +497,7 @@ msgstr "Tratamentos"
 
 #: data/ui/window.blp:154
 msgid "Click the button below to add some"
-msgstr "Adicione algum clicando no botão abaixo"
+msgstr "Clique no botão abaixo para adicionar algum"
 
 #: data/ui/window.blp:183
 msgid "About"
