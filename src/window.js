@@ -71,6 +71,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._updateItemsCycle();
 			this._loadToday();
 			this._handleSuspension();
+			this._scheduleNotifications();
 		} catch (err) {
 			console.error('Error loading treatments/history/today... ', err);
 		}
@@ -115,6 +116,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		setTimeout(() => {
 			this._updateEverything(true);
+			this._scheduleNotifications();
 			this.#checkInventory();
 			this.#scheduleNextMidnight();
 		}, timeUntilMidnight);
@@ -279,6 +281,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 							}
 						}
 						this._updateEverything();
+						this._scheduleNotifications('removing');
 					}				
 				});
 			}
@@ -337,8 +340,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		this._todayItems = [];
 
-		this._scheduleNotifications();
-		
 		const noItems = this._sortedTodayModel.get_n_items() === 0;
 		const noTreatments = this._treatmentsList.model.get_n_items() === 0;
 
@@ -358,7 +359,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 	}
 
-	_scheduleNotifications() {
+	_scheduleNotifications(action) {
 		for (const id in this._scheduledItems)
 			clearTimeout(this._scheduledItems[id]);
 
@@ -367,10 +368,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const todayLength = this._todayModel.get_n_items();
 		
 		for (let i = 0; i < todayLength; i++)
-			this._addToBeNotified(this._todayModel.get_item(i));
+			this._addToBeNotified(this._todayModel.get_item(i), action);
 	}
 
-	_addToBeNotified(item) {
+	_addToBeNotified(item, action) {
 		const now = new Date();
 		const hours = now.getHours();
 		const minutes = now.getMinutes();
@@ -384,8 +385,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 			(itemHour - hours) * 3600000 +
 			(itemMin - minutes) * 60000 -
 			seconds * 1000;
-
-		if (timeDiff < 0) timeDiff = 0;
 
 		const pseudoId = JSON.stringify({
 			name: item.name, dosage: item.info.dosage,
@@ -407,6 +406,19 @@ class DosageWindow extends Adw.ApplicationWindow {
 				`${item.info.dosage.dose} ${item.unit}  •  ` +
 				`${addLeadZero(h)}:${addLeadZero(m)}` + period
 			);
+			
+			/* 
+			* notifications from the past will be sent again instantly (setTimeout is < 0)
+			* when performing some action like saving/adding/updating/removing
+			* because it's needs to be rescheduled at every action
+			* so don't send notifications in this case
+			*/
+			if (action && timeDiff < 0) {
+				timeDiff = 0;
+				log(item.name)
+				return
+			};
+
 			app.send_notification(pseudoId, notification);
 		}
 	
@@ -517,6 +529,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			});
 
 			this._updateEverything();
+			this._scheduleNotifications('adding');
 		} 
 		else // one-time entry
 			this._openMedWindow(null, null, true);
@@ -896,6 +909,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			else addItemToTreatments();
 
 			this._updateEverything(null, true);
+			this._scheduleNotifications('saving');
 			closeWindow();		
 		});
 
@@ -918,6 +932,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					const deletePos = treatmentsLS.find(it)[1];
 					treatmentsLS.remove(deletePos);
 					this._updateEverything(null, true);
+					this._scheduleNotifications('deleting');
 					closeWindow();
 				}
 			});
