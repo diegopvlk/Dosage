@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-16 21:31-0300\n"
+"POT-Creation-Date: 2023-10-17 19:42-0300\n"
 "PO-Revision-Date: 2023-10-16 11:32-0300\n"
 "Last-Translator: Albano Battistella <albanobattistella@gmail.com>\n"
 "Language-Team: Italian\n"
@@ -19,7 +19,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:65
-#: src/window.js:442 data/ui/med-window.blp:410
+#: src/window.js:449 data/ui/med-window.blp:410
 msgid "Dosage"
 msgstr "Dosaggio"
 
@@ -69,7 +69,7 @@ msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
 msgstr ""
 "Farmaco;Tracciatore;Promemoria;Oggi;Storia;Trattamenti;Pillola;Droga;Rimedio;"
 
-#: src/historyFactory.js:41 src/window.js:916 data/ui/med-window.blp:522
+#: src/historyFactory.js:41 src/window.js:925 data/ui/med-window.blp:522
 msgid "Delete"
 msgstr "Cancella"
 
@@ -162,77 +162,77 @@ msgid "Delete dose"
 msgstr "Cancella dose"
 
 #. TRANSLATORS: Notification text for for when the inventory is low
-#: src/window.js:92
+#: src/window.js:93
 msgid "You have treatments low in stock"
 msgstr "Hai trattamenti in esaurimento"
 
-#: src/window.js:352
+#: src/window.js:353
 msgid "No treatments added yet!"
 msgstr "Nessun trattamento ancora aggiunto!"
 
-#: src/window.js:355
+#: src/window.js:356
 msgid "All done for today!"
 msgstr "Tutto fatto per oggi!"
 
-#: src/window.js:494
+#: src/window.js:501
 msgid "Confirm"
 msgstr "Conferma"
 
-#: src/window.js:494 data/ui/window.blp:70
+#: src/window.js:501 data/ui/window.blp:70
 msgid "One-time entry"
 msgstr "Unica voce"
 
-#: src/window.js:700
+#: src/window.js:708
 msgid "Edit treatment"
 msgstr "Modifica trattamento"
 
-#: src/window.js:701
+#: src/window.js:709
 msgid "Save"
 msgstr "Salva"
 
-#: src/window.js:787
+#: src/window.js:795
 msgid "New"
 msgstr "Nuovo"
 
-#: src/window.js:797 data/ui/med-window.blp:57
+#: src/window.js:805 data/ui/med-window.blp:57
 msgid "Pill(s)"
 msgstr "Pillola(e)"
 
-#: src/window.js:837
+#: src/window.js:845
 msgid "New entry"
 msgstr "Nuova voce"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:839
+#: src/window.js:847
 msgid "Add to history"
 msgstr "Aggiungi alla cronologia"
 
-#: src/window.js:840 data/ui/med-window.blp:70
+#: src/window.js:848 data/ui/med-window.blp:70
 msgid "Color"
 msgstr "Colore"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:910
+#: src/window.js:919
 msgid "Are you sure?"
 msgstr "Sei sicuro?"
 
-#: src/window.js:915 data/ui/med-window.blp:19
+#: src/window.js:924 data/ui/med-window.blp:19
 msgid "Cancel"
 msgstr "Annulla"
 
-#: src/window.js:1118
+#: src/window.js:1128
 msgid "Empty name"
 msgstr "Nome vuoto"
 
-#: src/window.js:1123
+#: src/window.js:1133
 msgid "Empty unit"
 msgstr "Unità vuota"
 
-#: src/window.js:1134
+#: src/window.js:1144
 msgid "Name already exists"
 msgstr "Il nome esiste già"
 
-#: src/window.js:1148
+#: src/window.js:1158
 msgid "Duplicated time"
 msgstr "Tempo duplicato"
 
