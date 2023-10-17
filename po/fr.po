@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-16 16:23-0300\n"
+"POT-Creation-Date: 2023-10-16 21:31-0300\n"
 "PO-Revision-Date: 2023-10-16 22:34+0000\n"
 "Last-Translator: Xenelio <thomas.colonna.d@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/dosage/dosage/fr/>"
-"\n"
+"Language-Team: French <https://hosted.weblate.org/projects/dosage/dosage/fr/"
+">\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
-#: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:67
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:65
 #: src/window.js:442 data/ui/med-window.blp:410
 msgid "Dosage"
 msgstr "Dosage"
@@ -88,16 +88,16 @@ msgid "Missed"
 msgstr "Manqué"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:75
+#: src/main.js:73
 msgid "translator-credits"
 msgstr "Xenelio <xenelio@gmail.com>"
 
-#: src/main.js:78
+#: src/main.js:76
 msgid "Thanks to these projects!"
 msgstr "Merci pour ces projets !"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:110
+#: src/main.js:108
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Autoriser l'exécution en tâche de fond et à recevoir des notifications"
 
@@ -201,7 +201,7 @@ msgstr "Comprimé(s)"
 msgid "New entry"
 msgstr "Nouvelle entrée"
 
-#. TRANSLATORS: Keep it short (add one-time entry to history)
+#. TRANSLATORS: Keep it short (button to add one-time entry to history)
 #: src/window.js:839
 msgid "Add to history"
 msgstr "Ajouter à l'historique"
@@ -219,19 +219,19 @@ msgstr "Êtes-vous sûrs ?"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: src/window.js:1117
+#: src/window.js:1118
 msgid "Empty name"
 msgstr "Nom vide"
 
-#: src/window.js:1122
+#: src/window.js:1123
 msgid "Empty unit"
 msgstr "Unité vide"
 
-#: src/window.js:1133
+#: src/window.js:1134
 msgid "Name already exists"
 msgstr "Nom déjà existant"
 
-#: src/window.js:1147
+#: src/window.js:1148
 msgid "Duplicated time"
 msgstr "Heure dupliquée"
 
@@ -456,10 +456,12 @@ msgid "Increase notification priority"
 msgstr "Augmenter la priorité des notifications"
 
 #: data/ui/preferences.blp:25
-msgid "On GNOME this will make the notification show on fullscreen mode or even if 'Do Not Disturb' is enabled"
+msgid ""
+"On GNOME this will make the notification show on fullscreen mode or even if "
+"'Do Not Disturb' is enabled"
 msgstr ""
-"Sur GNOME, la notification s'affichera même en mode plein écran ou même si « "
-"Ne Pas Déranger » est activé"
+"Sur GNOME, la notification s'affichera même en mode plein écran ou même si "
+"« Ne Pas Déranger » est activé"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"

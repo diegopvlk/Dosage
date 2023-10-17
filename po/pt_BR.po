@@ -45,7 +45,9 @@ msgstr "Gerenciamento de dosagem — Múltiplas doses com horários diferentes"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
-msgstr "Frequência — Todos os dias, dias específicos, ciclo ou apenas quando necessário"
+msgstr ""
+"Frequência — Todos os dias, dias específicos, ciclo ou apenas quando "
+"necessário"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Color and icon — Give a shape for your treatment"
@@ -62,7 +64,9 @@ msgstr "Duração — Defina datas para começar e terminar"
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
-msgstr "Medicação;Rastreador;Lembrete;Hoje;Histórico;Tratamentos;Pílula;Droga;Remédio;"
+msgstr ""
+"Medicação;Rastreador;Lembrete;Hoje;Histórico;Tratamentos;Pílula;Droga;"
+"Remédio;"
 
 #: src/historyFactory.js:41 src/window.js:916 data/ui/med-window.blp:522
 msgid "Delete"
@@ -95,7 +99,8 @@ msgstr "Obrigado à esses projetos!"
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:108
 msgid "Accept to allow running in the background and receive notifications"
-msgstr "Aceite para permitir a execução em segundo plano e receber notificações"
+msgstr ""
+"Aceite para permitir a execução em segundo plano e receber notificações"
 
 #. TRANSLATORS: Keep it short (label for when the inventory is low)
 #: src/treatmentsFactory.js:90 src/treatmentsFactory.js:92
@@ -452,8 +457,12 @@ msgid "Increase notification priority"
 msgstr "Aumentar a prioridade da notificação"
 
 #: data/ui/preferences.blp:25
-msgid "On GNOME this will make the notification show on fullscreen mode or even if 'Do Not Disturb' is enabled"
-msgstr "No GNOME isso fará com que a notificação seja exibida em tela cheia ou mesmo se o modo 'Não Perturbe' estiver ativado"
+msgid ""
+"On GNOME this will make the notification show on fullscreen mode or even if "
+"'Do Not Disturb' is enabled"
+msgstr ""
+"No GNOME isso fará com que a notificação seja exibida em tela cheia ou mesmo "
+"se o modo 'Não Perturbe' estiver ativado"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
@@ -504,11 +513,16 @@ msgstr "Sair"
 #~ msgid "Fixed notifications being delayed after suspension"
 #~ msgstr "Corrigido: notificações atrasadas após suspensão"
 
-#~ msgid "Fixed notifications being sent more than once after saving an existing treatment"
-#~ msgstr "Corrigido: notificações enviadas mais de uma vez após salvar um tratamento existente"
+#~ msgid ""
+#~ "Fixed notifications being sent more than once after saving an existing "
+#~ "treatment"
+#~ msgstr ""
+#~ "Corrigido: notificações enviadas mais de uma vez após salvar um "
+#~ "tratamento existente"
 
 #~ msgid "Added a label to show the frequency on treatments list"
-#~ msgstr "Adicionado um rótulo para mostrar a frequência na lista de tratamentos"
+#~ msgstr ""
+#~ "Adicionado um rótulo para mostrar a frequência na lista de tratamentos"
 
 #~ msgid "Brazilian translation updated"
 #~ msgstr "Tradução brasileira atualizada"
