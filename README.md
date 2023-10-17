@@ -16,13 +16,13 @@ Keep track of your treatments
 - **Inventory tracking** — Monitor your stock and get reminded when it's low
 - **Duration** — Define the start and end dates
 
-<p align="center"><img src="https://github.com/diegopvlk/Dosage/blob/main/screenshots/today-light.png"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/diegopvlk/Dosage/main/screenshots/today-light.png"/></p>
 
 <div>
   <details>
     <summary><h3>Other screenshots</h3></summary><br>
-      <p align="center"><img style="height:700px;" src="https://github.com/diegopvlk/Dosage/blob/main/screenshots/med-window-light.png"/></p>
-      <p align="center"><img src="https://github.com/diegopvlk/Dosage/blob/main/screenshots/today-dark.png"/></p>
+      <p align="center"><img style="height:700px;" src="https://raw.githubusercontent.com/diegopvlk/Dosage/main/screenshots/med-window-light.png"/></p>
+      <p align="center"><img src="https://raw.githubusercontent.com/diegopvlk/Dosage/main/screenshots/today-dark.png"/></p>
   </details>
 </div>
 
