@@ -31,5 +31,5 @@ Keep track of your treatments
 You can help translate using [Weblate](https://hosted.weblate.org/projects/dosage/dosage/)
 
 <a href="https://hosted.weblate.org/engage/dosage/">
-<img src="https://hosted.weblate.org/widget/dosage/dosage/287x66-white.png" alt="Translation status" />
+  <img src="https://hosted.weblate.org/widget/dosage/dosage/multi-auto.svg" alt="Translation status" />
 </a>
