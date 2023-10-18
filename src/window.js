@@ -410,12 +410,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 			/* 
 			* notifications from the past will be sent again instantly (setTimeout is < 0)
 			* when performing some action like saving/adding/updating/removing
-			* because it's needs to be rescheduled at every action
+			* because it needs to be rescheduled at every action
 			* so don't send notifications in this case
 			*/
 			if (action && timeDiff < 0) {
 				timeDiff = 0;
-				log(item.name)
 				return
 			};
 
