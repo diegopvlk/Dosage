@@ -33,3 +33,6 @@ You can help translate using [Weblate](https://hosted.weblate.org/projects/dosag
 <a href="https://hosted.weblate.org/engage/dosage/">
   <img src="https://hosted.weblate.org/widget/dosage/dosage/multi-auto.svg" alt="Translation status" />
 </a>
+
+### Build from source
+Clone the repo in GNOME Builder and press run
