@@ -1134,6 +1134,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 				return;
 			}
 
+			if (frequencySpecificDays.get_visible() && getSpecificDays().length == 0) {
+				toastOverlay.add_toast(new Adw.Toast({ title: _('Choose at least one day') }));
+				return;
+			}
+
 			for (const it of treatmentsLS) {
 				if (isUpdate) {
 					const item = list.get_model().get_item(position);
