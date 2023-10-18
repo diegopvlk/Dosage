@@ -65,9 +65,7 @@ msgstr "Durée — Définissez le début et la fin des traitements"
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
-msgstr ""
-"Médicament;Suivi;Rappel;Aujourd'hui;Historique;Traitements;Comprimé;Remède;"
-"Pilule;"
+msgstr "Médicament;Suivi;Rappel;Aujourd'hui;Historique;Traitements;Comprimé;Remède;Pilule;"
 
 #: src/historyFactory.js:41 src/window.js:924 data/ui/med-window.blp:522
 msgid "Delete"
@@ -126,31 +124,31 @@ msgstr "Jours de la semaine"
 
 #: src/treatmentsFactory.js:132
 msgid "Sunday"
-msgstr ""
+msgstr "Dimanche"
 
 #: src/treatmentsFactory.js:133
 msgid "Monday"
-msgstr ""
+msgstr "Lundi"
 
 #: src/treatmentsFactory.js:134
 msgid "Tuesday"
-msgstr ""
+msgstr "Mardi"
 
 #: src/treatmentsFactory.js:135
 msgid "Wednesday"
-msgstr ""
+msgstr "Mercredi"
 
 #: src/treatmentsFactory.js:136
 msgid "Thursday"
-msgstr ""
+msgstr "Jeudi"
 
 #: src/treatmentsFactory.js:137
 msgid "Friday"
-msgstr ""
+msgstr "Vendredi"
 
 #: src/treatmentsFactory.js:138
 msgid "Saturday"
-msgstr ""
+msgstr "Samedi"
 
 #: src/treatmentsFactory.js:147 data/ui/med-window.blp:300
 msgid "When needed"
@@ -229,7 +227,7 @@ msgstr "Unité vide"
 
 #: src/window.js:1138
 msgid "Choose at least one day"
-msgstr ""
+msgstr "Choisissez au moins un jour"
 
 #: src/window.js:1148
 msgid "Name already exists"
@@ -489,12 +487,8 @@ msgid "Increase notification priority"
 msgstr "Augmenter la priorité des notifications"
 
 #: data/ui/preferences.blp:25
-msgid ""
-"On GNOME this will make the notification show on fullscreen mode or even if "
-"'Do Not Disturb' is enabled"
-msgstr ""
-"Sur GNOME, la notification s'affichera même en mode plein écran ou même si "
-"« Ne Pas Déranger » est activé"
+msgid "On GNOME this will make the notification show on fullscreen mode or even if 'Do Not Disturb' is enabled"
+msgstr "Sur GNOME, la notification s'affichera même en mode plein écran ou même si « Ne Pas Déranger » est activé"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
