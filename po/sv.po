@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 19:42-0300\n"
+"POT-Creation-Date: 2023-10-18 10:01-0300\n"
 "PO-Revision-Date: 2023-10-18 11:43+0000\n"
 "Last-Translator: sköldpadda <weblate@turtle.garden>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
-">\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +21,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:65
-#: src/window.js:449 data/ui/med-window.blp:410
+#: src/window.js:448 data/ui/med-window.blp:410
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -57,9 +56,7 @@ msgstr "Färg och ikon — ge din behandling en form"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
-msgstr ""
-"Lagerhantering — övervaka ditt lager och få en påminnelse när det börjar ta "
-"slut"
+msgstr "Lagerhantering — övervaka ditt lager och få en påminnelse när det börjar ta slut"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Duration — Define the start and end dates"
@@ -68,11 +65,9 @@ msgstr "Längd — definiera start- och slutdatum"
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
-msgstr ""
-"Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;Medicin"
-"ering;Påminnelse;Idag;Historia;Behandlingar;Piller;Läkemedel;Botemedel;"
+msgstr "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;Medicinering;Påminnelse;Idag;Historia;Behandlingar;Piller;Läkemedel;Botemedel;"
 
-#: src/historyFactory.js:41 src/window.js:925 data/ui/med-window.blp:522
+#: src/historyFactory.js:41 src/window.js:924 data/ui/med-window.blp:522
 msgid "Delete"
 msgstr "Radera"
 
@@ -117,48 +112,47 @@ msgstr "Lågt lager"
 msgid "Until"
 msgstr "Till"
 
-#: src/treatmentsFactory.js:110 src/treatmentsFactory.js:121
+#: src/treatmentsFactory.js:110 src/treatmentsFactory.js:123
 msgid "Daily"
 msgstr "Daglig"
 
-#: src/treatmentsFactory.js:117
+#: src/treatmentsFactory.js:119
 msgid "Weekend"
 msgstr "Helg"
 
-#: src/treatmentsFactory.js:119
+#: src/treatmentsFactory.js:121
 msgid "Weekdays"
 msgstr "Veckodagar"
 
-#. TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa)
-#: src/treatmentsFactory.js:130 data/ui/med-window.blp:317
-msgid "Su"
-msgstr "Sö"
+#: src/treatmentsFactory.js:132
+msgid "Sunday"
+msgstr "Söndag"
 
-#: src/treatmentsFactory.js:131 data/ui/med-window.blp:323
-msgid "Mo"
-msgstr "Må"
+#: src/treatmentsFactory.js:133
+msgid "Monday"
+msgstr "Måndag"
 
-#: src/treatmentsFactory.js:132 data/ui/med-window.blp:329
-msgid "Tu"
-msgstr "Ti"
+#: src/treatmentsFactory.js:134
+msgid "Tuesday"
+msgstr "Tisdag"
 
-#: src/treatmentsFactory.js:133 data/ui/med-window.blp:335
-msgid "We"
-msgstr "On"
+#: src/treatmentsFactory.js:135
+msgid "Wednesday"
+msgstr "Onsdag"
 
-#: src/treatmentsFactory.js:134 data/ui/med-window.blp:341
-msgid "Th"
-msgstr "To"
+#: src/treatmentsFactory.js:136
+msgid "Thursday"
+msgstr "Torsdag"
 
-#: src/treatmentsFactory.js:135 data/ui/med-window.blp:347
-msgid "Fr"
-msgstr "Fr"
+#: src/treatmentsFactory.js:137
+msgid "Friday"
+msgstr "Fredag"
 
-#: src/treatmentsFactory.js:136 data/ui/med-window.blp:353
-msgid "Sa"
-msgstr "Lö"
+#: src/treatmentsFactory.js:138
+msgid "Saturday"
+msgstr "Lördag"
 
-#: src/treatmentsFactory.js:145 data/ui/med-window.blp:300
+#: src/treatmentsFactory.js:147 data/ui/med-window.blp:300
 msgid "When needed"
 msgstr "Vid behov"
 
@@ -180,66 +174,70 @@ msgstr "Inga behandlingar tillagad ännu!"
 msgid "All done for today!"
 msgstr "Färdig för i dag!"
 
-#: src/window.js:501
+#: src/window.js:500
 msgid "Confirm"
 msgstr "Bekräfta"
 
-#: src/window.js:501 data/ui/window.blp:70
+#: src/window.js:500 data/ui/window.blp:70
 msgid "One-time entry"
 msgstr "Engångsinträde"
 
-#: src/window.js:708
+#: src/window.js:707
 msgid "Edit treatment"
 msgstr "Redigera behandling"
 
-#: src/window.js:709
+#: src/window.js:708
 msgid "Save"
 msgstr "Spara"
 
-#: src/window.js:795
+#: src/window.js:794
 msgid "New"
 msgstr "Ny"
 
-#: src/window.js:805 data/ui/med-window.blp:57
+#: src/window.js:804 data/ui/med-window.blp:57
 msgid "Pill(s)"
 msgstr "Piller"
 
-#: src/window.js:845
+#: src/window.js:844
 #, fuzzy
 msgid "New entry"
 msgstr "Ny inträde"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:847
+#: src/window.js:846
 msgid "Add to history"
 msgstr "Lägg till i historik"
 
-#: src/window.js:848 data/ui/med-window.blp:70
+#: src/window.js:847 data/ui/med-window.blp:70
 msgid "Color"
 msgstr "Färg"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:919
+#: src/window.js:918
 msgid "Are you sure?"
 msgstr "Är du säker?"
 
-#: src/window.js:924 data/ui/med-window.blp:19
+#: src/window.js:923 data/ui/med-window.blp:19
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: src/window.js:1128
+#: src/window.js:1127
 msgid "Empty name"
 msgstr "Tömt namn"
 
-#: src/window.js:1133
+#: src/window.js:1132
 msgid "Empty unit"
 msgstr "Töm enhet"
 
-#: src/window.js:1144
+#: src/window.js:1138
+msgid "Choose at least one day"
+msgstr "Välj åtminstone en dag"
+
+#: src/window.js:1148
 msgid "Name already exists"
 msgstr "Namnet finns redan"
 
-#: src/window.js:1158
+#: src/window.js:1162
 msgid "Duplicated time"
 msgstr "Duplicerad tid"
 
@@ -386,6 +384,35 @@ msgstr "Cykel"
 msgid "Choose"
 msgstr "Välj"
 
+#. TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa)
+#: data/ui/med-window.blp:317
+msgid "Su"
+msgstr "Sö"
+
+#: data/ui/med-window.blp:323
+msgid "Mo"
+msgstr "Må"
+
+#: data/ui/med-window.blp:329
+msgid "Tu"
+msgstr "Ti"
+
+#: data/ui/med-window.blp:335
+msgid "We"
+msgstr "On"
+
+#: data/ui/med-window.blp:341
+msgid "Th"
+msgstr "To"
+
+#: data/ui/med-window.blp:347
+msgid "Fr"
+msgstr "Fr"
+
+#: data/ui/med-window.blp:353
+msgid "Sa"
+msgstr "Lö"
+
 #: data/ui/med-window.blp:370
 msgid "Days active"
 msgstr "Dagar aktiv"
@@ -466,9 +493,7 @@ msgstr "Öka aviseringsprioritet"
 
 #: data/ui/preferences.blp:25
 msgid "On GNOME this will make the notification show on fullscreen mode or even if 'Do Not Disturb' is enabled"
-msgstr ""
-"På GNOME gör detta en avisering visas i helskärmsläge eller även om \"Stör "
-"ej\" är aktiverat"
+msgstr "På GNOME gör detta en avisering visas i helskärmsläge eller även om \"Stör ej\" är aktiverat"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"

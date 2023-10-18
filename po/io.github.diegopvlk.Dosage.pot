@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 19:42-0300\n"
+"POT-Creation-Date: 2023-10-18 10:01-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:65
-#: src/window.js:449 data/ui/med-window.blp:410
+#: src/window.js:448 data/ui/med-window.blp:410
 msgid "Dosage"
 msgstr ""
 
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
 msgstr ""
 
-#: src/historyFactory.js:41 src/window.js:925 data/ui/med-window.blp:522
+#: src/historyFactory.js:41 src/window.js:924 data/ui/med-window.blp:522
 msgid "Delete"
 msgstr ""
 
@@ -108,48 +108,47 @@ msgstr ""
 msgid "Until"
 msgstr ""
 
-#: src/treatmentsFactory.js:110 src/treatmentsFactory.js:121
+#: src/treatmentsFactory.js:110 src/treatmentsFactory.js:123
 msgid "Daily"
 msgstr ""
 
-#: src/treatmentsFactory.js:117
+#: src/treatmentsFactory.js:119
 msgid "Weekend"
 msgstr ""
 
-#: src/treatmentsFactory.js:119
+#: src/treatmentsFactory.js:121
 msgid "Weekdays"
 msgstr ""
 
-#. TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa)
-#: src/treatmentsFactory.js:130 data/ui/med-window.blp:317
-msgid "Su"
+#: src/treatmentsFactory.js:132
+msgid "Sunday"
 msgstr ""
 
-#: src/treatmentsFactory.js:131 data/ui/med-window.blp:323
-msgid "Mo"
+#: src/treatmentsFactory.js:133
+msgid "Monday"
 msgstr ""
 
-#: src/treatmentsFactory.js:132 data/ui/med-window.blp:329
-msgid "Tu"
+#: src/treatmentsFactory.js:134
+msgid "Tuesday"
 msgstr ""
 
-#: src/treatmentsFactory.js:133 data/ui/med-window.blp:335
-msgid "We"
+#: src/treatmentsFactory.js:135
+msgid "Wednesday"
 msgstr ""
 
-#: src/treatmentsFactory.js:134 data/ui/med-window.blp:341
-msgid "Th"
+#: src/treatmentsFactory.js:136
+msgid "Thursday"
 msgstr ""
 
-#: src/treatmentsFactory.js:135 data/ui/med-window.blp:347
-msgid "Fr"
+#: src/treatmentsFactory.js:137
+msgid "Friday"
 msgstr ""
 
-#: src/treatmentsFactory.js:136 data/ui/med-window.blp:353
-msgid "Sa"
+#: src/treatmentsFactory.js:138
+msgid "Saturday"
 msgstr ""
 
-#: src/treatmentsFactory.js:145 data/ui/med-window.blp:300
+#: src/treatmentsFactory.js:147 data/ui/med-window.blp:300
 msgid "When needed"
 msgstr ""
 
@@ -170,65 +169,69 @@ msgstr ""
 msgid "All done for today!"
 msgstr ""
 
-#: src/window.js:501
+#: src/window.js:500
 msgid "Confirm"
 msgstr ""
 
-#: src/window.js:501 data/ui/window.blp:70
+#: src/window.js:500 data/ui/window.blp:70
 msgid "One-time entry"
 msgstr ""
 
-#: src/window.js:708
+#: src/window.js:707
 msgid "Edit treatment"
 msgstr ""
 
-#: src/window.js:709
+#: src/window.js:708
 msgid "Save"
 msgstr ""
 
-#: src/window.js:795
+#: src/window.js:794
 msgid "New"
 msgstr ""
 
-#: src/window.js:805 data/ui/med-window.blp:57
+#: src/window.js:804 data/ui/med-window.blp:57
 msgid "Pill(s)"
 msgstr ""
 
-#: src/window.js:845
+#: src/window.js:844
 msgid "New entry"
 msgstr ""
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:847
+#: src/window.js:846
 msgid "Add to history"
 msgstr ""
 
-#: src/window.js:848 data/ui/med-window.blp:70
+#: src/window.js:847 data/ui/med-window.blp:70
 msgid "Color"
 msgstr ""
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:919
+#: src/window.js:918
 msgid "Are you sure?"
 msgstr ""
 
-#: src/window.js:924 data/ui/med-window.blp:19
+#: src/window.js:923 data/ui/med-window.blp:19
 msgid "Cancel"
 msgstr ""
 
-#: src/window.js:1128
+#: src/window.js:1127
 msgid "Empty name"
 msgstr ""
 
-#: src/window.js:1133
+#: src/window.js:1132
 msgid "Empty unit"
 msgstr ""
 
-#: src/window.js:1144
+#: src/window.js:1138
+msgid "Choose at least one day"
+msgstr ""
+
+#: src/window.js:1148
 msgid "Name already exists"
 msgstr ""
 
-#: src/window.js:1158
+#: src/window.js:1162
 msgid "Duplicated time"
 msgstr ""
 
@@ -373,6 +376,35 @@ msgstr ""
 #: data/ui/med-window.blp:308 data/ui/med-window.blp:469
 #: data/ui/med-window.blp:485 data/ui/med-window.blp:503
 msgid "Choose"
+msgstr ""
+
+#. TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa)
+#: data/ui/med-window.blp:317
+msgid "Su"
+msgstr ""
+
+#: data/ui/med-window.blp:323
+msgid "Mo"
+msgstr ""
+
+#: data/ui/med-window.blp:329
+msgid "Tu"
+msgstr ""
+
+#: data/ui/med-window.blp:335
+msgid "We"
+msgstr ""
+
+#: data/ui/med-window.blp:341
+msgid "Th"
+msgstr ""
+
+#: data/ui/med-window.blp:347
+msgid "Fr"
+msgstr ""
+
+#: data/ui/med-window.blp:353
+msgid "Sa"
 msgstr ""
 
 #: data/ui/med-window.blp:370

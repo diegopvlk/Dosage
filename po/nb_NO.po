@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 19:42-0300\n"
+"POT-Creation-Date: 2023-10-18 10:01-0300\n"
 "PO-Revision-Date: 2023-10-15 22:56+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
-"dosage/nb_NO/>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/dosage/nb_NO/>\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +21,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:65
-#: src/window.js:449 data/ui/med-window.blp:410
+#: src/window.js:448 data/ui/med-window.blp:410
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -60,8 +59,7 @@ msgstr "Farge og ikon — gi behandlingen din en form"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
-msgstr ""
-"Inventar og sporing — hold øye med beholdning og få påminnelse når den er lav"
+msgstr "Inventar og sporing — hold øye med beholdning og få påminnelse når den er lav"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Duration — Define the start and end dates"
@@ -72,7 +70,7 @@ msgstr "Varighet — definer start- og sluttdatoer"
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
 msgstr ""
 
-#: src/historyFactory.js:41 src/window.js:925 data/ui/med-window.blp:522
+#: src/historyFactory.js:41 src/window.js:924 data/ui/med-window.blp:522
 msgid "Delete"
 msgstr "Slett"
 
@@ -103,7 +101,7 @@ msgstr "Takk til disse prosjektene."
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:108
 msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
+msgstr "Godta for å tillate kjøring i bakgrunnen og motta varsler"
 
 #. TRANSLATORS: Keep it short (label for when the inventory is low)
 #: src/treatmentsFactory.js:90 src/treatmentsFactory.js:92
@@ -115,56 +113,53 @@ msgstr "Lav beholdning"
 msgid "Until"
 msgstr "Til"
 
-#: src/treatmentsFactory.js:110 src/treatmentsFactory.js:121
+#: src/treatmentsFactory.js:110 src/treatmentsFactory.js:123
 msgid "Daily"
 msgstr "Daglig"
 
-#: src/treatmentsFactory.js:117
+#: src/treatmentsFactory.js:119
 msgid "Weekend"
 msgstr "Helg"
 
-#: src/treatmentsFactory.js:119
+#: src/treatmentsFactory.js:121
 msgid "Weekdays"
 msgstr "Ukedager"
 
-#. TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa)
-#: src/treatmentsFactory.js:130 data/ui/med-window.blp:317
-msgid "Su"
-msgstr "Sø"
+#: src/treatmentsFactory.js:132
+msgid "Sunday"
+msgstr "Søndag"
 
-#: src/treatmentsFactory.js:131 data/ui/med-window.blp:323
-msgid "Mo"
-msgstr "Ma"
+#: src/treatmentsFactory.js:133
+msgid "Monday"
+msgstr "Mandag"
 
-#: src/treatmentsFactory.js:132 data/ui/med-window.blp:329
-msgid "Tu"
-msgstr "Ti"
+#: src/treatmentsFactory.js:134
+msgid "Tuesday"
+msgstr "Tirsdag"
 
-#: src/treatmentsFactory.js:133 data/ui/med-window.blp:335
-msgid "We"
-msgstr "On"
+#: src/treatmentsFactory.js:135
+msgid "Wednesday"
+msgstr "Onsdag"
 
-#: src/treatmentsFactory.js:134 data/ui/med-window.blp:341
-msgid "Th"
-msgstr "To"
+#: src/treatmentsFactory.js:136
+msgid "Thursday"
+msgstr "Torsdag"
 
-#: src/treatmentsFactory.js:135 data/ui/med-window.blp:347
-msgid "Fr"
-msgstr "Fr"
+#: src/treatmentsFactory.js:137
+msgid "Friday"
+msgstr "Fredag"
 
-#: src/treatmentsFactory.js:136 data/ui/med-window.blp:353
-msgid "Sa"
-msgstr "Lø"
+#: src/treatmentsFactory.js:138
+msgid "Saturday"
+msgstr "Lørdag"
 
-#: src/treatmentsFactory.js:145 data/ui/med-window.blp:300
+#: src/treatmentsFactory.js:147 data/ui/med-window.blp:300
 msgid "When needed"
 msgstr "Ved behov"
 
 #: src/utils.js:137
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete dose"
-msgstr "Slett"
+msgstr "Slett dose"
 
 #. TRANSLATORS: Notification text for for when the inventory is low
 #: src/window.js:93
@@ -179,65 +174,69 @@ msgstr "Ingen behandlinger lagt til enda."
 msgid "All done for today!"
 msgstr "Ferdig for i dag."
 
-#: src/window.js:501
+#: src/window.js:500
 msgid "Confirm"
 msgstr "Bekreft"
 
-#: src/window.js:501 data/ui/window.blp:70
+#: src/window.js:500 data/ui/window.blp:70
 msgid "One-time entry"
 msgstr "Engangsoppføring"
 
-#: src/window.js:708
+#: src/window.js:707
 msgid "Edit treatment"
 msgstr "Rediger behandling"
 
-#: src/window.js:709
+#: src/window.js:708
 msgid "Save"
 msgstr "Lagre"
 
-#: src/window.js:795
+#: src/window.js:794
 msgid "New"
 msgstr "Ny"
 
-#: src/window.js:805 data/ui/med-window.blp:57
+#: src/window.js:804 data/ui/med-window.blp:57
 msgid "Pill(s)"
 msgstr "Pille(r)"
 
-#: src/window.js:845
+#: src/window.js:844
 msgid "New entry"
 msgstr "Ny oppføring"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:847
+#: src/window.js:846
 msgid "Add to history"
 msgstr "Legg til i historikk"
 
-#: src/window.js:848 data/ui/med-window.blp:70
+#: src/window.js:847 data/ui/med-window.blp:70
 msgid "Color"
 msgstr "Farge"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:919
+#: src/window.js:918
 msgid "Are you sure?"
 msgstr "Er du sikker?"
 
-#: src/window.js:924 data/ui/med-window.blp:19
+#: src/window.js:923 data/ui/med-window.blp:19
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: src/window.js:1128
+#: src/window.js:1127
 msgid "Empty name"
 msgstr "Tomt navn"
 
-#: src/window.js:1133
+#: src/window.js:1132
 msgid "Empty unit"
 msgstr "Tom enhet"
 
-#: src/window.js:1144
+#: src/window.js:1138
+msgid "Choose at least one day"
+msgstr "Velg minst én dag"
+
+#: src/window.js:1148
 msgid "Name already exists"
 msgstr "Navnet finnes allerede"
 
-#: src/window.js:1158
+#: src/window.js:1162
 msgid "Duplicated time"
 msgstr "Duplisert tid"
 
@@ -388,6 +387,35 @@ msgstr "Syklus"
 msgid "Choose"
 msgstr "Velg"
 
+#. TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa)
+#: data/ui/med-window.blp:317
+msgid "Su"
+msgstr "Sø"
+
+#: data/ui/med-window.blp:323
+msgid "Mo"
+msgstr "Ma"
+
+#: data/ui/med-window.blp:329
+msgid "Tu"
+msgstr "Ti"
+
+#: data/ui/med-window.blp:335
+msgid "We"
+msgstr "On"
+
+#: data/ui/med-window.blp:341
+msgid "Th"
+msgstr "To"
+
+#: data/ui/med-window.blp:347
+msgid "Fr"
+msgstr "Fr"
+
+#: data/ui/med-window.blp:353
+msgid "Sa"
+msgstr "Lø"
+
 #: data/ui/med-window.blp:370
 #, fuzzy
 msgid "Days active"
@@ -414,11 +442,11 @@ msgstr "Legg til dose"
 
 #: data/ui/med-window.blp:424
 msgid "Recurring notifications"
-msgstr ""
+msgstr "Gjentatte varsler"
 
 #: data/ui/med-window.blp:425
 msgid "Every five minutes until confirmed or skipped"
-msgstr ""
+msgstr "Hver fem minutter til bekreftet eller hoppet over"
 
 #: data/ui/med-window.blp:429
 msgid "Inventory"
@@ -469,10 +497,8 @@ msgid "Increase notification priority"
 msgstr "Øk merknadsprioritet"
 
 #: data/ui/preferences.blp:25
-msgid ""
-"On GNOME this will make the notification show on fullscreen mode or even if "
-"'Do Not Disturb' is enabled"
-msgstr ""
+msgid "On GNOME this will make the notification show on fullscreen mode or even if 'Do Not Disturb' is enabled"
+msgstr "På GNOME vil dette få varslingen til å vises i fullskjermmodus eller selv om 'Ikke forstyrr' er aktivert"
 
 #: data/ui/window.blp:29
 #, fuzzy
@@ -511,7 +537,7 @@ msgstr "Legg til noen ved å klikke på knappen nedenfor"
 
 #: data/ui/window.blp:183
 msgid "About"
-msgstr ""
+msgstr "Om"
 
 #: data/ui/window.blp:187
 msgid "Quit"
