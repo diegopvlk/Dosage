@@ -10,7 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2023-10-18 10:01-0300\n"
 "PO-Revision-Date: 2023-10-15 22:56+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/dosage/nb_NO/>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
+"dosage/nb_NO/>\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,7 +60,8 @@ msgstr "Farge og ikon — gi behandlingen din en form"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
-msgstr "Inventar og sporing — hold øye med beholdning og få påminnelse når den er lav"
+msgstr ""
+"Inventar og sporing — hold øye med beholdning og få påminnelse når den er lav"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Duration — Define the start and end dates"
@@ -497,8 +499,12 @@ msgid "Increase notification priority"
 msgstr "Øk merknadsprioritet"
 
 #: data/ui/preferences.blp:25
-msgid "On GNOME this will make the notification show on fullscreen mode or even if 'Do Not Disturb' is enabled"
-msgstr "På GNOME vil dette få varslingen til å vises i fullskjermmodus eller selv om 'Ikke forstyrr' er aktivert"
+msgid ""
+"On GNOME this will make the notification show on fullscreen mode or even if "
+"'Do Not Disturb' is enabled"
+msgstr ""
+"På GNOME vil dette få varslingen til å vises i fullskjermmodus eller selv om "
+"'Ikke forstyrr' er aktivert"
 
 #: data/ui/window.blp:29
 #, fuzzy

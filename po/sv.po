@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:65
-#: src/window.js:448 data/ui/med-window.blp:410 src/window.js:449
+#: src/window.js:448 data/ui/med-window.blp:410
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -73,7 +73,6 @@ msgstr ""
 "Botemedel;"
 
 #: src/historyFactory.js:41 src/window.js:924 data/ui/med-window.blp:522
-#: src/window.js:925
 msgid "Delete"
 msgstr "Radera"
 
@@ -117,15 +116,14 @@ msgid "Until"
 msgstr "Till"
 
 #: src/treatmentsFactory.js:110 src/treatmentsFactory.js:123
-#: src/treatmentsFactory.js:121
 msgid "Daily"
 msgstr "Daglig"
 
-#: src/treatmentsFactory.js:119 src/treatmentsFactory.js:117
+#: src/treatmentsFactory.js:119
 msgid "Weekend"
 msgstr "Helg"
 
-#: src/treatmentsFactory.js:121 src/treatmentsFactory.js:119
+#: src/treatmentsFactory.js:121
 msgid "Weekdays"
 msgstr "Veckodagar"
 
@@ -158,7 +156,6 @@ msgid "Saturday"
 msgstr "Lördag"
 
 #: src/treatmentsFactory.js:147 data/ui/med-window.blp:300
-#: src/treatmentsFactory.js:145
 msgid "When needed"
 msgstr "Vid behov"
 
@@ -179,57 +176,57 @@ msgstr "Inga behandlingar har lagts till ännu!"
 msgid "All done for today!"
 msgstr "Färdig för i dag!"
 
-#: src/window.js:500 src/window.js:501
+#: src/window.js:500
 msgid "Confirm"
 msgstr "Bekräfta"
 
-#: src/window.js:500 data/ui/window.blp:70 src/window.js:501
+#: src/window.js:500 data/ui/window.blp:70
 msgid "One-time entry"
 msgstr "Engångsinträde"
 
-#: src/window.js:707 src/window.js:708
+#: src/window.js:707
 msgid "Edit treatment"
 msgstr "Redigera behandling"
 
-#: src/window.js:708 src/window.js:709
+#: src/window.js:708
 msgid "Save"
 msgstr "Spara"
 
-#: src/window.js:794 src/window.js:795
+#: src/window.js:794
 msgid "New"
 msgstr "Ny"
 
-#: src/window.js:804 data/ui/med-window.blp:57 src/window.js:805
+#: src/window.js:804 data/ui/med-window.blp:57
 msgid "Pill(s)"
 msgstr "Piller"
 
-#: src/window.js:845
+#: src/window.js:844
 msgid "New entry"
 msgstr "Ny notering"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:846 src/window.js:847
+#: src/window.js:846
 msgid "Add to history"
 msgstr "Lägg till i historik"
 
-#: src/window.js:847 data/ui/med-window.blp:70 src/window.js:848
+#: src/window.js:847 data/ui/med-window.blp:70
 msgid "Color"
 msgstr "Färg"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:918 src/window.js:919
+#: src/window.js:918
 msgid "Are you sure?"
 msgstr "Är du säker?"
 
-#: src/window.js:923 data/ui/med-window.blp:19 src/window.js:924
+#: src/window.js:923 data/ui/med-window.blp:19
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: src/window.js:1127 src/window.js:1128
+#: src/window.js:1127
 msgid "Empty name"
 msgstr "Tömt namn"
 
-#: src/window.js:1132 src/window.js:1133
+#: src/window.js:1132
 msgid "Empty unit"
 msgstr "Töm enhet"
 
@@ -237,11 +234,11 @@ msgstr "Töm enhet"
 msgid "Choose at least one day"
 msgstr "Välj åtminstone en dag"
 
-#: src/window.js:1148 src/window.js:1144
+#: src/window.js:1148
 msgid "Name already exists"
 msgstr "Namnet finns redan"
 
-#: src/window.js:1162 src/window.js:1158
+#: src/window.js:1162
 msgid "Duplicated time"
 msgstr "Duplicerad tid"
 
@@ -389,31 +386,31 @@ msgid "Choose"
 msgstr "Välj"
 
 #. TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa)
-#: data/ui/med-window.blp:317 src/treatmentsFactory.js:130
+#: data/ui/med-window.blp:317
 msgid "Su"
 msgstr "Sö"
 
-#: data/ui/med-window.blp:323 src/treatmentsFactory.js:131
+#: data/ui/med-window.blp:323
 msgid "Mo"
 msgstr "Må"
 
-#: data/ui/med-window.blp:329 src/treatmentsFactory.js:132
+#: data/ui/med-window.blp:329
 msgid "Tu"
 msgstr "Ti"
 
-#: data/ui/med-window.blp:335 src/treatmentsFactory.js:133
+#: data/ui/med-window.blp:335
 msgid "We"
 msgstr "On"
 
-#: data/ui/med-window.blp:341 src/treatmentsFactory.js:134
+#: data/ui/med-window.blp:341
 msgid "Th"
 msgstr "To"
 
-#: data/ui/med-window.blp:347 src/treatmentsFactory.js:135
+#: data/ui/med-window.blp:347
 msgid "Fr"
 msgstr "Fr"
 
-#: data/ui/med-window.blp:353 src/treatmentsFactory.js:136
+#: data/ui/med-window.blp:353
 msgid "Sa"
 msgstr "Lö"
 

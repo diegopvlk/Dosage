@@ -48,15 +48,21 @@ msgstr "Керування дозами - кілька доз у різний ч
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
-msgstr "Частота прийомів — кожного дня, конкретні дні, цикли або просто коли треба прийняти"
+msgstr ""
+"Частота прийомів — кожного дня, конкретні дні, цикли або просто коли треба "
+"прийняти"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Color and icon — Give a shape for your treatment"
-msgstr "Колір та піктограма — щоб обрати колір і піктограму для запису в курсах лікування"
+msgstr ""
+"Колір та піктограма — щоб обрати колір і піктограму для запису в курсах "
+"лікування"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
-msgstr "Відкорковування запасу — моніторинг запасу і сповіщення, якщо запас буде закінчуватися"
+msgstr ""
+"Відкорковування запасу — моніторинг запасу і сповіщення, якщо запас буде "
+"закінчуватися"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Duration — Define the start and end dates"
@@ -65,7 +71,10 @@ msgstr "Тривалість — визначте початкову та кін
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
-msgstr "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;лікування;курс;аптечка;пігулка;таблетка;нагадати;згадати;прийом;пігулка;доза;дозування;процедура;"
+msgstr ""
+"Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
+"лікування;курс;аптечка;пігулка;таблетка;нагадати;згадати;прийом;пігулка;доза;"
+"дозування;процедура;"
 
 #: src/historyFactory.js:41 src/window.js:924 data/ui/med-window.blp:522
 msgid "Delete"
@@ -98,7 +107,9 @@ msgstr "Велике спасибі цим проектам!"
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:108
 msgid "Accept to allow running in the background and receive notifications"
-msgstr "Прийміть, щоб додаток міг працювати у фоновому режимі і відправляти сповіщення"
+msgstr ""
+"Прийміть, щоб додаток міг працювати у фоновому режимі і відправляти "
+"сповіщення"
 
 #. TRANSLATORS: Keep it short (label for when the inventory is low)
 #: src/treatmentsFactory.js:90 src/treatmentsFactory.js:92
@@ -487,8 +498,12 @@ msgid "Increase notification priority"
 msgstr "Збільшити пріорітет сповіщень"
 
 #: data/ui/preferences.blp:25
-msgid "On GNOME this will make the notification show on fullscreen mode or even if 'Do Not Disturb' is enabled"
-msgstr "У GNOME, ця опція дозволить відображати сповіщення навіть якщо у фокусі програма у повноекранному режимі або активовано режим 'Не турбувати'"
+msgid ""
+"On GNOME this will make the notification show on fullscreen mode or even if "
+"'Do Not Disturb' is enabled"
+msgstr ""
+"У GNOME, ця опція дозволить відображати сповіщення навіть якщо у фокусі "
+"програма у повноекранному режимі або активовано режим 'Не турбувати'"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
@@ -539,13 +554,20 @@ msgstr "Вийти"
 #~ msgstr "Дозволити 'Дозування' працювати у фоновому режимі."
 
 #~ msgid "Fixed notifications being delayed after suspension"
-#~ msgstr "Виправлено сповіщення, які затримувались після виходу із призупиненого стану системи"
+#~ msgstr ""
+#~ "Виправлено сповіщення, які затримувались після виходу із призупиненого "
+#~ "стану системи"
 
-#~ msgid "Fixed notifications being sent more than once after saving an existing treatment"
-#~ msgstr "Виправлено сповіщення, які відправлялись частіше ніж один раз після збереження існуючого курсу лікування"
+#~ msgid ""
+#~ "Fixed notifications being sent more than once after saving an existing "
+#~ "treatment"
+#~ msgstr ""
+#~ "Виправлено сповіщення, які відправлялись частіше ніж один раз після "
+#~ "збереження існуючого курсу лікування"
 
 #~ msgid "Added a label to show the frequency on treatments list"
-#~ msgstr "Додано напис, який показує частоту прийому у списку курсів лікування"
+#~ msgstr ""
+#~ "Додано напис, який показує частоту прийому у списку курсів лікування"
 
 #~ msgid "Brazilian translation updated"
 #~ msgstr "Оновлено бразильський переклад"
