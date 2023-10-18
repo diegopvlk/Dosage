@@ -205,7 +205,7 @@ msgstr "Nuova voce"
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
 #: src/window.js:847
 msgid "Add to history"
-msgstr "Aggiungi alla cronologia"
+msgstr "Agg. alla cronologia"
 
 #: src/window.js:848 data/ui/med-window.blp:70
 msgid "Color"
