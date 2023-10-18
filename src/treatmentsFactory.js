@@ -113,27 +113,29 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			const isWeekend = info.days.every(day => [0, 6].includes(day));
 			const isWeekdays = info.days.every(day => [1, 2, 3, 4, 5].includes(day));
 			
-			if (isWeekend)
+			if (info.days.length === 1)
+				infoLabel.label += '  •  ' + getDayLabel(info.days[0]);
+			else if (isWeekend)
 				infoLabel.label += '  •  ' + _("Weekend");
-			else if (isWeekdays)
+			else if (isWeekdays && info.days.length === 5)
 				infoLabel.label += '  •  ' + _("Weekdays");
 			else if (info.days.length === 7)
 				infoLabel.label += '  •  ' + _("Daily");
 			else {
 				infoLabel.label += '  • ';
 				info.days.forEach(day => {
-					infoLabel.label += ' ' + getDayLabel(day) ;
+					infoLabel.label += ' ' + getDayLabel(day).slice(0, 3) ;
 				});
 			}
 			function getDayLabel(day) {
 				const dayLabels = [
-					_('Su'),
-					_('Mo'),
-					_('Tu'),
-					_('We'),
-					_('Th'),
-					_('Fr'),
-					_('Sa'),
+					_('Sunday'),
+					_('Monday'),
+					_('Tuesday'),
+					_('Wednesday'),
+					_('Thursday'),
+					_('Friday'),
+					_('Saturday'),
 				];
 				return dayLabels[day];
 			}
