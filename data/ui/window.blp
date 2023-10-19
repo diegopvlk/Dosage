@@ -38,7 +38,7 @@ template $DosageWindow : Adw.ApplicationWindow {
       vexpand: true;
       Adw.ViewStackPage todayPage {
         name: 'page1';
-        title: _('Today');
+        title: _("Today");
         icon-name: 'today-symbolic';
         child:
           Overlay {
@@ -59,7 +59,7 @@ template $DosageWindow : Adw.ApplicationWindow {
               spacing: 8;
               Button unselectBtn {
                 styles [ 'pill', 'skip' ]
-                tooltip-text: _('Unselect');
+                tooltip-text: _("Unselect");
                 visible: false;
                 icon-name: 'unselect-meds-symbolic';
               }
@@ -67,13 +67,13 @@ template $DosageWindow : Adw.ApplicationWindow {
                 styles [ 'pill' ]
                 clicked => $_addTodayToHistory();
                 name: 'yes';
-                label: _('One-time entry');
+                label: _("One-time entry");
               }
               Button skipBtn {
                 styles [ 'pill', 'skip' ]
                 clicked => $_addTodayToHistory();
                 name: 'no';
-                tooltip-text: _('Skip');
+                tooltip-text: _("Skip");
                 visible: false;
                 icon-name: 'skip-med-symbolic';
               }
@@ -92,7 +92,7 @@ template $DosageWindow : Adw.ApplicationWindow {
 
       Adw.ViewStackPage historyPage {
         name: 'page2';
-        title: _('History');
+        title: _("History");
         icon-name: 'history-symbolic';
         child:
           Overlay {
@@ -118,7 +118,7 @@ template $DosageWindow : Adw.ApplicationWindow {
 
       Adw.ViewStackPage treatmentsPage {
         name: 'page3';
-        title: _('Treatments');
+        title: _("Treatments");
         icon-name: 'treatments-symbolic';
         child:
           Overlay {
@@ -144,7 +144,7 @@ template $DosageWindow : Adw.ApplicationWindow {
                 styles [ 'pill', 'suggested-action' ]
                 child: Adw.ButtonContent {
                   icon-name: 'list-add-symbolic';
-                  label: _('Add');
+                  label: _("Add");
                 };
               }
             }
@@ -176,15 +176,15 @@ template $DosageWindow : Adw.ApplicationWindow {
 
 menu appMenu {
   item {
-    label: _('Preferences');
+    label: _("Preferences");
     action: 'app.preferences';
   }
   item {
-    label: _('About');
+    label: _("About");
     action: 'app.about';
   }
   item {
-    label: _('Quit');
+    label: _("Quit");
     action: 'app.quit';
   }
 }

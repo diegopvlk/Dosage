@@ -1,7 +1,7 @@
 data/io.github.diegopvlk.Dosage.appdata.xml.in
 data/io.github.diegopvlk.Dosage.desktop.in
-data/io.github.diegopvlk.Dosage.gschema.xml
 
+data/gtk/help-overlay.blp
 data/ui/med-window.blp
 data/ui/preferences.blp
 data/ui/window.blp
