@@ -8,7 +8,7 @@ Adw.Window medWindow {
   default-height: 615;
   width-request: 320;
   height-request: 280;
-  title: _('New treatment');
+  title: _("New treatment");
   Adw.ToastOverlay toastOverlay {
     Adw.ToolbarView {
       [top]
@@ -16,13 +16,13 @@ Adw.Window medWindow {
         decoration-layout: '';
         [start]
         Button cancelButton {
-          label: _('Cancel');
+          label: _("Cancel");
           name: 'cancel';
         }
         [end]
         Button saveButton {
           styles [ 'suggested-action' ]
-          label: _('Add');
+          label: _("Add");
           name: 'save';
         }
       }
@@ -50,19 +50,19 @@ Adw.Window medWindow {
                 };
               }
               Adw.EntryRow name { 
-                title: _('Name');
+                title: _("Name");
               }
               Adw.EntryRow unit {
-                title: _('Unit');
-                text: _('Pill(s)');
+                title: _("Unit");
+                text: _("Pill(s)");
               }
               Adw.EntryRow notes {
-                title: _('Notes');
-                text: _('After meal');
+                title: _("Notes");
+                text: _("After meal");
               }
 
               Adw.ActionRow colorIcon {
-                title: _('Color and icon');
+                title: _("Color and icon");
                 [suffix]
                 MenuButton dosageColorButton {
                   styles [ 'circular', 'dosage-icon'  ]
@@ -294,10 +294,10 @@ Adw.Window medWindow {
                   styles [ 'button-left' ]
                   model: StringList {
                     strings [
-                      _('Every day'), 
-                      _('Specific days'), 
-                      _('Cycle'),
-                      _('When needed')
+                      _("Every day"), 
+                      _("Specific days"), 
+                      _("Cycle"),
+                      _("When needed")
                       ]
                   };
                 }
@@ -305,7 +305,7 @@ Adw.Window medWindow {
                 MenuButton frequencySpecificDays {
                   visible: false;
                   styles [ 'flat', 'button-right' ]
-                  label: _('Choose');
+                  label: _("Choose");
                   popover: Popover {
                     Box specificDaysBox {
                       spacing: 4;
@@ -314,43 +314,43 @@ Adw.Window medWindow {
                         valign: center;
                         active: false;
                         // TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa) 
-                        label: _('Su');
+                        label: _("Su");
                       }
                       ToggleButton {
                         styles ['flat', 'circular']
                         valign: center;
                         active: false;
-                        label: _('Mo');
+                        label: _("Mo");
                       }
                       ToggleButton {
                         styles ['flat', 'circular']
                         valign: center;
                         active: false;
-                        label: _('Tu');
+                        label: _("Tu");
                       }
                       ToggleButton {
                         styles ['flat', 'circular']
                         valign: center;
                         active: false;
-                        label: _('We');
+                        label: _("We");
                       }
                       ToggleButton {
                         styles ['flat', 'circular']
                         valign: center;
                         active: false;
-                        label: _('Th');
+                        label: _("Th");
                       }
                       ToggleButton {
                         styles ['flat', 'circular']
                         valign: center;
                         active: false;
-                        label: _('Fr');
+                        label: _("Fr");
                       }
                       ToggleButton {
                         styles ['flat', 'circular']
                         valign: center;
                         active: false;
-                        label: _('Sa');
+                        label: _("Sa");
                       }
                     }
                   };
@@ -367,7 +367,7 @@ Adw.Window medWindow {
                       Adw.SpinRow cycleActive {
                         activatable: false;
                         selectable: false;
-                        title: _('Days active');
+                        title: _("Days active");
                         climb-rate: 0.2;
                         adjustment: Adjustment  {
                           lower: 1;
@@ -379,7 +379,7 @@ Adw.Window medWindow {
                       Adw.SpinRow cycleInactive {
                         activatable: false;
                         selectable: false;
-                        title: _('Days inactive');
+                        title: _("Days inactive");
                         climb-rate: 0.2;
                         adjustment: Adjustment  {
                           lower: 1;
@@ -392,7 +392,7 @@ Adw.Window medWindow {
                         activatable: false;
                         selectable: false;
                         // TRANSLATORS: Day in cycle, try to keep it short
-                        title: _('Today is cycle day…');
+                        title: _("Today is cycle day…");
                         climb-rate: 0.2;
                         adjustment: Adjustment {
                           lower: 1;
@@ -407,8 +407,8 @@ Adw.Window medWindow {
               }
 
               Adw.ExpanderRow dosage {
-                title: _('Dosage');
-                subtitle: _('Time and amount');
+                title: _("Dosage");
+                subtitle: _("Time and amount");
                 expanded: true;
                 visible: true;
                 [prefix]
@@ -426,13 +426,13 @@ Adw.Window medWindow {
               }
 
               Adw.ExpanderRow inventory {
-                title: _('Inventory');
-                subtitle: _('Manage your stock');
+                title: _("Inventory");
+                subtitle: _("Manage your stock");
                 show-enable-switch: true;
                 enable-expansion: false;
                 expanded: true;
                 Adw.SpinRow  {
-                  title: _('Current');
+                  title: _("Current");
                   climb-rate: 0.2;
                   digits: 2;
                   adjustment: Adjustment currentInventory {
@@ -443,7 +443,7 @@ Adw.Window medWindow {
                   };
                 }
                 Adw.SpinRow {
-                  title: _('Remind me at');
+                  title: _("Remind me at");
                   climb-rate: 0.2;
                   digits: 2;
                   adjustment: Adjustment reminderInventory {
@@ -519,7 +519,7 @@ Adw.Window medWindow {
               opacity: 0.85;
               halign: center;
               valign: end;
-              label: _('Delete');
+              label: _("Delete");
               name: 'delete';
             }
           }
