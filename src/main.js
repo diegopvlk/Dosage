@@ -22,6 +22,7 @@ export const DosageApplication = GObject.registerClass(
 			super({
 				application_id: 'io.github.diegopvlk.Dosage',
 				flags: Gio.ApplicationFlags.DEFAULT_FLAGS,
+				resource_base_path: "/io/github/diegopvlk/Dosage/",
 			});
 
 			const quitAction = new Gio.SimpleAction({ name: "quit" });
