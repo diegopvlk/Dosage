@@ -71,4 +71,6 @@
 	<update_contact>diego.pvlk@gmail.com</update_contact>
 	<url type="homepage">https://github.com/diegopvlk/Dosage</url>
 	<url type="bugtracker">https://github.com/diegopvlk/Dosage/issues</url>
+	<url type="vcs-browser">https://github.com/diegopvlk/Dosage</url>
+	<url type="translate">https://hosted.weblate.org/translate/dosage</url>
 </component>
