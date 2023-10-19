@@ -100,15 +100,21 @@ list > row.activatable:active {
 }
 
 headerbar button,
-viewswitcher > button {
+viewswitcher:not(.narrow) > button {
 	border-radius: 99px;
 }
 
+viewswitcher.narrow > button,
 popover.menu > contents modelbutton {
 	border-radius: 9px;
 }
 
 actionbar viewswitcher.narrow indicatorbin {
+	margin-top: 1px;
+	margin-bottom: 0px;
+}
+
+actionbar viewswitcher box.narrow.vertical label:not(.numeric) {
 	margin-bottom: -2px;
 }
 
