@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-19 23:56+0300\n"
+"POT-Creation-Date: 2023-10-20 01:14+0300\n"
 "PO-Revision-Date: 2023-10-15 22:56+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:65 src/window.js:448
+#: src/main.js:67 src/window.js:448
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -78,11 +78,18 @@ msgid "General"
 msgstr ""
 
 #: data/gtk/help-overlay.blp:14
+#, fuzzy
+#| msgid "Preferences"
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "Innstillinger"
+
+#: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr ""
 
-#: data/gtk/help-overlay.blp:19
+#: data/gtk/help-overlay.blp:24
 #, fuzzy
 #| msgid "Quit"
 msgctxt "shortcut window"
@@ -413,10 +420,15 @@ msgid "Click the button below to add some"
 msgstr "Legg til noen ved å klikke på knappen nedenfor"
 
 #: data/ui/window.blp:183
-msgid "About"
-msgstr "Om"
+msgid "Keyboard Shortcuts"
+msgstr ""
 
 #: data/ui/window.blp:187
+#, fuzzy
+msgid "About Dosage"
+msgstr "Om"
+
+#: data/ui/window.blp:191
 msgid "Quit"
 msgstr "Avslutt"
 
@@ -436,16 +448,16 @@ msgid "Missed"
 msgstr "Glemt"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:73
+#: src/main.js:75
 msgid "translator-credits"
 msgstr "Allan Nordhøy <epost@anotheragency.no>"
 
-#: src/main.js:76
+#: src/main.js:78
 msgid "Thanks to these projects!"
 msgstr "Takk til disse prosjektene."
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:108
+#: src/main.js:110
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Godta for å tillate kjøring i bakgrunnen og motta varsler"
 
@@ -566,6 +578,5 @@ msgstr "Navnet finnes allerede"
 msgid "Duplicated time"
 msgstr "Duplisert tid"
 
-#, fuzzy
-#~ msgid "About Dosage"
+#~ msgid "About"
 #~ msgstr "Om"

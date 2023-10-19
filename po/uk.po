@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-19 23:56+0300\n"
+"POT-Creation-Date: 2023-10-20 01:14+0300\n"
 "PO-Revision-Date: 2023-10-15 23:53+0300\n"
 "Last-Translator: volkov <volkovissocool@gmail.com>\n"
 "Language-Team: \n"
@@ -20,7 +20,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:65 src/window.js:448
+#: src/main.js:67 src/window.js:448
 msgid "Dosage"
 msgstr "Дозування"
 
@@ -82,11 +82,18 @@ msgid "General"
 msgstr ""
 
 #: data/gtk/help-overlay.blp:14
+#, fuzzy
+#| msgid "Preferences"
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "Налаштування"
+
+#: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr ""
 
-#: data/gtk/help-overlay.blp:19
+#: data/gtk/help-overlay.blp:24
 #, fuzzy
 #| msgid "Quit"
 msgctxt "shortcut window"
@@ -409,10 +416,14 @@ msgid "Click the button below to add some"
 msgstr "Щоб додати новий курс лікування — натисніть на кнопку внизу"
 
 #: data/ui/window.blp:183
-msgid "About"
-msgstr "Про"
+msgid "Keyboard Shortcuts"
+msgstr ""
 
 #: data/ui/window.blp:187
+msgid "About Dosage"
+msgstr "Про Дозування"
+
+#: data/ui/window.blp:191
 msgid "Quit"
 msgstr "Вийти"
 
@@ -432,16 +443,16 @@ msgid "Missed"
 msgstr "Пропущено"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:73
+#: src/main.js:75
 msgid "translator-credits"
 msgstr "volkov <volkovissocool@gmail.com>"
 
-#: src/main.js:76
+#: src/main.js:78
 msgid "Thanks to these projects!"
 msgstr "Велике спасибі цим проектам!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:108
+#: src/main.js:110
 msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 "Прийміть, щоб додаток міг працювати у фоновому режимі і відправляти "
@@ -564,8 +575,8 @@ msgstr "Ця назва вже зайнята"
 msgid "Duplicated time"
 msgstr "Однакові часи у прийомів доз"
 
-#~ msgid "About Dosage"
-#~ msgstr "Про Дозування"
+#~ msgid "About"
+#~ msgstr "Про"
 
 #~ msgid "Allow Dosage to run in background."
 #~ msgstr "Дозволити 'Дозування' працювати у фоновому режимі."

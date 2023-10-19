@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-19 23:56+0300\n"
+"POT-Creation-Date: 2023-10-20 01:14+0300\n"
 "PO-Revision-Date: 2023-10-17 22:44+0000\n"
 "Last-Translator: Xenelio <Xenelio@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/dosage/dosage/fr/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:65 src/window.js:448
+#: src/main.js:67 src/window.js:448
 msgid "Dosage"
 msgstr "Dosage"
 
@@ -75,11 +75,18 @@ msgid "General"
 msgstr ""
 
 #: data/gtk/help-overlay.blp:14
+#, fuzzy
+#| msgid "Preferences"
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "Préférences"
+
+#: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr ""
 
-#: data/gtk/help-overlay.blp:19
+#: data/gtk/help-overlay.blp:24
 #, fuzzy
 #| msgid "Quit"
 msgctxt "shortcut window"
@@ -400,10 +407,16 @@ msgid "Click the button below to add some"
 msgstr "Cliquer sur le bouton pour en ajouter"
 
 #: data/ui/window.blp:183
-msgid "About"
-msgstr "À Propos"
+msgid "Keyboard Shortcuts"
+msgstr ""
 
 #: data/ui/window.blp:187
+#, fuzzy
+#| msgid "Dosage"
+msgid "About Dosage"
+msgstr "Dosage"
+
+#: data/ui/window.blp:191
 msgid "Quit"
 msgstr "Quitter"
 
@@ -423,16 +436,16 @@ msgid "Missed"
 msgstr "Manqué"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:73
+#: src/main.js:75
 msgid "translator-credits"
 msgstr "Xenelio <xenelio@gmail.com>"
 
-#: src/main.js:76
+#: src/main.js:78
 msgid "Thanks to these projects!"
 msgstr "Merci pour ces projets !"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:108
+#: src/main.js:110
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Autoriser l'exécution en tâche de fond et à recevoir des notifications"
 
@@ -552,3 +565,6 @@ msgstr "Nom déjà existant"
 #: src/window.js:1162
 msgid "Duplicated time"
 msgstr "Heure dupliquée"
+
+#~ msgid "About"
+#~ msgstr "À Propos"

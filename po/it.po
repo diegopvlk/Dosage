@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-19 23:56+0300\n"
+"POT-Creation-Date: 2023-10-20 01:14+0300\n"
 "PO-Revision-Date: 2023-10-16 11:32-0300\n"
 "Last-Translator: Albano Battistella <albanobattistella@gmail.com>\n"
 "Language-Team: Italian\n"
@@ -19,7 +19,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:65 src/window.js:448
+#: src/main.js:67 src/window.js:448
 msgid "Dosage"
 msgstr "Dosaggio"
 
@@ -75,11 +75,18 @@ msgid "General"
 msgstr ""
 
 #: data/gtk/help-overlay.blp:14
+#, fuzzy
+#| msgid "Preferences"
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "Preferenze"
+
+#: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr ""
 
-#: data/gtk/help-overlay.blp:19
+#: data/gtk/help-overlay.blp:24
 #, fuzzy
 #| msgid "Quit"
 msgctxt "shortcut window"
@@ -400,10 +407,14 @@ msgid "Click the button below to add some"
 msgstr "Fai clic sul pulsante qui sotto per aggiungerne alcuni"
 
 #: data/ui/window.blp:183
-msgid "About"
-msgstr "Informazioni"
+msgid "Keyboard Shortcuts"
+msgstr ""
 
 #: data/ui/window.blp:187
+msgid "About Dosage"
+msgstr "Informazioni su Dosaggio"
+
+#: data/ui/window.blp:191
 msgid "Quit"
 msgstr "Esci"
 
@@ -423,16 +434,16 @@ msgid "Missed"
 msgstr "Perso"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:73
+#: src/main.js:75
 msgid "translator-credits"
 msgstr "Albano Battistella <albanobattistella@gmail.com>"
 
-#: src/main.js:76
+#: src/main.js:78
 msgid "Thanks to these projects!"
 msgstr "Grazie a questi progetti!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:108
+#: src/main.js:110
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Accetta per consentire l'esecuzione in background e ricevere notifiche"
 
@@ -553,8 +564,8 @@ msgstr "Il nome esiste già"
 msgid "Duplicated time"
 msgstr "Tempo duplicato"
 
-#~ msgid "About Dosage"
-#~ msgstr "Informazioni su Dosaggio"
+#~ msgid "About"
+#~ msgstr "Informazioni"
 
 #~ msgid "Allow Dosage to run in background."
 #~ msgstr "Consenti l'esecuzione del Dosaggio in background."

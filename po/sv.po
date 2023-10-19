@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-19 23:56+0300\n"
+"POT-Creation-Date: 2023-10-20 01:14+0300\n"
 "PO-Revision-Date: 2023-10-18 11:43+0000\n"
 "Last-Translator: sköldpadda <weblate@turtle.garden>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:65 src/window.js:448
+#: src/main.js:67 src/window.js:448
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -78,11 +78,18 @@ msgid "General"
 msgstr ""
 
 #: data/gtk/help-overlay.blp:14
+#, fuzzy
+#| msgid "Preferences"
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "Inställningar"
+
+#: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr ""
 
-#: data/gtk/help-overlay.blp:19
+#: data/gtk/help-overlay.blp:24
 #, fuzzy
 #| msgid "Quit"
 msgctxt "shortcut window"
@@ -403,10 +410,16 @@ msgid "Click the button below to add some"
 msgstr "Tryck på knappen för att lägga till behandlingar"
 
 #: data/ui/window.blp:183
-msgid "About"
-msgstr "Om Dosering"
+msgid "Keyboard Shortcuts"
+msgstr ""
 
 #: data/ui/window.blp:187
+#, fuzzy
+#| msgid "Dosage"
+msgid "About Dosage"
+msgstr "Dosering"
+
+#: data/ui/window.blp:191
 msgid "Quit"
 msgstr "Avsluta"
 
@@ -426,16 +439,16 @@ msgid "Missed"
 msgstr "Glömd"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:73
+#: src/main.js:75
 msgid "translator-credits"
 msgstr "skøldis <turtle@turtle.garden>"
 
-#: src/main.js:76
+#: src/main.js:78
 msgid "Thanks to these projects!"
 msgstr "Tack vare dessa projekt!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:108
+#: src/main.js:110
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Acceptera för att tillåta körning i bakgrunden och ta emot aviseringar"
 
@@ -555,3 +568,6 @@ msgstr "Namnet finns redan"
 #: src/window.js:1162
 msgid "Duplicated time"
 msgstr "Duplicerad tid"
+
+#~ msgid "About"
+#~ msgstr "Om Dosering"
