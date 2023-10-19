@@ -57,6 +57,7 @@ export const DosageApplication = GObject.registerClass(
 				prefWindow.present();
 			});
 			this.add_action(showPrefAction);
+			this.set_accels_for_action('app.preferences', ["<primary>comma"]);
 			
 			const showAboutAction = new Gio.SimpleAction({ name: "about" });
 			showAboutAction.connect("activate", () => {
