@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-19 23:56+0300\n"
-"PO-Revision-Date: 2023-10-20 00:25+0300\n"
+"POT-Creation-Date: 2023-10-20 01:14+0300\n"
+"PO-Revision-Date: 2023-10-20 01:16+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
@@ -23,7 +23,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:65 src/window.js:448
+#: src/main.js:67 src/window.js:448
 msgid "Dosage"
 msgstr "Doz"
 
@@ -77,10 +77,15 @@ msgstr "Genel"
 
 #: data/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: data/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Kısayolları göster"
 
-#: data/gtk/help-overlay.blp:19
+#: data/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Çık"
@@ -233,7 +238,7 @@ msgstr "Belirli günler"
 
 #: data/ui/med-window.blp:299
 msgid "Cycle"
-msgstr "döngü"
+msgstr "Döngü"
 
 #: data/ui/med-window.blp:300 src/treatmentsFactory.js:147
 msgid "When needed"
@@ -399,10 +404,14 @@ msgid "Click the button below to add some"
 msgstr "Eklemek için aşağıdaki düğmeye tıklayın"
 
 #: data/ui/window.blp:183
-msgid "About"
-msgstr "Hakkında"
+msgid "Keyboard Shortcuts"
+msgstr "Klavye Kısayolları"
 
 #: data/ui/window.blp:187
+msgid "About Dosage"
+msgstr "Doz Hakkında"
+
+#: data/ui/window.blp:191
 msgid "Quit"
 msgstr "Çık"
 
@@ -422,16 +431,16 @@ msgid "Missed"
 msgstr "Unutuldu"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:73
+#: src/main.js:75
 msgid "translator-credits"
 msgstr "Sabri Ünal <libreajans@gmail.com>"
 
-#: src/main.js:76
+#: src/main.js:78
 msgid "Thanks to these projects!"
 msgstr "Bu projeler sayesinde!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:108
+#: src/main.js:110
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Arka planda çalışmaya izin vermeyi ve bildirim almayı kabul et"
 
@@ -551,3 +560,6 @@ msgstr "Ad zaten var"
 #: src/window.js:1162
 msgid "Duplicated time"
 msgstr "Yinelenen zaman"
+
+#~ msgid "About"
+#~ msgstr "Hakkında"
