@@ -122,9 +122,9 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			else if (info.days.length === 7)
 				infoLabel.label += '  •  ' + _("Daily");
 			else {
-				infoLabel.label += '  • ';
+				infoLabel.label += '  •';
 				info.days.forEach(day => {
-					infoLabel.label += ' ' + getDayLabel(day).slice(0, 3) ;
+					infoLabel.label += '  ' + getDayLabel(day).slice(0, 3);
 				});
 			}
 			function getDayLabel(day) {
