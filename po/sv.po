@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-18 10:01-0300\n"
+"POT-Creation-Date: 2023-10-19 23:56+0300\n"
 "PO-Revision-Date: 2023-10-18 11:43+0000\n"
 "Last-Translator: sköldpadda <weblate@turtle.garden>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -21,8 +21,8 @@ msgstr ""
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
-#: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:65
-#: src/window.js:448 data/ui/med-window.blp:410
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
+#: src/main.js:65 src/window.js:448
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -72,179 +72,30 @@ msgstr ""
 "Medicinering;Påminnelse;Idag;Historia;Behandlingar;Piller;Läkemedel;"
 "Botemedel;"
 
-#: src/historyFactory.js:41 src/window.js:924 data/ui/med-window.blp:522
-msgid "Delete"
-msgstr "Radera"
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
 
-#. TRANSLATORS: Keep it short
-#: src/historyFactory.js:122
-msgid "Confirmed"
-msgstr "Bekräftad"
+#: data/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
 
-#. TRANSLATORS: Keep it short
-#: src/historyFactory.js:125
-msgid "Skipped"
-msgstr "Hoppade över"
-
-#. TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
-#: src/historyFactory.js:128
-msgid "Missed"
-msgstr "Glömd"
-
-#. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:73
-msgid "translator-credits"
-msgstr "skøldis <turtle@turtle.garden>"
-
-#: src/main.js:76
-msgid "Thanks to these projects!"
-msgstr "Tack vare dessa projekt!"
-
-#. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:108
-msgid "Accept to allow running in the background and receive notifications"
-msgstr "Acceptera för att tillåta körning i bakgrunden och ta emot aviseringar"
-
-#. TRANSLATORS: Keep it short (label for when the inventory is low)
-#: src/treatmentsFactory.js:90 src/treatmentsFactory.js:92
-msgid "Low stock"
-msgstr "Lågt lager"
-
-#. TRANSLATORS: Keep it short (label for when duration is enabled)
-#: src/treatmentsFactory.js:99
-msgid "Until"
-msgstr "Till"
-
-#: src/treatmentsFactory.js:110 src/treatmentsFactory.js:123
-msgid "Daily"
-msgstr "Daglig"
-
-#: src/treatmentsFactory.js:119
-msgid "Weekend"
-msgstr "Helg"
-
-#: src/treatmentsFactory.js:121
-msgid "Weekdays"
-msgstr "Veckodagar"
-
-#: src/treatmentsFactory.js:132
-msgid "Sunday"
-msgstr "Söndag"
-
-#: src/treatmentsFactory.js:133
-msgid "Monday"
-msgstr "Måndag"
-
-#: src/treatmentsFactory.js:134
-msgid "Tuesday"
-msgstr "Tisdag"
-
-#: src/treatmentsFactory.js:135
-msgid "Wednesday"
-msgstr "Onsdag"
-
-#: src/treatmentsFactory.js:136
-msgid "Thursday"
-msgstr "Torsdag"
-
-#: src/treatmentsFactory.js:137
-msgid "Friday"
-msgstr "Fredag"
-
-#: src/treatmentsFactory.js:138
-msgid "Saturday"
-msgstr "Lördag"
-
-#: src/treatmentsFactory.js:147 data/ui/med-window.blp:300
-msgid "When needed"
-msgstr "Vid behov"
-
-#: src/utils.js:137
-msgid "Delete dose"
-msgstr "Radera dosering"
-
-#. TRANSLATORS: Notification text for for when the inventory is low
-#: src/window.js:93
-msgid "You have treatments low in stock"
-msgstr "Du har behandlingar som har lågt lager"
-
-#: src/window.js:353
-msgid "No treatments added yet!"
-msgstr "Inga behandlingar har lagts till ännu!"
-
-#: src/window.js:356
-msgid "All done for today!"
-msgstr "Färdig för i dag!"
-
-#: src/window.js:500
-msgid "Confirm"
-msgstr "Bekräfta"
-
-#: src/window.js:500 data/ui/window.blp:70
-msgid "One-time entry"
-msgstr "Engångsinträde"
-
-#: src/window.js:707
-msgid "Edit treatment"
-msgstr "Redigera behandling"
-
-#: src/window.js:708
-msgid "Save"
-msgstr "Spara"
-
-#: src/window.js:794
-msgid "New"
-msgstr "Ny"
-
-#: src/window.js:804 data/ui/med-window.blp:57
-msgid "Pill(s)"
-msgstr "Piller"
-
-#: src/window.js:844
-msgid "New entry"
-msgstr "Ny notering"
-
-#. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:846
-msgid "Add to history"
-msgstr "Lägg till i historik"
-
-#: src/window.js:847 data/ui/med-window.blp:70
-msgid "Color"
-msgstr "Färg"
-
-#. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:918
-msgid "Are you sure?"
-msgstr "Är du säker?"
-
-#: src/window.js:923 data/ui/med-window.blp:19
-msgid "Cancel"
-msgstr "Avbryt"
-
-#: src/window.js:1127
-msgid "Empty name"
-msgstr "Tömt namn"
-
-#: src/window.js:1132
-msgid "Empty unit"
-msgstr "Töm enhet"
-
-#: src/window.js:1138
-msgid "Choose at least one day"
-msgstr "Välj åtminstone en dag"
-
-#: src/window.js:1148
-msgid "Name already exists"
-msgstr "Namnet finns redan"
-
-#: src/window.js:1162
-msgid "Duplicated time"
-msgstr "Duplicerad tid"
+#: data/gtk/help-overlay.blp:19
+#, fuzzy
+#| msgid "Quit"
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Avsluta"
 
 #: data/ui/med-window.blp:11
 msgid "New treatment"
 msgstr "Ny behandling"
+
+#: data/ui/med-window.blp:19 src/window.js:923
+msgid "Cancel"
+msgstr "Avbryt"
 
 #: data/ui/med-window.blp:25 data/ui/window.blp:147
 msgid "Add"
@@ -262,6 +113,10 @@ msgstr "Namn"
 msgid "Unit"
 msgstr "Enhet"
 
+#: data/ui/med-window.blp:57 src/window.js:804
+msgid "Pill(s)"
+msgstr "Piller"
+
 #: data/ui/med-window.blp:60
 msgid "Notes"
 msgstr "Anteckningar"
@@ -273,6 +128,10 @@ msgstr "Efter måltid"
 #: data/ui/med-window.blp:65
 msgid "Color and icon"
 msgstr "Färg och ikon"
+
+#: data/ui/med-window.blp:70 src/window.js:847
+msgid "Color"
+msgstr "Färg"
 
 #. TRANSLATORS: Tooltip for the colors (from Default until Purple)
 #: data/ui/med-window.blp:81
@@ -380,6 +239,10 @@ msgstr "Särskilda dagar"
 msgid "Cycle"
 msgstr "Cykel"
 
+#: data/ui/med-window.blp:300 src/treatmentsFactory.js:147
+msgid "When needed"
+msgstr "Vid behov"
+
 #: data/ui/med-window.blp:308 data/ui/med-window.blp:469
 #: data/ui/med-window.blp:485 data/ui/med-window.blp:503
 msgid "Choose"
@@ -479,6 +342,10 @@ msgstr "Slutar"
 msgid "Date"
 msgstr "Datum"
 
+#: data/ui/med-window.blp:522 src/historyFactory.js:41 src/window.js:924
+msgid "Delete"
+msgstr "Radera"
+
 #: data/ui/preferences.blp:9 data/ui/window.blp:179
 msgid "Preferences"
 msgstr "Inställningar"
@@ -511,6 +378,10 @@ msgstr "I dag"
 msgid "Unselect"
 msgstr "Välja bort"
 
+#: data/ui/window.blp:70 src/window.js:500
+msgid "One-time entry"
+msgstr "Engångsinträde"
+
 #: data/ui/window.blp:76
 msgid "Skip"
 msgstr "Hoppa över"
@@ -538,3 +409,149 @@ msgstr "Om Dosering"
 #: data/ui/window.blp:187
 msgid "Quit"
 msgstr "Avsluta"
+
+#. TRANSLATORS: Keep it short
+#: src/historyFactory.js:122
+msgid "Confirmed"
+msgstr "Bekräftad"
+
+#. TRANSLATORS: Keep it short
+#: src/historyFactory.js:125
+msgid "Skipped"
+msgstr "Hoppade över"
+
+#. TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
+#: src/historyFactory.js:128
+msgid "Missed"
+msgstr "Glömd"
+
+#. TRANSLATORS: "Your Name <your@email.com>"
+#: src/main.js:73
+msgid "translator-credits"
+msgstr "skøldis <turtle@turtle.garden>"
+
+#: src/main.js:76
+msgid "Thanks to these projects!"
+msgstr "Tack vare dessa projekt!"
+
+#. TRANSLATORS: Confirmation message to allow background permission
+#: src/main.js:108
+msgid "Accept to allow running in the background and receive notifications"
+msgstr "Acceptera för att tillåta körning i bakgrunden och ta emot aviseringar"
+
+#. TRANSLATORS: Keep it short (label for when the inventory is low)
+#: src/treatmentsFactory.js:90 src/treatmentsFactory.js:92
+msgid "Low stock"
+msgstr "Lågt lager"
+
+#. TRANSLATORS: Keep it short (label for when duration is enabled)
+#: src/treatmentsFactory.js:99
+msgid "Until"
+msgstr "Till"
+
+#: src/treatmentsFactory.js:110 src/treatmentsFactory.js:123
+msgid "Daily"
+msgstr "Daglig"
+
+#: src/treatmentsFactory.js:119
+msgid "Weekend"
+msgstr "Helg"
+
+#: src/treatmentsFactory.js:121
+msgid "Weekdays"
+msgstr "Veckodagar"
+
+#: src/treatmentsFactory.js:132
+msgid "Sunday"
+msgstr "Söndag"
+
+#: src/treatmentsFactory.js:133
+msgid "Monday"
+msgstr "Måndag"
+
+#: src/treatmentsFactory.js:134
+msgid "Tuesday"
+msgstr "Tisdag"
+
+#: src/treatmentsFactory.js:135
+msgid "Wednesday"
+msgstr "Onsdag"
+
+#: src/treatmentsFactory.js:136
+msgid "Thursday"
+msgstr "Torsdag"
+
+#: src/treatmentsFactory.js:137
+msgid "Friday"
+msgstr "Fredag"
+
+#: src/treatmentsFactory.js:138
+msgid "Saturday"
+msgstr "Lördag"
+
+#: src/utils.js:137
+msgid "Delete dose"
+msgstr "Radera dosering"
+
+#. TRANSLATORS: Notification text for for when the inventory is low
+#: src/window.js:93
+msgid "You have treatments low in stock"
+msgstr "Du har behandlingar som har lågt lager"
+
+#: src/window.js:353
+msgid "No treatments added yet!"
+msgstr "Inga behandlingar har lagts till ännu!"
+
+#: src/window.js:356
+msgid "All done for today!"
+msgstr "Färdig för i dag!"
+
+#: src/window.js:500
+msgid "Confirm"
+msgstr "Bekräfta"
+
+#: src/window.js:707
+msgid "Edit treatment"
+msgstr "Redigera behandling"
+
+#: src/window.js:708
+msgid "Save"
+msgstr "Spara"
+
+#: src/window.js:794
+msgid "New"
+msgstr "Ny"
+
+#: src/window.js:844
+msgid "New entry"
+msgstr "Ny notering"
+
+#. TRANSLATORS: Keep it short (button to add one-time entry to history)
+#: src/window.js:846
+msgid "Add to history"
+msgstr "Lägg till i historik"
+
+#. TRANSLATORS: Message for confirmation when deleting an item
+#: src/window.js:918
+msgid "Are you sure?"
+msgstr "Är du säker?"
+
+#: src/window.js:1127
+msgid "Empty name"
+msgstr "Tömt namn"
+
+#: src/window.js:1132
+msgid "Empty unit"
+msgstr "Töm enhet"
+
+#: src/window.js:1138
+msgid "Choose at least one day"
+msgstr "Välj åtminstone en dag"
+
+#: src/window.js:1148
+msgid "Name already exists"
+msgstr "Namnet finns redan"
+
+#: src/window.js:1162
+msgid "Duplicated time"
+msgstr "Duplicerad tid"
