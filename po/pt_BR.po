@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 01:14+0300\n"
-"PO-Revision-Date: 2023-10-17 14:12+0000\n"
+"PO-Revision-Date: 2023-10-20 21:52+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "dosage/dosage/pt_BR/>\n"
@@ -74,7 +74,7 @@ msgstr ""
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Geral"
 
 #: data/gtk/help-overlay.blp:14
 #, fuzzy
@@ -86,7 +86,7 @@ msgstr "Preferências"
 #: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Mostrar Atalhos"
 
 #: data/gtk/help-overlay.blp:24
 #, fuzzy
@@ -410,7 +410,7 @@ msgstr "Clique no botão abaixo para adicionar algum"
 
 #: data/ui/window.blp:183
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Atalhos do Teclado"
 
 #: data/ui/window.blp:187
 msgid "About Dosage"
