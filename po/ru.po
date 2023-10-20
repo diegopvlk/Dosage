@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 01:14+0300\n"
-"PO-Revision-Date: 2023-10-20 22:03+0000\n"
+"PO-Revision-Date: 2023-10-20 22:06+0000\n"
 "Last-Translator: Anton Palgunov <toxblh@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
 ">\n"
@@ -434,7 +434,7 @@ msgstr "Пропущено"
 #. TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
 #: src/historyFactory.js:128
 msgid "Missed"
-msgstr "Упущено"
+msgstr "Пропущено"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
 #: src/main.js:75
