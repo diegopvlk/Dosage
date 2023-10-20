@@ -9,15 +9,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 01:14+0300\n"
-"PO-Revision-Date: 2023-10-20 01:16+0300\n"
+"PO-Revision-Date: 2023-10-20 21:52+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
-"Language-Team: Turkish <takim@gnome.org.tr>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
+">\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Weblate 5.1\n"
 "X-Project-Style: gnome\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
@@ -68,7 +69,9 @@ msgstr "Süre - Başlangıç ve bitiş tarihlerini tanımlayın"
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
-msgstr "İlaç;İzleyici;Hatırlatma;Bugün;Tarih;Tedaviler;Hap;İlaç;Çare;"
+msgstr ""
+"Dosage;Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
+"İlaç;İzleyici;Hatırlatma;Bugün;Tarih;Tedavi;Hap;İlaç;Çare;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -313,7 +316,7 @@ msgstr "Envanter"
 
 #: data/ui/med-window.blp:430
 msgid "Manage your stock"
-msgstr "Stokunuzu yönetin"
+msgstr "Stoğunuzu yönetin"
 
 #: data/ui/med-window.blp:435
 msgid "Current"
@@ -393,7 +396,7 @@ msgstr "Geçmiş"
 
 #: data/ui/window.blp:110
 msgid "Empty history"
-msgstr "Geçmişi boşalt"
+msgstr "Geçmiş boş"
 
 #: data/ui/window.blp:121
 msgid "Treatments"
