@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 01:14+0300\n"
 "PO-Revision-Date: 2023-10-20 21:52+0000\n"
-"Last-Translator: Aleksandr Melman <alexmelman88@gmail.com>\n"
+"Last-Translator: Anton Palgunov <toxblh@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
 ">\n"
 "Language: ru\n"
@@ -36,10 +36,8 @@ msgid "Features:"
 msgstr "Функции:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
-#, fuzzy
-#| msgid "Notifications — Get reminders on the right time"
 msgid "Notifications — Get reminders at the right time"
-msgstr "Уведомления — вовремя получайте уведомления"
+msgstr "Уведомления — получайте уведомления вовремя"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
 msgid "History — See which medications you took or skipped"
@@ -81,7 +79,7 @@ msgstr ""
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Общие"
 
 #: data/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
@@ -91,7 +89,7 @@ msgstr "Настройки"
 #: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Показать сочетания клавиш"
 
 #: data/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
@@ -111,10 +109,8 @@ msgid "Add"
 msgstr "Добавить"
 
 #: data/ui/med-window.blp:44
-#, fuzzy
-#| msgid "From treatments list"
 msgid "From treatment list"
-msgstr "Из списка курсов лечения"
+msgstr "Из списка курса лечения"
 
 #: data/ui/med-window.blp:53
 msgid "Name"
@@ -410,14 +406,12 @@ msgid "Treatments"
 msgstr "Курсы лечения"
 
 #: data/ui/window.blp:154
-#, fuzzy
-#| msgid "Add some clicking the button below"
 msgid "Click the button below to add some"
-msgstr "Чтобы добавить курс лечения — нажмите на кнопку внизу"
+msgstr "Нажмите кнопку ниже, чтобы добавить"
 
 #: data/ui/window.blp:183
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Сочетания клавиш"
 
 #: data/ui/window.blp:187
 msgid "About Dosage"
