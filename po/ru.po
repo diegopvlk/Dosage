@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 01:14+0300\n"
 "PO-Revision-Date: 2023-10-20 22:03+0000\n"
-"Last-Translator: Aleksandr Melman <alexmelman88@gmail.com>\n"
+"Last-Translator: Anton Palgunov <toxblh@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
 ">\n"
 "Language: ru\n"
@@ -370,8 +370,8 @@ msgid ""
 "On GNOME this will make the notification show on fullscreen mode or even if "
 "'Do Not Disturb' is enabled"
 msgstr ""
-"В GNOME, эта опция разрежить отоброжать уведомления даже если в фокусе "
-"программа в полноэкранном режиме или активирован режим 'Не тревожить'"
+"В GNOME это позволит уведомлению отображаться в полноэкранном режиме или "
+"даже если включен режим 'Не беспокоить'"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
@@ -415,7 +415,7 @@ msgstr "Комбинации клавиш"
 
 #: data/ui/window.blp:187
 msgid "About Dosage"
-msgstr "Про Дозировка"
+msgstr "О Дозировке"
 
 #: data/ui/window.blp:191
 msgid "Quit"
@@ -449,7 +449,7 @@ msgstr "Огромное спасибо этим проектам!"
 #: src/main.js:110
 msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
-"Примите, чтобы приложение могло работать в фоновом режиме и отправлять "
+"Разрешите, чтобы приложение могло работать в фоновом режиме и отправлять "
 "уведомления"
 
 #. TRANSLATORS: Keep it short (label for when the inventory is low)
