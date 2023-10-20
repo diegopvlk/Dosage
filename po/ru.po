@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 01:14+0300\n"
 "PO-Revision-Date: 2023-10-20 22:06+0000\n"
-"Last-Translator: Anton Palgunov <toxblh@gmail.com>\n"
+"Last-Translator: Aleksandr Melman <alexmelman88@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
 ">\n"
 "Language: ru\n"
@@ -375,7 +375,7 @@ msgstr ""
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
-msgstr "Главное Меню"
+msgstr "Главное меню"
 
 #: data/ui/window.blp:41
 msgid "Today"
@@ -415,7 +415,7 @@ msgstr "Комбинации клавиш"
 
 #: data/ui/window.blp:187
 msgid "About Dosage"
-msgstr "О Дозировке"
+msgstr "О приложении"
 
 #: data/ui/window.blp:191
 msgid "Quit"
