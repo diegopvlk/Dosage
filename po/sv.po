@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-20 01:14+0300\n"
-"PO-Revision-Date: 2023-10-18 11:43+0000\n"
+"PO-Revision-Date: 2023-10-20 21:52+0000\n"
 "Last-Translator: sköldpadda <weblate@turtle.garden>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
 ">\n"
@@ -73,9 +73,10 @@ msgstr ""
 "Botemedel;"
 
 #: data/gtk/help-overlay.blp:11
+#, fuzzy
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Allmänt"
 
 #: data/gtk/help-overlay.blp:14
 #, fuzzy
@@ -87,7 +88,7 @@ msgstr "Inställningar"
 #: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Visa genvägar"
 
 #: data/gtk/help-overlay.blp:24
 #, fuzzy
@@ -411,7 +412,7 @@ msgstr "Tryck på knappen för att lägga till behandlingar"
 
 #: data/ui/window.blp:183
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Tangentbordsgenvägar"
 
 #: data/ui/window.blp:187
 #, fuzzy
