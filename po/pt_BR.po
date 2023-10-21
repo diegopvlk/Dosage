@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-20 01:14+0300\n"
+"POT-Creation-Date: 2023-10-21 11:10-0300\n"
 "PO-Revision-Date: 2023-10-20 21:52+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
-"dosage/dosage/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/dosage/dosage/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +21,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:67 src/window.js:448
+#: src/main.js:67 src/window.js:449
 msgid "Dosage"
 msgstr "Dosagem"
 
@@ -48,9 +47,7 @@ msgstr "Gerenciamento de dosagem — Múltiplas doses com horários diferentes"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
-msgstr ""
-"Frequência — Todos os dias, dias específicos, ciclo ou apenas quando "
-"necessário"
+msgstr "Frequência — Todos os dias, dias específicos, ciclo ou apenas quando necessário"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Color and icon — Give a shape for your treatment"
@@ -67,9 +64,7 @@ msgstr "Duração — Defina datas para começar e terminar"
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
-msgstr ""
-"Medicação;Rastreador;Lembrete;Hoje;Histórico;Tratamentos;Pílula;Droga;"
-"Remédio;"
+msgstr "Medicação;Rastreador;Lembrete;Hoje;Histórico;Tratamentos;Pílula;Droga;Remédio;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -99,7 +94,7 @@ msgstr "Sair"
 msgid "New treatment"
 msgstr "Novo tratamento"
 
-#: data/ui/med-window.blp:19 src/window.js:923
+#: data/ui/med-window.blp:19 src/window.js:928
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -119,7 +114,7 @@ msgstr "Nome"
 msgid "Unit"
 msgstr "Unidade"
 
-#: data/ui/med-window.blp:57 src/window.js:804
+#: data/ui/med-window.blp:57 src/window.js:809
 msgid "Pill(s)"
 msgstr "Comprimido(s)"
 
@@ -135,7 +130,7 @@ msgstr "Após refeição"
 msgid "Color and icon"
 msgstr "Cor e ícone"
 
-#: data/ui/med-window.blp:70 src/window.js:847
+#: data/ui/med-window.blp:70 src/window.js:852
 msgid "Color"
 msgstr "Cor"
 
@@ -249,8 +244,8 @@ msgstr "Ciclo"
 msgid "When needed"
 msgstr "Quando necessário"
 
-#: data/ui/med-window.blp:308 data/ui/med-window.blp:469
-#: data/ui/med-window.blp:485 data/ui/med-window.blp:503
+#: data/ui/med-window.blp:308 data/ui/med-window.blp:481
+#: data/ui/med-window.blp:497 data/ui/med-window.blp:515
 msgid "Choose"
 msgstr "Escolha"
 
@@ -309,46 +304,52 @@ msgid "Recurring notifications"
 msgstr "Notificações recorrentes"
 
 #: data/ui/med-window.blp:425
-msgid "Every five minutes until confirmed or skipped"
-msgstr "A cada cinco minutos até ser confirmado ou ignorado"
+#, fuzzy
+#| msgid "Every five minutes until confirmed or skipped"
+msgid "Renotify until it's confirmed or skipped"
+msgstr "Renotificar até ser confirmado ou ignorado"
 
 #: data/ui/med-window.blp:429
+msgid "Interval in minutes"
+msgstr "Intervalo em minutos"
+
+#: data/ui/med-window.blp:441
 msgid "Inventory"
 msgstr "Inventário"
 
-#: data/ui/med-window.blp:430
+#: data/ui/med-window.blp:442
 msgid "Manage your stock"
 msgstr "Gerencie seu estoque"
 
-#: data/ui/med-window.blp:435
+#: data/ui/med-window.blp:447
 msgid "Current"
 msgstr "Atual"
 
-#: data/ui/med-window.blp:446
+#: data/ui/med-window.blp:458
 msgid "Remind me at"
 msgstr "Lembrar na quantidade"
 
-#: data/ui/med-window.blp:459
+#: data/ui/med-window.blp:471
 msgid "Duration"
 msgstr "Duração"
 
-#: data/ui/med-window.blp:460
+#: data/ui/med-window.blp:472
 msgid "Set a start and end date"
 msgstr "Defina datas para começar e terminar"
 
-#: data/ui/med-window.blp:464
+#: data/ui/med-window.blp:476
 msgid "Starts on"
 msgstr "Começa em"
 
-#: data/ui/med-window.blp:480
+#: data/ui/med-window.blp:492
 msgid "Ends on"
 msgstr "Termina em"
 
-#: data/ui/med-window.blp:498
+#: data/ui/med-window.blp:510
 msgid "Date"
 msgstr "Data"
 
-#: data/ui/med-window.blp:522 src/historyFactory.js:41 src/window.js:924
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:929
 msgid "Delete"
 msgstr "Excluir"
 
@@ -365,12 +366,8 @@ msgid "Increase notification priority"
 msgstr "Aumentar a prioridade da notificação"
 
 #: data/ui/preferences.blp:25
-msgid ""
-"On GNOME this will make the notification show on fullscreen mode or even if "
-"'Do Not Disturb' is enabled"
-msgstr ""
-"No GNOME isso fará com que a notificação seja exibida em tela cheia ou mesmo "
-"se o modo 'Não Perturbe' estiver ativado"
+msgid "On GNOME this will make the notification show on fullscreen mode or even if 'Do Not Disturb' is enabled"
+msgstr "No GNOME isso fará com que a notificação seja exibida em tela cheia ou mesmo se o modo 'Não Perturbe' estiver ativado"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
@@ -384,7 +381,7 @@ msgstr "Hoje"
 msgid "Unselect"
 msgstr "Desmarcar"
 
-#: data/ui/window.blp:70 src/window.js:500
+#: data/ui/window.blp:70 src/window.js:501
 msgid "One-time entry"
 msgstr "Registro único"
 
@@ -447,8 +444,7 @@ msgstr "Obrigado à esses projetos!"
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:110
 msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
-"Aceite para permitir a execução em segundo plano e receber notificações"
+msgstr "Aceite para permitir a execução em segundo plano e receber notificações"
 
 #. TRANSLATORS: Keep it short (label for when the inventory is low)
 #: src/treatmentsFactory.js:90 src/treatmentsFactory.js:92
@@ -517,53 +513,53 @@ msgstr "Nenhum tratamento adicionado ainda!"
 msgid "All done for today!"
 msgstr "Tudo feito por hoje!"
 
-#: src/window.js:500
+#: src/window.js:501
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: src/window.js:707
+#: src/window.js:709
 msgid "Edit treatment"
 msgstr "Editar tratamento"
 
-#: src/window.js:708
+#: src/window.js:710
 msgid "Save"
 msgstr "Salvar"
 
-#: src/window.js:794
+#: src/window.js:799
 msgid "New"
 msgstr "Novo"
 
-#: src/window.js:844
+#: src/window.js:849
 msgid "New entry"
 msgstr "Novo registro"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:846
+#: src/window.js:851
 msgid "Add to history"
 msgstr "Adc. ao histórico"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:918
+#: src/window.js:923
 msgid "Are you sure?"
 msgstr "Tem certeza?"
 
-#: src/window.js:1127
+#: src/window.js:1134
 msgid "Empty name"
 msgstr "Nome vazio"
 
-#: src/window.js:1132
+#: src/window.js:1139
 msgid "Empty unit"
 msgstr "Unidade vazia"
 
-#: src/window.js:1138
+#: src/window.js:1145
 msgid "Choose at least one day"
 msgstr "Escolha pelo menos um dia"
 
-#: src/window.js:1148
+#: src/window.js:1155
 msgid "Name already exists"
 msgstr "Nome já existe"
 
-#: src/window.js:1162
+#: src/window.js:1169
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 
@@ -576,16 +572,11 @@ msgstr "Hora duplicada"
 #~ msgid "Fixed notifications being delayed after suspension"
 #~ msgstr "Corrigido: notificações atrasadas após suspensão"
 
-#~ msgid ""
-#~ "Fixed notifications being sent more than once after saving an existing "
-#~ "treatment"
-#~ msgstr ""
-#~ "Corrigido: notificações enviadas mais de uma vez após salvar um "
-#~ "tratamento existente"
+#~ msgid "Fixed notifications being sent more than once after saving an existing treatment"
+#~ msgstr "Corrigido: notificações enviadas mais de uma vez após salvar um tratamento existente"
 
 #~ msgid "Added a label to show the frequency on treatments list"
-#~ msgstr ""
-#~ "Adicionado um rótulo para mostrar a frequência na lista de tratamentos"
+#~ msgstr "Adicionado um rótulo para mostrar a frequência na lista de tratamentos"
 
 #~ msgid "Brazilian translation updated"
 #~ msgstr "Tradução brasileira atualizada"
