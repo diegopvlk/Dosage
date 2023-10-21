@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-20 01:14+0300\n"
+"POT-Creation-Date: 2023-10-21 11:10-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:67 src/window.js:448
+#: src/main.js:67 src/window.js:449
 msgid "Dosage"
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "New treatment"
 msgstr ""
 
-#: data/ui/med-window.blp:19 src/window.js:923
+#: data/ui/med-window.blp:19 src/window.js:928
 msgid "Cancel"
 msgstr ""
 
@@ -109,7 +109,7 @@ msgstr ""
 msgid "Unit"
 msgstr ""
 
-#: data/ui/med-window.blp:57 src/window.js:804
+#: data/ui/med-window.blp:57 src/window.js:809
 msgid "Pill(s)"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Color and icon"
 msgstr ""
 
-#: data/ui/med-window.blp:70 src/window.js:847
+#: data/ui/med-window.blp:70 src/window.js:852
 msgid "Color"
 msgstr ""
 
@@ -239,8 +239,8 @@ msgstr ""
 msgid "When needed"
 msgstr ""
 
-#: data/ui/med-window.blp:308 data/ui/med-window.blp:469
-#: data/ui/med-window.blp:485 data/ui/med-window.blp:503
+#: data/ui/med-window.blp:308 data/ui/med-window.blp:481
+#: data/ui/med-window.blp:497 data/ui/med-window.blp:515
 msgid "Choose"
 msgstr ""
 
@@ -299,46 +299,50 @@ msgid "Recurring notifications"
 msgstr ""
 
 #: data/ui/med-window.blp:425
-msgid "Every five minutes until confirmed or skipped"
+msgid "Renotify until it's confirmed or skipped"
 msgstr ""
 
 #: data/ui/med-window.blp:429
+msgid "Interval in minutes"
+msgstr ""
+
+#: data/ui/med-window.blp:441
 msgid "Inventory"
 msgstr ""
 
-#: data/ui/med-window.blp:430
+#: data/ui/med-window.blp:442
 msgid "Manage your stock"
 msgstr ""
 
-#: data/ui/med-window.blp:435
+#: data/ui/med-window.blp:447
 msgid "Current"
 msgstr ""
 
-#: data/ui/med-window.blp:446
+#: data/ui/med-window.blp:458
 msgid "Remind me at"
 msgstr ""
 
-#: data/ui/med-window.blp:459
+#: data/ui/med-window.blp:471
 msgid "Duration"
 msgstr ""
 
-#: data/ui/med-window.blp:460
+#: data/ui/med-window.blp:472
 msgid "Set a start and end date"
 msgstr ""
 
-#: data/ui/med-window.blp:464
+#: data/ui/med-window.blp:476
 msgid "Starts on"
 msgstr ""
 
-#: data/ui/med-window.blp:480
+#: data/ui/med-window.blp:492
 msgid "Ends on"
 msgstr ""
 
-#: data/ui/med-window.blp:498
+#: data/ui/med-window.blp:510
 msgid "Date"
 msgstr ""
 
-#: data/ui/med-window.blp:522 src/historyFactory.js:41 src/window.js:924
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:929
 msgid "Delete"
 msgstr ""
 
@@ -372,7 +376,7 @@ msgstr ""
 msgid "Unselect"
 msgstr ""
 
-#: data/ui/window.blp:70 src/window.js:500
+#: data/ui/window.blp:70 src/window.js:501
 msgid "One-time entry"
 msgstr ""
 
@@ -504,52 +508,52 @@ msgstr ""
 msgid "All done for today!"
 msgstr ""
 
-#: src/window.js:500
+#: src/window.js:501
 msgid "Confirm"
 msgstr ""
 
-#: src/window.js:707
+#: src/window.js:709
 msgid "Edit treatment"
 msgstr ""
 
-#: src/window.js:708
+#: src/window.js:710
 msgid "Save"
 msgstr ""
 
-#: src/window.js:794
+#: src/window.js:799
 msgid "New"
 msgstr ""
 
-#: src/window.js:844
+#: src/window.js:849
 msgid "New entry"
 msgstr ""
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:846
+#: src/window.js:851
 msgid "Add to history"
 msgstr ""
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:918
+#: src/window.js:923
 msgid "Are you sure?"
 msgstr ""
 
-#: src/window.js:1127
+#: src/window.js:1134
 msgid "Empty name"
 msgstr ""
 
-#: src/window.js:1132
+#: src/window.js:1139
 msgid "Empty unit"
 msgstr ""
 
-#: src/window.js:1138
+#: src/window.js:1145
 msgid "Choose at least one day"
 msgstr ""
 
-#: src/window.js:1148
+#: src/window.js:1155
 msgid "Name already exists"
 msgstr ""
 
-#: src/window.js:1162
+#: src/window.js:1169
 msgid "Duplicated time"
 msgstr ""
