@@ -8,551 +8,563 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-21 11:10-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-10-21 19:49+0000\n"
+"Last-Translator: Sergio Varela <sergitroll9@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/es/"
+">\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.1\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
 #: src/main.js:67 src/window.js:449
 msgid "Dosage"
-msgstr ""
+msgstr "Dosis"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
 msgid "Keep track of your treatments"
-msgstr ""
+msgstr "Lleve un registro de sus tratamientos"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
 msgid "Features:"
-msgstr ""
+msgstr "Características:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
 msgid "Notifications — Get reminders at the right time"
-msgstr ""
+msgstr "Notificaciones — Reciba recordatorios en el momento oportuno"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
 msgid "History — See which medications you took or skipped"
-msgstr ""
+msgstr "Historial — Vea qué medicamentos tomó o se saltó"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
 msgid "Dosage management — Multiple doses with different times"
-msgstr ""
+msgstr "Gestión de la dosificación — Múltiples dosis con diferentes tiempos"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
 msgstr ""
+"Modos de frecuencia — todos los días, días concretos, ciclo o sólo cuando "
+"sea necesario"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Color and icon — Give a shape for your treatment"
-msgstr ""
+msgstr "Color e icono — Dé forma a su tratamiento"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
+"Seguimiento del inventario — Controle sus existencias y reciba recordatorios "
+"cuando se agoten"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Duration — Define the start and end dates"
-msgstr ""
+msgstr "Duración — Defina las fechas de inicio y fin"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
 msgstr ""
+"Medicación;Rastreador;Recordatorio;Hoy;Historial;Tratamientos;Pastilla;Medica"
+"mento;Remedio;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: data/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Preferences"
-msgstr ""
+msgstr "Preferencias"
 
 #: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Mostrar atajos"
 
 #: data/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Salir"
 
 #: data/ui/med-window.blp:11
 msgid "New treatment"
-msgstr ""
+msgstr "Nuevo tratamiento"
 
 #: data/ui/med-window.blp:19 src/window.js:928
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: data/ui/med-window.blp:25 data/ui/window.blp:147
 msgid "Add"
-msgstr ""
+msgstr "Añadir"
 
 #: data/ui/med-window.blp:44
 msgid "From treatment list"
-msgstr ""
+msgstr "De la lista de tratamientos"
 
 #: data/ui/med-window.blp:53
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: data/ui/med-window.blp:56
 msgid "Unit"
-msgstr ""
+msgstr "Unidad"
 
 #: data/ui/med-window.blp:57 src/window.js:809
 msgid "Pill(s)"
-msgstr ""
+msgstr "Píldora(s)"
 
 #: data/ui/med-window.blp:60
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #: data/ui/med-window.blp:61
 msgid "After meal"
-msgstr ""
+msgstr "Después de comer"
 
 #: data/ui/med-window.blp:65
 msgid "Color and icon"
-msgstr ""
+msgstr "Color e icono"
 
 #: data/ui/med-window.blp:70 src/window.js:852
 msgid "Color"
-msgstr ""
+msgstr "Color"
 
 #. TRANSLATORS: Tooltip for the colors (from Default until Purple)
 #: data/ui/med-window.blp:81
 msgid "Default"
-msgstr ""
+msgstr "Predeterminado"
 
 #: data/ui/med-window.blp:88
 msgid "Red"
-msgstr ""
+msgstr "Rojo"
 
 #: data/ui/med-window.blp:95
 msgid "Orange"
-msgstr ""
+msgstr "Naranja"
 
 #: data/ui/med-window.blp:102
 msgid "Yellow"
-msgstr ""
+msgstr "Amarillo"
 
 #: data/ui/med-window.blp:109
 msgid "Green"
-msgstr ""
+msgstr "Verde"
 
 #: data/ui/med-window.blp:116
 msgid "Cyan"
-msgstr ""
+msgstr "Cian"
 
 #: data/ui/med-window.blp:123
 msgid "Blue"
-msgstr ""
+msgstr "Azul"
 
 #: data/ui/med-window.blp:130
 msgid "Purple"
-msgstr ""
+msgstr "Morado"
 
 #: data/ui/med-window.blp:139
 msgid "Icon"
-msgstr ""
+msgstr "Icono"
 
 #. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
 #: data/ui/med-window.blp:152
 msgid "Pill"
-msgstr ""
+msgstr "Píldora"
 
 #: data/ui/med-window.blp:162
 msgid "Alternative pill"
-msgstr ""
+msgstr "Píldora alternativa"
 
 #: data/ui/med-window.blp:172
 msgid "Capsule"
-msgstr ""
+msgstr "Cápsula"
 
 #: data/ui/med-window.blp:182
 msgid "Round pill"
-msgstr ""
+msgstr "Píldora redonda"
 
 #: data/ui/med-window.blp:192
 msgid "Alternative round pill"
-msgstr ""
+msgstr "Píldora redonda alternativa"
 
 #: data/ui/med-window.blp:202
 msgid "Ampoule"
-msgstr ""
+msgstr "Ampolla"
 
 #: data/ui/med-window.blp:212
 msgid "Injection"
-msgstr ""
+msgstr "Inyección"
 
 #: data/ui/med-window.blp:223
 msgid "Square pill"
-msgstr ""
+msgstr "Pastilla cuadrada"
 
 #: data/ui/med-window.blp:233
 msgid "Alternative square pill"
-msgstr ""
+msgstr "Píldora cuadrada alternativa"
 
 #: data/ui/med-window.blp:243
 msgid "Triangle pill"
-msgstr ""
+msgstr "Píldora triangular"
 
 #: data/ui/med-window.blp:253
 msgid "Alternative triangle pill"
-msgstr ""
+msgstr "Píldora triangular alternativa"
 
 #: data/ui/med-window.blp:263
 msgid "Bottle"
-msgstr ""
+msgstr "Botella"
 
 #: data/ui/med-window.blp:273
 msgid "Drop"
-msgstr ""
+msgstr "Caída"
 
 #: data/ui/med-window.blp:283
 msgid "Potion"
-msgstr ""
+msgstr "Poción"
 
 #: data/ui/med-window.blp:297
 msgid "Every day"
-msgstr ""
+msgstr "Cada día"
 
 #: data/ui/med-window.blp:298
 msgid "Specific days"
-msgstr ""
+msgstr "Días específicos"
 
 #: data/ui/med-window.blp:299
 msgid "Cycle"
-msgstr ""
+msgstr "Ciclo"
 
 #: data/ui/med-window.blp:300 src/treatmentsFactory.js:147
 msgid "When needed"
-msgstr ""
+msgstr "En caso necesario"
 
 #: data/ui/med-window.blp:308 data/ui/med-window.blp:481
 #: data/ui/med-window.blp:497 data/ui/med-window.blp:515
 msgid "Choose"
-msgstr ""
+msgstr "Seleccione"
 
 #. TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa)
 #: data/ui/med-window.blp:317
 msgid "Su"
-msgstr ""
+msgstr "Do"
 
 #: data/ui/med-window.blp:323
 msgid "Mo"
-msgstr ""
+msgstr "Lu"
 
 #: data/ui/med-window.blp:329
 msgid "Tu"
-msgstr ""
+msgstr "Mar"
 
 #: data/ui/med-window.blp:335
 msgid "We"
-msgstr ""
+msgstr "Mie"
 
 #: data/ui/med-window.blp:341
 msgid "Th"
-msgstr ""
+msgstr "Ju"
 
 #: data/ui/med-window.blp:347
 msgid "Fr"
-msgstr ""
+msgstr "Vi"
 
 #: data/ui/med-window.blp:353
 msgid "Sa"
-msgstr ""
+msgstr "Sa"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"
-msgstr ""
+msgstr "Días activos"
 
 #: data/ui/med-window.blp:382
 msgid "Days inactive"
-msgstr ""
+msgstr "Días inactivos"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-window.blp:395
 msgid "Today is cycle day…"
-msgstr ""
+msgstr "Hoy es el día del ciclo…"
 
 #: data/ui/med-window.blp:411
 msgid "Time and amount"
-msgstr ""
+msgstr "Tiempo y cantidad"
 
 #: data/ui/med-window.blp:419
 msgid "Add dose"
-msgstr ""
+msgstr "Añadir dosis"
 
 #: data/ui/med-window.blp:424
 msgid "Recurring notifications"
-msgstr ""
+msgstr "Notificaciones recurrentes"
 
 #: data/ui/med-window.blp:425
 msgid "Renotify until it's confirmed or skipped"
-msgstr ""
+msgstr "Notificar de nuevo hasta que se confirme o se omita"
 
 #: data/ui/med-window.blp:429
 msgid "Interval in minutes"
-msgstr ""
+msgstr "Intervalo en minutos"
 
 #: data/ui/med-window.blp:441
 msgid "Inventory"
-msgstr ""
+msgstr "Inventario"
 
 #: data/ui/med-window.blp:442
 msgid "Manage your stock"
-msgstr ""
+msgstr "Gestione sus existencias"
 
 #: data/ui/med-window.blp:447
 msgid "Current"
-msgstr ""
+msgstr "Actual"
 
 #: data/ui/med-window.blp:458
 msgid "Remind me at"
-msgstr ""
+msgstr "Recuérdemelo en"
 
 #: data/ui/med-window.blp:471
 msgid "Duration"
-msgstr ""
+msgstr "Duración"
 
 #: data/ui/med-window.blp:472
 msgid "Set a start and end date"
-msgstr ""
+msgstr "Fijar una fecha de inicio y fin"
 
 #: data/ui/med-window.blp:476
 msgid "Starts on"
-msgstr ""
+msgstr "Comienza el"
 
 #: data/ui/med-window.blp:492
 msgid "Ends on"
-msgstr ""
+msgstr "Termina el"
 
 #: data/ui/med-window.blp:510
 msgid "Date"
-msgstr ""
+msgstr "Fecha"
 
 #: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:929
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #: data/ui/preferences.blp:9 data/ui/window.blp:179
 msgid "Preferences"
-msgstr ""
+msgstr "Preferencias"
 
 #: data/ui/preferences.blp:15
 msgid "Autostart at login"
-msgstr ""
+msgstr "Arranque automático al iniciar sesión"
 
 #: data/ui/preferences.blp:24
 msgid "Increase notification priority"
-msgstr ""
+msgstr "Aumentar la prioridad de las notificaciones"
 
 #: data/ui/preferences.blp:25
 msgid ""
 "On GNOME this will make the notification show on fullscreen mode or even if "
 "'Do Not Disturb' is enabled"
 msgstr ""
+"En GNOME esto hará que la notificación se muestre en modo de pantalla "
+"completa o incluso si el modo «No molestar» está activado"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
-msgstr ""
+msgstr "Menú principal"
 
 #: data/ui/window.blp:41
 msgid "Today"
-msgstr ""
+msgstr "Hoy"
 
 #: data/ui/window.blp:62
 msgid "Unselect"
-msgstr ""
+msgstr "Deseleccionar"
 
 #: data/ui/window.blp:70 src/window.js:501
 msgid "One-time entry"
-msgstr ""
+msgstr "Entrada única"
 
 #: data/ui/window.blp:76
 msgid "Skip"
-msgstr ""
+msgstr "Omitir"
 
 #: data/ui/window.blp:95
 msgid "History"
-msgstr ""
+msgstr "Historial"
 
 #: data/ui/window.blp:110
 msgid "Empty history"
-msgstr ""
+msgstr "Historial vacío"
 
 #: data/ui/window.blp:121
 msgid "Treatments"
-msgstr ""
+msgstr "Tratamientos"
 
 #: data/ui/window.blp:154
 msgid "Click the button below to add some"
-msgstr ""
+msgstr "Haga clic en el botón de abajo para añadir"
 
 #: data/ui/window.blp:183
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Atajos de teclado"
 
 #: data/ui/window.blp:187
 msgid "About Dosage"
-msgstr ""
+msgstr "Acerca de Dosis"
 
 #: data/ui/window.blp:191
 msgid "Quit"
-msgstr ""
+msgstr "Salir"
 
 #. TRANSLATORS: Keep it short
 #: src/historyFactory.js:122
 msgid "Confirmed"
-msgstr ""
+msgstr "Confirmado"
 
 #. TRANSLATORS: Keep it short
 #: src/historyFactory.js:125
 msgid "Skipped"
-msgstr ""
+msgstr "Omitido"
 
 #. TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
 #: src/historyFactory.js:128
 msgid "Missed"
-msgstr ""
+msgstr "Perdido"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
 #: src/main.js:75
 msgid "translator-credits"
-msgstr ""
+msgstr "Sergio Varela <sergiovg01@outlook.com>"
 
 #: src/main.js:78
 msgid "Thanks to these projects!"
-msgstr ""
+msgstr "¡Gracias a estos proyectos!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:110
 msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
+"Aceptar para permitir la ejecución en segundo plano y recibir notificaciones"
 
 #. TRANSLATORS: Keep it short (label for when the inventory is low)
 #: src/treatmentsFactory.js:90 src/treatmentsFactory.js:92
 msgid "Low stock"
-msgstr ""
+msgstr "Pocas existencias"
 
 #. TRANSLATORS: Keep it short (label for when duration is enabled)
 #: src/treatmentsFactory.js:99
 msgid "Until"
-msgstr ""
+msgstr "Hasta"
 
 #: src/treatmentsFactory.js:110 src/treatmentsFactory.js:123
 msgid "Daily"
-msgstr ""
+msgstr "Diario"
 
 #: src/treatmentsFactory.js:119
 msgid "Weekend"
-msgstr ""
+msgstr "Fin de semana"
 
 #: src/treatmentsFactory.js:121
 msgid "Weekdays"
-msgstr ""
+msgstr "Días laborables"
 
 #: src/treatmentsFactory.js:132
 msgid "Sunday"
-msgstr ""
+msgstr "Domingo"
 
 #: src/treatmentsFactory.js:133
 msgid "Monday"
-msgstr ""
+msgstr "Lunes"
 
 #: src/treatmentsFactory.js:134
 msgid "Tuesday"
-msgstr ""
+msgstr "Martes"
 
 #: src/treatmentsFactory.js:135
 msgid "Wednesday"
-msgstr ""
+msgstr "Miércoles"
 
 #: src/treatmentsFactory.js:136
 msgid "Thursday"
-msgstr ""
+msgstr "Jueves"
 
 #: src/treatmentsFactory.js:137
 msgid "Friday"
-msgstr ""
+msgstr "Viernes"
 
 #: src/treatmentsFactory.js:138
 msgid "Saturday"
-msgstr ""
+msgstr "Sábado"
 
 #: src/utils.js:137
 msgid "Delete dose"
-msgstr ""
+msgstr "Eliminar dosis"
 
 #. TRANSLATORS: Notification text for for when the inventory is low
 #: src/window.js:93
 msgid "You have treatments low in stock"
-msgstr ""
+msgstr "Dispone de tratamientos bajos en stock"
 
 #: src/window.js:353
 msgid "No treatments added yet!"
-msgstr ""
+msgstr "¡Aún no se han añadido tratamientos!"
 
 #: src/window.js:356
 msgid "All done for today!"
-msgstr ""
+msgstr "¡Todo listo por hoy!"
 
 #: src/window.js:501
 msgid "Confirm"
-msgstr ""
+msgstr "Confirmar"
 
 #: src/window.js:709
 msgid "Edit treatment"
-msgstr ""
+msgstr "Editar tratamiento"
 
 #: src/window.js:710
 msgid "Save"
-msgstr ""
+msgstr "Guardar"
 
 #: src/window.js:799
 msgid "New"
-msgstr ""
+msgstr "Nuevo"
 
 #: src/window.js:849
 msgid "New entry"
-msgstr ""
+msgstr "Nueva entrada"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
 #: src/window.js:851
 msgid "Add to history"
-msgstr ""
+msgstr "Añadir al historial"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
 #: src/window.js:923
 msgid "Are you sure?"
-msgstr ""
+msgstr "¿Estás seguro?"
 
 #: src/window.js:1134
 msgid "Empty name"
-msgstr ""
+msgstr "Nombre vacío"
 
 #: src/window.js:1139
 msgid "Empty unit"
-msgstr ""
+msgstr "Unidad vacía"
 
 #: src/window.js:1145
 msgid "Choose at least one day"
-msgstr ""
+msgstr "Elija al menos un día"
 
 #: src/window.js:1155
 msgid "Name already exists"
-msgstr ""
+msgstr "El nombre ya existe"
 
 #: src/window.js:1169
 msgid "Duplicated time"
-msgstr ""
+msgstr "Hora duplicada"
