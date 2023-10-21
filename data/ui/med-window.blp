@@ -420,9 +420,21 @@ Adw.Window medWindow {
                 }
               }
 
-              Adw.SwitchRow recurringNotif {
+              Adw.ExpanderRow recurringNotif {
                 title: _("Recurring notifications");
-                subtitle: _("Every five minutes until confirmed or skipped");
+                subtitle: _("Renotify until it's confirmed or skipped");
+                show-enable-switch: true;
+                enable-expansion: false;
+                Adw.SpinRow  {
+                  title: _("Interval in minutes");
+                  climb-rate: 0.2;
+                  adjustment: Adjustment recurringInterval {
+                    lower: 5;
+                    upper: 60;
+                    step-increment: 1;
+                    value: 5;
+                  };
+                }
               }
 
               Adw.ExpanderRow inventory {

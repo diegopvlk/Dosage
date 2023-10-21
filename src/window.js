@@ -378,7 +378,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const seconds = now.getSeconds();
 		const itemHour = item.info.dosage.time[0];
 		const itemMin = item.info.dosage.time[1];
-		const fiveMin = 5 * 60 * 1000;
 
 		// milliseconds
 		let timeDiff =
@@ -420,13 +419,15 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			app.send_notification(pseudoId, notification);
 		}
-	
-		if (item.info.recurring) {
-			// send every 5 minutes
+		
+		// v1.1.0 only has recurring: boolean
+		if (item.info.recurring.enabled || item.info.recurring === true) {
+			const interval = item.info.recurring.interval || 5;
+			const minutes = interval * 60 * 1000;
 			const recurringNotify = (pseudoId, timeDiff) => {
 				this._scheduledItems[pseudoId] = setTimeout(() => {
 					notify();
-					recurringNotify(pseudoId, fiveMin);
+					recurringNotify(pseudoId, minutes);
 				}, timeDiff);
 			};
 
@@ -685,6 +686,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		dosageExpanderBtn.set_visible(false);
 
 		const recurringNotif = builder.get_object('recurringNotif');
+		const recurringInterval = builder.get_object('recurringInterval');
 
 		const medInventory = builder.get_object('inventory');
 		const medCurrrentInv = builder.get_object('currentInventory');
@@ -732,7 +734,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 				dosage.add_row(doseRow(timeDose));
 			});
 
-			recurringNotif.set_active(info.recurring);
+			// v1.1.0 only has recurring: boolean
+			const recurrEnabled = info.recurring.enabled || info.recurring === true;
+			recurringNotif.set_enable_expansion(recurrEnabled);
+			recurringInterval.value = info.recurring.interval || 5;
 
 			if (info.days && info.days.length !== 0) {
 				const specificDaysBox = builder.get_object('specificDaysBox');
@@ -991,7 +996,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 			notes = medNotes.text.trim(),
 			days = getSpecificDays();
 			doses = getDoses();
-			recurring = recurringNotif.get_active();
+			recurring = {};
+			recurring.enabled = recurringNotif.get_enable_expansion();
+			recurring.interval = recurringInterval.get_value();
 			cycle[0] = cycleActive.adjustment.value;
 			cycle[1] = cycleInactive.adjustment.value;
 			cycle[2] = cycleCurrent.adjustment.value;
