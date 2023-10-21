@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-21 11:10-0300\n"
-"PO-Revision-Date: 2023-10-20 21:52+0000\n"
+"PO-Revision-Date: 2023-10-22 19:52+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
 ">\n"
@@ -307,14 +307,12 @@ msgid "Recurring notifications"
 msgstr "Yinelenen bildirimler"
 
 #: data/ui/med-window.blp:425
-#, fuzzy
-#| msgid "Every five minutes until confirmed or skipped"
 msgid "Renotify until it's confirmed or skipped"
-msgstr "Onaylanana ya da atlanana kadar her beş dakikada bir"
+msgstr "Onaylanana ya da atlanana kadar yeniden bildir"
 
 #: data/ui/med-window.blp:429
 msgid "Interval in minutes"
-msgstr ""
+msgstr "Aralık (dakika olarak)"
 
 #: data/ui/med-window.blp:441
 msgid "Inventory"
