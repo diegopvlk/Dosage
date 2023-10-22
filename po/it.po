@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-21 11:10-0300\n"
-"PO-Revision-Date: 2023-10-21 14:16+0000\n"
+"PO-Revision-Date: 2023-10-22 19:52+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
 ">\n"
@@ -306,14 +306,12 @@ msgid "Recurring notifications"
 msgstr "Notifiche ricorrenti"
 
 #: data/ui/med-window.blp:425
-#, fuzzy
-#| msgid "Every five minutes until confirmed or skipped"
 msgid "Renotify until it's confirmed or skipped"
-msgstr "Ogni cinque minuti fino a conferma o salto"
+msgstr "Rinotificare finché non viene confermato o saltato"
 
 #: data/ui/med-window.blp:429
 msgid "Interval in minutes"
-msgstr ""
+msgstr "Intervallo in minuti"
 
 #: data/ui/med-window.blp:441
 msgid "Inventory"
