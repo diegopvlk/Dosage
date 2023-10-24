@@ -5,6 +5,7 @@
 'use strict';
 
 import Adw from 'gi://Adw?version=1';
+import Gdk from 'gi://Gdk';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
@@ -630,6 +631,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const medWindow = builder.get_object('medWindow');
 		medWindow.set_modal(true);
 		medWindow.set_transient_for(this);
+
+		const keyController = new Gtk.EventControllerKey();
+		keyController.connect('key-pressed', (_, keyval, keycode, state) => {
+			if (keyval === Gdk.KEY_Escape) closeWindow();
+		});
+		medWindow.add_controller(keyController);
 		
 		const cancelButton = builder.get_object('cancelButton');
 		const saveButton = builder.get_object('saveButton');
