@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 11:10-0300\n"
+"POT-Creation-Date: 2023-10-24 14:23-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:67 src/window.js:449
+#: src/main.js:98 src/window.js:450
 msgid "Dosage"
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "New treatment"
 msgstr ""
 
-#: data/ui/med-window.blp:19 src/window.js:928
+#: data/ui/med-window.blp:19 src/window.js:935
 msgid "Cancel"
 msgstr ""
 
@@ -109,7 +109,7 @@ msgstr ""
 msgid "Unit"
 msgstr ""
 
-#: data/ui/med-window.blp:57 src/window.js:809
+#: data/ui/med-window.blp:57 src/window.js:816
 msgid "Pill(s)"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Color and icon"
 msgstr ""
 
-#: data/ui/med-window.blp:70 src/window.js:852
+#: data/ui/med-window.blp:70 src/window.js:859
 msgid "Color"
 msgstr ""
 
@@ -342,7 +342,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:929
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:936
 msgid "Delete"
 msgstr ""
 
@@ -376,7 +376,7 @@ msgstr ""
 msgid "Unselect"
 msgstr ""
 
-#: data/ui/window.blp:70 src/window.js:501
+#: data/ui/window.blp:70 src/window.js:502
 msgid "One-time entry"
 msgstr ""
 
@@ -401,14 +401,10 @@ msgid "Click the button below to add some"
 msgstr ""
 
 #: data/ui/window.blp:183
-msgid "Keyboard Shortcuts"
-msgstr ""
-
-#: data/ui/window.blp:187
 msgid "About Dosage"
 msgstr ""
 
-#: data/ui/window.blp:191
+#: data/ui/window.blp:187
 msgid "Quit"
 msgstr ""
 
@@ -428,16 +424,16 @@ msgid "Missed"
 msgstr ""
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:75
+#: src/main.js:106
 msgid "translator-credits"
 msgstr ""
 
-#: src/main.js:78
+#: src/main.js:109
 msgid "Thanks to these projects!"
 msgstr ""
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:110
+#: src/main.js:141
 msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 
@@ -496,64 +492,64 @@ msgid "Delete dose"
 msgstr ""
 
 #. TRANSLATORS: Notification text for for when the inventory is low
-#: src/window.js:93
+#: src/window.js:94
 msgid "You have treatments low in stock"
 msgstr ""
 
-#: src/window.js:353
+#: src/window.js:354
 msgid "No treatments added yet!"
 msgstr ""
 
-#: src/window.js:356
+#: src/window.js:357
 msgid "All done for today!"
 msgstr ""
 
-#: src/window.js:501
+#: src/window.js:502
 msgid "Confirm"
 msgstr ""
 
-#: src/window.js:709
+#: src/window.js:716
 msgid "Edit treatment"
 msgstr ""
 
-#: src/window.js:710
+#: src/window.js:717
 msgid "Save"
 msgstr ""
 
-#: src/window.js:799
+#: src/window.js:806
 msgid "New"
 msgstr ""
 
-#: src/window.js:849
+#: src/window.js:856
 msgid "New entry"
 msgstr ""
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:851
+#: src/window.js:858
 msgid "Add to history"
 msgstr ""
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:923
+#: src/window.js:930
 msgid "Are you sure?"
 msgstr ""
 
-#: src/window.js:1134
+#: src/window.js:1141
 msgid "Empty name"
 msgstr ""
 
-#: src/window.js:1139
+#: src/window.js:1146
 msgid "Empty unit"
 msgstr ""
 
-#: src/window.js:1145
+#: src/window.js:1152
 msgid "Choose at least one day"
 msgstr ""
 
-#: src/window.js:1155
+#: src/window.js:1162
 msgid "Name already exists"
 msgstr ""
 
-#: src/window.js:1169
+#: src/window.js:1176
 msgid "Duplicated time"
 msgstr ""
