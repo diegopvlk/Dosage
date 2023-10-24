@@ -32,23 +32,54 @@ export const DosageApplication = GObject.registerClass(
 
 			this._hidden = false;
 
+			const container = GLib.getenv('container');
+
+			// auto-start for non-flatpak
+			if (container !== 'flatpak') {
+				const autostartDir = GLib.build_filenamev([
+					GLib.get_home_dir(),
+					'.config',
+					'autostart',
+				]);
+				const autostartFilePath = GLib.build_filenamev([
+					autostartDir,
+					'dosage-tracker-startup.desktop',
+				]);
+
+				if (!GLib.file_test(autostartFilePath, GLib.FileTest.EXISTS)) {
+					GLib.mkdir_with_parents(autostartDir, 0o755);
+
+					const fileContents =
+						'[Desktop Entry]\nType=Application\nName=io.github.diegopvlk.Dosage\nExec=dosage-tracker --startup';
+					
+					GLib.file_set_contents(autostartFilePath, fileContents);
+				}
+			}
+
 			const showPrefAction = new Gio.SimpleAction({ name: "preferences" });
 			showPrefAction.connect("activate", () => {
 				const builder = Gtk.Builder.new_from_resource(
 					'/io/github/diegopvlk/Dosage/ui/preferences.ui'
 				);
+				
 				const prefWindow = builder.get_object('prefWindow');
+				const autostartRow = builder.get_object('autostartRow');
 				const autostartSwitch = builder.get_object('autostartSwitch');
 				const prioritySwitch = builder.get_object('prioritySwitch');
 				
-				autostartSwitch.set_active(settings.get_boolean('autostart'));
+				if (container === 'flatpak') {
+					autostartSwitch.set_active(settings.get_boolean('autostart'));
+					autostartSwitch.connect('state-set', () => {
+						const state = autostartSwitch.get_active();
+						settings.set_boolean('autostart', state);
+						this._requestBackground(state);
+					});
+				} 
+				else // no option to disable auto-start
+					autostartRow.set_visible(false);
+				
 				prioritySwitch.set_active(settings.get_boolean('priority'));
-
-				autostartSwitch.connect('state-set', () => {
-					const state = autostartSwitch.get_active();
-					settings.set_boolean('autostart', state);
-					this._requestBackground(state);
-				})
+				
 				prioritySwitch.connect('state-set', () => {
 					const state = prioritySwitch.get_active();
 					settings.set_boolean('priority', state)
