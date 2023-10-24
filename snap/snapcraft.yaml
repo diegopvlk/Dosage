@@ -1,0 +1,54 @@
+name: dosage-tracker
+base: core22
+adopt-info: dosage-tracker
+grade: stable
+confinement: strict 
+  
+parts:      
+  blueprint-compiler:
+    source: https://gitlab.gnome.org/jwestman/blueprint-compiler.git
+    source-tag: 'v0.10.0'
+    plugin: meson
+    meson-parameters:
+      - --prefix=/usr
+    override-prime: ''
+
+  dosage-tracker:
+    after: [ blueprint-compiler ]
+    plugin: meson
+    # source: snap/local/Dosage
+    source: https://github.com/diegopvlk/Dosage.git
+    # source-tag: 'v1.1.0'
+    source-commit: e3da1dfcb0772353dfea3eff549b5c5064514e9c
+    build-environment:
+      - PYTHONPATH: $CRAFT_STAGE/usr/lib/python3/dist-packages:$PYTHONPATH
+      - GI_TYPELIB_PATH: /snap/gnome-42-2204-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/girepository-1.0:/snap/gnome-42-2204-sdk/current/usr/lib/girepository-1.0
+    meson-parameters:
+      - --prefix=/snap/dosage-tracker/current/usr
+    override-pull: |
+      craftctl default
+      sed -i -e 's|@GJS@|/snap/dosage-tracker/current/gnome-platform/usr/bin/gjs|g' src/io.github.diegopvlk.Dosage.in
+    organize: 
+      snap/dosage-tracker/current: .
+    parse-info: [ usr/share/appdata/io.github.diegopvlk.Dosage.appdata.xml ]
+    prime:
+      - -snap/dosage-tracker
+
+slots:
+  dosage-tracker:
+    interface: dbus
+    bus: session
+    name: io.github.diegopvlk.Dosage
+
+apps:
+  dosage-tracker:
+    command: usr/bin/io.github.diegopvlk.Dosage
+    desktop: usr/share/applications/io.github.diegopvlk.Dosage.desktop
+    autostart: dosage-tracker-startup.desktop
+    common-id: io.github.diegopvlk.Dosage
+    environment:
+      GI_TYPELIB_PATH: $SNAP/gnome-platform/usr/lib/$CRAFT_ARCH_TRIPLET/girepository-1.0:$SNAP/gnome-platform/usr/lib/$CRAFT_ARCH_TRIPLET/gjs/girepository-1.0
+    extensions:
+      - gnome
+    plugs:
+      - login-session-observe
