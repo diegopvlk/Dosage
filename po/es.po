@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 11:10-0300\n"
+"POT-Creation-Date: 2023-10-24 14:23-0300\n"
 "PO-Revision-Date: 2023-10-21 19:49+0000\n"
 "Last-Translator: Sergio Varela <sergitroll9@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/es/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:67 src/window.js:449
+#: src/main.js:98 src/window.js:450
 msgid "Dosage"
 msgstr "Dosis"
 
@@ -70,8 +70,8 @@ msgstr "Duración — Defina las fechas de inicio y fin"
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
 msgstr ""
-"Medicación;Rastreador;Recordatorio;Hoy;Historial;Tratamientos;Pastilla;Medica"
-"mento;Remedio;"
+"Medicación;Rastreador;Recordatorio;Hoy;Historial;Tratamientos;Pastilla;"
+"Medicamento;Remedio;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -97,7 +97,7 @@ msgstr "Salir"
 msgid "New treatment"
 msgstr "Nuevo tratamiento"
 
-#: data/ui/med-window.blp:19 src/window.js:928
+#: data/ui/med-window.blp:19 src/window.js:935
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -117,7 +117,7 @@ msgstr "Nombre"
 msgid "Unit"
 msgstr "Unidad"
 
-#: data/ui/med-window.blp:57 src/window.js:809
+#: data/ui/med-window.blp:57 src/window.js:816
 msgid "Pill(s)"
 msgstr "Píldora(s)"
 
@@ -133,7 +133,7 @@ msgstr "Después de comer"
 msgid "Color and icon"
 msgstr "Color e icono"
 
-#: data/ui/med-window.blp:70 src/window.js:852
+#: data/ui/med-window.blp:70 src/window.js:859
 msgid "Color"
 msgstr "Color"
 
@@ -350,7 +350,7 @@ msgstr "Termina el"
 msgid "Date"
 msgstr "Fecha"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:929
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:936
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -386,7 +386,7 @@ msgstr "Hoy"
 msgid "Unselect"
 msgstr "Deseleccionar"
 
-#: data/ui/window.blp:70 src/window.js:501
+#: data/ui/window.blp:70 src/window.js:502
 msgid "One-time entry"
 msgstr "Entrada única"
 
@@ -411,14 +411,10 @@ msgid "Click the button below to add some"
 msgstr "Haga clic en el botón de abajo para añadir"
 
 #: data/ui/window.blp:183
-msgid "Keyboard Shortcuts"
-msgstr "Atajos de teclado"
-
-#: data/ui/window.blp:187
 msgid "About Dosage"
 msgstr "Acerca de Dosis"
 
-#: data/ui/window.blp:191
+#: data/ui/window.blp:187
 msgid "Quit"
 msgstr "Salir"
 
@@ -438,16 +434,16 @@ msgid "Missed"
 msgstr "Perdido"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:75
+#: src/main.js:106
 msgid "translator-credits"
 msgstr "Sergio Varela <sergiovg01@outlook.com>"
 
-#: src/main.js:78
+#: src/main.js:109
 msgid "Thanks to these projects!"
 msgstr "¡Gracias a estos proyectos!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:110
+#: src/main.js:141
 msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 "Aceptar para permitir la ejecución en segundo plano y recibir notificaciones"
@@ -507,64 +503,67 @@ msgid "Delete dose"
 msgstr "Eliminar dosis"
 
 #. TRANSLATORS: Notification text for for when the inventory is low
-#: src/window.js:93
+#: src/window.js:94
 msgid "You have treatments low in stock"
 msgstr "Dispone de tratamientos bajos en stock"
 
-#: src/window.js:353
+#: src/window.js:354
 msgid "No treatments added yet!"
 msgstr "¡Aún no se han añadido tratamientos!"
 
-#: src/window.js:356
+#: src/window.js:357
 msgid "All done for today!"
 msgstr "¡Todo listo por hoy!"
 
-#: src/window.js:501
+#: src/window.js:502
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: src/window.js:709
+#: src/window.js:716
 msgid "Edit treatment"
 msgstr "Editar tratamiento"
 
-#: src/window.js:710
+#: src/window.js:717
 msgid "Save"
 msgstr "Guardar"
 
-#: src/window.js:799
+#: src/window.js:806
 msgid "New"
 msgstr "Nuevo"
 
-#: src/window.js:849
+#: src/window.js:856
 msgid "New entry"
 msgstr "Nueva entrada"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:851
+#: src/window.js:858
 msgid "Add to history"
 msgstr "Añadir al historial"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:923
+#: src/window.js:930
 msgid "Are you sure?"
 msgstr "¿Estás seguro?"
 
-#: src/window.js:1134
+#: src/window.js:1141
 msgid "Empty name"
 msgstr "Nombre vacío"
 
-#: src/window.js:1139
+#: src/window.js:1146
 msgid "Empty unit"
 msgstr "Unidad vacía"
 
-#: src/window.js:1145
+#: src/window.js:1152
 msgid "Choose at least one day"
 msgstr "Elija al menos un día"
 
-#: src/window.js:1155
+#: src/window.js:1162
 msgid "Name already exists"
 msgstr "El nombre ya existe"
 
-#: src/window.js:1169
+#: src/window.js:1176
 msgid "Duplicated time"
 msgstr "Hora duplicada"
+
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Atajos de teclado"
