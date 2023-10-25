@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 14:23-0300\n"
+"POT-Creation-Date: 2023-10-25 14:28-0300\n"
 "PO-Revision-Date: 2023-10-17 22:44+0000\n"
 "Last-Translator: Xenelio <Xenelio@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/dosage/dosage/fr/"
@@ -31,40 +31,96 @@ msgid "Keep track of your treatments"
 msgstr "Suivre vos traitements"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
+msgid ""
+"Easily manage track treatments with Dosage: Notifications, History, Multiple "
+"Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
+"Control"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:8
 msgid "Features:"
 msgstr "Fonctionnalités :"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
 msgid "Notifications — Get reminders at the right time"
 msgstr "Notifications — Être rappelé au bon moment"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
 msgid "History — See which medications you took or skipped"
 msgstr "Historique — Médicaments pris ou oubliés"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Dosage management — Multiple doses with different times"
 msgstr "Gestion des dosages — Plusieurs doses avec des horaires différents"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
 msgstr "Fréquences — Tous les jours, jour spécifique, cycle ou au besoin"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Color and icon — Give a shape for your treatment"
 msgstr "Couleurs et icônes — Donnez un forme a vos traitements"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr "Gestion de stock — Gérez vos stocks et être rappelé avant la fin"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:16
 msgid "Duration — Define the start and end dates"
 msgstr "Durée — Définissez le début et la fin des traitements"
 
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
+msgid "Dosage today window in light theme."
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
+msgid "Dosage edit treatment window in light theme."
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
+msgid "Dosage today window in dark theme."
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:101
+#, fuzzy
+#| msgid "Injection"
+msgid "medication"
+msgstr "Injection"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:102
+msgid "tracker"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:103
+#, fuzzy
+#| msgid "Remind me at"
+msgid "reminder"
+msgstr "Me le rappeler à"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:104
+#, fuzzy
+#| msgid "Treatments"
+msgid "treatments"
+msgstr "Traitements"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:105
+msgid "pill"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:106
+msgid "drug"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:107
+msgid "remedy"
+msgstr ""
+
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
-msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
+#, fuzzy
+#| msgid ""
+#| "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
+msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
 "Médicament;Suivi;Rappel;Aujourd'hui;Historique;Traitements;Comprimé;Remède;"
 "Pilule;"

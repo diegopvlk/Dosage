@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 14:23-0300\n"
+"POT-Creation-Date: 2023-10-25 14:28-0300\n"
 "PO-Revision-Date: 2023-10-15 22:56+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
@@ -33,43 +33,96 @@ msgid "Keep track of your treatments"
 msgstr "Hold øye med behandlingene dine."
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
+msgid ""
+"Easily manage track treatments with Dosage: Notifications, History, Multiple "
+"Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
+"Control"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:8
 msgid "Features:"
 msgstr "Funksjoner:"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
 #, fuzzy
 #| msgid "Notifications — Get reminders on the right time"
 msgid "Notifications — Get reminders at the right time"
 msgstr "Merknader — få påminnelser til rett tid"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
 msgid "History — See which medications you took or skipped"
 msgstr "Historikk — ta rede på hvilken medisin du har tatt eller hoppet over"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Dosage management — Multiple doses with different times"
 msgstr "Dosehåndtering — flere doser med forskjellige tider"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
 msgstr "Frekvensmodus — hver dag, spesifikke dager, eller syklus ved behov"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Color and icon — Give a shape for your treatment"
 msgstr "Farge og ikon — gi behandlingen din en form"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
 "Inventar og sporing — hold øye med beholdning og få påminnelse når den er lav"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:16
 msgid "Duration — Define the start and end dates"
 msgstr "Varighet — definer start- og sluttdatoer"
 
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
+msgid "Dosage today window in light theme."
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
+msgid "Dosage edit treatment window in light theme."
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
+msgid "Dosage today window in dark theme."
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:101
+#, fuzzy
+#| msgid "Injection"
+msgid "medication"
+msgstr "Injeksjon"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:102
+msgid "tracker"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:103
+#, fuzzy
+#| msgid "Remind me at"
+msgid "reminder"
+msgstr "Minn meg på dette"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:104
+#, fuzzy
+#| msgid "Treatments"
+msgid "treatments"
+msgstr "Behandlinger"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:105
+msgid "pill"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:106
+msgid "drug"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:107
+msgid "remedy"
+msgstr ""
+
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
-msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
+msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
 
 #: data/gtk/help-overlay.blp:11
