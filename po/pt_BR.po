@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 14:23-0300\n"
+"POT-Creation-Date: 2023-10-25 14:28-0300\n"
 "PO-Revision-Date: 2023-10-20 21:52+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
-"dosage/dosage/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/dosage/dosage/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,45 +30,93 @@ msgid "Keep track of your treatments"
 msgstr "Acompanhe seus tratamentos"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
+msgid "Easily manage track treatments with Dosage: Notifications, History, Multiple Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration Control"
+msgstr "Facilmente gerencie seus tratamentos com o Dosagem: notificações, histórico, doses múltiplas, frequências, monitore o estoque e defina a duração do tratamento"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:8
 msgid "Features:"
 msgstr "Recursos:"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:9
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
 msgid "Notifications — Get reminders at the right time"
 msgstr "Notificações — Receba lembretes na hora certa"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
 msgid "History — See which medications you took or skipped"
 msgstr "Histórico — Veja quais medicamentos você confirmou ou ignorou"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Dosage management — Multiple doses with different times"
 msgstr "Gerenciamento de dosagem — Múltiplas doses com horários diferentes"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
-msgid "Frequency modes — Every day, specific days, cycle or just when needed"
-msgstr ""
-"Frequência — Todos os dias, dias específicos, ciclo ou apenas quando "
-"necessário"
-
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
+msgid "Frequency modes — Every day, specific days, cycle or just when needed"
+msgstr "Frequência — Todos os dias, dias específicos, ciclo ou apenas quando necessário"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Color and icon — Give a shape for your treatment"
 msgstr "Cor e ícone — Dê uma forma ao seu tratamento"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr "Estoque — Monitore e seja lembrado quando estiver baixo"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:16
 msgid "Duration — Define the start and end dates"
 msgstr "Duração — Defina datas para começar e terminar"
 
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
+msgid "Dosage today window in light theme."
+msgstr "Janela do Dosagem hoje em tema claro."
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
+msgid "Dosage edit treatment window in light theme."
+msgstr "Janela de edição de tratamento em tema claro."
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
+msgid "Dosage today window in dark theme."
+msgstr "Janela do Dosagem hoje em tema escuro."
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:101
+#, fuzzy
+#| msgid "Injection"
+msgid "medication"
+msgstr "medicamento"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:102
+msgid "tracker"
+msgstr "rastreador"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:103
+#, fuzzy
+#| msgid "Remind me at"
+msgid "reminder"
+msgstr "lembrete"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:104
+#, fuzzy
+#| msgid "Treatments"
+msgid "treatments"
+msgstr "Tratamentos"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:105
+msgid "pill"
+msgstr "pílula"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:106
+msgid "drug"
+msgstr "droga"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:107
+msgid "remedy"
+msgstr "remédio"
+
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
-msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
-msgstr ""
-"Medicação;Rastreador;Lembrete;Hoje;Histórico;Tratamentos;Pílula;Droga;"
-"Remédio;"
+#, fuzzy
+#| msgid "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
+msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
+msgstr "Medicação;Rastreador;Lembrete;Hoje;Tratamentos;Pílula;Droga;Remédio;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -371,12 +418,8 @@ msgid "Increase notification priority"
 msgstr "Aumentar a prioridade da notificação"
 
 #: data/ui/preferences.blp:25
-msgid ""
-"On GNOME this will make the notification show on fullscreen mode or even if "
-"'Do Not Disturb' is enabled"
-msgstr ""
-"No GNOME isso fará com que a notificação seja exibida em tela cheia ou mesmo "
-"se o modo 'Não Perturbe' estiver ativado"
+msgid "On GNOME this will make the notification show on fullscreen mode or even if 'Do Not Disturb' is enabled"
+msgstr "No GNOME isso fará com que a notificação seja exibida em tela cheia ou mesmo se o modo 'Não Perturbe' estiver ativado"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
@@ -449,8 +492,7 @@ msgstr "Obrigado à esses projetos!"
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:141
 msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
-"Aceite para permitir a execução em segundo plano e receber notificações"
+msgstr "Aceite para permitir a execução em segundo plano e receber notificações"
 
 #. TRANSLATORS: Keep it short (label for when the inventory is low)
 #: src/treatmentsFactory.js:90 src/treatmentsFactory.js:92
@@ -581,16 +623,11 @@ msgstr "Hora duplicada"
 #~ msgid "Fixed notifications being delayed after suspension"
 #~ msgstr "Corrigido: notificações atrasadas após suspensão"
 
-#~ msgid ""
-#~ "Fixed notifications being sent more than once after saving an existing "
-#~ "treatment"
-#~ msgstr ""
-#~ "Corrigido: notificações enviadas mais de uma vez após salvar um "
-#~ "tratamento existente"
+#~ msgid "Fixed notifications being sent more than once after saving an existing treatment"
+#~ msgstr "Corrigido: notificações enviadas mais de uma vez após salvar um tratamento existente"
 
 #~ msgid "Added a label to show the frequency on treatments list"
-#~ msgstr ""
-#~ "Adicionado um rótulo para mostrar a frequência na lista de tratamentos"
+#~ msgstr "Adicionado um rótulo para mostrar a frequência na lista de tratamentos"
 
 #~ msgid "Brazilian translation updated"
 #~ msgstr "Tradução brasileira atualizada"
