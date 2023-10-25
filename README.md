@@ -5,7 +5,9 @@ Keep track of your treatments
 
 <br>
 
-</a> <a href='https://flathub.org/apps/io.github.diegopvlk.Dosage'><img width='240' alt='Download on Flathub' src='https://dl.flathub.org/assets/badges/flathub-badge-i-en.svg'/></a>
+</a> <a href='https://flathub.org/apps/io.github.diegopvlk.Dosage'><img width='240' alt='Download on Flathub' src='https://dl.flathub.org/assets/badges/flathub-badge-i-en.svg'/></a> <a href="https://snapcraft.io/dosage-tracker">
+  <img height='80' alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-white.svg" />
+</a>
 
 ### Features
 - **Notifications** — Get reminders at the right time  
