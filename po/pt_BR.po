@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-25 14:28-0300\n"
-"PO-Revision-Date: 2023-10-20 21:52+0000\n"
+"PO-Revision-Date: 2023-10-26 00:40+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "dosage/dosage/pt_BR/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.1\n"
+"X-Generator: Weblate 5.1.1\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
@@ -87,10 +87,8 @@ msgid "Dosage today window in dark theme."
 msgstr "Janela do Dosagem hoje em tema escuro."
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:101
-#, fuzzy
-#| msgid "Injection"
 msgid "medication"
-msgstr "medicamento"
+msgstr "medicação"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:102
 msgid "tracker"
