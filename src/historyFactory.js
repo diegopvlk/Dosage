@@ -60,7 +60,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	});
 	labelsBox.append(dose);
 	const takenLabel = new Gtk.Label({
-		css_classes: ['taken-label'],
+		css_classes: ['rounded-label'],
 		valign: Gtk.Align.CENTER,
 		margin_end: 15,
 		visible: true,

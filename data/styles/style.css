@@ -21,6 +21,7 @@
   font-size: 24px;
   font-weight: 700;
 }
+
 .needs-attention > indicator {
 	opacity: 0.75;
 }
@@ -169,8 +170,7 @@ row:focus {
 	border-radius: 6px;
 }
 
-.taken-label,
-.inventory-label {
+.rounded-label {
 	background-color: alpha(currentColor, 0.2);
 	border: 1px solid alpha(currentColor, 0.4);
 	padding: 3px 8px;

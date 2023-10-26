@@ -4,6 +4,7 @@ import Gdk from 'gi://Gdk';
 import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
+import { ngettext } from 'gettext';
 
 export const treatmentsFactory = new Gtk.SignalListItemFactory();
 
@@ -44,7 +45,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 	});
 	labelsBox.append(durationLabel);
 	const inventoryLabel = new Gtk.Label({
-		css_classes: ['inventory-label'],
+		css_classes: ['rounded-label'],
 		valign: Gtk.Align.CENTER,
 		margin_end: 5,
 		visible: false,
@@ -83,13 +84,19 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	row.add_controller(keyController);
 
 	const inv = info.inventory;
-	if (inv.enabled && inv.current <= inv.reminder) {
+	
+	if (inv.enabled) {
+		let currInv = inv.current < 0 ? 0 : inv.current;
+
 		inventoryLabel.set_visible(true);
-		if (inv.current < 0)
-			// TRANSLATORS: Keep it short (label for when the inventory is low)
-			inventoryLabel.label = _("Low stock") + ` │ 0`;
-		else
-			inventoryLabel.label = _("Low stock") + ` │ ${inv.current}`;
+		inventoryLabel.label = ngettext(
+			'%d Remaining',
+			'%d Remaining',
+			currInv
+		).replace('%d', currInv);
+		
+		if (inv.current <= inv.reminder)
+			inventoryLabel.label = `${currInv} ↓ ` + _('Low Stock');
 	}
 
 	if (info.duration.enabled) {
