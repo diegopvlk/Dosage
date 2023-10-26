@@ -49,7 +49,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 		valign: Gtk.Align.CENTER,
 		margin_end: 5,
 		visible: false,
-		ellipsize: Pango.EllipsizeMode.START,
+		ellipsize: Pango.EllipsizeMode.END,
 	});
 	box.append(inventoryLabel);
 	const editIcon = new Gtk.Image({
