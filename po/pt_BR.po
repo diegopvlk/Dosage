@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-25 14:28-0300\n"
+"POT-Creation-Date: 2023-10-26 18:40-0300\n"
 "PO-Revision-Date: 2023-10-26 00:40+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -300,7 +300,7 @@ msgstr "Dias específicos"
 msgid "Cycle"
 msgstr "Ciclo"
 
-#: data/ui/med-window.blp:300 src/treatmentsFactory.js:147
+#: data/ui/med-window.blp:300 src/treatmentsFactory.js:154
 msgid "When needed"
 msgstr "Quando necessário"
 
@@ -507,53 +507,61 @@ msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 "Aceite para permitir a execução em segundo plano e receber notificações"
 
-#. TRANSLATORS: Keep it short (label for when the inventory is low)
-#: src/treatmentsFactory.js:90 src/treatmentsFactory.js:92
-msgid "Low stock"
+#: src/treatmentsFactory.js:93
+#, javascript-format
+msgid "%d Remaining"
+msgid_plural "%d Remaining"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/treatmentsFactory.js:99
+#, fuzzy
+#| msgid "Low stock"
+msgid "Low Stock"
 msgstr "Estoque Baixo"
 
 #. TRANSLATORS: Keep it short (label for when duration is enabled)
-#: src/treatmentsFactory.js:99
+#: src/treatmentsFactory.js:106
 msgid "Until"
 msgstr "Até"
 
-#: src/treatmentsFactory.js:110 src/treatmentsFactory.js:123
+#: src/treatmentsFactory.js:117 src/treatmentsFactory.js:130
 msgid "Daily"
 msgstr "Diariamente"
 
-#: src/treatmentsFactory.js:119
+#: src/treatmentsFactory.js:126
 msgid "Weekend"
 msgstr "Fim de semana"
 
-#: src/treatmentsFactory.js:121
+#: src/treatmentsFactory.js:128
 msgid "Weekdays"
 msgstr "Dias da semana"
 
-#: src/treatmentsFactory.js:132
+#: src/treatmentsFactory.js:139
 msgid "Sunday"
 msgstr "Domingo"
 
-#: src/treatmentsFactory.js:133
+#: src/treatmentsFactory.js:140
 msgid "Monday"
 msgstr "Segunda-feira"
 
-#: src/treatmentsFactory.js:134
+#: src/treatmentsFactory.js:141
 msgid "Tuesday"
 msgstr "Terça-feira"
 
-#: src/treatmentsFactory.js:135
+#: src/treatmentsFactory.js:142
 msgid "Wednesday"
 msgstr "Quarta-feira"
 
-#: src/treatmentsFactory.js:136
+#: src/treatmentsFactory.js:143
 msgid "Thursday"
 msgstr "Quinta-feira"
 
-#: src/treatmentsFactory.js:137
+#: src/treatmentsFactory.js:144
 msgid "Friday"
 msgstr "Sexta-feira"
 
-#: src/treatmentsFactory.js:138
+#: src/treatmentsFactory.js:145
 msgid "Saturday"
 msgstr "Sábado"
 
