@@ -404,7 +404,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			notification.set_title(item.name);
 			notification.set_body(
 				`${item.info.dosage.dose} ${item.unit}  •  ` +
-				`${addLeadZero(h)}:${addLeadZero(m)}` + period
+				`${addLeadZero(h)}∶${addLeadZero(m)}` + period
 			);
 			
 			/* 
