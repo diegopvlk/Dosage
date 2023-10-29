@@ -93,7 +93,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		
 		if (inv.current <= inv.reminder) {
 			inventoryLabel.add_css_class('low-stock-label');
-			inventoryLabel.label = `${currInv} ↓ ` + _('Low Stock');
+			inventoryLabel.label = `${currInv} ↓ ` + _('Low stock');
 		}
 	}
 

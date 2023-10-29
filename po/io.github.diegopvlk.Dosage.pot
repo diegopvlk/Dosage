@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-29 16:54-0300\n"
+"POT-Creation-Date: 2023-10-29 17:06-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -489,7 +489,7 @@ msgid "Remaining"
 msgstr ""
 
 #: src/treatmentsFactory.js:96
-msgid "Low Stock"
+msgid "Low stock"
 msgstr ""
 
 #. TRANSLATORS: Keep it short (label for when duration is enabled)
