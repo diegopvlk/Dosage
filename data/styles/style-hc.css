@@ -2,9 +2,14 @@ popover contents {
 	border: 1px solid alpha(currentColor, 0.6);
 }
 
-.taken-label,
-.inventory-label {
-	background-color: alpha(currentColor, 0.18);
+.rounded-label {
+	background-color: alpha(currentColor, 0.2);
+	border: 1px solid alpha(currentColor, 0.66);
+	opacity: 0.8;
+}
+
+.low-stock-label {
+	border: 1px solid alpha(currentColor, 0.9);
 	opacity: 1;
 }
 

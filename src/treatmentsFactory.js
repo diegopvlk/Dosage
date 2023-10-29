@@ -89,14 +89,12 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		let currInv = inv.current < 0 ? 0 : inv.current;
 
 		inventoryLabel.set_visible(true);
-		inventoryLabel.label = ngettext(
-			'%d Remaining',
-			'%d Remaining',
-			currInv
-		).replace('%d', currInv);
+		inventoryLabel.label = `${currInv} ` + _('Remaining');
 		
-		if (inv.current <= inv.reminder)
+		if (inv.current <= inv.reminder) {
+			inventoryLabel.add_css_class('low-stock-label');
 			inventoryLabel.label = `${currInv} ↓ ` + _('Low Stock');
+		}
 	}
 
 	if (info.duration.enabled) {
