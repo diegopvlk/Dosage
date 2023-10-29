@@ -1,6 +1,3 @@
-<!-- for some reason i can't put the extension blp here or in the js code -->
-<!-- but the files are actually written in blueprint format -->
-
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/github/diegopvlk/Dosage">
