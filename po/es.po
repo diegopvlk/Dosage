@@ -503,8 +503,6 @@ msgid "Remaining"
 msgstr ""
 
 #: src/treatmentsFactory.js:96
-#, fuzzy
-#| msgid "Low stock"
 msgid "Low stock"
 msgstr "Pocas existencias"
 

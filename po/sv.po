@@ -84,26 +84,20 @@ msgid "Dosage today window in dark theme."
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:101
-#, fuzzy
-#| msgid "Injection"
 msgid "medication"
-msgstr "Injektion"
+msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:102
 msgid "tracker"
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:103
-#, fuzzy
-#| msgid "Remind me at"
 msgid "reminder"
-msgstr "Påminna mig på"
+msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:104
-#, fuzzy
-#| msgid "Treatments"
 msgid "treatments"
-msgstr "Behandlingar"
+msgstr "behandlingar"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:105
 msgid "pill"
@@ -135,8 +129,6 @@ msgid "General"
 msgstr "Allmänt"
 
 #: data/gtk/help-overlay.blp:14
-#, fuzzy
-#| msgid "Preferences"
 msgctxt "shortcut window"
 msgid "Preferences"
 msgstr "Inställningar"
@@ -147,8 +139,6 @@ msgid "Show Shortcuts"
 msgstr "Visa genvägar"
 
 #: data/gtk/help-overlay.blp:24
-#, fuzzy
-#| msgid "Quit"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Avsluta"
@@ -367,10 +357,8 @@ msgid "Recurring notifications"
 msgstr "Återkommande aviseringar"
 
 #: data/ui/med-window.blp:425
-#, fuzzy
-#| msgid "Every five minutes until confirmed or skipped"
 msgid "Renotify until it's confirmed or skipped"
-msgstr "Var femte minut tills bekräftat eller hoppat över"
+msgstr ""
 
 #: data/ui/med-window.blp:429
 msgid "Interval in minutes"
@@ -476,7 +464,7 @@ msgstr "Tryck på knappen för att lägga till behandlingar"
 #, fuzzy
 #| msgid "Dosage"
 msgid "About Dosage"
-msgstr "Dosering"
+msgstr "Om Dosering"
 
 #: data/ui/window.blp:187
 msgid "Quit"
@@ -516,8 +504,6 @@ msgid "Remaining"
 msgstr ""
 
 #: src/treatmentsFactory.js:96
-#, fuzzy
-#| msgid "Low stock"
 msgid "Low stock"
 msgstr "Lågt lager"
 

@@ -27,10 +27,8 @@ msgid "Dosage"
 msgstr "Dosering"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
-#, fuzzy
-#| msgid "Keep track of your treatments!"
 msgid "Keep track of your treatments"
-msgstr "Hold øye med behandlingene dine."
+msgstr "Hold øye med behandlingene dine"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
 msgid ""
@@ -44,8 +42,6 @@ msgid "Features:"
 msgstr "Funksjoner:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
-#, fuzzy
-#| msgid "Notifications — Get reminders on the right time"
 msgid "Notifications — Get reminders at the right time"
 msgstr "Merknader — få påminnelser til rett tid"
 
@@ -87,26 +83,20 @@ msgid "Dosage today window in dark theme."
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:101
-#, fuzzy
-#| msgid "Injection"
 msgid "medication"
-msgstr "Injeksjon"
+msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:102
 msgid "tracker"
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:103
-#, fuzzy
-#| msgid "Remind me at"
 msgid "reminder"
-msgstr "Minn meg på dette"
+msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:104
-#, fuzzy
-#| msgid "Treatments"
 msgid "treatments"
-msgstr "Behandlinger"
+msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:105
 msgid "pill"
@@ -131,8 +121,6 @@ msgid "General"
 msgstr ""
 
 #: data/gtk/help-overlay.blp:14
-#, fuzzy
-#| msgid "Preferences"
 msgctxt "shortcut window"
 msgid "Preferences"
 msgstr "Innstillinger"
@@ -143,8 +131,6 @@ msgid "Show Shortcuts"
 msgstr ""
 
 #: data/gtk/help-overlay.blp:24
-#, fuzzy
-#| msgid "Quit"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Avslutt"
@@ -370,10 +356,8 @@ msgid "Recurring notifications"
 msgstr "Gjentatte varsler"
 
 #: data/ui/med-window.blp:425
-#, fuzzy
-#| msgid "Every five minutes until confirmed or skipped"
 msgid "Renotify until it's confirmed or skipped"
-msgstr "Hver fem minutter til bekreftet eller hoppet over"
+msgstr ""
 
 #: data/ui/med-window.blp:429
 msgid "Interval in minutes"
@@ -440,10 +424,8 @@ msgstr ""
 "'Ikke forstyrr' er aktivert"
 
 #: data/ui/window.blp:29
-#, fuzzy
-#| msgid "Menu"
 msgid "Main Menu"
-msgstr "Meny"
+msgstr "Hovedmeny"
 
 #: data/ui/window.blp:41
 msgid "Today"
@@ -481,7 +463,7 @@ msgstr "Legg til noen ved å klikke på knappen nedenfor"
 #: data/ui/window.blp:183
 #, fuzzy
 msgid "About Dosage"
-msgstr "Om"
+msgstr "Om Dosering"
 
 #: data/ui/window.blp:187
 msgid "Quit"
@@ -521,8 +503,6 @@ msgid "Remaining"
 msgstr ""
 
 #: src/treatmentsFactory.js:96
-#, fuzzy
-#| msgid "Low stock"
 msgid "Low stock"
 msgstr "Lav beholdning"
 

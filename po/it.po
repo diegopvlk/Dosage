@@ -86,26 +86,20 @@ msgid "Dosage today window in dark theme."
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:101
-#, fuzzy
-#| msgid "Injection"
 msgid "medication"
-msgstr "Iniezione"
+msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:102
 msgid "tracker"
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:103
-#, fuzzy
-#| msgid "Remind me at"
 msgid "reminder"
-msgstr "Ricordamelo a"
+msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:104
-#, fuzzy
-#| msgid "Treatments"
 msgid "treatments"
-msgstr "Trattamenti"
+msgstr "trattamenti"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:105
 msgid "pill"
@@ -294,7 +288,7 @@ msgstr "Ogni giorno"
 msgid "Specific days"
 msgstr "Giorni specifici"
 
-#: data/ui/med-window.blp:299
+#: data/ui/med-winuidow.blp:299
 msgid "Cycle"
 msgstr "Ciclo"
 
@@ -507,8 +501,6 @@ msgid "Remaining"
 msgstr ""
 
 #: src/treatmentsFactory.js:96
-#, fuzzy
-#| msgid "Low stock"
 msgid "Low stock"
 msgstr "Scorta bassa"
 

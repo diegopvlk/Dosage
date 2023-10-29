@@ -95,16 +95,12 @@ msgid "tracker"
 msgstr "rastreador"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:103
-#, fuzzy
-#| msgid "Remind me at"
 msgid "reminder"
 msgstr "lembrete"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:104
-#, fuzzy
-#| msgid "Treatments"
 msgid "treatments"
-msgstr "Tratamentos"
+msgstr "tratamentos"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:105
 msgid "pill"
@@ -120,9 +116,6 @@ msgstr "remédio"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
-#, fuzzy
-#| msgid ""
-#| "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr "Medicação;Rastreador;Lembrete;Hoje;Tratamentos;Pílula;Droga;Remédio;"
 
@@ -132,8 +125,6 @@ msgid "General"
 msgstr "Geral"
 
 #: data/gtk/help-overlay.blp:14
-#, fuzzy
-#| msgid "Preferences"
 msgctxt "shortcut window"
 msgid "Preferences"
 msgstr "Preferências"
@@ -144,8 +135,6 @@ msgid "Show Shortcuts"
 msgstr "Mostrar Atalhos"
 
 #: data/gtk/help-overlay.blp:24
-#, fuzzy
-#| msgid "Quit"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Sair"
@@ -364,8 +353,6 @@ msgid "Recurring notifications"
 msgstr "Notificações recorrentes"
 
 #: data/ui/med-window.blp:425
-#, fuzzy
-#| msgid "Every five minutes until confirmed or skipped"
 msgid "Renotify until it's confirmed or skipped"
 msgstr "Renotificar até ser confirmado ou ignorado"
 
@@ -512,8 +499,6 @@ msgid "Remaining"
 msgstr "Restantes"
 
 #: src/treatmentsFactory.js:96
-#, fuzzy
-#| msgid "Low stock"
 msgid "Low stock"
 msgstr "Estoque Baixo"
 
