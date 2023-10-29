@@ -90,7 +90,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 				if (!this.get_visible()) {
 					const [ notification, app ] = this._getNotification();
-					// TRANSLATORS: Notification text for for when the inventory is low 
+					// TRANSLATORS: Notification text for for when the inventory is low
 					notification.set_body(_("You have treatments low in stock"));
 					app.send_notification('low-stock', notification);	
 				}
@@ -386,27 +386,49 @@ class DosageWindow extends Adw.ApplicationWindow {
 			(itemMin - minutes) * 60000 -
 			seconds * 1000;
 
-		const pseudoId = JSON.stringify({
+		let pseudoId = JSON.stringify({
 			name: item.name, dosage: item.info.dosage,
 		});
+		// remove special characters
+		pseudoId = pseudoId.replace(/[^\w\s]/g, '');
 
 		const notify = () => {
 			const [notification, app] = this._getNotification();
 			let h = item.info.dosage.time[0];
 			let m = item.info.dosage.time[1];
 			let period = '';
+			
 			if (clockIs12) {
 				period = ' AM';
 				if (h >= 12) period = ' PM';
 				if (h > 12) h -= 12;
 				if (h === 0) h = 12;
 			}
+
 			notification.set_title(item.name);
 			notification.set_body(
 				`${item.info.dosage.dose} ${item.unit}  •  ` +
-				`${addLeadZero(h)}∶${addLeadZero(m)}` + period
+					`${addLeadZero(h)}∶${addLeadZero(m)}` + period
 			);
-			
+
+			notification.add_button(_("Confirm"), `app.confirm${pseudoId}`);
+			notification.add_button(_("Skip"), `app.skip${pseudoId}`);
+
+			const confirmAction = new Gio.SimpleAction({
+				name: `confirm${pseudoId}`,
+			});
+			confirmAction.connect('activate', () =>
+				this._addNotifItemToHistory(item, 'yes')
+			);
+
+			const skipAction = new Gio.SimpleAction({ name: `skip${pseudoId}` });
+			skipAction.connect('activate', () =>
+				this._addNotifItemToHistory(item, 'no')
+			);
+
+			app.add_action(confirmAction);
+			app.add_action(skipAction);
+
 			/* 
 			* notifications from the past will be sent again instantly (setTimeout is < 0)
 			* when performing some action like saving/adding/updating/removing
@@ -442,6 +464,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 	_getNotification() {
 		const app = this.get_application();
 		const notification = new Gio.Notification();
+		const openAction = new Gio.SimpleAction({ name: "open" });
+
+		notification.set_default_action('app.open');
+		openAction.connect("activate", () => this.present());
+		app.add_action(openAction);
+
 		const priorityState = settings.get_boolean('priority');
 		const priority = priorityState
 			? Gio.NotificationPriority.URGENT
@@ -515,19 +543,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const taken = btn.get_name(); // yes or no
 
 		if (this._todayItems.length > 0) {
-			this._todayItems.forEach(item => {
-				historyLS.insert(
-					0,
-					new HistoryMedication({
-						name: item.name,
-						unit: item.unit,
-						color: item.info.color,
-						taken: taken,
-						info: item.info.dosage,
-						date: new Date().toISOString(),
-					})
-				);
-			});
+			this._todayItems.forEach(item => 
+				this._insertItemToHistory(item, taken)
+			);
 
 			this._updateEverything();
 			this._scheduleNotifications('adding');
@@ -536,6 +554,32 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._openMedWindow(null, null, true);
 
 		this._updateEntryBtn(false);
+	}
+
+	_addNotifItemToHistory(item, taken) {
+		const todayLength = this._todayModel.get_n_items();
+		// only insert to history if item is not in today list
+		for (let i = 0; i < todayLength; i++) {
+			if (item === this._todayModel.get_item(i)) {
+				this._insertItemToHistory(item, taken);
+				this._updateEverything();
+				this._scheduleNotifications('adding');
+			}
+		}	
+	}
+
+	_insertItemToHistory(item, taken) {
+		historyLS.insert(
+			0,
+			new HistoryMedication({
+				name: item.name,
+				unit: item.unit,
+				color: item.info.color,
+				taken: taken,
+				info: item.info.dosage,
+				date: new Date().toISOString(),
+			})
+		);
 	}
 
 	_updateJsonFile(type, listStore) {
