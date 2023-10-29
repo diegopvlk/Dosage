@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-29 16:54-0300\n"
+"POT-Creation-Date: 2023-10-29 17:06-0300\n"
 "PO-Revision-Date: 2023-10-29 20:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -514,7 +514,7 @@ msgstr "Restantes"
 #: src/treatmentsFactory.js:96
 #, fuzzy
 #| msgid "Low stock"
-msgid "Low Stock"
+msgid "Low stock"
 msgstr "Estoque Baixo"
 
 #. TRANSLATORS: Keep it short (label for when duration is enabled)

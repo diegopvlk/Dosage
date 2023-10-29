@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-29 16:54-0300\n"
+"POT-Creation-Date: 2023-10-29 17:06-0300\n"
 "PO-Revision-Date: 2023-10-22 19:52+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
@@ -510,7 +510,7 @@ msgstr ""
 #: src/treatmentsFactory.js:96
 #, fuzzy
 #| msgid "Low stock"
-msgid "Low Stock"
+msgid "Low stock"
 msgstr "Düşük stok"
 
 #. TRANSLATORS: Keep it short (label for when duration is enabled)
