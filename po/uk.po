@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-29 17:06-0300\n"
+"POT-Creation-Date: 2023-10-30 16:37-0300\n"
 "PO-Revision-Date: 2023-10-25 17:46+0000\n"
 "Last-Translator: volkov <d2oo1dle2x@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -23,7 +23,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:98 src/window.js:478
+#: src/main.js:98 src/window.js:484
 msgid "Dosage"
 msgstr "Дозування"
 
@@ -77,42 +77,42 @@ msgid "Duration — Define the start and end dates"
 msgstr "Тривалість — визначте початкову та кінцеву дати"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
-msgid "Dosage today window in light theme."
+msgid "Dosage today window in light theme"
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
-msgid "Dosage edit treatment window in light theme."
+msgid "Dosage edit treatment window in light theme"
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
-msgid "Dosage today window in dark theme."
+msgid "Dosage today window in dark theme"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:101
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:111
 msgid "medication"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:102
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:112
 msgid "tracker"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:103
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:113
 msgid "reminder"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:104
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:114
 msgid "treatments"
 msgstr "kурси лікування"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:105
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:115
 msgid "pill"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:106
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:116
 msgid "drug"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:107
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:117
 msgid "remedy"
 msgstr ""
 
@@ -151,11 +151,11 @@ msgstr "Вийти"
 msgid "New treatment"
 msgstr "Новий курс лікування"
 
-#: data/ui/med-window.blp:19 src/window.js:979
+#: data/ui/med-window.blp:19 src/window.js:985
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: data/ui/med-window.blp:25 data/ui/window.blp:147
+#: data/ui/med-window.blp:25 data/ui/window.blp:158
 msgid "Add"
 msgstr "Додати"
 
@@ -171,7 +171,7 @@ msgstr "Назва запису"
 msgid "Unit"
 msgstr "Одиниця виміру"
 
-#: data/ui/med-window.blp:57 src/window.js:860
+#: data/ui/med-window.blp:57 src/window.js:866
 msgid "Pill(s)"
 msgstr "Пігулка(и)"
 
@@ -187,7 +187,7 @@ msgstr "Після прийому їжі"
 msgid "Color and icon"
 msgstr "Колір та піктограма"
 
-#: data/ui/med-window.blp:70 src/window.js:903
+#: data/ui/med-window.blp:70 src/window.js:909
 msgid "Color"
 msgstr "Колір"
 
@@ -404,11 +404,11 @@ msgstr "Закінчується"
 msgid "Date"
 msgstr "Дата прийому"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:980
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:986
 msgid "Delete"
 msgstr "Видалити"
 
-#: data/ui/preferences.blp:9 data/ui/window.blp:179
+#: data/ui/preferences.blp:9 data/ui/window.blp:190
 msgid "Preferences"
 msgstr "Налаштування"
 
@@ -440,35 +440,35 @@ msgstr "Сьогодні"
 msgid "Unselect"
 msgstr "Скасувати вибір"
 
-#: data/ui/window.blp:70 src/window.js:530
+#: data/ui/window.blp:70 src/window.js:536
 msgid "One-time entry"
 msgstr "Одноразовий прийом"
 
-#: data/ui/window.blp:76 src/window.js:415
+#: data/ui/window.blp:76 src/window.js:421
 msgid "Skip"
 msgstr "Пропустити"
 
-#: data/ui/window.blp:95
+#: data/ui/window.blp:106
 msgid "History"
 msgstr "Історія"
 
-#: data/ui/window.blp:110
+#: data/ui/window.blp:121
 msgid "Empty history"
 msgstr "Історія порожня"
 
-#: data/ui/window.blp:121
+#: data/ui/window.blp:132
 msgid "Treatments"
 msgstr "Курси лікування"
 
-#: data/ui/window.blp:154
+#: data/ui/window.blp:165
 msgid "Click the button below to add some"
 msgstr "Щоб додати новий курс лікування — натисніть на кнопку внизу"
 
-#: data/ui/window.blp:183
+#: data/ui/window.blp:194
 msgid "About Dosage"
 msgstr "Про Дозування"
 
-#: data/ui/window.blp:187
+#: data/ui/window.blp:198
 msgid "Quit"
 msgstr "Вийти"
 
@@ -565,61 +565,61 @@ msgstr "Видалити дозу"
 msgid "You have treatments low in stock"
 msgstr "У вас залишилося мало ліків у запасі"
 
-#: src/window.js:354
+#: src/window.js:356
 msgid "No treatments added yet!"
 msgstr "Ще не було додано жодного курсу лікування!"
 
-#: src/window.js:357
+#: src/window.js:361
 msgid "All done for today!"
 msgstr "Ви прийняли усі ліки на сьогодні!"
 
-#: src/window.js:414 src/window.js:530
+#: src/window.js:420 src/window.js:536
 msgid "Confirm"
 msgstr "Підтвердити"
 
-#: src/window.js:760
+#: src/window.js:766
 msgid "Edit treatment"
 msgstr "Редагувати курс лікування"
 
-#: src/window.js:761
+#: src/window.js:767
 msgid "Save"
 msgstr "Зберегти"
 
-#: src/window.js:850
+#: src/window.js:856
 msgid "New"
 msgstr "Новий"
 
-#: src/window.js:900
+#: src/window.js:906
 msgid "New entry"
 msgstr "Новий запис"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:902
+#: src/window.js:908
 msgid "Add to history"
 msgstr "Додати до історії"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:974
+#: src/window.js:980
 msgid "Are you sure?"
 msgstr "Ви впевнені?"
 
-#: src/window.js:1185
+#: src/window.js:1191
 msgid "Empty name"
 msgstr "Відсутня назва запису"
 
-#: src/window.js:1190
+#: src/window.js:1196
 msgid "Empty unit"
 msgstr "Відсутня одиниця виміру"
 
-#: src/window.js:1196
+#: src/window.js:1202
 msgid "Choose at least one day"
 msgstr "Виберіть хоча б один день"
 
-#: src/window.js:1206
+#: src/window.js:1212
 msgid "Name already exists"
 msgstr "Ця назва вже зайнята"
 
-#: src/window.js:1220
+#: src/window.js:1226
 msgid "Duplicated time"
 msgstr "Однакові часи у прийомів доз"
 

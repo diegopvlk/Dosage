@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-29 17:06-0300\n"
+"POT-Creation-Date: 2023-10-30 16:37-0300\n"
 "PO-Revision-Date: 2023-10-15 22:56+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:98 src/window.js:478
+#: src/main.js:98 src/window.js:484
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -71,42 +71,42 @@ msgid "Duration — Define the start and end dates"
 msgstr "Varighet — definer start- og sluttdatoer"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
-msgid "Dosage today window in light theme."
+msgid "Dosage today window in light theme"
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
-msgid "Dosage edit treatment window in light theme."
+msgid "Dosage edit treatment window in light theme"
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
-msgid "Dosage today window in dark theme."
+msgid "Dosage today window in dark theme"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:101
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:111
 msgid "medication"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:102
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:112
 msgid "tracker"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:103
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:113
 msgid "reminder"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:104
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:114
 msgid "treatments"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:105
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:115
 msgid "pill"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:106
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:116
 msgid "drug"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:107
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:117
 msgid "remedy"
 msgstr ""
 
@@ -139,11 +139,11 @@ msgstr "Avslutt"
 msgid "New treatment"
 msgstr "Ny behandling"
 
-#: data/ui/med-window.blp:19 src/window.js:979
+#: data/ui/med-window.blp:19 src/window.js:985
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: data/ui/med-window.blp:25 data/ui/window.blp:147
+#: data/ui/med-window.blp:25 data/ui/window.blp:158
 msgid "Add"
 msgstr "Legg til"
 
@@ -160,7 +160,7 @@ msgstr "Navn"
 msgid "Unit"
 msgstr "Enhet"
 
-#: data/ui/med-window.blp:57 src/window.js:860
+#: data/ui/med-window.blp:57 src/window.js:866
 msgid "Pill(s)"
 msgstr "Pille(r)"
 
@@ -176,7 +176,7 @@ msgstr "Etter måltid"
 msgid "Color and icon"
 msgstr "Farge og ikon"
 
-#: data/ui/med-window.blp:70 src/window.js:903
+#: data/ui/med-window.blp:70 src/window.js:909
 msgid "Color"
 msgstr "Farge"
 
@@ -399,11 +399,11 @@ msgstr "Slutter"
 msgid "Date"
 msgstr "Dato"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:980
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:986
 msgid "Delete"
 msgstr "Slett"
 
-#: data/ui/preferences.blp:9 data/ui/window.blp:179
+#: data/ui/preferences.blp:9 data/ui/window.blp:190
 msgid "Preferences"
 msgstr "Innstillinger"
 
@@ -435,37 +435,37 @@ msgstr "I dag"
 msgid "Unselect"
 msgstr "Fravelg"
 
-#: data/ui/window.blp:70 src/window.js:530
+#: data/ui/window.blp:70 src/window.js:536
 msgid "One-time entry"
 msgstr "Engangsoppføring"
 
-#: data/ui/window.blp:76 src/window.js:415
+#: data/ui/window.blp:76 src/window.js:421
 msgid "Skip"
 msgstr "Hopp over"
 
-#: data/ui/window.blp:95
+#: data/ui/window.blp:106
 msgid "History"
 msgstr "Historikk"
 
-#: data/ui/window.blp:110
+#: data/ui/window.blp:121
 msgid "Empty history"
 msgstr "Tøm historikk"
 
-#: data/ui/window.blp:121
+#: data/ui/window.blp:132
 msgid "Treatments"
 msgstr "Behandlinger"
 
-#: data/ui/window.blp:154
+#: data/ui/window.blp:165
 #, fuzzy
 msgid "Click the button below to add some"
 msgstr "Legg til noen ved å klikke på knappen nedenfor"
 
-#: data/ui/window.blp:183
+#: data/ui/window.blp:194
 #, fuzzy
 msgid "About Dosage"
 msgstr "Om Dosering"
 
-#: data/ui/window.blp:187
+#: data/ui/window.blp:198
 msgid "Quit"
 msgstr "Avslutt"
 
@@ -560,61 +560,61 @@ msgstr "Slett dose"
 msgid "You have treatments low in stock"
 msgstr "Du har behandlinger med manko på beholdning"
 
-#: src/window.js:354
+#: src/window.js:356
 msgid "No treatments added yet!"
 msgstr "Ingen behandlinger lagt til enda."
 
-#: src/window.js:357
+#: src/window.js:361
 msgid "All done for today!"
 msgstr "Ferdig for i dag."
 
-#: src/window.js:414 src/window.js:530
+#: src/window.js:420 src/window.js:536
 msgid "Confirm"
 msgstr "Bekreft"
 
-#: src/window.js:760
+#: src/window.js:766
 msgid "Edit treatment"
 msgstr "Rediger behandling"
 
-#: src/window.js:761
+#: src/window.js:767
 msgid "Save"
 msgstr "Lagre"
 
-#: src/window.js:850
+#: src/window.js:856
 msgid "New"
 msgstr "Ny"
 
-#: src/window.js:900
+#: src/window.js:906
 msgid "New entry"
 msgstr "Ny oppføring"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:902
+#: src/window.js:908
 msgid "Add to history"
 msgstr "Legg til i historikk"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:974
+#: src/window.js:980
 msgid "Are you sure?"
 msgstr "Er du sikker?"
 
-#: src/window.js:1185
+#: src/window.js:1191
 msgid "Empty name"
 msgstr "Tomt navn"
 
-#: src/window.js:1190
+#: src/window.js:1196
 msgid "Empty unit"
 msgstr "Tom enhet"
 
-#: src/window.js:1196
+#: src/window.js:1202
 msgid "Choose at least one day"
 msgstr "Velg minst én dag"
 
-#: src/window.js:1206
+#: src/window.js:1212
 msgid "Name already exists"
 msgstr "Navnet finnes allerede"
 
-#: src/window.js:1220
+#: src/window.js:1226
 msgid "Duplicated time"
 msgstr "Duplisert tid"
 
