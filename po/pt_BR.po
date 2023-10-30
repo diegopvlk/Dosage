@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-30 16:37-0300\n"
-"PO-Revision-Date: 2023-10-29 20:04+0000\n"
+"PO-Revision-Date: 2023-10-30 19:44+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "dosage/dosage/pt_BR/>\n"
@@ -75,22 +75,16 @@ msgid "Duration — Define the start and end dates"
 msgstr "Duração — Defina datas para começar e terminar"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
-#, fuzzy
-#| msgid "Dosage today window in light theme."
 msgid "Dosage today window in light theme"
-msgstr "Janela do Dosagem hoje em tema claro."
+msgstr "Janela do Dosagem hoje em tema claro"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
-#, fuzzy
-#| msgid "Dosage edit treatment window in light theme."
 msgid "Dosage edit treatment window in light theme"
-msgstr "Janela de edição de tratamento em tema claro."
+msgstr "Janela de edição de tratamento em tema claro"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
-#, fuzzy
-#| msgid "Dosage today window in dark theme."
 msgid "Dosage today window in dark theme"
-msgstr "Janela do Dosagem hoje em tema escuro."
+msgstr "Janela do Dosagem hoje em tema escuro"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:111
 msgid "medication"
