@@ -11,7 +11,7 @@
     <file>ui/preferences.ui</file>
   </gresource>
   <gresource prefix="/io/github/diegopvlk/Dosage/icons/scalable/actions">
-    <file alias="today-symbolic.svg">icons/ui/today-symbolic.svg</file>
+    <file alias="today-icn-symbolic.svg">icons/ui/today-icn-symbolic.svg</file>
     <file alias="history-symbolic.svg">icons/ui/history-symbolic.svg</file>
     <file alias="treatments-symbolic.svg">icons/ui/treatments-symbolic.svg</file>
     <file alias="unselect-meds-symbolic.svg">icons/ui/unselect-meds-symbolic.svg</file>
