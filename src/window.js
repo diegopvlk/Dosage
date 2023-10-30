@@ -389,8 +389,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 		let pseudoId = JSON.stringify({
 			name: item.name, dosage: item.info.dosage,
 		});
-		// remove special characters
-		pseudoId = pseudoId.replace(/[^\w\s]/g, '');
+		// remove accents and special characters
+		pseudoId = pseudoId.normalize('NFKD').replace(/[^0-9A-Za-z]/g, '');
 
 		const notify = () => {
 			const [notification, app] = this._getNotification();
