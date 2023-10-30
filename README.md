@@ -22,7 +22,7 @@ Keep track of your treatments
 
 <div>
   <details>
-    <summary><h3>Other screenshots</h3></summary><br>
+    <summary>Other screenshots</summary><br>
       <p align="center"><img style="height:700px;" src="https://raw.githubusercontent.com/diegopvlk/Dosage/main/screenshots/med-window-light.png"/></p>
       <p align="center"><img src="https://raw.githubusercontent.com/diegopvlk/Dosage/main/screenshots/today-dark.png"/></p>
   </details>
