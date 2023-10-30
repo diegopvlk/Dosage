@@ -79,12 +79,23 @@ template $DosageWindow : Adw.ApplicationWindow {
               }
             }
             [overlay]
-            Label emptyToday {
-                styles [ 'empty-today' ]
+            Box emptyTodayBox {
+              visible: false;
+              margin-bottom: 64;
+              orientation: vertical;
+              halign: center;
+              valign: center;
+              Image allDoneIcon {
+                styles [ 'empty-icon' ]
+                icon-name: 'all-done-symbolic';
                 visible: false;
-                margin-start: 30;
-                margin-end: 30;
-                margin-bottom: 64;
+              }
+              Label emptyToday {
+                  styles [ 'empty-today' ]
+                  visible: false;
+                  margin-start: 30;
+                  margin-end: 30;
+              }
             }
           }
         ;

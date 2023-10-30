@@ -33,7 +33,7 @@ export const DosageWindow = GObject.registerClass({
 	InternalChildren: [
 		'todayList', 'historyList', 'treatmentsList', 'treatmentsPage',
 		'skipBtn', 'entryBtn', 'unselectBtn', 
-		'emptyToday', 'emptyHistory', 'emptyTreatments'
+		'emptyTodayBox', 'allDoneIcon', 'emptyToday', 'emptyHistory', 'emptyTreatments'
 	],
 },
 class DosageWindow extends Adw.ApplicationWindow {
@@ -350,12 +350,18 @@ class DosageWindow extends Adw.ApplicationWindow {
 		this._emptyTreatments.set_visible(noTreatments);
 
 		if (noItems && noTreatments) {
+			this._emptyTodayBox.set_visible(true);
 			this._emptyToday.set_visible(true);
+			this._allDoneIcon.set_visible(false);
 			this._emptyToday.label = _("No treatments added yet!");
 		} else if (noItems) {
+			this._emptyTodayBox.set_visible(true);
+			this._allDoneIcon.set_visible(true);
 			this._emptyToday.set_visible(true);
 			this._emptyToday.label = _("All done for today!");
-		} else {		
+		} else {
+			this._emptyTodayBox.set_visible(false);
+			this._allDoneIcon.set_visible(false);
 			this._emptyToday.set_visible(false);
 		}
 	}

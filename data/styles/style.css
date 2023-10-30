@@ -18,8 +18,15 @@
 .empty-history,
 .empty-today,
 .empty-treatments {
-  font-size: 24px;
-  font-weight: 700;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.empty-icon {
+	margin-top: -10px;
+	margin-bottom: 10px;
+	-gtk-icon-size: 72px;
+	opacity: 0.75;
 }
 
 .needs-attention > indicator {

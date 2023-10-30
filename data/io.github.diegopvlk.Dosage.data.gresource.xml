@@ -33,5 +33,7 @@
     <file alias="med-bottle-symbolic.svg">icons/ui/med-bottle-symbolic.svg</file>
     <file alias="med-drop-symbolic.svg">icons/ui/med-drop-symbolic.svg</file>
     <file alias="magic-potion-symbolic.svg">icons/ui/magic-potion-symbolic.svg</file>
+    
+    <file alias="all-done-symbolic.svg">icons/ui/all-done-symbolic.svg</file>
 	</gresource>
 </gresources>
