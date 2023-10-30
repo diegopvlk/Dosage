@@ -78,7 +78,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 	}
 
-	#checkInventory() {
+	#checkInventory(notifAction) {
 		this._treatmentsPage.set_needs_attention(false);
 		this._treatmentsPage.badge_number = 0;
 
@@ -88,7 +88,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				this._treatmentsPage.set_needs_attention(true);
 				this._treatmentsPage.badge_number += 1;
 
-				if (!this.get_visible()) {
+				if (!this.get_visible() && !notifAction) {
 					const [ notification, app ] = this._getNotification();
 					// TRANSLATORS: Notification text for for when the inventory is low
 					notification.set_body(_("You have treatments low in stock"));
@@ -568,7 +568,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		for (let i = 0; i < todayLength; i++) {
 			if (item === this._todayModel.get_item(i)) {
 				this._insertItemToHistory(item, taken);
-				this._updateEverything();
+				this._updateEverything(null, null, 'notifAction');
 				this._scheduleNotifications('adding');
 			}
 		}	
@@ -657,14 +657,14 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._emptyHistory.set_visible(false);
 	}
 
-	_updateEverything(midnight, skipHistUp) {
+	_updateEverything(midnight, skipHistUp, notifAction) {
 		if (!skipHistUp) this._updateJsonFile('history', historyLS);
 		this._updateItemsCycle(midnight);
 		this._updateJsonFile('treatments', treatmentsLS);
 		this._loadToday();
 		this._setEmptyHistLabel();
 		this._updateEntryBtn(false);
-		this.#checkInventory();
+		this.#checkInventory(notifAction);
 	}
 
 	_openMedWindow(list, position, oneTime) {
