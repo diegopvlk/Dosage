@@ -19,15 +19,15 @@
 
 	<screenshots>
 		<screenshot type="default">
-			<caption>Dosage today window in light theme.</caption>
+			<caption>Dosage today window in light theme</caption>
 			<image>https://raw.githubusercontent.com/diegopvlk/Dosage/8575c77e1250a3bf71eb76d3ea33381f6b2ae403/screenshots/today-light.png</image>
 		</screenshot>
 		<screenshot>
-			<caption>Dosage edit treatment window in light theme.</caption>
+			<caption>Dosage edit treatment window in light theme</caption>
 			<image>https://raw.githubusercontent.com/diegopvlk/Dosage/8575c77e1250a3bf71eb76d3ea33381f6b2ae403/screenshots/med-window-light.png</image>
 		</screenshot>
 		<screenshot>
-			<caption>Dosage today window in dark theme.</caption>
+			<caption>Dosage today window in dark theme</caption>
 			<image>https://raw.githubusercontent.com/diegopvlk/Dosage/8575c77e1250a3bf71eb76d3ea33381f6b2ae403/screenshots/today-dark.png</image>
 		</screenshot>
 	</screenshots>
