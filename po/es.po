@@ -77,22 +77,16 @@ msgid "Duration — Define the start and end dates"
 msgstr "Duración — Defina las fechas de inicio y fin"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
-#, fuzzy
-#| msgid "Dosage today window in light theme."
 msgid "Dosage today window in light theme"
-msgstr "La ventana de la toma para hoy en tema claro."
+msgstr "La ventana de la toma para hoy en tema claro"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
-#, fuzzy
-#| msgid "Dosage edit treatment window in light theme."
 msgid "Dosage edit treatment window in light theme"
-msgstr "Ventana del tratamiento de edición de la dosis en tema claro."
+msgstr "Ventana del tratamiento de edición de la dosis en tema claro"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
-#, fuzzy
-#| msgid "Dosage today window in dark theme."
 msgid "Dosage today window in dark theme"
-msgstr "Ventana de la toma para hoy en tema oscuro."
+msgstr "Ventana de la toma para hoy en tema oscuro"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:111
 msgid "medication"
