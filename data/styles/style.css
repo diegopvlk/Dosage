@@ -24,8 +24,8 @@
 
 .empty-icon {
 	margin-top: -10px;
-	margin-bottom: 10px;
-	-gtk-icon-size: 72px;
+	margin-bottom: 14px;
+	-gtk-icon-size: 64px;
 	opacity: 0.75;
 }
 
