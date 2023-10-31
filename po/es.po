@@ -506,7 +506,7 @@ msgstr ""
 
 #: src/treatmentsFactory.js:92
 msgid "Remaining"
-msgstr ""
+msgstr "Restantes"
 
 #: src/treatmentsFactory.js:96
 msgid "Low stock"
