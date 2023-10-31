@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-31 18:04-0300\n"
-"PO-Revision-Date: 2023-10-31 21:07+0000\n"
+"PO-Revision-Date: 2023-11-01 00:19+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "dosage/dosage/pt_BR/>\n"
@@ -422,7 +422,7 @@ msgstr ""
 
 #: data/ui/preferences.blp:34
 msgid "Notification buttons"
-msgstr "Botões de notificação"
+msgstr "Botões da notificação"
 
 #: data/ui/preferences.blp:35
 msgid "Show or hide confirm/skip"
