@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-30 16:37-0300\n"
+"POT-Creation-Date: 2023-10-31 18:04-0300\n"
 "PO-Revision-Date: 2023-10-22 19:52+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
@@ -24,7 +24,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:98 src/window.js:484
+#: src/main.js:112 src/window.js:487
 msgid "Dosage"
 msgstr "Doz"
 
@@ -147,7 +147,7 @@ msgstr "Çık"
 msgid "New treatment"
 msgstr "Yeni ilaç"
 
-#: data/ui/med-window.blp:19 src/window.js:985
+#: data/ui/med-window.blp:19 src/window.js:988
 msgid "Cancel"
 msgstr "İptal"
 
@@ -167,7 +167,7 @@ msgstr "Ad"
 msgid "Unit"
 msgstr "Birim"
 
-#: data/ui/med-window.blp:57 src/window.js:866
+#: data/ui/med-window.blp:57 src/window.js:869
 msgid "Pill(s)"
 msgstr "Hap"
 
@@ -183,7 +183,7 @@ msgstr "Yemekten sonra"
 msgid "Color and icon"
 msgstr "Renk ve simge"
 
-#: data/ui/med-window.blp:70 src/window.js:909
+#: data/ui/med-window.blp:70 src/window.js:912
 msgid "Color"
 msgstr "Renk"
 
@@ -400,7 +400,7 @@ msgstr "Bitiş"
 msgid "Date"
 msgstr "Tarih"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:986
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:989
 msgid "Delete"
 msgstr "Sil"
 
@@ -424,6 +424,22 @@ msgstr ""
 "Bu işlem, GNOME masaüstünde bildirimin tam ekran kipinde ya da 'Rahatsız "
 "Etme' kipi etkin olsa bile gösterilmesini sağlar"
 
+#: data/ui/preferences.blp:34
+msgid "Notification buttons"
+msgstr ""
+
+#: data/ui/preferences.blp:35
+msgid "Show or hide confirm/skip"
+msgstr ""
+
+#: data/ui/preferences.blp:38 src/window.js:421 src/window.js:539
+msgid "Confirm"
+msgstr "Onayla"
+
+#: data/ui/preferences.blp:47 data/ui/window.blp:76 src/window.js:424
+msgid "Skip"
+msgstr "Atla"
+
 #: data/ui/window.blp:29
 msgid "Main Menu"
 msgstr "Ana Menü"
@@ -436,13 +452,9 @@ msgstr "Bugün"
 msgid "Unselect"
 msgstr "Seçimi kaldır"
 
-#: data/ui/window.blp:70 src/window.js:536
+#: data/ui/window.blp:70 src/window.js:539
 msgid "One-time entry"
 msgstr "Tek seferlik girdi"
-
-#: data/ui/window.blp:76 src/window.js:421
-msgid "Skip"
-msgstr "Atla"
 
 #: data/ui/window.blp:106
 msgid "History"
@@ -484,16 +496,16 @@ msgid "Missed"
 msgstr "Unutuldu"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:106
+#: src/main.js:120
 msgid "translator-credits"
 msgstr "Sabri Ünal <libreajans@gmail.com>"
 
-#: src/main.js:109
+#: src/main.js:123
 msgid "Thanks to these projects!"
 msgstr "Bu projeler sayesinde!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:141
+#: src/main.js:155
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Arka planda çalışmaya izin vermeyi ve bildirim almayı kabul et"
 
@@ -567,53 +579,49 @@ msgstr "Henüz ilaç eklenmedi!"
 msgid "All done for today!"
 msgstr "Bugünlük her şey bitti!"
 
-#: src/window.js:420 src/window.js:536
-msgid "Confirm"
-msgstr "Onayla"
-
-#: src/window.js:766
+#: src/window.js:769
 msgid "Edit treatment"
 msgstr "İlaç düzenle"
 
-#: src/window.js:767
+#: src/window.js:770
 msgid "Save"
 msgstr "Kaydet"
 
-#: src/window.js:856
+#: src/window.js:859
 msgid "New"
 msgstr "Yeni"
 
-#: src/window.js:906
+#: src/window.js:909
 msgid "New entry"
 msgstr "Yeni girdi"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:908
+#: src/window.js:911
 msgid "Add to history"
 msgstr "Geçmişe ekle"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:980
+#: src/window.js:983
 msgid "Are you sure?"
 msgstr "Emin misiniz?"
 
-#: src/window.js:1191
+#: src/window.js:1194
 msgid "Empty name"
 msgstr "Boş ad"
 
-#: src/window.js:1196
+#: src/window.js:1199
 msgid "Empty unit"
 msgstr "Boş birim"
 
-#: src/window.js:1202
+#: src/window.js:1205
 msgid "Choose at least one day"
 msgstr "En az bir gün seçin"
 
-#: src/window.js:1212
+#: src/window.js:1215
 msgid "Name already exists"
 msgstr "Ad zaten var"
 
-#: src/window.js:1226
+#: src/window.js:1229
 msgid "Duplicated time"
 msgstr "Yinelenen zaman"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-30 16:37-0300\n"
+"POT-Creation-Date: 2023-10-31 18:04-0300\n"
 "PO-Revision-Date: 2023-10-15 22:56+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:98 src/window.js:484
+#: src/main.js:112 src/window.js:487
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -139,7 +139,7 @@ msgstr "Avslutt"
 msgid "New treatment"
 msgstr "Ny behandling"
 
-#: data/ui/med-window.blp:19 src/window.js:985
+#: data/ui/med-window.blp:19 src/window.js:988
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -160,7 +160,7 @@ msgstr "Navn"
 msgid "Unit"
 msgstr "Enhet"
 
-#: data/ui/med-window.blp:57 src/window.js:866
+#: data/ui/med-window.blp:57 src/window.js:869
 msgid "Pill(s)"
 msgstr "Pille(r)"
 
@@ -176,7 +176,7 @@ msgstr "Etter måltid"
 msgid "Color and icon"
 msgstr "Farge og ikon"
 
-#: data/ui/med-window.blp:70 src/window.js:909
+#: data/ui/med-window.blp:70 src/window.js:912
 msgid "Color"
 msgstr "Farge"
 
@@ -399,7 +399,7 @@ msgstr "Slutter"
 msgid "Date"
 msgstr "Dato"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:986
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:989
 msgid "Delete"
 msgstr "Slett"
 
@@ -423,6 +423,22 @@ msgstr ""
 "På GNOME vil dette få varslingen til å vises i fullskjermmodus eller selv om "
 "'Ikke forstyrr' er aktivert"
 
+#: data/ui/preferences.blp:34
+msgid "Notification buttons"
+msgstr ""
+
+#: data/ui/preferences.blp:35
+msgid "Show or hide confirm/skip"
+msgstr ""
+
+#: data/ui/preferences.blp:38 src/window.js:421 src/window.js:539
+msgid "Confirm"
+msgstr "Bekreft"
+
+#: data/ui/preferences.blp:47 data/ui/window.blp:76 src/window.js:424
+msgid "Skip"
+msgstr "Hopp over"
+
 #: data/ui/window.blp:29
 msgid "Main Menu"
 msgstr "Hovedmeny"
@@ -435,13 +451,9 @@ msgstr "I dag"
 msgid "Unselect"
 msgstr "Fravelg"
 
-#: data/ui/window.blp:70 src/window.js:536
+#: data/ui/window.blp:70 src/window.js:539
 msgid "One-time entry"
 msgstr "Engangsoppføring"
-
-#: data/ui/window.blp:76 src/window.js:421
-msgid "Skip"
-msgstr "Hopp over"
 
 #: data/ui/window.blp:106
 msgid "History"
@@ -485,16 +497,16 @@ msgid "Missed"
 msgstr "Glemt"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:106
+#: src/main.js:120
 msgid "translator-credits"
 msgstr "Allan Nordhøy <epost@anotheragency.no>"
 
-#: src/main.js:109
+#: src/main.js:123
 msgid "Thanks to these projects!"
 msgstr "Takk til disse prosjektene."
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:141
+#: src/main.js:155
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Godta for å tillate kjøring i bakgrunnen og motta varsler"
 
@@ -568,53 +580,49 @@ msgstr "Ingen behandlinger lagt til enda."
 msgid "All done for today!"
 msgstr "Ferdig for i dag."
 
-#: src/window.js:420 src/window.js:536
-msgid "Confirm"
-msgstr "Bekreft"
-
-#: src/window.js:766
+#: src/window.js:769
 msgid "Edit treatment"
 msgstr "Rediger behandling"
 
-#: src/window.js:767
+#: src/window.js:770
 msgid "Save"
 msgstr "Lagre"
 
-#: src/window.js:856
+#: src/window.js:859
 msgid "New"
 msgstr "Ny"
 
-#: src/window.js:906
+#: src/window.js:909
 msgid "New entry"
 msgstr "Ny oppføring"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:908
+#: src/window.js:911
 msgid "Add to history"
 msgstr "Legg til i historikk"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:980
+#: src/window.js:983
 msgid "Are you sure?"
 msgstr "Er du sikker?"
 
-#: src/window.js:1191
+#: src/window.js:1194
 msgid "Empty name"
 msgstr "Tomt navn"
 
-#: src/window.js:1196
+#: src/window.js:1199
 msgid "Empty unit"
 msgstr "Tom enhet"
 
-#: src/window.js:1202
+#: src/window.js:1205
 msgid "Choose at least one day"
 msgstr "Velg minst én dag"
 
-#: src/window.js:1212
+#: src/window.js:1215
 msgid "Name already exists"
 msgstr "Navnet finnes allerede"
 
-#: src/window.js:1226
+#: src/window.js:1229
 msgid "Duplicated time"
 msgstr "Duplisert tid"
 
