@@ -495,7 +495,7 @@ msgstr "Autoriser l'exécution en tâche de fond et à recevoir des notification
 
 #: src/treatmentsFactory.js:92
 msgid "Remaining"
-msgstr ""
+msgstr "Restant"
 
 #: src/treatmentsFactory.js:96
 msgid "Low stock"

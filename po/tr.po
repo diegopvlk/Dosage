@@ -499,7 +499,7 @@ msgstr "Arka planda çalışmaya izin vermeyi ve bildirim almayı kabul et"
 
 #: src/treatmentsFactory.js:92
 msgid "Remaining"
-msgstr ""
+msgstr "Kalan"
 
 #: src/treatmentsFactory.js:96
 msgid "Low stock"

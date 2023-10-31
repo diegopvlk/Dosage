@@ -501,7 +501,7 @@ msgstr "Acceptera för att tillåta körning i bakgrunden och ta emot aviseringa
 
 #: src/treatmentsFactory.js:92
 msgid "Remaining"
-msgstr ""
+msgstr "Återstående"
 
 #: src/treatmentsFactory.js:96
 msgid "Low stock"

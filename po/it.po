@@ -498,7 +498,7 @@ msgstr "Accetta per consentire l'esecuzione in background e ricevere notifiche"
 
 #: src/treatmentsFactory.js:92
 msgid "Remaining"
-msgstr ""
+msgstr "Rimanenti"
 
 #: src/treatmentsFactory.js:96
 msgid "Low stock"
