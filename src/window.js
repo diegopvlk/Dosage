@@ -417,8 +417,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 					`${addLeadZero(h)}∶${addLeadZero(m)}` + period
 			);
 
-			notification.add_button(_("Confirm"), `app.confirm${pseudoId}`);
-			notification.add_button(_("Skip"), `app.skip${pseudoId}`);
+			if (settings.get_boolean('confirm-button'))
+				notification.add_button(_("Confirm"), `app.confirm${pseudoId}`);
+
+			if (settings.get_boolean('skip-button'))
+				notification.add_button(_("Skip"), `app.skip${pseudoId}`);
 
 			const confirmAction = new Gio.SimpleAction({
 				name: `confirm${pseudoId}`,

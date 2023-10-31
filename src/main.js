@@ -66,6 +66,8 @@ export const DosageApplication = GObject.registerClass(
 				const autostartRow = builder.get_object('autostartRow');
 				const autostartSwitch = builder.get_object('autostartSwitch');
 				const prioritySwitch = builder.get_object('prioritySwitch');
+				const confirmSwitch = builder.get_object('confirmSwitch');
+				const skipSwitch = builder.get_object('skipSwitch');
 				
 				if (container === 'flatpak') {
 					autostartSwitch.set_active(settings.get_boolean('autostart'));
@@ -83,7 +85,19 @@ export const DosageApplication = GObject.registerClass(
 				prioritySwitch.connect('state-set', () => {
 					const state = prioritySwitch.get_active();
 					settings.set_boolean('priority', state)
-				})
+				});
+
+				confirmSwitch.set_active(settings.get_boolean('confirm-button'));
+				skipSwitch.set_active(settings.get_boolean('skip-button'));
+
+				confirmSwitch.connect('state-set', () => {
+					const state = confirmSwitch.get_active();
+					settings.set_boolean('confirm-button', state)
+				});
+				skipSwitch.connect('state-set', () => {
+					const state = skipSwitch.get_active();
+					settings.set_boolean('skip-button', state)
+				});
 
 				prefWindow.set_transient_for(this.active_window);
 				prefWindow.present();
