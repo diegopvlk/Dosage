@@ -64,7 +64,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 		valign: Gtk.Align.CENTER,
 		margin_end: 15,
 		visible: true,
-		ellipsize: Pango.EllipsizeMode.START,
+		ellipsize: Pango.EllipsizeMode.END,
 	});
 	box.append(takenLabel);
 	listItem.set_child(box);
