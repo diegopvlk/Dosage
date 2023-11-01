@@ -499,7 +499,7 @@ msgstr "Адсутнічае"
 #. TRANSLATORS: "Your Name <your@email.com>"
 #: src/main.js:120
 msgid "translator-credits"
-msgstr "Yahor Haurylenka<k1llo2810@gmail.com>"
+msgstr "Yahor Haurylenka <k1llo2810@gmail.com>"
 
 #: src/main.js:123
 msgid "Thanks to these projects!"
