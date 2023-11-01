@@ -476,7 +476,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const openAction = new Gio.SimpleAction({ name: "open" });
 
 		notification.set_default_action('app.open');
-		openAction.connect("activate", () => this.present());
+		openAction.connect("activate", () => {
+			app.activate();
+			this.present();
+		});
 		app.add_action(openAction);
 
 		const priorityState = settings.get_boolean('priority');
