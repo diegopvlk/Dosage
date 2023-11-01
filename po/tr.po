@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-31 18:04-0300\n"
-"PO-Revision-Date: 2023-10-22 19:52+0000\n"
+"PO-Revision-Date: 2023-11-01 22:36+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
 ">\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.1\n"
+"X-Generator: Weblate 5.2-dev\n"
 "X-Project-Style: gnome\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
@@ -38,6 +38,8 @@ msgid ""
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
 "Control"
 msgstr ""
+"Dozaj ile tedavi takibini kolayca yönetin: Bildirimler, Geçmiş, Çoklu "
+"Dozlar, Esnek Sıklık, Özelleştirme, Stok İzleme ve Süre Kontrolü"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:8
 msgid "Features:"
@@ -75,27 +77,27 @@ msgstr "Süre - Başlangıç ve bitiş tarihlerini tanımlayın"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
 msgid "Dosage today window in light theme"
-msgstr ""
+msgstr "Bugün penceresi açık tema ile"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
 msgid "Dosage edit treatment window in light theme"
-msgstr ""
+msgstr "İlaç düzenle penceresi açık tema ile"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid "Dosage today window in dark theme"
-msgstr ""
+msgstr "Bugün penceresi koyu tema ile"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:111
 msgid "medication"
-msgstr ""
+msgstr "tedavi"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:112
 msgid "tracker"
-msgstr ""
+msgstr "izleyici"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:113
 msgid "reminder"
-msgstr ""
+msgstr "hatırlatıcı"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:114
 msgid "treatments"
@@ -103,25 +105,22 @@ msgstr "İlaçlar"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:115
 msgid "pill"
-msgstr ""
+msgstr "ilaç"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:116
 msgid "drug"
-msgstr ""
+msgstr "ilaç"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:117
 msgid "remedy"
-msgstr ""
+msgstr "çare"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
-#, fuzzy
-#| msgid ""
-#| "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
-"Dosage;Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
-"İlaç;İzleyici;Hatırlatma;Bugün;Tarih;Tedavi;Hap;İlaç;Çare;"
+"Dosage;Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;İlaç;İzl"
+"eyici;Hatırlatma;Bugün;Tedavi;Hap;İlaç;Çare;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -426,11 +425,11 @@ msgstr ""
 
 #: data/ui/preferences.blp:34
 msgid "Notification buttons"
-msgstr ""
+msgstr "Bildirim düğmeleri"
 
 #: data/ui/preferences.blp:35
 msgid "Show or hide confirm/skip"
-msgstr ""
+msgstr "Onayla/atla düğmelerini göster ya da gizle"
 
 #: data/ui/preferences.blp:38 src/window.js:421 src/window.js:539
 msgid "Confirm"
