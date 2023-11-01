@@ -28,6 +28,11 @@ Keep track of your treatments
   </details>
 </div>
 
+### Donate
+If you want to help with a donation (thank you!), you can use:
+- [PayPal](https://www.paypal.com/donate?hosted_button_id=DVL7H35GA66X6)
+- [Ko-fi](https://ko-fi.com/diegopvlk)
+- Pix: diego.pvlk@gmail.com
 
 ### Translations
 You can help translate using [Weblate](https://hosted.weblate.org/projects/dosage/dosage/)
