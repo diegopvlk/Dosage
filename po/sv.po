@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-31 18:04-0300\n"
-"PO-Revision-Date: 2023-10-20 21:52+0000\n"
-"Last-Translator: sköldpadda <weblate@turtle.garden>\n"
+"PO-Revision-Date: 2023-11-01 22:36+0000\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
 ">\n"
 "Language: sv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.1\n"
+"X-Generator: Weblate 5.2-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
@@ -113,14 +113,10 @@ msgstr ""
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
-#, fuzzy
-#| msgid ""
-#| "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
-"Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
-"Medicinering;Påminnelse;Idag;Historia;Behandlingar;Piller;Läkemedel;"
-"Botemedel;"
+"Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;Medicinering;På"
+"minnelse;Idag;Behandlingar;Piller;Läkemedel;Botemedel;"
 
 #: data/gtk/help-overlay.blp:11
 #, fuzzy
