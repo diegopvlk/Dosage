@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-31 18:04-0300\n"
-"PO-Revision-Date: 2023-10-22 19:52+0000\n"
+"PO-Revision-Date: 2023-11-01 11:39+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.1\n"
+"X-Generator: Weblate 5.2-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
@@ -36,6 +36,9 @@ msgid ""
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
 "Control"
 msgstr ""
+"Gestisci facilmente il tracciamento dei trattamenti con Dosaggio: notifiche, "
+"cronologia, dosi multiple, frequenza flessibile, personalizzazione, "
+"monitoraggio delle scorte e controllo della durata"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:8
 msgid "Features:"
@@ -75,27 +78,27 @@ msgstr "Durata — Definisci le date di inizio e di fine"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
 msgid "Dosage today window in light theme"
-msgstr ""
+msgstr "Finestra di Dosaggio oggi in tema chiaro"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
 msgid "Dosage edit treatment window in light theme"
-msgstr ""
+msgstr "Finestra di modifica del dosaggio del trattamento in tema chiaro"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid "Dosage today window in dark theme"
-msgstr ""
+msgstr "Finestra di Dosaggio oggi in tema scuro"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:111
 msgid "medication"
-msgstr ""
+msgstr "farmaco"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:112
 msgid "tracker"
-msgstr ""
+msgstr "Tracciatore"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:113
 msgid "reminder"
-msgstr ""
+msgstr "promemoria"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:114
 msgid "treatments"
@@ -103,24 +106,20 @@ msgstr "trattamenti"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:115
 msgid "pill"
-msgstr ""
+msgstr "pillola"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:116
 msgid "drug"
-msgstr ""
+msgstr "Medicinale"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:117
 msgid "remedy"
-msgstr ""
+msgstr "rimedio"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
-#, fuzzy
-#| msgid ""
-#| "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
-msgstr ""
-"Farmaco;Tracciatore;Promemoria;Oggi;Storia;Trattamenti;Pillola;Droga;Rimedio;"
+msgstr "Medicinale;Tracker;Promemoria;Oggi;Trattamenti;Pillola;Farmaco;Rimedio;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -425,11 +424,11 @@ msgstr ""
 
 #: data/ui/preferences.blp:34
 msgid "Notification buttons"
-msgstr ""
+msgstr "Pulsanti di notifica"
 
 #: data/ui/preferences.blp:35
 msgid "Show or hide confirm/skip"
-msgstr ""
+msgstr "Mostra o nascondi conferma/salta"
 
 #: data/ui/preferences.blp:38 src/window.js:421 src/window.js:539
 msgid "Confirm"
