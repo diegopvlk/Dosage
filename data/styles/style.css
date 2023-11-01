@@ -386,6 +386,11 @@ button.suggested-action:focus {
 	outline: none;
 }
 
+preferencespage scrolledwindow viewport {
+	margin-top: -24px;
+	margin-bottom: -11px;
+}
+
 row.error {
 	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.5);
 }
