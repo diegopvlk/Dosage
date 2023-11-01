@@ -431,11 +431,11 @@ msgstr ""
 
 #: data/ui/preferences.blp:34
 msgid "Notification buttons"
-msgstr ""
+msgstr "Кнопки уведомлений"
 
 #: data/ui/preferences.blp:35
 msgid "Show or hide confirm/skip"
-msgstr ""
+msgstr "Показать или скрыть подтвердить/пропустить"
 
 #: data/ui/preferences.blp:38 src/window.js:421 src/window.js:539
 msgid "Confirm"
