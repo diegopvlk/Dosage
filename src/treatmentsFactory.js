@@ -108,29 +108,28 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	box.add_css_class('activatable');
 
 	nameLabel.label = item.name;
-	infoLabel.label = item.unit;
 
 	switch (info.frequency) {
 		case 'daily':
-			infoLabel.label += '  •  ' + _("Daily");
+			infoLabel.label = _("Daily");
 			break;
 		case 'specific-days':
 			const isWeekend = info.days.every(day => [0, 6].includes(day));
 			const isWeekdays = info.days.every(day => [1, 2, 3, 4, 5].includes(day));
 			
 			if (info.days.length === 1)
-				infoLabel.label += '  •  ' + getDayLabel(info.days[0]);
+				infoLabel.label = getDayLabel(info.days[0]);
 			else if (isWeekend)
-				infoLabel.label += '  •  ' + _("Weekend");
+				infoLabel.label = _("Weekend");
 			else if (isWeekdays && info.days.length === 5)
-				infoLabel.label += '  •  ' + _("Weekdays");
+				infoLabel.label = _("Weekdays");
 			else if (info.days.length === 7)
-				infoLabel.label += '  •  ' + _("Daily");
+				infoLabel.label = _("Daily");
 			else {
-				infoLabel.label += '  •';
 				info.days.forEach(day => {
-					infoLabel.label += '  ' + getDayLabel(day).slice(0, 3);
+					infoLabel.label += getDayLabel(day).slice(0, 3) + ',  ';
 				});
+				infoLabel.label = infoLabel.label.slice(0, -3);
 			}
 			function getDayLabel(day) {
 				const dayLabels = [
@@ -146,10 +145,11 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			}
 			break;
 		case 'cycle':
-			infoLabel.label += `  •  ${info.cycle[0]}` + ' ⊷ ' + `${info.cycle[1]}`;
+			infoLabel.label = _("Cycle") + '  •  ';
+			infoLabel.label += `${info.cycle[0]}` + ' ⊷ ' + `${info.cycle[1]}`;
 			break;
 		case 'when-needed':
-			infoLabel.label += '  •  ' + _("When needed");
+			infoLabel.label = _("When needed");
 			break;
 	}
 
