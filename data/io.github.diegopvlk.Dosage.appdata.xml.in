@@ -33,6 +33,17 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.1.3" date="2023-11-01">
+			<description translatable="no">
+				<ul>
+					<li>Added a preference to disable notification buttons</li>
+					<li>Minor changes to treatment list and other minor fixes</li>
+					<li>Added a donate link in the about window - details</li>
+					<li>Added Belarusian translation (by Yahor Haurylenka)</li>
+					<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.1.2" date="2023-10-30">
 			<description translatable="no">
 				<ul>
@@ -127,4 +138,5 @@
 	<url type="bugtracker">https://github.com/diegopvlk/Dosage/issues</url>
 	<url type="vcs-browser">https://github.com/diegopvlk/Dosage</url>
 	<url type="translate">https://hosted.weblate.org/projects/dosage/dosage/</url>
+	<url type="donate">https://hosted.weblate.org/projects/dosage/dosage/</url>
 </component>
