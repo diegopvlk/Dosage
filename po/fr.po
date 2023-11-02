@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-31 18:04-0300\n"
-"PO-Revision-Date: 2023-11-01 22:36+0000\n"
-"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"PO-Revision-Date: 2023-11-02 19:54+0000\n"
+"Last-Translator: rene-coty <irenee.thirion@e.email>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/dosage/dosage/fr/>"
 "\n"
 "Language: fr\n"
@@ -36,6 +36,9 @@ msgid ""
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
 "Control"
 msgstr ""
+"Gérez facilement le suivi de vos traitements médicamenteux avec Dosage : "
+"notifications, historique, doses multiples, fréquences flexibles, "
+"personnalisation, gestion des stocks, et contrôle de la durée"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:8
 msgid "Features:"
@@ -43,7 +46,7 @@ msgstr "Fonctionnalités :"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
 msgid "Notifications — Get reminders at the right time"
-msgstr "Notifications — Être rappelé au bon moment"
+msgstr "Notifications — Pour être rappelé à temps"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
 msgid "History — See which medications you took or skipped"
@@ -55,15 +58,15 @@ msgstr "Gestion des dosages — Plusieurs doses avec des horaires différents"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
 msgid "Frequency modes — Every day, specific days, cycle or just when needed"
-msgstr "Fréquences — Tous les jours, jour spécifique, cycle ou au besoin"
+msgstr "Fréquences — Tous les jours, certains jours, par cycle ou au besoin"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "Color and icon — Give a shape for your treatment"
-msgstr "Couleurs et icônes — Donnez un forme a vos traitements"
+msgstr "Couleurs et icônes — Donnez une forme à vos traitements"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
-msgstr "Gestion de stock — Gérez vos stocks et être rappelé avant la fin"
+msgstr "Gestion de stock — Gérez vos stocks avec des rappels avant épuisement"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:16
 msgid "Duration — Define the start and end dates"
@@ -71,27 +74,27 @@ msgstr "Durée — Définissez le début et la fin des traitements"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
 msgid "Dosage today window in light theme"
-msgstr ""
+msgstr "Fenêtre « Aujourd’hui » de Dosage avec thème clair"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
 msgid "Dosage edit treatment window in light theme"
-msgstr ""
+msgstr "Fenêtre d’édition des traitements de Dosage avec thème clair"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid "Dosage today window in dark theme"
-msgstr ""
+msgstr "Fenêtre « Aujourd’hui » de Dosage avec thème sombre"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:111
 msgid "medication"
-msgstr ""
+msgstr "médicament"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:112
 msgid "tracker"
-msgstr ""
+msgstr "suivi"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:113
 msgid "reminder"
-msgstr ""
+msgstr "rappel"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:114
 msgid "treatments"
@@ -99,15 +102,15 @@ msgstr "traitements"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:115
 msgid "pill"
-msgstr ""
+msgstr "pillule"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:116
 msgid "drug"
-msgstr ""
+msgstr "comprimé"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:117
 msgid "remedy"
-msgstr ""
+msgstr "remède"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
@@ -117,7 +120,7 @@ msgstr "Médicament;Suivi;Rappel;Aujourd'hui;Traitements;Comprimé;Remède;Pilul
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Général"
 
 #: data/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
@@ -127,7 +130,7 @@ msgstr "Préférences"
 #: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Afficher les raccourcis"
 
 #: data/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
@@ -278,7 +281,7 @@ msgstr "Tous les jours"
 
 #: data/ui/med-window.blp:298
 msgid "Specific days"
-msgstr "Jour particulier"
+msgstr "Certains jours"
 
 #: data/ui/med-window.blp:299
 msgid "Cycle"
@@ -324,16 +327,16 @@ msgstr "Sa"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"
-msgstr "Jours d'activité"
+msgstr "Jours d’activité"
 
 #: data/ui/med-window.blp:382
 msgid "Days inactive"
-msgstr "Jours d'inactivité"
+msgstr "Jours d’inactivité"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-window.blp:395
 msgid "Today is cycle day…"
-msgstr "Aujourd'hui c'est le jour du cycle…"
+msgstr "Aujourd’hui jour du cycle…"
 
 #: data/ui/med-window.blp:411
 msgid "Time and amount"
@@ -349,11 +352,11 @@ msgstr "Notifications récurrentes"
 
 #: data/ui/med-window.blp:425
 msgid "Renotify until it's confirmed or skipped"
-msgstr ""
+msgstr "Notifier à nouveau jusqu’à confirmation ou saut"
 
 #: data/ui/med-window.blp:429
 msgid "Interval in minutes"
-msgstr ""
+msgstr "Intervalle en minutes"
 
 #: data/ui/med-window.blp:441
 msgid "Inventory"
@@ -385,7 +388,7 @@ msgstr "Débute le"
 
 #: data/ui/med-window.blp:492
 msgid "Ends on"
-msgstr "Termine le"
+msgstr "S’achève le"
 
 #: data/ui/med-window.blp:510
 msgid "Date"
@@ -412,16 +415,16 @@ msgid ""
 "On GNOME this will make the notification show on fullscreen mode or even if "
 "'Do Not Disturb' is enabled"
 msgstr ""
-"Sur GNOME, la notification s'affichera même en mode plein écran ou même si "
-"« Ne Pas Déranger » est activé"
+"Sur GNOME, la notification s’affichera même en mode plein écran ou même si « "
+"Ne Pas Déranger » est activé"
 
 #: data/ui/preferences.blp:34
 msgid "Notification buttons"
-msgstr ""
+msgstr "Boutons de notification"
 
 #: data/ui/preferences.blp:35
 msgid "Show or hide confirm/skip"
-msgstr ""
+msgstr "Afficher ou masquer Confirmer/Sauter"
 
 #: data/ui/preferences.blp:38 src/window.js:421 src/window.js:539
 msgid "Confirm"
@@ -429,15 +432,15 @@ msgstr "Confirmer"
 
 #: data/ui/preferences.blp:47 data/ui/window.blp:76 src/window.js:424
 msgid "Skip"
-msgstr "Passer"
+msgstr "Sauter"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
-msgstr "Menu Principal"
+msgstr "Menu principal"
 
 #: data/ui/window.blp:41
 msgid "Today"
-msgstr "Aujourd'hui"
+msgstr "Aujourd’hui"
 
 #: data/ui/window.blp:62
 msgid "Unselect"
@@ -461,7 +464,7 @@ msgstr "Traitements"
 
 #: data/ui/window.blp:165
 msgid "Click the button below to add some"
-msgstr "Cliquer sur le bouton pour en ajouter"
+msgstr "Cliquez sur le bouton pour en ajouter"
 
 #: data/ui/window.blp:194
 msgid "About Dosage"
@@ -479,7 +482,7 @@ msgstr "Confirmé"
 #. TRANSLATORS: Keep it short
 #: src/historyFactory.js:125
 msgid "Skipped"
-msgstr "Passé"
+msgstr "Sauté"
 
 #. TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
 #: src/historyFactory.js:128
@@ -498,7 +501,7 @@ msgstr "Merci pour ces projets !"
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:155
 msgid "Accept to allow running in the background and receive notifications"
-msgstr "Autoriser l'exécution en tâche de fond et à recevoir des notifications"
+msgstr "Autoriser l’exécution en arrière-plan et l’envoi de notifications"
 
 #: src/treatmentsFactory.js:92
 msgid "Remaining"
@@ -511,11 +514,11 @@ msgstr "Stock bas"
 #. TRANSLATORS: Keep it short (label for when duration is enabled)
 #: src/treatmentsFactory.js:104
 msgid "Until"
-msgstr "Jusqu'à"
+msgstr "Jusqu’à"
 
 #: src/treatmentsFactory.js:115 src/treatmentsFactory.js:128
 msgid "Daily"
-msgstr "Tous les jours"
+msgstr "Quotidiennement"
 
 #: src/treatmentsFactory.js:124
 msgid "Weekend"
@@ -568,7 +571,7 @@ msgstr "Pas encore de traitements configurés !"
 
 #: src/window.js:361
 msgid "All done for today!"
-msgstr "C'est bon pour aujourd'hui !"
+msgstr "C’est bon pour aujourd’hui !"
 
 #: src/window.js:769
 msgid "Edit treatment"
@@ -589,12 +592,12 @@ msgstr "Nouvelle entrée"
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
 #: src/window.js:911
 msgid "Add to history"
-msgstr "Ajt à l'historique"
+msgstr "Ajout à l’historique"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
 #: src/window.js:983
 msgid "Are you sure?"
-msgstr "Êtes-vous sûrs ?"
+msgstr "Êtes-vous sûr ?"
 
 #: src/window.js:1194
 msgid "Empty name"
