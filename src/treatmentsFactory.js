@@ -29,19 +29,21 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 	box.append(labelsBox);
 	const name = new Gtk.Label({
 		halign: Gtk.Align.START,
+		margin_bottom: 1,
 	});
 	labelsBox.append(name);
-	const unitAndInfo = new Gtk.Label({
+	const info = new Gtk.Label({
 		css_classes: ['subtitle'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
-	labelsBox.append(unitAndInfo);
+	labelsBox.append(info);
 	const durationLabel = new Gtk.Label({
 		css_classes: ['subtitle'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 		visible: false,
+		margin_top: 1,
 	});
 	labelsBox.append(durationLabel);
 	const inventoryLabel = new Gtk.Label({

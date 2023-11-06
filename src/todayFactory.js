@@ -62,6 +62,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	box.append(labelsBox);
 	const name = new Gtk.Label({
 		halign: Gtk.Align.START,
+		margin_bottom: 1,
 	});
 	labelsBox.append(name);
 	const doseAndNotes = new Gtk.Label({
