@@ -116,7 +116,7 @@
 	<developer_name translatable="no">Diego Povliuk</developer_name>
 	<update_contact>diego.pvlk@gmail.com</update_contact>
 	<launchable type="desktop-id">io.github.diegopvlk.Dosage.desktop</launchable>
-	<translation type="gettext">io.github.diegopvlk.Dosage</translation>
+	<translation type="gettext">dosage</translation>
     <keywords>
 		<keyword translate="no">dosage</keyword>
 		<keyword>medication</keyword>
