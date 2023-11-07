@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-31 18:04-0300\n"
-"PO-Revision-Date: 2023-10-15 22:56+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2023-11-07 13:17+0000\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
 "dosage/nb_NO/>\n"
 "Language: nb_NO\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.2-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
@@ -357,11 +357,11 @@ msgstr "Gjentatte varsler"
 
 #: data/ui/med-window.blp:425
 msgid "Renotify until it's confirmed or skipped"
-msgstr ""
+msgstr "Gi beskjed på nytt til det er bekreftet eller hoppet over"
 
 #: data/ui/med-window.blp:429
 msgid "Interval in minutes"
-msgstr ""
+msgstr "Intervall i minutter"
 
 #: data/ui/med-window.blp:441
 msgid "Inventory"
@@ -425,11 +425,11 @@ msgstr ""
 
 #: data/ui/preferences.blp:34
 msgid "Notification buttons"
-msgstr ""
+msgstr "Varselknapper"
 
 #: data/ui/preferences.blp:35
 msgid "Show or hide confirm/skip"
-msgstr ""
+msgstr "Vis eller skjul bekreft/hopp over"
 
 #: data/ui/preferences.blp:38 src/window.js:421 src/window.js:539
 msgid "Confirm"
@@ -512,7 +512,7 @@ msgstr "Godta for å tillate kjøring i bakgrunnen og motta varsler"
 
 #: src/treatmentsFactory.js:92
 msgid "Remaining"
-msgstr ""
+msgstr "Gjenstående"
 
 #: src/treatmentsFactory.js:96
 msgid "Low stock"
