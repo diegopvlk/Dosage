@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-31 18:04-0300\n"
-"PO-Revision-Date: 2023-11-01 22:36+0000\n"
-"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"PO-Revision-Date: 2023-11-07 13:17+0000\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
 ">\n"
 "Language: sv\n"
@@ -354,11 +354,11 @@ msgstr "Återkommande aviseringar"
 
 #: data/ui/med-window.blp:425
 msgid "Renotify until it's confirmed or skipped"
-msgstr ""
+msgstr "Meddela igen tills det är bekräftat eller hoppade över"
 
 #: data/ui/med-window.blp:429
 msgid "Interval in minutes"
-msgstr ""
+msgstr "Intervall i minuter"
 
 #: data/ui/med-window.blp:441
 msgid "Inventory"
@@ -422,11 +422,11 @@ msgstr ""
 
 #: data/ui/preferences.blp:34
 msgid "Notification buttons"
-msgstr ""
+msgstr "Aviseringsknappar"
 
 #: data/ui/preferences.blp:35
 msgid "Show or hide confirm/skip"
-msgstr ""
+msgstr "Visa eller dölj bekräfta/hoppa över"
 
 #: data/ui/preferences.blp:38 src/window.js:421 src/window.js:539
 msgid "Confirm"
