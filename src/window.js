@@ -453,7 +453,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 		
 		// v1.1.0 only has recurring: boolean
-		if (item.info.recurring.enabled || item.info.recurring === true) {
+		const recurringEnabled =
+			item.info.recurring &&
+			item.info.recurring.enabled || item.info.recurring === true;	
+			
+		if (recurringEnabled) {
 			const interval = item.info.recurring.interval || 5;
 			const minutes = interval * 60 * 1000;
 			const recurringNotify = (pseudoId, timeDiff) => {
@@ -464,9 +468,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 			};
 
 			recurringNotify(pseudoId, timeDiff);
-			return
+			return;
 		}
-		
+
 		this._scheduledItems[pseudoId] = setTimeout(notify, timeDiff);
 	}
 
@@ -798,9 +802,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 			});
 
 			// v1.1.0 only has recurring: boolean
-			const recurrEnabled = info.recurring.enabled || info.recurring === true;
-			recurringNotif.set_enable_expansion(recurrEnabled);
-			recurringInterval.value = info.recurring.interval || 5;
+			if (info.recurring) {
+				const recurrEnabled = info.recurring.enabled || info.recurring === true;
+				recurringNotif.set_enable_expansion(recurrEnabled);
+				recurringInterval.value = info.recurring.interval || 5;
+			}
 
 			if (info.days && info.days.length !== 0) {
 				const specificDaysBox = builder.get_object('specificDaysBox');
