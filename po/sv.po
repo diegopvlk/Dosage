@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-31 18:04-0300\n"
-"PO-Revision-Date: 2023-11-07 13:17+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"PO-Revision-Date: 2023-11-08 09:24+0000\n"
+"Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
 ">\n"
 "Language: sv\n"
@@ -36,6 +36,9 @@ msgid ""
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
 "Control"
 msgstr ""
+"Hantera enkelt spårbehandlingar med dosering: aviseringar, historik, flera "
+"doser, flexibel frekvens, anpassning, lagerövervakning och "
+"varaktighetskontroll"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:8
 msgid "Features:"
@@ -73,27 +76,27 @@ msgstr "Längd — definiera start- och slutdatum"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
 msgid "Dosage today window in light theme"
-msgstr ""
+msgstr "Dosering idag fönster i ljust tema"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
 msgid "Dosage edit treatment window in light theme"
-msgstr ""
+msgstr "Dosredigeringsbehandlingsfönster i ljust tema"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid "Dosage today window in dark theme"
-msgstr ""
+msgstr "Dosering idag fönster i mörkt tema"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:111
 msgid "medication"
-msgstr ""
+msgstr "medicin"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:112
 msgid "tracker"
-msgstr ""
+msgstr "spårare"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:113
 msgid "reminder"
-msgstr ""
+msgstr "påminnelse"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:114
 msgid "treatments"
@@ -101,15 +104,15 @@ msgstr "behandlingar"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:115
 msgid "pill"
-msgstr ""
+msgstr "tablett"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:116
 msgid "drug"
-msgstr ""
+msgstr "läkemedel"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:117
 msgid "remedy"
-msgstr ""
+msgstr "botemedel"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
@@ -119,10 +122,9 @@ msgstr ""
 "minnelse;Idag;Behandlingar;Piller;Läkemedel;Botemedel;"
 
 #: data/gtk/help-overlay.blp:11
-#, fuzzy
 msgctxt "shortcut window"
 msgid "General"
-msgstr "Allmänt"
+msgstr "Allmän"
 
 #: data/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
@@ -469,8 +471,6 @@ msgid "Click the button below to add some"
 msgstr "Tryck på knappen för att lägga till behandlingar"
 
 #: data/ui/window.blp:194
-#, fuzzy
-#| msgid "Dosage"
 msgid "About Dosage"
 msgstr "Om Dosering"
 
