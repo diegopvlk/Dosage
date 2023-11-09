@@ -302,31 +302,31 @@ msgstr "Kiezen"
 #. TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa)
 #: data/ui/med-window.blp:317
 msgid "Su"
-msgstr "zo"
+msgstr "Zo"
 
 #: data/ui/med-window.blp:323
 msgid "Mo"
-msgstr "ma"
+msgstr "Ma"
 
 #: data/ui/med-window.blp:329
 msgid "Tu"
-msgstr "di"
+msgstr "Di"
 
 #: data/ui/med-window.blp:335
 msgid "We"
-msgstr "woe"
+msgstr "Wo"
 
 #: data/ui/med-window.blp:341
 msgid "Th"
-msgstr "do"
+msgstr "Do"
 
 #: data/ui/med-window.blp:347
 msgid "Fr"
-msgstr "vrij"
+msgstr "Vr"
 
 #: data/ui/med-window.blp:353
 msgid "Sa"
-msgstr "za"
+msgstr "Za"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"
