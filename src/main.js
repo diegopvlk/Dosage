@@ -130,7 +130,7 @@ export const DosageApplication = GObject.registerClass(
 					"GJS Guide https://gjs.guide/",
 					"Flatpak https://github.com/flatpak/",
 				]);
-				aboutWindow.add_link(_("Donate"), "https://github.com/diegopvlk/Dosage#donate") 
+				aboutWindow.add_link("Donate", "https://github.com/diegopvlk/Dosage#donate") 
 				aboutWindow.present();
 			});
 			this.add_action(showAboutAction);
