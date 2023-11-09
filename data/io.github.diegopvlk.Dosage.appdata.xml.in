@@ -33,6 +33,13 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.1.6" date="2023-11-09">
+			<description translatable="no">
+				<ul>
+					<li>Added Dutch translation (by Heimen Stoffels)</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.1.5" date="2023-11-07">
 			<description translatable="no">
 				<ul>
