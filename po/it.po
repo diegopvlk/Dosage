@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-31 18:04-0300\n"
+"POT-Creation-Date: 2023-11-09 17:15-0300\n"
 "PO-Revision-Date: 2023-11-01 11:39+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:112 src/window.js:487
+#: src/main.js:112 src/window.js:494
 msgid "Dosage"
 msgstr "Dosaggio"
 
@@ -88,38 +88,39 @@ msgstr "Finestra di modifica del dosaggio del trattamento in tema chiaro"
 msgid "Dosage today window in dark theme"
 msgstr "Finestra di Dosaggio oggi in tema scuro"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:111
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:136
 msgid "medication"
 msgstr "farmaco"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:112
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:137
 msgid "tracker"
 msgstr "Tracciatore"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:113
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:138
 msgid "reminder"
 msgstr "promemoria"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:114
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:139
 msgid "treatments"
 msgstr "trattamenti"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:115
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:140
 msgid "pill"
 msgstr "pillola"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:116
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:141
 msgid "drug"
 msgstr "Medicinale"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:117
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:142
 msgid "remedy"
 msgstr "rimedio"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
-msgstr "Medicinale;Tracker;Promemoria;Oggi;Trattamenti;Pillola;Farmaco;Rimedio;"
+msgstr ""
+"Medicinale;Tracker;Promemoria;Oggi;Trattamenti;Pillola;Farmaco;Rimedio;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -145,7 +146,7 @@ msgstr "Esci"
 msgid "New treatment"
 msgstr "Nuovo trattamento"
 
-#: data/ui/med-window.blp:19 src/window.js:988
+#: data/ui/med-window.blp:19 src/window.js:997
 msgid "Cancel"
 msgstr "Annulla"
 
@@ -165,7 +166,7 @@ msgstr "Nome"
 msgid "Unit"
 msgstr "Unità"
 
-#: data/ui/med-window.blp:57 src/window.js:869
+#: data/ui/med-window.blp:57 src/window.js:878
 msgid "Pill(s)"
 msgstr "Pillola(e)"
 
@@ -181,7 +182,7 @@ msgstr "Dopo il pasto"
 msgid "Color and icon"
 msgstr "Colore e icona"
 
-#: data/ui/med-window.blp:70 src/window.js:912
+#: data/ui/med-window.blp:70 src/window.js:921
 msgid "Color"
 msgstr "Colore"
 
@@ -287,11 +288,11 @@ msgstr "Ogni giorno"
 msgid "Specific days"
 msgstr "Giorni specifici"
 
-#: data/ui/med-window.blp:299
+#: data/ui/med-window.blp:299 src/treatmentsFactory.js:150
 msgid "Cycle"
 msgstr "Ciclo"
 
-#: data/ui/med-window.blp:300 src/treatmentsFactory.js:152
+#: data/ui/med-window.blp:300 src/treatmentsFactory.js:154
 msgid "When needed"
 msgstr "Quando necessario"
 
@@ -398,7 +399,7 @@ msgstr "Finisce il"
 msgid "Date"
 msgstr "Data"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:989
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:998
 msgid "Delete"
 msgstr "Cancella"
 
@@ -430,7 +431,7 @@ msgstr "Pulsanti di notifica"
 msgid "Show or hide confirm/skip"
 msgstr "Mostra o nascondi conferma/salta"
 
-#: data/ui/preferences.blp:38 src/window.js:421 src/window.js:539
+#: data/ui/preferences.blp:38 src/window.js:421 src/window.js:546
 msgid "Confirm"
 msgstr "Conferma"
 
@@ -450,7 +451,7 @@ msgstr "Oggi"
 msgid "Unselect"
 msgstr "Non selezionato"
 
-#: data/ui/window.blp:70 src/window.js:539
+#: data/ui/window.blp:70 src/window.js:546
 msgid "One-time entry"
 msgstr "Unica voce"
 
@@ -479,17 +480,17 @@ msgid "Quit"
 msgstr "Esci"
 
 #. TRANSLATORS: Keep it short
-#: src/historyFactory.js:122
+#: src/historyFactory.js:123
 msgid "Confirmed"
 msgstr "Confermato"
 
 #. TRANSLATORS: Keep it short
-#: src/historyFactory.js:125
+#: src/historyFactory.js:126
 msgid "Skipped"
 msgstr "Saltato"
 
 #. TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
-#: src/historyFactory.js:128
+#: src/historyFactory.js:129
 msgid "Missed"
 msgstr "Perso"
 
@@ -503,60 +504,60 @@ msgid "Thanks to these projects!"
 msgstr "Grazie a questi progetti!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:155
+#: src/main.js:156
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Accetta per consentire l'esecuzione in background e ricevere notifiche"
 
-#: src/treatmentsFactory.js:92
+#: src/treatmentsFactory.js:94
 msgid "Remaining"
 msgstr "Rimanenti"
 
-#: src/treatmentsFactory.js:96
+#: src/treatmentsFactory.js:98
 msgid "Low stock"
 msgstr "Scorta bassa"
 
 #. TRANSLATORS: Keep it short (label for when duration is enabled)
-#: src/treatmentsFactory.js:104
+#: src/treatmentsFactory.js:106
 msgid "Until"
 msgstr "Fino a"
 
-#: src/treatmentsFactory.js:115 src/treatmentsFactory.js:128
+#: src/treatmentsFactory.js:116 src/treatmentsFactory.js:129
 msgid "Daily"
 msgstr "Giornaliero"
 
-#: src/treatmentsFactory.js:124
+#: src/treatmentsFactory.js:125
 msgid "Weekend"
 msgstr "Fine settimana"
 
-#: src/treatmentsFactory.js:126
+#: src/treatmentsFactory.js:127
 msgid "Weekdays"
 msgstr "Giorni della settimana"
 
-#: src/treatmentsFactory.js:137
+#: src/treatmentsFactory.js:138
 msgid "Sunday"
 msgstr "Domenica"
 
-#: src/treatmentsFactory.js:138
+#: src/treatmentsFactory.js:139
 msgid "Monday"
 msgstr "Lunedì"
 
-#: src/treatmentsFactory.js:139
+#: src/treatmentsFactory.js:140
 msgid "Tuesday"
 msgstr "Martedì"
 
-#: src/treatmentsFactory.js:140
+#: src/treatmentsFactory.js:141
 msgid "Wednesday"
 msgstr "Mercoledì"
 
-#: src/treatmentsFactory.js:141
+#: src/treatmentsFactory.js:142
 msgid "Thursday"
 msgstr "Giovedì"
 
-#: src/treatmentsFactory.js:142
+#: src/treatmentsFactory.js:143
 msgid "Friday"
 msgstr "Venerdì"
 
-#: src/treatmentsFactory.js:143
+#: src/treatmentsFactory.js:144
 msgid "Saturday"
 msgstr "Sabato"
 
@@ -577,49 +578,49 @@ msgstr "Nessun trattamento ancora aggiunto!"
 msgid "All done for today!"
 msgstr "Tutto fatto per oggi!"
 
-#: src/window.js:769
+#: src/window.js:776
 msgid "Edit treatment"
 msgstr "Modifica trattamento"
 
-#: src/window.js:770
+#: src/window.js:777
 msgid "Save"
 msgstr "Salva"
 
-#: src/window.js:859
+#: src/window.js:868
 msgid "New"
 msgstr "Nuovo"
 
-#: src/window.js:909
+#: src/window.js:918
 msgid "New entry"
 msgstr "Nuova voce"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:911
+#: src/window.js:920
 msgid "Add to history"
 msgstr "Agg. alla cronologia"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:983
+#: src/window.js:992
 msgid "Are you sure?"
 msgstr "Sei sicuro?"
 
-#: src/window.js:1194
+#: src/window.js:1203
 msgid "Empty name"
 msgstr "Nome vuoto"
 
-#: src/window.js:1199
+#: src/window.js:1208
 msgid "Empty unit"
 msgstr "Unità vuota"
 
-#: src/window.js:1205
+#: src/window.js:1214
 msgid "Choose at least one day"
 msgstr "Scegli almeno un giorno"
 
-#: src/window.js:1215
+#: src/window.js:1224
 msgid "Name already exists"
 msgstr "Il nome esiste già"
 
-#: src/window.js:1229
+#: src/window.js:1238
 msgid "Duplicated time"
 msgstr "Tempo duplicato"
 
