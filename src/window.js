@@ -115,7 +115,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		const timeUntilMidnight = midnight - now;
 
-		setTimeout(() => {
+		this._scheduledMidnight = setTimeout(() => {
 			this._updateEverything(true);
 			this._scheduleNotifications();
 			this.#checkInventory();
@@ -124,7 +124,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_handleSuspension() {
-		const onWakingUp = () => this._scheduleNotifications();
+		const onWakingUp = () => {
+			this._scheduleNotifications();
+			clearTimeout(this._scheduledMidnight);
+			this.#scheduleNextMidnight();
+		};
 		this._connection = Gio.bus_get_sync(Gio.BusType.SYSTEM, null)
         this._connection.signal_subscribe(
             'org.freedesktop.login1',
