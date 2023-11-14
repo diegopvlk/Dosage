@@ -9,3 +9,5 @@ Categories=GTK;GNOME;Utility;MedicalSoftware;Calendar;
 # TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 Keywords=Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;
 X-GNOME-UsesNotifications=true
+# Translators: Do NOT translate or transliterate this text (these are enum types)!
+X-Purism-FormFactor=Workstation;Mobile;
