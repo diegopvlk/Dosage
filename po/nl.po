@@ -58,7 +58,7 @@ msgid "Dosage management — Multiple doses with different times"
 msgstr "Doseringsbeheer — Meerdere doseringen op verschillende tijdstippen"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
-msgid "Frequency modes — Every day, specific days, cycle or just when needed"
+msgid "Frequency modes — Every day, specific days, cycle or just when necessary"
 msgstr "Innamemomenten — Iedere dag, bepaalde dagen of alleen indien nodig"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
@@ -292,7 +292,7 @@ msgid "Cycle"
 msgstr "Cyclus"
 
 #: data/ui/med-window.blp:300 src/treatmentsFactory.js:154
-msgid "When needed"
+msgid "When necessary"
 msgstr "Alleen indien nodig"
 
 #: data/ui/med-window.blp:308 data/ui/med-window.blp:481

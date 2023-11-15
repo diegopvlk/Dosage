@@ -58,7 +58,7 @@ msgid "Dosage management — Multiple doses with different times"
 msgstr "Dozaj yönetimi - Farklı zamanlarda çoklu doz"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
-msgid "Frequency modes — Every day, specific days, cycle or just when needed"
+msgid "Frequency modes — Every day, specific days, cycle or just when necessary"
 msgstr ""
 "Sıklık kipleri - Her gün, belirli günler, döngü ya da yalnızca ihtiyaç "
 "olduğunda"
@@ -293,7 +293,7 @@ msgid "Cycle"
 msgstr "Döngü"
 
 #: data/ui/med-window.blp:300 src/treatmentsFactory.js:154
-msgid "When needed"
+msgid "When necessary"
 msgstr "Gerektiğinde"
 
 #: data/ui/med-window.blp:308 data/ui/med-window.blp:481

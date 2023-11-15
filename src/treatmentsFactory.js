@@ -151,7 +151,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			infoLabel.label += `${info.cycle[0]}` + ' ⊷ ' + `${info.cycle[1]}`;
 			break;
 		case 'when-needed':
-			infoLabel.label = _("When needed");
+			infoLabel.label = _("When necessary");
 			break;
 	}
 

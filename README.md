@@ -13,7 +13,7 @@ Keep track of your treatments
 - **Notifications** — Get reminders at the right time  
 - **History** — See which medications you took or skipped   
 - **Dosage management** — Multiple doses with different times
-- **Frequency modes** — Every day, selected days, cycle or just when needed    
+- **Frequency modes** — Every day, selected days, cycle or just when necessary    
 - **Color and icon** — Give a shape for your treatment    
 - **Inventory tracking** — Monitor your stock and get reminded when it's low
 - **Duration** — Define the start and end dates
