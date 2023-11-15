@@ -57,7 +57,8 @@ msgid "Dosage management — Multiple doses with different times"
 msgstr "Gestion des dosages — Plusieurs doses avec des horaires différents"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
-msgid "Frequency modes — Every day, specific days, cycle or just when necessary"
+msgid ""
+"Frequency modes — Every day, specific days, cycle or just when necessary"
 msgstr "Fréquences — Tous les jours, certains jours, par cycle ou au besoin"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
