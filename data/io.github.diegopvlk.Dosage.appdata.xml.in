@@ -33,6 +33,15 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.2.0" date="2023-11-15">
+			<description translatable="no">
+				<ul>
+					<li>Added a preference for notification sound</li>
+					<li>Added purism form factor tag for mobile</li>
+					<li>Fixed today page reload sometimes being delayed at midnight</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.1.6" date="2023-11-09">
 			<description translatable="no">
 				<ul>
