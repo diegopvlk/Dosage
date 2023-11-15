@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-09 17:15-0300\n"
+"POT-Creation-Date: 2023-11-15 10:05-0300\n"
 "PO-Revision-Date: 2023-11-08 09:24+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:112 src/window.js:494
+#: src/main.js:112 src/window.js:491
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -87,31 +87,31 @@ msgstr "Dosredigeringsbehandlingsfönster i ljust tema"
 msgid "Dosage today window in dark theme"
 msgstr "Dosering idag fönster i mörkt tema"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:136
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:143
 msgid "medication"
 msgstr "medicin"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:137
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:144
 msgid "tracker"
 msgstr "spårare"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:138
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:145
 msgid "reminder"
 msgstr "påminnelse"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:139
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:146
 msgid "treatments"
 msgstr "behandlingar"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:140
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:147
 msgid "pill"
 msgstr "tablett"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:141
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:148
 msgid "drug"
 msgstr "läkemedel"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:142
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:149
 msgid "remedy"
 msgstr "botemedel"
 
@@ -146,7 +146,7 @@ msgstr "Avsluta"
 msgid "New treatment"
 msgstr "Ny behandling"
 
-#: data/ui/med-window.blp:19 src/window.js:997
+#: data/ui/med-window.blp:19 src/window.js:989
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -166,7 +166,7 @@ msgstr "Namn"
 msgid "Unit"
 msgstr "Enhet"
 
-#: data/ui/med-window.blp:57 src/window.js:878
+#: data/ui/med-window.blp:57 src/window.js:870
 msgid "Pill(s)"
 msgstr "Piller"
 
@@ -182,7 +182,7 @@ msgstr "Efter måltid"
 msgid "Color and icon"
 msgstr "Färg och ikon"
 
-#: data/ui/med-window.blp:70 src/window.js:921
+#: data/ui/med-window.blp:70 src/window.js:913
 msgid "Color"
 msgstr "Färg"
 
@@ -399,7 +399,7 @@ msgstr "Slutar"
 msgid "Date"
 msgstr "Datum"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:998
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:990
 msgid "Delete"
 msgstr "Radera"
 
@@ -431,11 +431,11 @@ msgstr "Aviseringsknappar"
 msgid "Show or hide confirm/skip"
 msgstr "Visa eller dölj bekräfta/hoppa över"
 
-#: data/ui/preferences.blp:38 src/window.js:421 src/window.js:546
+#: data/ui/preferences.blp:38 src/window.js:418 src/window.js:543
 msgid "Confirm"
 msgstr "Bekräfta"
 
-#: data/ui/preferences.blp:47 data/ui/window.blp:76 src/window.js:424
+#: data/ui/preferences.blp:47 data/ui/window.blp:76 src/window.js:421
 msgid "Skip"
 msgstr "Hoppa över"
 
@@ -451,7 +451,7 @@ msgstr "I dag"
 msgid "Unselect"
 msgstr "Välja bort"
 
-#: data/ui/window.blp:70 src/window.js:546
+#: data/ui/window.blp:70 src/window.js:543
 msgid "One-time entry"
 msgstr "Engångsinträde"
 
@@ -561,7 +561,7 @@ msgstr "Fredag"
 msgid "Saturday"
 msgstr "Lördag"
 
-#: src/utils.js:137
+#: src/utils.js:129
 msgid "Delete dose"
 msgstr "Radera dosering"
 
@@ -570,57 +570,57 @@ msgstr "Radera dosering"
 msgid "You have treatments low in stock"
 msgstr "Du har behandlingar som har lågt lager"
 
-#: src/window.js:356
+#: src/window.js:353
 msgid "No treatments added yet!"
 msgstr "Inga behandlingar har lagts till ännu!"
 
-#: src/window.js:361
+#: src/window.js:358
 msgid "All done for today!"
 msgstr "Färdig för i dag!"
 
-#: src/window.js:776
+#: src/window.js:768
 msgid "Edit treatment"
 msgstr "Redigera behandling"
 
-#: src/window.js:777
+#: src/window.js:769
 msgid "Save"
 msgstr "Spara"
 
-#: src/window.js:868
+#: src/window.js:860
 msgid "New"
 msgstr "Ny"
 
-#: src/window.js:918
+#: src/window.js:910
 msgid "New entry"
 msgstr "Ny notering"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:920
+#: src/window.js:912
 msgid "Add to history"
 msgstr "Lägg till i historik"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:992
+#: src/window.js:984
 msgid "Are you sure?"
 msgstr "Är du säker?"
 
-#: src/window.js:1203
+#: src/window.js:1195
 msgid "Empty name"
 msgstr "Tömt namn"
 
-#: src/window.js:1208
+#: src/window.js:1200
 msgid "Empty unit"
 msgstr "Töm enhet"
 
-#: src/window.js:1214
+#: src/window.js:1206
 msgid "Choose at least one day"
 msgstr "Välj åtminstone en dag"
 
-#: src/window.js:1224
+#: src/window.js:1216
 msgid "Name already exists"
 msgstr "Namnet finns redan"
 
-#: src/window.js:1238
+#: src/window.js:1230
 msgid "Duplicated time"
 msgstr "Duplicerad tid"
 
