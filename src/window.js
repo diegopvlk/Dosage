@@ -43,7 +43,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		this.#checkClockFormat();
 		this.#start();
 		this.#checkInventory();
-		this.#scheduleNextMidnight();
+		this.#clockTick();
 	}
 
 	#loadSettings() {
@@ -104,31 +104,24 @@ class DosageWindow extends Adw.ApplicationWindow {
 		});
 	}
 
-	#scheduleNextMidnight() {
-		const now = new Date();
-		const midnight = new Date(
-			now.getFullYear(),
-			now.getMonth(),
-			now.getDate() + 1, // next day at midnight
-			0, 0, 0, // hours, minutes, seconds
-		);
+	#clockTick() {
+		let initial = new Date().setHours(0, 0, 0, 0);
 
-		const timeUntilMidnight = midnight - now;
+		const tick = () => {
+			const now = new Date().setHours(0, 0, 0, 0);
 
-		this._scheduledMidnight = setTimeout(() => {
-			this._updateEverything(true);
-			this._scheduleNotifications();
-			this.#checkInventory();
-			this.#scheduleNextMidnight();
-		}, timeUntilMidnight);
+			if (now > initial) {
+				this._updateEverything();
+				this._scheduleNotifications();
+				initial = new Date().setHours(0, 0, 0, 0);
+			}
+		}
+	
+		setInterval(tick, 2500);	
 	}
 
 	_handleSuspension() {
-		const onWakingUp = () => {
-			this._scheduleNotifications();
-			clearTimeout(this._scheduledMidnight);
-			this.#scheduleNextMidnight();
-		};
+		const onWakingUp = () => this._scheduleNotifications();
 		this._connection = Gio.bus_get_sync(Gio.BusType.SYSTEM, null)
         this._connection.signal_subscribe(
             'org.freedesktop.login1',
@@ -582,7 +575,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		for (let i = 0; i < todayLength; i++) {
 			if (item === this._todayModel.get_item(i)) {
 				this._insertItemToHistory(item, taken);
-				this._updateEverything(null, null, 'notifAction');
+				this._updateEverything(null, 'notifAction');
 				this._scheduleNotifications('adding');
 			}
 		}	
@@ -635,7 +628,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			.catch(err => console.error('Update failed...', err));
 	}
 
-	_updateItemsCycle(midnight) {
+	_updateItemsCycle() {
 		for (const it of treatmentsLS) {
 			if(it.info.frequency == 'cycle') {
 				const startDate = new Date(it.info.duration.start * 1000);
@@ -644,16 +637,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 				const today = formatDate(new Date());
 				let [ active, inactive, current ] = it.info.cycle;
 				
-				if (midnight) {
+				for (let i = 0; i < datesPassed.length; i++) {
 					current += 1;
-					if (current > active + inactive) current = 1;	
-				} else {
-					for (let i = 0; i < datesPassed.length; i++) {
-						current += 1;
-						if (current > active + inactive) current = 1;
-					}
+					if (current > active + inactive) current = 1;
 				}
-
+				
 				it.info.cycle[2] = current;
 
 				if (start < today) {
@@ -671,9 +659,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._emptyHistory.set_visible(false);
 	}
 
-	_updateEverything(midnight, skipHistUp, notifAction) {
+	_updateEverything(skipHistUp, notifAction) {
 		if (!skipHistUp) this._updateJsonFile('history', historyLS);
-		this._updateItemsCycle(midnight);
+		this._updateItemsCycle();
 		this._updateJsonFile('treatments', treatmentsLS);
 		this._loadToday();
 		this._setEmptyHistLabel();
@@ -985,7 +973,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			}
 			else addItemToTreatments();
 
-			this._updateEverything(null, true);
+			this._updateEverything(true);
 			this._scheduleNotifications('saving');
 			closeWindow();		
 		});
@@ -1008,7 +996,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					const it = this._treatmentsList.model.get_item(position);
 					const deletePos = treatmentsLS.find(it)[1];
 					treatmentsLS.remove(deletePos);
-					this._updateEverything(null, true);
+					this._updateEverything(true);
 					this._scheduleNotifications('deleting');
 					closeWindow();
 				}
