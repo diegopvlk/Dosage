@@ -19,7 +19,7 @@ import { treatmentsFactory } from './treatmentsFactory.js';
 
 import {
 	HistorySorter, HistorySectionSorter, TodaySectionSorter,
-	DataDir, addLeadZero, doseRow, getTimeBtnInput, formatDate,
+	DataDir, addLeadZero, doseRow, getTimeBtnInput,
 	createTempFile, handleCalendarSelect, isTodayMedDay,
 	datesPassedDiff, removeCssColors
 } from './utils.js';
@@ -266,8 +266,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 					if (removed) {
 						const itemRmDt = new Date(itemRemoved.date);
-						const date = formatDate(itemRmDt);
-						const today = formatDate(new Date());
+						const date = itemRmDt.setHours(0, 0, 0, 0);
+						const today = new Date().setHours(0, 0, 0, 0);
 
 						if (date === today) {
 							for (const item of treatmentsLS) {
@@ -633,8 +633,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 			if(it.info.frequency == 'cycle') {
 				const startDate = new Date(it.info.duration.start * 1000);
 				const datesPassed = datesPassedDiff(startDate, new Date());
-				const start = formatDate(startDate);
-				const today = formatDate(new Date());
+				const start = startDate.setHours(0, 0, 0, 0);
+				const today = new Date().setHours(0, 0, 0, 0);
 				let [ active, inactive, current ] = it.info.cycle;
 				
 				for (let i = 0; i < datesPassed.length; i++) {

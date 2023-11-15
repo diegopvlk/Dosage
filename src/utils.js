@@ -31,14 +31,6 @@ export function createTempFile(listStore) {
 	return tempFile;
 }
 
-export function formatDate(date) {
-	const day = date.getDate();
-	const month = date.getMonth() + 1;
-	const year = date.getFullYear();
-
-	return `${year}${addLeadZero(month)}${addLeadZero(day)}`;
-}
-
 export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
 	const today = GLib.DateTime.new_now_local().format('%F');
 	calendar.connect('day-selected', cal => {
@@ -59,9 +51,9 @@ export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
 
 export function isTodayMedDay(item, histModel) {
 	const info = item.info;
-	const today = formatDate(new Date());
-	const start = formatDate(new Date(info.duration.start * 1000));
-	const end = formatDate(new Date(info.duration.end * 1000));
+	const today = new Date().setHours(0, 0, 0, 0);
+	const start = new Date(info.duration.start * 1000).setHours(0, 0, 0, 0);
+	const end = new Date(info.duration.end * 1000).setHours(0, 0, 0, 0);
 	const lastSectionAmount = histModel.get_section(0)[1];
 
 	if (info.duration.enabled && start > today || end < today)
@@ -71,7 +63,7 @@ export function isTodayMedDay(item, histModel) {
 		for (let i = 0; i < lastSectionAmount; i++) {
 			const name = histModel.get_item(i).name;
 			const time = histModel.get_item(i).info.time;
-			const date = formatDate(new Date(histModel.get_item(i).date));
+			const date = new Date(histModel.get_item(i).date).setHours(0, 0, 0, 0);
 
 			if (date === today && item.name === name)
 				if (String(info.dosage.time) == String(time))
@@ -263,8 +255,8 @@ export const HistorySectionSorter = GObject.registerClass(
 		_init(params) {	super._init(params); }
 
 		vfunc_compare(obj1, obj2) {
-			const dt1 = formatDate(new Date(obj1.date));
-			const dt2 = formatDate(new Date(obj2.date));
+			const dt1 = new Date(obj1.date).setHours(0, 0, 0, 0);
+			const dt2 = new Date(obj2.date).setHours(0, 0, 0, 0);
 
 			return dt1 === dt2 ? 0 : dt1 < dt2 ? 1 : -1;
 		}
