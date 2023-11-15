@@ -425,10 +425,8 @@ msgstr ""
 "Etme' kipi etkin olsa bile gösterilmesini sağlar"
 
 #: data/ui/preferences.blp:34
-#, fuzzy
-#| msgid "Notification buttons"
 msgid "Notification sound"
-msgstr "Bildirim düğmeleri"
+msgstr "Bilgilendirme sesi"
 
 #: data/ui/preferences.blp:43
 msgid "Notification buttons"

@@ -424,10 +424,8 @@ msgstr ""
 "niet-storenstand getoond worden"
 
 #: data/ui/preferences.blp:34
-#, fuzzy
-#| msgid "Notification buttons"
 msgid "Notification sound"
-msgstr "Meldingsknoppen"
+msgstr "Notificatie geluid"
 
 #: data/ui/preferences.blp:43
 msgid "Notification buttons"

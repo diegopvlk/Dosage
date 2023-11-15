@@ -422,10 +422,8 @@ msgstr ""
 "se o modo 'Não Perturbe' estiver ativado"
 
 #: data/ui/preferences.blp:34
-#, fuzzy
-#| msgid "Notification buttons"
 msgid "Notification sound"
-msgstr "Botões da notificação"
+msgstr "Som de notificação"
 
 #: data/ui/preferences.blp:43
 msgid "Notification buttons"

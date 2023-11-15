@@ -426,10 +426,8 @@ msgstr ""
 "completa o incluso si el modo «No molestar» está activado"
 
 #: data/ui/preferences.blp:34
-#, fuzzy
-#| msgid "Notification buttons"
 msgid "Notification sound"
-msgstr "Botones de notificación"
+msgstr "Sonido de notificación"
 
 #: data/ui/preferences.blp:43
 msgid "Notification buttons"

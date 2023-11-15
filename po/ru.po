@@ -431,10 +431,8 @@ msgstr ""
 "даже если включен режим 'Не беспокоить'"
 
 #: data/ui/preferences.blp:34
-#, fuzzy
-#| msgid "Notification buttons"
 msgid "Notification sound"
-msgstr "Кнопки уведомлений"
+msgstr "Звук уведомления"
 
 #: data/ui/preferences.blp:43
 msgid "Notification buttons"

@@ -421,10 +421,8 @@ msgstr ""
 "« Ne Pas Déranger » est activé"
 
 #: data/ui/preferences.blp:34
-#, fuzzy
-#| msgid "Notification buttons"
 msgid "Notification sound"
-msgstr "Boutons de notification"
+msgstr "Son de notification"
 
 #: data/ui/preferences.blp:43
 msgid "Notification buttons"
