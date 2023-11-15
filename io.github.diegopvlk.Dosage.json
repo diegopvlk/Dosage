@@ -9,7 +9,8 @@
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland",
-        "--system-talk-name=org.freedesktop.login1"
+        "--system-talk-name=org.freedesktop.login1",
+        "--socket=pulseaudio"
     ],
     "cleanup": [
         "/include",

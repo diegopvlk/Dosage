@@ -66,6 +66,7 @@ export const DosageApplication = GObject.registerClass(
 				const autostartRow = builder.get_object('autostartRow');
 				const autostartSwitch = builder.get_object('autostartSwitch');
 				const prioritySwitch = builder.get_object('prioritySwitch');
+				const notifSoundSwitch = builder.get_object('notifSoundSwitch');
 				const confirmSwitch = builder.get_object('confirmSwitch');
 				const skipSwitch = builder.get_object('skipSwitch');
 				
@@ -85,6 +86,13 @@ export const DosageApplication = GObject.registerClass(
 				prioritySwitch.connect('state-set', () => {
 					const state = prioritySwitch.get_active();
 					settings.set_boolean('priority', state)
+				});
+
+				notifSoundSwitch.set_active(settings.get_boolean('sound'));
+
+				notifSoundSwitch.connect('state-set', () => {
+					const state = notifSoundSwitch.get_active();
+					settings.set_boolean('sound', state)
 				});
 
 				confirmSwitch.set_active(settings.get_boolean('confirm-button'));

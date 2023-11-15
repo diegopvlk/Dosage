@@ -19,5 +19,8 @@
 		<key name="skip-button" type="b">
 			<default>true</default>
 		</key>
+		<key name="sound" type="b">
+			<default>false</default>
+		</key>
 	</schema>
 </schemalist>

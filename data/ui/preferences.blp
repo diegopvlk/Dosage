@@ -4,7 +4,7 @@ using Adw 1;
 Adw.PreferencesWindow prefWindow {
   name: 'dosage-pref-window';
   default-width: 300;
-  default-height: 386;
+  default-height: 440;
   search-enabled: false;
   title: _("Preferences");
 
@@ -26,6 +26,15 @@ Adw.PreferencesWindow prefWindow {
         activatable-widget: prioritySwitch;
         [suffix]
         Switch prioritySwitch {
+          halign: center;
+          valign: center;
+        }
+      }
+      Adw.ActionRow {
+        title: _("Notification sound");
+        activatable-widget: notifSoundSwitch;
+        [suffix]
+        Switch notifSoundSwitch {
           halign: center;
           valign: center;
         }

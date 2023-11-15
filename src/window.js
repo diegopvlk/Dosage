@@ -446,6 +446,14 @@ class DosageWindow extends Adw.ApplicationWindow {
 				return
 			};
 
+			if (settings.get_boolean('sound')) {
+				const ding = Gio.File.new_for_uri(
+					'resource:///io/github/diegopvlk/Dosage/sounds/ding.ogg'
+				);
+				const mediaFile = Gtk.MediaFile.new_for_file(ding);
+				mediaFile.play();
+			}
+
 			app.send_notification(pseudoId, notification);
 		}
 		
