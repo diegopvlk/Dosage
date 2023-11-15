@@ -85,13 +85,14 @@ export function isTodayMedDay(item, histModel) {
 }
 
 export function datesPassedDiff(startDate, endDate) {
-	const start = new Date(startDate);
-	const end = new Date(endDate);
+	const start = new Date(startDate).setHours(0, 0, 0, 0);
+	const end = new Date(endDate).setHours(0, 0, 0, 0);
 	const daysDiff = Math.floor((end - start) / 86400000);
 	const datesPassed = [];
 
 	for (let i = 1; i <= daysDiff; i++) {
 		const currentDate = new Date(startDate);
+		currentDate.setHours(0, 0, 0, 0);
 		currentDate.setDate(currentDate.getDate() + i);
 		datesPassed.push(currentDate);
 	}
