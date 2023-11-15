@@ -109,7 +109,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		const tick = () => {
 			const now = new Date().setHours(0, 0, 0, 0);
-
+			// update everything at next midnight
 			if (now > initial) {
 				this._updateEverything();
 				this._scheduleNotifications();
@@ -117,7 +117,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			}
 		}
 	
-		setInterval(tick, 2500);	
+		setInterval(tick, 2500);
 	}
 
 	_handleSuspension() {
