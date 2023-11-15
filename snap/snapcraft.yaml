@@ -50,4 +50,5 @@ apps:
     extensions:
       - gnome
     plugs:
+      - audio-playback
       - login-session-observe
