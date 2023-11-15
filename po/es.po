@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 10:05-0300\n"
+"POT-Creation-Date: 2023-11-15 12:05-0300\n"
 "PO-Revision-Date: 2023-11-01 00:19+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/es/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:112 src/window.js:491
+#: src/main.js:120 src/window.js:499
 msgid "Dosage"
 msgstr "Dosis"
 
@@ -148,7 +148,7 @@ msgstr "Salir"
 msgid "New treatment"
 msgstr "Nuevo tratamiento"
 
-#: data/ui/med-window.blp:19 src/window.js:989
+#: data/ui/med-window.blp:19 src/window.js:997
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -168,7 +168,7 @@ msgstr "Nombre"
 msgid "Unit"
 msgstr "Unidad"
 
-#: data/ui/med-window.blp:57 src/window.js:870
+#: data/ui/med-window.blp:57 src/window.js:878
 msgid "Pill(s)"
 msgstr "Píldora(s)"
 
@@ -184,7 +184,7 @@ msgstr "Después de comer"
 msgid "Color and icon"
 msgstr "Color e icono"
 
-#: data/ui/med-window.blp:70 src/window.js:913
+#: data/ui/med-window.blp:70 src/window.js:921
 msgid "Color"
 msgstr "Color"
 
@@ -401,7 +401,7 @@ msgstr "Termina el"
 msgid "Date"
 msgstr "Fecha"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:990
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:998
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -426,18 +426,24 @@ msgstr ""
 "completa o incluso si el modo «No molestar» está activado"
 
 #: data/ui/preferences.blp:34
+#, fuzzy
+#| msgid "Notification buttons"
+msgid "Notification sound"
+msgstr "Botones de notificación"
+
+#: data/ui/preferences.blp:43
 msgid "Notification buttons"
 msgstr "Botones de notificación"
 
-#: data/ui/preferences.blp:35
+#: data/ui/preferences.blp:44
 msgid "Show or hide confirm/skip"
 msgstr "Mostrar u ocultar confirmar/saltar"
 
-#: data/ui/preferences.blp:38 src/window.js:418 src/window.js:543
+#: data/ui/preferences.blp:47 src/window.js:418 src/window.js:551
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: data/ui/preferences.blp:47 data/ui/window.blp:76 src/window.js:421
+#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:421
 msgid "Skip"
 msgstr "Omitir"
 
@@ -453,7 +459,7 @@ msgstr "Hoy"
 msgid "Unselect"
 msgstr "Deseleccionar"
 
-#: data/ui/window.blp:70 src/window.js:543
+#: data/ui/window.blp:70 src/window.js:551
 msgid "One-time entry"
 msgstr "Entrada única"
 
@@ -497,16 +503,16 @@ msgid "Missed"
 msgstr "Perdido"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:120
+#: src/main.js:128
 msgid "translator-credits"
 msgstr "Sergio Varela <sergiovg01@outlook.com>"
 
-#: src/main.js:123
+#: src/main.js:131
 msgid "Thanks to these projects!"
 msgstr "¡Gracias a estos proyectos!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:156
+#: src/main.js:164
 msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 "Aceptar para permitir la ejecución en segundo plano y recibir notificaciones"
@@ -581,49 +587,49 @@ msgstr "¡Aún no se han añadido tratamientos!"
 msgid "All done for today!"
 msgstr "¡Todo listo por hoy!"
 
-#: src/window.js:768
+#: src/window.js:776
 msgid "Edit treatment"
 msgstr "Editar tratamiento"
 
-#: src/window.js:769
+#: src/window.js:777
 msgid "Save"
 msgstr "Guardar"
 
-#: src/window.js:860
+#: src/window.js:868
 msgid "New"
 msgstr "Nuevo"
 
-#: src/window.js:910
+#: src/window.js:918
 msgid "New entry"
 msgstr "Nueva entrada"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:912
+#: src/window.js:920
 msgid "Add to history"
 msgstr "Añadir al historial"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:984
+#: src/window.js:992
 msgid "Are you sure?"
 msgstr "¿Estás seguro?"
 
-#: src/window.js:1195
+#: src/window.js:1203
 msgid "Empty name"
 msgstr "Nombre vacío"
 
-#: src/window.js:1200
+#: src/window.js:1208
 msgid "Empty unit"
 msgstr "Unidad vacía"
 
-#: src/window.js:1206
+#: src/window.js:1214
 msgid "Choose at least one day"
 msgstr "Elija al menos un día"
 
-#: src/window.js:1216
+#: src/window.js:1224
 msgid "Name already exists"
 msgstr "El nombre ya existe"
 
-#: src/window.js:1230
+#: src/window.js:1238
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 
