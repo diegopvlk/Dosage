@@ -32,8 +32,8 @@ export const DosageWindow = GObject.registerClass({
 	Template: 'resource:///io/github/diegopvlk/Dosage/ui/window.ui',
 	InternalChildren: [
 		'todayList', 'historyList', 'treatmentsList', 'treatmentsPage',
-		'skipBtn', 'entryBtn', 'unselectBtn', 
-		'emptyTodayBox', 'allDoneIcon', 'emptyToday', 'emptyHistory', 'emptyTreatments'
+		'emptyTodayBox', 'emptyToday', 'emptyHistory', 'emptyTreatments', 
+		'allDoneIcon', 'skipBtn', 'entryBtn', 'unselectBtn'
 	],
 },
 class DosageWindow extends Adw.ApplicationWindow {
@@ -74,7 +74,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._handleSuspension();
 			this._scheduleNotifications();
 		} catch (err) {
-			console.error('Error loading treatments/history/today... ', err);
+			console.error('Error loading treatments/history/today:', err);
 		}
 	}
 
@@ -91,7 +91,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				if (!this.get_visible() && !notifAction) {
 					const [ notification, app ] = this._getNotification();
 					// TRANSLATORS: Notification text for for when the inventory is low
-					notification.set_body(_("You have treatments low in stock"));
+					notification.set_body(_('You have treatments low in stock'));
 					app.send_notification('low-stock', notification);	
 				}
 			}
@@ -105,15 +105,15 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	#clockTick() {
-		let initial = new Date().setHours(0, 0, 0, 0);
+		let lastDate = new Date().setHours(0, 0, 0, 0);
 
 		const tick = () => {
 			const now = new Date().setHours(0, 0, 0, 0);
 			// update everything at next midnight
-			if (now > initial) {
+			if (now > lastDate) {
 				this._updateEverything();
 				this._scheduleNotifications();
-				initial = new Date().setHours(0, 0, 0, 0);
+				lastDate = now;
 			}
 		}
 	
@@ -142,14 +142,14 @@ class DosageWindow extends Adw.ApplicationWindow {
 				this._createNewFile(filePath);
 				log(`New ${fileType} file created at: ${filePath}`);
 			} catch (err) {
-				console.error(`Failed to create new ${fileType} file... ${err}`);
+				console.error(`Failed to create new ${fileType} file: ${err}`);
 			}
 		}
 
 		try {
 			this._loadJsonContents(fileType, filePath);
 		} catch (err) {
-			console.error(`Failed to load ${fileType} contents... ${err}`);
+			console.error(`Failed to load ${fileType} contents: ${err}`);
 		}
 	}
 
@@ -158,8 +158,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const flags = Gio.FileCreateFlags.NONE;
 		const fileStream = file.create(flags, null);
 
-		if (!fileStream)
-			throw new Error("Failed to create the file:", filePath);
+		if (!fileStream) {
+			throw new Error('Failed to create the file:', filePath);
+		}
 
 		const outputStream = new Gio.DataOutputStream({ base_stream: fileStream });
 		outputStream.put_string('{"meds":[]}', null);
@@ -183,10 +184,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 					this._historyJson = JSON.parse(contentString);
 				}
 			} else {
-				log("Failed to read file contents.");
+				log('Failed to read file contents.');
 			}
 		} catch (err) {
-			console.error(`Error reading the file ${fileType}... ${err.message}`);
+			console.error(`Error reading the file ${fileType}: ${err.message}`);
 		}
 	}
 
@@ -214,7 +215,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				});
 			}
 		} catch (err) {
-			console.error('Error loading treatments...', err)
+			console.error('Error loading treatments:', err)
 		}
 	}
 
@@ -257,10 +258,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 							const sameItem = 
 								item.name === itemAdded.name &&
 								item.info.inventory.enabled &&
-								itemAdded.taken === "yes";
+								itemAdded.taken === 'yes';
 
-							if (sameItem)
+							if (sameItem) {
 								item.info.inventory.current -= itemAdded.info.dose;
+							}		
 						}
 					}
 
@@ -274,8 +276,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 								const sameItem =
 									item.name === itemRemoved.name && itemRemoved.taken === 'yes';
 
-								if (sameItem && item.info.inventory.enabled)
+								if (sameItem && item.info.inventory.enabled) {
 									item.info.inventory.current += itemRemoved.info.dose;
+								}		
 							}
 						}
 						this._updateEverything();
@@ -284,7 +287,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				});
 			}
 		} catch (err) {
-			console.error('Error loading history...', err)
+			console.error('Error loading history:', err)
 		}
 
 		this._setEmptyHistLabel();
@@ -350,12 +353,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._emptyTodayBox.set_visible(true);
 			this._emptyToday.set_visible(true);
 			this._allDoneIcon.set_visible(false);
-			this._emptyToday.label = _("No treatments added yet!");
+			this._emptyToday.label = _('No treatments added yet!');
 		} else if (noItems) {
 			this._emptyTodayBox.set_visible(true);
 			this._allDoneIcon.set_visible(true);
 			this._emptyToday.set_visible(true);
-			this._emptyToday.label = _("All done for today!");
+			this._emptyToday.label = _('All done for today!');
 		} else {
 			this._emptyTodayBox.set_visible(false);
 			this._allDoneIcon.set_visible(false);
@@ -396,6 +399,15 @@ class DosageWindow extends Adw.ApplicationWindow {
 		pseudoId = pseudoId.normalize('NFKD').replace(/[^0-9A-Za-z]/g, '');
 
 		const notify = () => {
+			// notifications from the past will be sent again instantly (setTimeout is < 0)
+			// when performing some action like saving/adding/updating/removing
+			// because it needs to be rescheduled at every action
+			// so don't send notifications in this case
+			if (action && action != 'sleep' && timeDiff < 0) {
+				timeDiff = 0;
+				return;
+			};
+
 			const [notification, app] = this._getNotification();
 			let h = item.info.dosage.time[0];
 			let m = item.info.dosage.time[1];
@@ -414,11 +426,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 					`${addLeadZero(h)}∶${addLeadZero(m)}` + period
 			);
 
-			if (settings.get_boolean('confirm-button'))
-				notification.add_button(_("Confirm"), `app.confirm${pseudoId}`);
+			if (settings.get_boolean('confirm-button')) {
+				notification.add_button(_('Confirm'), `app.confirm${pseudoId}`);
+			}
 
-			if (settings.get_boolean('skip-button'))
-				notification.add_button(_("Skip"), `app.skip${pseudoId}`);
+			if (settings.get_boolean('skip-button')) {
+				notification.add_button(_('Skip'), `app.skip${pseudoId}`);
+			}
 
 			const confirmAction = new Gio.SimpleAction({
 				name: `confirm${pseudoId}`,
@@ -434,17 +448,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			app.add_action(confirmAction);
 			app.add_action(skipAction);
-
-			/* 
-			* notifications from the past will be sent again instantly (setTimeout is < 0)
-			* when performing some action like saving/adding/updating/removing
-			* because it needs to be rescheduled at every action
-			* so don't send notifications in this case
-			*/
-			if (action && action != 'sleep' && timeDiff < 0) {
-				timeDiff = 0;
-				return
-			};
 
 			if (settings.get_boolean('sound') && action != 'sleep') {
 				const ding = Gio.File.new_for_uri(
@@ -482,10 +485,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 	_getNotification() {
 		const app = this.get_application();
 		const notification = new Gio.Notification();
-		const openAction = new Gio.SimpleAction({ name: "open" });
+		const openAction = new Gio.SimpleAction({ name: 'open' });
 
 		notification.set_default_action('app.open');
-		openAction.connect("activate", () => {
+		openAction.connect('activate', () => {
 			app.activate();
 			this.present();
 		});
@@ -496,7 +499,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			? Gio.NotificationPriority.URGENT
 			: Gio.NotificationPriority.NORMAL;
 		notification.set_priority(priority);
-		notification.set_title(_("Dosage"));
+		notification.set_title(_('Dosage'));
 
 		return [ notification, app ]
 	}
@@ -516,11 +519,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 					const item = model.get_item(position);
 					const index = this._todayItems.lastIndexOf(item);
 
-					if (check.get_active() === false)
+					if (check.get_active() === false) {
 						this._todayItems.push(item);
-					else
+					} else {
 						this._todayItems.splice(index, 1);
-
+					}
+					
 					check.set_active(!check.get_active());
 				}
 				rowItemPos++;
@@ -570,9 +574,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			this._updateEverything();
 			this._scheduleNotifications('adding');
-		} 
-		else // one-time entry
+		} else {
+			// one-time entry
 			this._openMedWindow(null, null, true);
+		}
 
 		this._updateEntryBtn(false);
 	}
@@ -622,7 +627,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 							file.replace_contents_finish(result);
 							resolve(`${fileName} updated`);
 						} catch (err) {
-							console.error(`Update of ${fileName} failed... ${err}`);
+							console.error(`Update of ${fileName} failed: ${err}`);
 							reject(err);
 						}
 					},
@@ -633,12 +638,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		updateFile()
 			.then(result => log(result))
-			.catch(err => console.error('Update failed...', err));
+			.catch(err => console.error('Update failed:', err));
 	}
 
 	_updateItemsCycle() {
 		for (const it of treatmentsLS) {
-			if(it.info.frequency == 'cycle') {
+			if (it.info.frequency == 'cycle') {
 				const startDate = new Date(it.info.duration.start * 1000);
 				const datesPassed = datesPassedDiff(startDate, new Date());
 				const start = startDate.setHours(0, 0, 0, 0);
@@ -694,7 +699,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		const keyController = new Gtk.EventControllerKey();
 		keyController.connect('key-pressed', (_, keyval, keycode, state) => {
-			if (keyval === Gdk.KEY_Escape) closeWindow();
+			if (keyval === Gdk.KEY_Escape) {
+				closeWindow();
+			}
 		});
 		medWindow.add_controller(keyController);
 		
@@ -773,8 +780,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		// when opening an existing treatment
 		if (list && position >= 0) {
-			medWindow.title = _("Edit treatment");
-			saveButton.label = _("Save");
+			medWindow.title = _('Edit treatment');
+			saveButton.label = _('Save');
 			deleteButton.set_visible(true);
 			
 			const item = list.get_model().get_item(position);
@@ -782,7 +789,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			medName.text = item.name;
 			medUnit.text = item.unit;
-			medNotes.text = info.notes ? info.notes : "";
+			medNotes.text = info.notes ? info.notes : '';
 			
 			for (const clr of dosageColorBox) {
 				if (clr.get_name() === info.color) {
@@ -791,8 +798,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 				}
 			}
 			for (const icn of dosageIconBox) {
-				if (icn.get_icon_name() === info.icon)
+				if (icn.get_icon_name() === info.icon) {
 					dosageIconButton.set_icon_name(info.icon)
+				}	
 			}
 
 			setFreqMenuVisibility(item);
@@ -956,16 +964,22 @@ class DosageWindow extends Adw.ApplicationWindow {
 			const firstDoseRow = listRows.get_first_child();
 			const lastDoseRow = listRows.get_last_child();
 			
-			if (firstDoseRow != lastDoseRow) dosage.remove(doseRow);
+			if (firstDoseRow != lastDoseRow) {
+				dosage.remove(doseRow);
+			}
 		}
 
 		const medWindowBox = builder.get_object('medWindowBox');
-		const [ medWindowBoxHeight, ] = medWindowBox.measure(Gtk.Orientation.VERTICAL, -1);
+		const [medWindowBoxHeight] = medWindowBox.measure(
+			Gtk.Orientation.VERTICAL,
+			-1
+		);
 		medWindow.default_height = medWindowBoxHeight + 58;
 		
-		if (deleteButton.get_visible())
+		if (deleteButton.get_visible()) {
 			medWindow.default_height -= 12;
-	
+		}
+
 		medWindow.present();
 
 		cancelButton.connect('clicked', closeWindow);
@@ -973,15 +987,18 @@ class DosageWindow extends Adw.ApplicationWindow {
 		saveButton.connect('clicked', () => {
 			const isUpdate = list && position >= 0;
 
-			if (!isValidInput(isUpdate)) return;
+			if (!isValidInput(isUpdate)) {
+				return;
+			}
 
 			if (oneTime) {
 				addItemToHistory(this._historyList, this._sortedHistoryModel);
 				this._updateJsonFile('history', historyLS);
+			} else {
+				addOrUpdateTreatment();
 			}
-			else addItemToTreatments();
 
-			this._updateEverything(true);
+			this._updateEverything('skipHistUp');
 			this._scheduleNotifications('saving');
 			closeWindow();		
 		});
@@ -989,13 +1006,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 		deleteButton.connect('clicked', () => {
 			const dialog = new Adw.MessageDialog({
 				// TRANSLATORS: Message for confirmation when deleting an item
-				heading: _("Are you sure?"),
+				heading: _('Are you sure?'),
 				modal: true,
 				transient_for: medWindow,
 			});
 
-			dialog.add_response('no', _("Cancel"));
-			dialog.add_response('yes', _("Delete"));
+			dialog.add_response('no', _('Cancel'));
+			dialog.add_response('yes', _('Delete'));
 			dialog.set_response_appearance('yes', Adw.ResponseAppearance.DESTRUCTIVE);
 			dialog.present();
 
@@ -1004,7 +1021,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					const it = this._treatmentsList.model.get_item(position);
 					const deletePos = treatmentsLS.find(it)[1];
 					treatmentsLS.remove(deletePos);
-					this._updateEverything(true);
+					this._updateEverything('skipHistUp');
 					this._scheduleNotifications('deleting');
 					closeWindow();
 				}
@@ -1031,34 +1048,37 @@ class DosageWindow extends Adw.ApplicationWindow {
 				}
 			);
 
-			/*
-			* reload-ish of history, so the item don't get inserted 
-			* on a separate section (with the same day) 
-			* when the time is less than the first one of same section
-			*/
+			// reload-ish of history, so the item don't get inserted 
+			// on a separate section (with the same day) 
+			// when the time is less than the first one of same section
 			histList.model = new Gtk.NoSelection({
 				model: sortedHist,
 			});
 		}
 
-		function addItemToTreatments() {
+		function addOrUpdateTreatment() {
 			const isUpdate = list && position >= 0;
 			const today = new GLib.DateTime;
 
-			let days, doses, cycle = [];
-			let invEnabled, durEnabled = false;
+			let days = [];
+			let doses = [];
+			let cycle = [];
+			let invEnabled = false;
+			let durEnabled = false;
 			let name, unit, notes, color, freq, icon, recurring,
 				inventory, current, reminder, duration, start, end;
 
-			if (medInventory.get_enable_expansion())
+			if (medInventory.get_enable_expansion()) {
 				invEnabled = true;
+			}
 
 			if (medDuration.get_enable_expansion()) {
 				durEnabled = true;
 				start = calendarStart.get_date().format('%s');
 				end = calendarEnd.get_date().format('%s');
-			} else
+			} else {
 				start = today.format('%s');
+			}
 
 			name = medName.text.trim(),
 			unit = medUnit.text.trim(),
@@ -1144,8 +1164,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 			let day = 0;
 			for (const button of specificDaysBox) {
 				if (button.get_active()) {
-					if (!days.includes(day))
+					if (!days.includes(day)) {
 						days.push(day)
+					}	
 				};
 				day++;
 			}
@@ -1156,8 +1177,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 			const sum = cycleActive.value + cycleInactive.value;
 			frequencyCycle.label = cycleActive.value + '  ⊷  ' + cycleInactive.value;
 			cycleCurrent.adjustment.set_upper(sum);
-			if (cycleCurrent.adjustment.value > sum)
+			if (cycleCurrent.adjustment.value > sum) {
 				cycleCurrent.adjustment.value = sum;
+			}		
 		}
 
 		function setFreqMenuVisibility(item) {
@@ -1203,8 +1225,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				toastOverlay.add_toast(new Adw.Toast({ title: _('Empty name') }));
 				medName.add_css_class('error');
 				return;
-			}
-			else if (emptyUnit) {
+			} else if (emptyUnit) {
 				toastOverlay.add_toast(new Adw.Toast({ title: _('Empty unit') }));
 				medUnit.add_css_class('error');
 				return;
@@ -1244,8 +1265,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 						ampm.remove_css_class('time-error');
 					})();
 					return;
-				} else
+				} else {
 					rows.push(time);
+				}
 
 				currentDoseRow = currentDoseRow.get_next_sibling();
 			}

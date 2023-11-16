@@ -116,7 +116,9 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	nameLabel.label = item.name;
 	doseLabel.label = `${item.info.dosage.dose} ${item.unit}`;
 
-	if (item.info.notes !== '') doseLabel.label += `  •  ${item.info.notes}`;
+	if (item.info.notes !== '') {
+		doseLabel.label += `  •  ${item.info.notes}`;
+	}
 
 	icon.icon_name = item.info.icon;
 });

@@ -115,18 +115,22 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	let takenTime = localDT.format('%X').replace(':', '∶');
 	let parts = takenTime.split(' ');
 	takenTime = parts[0].slice(0, -3);
-	// if the time has AM/PM
-	if (parts.length > 1) takenTime += ' ' + parts[1];
+		
+	if (parts.length > 1) {
+		// if the time has AM/PM
+		takenTime += ' ' + parts[1];
+	}
 
-	if (item.taken === 'yes')
+	if (item.taken === 'yes') {
 		// TRANSLATORS: Keep it short
-		takenLabel.label = `${takenTime} │ ` +  _("Confirmed");
-	else if (item.taken === 'no')
+		takenLabel.label = `${takenTime} │ ` + _('Confirmed');
+	} else if (item.taken === 'no') {
 		// TRANSLATORS: Keep it short
-		takenLabel.label = _("Skipped");
-	else if (item.taken === 'miss')
+		takenLabel.label = _('Skipped');
+	} else if (item.taken === 'miss') {
 		// TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
-		takenLabel.label = _("Missed");
+		takenLabel.label = _('Missed');
+	}
 
 	const colors = [
 		'default', 'red', 'orange', 'yellow', 

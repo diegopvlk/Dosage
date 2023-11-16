@@ -17,8 +17,9 @@ export function addLeadZero(input) {
 export function removeCssColors(colorBtn) {
 	const colors = colorBtn.get_css_classes();
 	for (const c of colors) {
-		if (c.includes('-clr'))
+		if (c.includes('-clr')) {
 			colorBtn.remove_css_class(c);
+		}		
 	}
 }
 
@@ -56,8 +57,9 @@ export function isTodayMedDay(item, histModel) {
 	const end = new Date(info.duration.end * 1000).setHours(0, 0, 0, 0);
 	const lastSectionAmount = histModel.get_section(0)[1];
 
-	if (info.duration.enabled && start > today || end < today)
+	if (info.duration.enabled && start > today || end < today) {
 		return false;
+	}	
 	
 	if (histModel.get_n_items() > 0) {
 		for (let i = 0; i < lastSectionAmount; i++) {
@@ -65,9 +67,11 @@ export function isTodayMedDay(item, histModel) {
 			const time = histModel.get_item(i).info.time;
 			const date = new Date(histModel.get_item(i).date).setHours(0, 0, 0, 0);
 
-			if (date === today && item.name === name)
-				if (String(info.dosage.time) == String(time))
+			if (date === today && item.name === name) {
+				if (String(info.dosage.time) == String(time)) {
 					return false;
+				}		
+			}		
 		}
 	}
 
@@ -253,7 +257,7 @@ export function getTimeBtnInput(currentDoseRow) {
 
 export const HistorySectionSorter = GObject.registerClass(
 {},	class HistorySectionSorter extends Gtk.Sorter {
-		_init(params) {	super._init(params); }
+		_init(params) {	super._init(params) }
 
 		vfunc_compare(obj1, obj2) {
 			const dt1 = new Date(obj1.date).setHours(0, 0, 0, 0);
@@ -266,7 +270,7 @@ export const HistorySectionSorter = GObject.registerClass(
 
 export const HistorySorter = GObject.registerClass(
 {},	class HistorySorter extends Gtk.Sorter {
-		_init(params) {	super._init(params); }
+		_init(params) {	super._init(params) }
 
 		vfunc_compare(obj1, obj2) {
 			return obj1.date > obj2.date ? -1 : 0;
@@ -276,7 +280,7 @@ export const HistorySorter = GObject.registerClass(
 
 export const TodaySectionSorter = GObject.registerClass(
 {},	class TodaySectionSorter extends Gtk.Sorter {
-		_init(params) { super._init(params); }
+		_init(params) { super._init(params) }
 
 		vfunc_compare(obj1, obj2) {
 			const [h1, m1] = obj1.info.dosage.time;

@@ -22,13 +22,13 @@ export const DosageApplication = GObject.registerClass(
 			super({
 				application_id: 'io.github.diegopvlk.Dosage',
 				flags: Gio.ApplicationFlags.DEFAULT_FLAGS,
-				resource_base_path: "/io/github/diegopvlk/Dosage/",
+				resource_base_path: '/io/github/diegopvlk/Dosage/',
 			});
 
-			const quitAction = new Gio.SimpleAction({ name: "quit" });
-			quitAction.connect("activate", () => this.quit());
+			const quitAction = new Gio.SimpleAction({ name: 'quit' });
+			quitAction.connect('activate', () => this.quit());
 			this.add_action(quitAction);
-			this.set_accels_for_action('app.quit', ["<primary>q"]);
+			this.set_accels_for_action('app.quit', ['<primary>q']);
 
 			this._hidden = false;
 
@@ -56,8 +56,8 @@ export const DosageApplication = GObject.registerClass(
 				}
 			}
 
-			const showPrefAction = new Gio.SimpleAction({ name: "preferences" });
-			showPrefAction.connect("activate", () => {
+			const showPrefAction = new Gio.SimpleAction({ name: 'preferences' });
+			showPrefAction.connect('activate', () => {
 				const builder = Gtk.Builder.new_from_resource(
 					'/io/github/diegopvlk/Dosage/ui/preferences.ui'
 				);
@@ -111,34 +111,34 @@ export const DosageApplication = GObject.registerClass(
 				prefWindow.present();
 			});
 			this.add_action(showPrefAction);
-			this.set_accels_for_action('app.preferences', ["<primary>comma"]);
+			this.set_accels_for_action('app.preferences', ['<primary>comma']);
 			
-			const showAboutAction = new Gio.SimpleAction({ name: "about" });
-			showAboutAction.connect("activate", () => {
+			const showAboutAction = new Gio.SimpleAction({ name: 'about' });
+			showAboutAction.connect('activate', () => {
 				let aboutParams = {
 					transient_for: this.active_window,
 					application_name: _('Dosage'),
 					application_icon: 'io.github.diegopvlk.Dosage',
-					developer_name: "Diego Povliuk",
-					version: "1.2.0",
+					developer_name: 'Diego Povliuk',
+					version: '1.2.0',
 					issue_url: 'https://github.com/diegopvlk/Dosage/issues',
 					license_type: Gtk.License.GPL_3_0_ONLY,
-					copyright: "© 2023 Diego Povliuk",
-					// TRANSLATORS: "Your Name <your@email.com>"
-					translator_credits: _("translator-credits"),
+					copyright: '© 2023 Diego Povliuk',
+					// TRANSLATORS: 'Your Name <your@email.com>'
+					translator_credits: _('translator-credits'),
 				};
 				const aboutWindow = new Adw.AboutWindow(aboutParams);
-				aboutWindow.add_acknowledgement_section(_("Thanks to these projects!"), [
-					"GNOME https://www.gnome.org/", 
-					"GTK https://www.gtk.org/", 
-					"Libadwaita https://gnome.pages.gitlab.gnome.org/libadwaita/", 
-					"Workbench https://apps.gnome.org/Workbench/", 
-					"Blueprint https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/index.html",
-					"GTK4 + GJS Book https://rmnvgr.gitlab.io/gtk4-gjs-book/",
-					"GJS Guide https://gjs.guide/",
-					"Flatpak https://github.com/flatpak/",
+				aboutWindow.add_acknowledgement_section(_('Thanks to these projects!'), [
+					'GNOME https://www.gnome.org/', 
+					'GTK https://www.gtk.org/', 
+					'Libadwaita https://gnome.pages.gitlab.gnome.org/libadwaita/', 
+					'Workbench https://apps.gnome.org/Workbench/', 
+					'Blueprint https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/index.html',
+					'GTK4 + GJS Book https://rmnvgr.gitlab.io/gtk4-gjs-book/',
+					'GJS Guide https://gjs.guide/',
+					'Flatpak https://github.com/flatpak/',
 				]);
-				aboutWindow.add_link("Donate", "https://github.com/diegopvlk/Dosage#donate") 
+				aboutWindow.add_link('Donate', 'https://github.com/diegopvlk/Dosage#donate') 
 				aboutWindow.present();
 			});
 			this.add_action(showAboutAction);
@@ -148,7 +148,7 @@ export const DosageApplication = GObject.registerClass(
 				null,
 				GLib.OptionFlags.NONE,
 				GLib.OptionArg.NONE,
-				"Start app hidden at startup",
+				'Start app hidden at startup',
 				null
 			);
 		}
@@ -161,7 +161,7 @@ export const DosageApplication = GObject.registerClass(
 			portal.request_background(
 				null,
 				// TRANSLATORS: Confirmation message to allow background permission
-				_("Accept to allow running in the background and receive notifications"),
+				_('Accept to allow running in the background and receive notifications'),
 				['io.github.diegopvlk.Dosage', '--startup'],
 				setAutostart,
 				null,
@@ -170,9 +170,9 @@ export const DosageApplication = GObject.registerClass(
 		}
 
 		vfunc_handle_local_options(options) {
-			if (options.contains('startup')) 
+			if (options.contains('startup')) {
 				this._hidden = true;
-
+			}
 			return -1; // continue execution
 		}
 

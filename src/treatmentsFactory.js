@@ -103,7 +103,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		durationLabel.set_visible(true);
 		const dt = GLib.DateTime.new_from_unix_utc(info.duration.end);
 		// TRANSLATORS: Keep it short (label for when duration is enabled)
-		durationLabel.label = _("Until") + ` ${dt.format('%d %B %Y')}`;
+		durationLabel.label = _('Until') + ` ${dt.format('%d %B %Y')}`;
 	}
 
 	row.remove_css_class('activatable');
@@ -113,22 +113,22 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 
 	switch (info.frequency) {
 		case 'daily':
-			infoLabel.label = _("Daily");
+			infoLabel.label = _('Daily');
 			break;
 		case 'specific-days':
 			const isWeekend = info.days.every(day => [0, 6].includes(day));
 			const isWeekdays = info.days.every(day => [1, 2, 3, 4, 5].includes(day));
 			
-			if (info.days.length === 1)
+			if (info.days.length === 1) {
 				infoLabel.label = getDayLabel(info.days[0]);
-			else if (isWeekend)
-				infoLabel.label = _("Weekend");
-			else if (isWeekdays && info.days.length === 5)
-				infoLabel.label = _("Weekdays");
-			else if (info.days.length === 7)
-				infoLabel.label = _("Daily");
-			else {
-				info.days.forEach(day => {
+			} else if (isWeekend) {
+				infoLabel.label = _('Weekend');
+			} else if (isWeekdays && info.days.length === 5) {
+				infoLabel.label = _('Weekdays');
+			} else if (info.days.length === 7) {
+				infoLabel.label = _('Daily');
+			} else {
+				info.days.forEach((day) => {
 					infoLabel.label += getDayLabel(day).slice(0, 3) + ',  ';
 				});
 				infoLabel.label = infoLabel.label.slice(0, -3);
@@ -147,16 +147,17 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			}
 			break;
 		case 'cycle':
-			infoLabel.label = _("Cycle") + '  •  ';
+			infoLabel.label = _('Cycle') + '  •  ';
 			infoLabel.label += `${info.cycle[0]}` + ' ⊷ ' + `${info.cycle[1]}`;
 			break;
 		case 'when-needed':
-			infoLabel.label = _("When necessary");
+			infoLabel.label = _('When necessary');
 			break;
 	}
 
-	if (info.notes !== '') 
+	if (info.notes !== '') {
 		infoLabel.label += `  •  ${info.notes}`;
+	}
 
 	const colors = [
 		'default', 'red', 'orange', 'yellow',
