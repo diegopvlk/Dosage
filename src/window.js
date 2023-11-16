@@ -121,7 +121,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_handleSuspension() {
-		const onWakingUp = () => this._scheduleNotifications();
+		const onWakingUp = () => this._scheduleNotifications('sleep');
 		this._connection = Gio.bus_get_sync(Gio.BusType.SYSTEM, null)
         this._connection.signal_subscribe(
             'org.freedesktop.login1',
@@ -441,12 +441,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 			* because it needs to be rescheduled at every action
 			* so don't send notifications in this case
 			*/
-			if (action && timeDiff < 0) {
+			if (action && action != 'sleep' && timeDiff < 0) {
 				timeDiff = 0;
 				return
 			};
 
-			if (settings.get_boolean('sound')) {
+			if (settings.get_boolean('sound') && action != 'sleep') {
 				const ding = Gio.File.new_for_uri(
 					'resource:///io/github/diegopvlk/Dosage/sounds/ding.ogg'
 				);
