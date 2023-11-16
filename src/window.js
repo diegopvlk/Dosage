@@ -197,9 +197,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 				this._treatmentsJson.meds.forEach(med => {
 					treatmentsLS.insert_sorted(
 						new Medication({
-							name: med._name,
-							unit: med._unit,
-							info: med._info,
+							// condition is for <= v1.2.0
+							name: med.name || med._name,
+							unit: med.unit || med._unit,
+							info: med.info || med._info,
 						}), (obj1, obj2) => {
 							const name1 = obj1.name;
 							const name2 = obj2.name;
@@ -225,12 +226,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 				this._historyJson.meds.forEach(med => {
 					historyLS.append(
 						new HistoryMedication({
-							name: med._name,
-							unit: med._unit,
-							color: med._color,
-							info: med._info,
-							taken: med._taken,
-							date: med._date,
+							// condition is for <= v1.2.0
+							name: med.name || med._name,
+							unit: med.unit || med._unit,
+							color: med.color || med._color,
+							info: med.info || med._info,
+							taken: med.taken || med._taken,
+							date: med.date || med._date,
 						})
 					);
 				});
@@ -615,7 +617,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 		
 		const updateFile = () => {
 			return new Promise((resolve, reject) => {
-				const byteArray = new TextEncoder().encode(JSON.stringify(tempFile));
+				const byteArray = new TextEncoder().encode(
+					JSON.stringify(tempFile).replace(/"_([^"]+)":/g, '"$1":')
+				);
 				file.replace_contents_async(
 					GLib.Bytes.new(byteArray),
 					null,
