@@ -623,7 +623,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				file.replace_contents_async(
 					GLib.Bytes.new(byteArray),
 					null,
-					false,
+					true,
 					Gio.FileCreateFlags.REPLACE_DESTINATION,
 					null,
 					(file, result, userData) => {
