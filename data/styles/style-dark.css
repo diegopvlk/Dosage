@@ -3,8 +3,8 @@
 @define-color dosage_purple_3 #5C52AB;
 @define-color dosage_purple_4 #756BC6;
 
-@define-color window_bg_color #1C1B1F;
-@define-color window_fg_color #D1D1DF;
+@define-color window_bg_color #1d1c1f;
+@define-color window_fg_color #d5d5e3;
 @define-color accent_color lighter(@dosage_purple_4);
 @define-color accent_bg_color lighter(lighter(@dosage_purple_2));
 @define-color accent_fg_color black;
