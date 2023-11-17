@@ -104,7 +104,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		durationLabel.set_visible(true);
 		const dt = GLib.DateTime.new_from_unix_utc(info.duration.end).to_timezone(localTZ);
 		// TRANSLATORS: Keep it short (label for when duration is enabled)
-		durationLabel.label = _('Until') + ` ${dt.format('%d %B %Y')}`;
+		durationLabel.label = _('Until') + ` ${dt.format('%x')}`;
 	}
 
 	row.remove_css_class('activatable');
