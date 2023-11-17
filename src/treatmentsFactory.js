@@ -100,8 +100,9 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	}
 
 	if (info.duration.enabled) {
+		const localTZ = GLib.TimeZone.new_local();
 		durationLabel.set_visible(true);
-		const dt = GLib.DateTime.new_from_unix_utc(info.duration.end);
+		const dt = GLib.DateTime.new_from_unix_utc(info.duration.end).to_timezone(localTZ);
 		// TRANSLATORS: Keep it short (label for when duration is enabled)
 		durationLabel.label = _('Until') + ` ${dt.format('%d %B %Y')}`;
 	}

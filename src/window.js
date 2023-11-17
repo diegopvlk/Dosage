@@ -856,11 +856,14 @@ class DosageWindow extends Adw.ApplicationWindow {
 				medDuration.set_enable_expansion(true);
 
 				// the parsing is in seconds
+				const localTZ = GLib.TimeZone.new_local();
 				const start = GLib.DateTime.new_from_unix_utc(item.info.duration.start);
 				const end = GLib.DateTime.new_from_unix_utc(item.info.duration.end);
+				const startTZ = start.to_timezone(localTZ);
+				const endTZ = end.to_timezone(localTZ);
 
-				calendarStart.select_day(start);
-				calendarEnd.select_day(end);
+				calendarStart.select_day(startTZ);
+				calendarEnd.select_day(endTZ);
 			}
 		}
 
