@@ -33,6 +33,15 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.2.1" date="2023-11-17">
+			<description translatable="no">
+				<ul>
+					<li>Fixed notification sound being played on suspension event</li>
+					<li>Fixed duration date text not being showed in local time</li>
+					<li>Slight changed background color of dark theme</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.2.0" date="2023-11-15">
 			<description translatable="no">
 				<ul>
