@@ -69,7 +69,7 @@ export const DosageApplication = GObject.registerClass(
 				const notifSoundSwitch = builder.get_object('notifSoundSwitch');
 				const confirmSwitch = builder.get_object('confirmSwitch');
 				const skipSwitch = builder.get_object('skipSwitch');
-				
+
 				if (container === 'flatpak') {
 					autostartSwitch.set_active(settings.get_boolean('autostart'));
 					autostartSwitch.connect('state-set', () => {
@@ -77,9 +77,10 @@ export const DosageApplication = GObject.registerClass(
 						settings.set_boolean('autostart', state);
 						this._requestBackground(state);
 					});
-				} 
-				else // no option to disable auto-start
+				} else {
+					// no option to disable auto-start
 					autostartRow.set_visible(false);
+				}
 				
 				prioritySwitch.set_active(settings.get_boolean('priority'));
 				
@@ -106,6 +107,13 @@ export const DosageApplication = GObject.registerClass(
 					const state = skipSwitch.get_active();
 					settings.set_boolean('skip-button', state)
 				});
+
+				const prefPage = builder.get_object('prefPage');
+				const [prefPageHeight] = prefPage
+					.get_first_child()
+					.get_first_child()
+					.measure(Gtk.Orientation.VERTICAL, -1);
+				prefWindow.default_height = prefPageHeight + 64;
 
 				prefWindow.set_transient_for(this.active_window);
 				prefWindow.present();
