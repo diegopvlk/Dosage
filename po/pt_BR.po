@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-16 21:19-0300\n"
+"POT-Creation-Date: 2023-11-17 09:15-0300\n"
 "PO-Revision-Date: 2023-11-01 00:19+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -144,7 +144,7 @@ msgstr "Sair"
 msgid "New treatment"
 msgstr "Novo tratamento"
 
-#: data/ui/med-window.blp:19 src/window.js:1018
+#: data/ui/med-window.blp:19 src/window.js:1021
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -164,7 +164,7 @@ msgstr "Nome"
 msgid "Unit"
 msgstr "Unidade"
 
-#: data/ui/med-window.blp:57 src/window.js:890
+#: data/ui/med-window.blp:57 src/window.js:893
 msgid "Pill(s)"
 msgstr "Comprimido(s)"
 
@@ -180,7 +180,7 @@ msgstr "Após refeição"
 msgid "Color and icon"
 msgstr "Cor e ícone"
 
-#: data/ui/med-window.blp:70 src/window.js:933
+#: data/ui/med-window.blp:70 src/window.js:936
 msgid "Color"
 msgstr "Cor"
 
@@ -286,11 +286,11 @@ msgstr "Todos os dias"
 msgid "Specific days"
 msgstr "Dias específicos"
 
-#: data/ui/med-window.blp:299 src/treatmentsFactory.js:150
+#: data/ui/med-window.blp:299 src/treatmentsFactory.js:151
 msgid "Cycle"
 msgstr "Ciclo"
 
-#: data/ui/med-window.blp:300 src/treatmentsFactory.js:154
+#: data/ui/med-window.blp:300 src/treatmentsFactory.js:155
 msgid "When necessary"
 msgstr "Quando necessário"
 
@@ -397,7 +397,7 @@ msgstr "Termina em"
 msgid "Date"
 msgstr "Data"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1019
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1022
 msgid "Delete"
 msgstr "Excluir"
 
@@ -520,47 +520,47 @@ msgid "Low stock"
 msgstr "Estoque Baixo"
 
 #. TRANSLATORS: Keep it short (label for when duration is enabled)
-#: src/treatmentsFactory.js:106
+#: src/treatmentsFactory.js:107
 msgid "Until"
 msgstr "Até"
 
-#: src/treatmentsFactory.js:116 src/treatmentsFactory.js:129
+#: src/treatmentsFactory.js:117 src/treatmentsFactory.js:130
 msgid "Daily"
 msgstr "Diariamente"
 
-#: src/treatmentsFactory.js:125
+#: src/treatmentsFactory.js:126
 msgid "Weekend"
 msgstr "Fim de semana"
 
-#: src/treatmentsFactory.js:127
+#: src/treatmentsFactory.js:128
 msgid "Weekdays"
 msgstr "Dias da semana"
 
-#: src/treatmentsFactory.js:138
+#: src/treatmentsFactory.js:139
 msgid "Sunday"
 msgstr "Domingo"
 
-#: src/treatmentsFactory.js:139
+#: src/treatmentsFactory.js:140
 msgid "Monday"
 msgstr "Segunda-feira"
 
-#: src/treatmentsFactory.js:140
+#: src/treatmentsFactory.js:141
 msgid "Tuesday"
 msgstr "Terça-feira"
 
-#: src/treatmentsFactory.js:141
+#: src/treatmentsFactory.js:142
 msgid "Wednesday"
 msgstr "Quarta-feira"
 
-#: src/treatmentsFactory.js:142
+#: src/treatmentsFactory.js:143
 msgid "Thursday"
 msgstr "Quinta-feira"
 
-#: src/treatmentsFactory.js:143
+#: src/treatmentsFactory.js:144
 msgid "Friday"
 msgstr "Sexta-feira"
 
-#: src/treatmentsFactory.js:144
+#: src/treatmentsFactory.js:145
 msgid "Saturday"
 msgstr "Sábado"
 
@@ -589,41 +589,41 @@ msgstr "Editar tratamento"
 msgid "Save"
 msgstr "Salvar"
 
-#: src/window.js:880
+#: src/window.js:883
 msgid "New"
 msgstr "Novo"
 
-#: src/window.js:930
+#: src/window.js:933
 msgid "New entry"
 msgstr "Novo registro"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:932
+#: src/window.js:935
 msgid "Add to history"
 msgstr "Adc. ao histórico"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:1013
+#: src/window.js:1016
 msgid "Are you sure?"
 msgstr "Tem certeza?"
 
-#: src/window.js:1229
+#: src/window.js:1232
 msgid "Empty name"
 msgstr "Nome vazio"
 
-#: src/window.js:1233
+#: src/window.js:1236
 msgid "Empty unit"
 msgstr "Unidade vazia"
 
-#: src/window.js:1239
+#: src/window.js:1242
 msgid "Choose at least one day"
 msgstr "Escolha pelo menos um dia"
 
-#: src/window.js:1249
+#: src/window.js:1252
 msgid "Name already exists"
 msgstr "Nome já existe"
 
-#: src/window.js:1263
+#: src/window.js:1266
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 

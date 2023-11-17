@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-16 21:19-0300\n"
+"POT-Creation-Date: 2023-11-17 09:15-0300\n"
 "PO-Revision-Date: 2023-11-08 09:24+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -146,7 +146,7 @@ msgstr "Avsluta"
 msgid "New treatment"
 msgstr "Ny behandling"
 
-#: data/ui/med-window.blp:19 src/window.js:1018
+#: data/ui/med-window.blp:19 src/window.js:1021
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -166,7 +166,7 @@ msgstr "Namn"
 msgid "Unit"
 msgstr "Enhet"
 
-#: data/ui/med-window.blp:57 src/window.js:890
+#: data/ui/med-window.blp:57 src/window.js:893
 msgid "Pill(s)"
 msgstr "Piller"
 
@@ -182,7 +182,7 @@ msgstr "Efter måltid"
 msgid "Color and icon"
 msgstr "Färg och ikon"
 
-#: data/ui/med-window.blp:70 src/window.js:933
+#: data/ui/med-window.blp:70 src/window.js:936
 msgid "Color"
 msgstr "Färg"
 
@@ -288,11 +288,11 @@ msgstr "Varje dag"
 msgid "Specific days"
 msgstr "Särskilda dagar"
 
-#: data/ui/med-window.blp:299 src/treatmentsFactory.js:150
+#: data/ui/med-window.blp:299 src/treatmentsFactory.js:151
 msgid "Cycle"
 msgstr "Cykel"
 
-#: data/ui/med-window.blp:300 src/treatmentsFactory.js:154
+#: data/ui/med-window.blp:300 src/treatmentsFactory.js:155
 msgid "When necessary"
 msgstr "Vid behov"
 
@@ -399,7 +399,7 @@ msgstr "Slutar"
 msgid "Date"
 msgstr "Datum"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1019
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1022
 msgid "Delete"
 msgstr "Radera"
 
@@ -521,47 +521,47 @@ msgid "Low stock"
 msgstr "Lågt lager"
 
 #. TRANSLATORS: Keep it short (label for when duration is enabled)
-#: src/treatmentsFactory.js:106
+#: src/treatmentsFactory.js:107
 msgid "Until"
 msgstr "Till"
 
-#: src/treatmentsFactory.js:116 src/treatmentsFactory.js:129
+#: src/treatmentsFactory.js:117 src/treatmentsFactory.js:130
 msgid "Daily"
 msgstr "Daglig"
 
-#: src/treatmentsFactory.js:125
+#: src/treatmentsFactory.js:126
 msgid "Weekend"
 msgstr "Helg"
 
-#: src/treatmentsFactory.js:127
+#: src/treatmentsFactory.js:128
 msgid "Weekdays"
 msgstr "Veckodagar"
 
-#: src/treatmentsFactory.js:138
+#: src/treatmentsFactory.js:139
 msgid "Sunday"
 msgstr "Söndag"
 
-#: src/treatmentsFactory.js:139
+#: src/treatmentsFactory.js:140
 msgid "Monday"
 msgstr "Måndag"
 
-#: src/treatmentsFactory.js:140
+#: src/treatmentsFactory.js:141
 msgid "Tuesday"
 msgstr "Tisdag"
 
-#: src/treatmentsFactory.js:141
+#: src/treatmentsFactory.js:142
 msgid "Wednesday"
 msgstr "Onsdag"
 
-#: src/treatmentsFactory.js:142
+#: src/treatmentsFactory.js:143
 msgid "Thursday"
 msgstr "Torsdag"
 
-#: src/treatmentsFactory.js:143
+#: src/treatmentsFactory.js:144
 msgid "Friday"
 msgstr "Fredag"
 
-#: src/treatmentsFactory.js:144
+#: src/treatmentsFactory.js:145
 msgid "Saturday"
 msgstr "Lördag"
 
@@ -590,41 +590,41 @@ msgstr "Redigera behandling"
 msgid "Save"
 msgstr "Spara"
 
-#: src/window.js:880
+#: src/window.js:883
 msgid "New"
 msgstr "Ny"
 
-#: src/window.js:930
+#: src/window.js:933
 msgid "New entry"
 msgstr "Ny notering"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:932
+#: src/window.js:935
 msgid "Add to history"
 msgstr "Lägg till i historik"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:1013
+#: src/window.js:1016
 msgid "Are you sure?"
 msgstr "Är du säker?"
 
-#: src/window.js:1229
+#: src/window.js:1232
 msgid "Empty name"
 msgstr "Tömt namn"
 
-#: src/window.js:1233
+#: src/window.js:1236
 msgid "Empty unit"
 msgstr "Töm enhet"
 
-#: src/window.js:1239
+#: src/window.js:1242
 msgid "Choose at least one day"
 msgstr "Välj åtminstone en dag"
 
-#: src/window.js:1249
+#: src/window.js:1252
 msgid "Name already exists"
 msgstr "Namnet finns redan"
 
-#: src/window.js:1263
+#: src/window.js:1266
 msgid "Duplicated time"
 msgstr "Duplicerad tid"
 

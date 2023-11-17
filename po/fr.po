@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-16 21:19-0300\n"
+"POT-Creation-Date: 2023-11-17 09:15-0300\n"
 "PO-Revision-Date: 2023-11-02 19:54+0000\n"
 "Last-Translator: rene-coty <irenee.thirion@e.email>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/dosage/dosage/fr/"
@@ -143,7 +143,7 @@ msgstr "Quitter"
 msgid "New treatment"
 msgstr "Nouveau traitement"
 
-#: data/ui/med-window.blp:19 src/window.js:1018
+#: data/ui/med-window.blp:19 src/window.js:1021
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -163,7 +163,7 @@ msgstr "Nom"
 msgid "Unit"
 msgstr "Unité"
 
-#: data/ui/med-window.blp:57 src/window.js:890
+#: data/ui/med-window.blp:57 src/window.js:893
 msgid "Pill(s)"
 msgstr "Comprimé(s)"
 
@@ -179,7 +179,7 @@ msgstr "Après un repas"
 msgid "Color and icon"
 msgstr "Couleur et icône"
 
-#: data/ui/med-window.blp:70 src/window.js:933
+#: data/ui/med-window.blp:70 src/window.js:936
 msgid "Color"
 msgstr "Couleur"
 
@@ -285,11 +285,11 @@ msgstr "Tous les jours"
 msgid "Specific days"
 msgstr "Certains jours"
 
-#: data/ui/med-window.blp:299 src/treatmentsFactory.js:150
+#: data/ui/med-window.blp:299 src/treatmentsFactory.js:151
 msgid "Cycle"
 msgstr "Cycle"
 
-#: data/ui/med-window.blp:300 src/treatmentsFactory.js:154
+#: data/ui/med-window.blp:300 src/treatmentsFactory.js:155
 msgid "When necessary"
 msgstr "Au besoin"
 
@@ -396,7 +396,7 @@ msgstr "S’achève le"
 msgid "Date"
 msgstr "Date"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1019
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1022
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -518,47 +518,47 @@ msgid "Low stock"
 msgstr "Stock bas"
 
 #. TRANSLATORS: Keep it short (label for when duration is enabled)
-#: src/treatmentsFactory.js:106
+#: src/treatmentsFactory.js:107
 msgid "Until"
 msgstr "Jusqu’à"
 
-#: src/treatmentsFactory.js:116 src/treatmentsFactory.js:129
+#: src/treatmentsFactory.js:117 src/treatmentsFactory.js:130
 msgid "Daily"
 msgstr "Quotidiennement"
 
-#: src/treatmentsFactory.js:125
+#: src/treatmentsFactory.js:126
 msgid "Weekend"
 msgstr "Weekend"
 
-#: src/treatmentsFactory.js:127
+#: src/treatmentsFactory.js:128
 msgid "Weekdays"
 msgstr "Jours de la semaine"
 
-#: src/treatmentsFactory.js:138
+#: src/treatmentsFactory.js:139
 msgid "Sunday"
 msgstr "Dimanche"
 
-#: src/treatmentsFactory.js:139
+#: src/treatmentsFactory.js:140
 msgid "Monday"
 msgstr "Lundi"
 
-#: src/treatmentsFactory.js:140
+#: src/treatmentsFactory.js:141
 msgid "Tuesday"
 msgstr "Mardi"
 
-#: src/treatmentsFactory.js:141
+#: src/treatmentsFactory.js:142
 msgid "Wednesday"
 msgstr "Mercredi"
 
-#: src/treatmentsFactory.js:142
+#: src/treatmentsFactory.js:143
 msgid "Thursday"
 msgstr "Jeudi"
 
-#: src/treatmentsFactory.js:143
+#: src/treatmentsFactory.js:144
 msgid "Friday"
 msgstr "Vendredi"
 
-#: src/treatmentsFactory.js:144
+#: src/treatmentsFactory.js:145
 msgid "Saturday"
 msgstr "Samedi"
 
@@ -587,41 +587,41 @@ msgstr "Modifier le traitement"
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: src/window.js:880
+#: src/window.js:883
 msgid "New"
 msgstr "Nouveau"
 
-#: src/window.js:930
+#: src/window.js:933
 msgid "New entry"
 msgstr "Nouvelle entrée"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:932
+#: src/window.js:935
 msgid "Add to history"
 msgstr "Ajout à l’historique"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:1013
+#: src/window.js:1016
 msgid "Are you sure?"
 msgstr "Êtes-vous sûr ?"
 
-#: src/window.js:1229
+#: src/window.js:1232
 msgid "Empty name"
 msgstr "Nom vide"
 
-#: src/window.js:1233
+#: src/window.js:1236
 msgid "Empty unit"
 msgstr "Unité vide"
 
-#: src/window.js:1239
+#: src/window.js:1242
 msgid "Choose at least one day"
 msgstr "Choisissez au moins un jour"
 
-#: src/window.js:1249
+#: src/window.js:1252
 msgid "Name already exists"
 msgstr "Nom déjà existant"
 
-#: src/window.js:1263
+#: src/window.js:1266
 msgid "Duplicated time"
 msgstr "Heure dupliquée"
 
