@@ -1,12 +1,12 @@
-@define-color dosage_blue_1 #2D207A;
-@define-color dosage_blue_2 #443992;
-@define-color dosage_blue_3 #5C52AB;
-@define-color dosage_blue_4 #756BC6;
+@define-color dosage_purple_1 #2D207A;
+@define-color dosage_purple_2 #443992;
+@define-color dosage_purple_3 #5C52AB;
+@define-color dosage_purple_4 #756BC6;
 
 @define-color window_bg_color #1C1B1F;
 @define-color window_fg_color #D1D1DF;
-@define-color accent_color lighter(@dosage_blue_4);
-@define-color accent_bg_color lighter(lighter(@dosage_blue_2));
+@define-color accent_color lighter(@dosage_purple_4);
+@define-color accent_bg_color lighter(lighter(@dosage_purple_2));
 @define-color accent_fg_color black;
 @define-color popover_bg_color lighter(@window_bg_color);
 @define-color card_bg_color alpha(#373841, 0.7);
@@ -143,8 +143,8 @@ actionbar > revealer > box {
 
 button.pill:not(.suggested-action) {
 	background-color: #38354a;
-	box-shadow: 0 1px 6px 0px alpha(@dosage_blue_4, 0.2),
-		inset 0 0 0 1px alpha(@dosage_blue_4, 0.15);
+	box-shadow: 0 1px 6px 0px alpha(@dosage_purple_4, 0.2),
+		inset 0 0 0 1px alpha(@dosage_purple_4, 0.15);
 }
 
 button.pill:not(.suggested-action):hover {
@@ -156,28 +156,28 @@ button.pill:not(.suggested-action):active {
 }
 
 button.suggested-action {
-	background: linear-gradient(45deg, @dosage_blue_3 0%, @dosage_blue_2 75%);
-	box-shadow: 0 1px 7px 0px alpha(@dosage_blue_4, 0.2);
+	background: linear-gradient(45deg, @dosage_purple_3 0%, @dosage_purple_2 75%);
+	box-shadow: 0 1px 7px 0px alpha(@dosage_purple_4, 0.2);
 }
 
 button.suggested-action:hover {
 	background: linear-gradient(
 		45deg,
-		lighter(@dosage_blue_3) 0%,
-		lighter(@dosage_blue_2) 55%
+		lighter(@dosage_purple_3) 0%,
+		lighter(@dosage_purple_2) 55%
 	);
 }
 
 button.suggested-action:active {
 	background: linear-gradient(
 		45deg,
-		lighter(@dosage_blue_4) 0%,
-		@dosage_blue_3 50%
+		lighter(@dosage_purple_4) 0%,
+		@dosage_purple_3 50%
 	);
 }
 
 #dosage-med-window button.suggested-action {
-	box-shadow: 0 1px 3.5px 0px alpha(@dosage_blue_4, 0.2);
+	box-shadow: 0 1px 3.5px 0px alpha(@dosage_purple_4, 0.2);
 }
 
 .button-left > button:hover,
