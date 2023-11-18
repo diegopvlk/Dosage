@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-17 09:15-0300\n"
-"PO-Revision-Date: 2023-11-01 00:19+0000\n"
+"PO-Revision-Date: 2023-11-18 13:55+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "dosage/dosage/pt_BR/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"X-Generator: Weblate 5.2\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
@@ -499,7 +499,7 @@ msgstr "Perdido"
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:136
 msgid "translator-credits"
-msgstr ""
+msgstr "translator-credits"
 
 #: src/main.js:139
 msgid "Thanks to these projects!"
