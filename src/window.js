@@ -89,7 +89,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				this._treatmentsPage.badge_number += 1;
 
 				if (!this.get_visible() && !notifAction) {
-					const [ notification, app ] = this._getNotification();
+					const [notification, app] = this._getNotification();
 					// TRANSLATORS: Notification text for for when the inventory is low
 					notification.set_body(_('You have treatments low in stock'));
 					app.send_notification('low-stock', notification);	
@@ -201,11 +201,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 							name: med.name || med._name,
 							unit: med.unit || med._unit,
 							info: med.info || med._info,
-						}), (obj1, obj2) => {
+						}),
+						(obj1, obj2) => {
 							const name1 = obj1.name;
 							const name2 = obj2.name;
 							return name1.localeCompare(name2);
-					});
+						}
+					);
 				});	
 				this._treatmentsList.set_factory(treatmentsFactory);	
 				this._treatmentsList.remove_css_class('view');
@@ -216,7 +218,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				});
 			}
 		} catch (err) {
-			console.error('Error loading treatments:', err)
+			console.error('Error loading treatments:', err);
 		}
 	}
 
@@ -323,7 +325,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				return isTodayMedDay(
 					item,
 					this._historyList.model,
-				)
+				);
 			}),
 		});
 
@@ -369,15 +371,17 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_scheduleNotifications(action) {
-		for (const id in this._scheduledItems)
+		for (const id in this._scheduledItems) {
 			clearTimeout(this._scheduledItems[id]);
+		}
 
 		this._scheduledItems = {};
 		
 		const todayLength = this._todayModel.get_n_items();
 		
-		for (let i = 0; i < todayLength; i++)
+		for (let i = 0; i < todayLength; i++) {
 			this._addToBeNotified(this._todayModel.get_item(i), action);
+		}		
 	}
 
 	_addToBeNotified(item, action) {
@@ -503,7 +507,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		notification.set_priority(priority);
 		notification.set_title(_('Dosage'));
 
-		return [ notification, app ]
+		return [notification, app];
 	}
 
 	_selectTodayItems(list, position) {
@@ -652,7 +656,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				const datesPassed = datesPassedDiff(startDate, new Date());
 				const start = startDate.setHours(0, 0, 0, 0);
 				const today = new Date().setHours(0, 0, 0, 0);
-				let [ active, inactive, current ] = it.info.cycle;
+				let [active, inactive, current] = it.info.cycle;
 				
 				for (let i = 0; i < datesPassed.length; i++) {
 					current += 1;
@@ -803,7 +807,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			}
 			for (const icn of dosageIconBox) {
 				if (icn.get_icon_name() === info.icon) {
-					dosageIconButton.set_icon_name(info.icon)
+					dosageIconButton.set_icon_name(info.icon);
 				}	
 			}
 
@@ -825,8 +829,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 				let day = 0;
 				for (const btn of specificDaysBox) {
-					for (const d of info.days)
+					for (const d of info.days) {
 						if (d === day) btn.set_active(true);
+					}	
 					day++;
 				}
 			}
@@ -1050,7 +1055,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 					taken: 'yes',
 					info: info,
 					date: entryDate.toISOString(),
-				}), (obj1, obj2) => {
+				}),
+				(obj1, obj2) => {
 					return obj1.date > obj2.date ? -1 : 0;
 				}
 			);
@@ -1141,11 +1147,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 						inventory: inventory,
 						duration: duration,
 					},
-				}), (obj1, obj2) => {
+				}),
+				(obj1, obj2) => {
 					const name1 = obj1.name;
 					const name2 = obj2.name;
 					return name1.localeCompare(name2);
-			});
+				}
+			);
 		}
 
 		function getDoses() {
@@ -1153,7 +1161,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			let currentDoseRow = listRows.get_first_child();
 
 			while (currentDoseRow) {
-				const [ hours, minutes ] = getTimeBtnInput(currentDoseRow);
+				const [hours, minutes] = getTimeBtnInput(currentDoseRow);
 				const ds = {
 					time: [hours, minutes],
 					dose: currentDoseRow.get_value(),
@@ -1259,7 +1267,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			const rows = [];
 
 			while (currentDoseRow) {
-				const [ hours, minutes, ampm, timeBtn ] = getTimeBtnInput(currentDoseRow);
+				const [hours, minutes, ampm, timeBtn] = getTimeBtnInput(currentDoseRow);
 				const time = String([hours, minutes])
 
 				if (rows.includes(time)) {

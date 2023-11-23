@@ -4,7 +4,6 @@ import Gdk from 'gi://Gdk';
 import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
-import { ngettext } from 'gettext';
 
 export const treatmentsFactory = new Gtk.SignalListItemFactory();
 
@@ -164,7 +163,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		'default', 'red', 'orange', 'yellow',
 		'green', 'cyan', 'blue', 'purple'
 	];
-	colors.forEach(c => box.remove_css_class(c))
+	colors.forEach(c => box.remove_css_class(c));
 	
 	box.add_css_class(info.color);
 

@@ -136,7 +136,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 		'default', 'red', 'orange', 'yellow', 
 		'green', 'cyan', 'blue', 'purple'
 	];
-	colors.forEach(c => box.remove_css_class(c))
+	colors.forEach(c => box.remove_css_class(c));
 
 	box.add_css_class(item.color);
 });
