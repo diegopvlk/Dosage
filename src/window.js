@@ -1250,7 +1250,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					return {
 						time: dose.time,
 						dose: dose.dose,
-						lastTaken: item.info.dosage[idx].lastTaken || null,
+						lastTaken: item.info.dosage[idx]?.lastTaken || null,
 					};
 				});
 				treatmentsLS.remove(position);
