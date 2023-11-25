@@ -37,7 +37,7 @@ export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
 	calendar.connect('day-selected', cal => {
 		const selDate = cal.get_date().format('%F');
 
-		if (oneTime && selDate > today || !oneTime && selDate < today) {
+		if ((oneTime && selDate > today) || (!oneTime && selDate < today)) {
 			(async function () {
 				cal.add_css_class('calendar-error');
 				await new Promise((res) => setTimeout(res, 400));
@@ -70,8 +70,8 @@ export function isTodayMedDay(item, histModel) {
 			if (date === today && item.name === name) {
 				if (String(info.dosage.time) == String(time)) {
 					return false;
-				}		
-			}		
+				}
+			}
 		}
 	}
 
@@ -79,9 +79,9 @@ export function isTodayMedDay(item, histModel) {
 		case 'daily':
 			return true;
 		case 'specific-days':
-			return info.days.includes(new Date().getDay());	
+			return info.days.includes(new Date().getDay());
 		case 'cycle':
-			const [ active, inactive, current ] = info.cycle;
+			const [active, inactive, current] = info.cycle;
 			return current <= active;
 		case 'when-needed':
 			return false;

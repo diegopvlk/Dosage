@@ -636,10 +636,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 					this._todayItems.forEach(i => {
 						const todayDose = JSON.stringify(i.info.dosage);
-						if (treatDose === todayDose){
+						if (treatDose === todayDose) {
 							timeDose.lastTaken = new Date().toISOString();
 						}
-					});	
+					});
 				});
 			}
 		}
