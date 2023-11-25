@@ -69,7 +69,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 		try {
 			this._loadTreatments();
 			this._loadHistory();
-			this._updateItemsCycle();
+			this._updateItems();
+			this._updateCycleAndLastUp();
+			this._updateJsonFile('treatments', treatmentsLS);
 			this._loadToday();
 			this._handleSuspension();
 			this._scheduleNotifications();
@@ -649,27 +651,49 @@ class DosageWindow extends Adw.ApplicationWindow {
 			.catch(err => console.error('Update failed:', err));
 	}
 
-	_updateItemsCycle() {
-		for (const it of treatmentsLS) {
-			if (it.info.frequency == 'cycle') {
-				const startDate = new Date(it.info.duration.start * 1000);
-				const datesPassed = datesPassedDiff(startDate, new Date());
-				const start = startDate.setHours(0, 0, 0, 0);
+	_updateItems() {
+		// for compatibility
+		for (const item of treatmentsLS) {
+			const info = item.info;
+			const dur = info.duration;
+
+			// change to int and to parse in ms instead of seconds
+			if (typeof dur.start === 'string') {
+				dur.start = +dur.start * 1000;
+				// add duration.end if doesn't exist
+				dur.end = +dur.end * 1000 || dur.start;
+			}
+
+			if (!info.lastUpdate) {
 				const today = new Date().setHours(0, 0, 0, 0);
-				let [active, inactive, current] = it.info.cycle;
-				
+				const start = new Date(dur.start).setHours(0, 0, 0, 0);
+
+				info.lastUpdate = start > today ? new Date() : new Date(dur.start);
+				info.lastUpdate = info.lastUpdate.toISOString();
+			}
+		}
+	}
+
+	_updateCycleAndLastUp() {
+		for (const item of treatmentsLS) {
+			const info = item.info;
+			const lastUpdate = new Date(info.lastUpdate);
+			const lastUp = lastUpdate.setHours(0, 0, 0, 0);
+			const today = new Date().setHours(0, 0, 0, 0);
+
+			if (info.frequency == 'cycle') {
+				const datesPassed = datesPassedDiff(lastUpdate, new Date());
+				let [active, inactive, current] = info.cycle;
+
 				for (let i = 0; i < datesPassed.length; i++) {
 					current += 1;
 					if (current > active + inactive) current = 1;
 				}
-				
-				it.info.cycle[2] = current;
 
-				if (start < today) {
-					const now = GLib.DateTime.new_now_local();
-					it.info.duration.start = now.format('%s');
-				}
+				item.info.cycle[2] = current;
 			}
+
+			if (lastUp < today) info.lastUpdate = new Date().toISOString();
 		}
 	}
 
@@ -682,7 +706,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 	_updateEverything(skipHistUp, notifAction) {
 		if (!skipHistUp) this._updateJsonFile('history', historyLS);
-		this._updateItemsCycle();
+		this._updateCycleAndLastUp();
 		this._updateJsonFile('treatments', treatmentsLS);
 		this._loadToday();
 		this._setEmptyHistLabel();
@@ -860,10 +884,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 			if (info.duration.enabled) {
 				medDuration.set_enable_expansion(true);
 
-				// the parsing is in seconds
+				// this parsing is in seconds
 				const localTZ = GLib.TimeZone.new_local();
-				const start = GLib.DateTime.new_from_unix_utc(item.info.duration.start);
-				const end = GLib.DateTime.new_from_unix_utc(item.info.duration.end);
+				const start = GLib.DateTime.new_from_unix_utc(item.info.duration.start / 1000);
+				const end = GLib.DateTime.new_from_unix_utc(item.info.duration.end / 1000);
 				const startTZ = start.to_timezone(localTZ);
 				const endTZ = end.to_timezone(localTZ);
 
@@ -1042,7 +1066,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		function addItemToHistory(histList, sortedHist) {
 			const calOneEntry = builder.get_object('calOneEntry');
-			const dt = calOneEntry.get_date().format('%s') * 1000;
+			const dt = +calOneEntry.get_date().format('%s') * 1000;
 			const entryDate = new Date(dt);
 			const info = getDoses()[0];
 			entryDate.setHours(info.time[0]);
@@ -1078,7 +1102,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			let cycle = [];
 			let invEnabled = false;
 			let durEnabled = false;
-			let name, unit, notes, color, freq, icon, recurring,
+			let name, unit, notes, color, freq, icon, recurring, lastUpdate,
 				inventory, current, reminder, duration, start, end;
 
 			if (medInventory.get_enable_expansion()) {
@@ -1087,10 +1111,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			if (medDuration.get_enable_expansion()) {
 				durEnabled = true;
-				start = calendarStart.get_date().format('%s');
-				end = calendarEnd.get_date().format('%s');
+				start = +calendarStart.get_date().format('%s') * 1000;
+				end = +calendarEnd.get_date().format('%s') * 1000;
 			} else {
-				start = today.format('%s');
+				start = +today.format('%s') * 1000;
+				end = start;
 			}
 
 			name = medName.text.trim(),
@@ -1108,9 +1133,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 			icon = dosageIconButton.get_icon_name();
 			current = medCurrrentInv.value;
 			reminder = medReminderInv.value;
-
 			inventory = { enabled: invEnabled, current: current, reminder: reminder };
 			duration = { enabled: durEnabled, start: start, end: end };
+			lastUpdate = new Date().toISOString();
 
 			if (frequencyMenu.get_selected() === 0) freq = 'daily';
 			if (frequencyMenu.get_selected() === 1) freq = 'specific-days';
@@ -1128,6 +1153,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			if (isUpdate) {
 				const item = list.get_model().get_item(position);
 				doses.concat(item.info.dosage);
+				lastUpdate = item.info.lastUpdate;
 				treatmentsLS.remove(position);
 			}
 
@@ -1146,6 +1172,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 						recurring: recurring,
 						inventory: inventory,
 						duration: duration,
+						lastUpdate: lastUpdate,
 					},
 				}),
 				(obj1, obj2) => {

@@ -53,11 +53,11 @@ export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
 export function isTodayMedDay(item, histModel) {
 	const info = item.info;
 	const today = new Date().setHours(0, 0, 0, 0);
-	const start = new Date(info.duration.start * 1000).setHours(0, 0, 0, 0);
-	const end = new Date(info.duration.end * 1000).setHours(0, 0, 0, 0);
+	const start = new Date(info.duration.start).setHours(0, 0, 0, 0);
+	const end = new Date(info.duration.end).setHours(0, 0, 0, 0);
 	const lastSectionAmount = histModel.get_section(0)[1];
 
-	if (info.duration.enabled && start > today || end < today) {
+	if (info.duration.enabled && (start > today || end < today)) {
 		return false;
 	}	
 	
