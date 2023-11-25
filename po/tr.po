@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-17 09:15-0300\n"
-"PO-Revision-Date: 2023-11-01 22:36+0000\n"
+"PO-Revision-Date: 2023-11-25 18:39+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
 ">\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"X-Generator: Weblate 5.2.1-rc\n"
 "X-Project-Style: gnome\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
@@ -454,11 +454,11 @@ msgstr "Bugün"
 
 #: data/ui/window.blp:62
 msgid "Unselect"
-msgstr "Seçimi kaldır"
+msgstr "Seçimi Kaldır"
 
 #: data/ui/window.blp:70 src/window.js:557
 msgid "One-time entry"
-msgstr "Tek seferlik girdi"
+msgstr "Tek Seferlik Girdi"
 
 #: data/ui/window.blp:106
 msgid "History"
@@ -487,7 +487,7 @@ msgstr "Çık"
 #. TRANSLATORS: Keep it short
 #: src/historyFactory.js:126
 msgid "Confirmed"
-msgstr "Onaylanmış"
+msgstr "Onaylandı"
 
 #. TRANSLATORS: Keep it short
 #: src/historyFactory.js:129
