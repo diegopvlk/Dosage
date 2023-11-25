@@ -314,19 +314,19 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 	_loadToday() {
 		const todayLS = Gio.ListStore.new(TodayMedication);
-		const tempFile = createTempFile(treatmentsLS);
+		const tempFile = createTempFile('treatments', treatmentsLS);
 
 		tempFile.meds.forEach(med => {
-			med._info.dosage.forEach(timeDose => {
-				const info = { ...med._info };
+			med.info.dosage.forEach(timeDose => {
+				const info = { ...med.info };
 				info.dosage = {
 					time: [timeDose.time[0], timeDose.time[1]],
 					dose: timeDose.dose,
 				};
 				todayLS.append(
 					new TodayMedication({
-						name: med._name,
-						unit: med._unit,
+						name: med.name,
+						unit: med.unit,
 						info: info,
 					})
 				);
@@ -648,13 +648,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 	_updateJsonFile(type, listStore) {
 		const fileName = `dosage-${type}.json`;
 		const file = DataDir.get_child(fileName);
-		const tempFile = createTempFile(listStore);
+		const tempFile = createTempFile(type, listStore);
 		
 		const updateFile = () => {
 			return new Promise((resolve, reject) => {
-				const byteArray = new TextEncoder().encode(
-					JSON.stringify(tempFile).replace(/"_([^"]+)":/g, '"$1":')
-				);
+				const byteArray = new TextEncoder().encode(JSON.stringify(tempFile));
 				file.replace_contents_async(
 					GLib.Bytes.new(byteArray),
 					null,

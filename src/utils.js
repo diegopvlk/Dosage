@@ -23,11 +23,29 @@ export function removeCssColors(colorBtn) {
 	}
 }
 
-export function createTempFile(listStore) {
+export function createTempFile(type, listStore) {
 	const tempFile = { meds: [] };
-	for (const item of listStore) {
-		const tempObj = { ...item };
-		tempFile.meds.push(tempObj);
+	if (type === 'treatments') {
+		for (const item of listStore) {
+			const tempObj = {
+				name: item.name,
+				unit: item.unit,
+				info: item.info,
+			};
+			tempFile.meds.push(tempObj);
+		}
+	} else if (type === 'history') {
+		for (const item of listStore) {
+			const tempObj = {
+				name: item.name,
+				info: item.info,
+				unit: item.unit,
+				color: item.color,
+				taken: item.taken,
+				date: item.date,
+			};
+			tempFile.meds.push(tempObj);
+		}
 	}
 	return tempFile;
 }
