@@ -287,10 +287,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 								if (sameItem) {
 									info.dosage.forEach((timeDose) => {
 										const td = { ...timeDose, lastTaken: undefined };
-										const sameInfo =
+										const sameDose =
 											JSON.stringify(td) === JSON.stringify(itemRemoved.info);
 										
-										if (sameInfo) timeDose.lastTaken = null;
+										if (sameDose) timeDose.lastTaken = null;
 									});
 					
 									if (info.inventory.enabled && itemRemoved.taken === 'yes') {
