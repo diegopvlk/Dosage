@@ -55,13 +55,19 @@ export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
 	calendar.connect('day-selected', cal => {
 		const selDate = cal.get_date().format('%F');
 
-		if ((oneTime && selDate > today) || (!oneTime && selDate < today)) {
+		if (oneTime && selDate > today) {
 			(async function () {
 				cal.add_css_class('calendar-error');
-				await new Promise((res) => setTimeout(res, 400));
+				await new Promise((res) => setTimeout(res, 500));
 				cal.remove_css_class('calendar-error');
 			})();
 			cal.select_day(GLib.DateTime.new_now_local());
+		}
+
+		if (!oneTime && selDate < today) {
+			cal.add_css_class('calendar-warning');
+		} else {
+			cal.remove_css_class('calendar-warning');
 		}
 
 		calendarBtn.label = cal.get_date().format('%x');
