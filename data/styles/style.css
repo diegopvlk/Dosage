@@ -376,6 +376,26 @@ preferencespage scrolledwindow viewport {
 	margin-bottom: -11px;
 }
 
+calendar button,
+calendar .day-number {
+  border-radius: 99px;
+}
+
+calendar button,
+calendar .month,
+calendar .year {
+  margin-bottom: 5px;
+  margin-top: -1px;
+}
+
+calendar .day-name {
+  opacity: 0.5;
+}
+
+calendar .day-number.today:not(:selected) {
+  background-color: alpha(@view_fg_color, 0.05);
+}
+
 row.error {
 	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.5);
 }
