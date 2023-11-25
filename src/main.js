@@ -86,14 +86,14 @@ export const DosageApplication = GObject.registerClass(
 				
 				prioritySwitch.connect('state-set', () => {
 					const state = prioritySwitch.get_active();
-					settings.set_boolean('priority', state)
+					settings.set_boolean('priority', state);
 				});
 
 				notifSoundSwitch.set_active(settings.get_boolean('sound'));
 
 				notifSoundSwitch.connect('state-set', () => {
 					const state = notifSoundSwitch.get_active();
-					settings.set_boolean('sound', state)
+					settings.set_boolean('sound', state);
 				});
 
 				confirmSwitch.set_active(settings.get_boolean('confirm-button'));
@@ -101,11 +101,11 @@ export const DosageApplication = GObject.registerClass(
 
 				confirmSwitch.connect('state-set', () => {
 					const state = confirmSwitch.get_active();
-					settings.set_boolean('confirm-button', state)
+					settings.set_boolean('confirm-button', state);
 				});
 				skipSwitch.connect('state-set', () => {
 					const state = skipSwitch.get_active();
-					settings.set_boolean('skip-button', state)
+					settings.set_boolean('skip-button', state);
 				});
 
 				const prefPage = builder.get_object('prefPage');
@@ -146,7 +146,7 @@ export const DosageApplication = GObject.registerClass(
 					'GJS Guide https://gjs.guide/',
 					'Flatpak https://github.com/flatpak/',
 				]);
-				aboutWindow.add_link('Donate', 'https://github.com/diegopvlk/Dosage#donate') 
+				aboutWindow.add_link('Donate', 'https://github.com/diegopvlk/Dosage#donate');
 				aboutWindow.present();
 			});
 			this.add_action(showAboutAction);
