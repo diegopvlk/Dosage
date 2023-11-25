@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-17 09:15-0300\n"
+"POT-Creation-Date: 2023-11-25 15:38-0300\n"
 "PO-Revision-Date: 2023-11-25 18:39+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
@@ -24,7 +24,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:128 src/window.js:504
+#: src/main.js:128 src/window.js:522
 msgid "Dosage"
 msgstr "Doz"
 
@@ -88,31 +88,31 @@ msgstr "İlaç düzenle penceresi açık tema ile"
 msgid "Dosage today window in dark theme"
 msgstr "Bugün penceresi koyu tema ile"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:152
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:161
 msgid "medication"
 msgstr "tedavi"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:153
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:162
 msgid "tracker"
 msgstr "izleyici"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:154
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:163
 msgid "reminder"
 msgstr "hatırlatıcı"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:155
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:164
 msgid "treatments"
 msgstr "İlaçlar"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:156
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:165
 msgid "pill"
 msgstr "ilaç"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:157
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:166
 msgid "drug"
 msgstr "ilaç"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:158
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:167
 msgid "remedy"
 msgstr "çare"
 
@@ -147,7 +147,7 @@ msgstr "Çık"
 msgid "New treatment"
 msgstr "Yeni ilaç"
 
-#: data/ui/med-window.blp:19 src/window.js:1021
+#: data/ui/med-window.blp:19 src/window.js:1144
 msgid "Cancel"
 msgstr "İptal"
 
@@ -167,7 +167,7 @@ msgstr "Ad"
 msgid "Unit"
 msgstr "Birim"
 
-#: data/ui/med-window.blp:57 src/window.js:893
+#: data/ui/med-window.blp:57 src/window.js:1016
 msgid "Pill(s)"
 msgstr "Hap"
 
@@ -183,7 +183,7 @@ msgstr "Yemekten sonra"
 msgid "Color and icon"
 msgstr "Renk ve simge"
 
-#: data/ui/med-window.blp:70 src/window.js:936
+#: data/ui/med-window.blp:70 src/window.js:1059
 msgid "Color"
 msgstr "Renk"
 
@@ -400,7 +400,7 @@ msgstr "Bitiş"
 msgid "Date"
 msgstr "Tarih"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1022
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1145
 msgid "Delete"
 msgstr "Sil"
 
@@ -436,11 +436,11 @@ msgstr "Bildirim düğmeleri"
 msgid "Show or hide confirm/skip"
 msgstr "Onayla/atla düğmelerini göster ya da gizle"
 
-#: data/ui/preferences.blp:47 src/window.js:432 src/window.js:557
+#: data/ui/preferences.blp:47 src/window.js:450 src/window.js:575
 msgid "Confirm"
 msgstr "Onayla"
 
-#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:436
+#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:454
 msgid "Skip"
 msgstr "Atla"
 
@@ -456,7 +456,7 @@ msgstr "Bugün"
 msgid "Unselect"
 msgstr "Seçimi Kaldır"
 
-#: data/ui/window.blp:70 src/window.js:557
+#: data/ui/window.blp:70 src/window.js:575
 msgid "One-time entry"
 msgstr "Tek Seferlik Girdi"
 
@@ -513,11 +513,11 @@ msgstr "Bu projeler sayesinde!"
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Arka planda çalışmaya izin vermeyi ve bildirim almayı kabul et"
 
-#: src/treatmentsFactory.js:94
+#: src/treatmentsFactory.js:93
 msgid "Remaining"
 msgstr "Kalan"
 
-#: src/treatmentsFactory.js:98
+#: src/treatmentsFactory.js:97
 msgid "Low stock"
 msgstr "Düşük stok"
 
@@ -566,66 +566,66 @@ msgstr "Cuma"
 msgid "Saturday"
 msgstr "Cumartesi"
 
-#: src/utils.js:134
+#: src/utils.js:158
 msgid "Delete dose"
 msgstr "Dozu sil"
 
 #. TRANSLATORS: Notification text for for when the inventory is low
-#: src/window.js:94
+#: src/window.js:97
 msgid "You have treatments low in stock"
 msgstr "Stok sayısı azalmış ilaçlarınız var"
 
-#: src/window.js:358
+#: src/window.js:374
 msgid "No treatments added yet!"
 msgstr "Henüz ilaç eklenmedi!"
 
-#: src/window.js:363
+#: src/window.js:379
 msgid "All done for today!"
 msgstr "Bugünlük her şey bitti!"
 
-#: src/window.js:787
+#: src/window.js:909
 msgid "Edit treatment"
 msgstr "İlaç düzenle"
 
-#: src/window.js:788
+#: src/window.js:910
 msgid "Save"
 msgstr "Kaydet"
 
-#: src/window.js:883
+#: src/window.js:1006
 msgid "New"
 msgstr "Yeni"
 
-#: src/window.js:933
+#: src/window.js:1056
 msgid "New entry"
 msgstr "Yeni girdi"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:935
+#: src/window.js:1058
 msgid "Add to history"
 msgstr "Geçmişe ekle"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:1016
+#: src/window.js:1139
 msgid "Are you sure?"
 msgstr "Emin misiniz?"
 
-#: src/window.js:1232
+#: src/window.js:1366
 msgid "Empty name"
 msgstr "Boş ad"
 
-#: src/window.js:1236
+#: src/window.js:1370
 msgid "Empty unit"
 msgstr "Boş birim"
 
-#: src/window.js:1242
+#: src/window.js:1376
 msgid "Choose at least one day"
 msgstr "En az bir gün seçin"
 
-#: src/window.js:1252
+#: src/window.js:1386
 msgid "Name already exists"
 msgstr "Ad zaten var"
 
-#: src/window.js:1266
+#: src/window.js:1400
 msgid "Duplicated time"
 msgstr "Yinelenen zaman"
 

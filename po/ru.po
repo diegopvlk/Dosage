@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-17 09:15-0300\n"
+"POT-Creation-Date: 2023-11-25 15:38-0300\n"
 "PO-Revision-Date: 2023-10-31 01:26+0000\n"
 "Last-Translator: volkov <d2oo1dle2x@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
@@ -23,7 +23,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:128 src/window.js:504
+#: src/main.js:128 src/window.js:522
 msgid "Dosage"
 msgstr "Дозировка"
 
@@ -92,31 +92,31 @@ msgstr "Раздел \"Курсы лечения\" Дозировки в све�
 msgid "Dosage today window in dark theme"
 msgstr "Раздел \"Сегодня\" Дозировки в темной теме"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:152
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:161
 msgid "medication"
 msgstr "лекарства"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:153
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:162
 msgid "tracker"
 msgstr "трекер"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:154
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:163
 msgid "reminder"
 msgstr "напоминание"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:155
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:164
 msgid "treatments"
 msgstr "kурсы лечения"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:156
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:165
 msgid "pill"
 msgstr "таблетка"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:157
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:166
 msgid "drug"
 msgstr "лекарства"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:158
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:167
 msgid "remedy"
 msgstr "целебная"
 
@@ -151,7 +151,7 @@ msgstr "Выйти"
 msgid "New treatment"
 msgstr "Новый курс лечения"
 
-#: data/ui/med-window.blp:19 src/window.js:1021
+#: data/ui/med-window.blp:19 src/window.js:1144
 msgid "Cancel"
 msgstr "Отменить"
 
@@ -171,7 +171,7 @@ msgstr "Название"
 msgid "Unit"
 msgstr "Единица измерения"
 
-#: data/ui/med-window.blp:57 src/window.js:893
+#: data/ui/med-window.blp:57 src/window.js:1016
 msgid "Pill(s)"
 msgstr "Таблетка(и)"
 
@@ -187,7 +187,7 @@ msgstr "После приема пищи"
 msgid "Color and icon"
 msgstr "Цвет и иконка"
 
-#: data/ui/med-window.blp:70 src/window.js:936
+#: data/ui/med-window.blp:70 src/window.js:1059
 msgid "Color"
 msgstr "Цвет"
 
@@ -406,7 +406,7 @@ msgstr "Заканчивается"
 msgid "Date"
 msgstr "Дата приема"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1022
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1145
 msgid "Delete"
 msgstr "Удалить"
 
@@ -442,11 +442,11 @@ msgstr "Кнопки уведомлений"
 msgid "Show or hide confirm/skip"
 msgstr "Показать или скрыть подтвердить/пропустить"
 
-#: data/ui/preferences.blp:47 src/window.js:432 src/window.js:557
+#: data/ui/preferences.blp:47 src/window.js:450 src/window.js:575
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:436
+#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:454
 msgid "Skip"
 msgstr "Пропустить"
 
@@ -462,7 +462,7 @@ msgstr "Сегодня"
 msgid "Unselect"
 msgstr "Отменить выбор"
 
-#: data/ui/window.blp:70 src/window.js:557
+#: data/ui/window.blp:70 src/window.js:575
 msgid "One-time entry"
 msgstr "Одноразовый прием"
 
@@ -521,11 +521,11 @@ msgstr ""
 "Разрешите, чтобы приложение могло работать в фоновом режиме и отправлять "
 "уведомления"
 
-#: src/treatmentsFactory.js:94
+#: src/treatmentsFactory.js:93
 msgid "Remaining"
 msgstr "Осталось"
 
-#: src/treatmentsFactory.js:98
+#: src/treatmentsFactory.js:97
 msgid "Low stock"
 msgstr "Запас на исходе"
 
@@ -574,66 +574,66 @@ msgstr "Пятница"
 msgid "Saturday"
 msgstr "Суббота"
 
-#: src/utils.js:134
+#: src/utils.js:158
 msgid "Delete dose"
 msgstr "Удалить дозу"
 
 #. TRANSLATORS: Notification text for for when the inventory is low
-#: src/window.js:94
+#: src/window.js:97
 msgid "You have treatments low in stock"
 msgstr "У вас осталось мало лекарств в запасе"
 
-#: src/window.js:358
+#: src/window.js:374
 msgid "No treatments added yet!"
 msgstr "Ни одного курса лечения еще не было добавлено!"
 
-#: src/window.js:363
+#: src/window.js:379
 msgid "All done for today!"
 msgstr "Вы приняли все лекарства на сегодня!"
 
-#: src/window.js:787
+#: src/window.js:909
 msgid "Edit treatment"
 msgstr "Редактировать курс лечения"
 
-#: src/window.js:788
+#: src/window.js:910
 msgid "Save"
 msgstr "Сохранить"
 
-#: src/window.js:883
+#: src/window.js:1006
 msgid "New"
 msgstr "Новая"
 
-#: src/window.js:933
+#: src/window.js:1056
 msgid "New entry"
 msgstr "Новая запись"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:935
+#: src/window.js:1058
 msgid "Add to history"
 msgstr "Добавить в историю"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:1016
+#: src/window.js:1139
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
-#: src/window.js:1232
+#: src/window.js:1366
 msgid "Empty name"
 msgstr "Отсутствует название записи"
 
-#: src/window.js:1236
+#: src/window.js:1370
 msgid "Empty unit"
 msgstr "Пустая единица измерения"
 
-#: src/window.js:1242
+#: src/window.js:1376
 msgid "Choose at least one day"
 msgstr "Выберите хотя бы один день"
 
-#: src/window.js:1252
+#: src/window.js:1386
 msgid "Name already exists"
 msgstr "Это название уже занято"
 
-#: src/window.js:1266
+#: src/window.js:1400
 msgid "Duplicated time"
 msgstr "Одинаковое время у приемов доз"
 

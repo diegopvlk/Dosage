@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-17 09:15-0300\n"
+"POT-Creation-Date: 2023-11-25 15:38-0300\n"
 "PO-Revision-Date: 2023-11-09 18:55+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/dosage/dosage/nl/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:128 src/window.js:504
+#: src/main.js:128 src/window.js:522
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -88,31 +88,31 @@ msgstr "Bewerkscherm (licht thema)"
 msgid "Dosage today window in dark theme"
 msgstr "Vandaag-scherm (donker thema)"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:152
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:161
 msgid "medication"
 msgstr "medicatie"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:153
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:162
 msgid "tracker"
 msgstr "bijhouden"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:154
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:163
 msgid "reminder"
 msgstr "herinnering"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:155
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:164
 msgid "treatments"
 msgstr "medicatie"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:156
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:165
 msgid "pill"
 msgstr "pil"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:157
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:166
 msgid "drug"
 msgstr "medicijn"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:158
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:167
 msgid "remedy"
 msgstr "remedie"
 
@@ -146,7 +146,7 @@ msgstr "Afsluiten"
 msgid "New treatment"
 msgstr "Medicatie toevoegen"
 
-#: data/ui/med-window.blp:19 src/window.js:1021
+#: data/ui/med-window.blp:19 src/window.js:1144
 msgid "Cancel"
 msgstr "Annuleren"
 
@@ -166,7 +166,7 @@ msgstr "Naam"
 msgid "Unit"
 msgstr "Eenheid"
 
-#: data/ui/med-window.blp:57 src/window.js:893
+#: data/ui/med-window.blp:57 src/window.js:1016
 msgid "Pill(s)"
 msgstr "Pil(len)"
 
@@ -182,7 +182,7 @@ msgstr "Na de maaltijd"
 msgid "Color and icon"
 msgstr "Kleur en pictogram"
 
-#: data/ui/med-window.blp:70 src/window.js:936
+#: data/ui/med-window.blp:70 src/window.js:1059
 msgid "Color"
 msgstr "Kleur"
 
@@ -399,7 +399,7 @@ msgstr "Eindigt op"
 msgid "Date"
 msgstr "Datum"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1022
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1145
 msgid "Delete"
 msgstr "Verwijderen"
 
@@ -435,11 +435,11 @@ msgstr "Meldingsknoppen"
 msgid "Show or hide confirm/skip"
 msgstr "Toon of verberg bevestigen/overslaan"
 
-#: data/ui/preferences.blp:47 src/window.js:432 src/window.js:557
+#: data/ui/preferences.blp:47 src/window.js:450 src/window.js:575
 msgid "Confirm"
 msgstr "Bevestigen"
 
-#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:436
+#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:454
 msgid "Skip"
 msgstr "Overslaan"
 
@@ -455,7 +455,7 @@ msgstr "Vandaag"
 msgid "Unselect"
 msgstr "Niets selecteren"
 
-#: data/ui/window.blp:70 src/window.js:557
+#: data/ui/window.blp:70 src/window.js:575
 msgid "One-time entry"
 msgstr "Eenmalig"
 
@@ -514,11 +514,11 @@ msgstr ""
 "Keur goed dat de toepassing op de achtergrond mag worden uitgevoerd en "
 "meldingen mag tonen"
 
-#: src/treatmentsFactory.js:94
+#: src/treatmentsFactory.js:93
 msgid "Remaining"
 msgstr "Resterend"
 
-#: src/treatmentsFactory.js:98
+#: src/treatmentsFactory.js:97
 msgid "Low stock"
 msgstr "Weinig voorraad"
 
@@ -567,65 +567,65 @@ msgstr "Vrijdag"
 msgid "Saturday"
 msgstr "Zaterdag"
 
-#: src/utils.js:134
+#: src/utils.js:158
 msgid "Delete dose"
 msgstr "Dosering verwijderen"
 
 #. TRANSLATORS: Notification text for for when the inventory is low
-#: src/window.js:94
+#: src/window.js:97
 msgid "You have treatments low in stock"
 msgstr "De voorraad van enkele medicatie is laag"
 
-#: src/window.js:358
+#: src/window.js:374
 msgid "No treatments added yet!"
 msgstr "U heeft nog niets toegevoegd!"
 
-#: src/window.js:363
+#: src/window.js:379
 msgid "All done for today!"
 msgstr "U bent klaar voor vandaag!"
 
-#: src/window.js:787
+#: src/window.js:909
 msgid "Edit treatment"
 msgstr "Medicatie bewerken"
 
-#: src/window.js:788
+#: src/window.js:910
 msgid "Save"
 msgstr "Opslaan"
 
-#: src/window.js:883
+#: src/window.js:1006
 msgid "New"
 msgstr "Nieuw"
 
-#: src/window.js:933
+#: src/window.js:1056
 msgid "New entry"
 msgstr "Nieuw item"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:935
+#: src/window.js:1058
 msgid "Add to history"
 msgstr "Tonen in geschiedenis"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:1016
+#: src/window.js:1139
 msgid "Are you sure?"
 msgstr "Weet u het zeker?"
 
-#: src/window.js:1232
+#: src/window.js:1366
 msgid "Empty name"
 msgstr "Naamloos"
 
-#: src/window.js:1236
+#: src/window.js:1370
 msgid "Empty unit"
 msgstr "Niets ingevoerd"
 
-#: src/window.js:1242
+#: src/window.js:1376
 msgid "Choose at least one day"
 msgstr "Kies minimaal één dag"
 
-#: src/window.js:1252
+#: src/window.js:1386
 msgid "Name already exists"
 msgstr "Deze naam is al in gebruik"
 
-#: src/window.js:1266
+#: src/window.js:1400
 msgid "Duplicated time"
 msgstr "Dit tijdstip is al gekozen"
