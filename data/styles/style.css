@@ -15,6 +15,9 @@
 @define-color card_bg_color alpha(#DBD8E8, 0.7);
 @define-color card_fg_color @window_fg_color;
 
+@define-color boxed_hover #d7d5e8;
+@define-color boxed_active #d2cfe4;
+
 .empty-history,
 .empty-today,
 .empty-treatments {
@@ -48,38 +51,49 @@ list > row.header {
 	background: transparent;
 }
 
+list > row.activatable:hover,
 list.nested > row.activatable:hover,
 list > row.activatable.header:hover {
-	background: alpha(@accent_color, 0.09);
+	background: @boxed_hover;
 }
 
+list > row.activatable:active,
 list.nested > row.activatable:active,
 list > row.activatable.header:active {
-	background: alpha(@accent_color, 0.11);
+	background: @boxed_active;
 }
 
-list > row.activatable:hover {
-	background: alpha(@accent_color, 0.19);
+.button-left > button:hover,
+.button-left > button:checked {
+	background: linear-gradient(
+		90deg,
+		@boxed_hover 70%,
+		alpha(@boxed_hover, 0.01) 100%
+	);
 }
 
-list > row.activatable:active {
-	background: alpha(@accent_color, 0.21);
+.button-left > button:active {
+	background: linear-gradient(
+		90deg,
+		@boxed_active 70%,
+		alpha(@boxed_active, 0.01) 100%
+	);
 }
 
 .button-right > button:hover,
 .button-right > button:checked {
 	background: linear-gradient(
 		-90deg,
-		alpha(darker(@card_bg_color), 0.18) 70%,
-		transparent 100%
+		@boxed_hover 70%,
+		alpha(@boxed_hover, 0.01) 100%
 	);
 }
 
 .button-right > button:active {
 	background: linear-gradient(
 		-90deg,
-		alpha(darker(@card_bg_color), 0.3) 70%,
-		transparent 100%
+		@boxed_active 70%,
+		alpha(@boxed_active, 0.01) 100%
 	);
 }
 
@@ -131,6 +145,10 @@ actionbar viewswitcher box.narrow.vertical label:not(.numeric) {
 	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.05);
 }
 
+.custom-list > row:hover > box.activatable {
+	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.1);
+}
+
 .card,
 .boxed-list {
 	box-shadow: none;
@@ -178,18 +196,19 @@ row:focus {
 }
 
 .rounded-label {
-	background-color: alpha(currentColor, 0.15);
-	border: 1px solid alpha(currentColor, 0.27);
-	padding: 3px 8px;
+	background-color: alpha(currentColor, 0.13);
+	border: 1px solid alpha(currentColor, 0.23);
+	padding: 3px 7px;
 	border-radius: 99px;
-	text-transform: uppercase;
+	text-transform: capitalize;
+	font-weight: 500;
 	font-size: 90%;
 	opacity: 0.72;
 }
 
 .low-stock-label {
-	background-color: alpha(currentColor, 0.2);
-	border: 1px solid alpha(currentColor, 0.4);
+	background-color: alpha(currentColor, 0.18);
+	border: 1px solid alpha(currentColor, 0.48);
 }
 
 .ampm-row .suffixes spinbutton text {
@@ -259,40 +278,6 @@ popover > contents {
 	border-radius: 10px;
 	padding-top: 7px;
 	padding-bottom: 7px;
-}
-
-.button-left > button:hover,
-.button-left > button:checked {
-	background: linear-gradient(
-		90deg,
-		alpha(darker(@card_bg_color), 0.3) 70%,
-		transparent 100%
-	);
-}
-
-.button-left > button:active {
-	background: linear-gradient(
-		90deg,
-		alpha(darker(@card_bg_color), 0.45) 70%,
-		transparent 100%
-	);
-}
-
-.button-right > button:hover,
-.button-right > button:checked {
-	background: linear-gradient(
-		-90deg,
-		alpha(darker(@card_bg_color), 0.3) 70%,
-		transparent 100%
-	);
-}
-
-.button-right > button:active {
-	background: linear-gradient(
-		-90deg,
-		alpha(darker(@card_bg_color), 0.45) 70%,
-		transparent 100%
-	);
 }
 
 menubutton.numeric button {

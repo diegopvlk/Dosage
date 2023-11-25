@@ -3,7 +3,6 @@ popover contents {
 }
 
 .rounded-label {
-	background-color: alpha(currentColor, 0.2);
 	border: 1px solid alpha(currentColor, 0.66);
 	opacity: 0.8;
 }

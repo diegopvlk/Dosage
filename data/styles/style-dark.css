@@ -12,6 +12,9 @@
 @define-color card_bg_color alpha(#373841, 0.7);
 @define-color card_fg_color @window_fg_color;
 
+@define-color boxed_hover #383a44;
+@define-color boxed_active #3c3d49;
+
 .card-stripe {
 	background-image: linear-gradient(
 		alpha(currentColor, 0.15),
@@ -178,38 +181,4 @@ button.suggested-action:active {
 
 #dosage-med-window button.suggested-action {
 	box-shadow: 0 1px 3.5px 0px alpha(@dosage_purple_4, 0.2);
-}
-
-.button-left > button:hover,
-.button-left > button:checked {
-	background: linear-gradient(
-		90deg,
-		alpha(lighter(@card_bg_color), 0.6) 70%,
-		alpha(lighter(@card_bg_color), 0.01) 100%
-	);
-}
-
-.button-left > button:active {
-	background: linear-gradient(
-		90deg,
-		alpha(lighter(@card_bg_color), 0.8) 70%,
-		alpha(lighter(@card_bg_color), 0.01) 100%
-	);
-}
-
-.button-right > button:hover,
-.button-right > button:checked {
-	background: linear-gradient(
-		-90deg,
-		alpha(lighter(@card_bg_color), 0.6) 70%,
-		alpha(lighter(@card_bg_color), 0.01) 100%
-	);
-}
-
-.button-right > button:active {
-	background: linear-gradient(
-		-90deg,
-		alpha(lighter(@card_bg_color), 0.8) 70%,
-		alpha(lighter(@card_bg_color), 0.01) 100%
-	);
 }

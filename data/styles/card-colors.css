@@ -5,8 +5,17 @@
 	);
 	background-repeat: no-repeat;
 	background-size: 3px;
+}
+
+.card-stripe:dir(ltr) {
 	border-top-left-radius: 99px;
 	border-bottom-left-radius: 99px;
+}
+
+.card-stripe:dir(rtl) {
+	border-top-right-radius: 99px;
+	border-bottom-right-radius: 99px;
+	margin-left: 3px;
 }
 
 .card checkbutton check:checked {
