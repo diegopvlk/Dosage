@@ -70,6 +70,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._loadTreatments();
 			this._loadHistory();
 			this._updateItems();
+			this._addMissedItems();
 			this._updateCycleAndLastUp();
 			this._updateJsonFile('treatments', treatmentsLS);
 			this._loadToday();
@@ -113,6 +114,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			const now = new Date().setHours(0, 0, 0, 0);
 			// update everything at next midnight
 			if (now > lastDate) {
+				this._addMissedItems();
 				this._updateEverything();
 				this._scheduleNotifications();
 				lastDate = now;
@@ -276,15 +278,25 @@ class DosageWindow extends Adw.ApplicationWindow {
 						const itemRmDt = new Date(itemRemoved.date);
 						const date = itemRmDt.setHours(0, 0, 0, 0);
 						const today = new Date().setHours(0, 0, 0, 0);
-
+					
 						if (date === today) {
 							for (const item of treatmentsLS) {
-								const sameItem =
-									item.name === itemRemoved.name && itemRemoved.taken === 'yes';
-
-								if (sameItem && item.info.inventory.enabled) {
-									item.info.inventory.current += itemRemoved.info.dose;
-								}		
+								const sameItem = item.name === itemRemoved.name;
+								const info = item.info;
+					
+								if (sameItem) {
+									info.dosage.forEach((timeDose) => {
+										const td = { ...timeDose, lastTaken: undefined };
+										const sameInfo =
+											JSON.stringify(td) === JSON.stringify(itemRemoved.info);
+										
+										if (sameInfo) timeDose.lastTaken = null;
+									});
+					
+									if (info.inventory.enabled && itemRemoved.taken === 'yes') {
+										info.inventory.current += itemRemoved.info.dose;
+									}
+								}
 							}
 						}
 						this._updateEverything();
@@ -602,7 +614,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}	
 	}
 
-	_insertItemToHistory(item, taken) {
+	_insertItemToHistory(item, taken, missedDate) {
 		historyLS.insert(
 			0,
 			new HistoryMedication({
@@ -611,9 +623,26 @@ class DosageWindow extends Adw.ApplicationWindow {
 				color: item.info.color,
 				taken: taken,
 				info: item.info.dosage,
-				date: new Date().toISOString(),
+				date: missedDate || new Date().toISOString(),
 			})
 		);
+
+		// update lastTaken of treatment dose when confirming/skipping
+		if (!missedDate) {	
+			for (const item of treatmentsLS) {
+				item.info.dosage.forEach(timeDose => {
+					const tempObj = { ...timeDose, lastTaken: undefined };
+					const treatDose = JSON.stringify(tempObj);
+
+					this._todayItems.forEach(i => {
+						const todayDose = JSON.stringify(i.info.dosage);
+						if (treatDose === todayDose){
+							timeDose.lastTaken = new Date().toISOString();
+						}
+					});	
+				});
+			}
+		}
 	}
 
 	_updateJsonFile(type, listStore) {
@@ -672,6 +701,73 @@ class DosageWindow extends Adw.ApplicationWindow {
 				info.lastUpdate = info.lastUpdate.toISOString();
 			}
 		}
+	}
+
+	_addMissedItems() {
+		let itemsAdded = false;
+
+		const insert = (timeDose, tempItem, nextDate) => {
+			if (!timeDose.lastTaken) {
+				const nextDt = new Date(nextDate);
+				nextDt.setHours(23, 59, 59, 999);
+				this._insertItemToHistory(tempItem, 'miss', nextDt.toISOString());
+				itemsAdded = true;
+			}
+		}
+
+		for (const item of treatmentsLS) {
+			const info = item.info;
+			const today = new Date();
+			const nextDate = new Date(item.info.lastUpdate);
+			today.setHours(0, 0, 0, 0);
+			nextDate.setHours(0, 0, 0, 0);
+
+			let current = info.cycle[2];
+			
+			while (nextDate < today) {
+				const [active, inactive] = info.cycle;
+	
+				info.dosage.forEach(timeDose => {
+					const tempItem = {};
+					tempItem.name = item.name;
+					tempItem.unit = item.unit;
+					tempItem.info = { ...item.info };
+					tempItem.info.dosage = {
+						time: [timeDose.time[0], timeDose.time[1]],
+						dose: timeDose.dose,
+					};
+					switch (info.frequency) {
+						case 'daily':
+							insert(timeDose, tempItem, nextDate);
+							break;
+						case 'specific-days':
+							if (info.days.includes(nextDate.getDay())) {
+								insert(timeDose, tempItem, nextDate);
+							}
+							break;
+						case 'cycle':
+							if (current <= active) {
+								insert(timeDose, tempItem, nextDate);
+							}
+							break;
+					}
+					// only the first date of confirmed/skipped items doens't get added 
+					// so set lastTaken to null after the first loop
+					timeDose.lastTaken = null;
+				});
+
+				current += 1;
+				if (current > active + inactive) current = 1;
+				
+				nextDate.setDate(nextDate.getDate() + 1);
+			}	
+		}
+
+		if (itemsAdded) {
+			this._updateJsonFile('history', historyLS);
+		}
+
+		this._setEmptyHistLabel();
 	}
 
 	_updateCycleAndLastUp() {
@@ -1152,8 +1248,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			if (isUpdate) {
 				const item = list.get_model().get_item(position);
-				doses.concat(item.info.dosage);
-				lastUpdate = item.info.lastUpdate;
+				doses = doses.map((dose, idx) => {
+					return {
+						time: dose.time,
+						dose: dose.dose,
+						lastTaken: item.info.dosage[idx].lastTaken || null,
+					};
+				});
 				treatmentsLS.remove(position);
 			}
 
