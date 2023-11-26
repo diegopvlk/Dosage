@@ -8,24 +8,27 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-25 22:33-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-11-26 20:29+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
+">\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.2.1-rc\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
 #: src/main.js:128 src/window.js:522
 msgid "Dosage"
-msgstr ""
+msgstr "Dosage"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
 msgid "Keep track of your treatments"
-msgstr ""
+msgstr "Pidä kirjaa lääkityksistä"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
 msgid ""
@@ -36,7 +39,7 @@ msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:8
 msgid "Features:"
-msgstr ""
+msgstr "Ominaisuudet:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
 msgid "Notifications — Get reminders at the right time"
@@ -81,27 +84,27 @@ msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:169
 msgid "medication"
-msgstr ""
+msgstr "lääkitys"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:170
 msgid "tracker"
-msgstr ""
+msgstr "seuranta"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:171
 msgid "reminder"
-msgstr ""
+msgstr "muistutus"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:172
 msgid "treatments"
-msgstr ""
+msgstr "hoidot"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:173
 msgid "pill"
-msgstr ""
+msgstr "pilleri"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:174
 msgid "drug"
-msgstr ""
+msgstr "lääke"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:175
 msgid "remedy"
@@ -115,503 +118,506 @@ msgstr ""
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Yleiset"
 
 #: data/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Preferences"
-msgstr ""
+msgstr "Asetukset"
 
 #: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Näytä pikanäppäimet"
 
 #: data/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Lopeta"
 
 #: data/ui/med-window.blp:11
 msgid "New treatment"
-msgstr ""
+msgstr "Uusi hoito"
 
 #: data/ui/med-window.blp:19 src/window.js:1140
 msgid "Cancel"
-msgstr ""
+msgstr "Peru"
 
 #: data/ui/med-window.blp:25 data/ui/window.blp:158
 msgid "Add"
-msgstr ""
+msgstr "Lisää"
 
 #: data/ui/med-window.blp:44
 msgid "From treatment list"
-msgstr ""
+msgstr "Hoitoluettelosta"
 
 #: data/ui/med-window.blp:53
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #: data/ui/med-window.blp:56
 msgid "Unit"
-msgstr ""
+msgstr "Yksikkö"
 
 #: data/ui/med-window.blp:57 src/window.js:1012
 msgid "Pill(s)"
-msgstr ""
+msgstr "Pilleri(t)"
 
 #: data/ui/med-window.blp:60
 msgid "Notes"
-msgstr ""
+msgstr "Muistiinpanot"
 
 #: data/ui/med-window.blp:61
 msgid "After meal"
-msgstr ""
+msgstr "Aterian jälkeen"
 
 #: data/ui/med-window.blp:65
 msgid "Color and icon"
-msgstr ""
+msgstr "Väri ja kuvake"
 
 #: data/ui/med-window.blp:70 src/window.js:1055
 msgid "Color"
-msgstr ""
+msgstr "Väri"
 
 #. TRANSLATORS: Tooltip for the colors (from Default until Purple)
 #: data/ui/med-window.blp:81
 msgid "Default"
-msgstr ""
+msgstr "Oletus"
 
 #: data/ui/med-window.blp:88
 msgid "Red"
-msgstr ""
+msgstr "Punainen"
 
 #: data/ui/med-window.blp:95
 msgid "Orange"
-msgstr ""
+msgstr "Oranssi"
 
 #: data/ui/med-window.blp:102
 msgid "Yellow"
-msgstr ""
+msgstr "Keltainen"
 
 #: data/ui/med-window.blp:109
 msgid "Green"
-msgstr ""
+msgstr "Vihreä"
 
 #: data/ui/med-window.blp:116
 msgid "Cyan"
-msgstr ""
+msgstr "Syaani"
 
 #: data/ui/med-window.blp:123
 msgid "Blue"
-msgstr ""
+msgstr "Sininen"
 
 #: data/ui/med-window.blp:130
 msgid "Purple"
-msgstr ""
+msgstr "Liila"
 
 #: data/ui/med-window.blp:139
 msgid "Icon"
-msgstr ""
+msgstr "Kuvake"
 
 #. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
 #: data/ui/med-window.blp:152
 msgid "Pill"
-msgstr ""
+msgstr "Pilleri"
 
 #: data/ui/med-window.blp:162
 msgid "Alternative pill"
-msgstr ""
+msgstr "Vaihtoehtoinen pilleri"
 
 #: data/ui/med-window.blp:172
 msgid "Capsule"
-msgstr ""
+msgstr "Kapseli"
 
 #: data/ui/med-window.blp:182
 msgid "Round pill"
-msgstr ""
+msgstr "Pyöreä pilleri"
 
 #: data/ui/med-window.blp:192
 msgid "Alternative round pill"
-msgstr ""
+msgstr "Vaihtoehtoinen pyöreä pilleri"
 
 #: data/ui/med-window.blp:202
 msgid "Ampoule"
-msgstr ""
+msgstr "Ampulli"
 
 #: data/ui/med-window.blp:212
 msgid "Injection"
-msgstr ""
+msgstr "Injektio"
 
 #: data/ui/med-window.blp:223
 msgid "Square pill"
-msgstr ""
+msgstr "Neliömäinen pilleri"
 
 #: data/ui/med-window.blp:233
 msgid "Alternative square pill"
-msgstr ""
+msgstr "Vaihtoehtoinen neliömäinen pilleri"
 
 #: data/ui/med-window.blp:243
 msgid "Triangle pill"
-msgstr ""
+msgstr "Kolmiomainen pilleri"
 
 #: data/ui/med-window.blp:253
 msgid "Alternative triangle pill"
-msgstr ""
+msgstr "Vaihtoehtoinen kolmiomainen pilleri"
 
 #: data/ui/med-window.blp:263
 msgid "Bottle"
-msgstr ""
+msgstr "Pullo"
 
 #: data/ui/med-window.blp:273
 msgid "Drop"
-msgstr ""
+msgstr "Tippa"
 
 #: data/ui/med-window.blp:283
 msgid "Potion"
-msgstr ""
+msgstr "Lääkeannos"
 
 #: data/ui/med-window.blp:297
 msgid "Every day"
-msgstr ""
+msgstr "Päivittäin"
 
 #: data/ui/med-window.blp:298
 msgid "Specific days"
-msgstr ""
+msgstr "Valitut päivät"
 
 #: data/ui/med-window.blp:299 src/treatmentsFactory.js:151
 msgid "Cycle"
-msgstr ""
+msgstr "Sykli"
 
 #: data/ui/med-window.blp:300 src/treatmentsFactory.js:155
 msgid "When necessary"
-msgstr ""
+msgstr "Tarvittaessa"
 
 #: data/ui/med-window.blp:308 data/ui/med-window.blp:481
 #: data/ui/med-window.blp:497 data/ui/med-window.blp:515
 msgid "Choose"
-msgstr ""
+msgstr "Valitse"
 
 #. TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa)
 #: data/ui/med-window.blp:317
 msgid "Su"
-msgstr ""
+msgstr "Su"
 
 #: data/ui/med-window.blp:323
 msgid "Mo"
-msgstr ""
+msgstr "Ma"
 
 #: data/ui/med-window.blp:329
 msgid "Tu"
-msgstr ""
+msgstr "Ti"
 
 #: data/ui/med-window.blp:335
 msgid "We"
-msgstr ""
+msgstr "Ke"
 
 #: data/ui/med-window.blp:341
 msgid "Th"
-msgstr ""
+msgstr "To"
 
 #: data/ui/med-window.blp:347
 msgid "Fr"
-msgstr ""
+msgstr "Pe"
 
 #: data/ui/med-window.blp:353
 msgid "Sa"
-msgstr ""
+msgstr "La"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"
-msgstr ""
+msgstr "Aktiiviset päivät"
 
 #: data/ui/med-window.blp:382
 msgid "Days inactive"
-msgstr ""
+msgstr "Passiiviset päivät"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-window.blp:395
 msgid "Today is cycle day…"
-msgstr ""
+msgstr "Tänään syklin päivä…"
 
 #: data/ui/med-window.blp:411
 msgid "Time and amount"
-msgstr ""
+msgstr "Aika ja määrä"
 
 #: data/ui/med-window.blp:419
 msgid "Add dose"
-msgstr ""
+msgstr "Lisää annos"
 
 #: data/ui/med-window.blp:424
 msgid "Recurring notifications"
-msgstr ""
+msgstr "Toistuvat ilmoitukset"
 
 #: data/ui/med-window.blp:425
 msgid "Renotify until it's confirmed or skipped"
-msgstr ""
+msgstr "Muistuta uudelleen, kunnes on saatu vahvistus tai ohitus"
 
 #: data/ui/med-window.blp:429
 msgid "Interval in minutes"
-msgstr ""
+msgstr "Väli minuuteissa"
 
 #: data/ui/med-window.blp:441
 msgid "Inventory"
-msgstr ""
+msgstr "Inventaario"
 
 #: data/ui/med-window.blp:442
 msgid "Manage your stock"
-msgstr ""
+msgstr "Hallitse varastoa"
 
 #: data/ui/med-window.blp:447
 msgid "Current"
-msgstr ""
+msgstr "Nykyinen"
 
 #: data/ui/med-window.blp:458
 msgid "Remind me at"
-msgstr ""
+msgstr "Muistuta kun jäljellä"
 
 #: data/ui/med-window.blp:471
 msgid "Duration"
-msgstr ""
+msgstr "Kesto"
 
 #: data/ui/med-window.blp:472
 msgid "Set a start and end date"
-msgstr ""
+msgstr "Aseta alku- ja loppupäivä"
 
 #: data/ui/med-window.blp:476
 msgid "Starts on"
-msgstr ""
+msgstr "Alkaa"
 
 #: data/ui/med-window.blp:492
 msgid "Ends on"
-msgstr ""
+msgstr "Loppuu"
 
 #: data/ui/med-window.blp:510
 msgid "Date"
-msgstr ""
+msgstr "Päivä"
 
 #: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1141
 msgid "Delete"
-msgstr ""
+msgstr "Poista"
 
 #: data/ui/preferences.blp:9 data/ui/window.blp:190
 msgid "Preferences"
-msgstr ""
+msgstr "Asetukset"
 
 #: data/ui/preferences.blp:15
 msgid "Autostart at login"
-msgstr ""
+msgstr "Käynnistä kirjautumisen yhteydessä"
 
 #: data/ui/preferences.blp:24
 msgid "Increase notification priority"
-msgstr ""
+msgstr "Korota ilmoituksen tärkeysastetta"
 
 #: data/ui/preferences.blp:25
 msgid ""
 "On GNOME this will make the notification show on fullscreen mode or even if "
 "'Do Not Disturb' is enabled"
 msgstr ""
+"Gnome-työpöydällä ilmoitus näytetään koko näytön tilassa ja jopa silloin, "
+"kun \"Älä häiritse\"-tila on käytössä"
 
 #: data/ui/preferences.blp:34
 msgid "Notification sound"
-msgstr ""
+msgstr "Ilmoituksen ääni"
 
 #: data/ui/preferences.blp:43
 msgid "Notification buttons"
-msgstr ""
+msgstr "Ilmoituksen painikkeet"
 
 #: data/ui/preferences.blp:44
 msgid "Show or hide confirm/skip"
-msgstr ""
+msgstr "Näytä tai piilota vahvistus- ja ohituspainikkeet"
 
 #: data/ui/preferences.blp:47 src/window.js:450 src/window.js:575
 msgid "Confirm"
-msgstr ""
+msgstr "Vahvista"
 
 #: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:454
 msgid "Skip"
-msgstr ""
+msgstr "Ohita"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
-msgstr ""
+msgstr "Päävalikko"
 
 #: data/ui/window.blp:41
 msgid "Today"
-msgstr ""
+msgstr "Tänään"
 
 #: data/ui/window.blp:62
 msgid "Unselect"
-msgstr ""
+msgstr "Älä valitse"
 
 #: data/ui/window.blp:70 src/window.js:575
 msgid "One-time entry"
-msgstr ""
+msgstr "Kertakirjaus"
 
 #: data/ui/window.blp:106
 msgid "History"
-msgstr ""
+msgstr "Historia"
 
 #: data/ui/window.blp:121
 msgid "Empty history"
-msgstr ""
+msgstr "Historia on tyhjä"
 
 #: data/ui/window.blp:132
 msgid "Treatments"
-msgstr ""
+msgstr "Hoidot"
 
 #: data/ui/window.blp:165
 msgid "Click the button below to add some"
-msgstr ""
+msgstr "Napsauta alla olevaa painiketta lisätäksesi"
 
 #: data/ui/window.blp:194
 msgid "About Dosage"
-msgstr ""
+msgstr "Tietoja - Dosage"
 
 #: data/ui/window.blp:198
 msgid "Quit"
-msgstr ""
+msgstr "Lopeta"
 
 #. TRANSLATORS: Keep it short
 #: src/historyFactory.js:126
 msgid "Confirmed"
-msgstr ""
+msgstr "Vahvistettu"
 
 #. TRANSLATORS: Keep it short
 #: src/historyFactory.js:129
 msgid "Skipped"
-msgstr ""
+msgstr "Ohitettu"
 
 #. TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
 #: src/historyFactory.js:132
 msgid "Missed"
-msgstr ""
+msgstr "Jäänyt huomiotta"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:136
 msgid "translator-credits"
-msgstr ""
+msgstr "Jiri Grönroos <jiri.gronroos+l10n@iki.fi>"
 
 #: src/main.js:139
 msgid "Thanks to these projects!"
-msgstr ""
+msgstr "Kiitos näille projekteille!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:172
 msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
+"Hyväksy, jotta suoritus taustalla ja ilmoitusten vastaanottaminen sallitaan"
 
 #: src/treatmentsFactory.js:93
 msgid "Remaining"
-msgstr ""
+msgstr "Jäljellä"
 
 #: src/treatmentsFactory.js:97
 msgid "Low stock"
-msgstr ""
+msgstr "Loppumaisillaan"
 
 #. TRANSLATORS: Keep it short (label for when duration is enabled)
 #: src/treatmentsFactory.js:107
 msgid "Until"
-msgstr ""
+msgstr "Asti"
 
 #: src/treatmentsFactory.js:117 src/treatmentsFactory.js:130
 msgid "Daily"
-msgstr ""
+msgstr "Päivittäin"
 
 #: src/treatmentsFactory.js:126
 msgid "Weekend"
-msgstr ""
+msgstr "Viikonloppuisin"
 
 #: src/treatmentsFactory.js:128
 msgid "Weekdays"
-msgstr ""
+msgstr "Viikonpäivät"
 
 #: src/treatmentsFactory.js:139
 msgid "Sunday"
-msgstr ""
+msgstr "Sunnuntai"
 
 #: src/treatmentsFactory.js:140
 msgid "Monday"
-msgstr ""
+msgstr "Maanantai"
 
 #: src/treatmentsFactory.js:141
 msgid "Tuesday"
-msgstr ""
+msgstr "Tiistai"
 
 #: src/treatmentsFactory.js:142
 msgid "Wednesday"
-msgstr ""
+msgstr "Keskiviikko"
 
 #: src/treatmentsFactory.js:143
 msgid "Thursday"
-msgstr ""
+msgstr "Torstai"
 
 #: src/treatmentsFactory.js:144
 msgid "Friday"
-msgstr ""
+msgstr "Perjantai"
 
 #: src/treatmentsFactory.js:145
 msgid "Saturday"
-msgstr ""
+msgstr "Lauantai"
 
 #: src/utils.js:158
 msgid "Delete dose"
-msgstr ""
+msgstr "Poista annos"
 
 #. TRANSLATORS: Notification text for for when the inventory is low
 #: src/window.js:97
 msgid "You have treatments low in stock"
-msgstr ""
+msgstr "Hoitoannokset ovat käymässä vähiin"
 
 #: src/window.js:374
 msgid "No treatments added yet!"
-msgstr ""
+msgstr "Hoitoja ei ole vielä lisätty!"
 
 #: src/window.js:379
 msgid "All done for today!"
-msgstr ""
+msgstr "Kaikki kunnossa tämän päivän osalta!"
 
 #: src/window.js:905
 msgid "Edit treatment"
-msgstr ""
+msgstr "Muokkaa hoitoa"
 
 #: src/window.js:906
 msgid "Save"
-msgstr ""
+msgstr "Tallenna"
 
 #: src/window.js:1002
 msgid "New"
-msgstr ""
+msgstr "Uusi"
 
 #: src/window.js:1052
 msgid "New entry"
-msgstr ""
+msgstr "Uusi merkintä"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
 #: src/window.js:1054
 msgid "Add to history"
-msgstr ""
+msgstr "Lisää historiaan"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
 #: src/window.js:1135
 msgid "Are you sure?"
-msgstr ""
+msgstr "Oletko varma?"
 
 #: src/window.js:1362
 msgid "Empty name"
-msgstr ""
+msgstr "Tyhjä nimi"
 
 #: src/window.js:1366
 msgid "Empty unit"
-msgstr ""
+msgstr "Tyhjä yksikkö"
 
 #: src/window.js:1372
 msgid "Choose at least one day"
-msgstr ""
+msgstr "Valitse vähintään yksi päivä"
 
 #: src/window.js:1382
 msgid "Name already exists"
-msgstr ""
+msgstr "Nimi on jo olemassa"
 
 #: src/window.js:1396
 msgid "Duplicated time"
-msgstr ""
+msgstr "Päällekkäinen aika"
