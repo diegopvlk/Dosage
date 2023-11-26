@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-25 15:38-0300\n"
+"POT-Creation-Date: 2023-11-25 22:33-0300\n"
 "PO-Revision-Date: 2023-11-18 13:55+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -87,31 +87,31 @@ msgstr "Janela de edição de tratamento em tema claro"
 msgid "Dosage today window in dark theme"
 msgstr "Janela do Dosagem hoje em tema escuro"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:161
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:169
 msgid "medication"
 msgstr "medicação"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:162
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:170
 msgid "tracker"
 msgstr "rastreador"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:163
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:171
 msgid "reminder"
 msgstr "lembrete"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:164
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:172
 msgid "treatments"
 msgstr "tratamentos"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:165
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:173
 msgid "pill"
 msgstr "pílula"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:166
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:174
 msgid "drug"
 msgstr "droga"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:167
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:175
 msgid "remedy"
 msgstr "remédio"
 
@@ -144,7 +144,7 @@ msgstr "Sair"
 msgid "New treatment"
 msgstr "Novo tratamento"
 
-#: data/ui/med-window.blp:19 src/window.js:1144
+#: data/ui/med-window.blp:19 src/window.js:1140
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -164,7 +164,7 @@ msgstr "Nome"
 msgid "Unit"
 msgstr "Unidade"
 
-#: data/ui/med-window.blp:57 src/window.js:1016
+#: data/ui/med-window.blp:57 src/window.js:1012
 msgid "Pill(s)"
 msgstr "Comprimido(s)"
 
@@ -180,7 +180,7 @@ msgstr "Após refeição"
 msgid "Color and icon"
 msgstr "Cor e ícone"
 
-#: data/ui/med-window.blp:70 src/window.js:1059
+#: data/ui/med-window.blp:70 src/window.js:1055
 msgid "Color"
 msgstr "Cor"
 
@@ -397,7 +397,7 @@ msgstr "Termina em"
 msgid "Date"
 msgstr "Data"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1145
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1141
 msgid "Delete"
 msgstr "Excluir"
 
@@ -581,49 +581,49 @@ msgstr "Nenhum tratamento adicionado ainda!"
 msgid "All done for today!"
 msgstr "Tudo feito por hoje!"
 
-#: src/window.js:909
+#: src/window.js:905
 msgid "Edit treatment"
 msgstr "Editar tratamento"
 
-#: src/window.js:910
+#: src/window.js:906
 msgid "Save"
 msgstr "Salvar"
 
-#: src/window.js:1006
+#: src/window.js:1002
 msgid "New"
 msgstr "Novo"
 
-#: src/window.js:1056
+#: src/window.js:1052
 msgid "New entry"
 msgstr "Novo registro"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:1058
+#: src/window.js:1054
 msgid "Add to history"
 msgstr "Adc. ao histórico"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:1139
+#: src/window.js:1135
 msgid "Are you sure?"
 msgstr "Tem certeza?"
 
-#: src/window.js:1366
+#: src/window.js:1362
 msgid "Empty name"
 msgstr "Nome vazio"
 
-#: src/window.js:1370
+#: src/window.js:1366
 msgid "Empty unit"
 msgstr "Unidade vazia"
 
-#: src/window.js:1376
+#: src/window.js:1372
 msgid "Choose at least one day"
 msgstr "Escolha pelo menos um dia"
 
-#: src/window.js:1386
+#: src/window.js:1382
 msgid "Name already exists"
 msgstr "Nome já existe"
 
-#: src/window.js:1400
+#: src/window.js:1396
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 

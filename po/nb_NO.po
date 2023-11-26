@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-25 15:38-0300\n"
+"POT-Creation-Date: 2023-11-25 22:33-0300\n"
 "PO-Revision-Date: 2023-11-07 13:17+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
@@ -83,31 +83,31 @@ msgstr ""
 msgid "Dosage today window in dark theme"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:161
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:169
 msgid "medication"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:162
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:170
 msgid "tracker"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:163
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:171
 msgid "reminder"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:164
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:172
 msgid "treatments"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:165
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:173
 msgid "pill"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:166
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:174
 msgid "drug"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:167
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:175
 msgid "remedy"
 msgstr ""
 
@@ -140,7 +140,7 @@ msgstr "Avslutt"
 msgid "New treatment"
 msgstr "Ny behandling"
 
-#: data/ui/med-window.blp:19 src/window.js:1144
+#: data/ui/med-window.blp:19 src/window.js:1140
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -161,7 +161,7 @@ msgstr "Navn"
 msgid "Unit"
 msgstr "Enhet"
 
-#: data/ui/med-window.blp:57 src/window.js:1016
+#: data/ui/med-window.blp:57 src/window.js:1012
 msgid "Pill(s)"
 msgstr "Pille(r)"
 
@@ -177,7 +177,7 @@ msgstr "Etter måltid"
 msgid "Color and icon"
 msgstr "Farge og ikon"
 
-#: data/ui/med-window.blp:70 src/window.js:1059
+#: data/ui/med-window.blp:70 src/window.js:1055
 msgid "Color"
 msgstr "Farge"
 
@@ -400,7 +400,7 @@ msgstr "Slutter"
 msgid "Date"
 msgstr "Dato"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1145
+#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/window.js:1141
 msgid "Delete"
 msgstr "Slett"
 
@@ -585,49 +585,49 @@ msgstr "Ingen behandlinger lagt til enda."
 msgid "All done for today!"
 msgstr "Ferdig for i dag."
 
-#: src/window.js:909
+#: src/window.js:905
 msgid "Edit treatment"
 msgstr "Rediger behandling"
 
-#: src/window.js:910
+#: src/window.js:906
 msgid "Save"
 msgstr "Lagre"
 
-#: src/window.js:1006
+#: src/window.js:1002
 msgid "New"
 msgstr "Ny"
 
-#: src/window.js:1056
+#: src/window.js:1052
 msgid "New entry"
 msgstr "Ny oppføring"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/window.js:1058
+#: src/window.js:1054
 msgid "Add to history"
 msgstr "Legg til i historikk"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/window.js:1139
+#: src/window.js:1135
 msgid "Are you sure?"
 msgstr "Er du sikker?"
 
-#: src/window.js:1366
+#: src/window.js:1362
 msgid "Empty name"
 msgstr "Tomt navn"
 
-#: src/window.js:1370
+#: src/window.js:1366
 msgid "Empty unit"
 msgstr "Tom enhet"
 
-#: src/window.js:1376
+#: src/window.js:1372
 msgid "Choose at least one day"
 msgstr "Velg minst én dag"
 
-#: src/window.js:1386
+#: src/window.js:1382
 msgid "Name already exists"
 msgstr "Navnet finnes allerede"
 
-#: src/window.js:1400
+#: src/window.js:1396
 msgid "Duplicated time"
 msgstr "Duplisert tid"
 
