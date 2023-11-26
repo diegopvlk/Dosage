@@ -692,11 +692,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			}
 
 			if (!info.lastUpdate) {
-				const today = new Date().setHours(0, 0, 0, 0);
-				const start = new Date(dur.start).setHours(0, 0, 0, 0);
-
-				info.lastUpdate = start > today ? new Date() : new Date(dur.start);
-				info.lastUpdate = info.lastUpdate.toISOString();
+				info.lastUpdate = new Date().toISOString();
 			}
 		}
 	}
