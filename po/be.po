@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-25 22:33-0300\n"
-"PO-Revision-Date: 2023-11-01 00:19+0000\n"
+"PO-Revision-Date: 2023-11-26 20:29+0000\n"
 "Last-Translator: Yahor <k1llo2810@protonmail.com>\n"
 "Language-Team: Belarusian <https://hosted.weblate.org/projects/dosage/dosage/"
 "be/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"X-Generator: Weblate 5.2.1-rc\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
@@ -37,17 +37,17 @@ msgid ""
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
 "Control"
 msgstr ""
-"Лёгка адсочвайце лячэнне з дапамогай дазоўкі: апавяшчэнні, гісторыя, "
-"некалькі доз, гнуткая частата, налада, маніторынг запасаў і кантроль "
+"Адсочвайце курсы лячэння з дапамогай Дазоўкі: апавяшчэнні, гісторыя, "
+"некалькі доз, гнуткая частата, налады, маніторынг запасаў і кантроль "
 "працягласці"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:8
 msgid "Features:"
-msgstr "Мажлівасці:"
+msgstr "Функцыі:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
 msgid "Notifications — Get reminders at the right time"
-msgstr "Паведамленні — атрымвайце паведамленні своечасова"
+msgstr "Апавяшчэнні — сваечасова атрымлівайце апавяшчэнні"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
 msgid "History — See which medications you took or skipped"
@@ -70,7 +70,7 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
-"Маніторынг запасу - маніторыце ваш запас і атрымлівайце апавяшчэння, калі ён "
+"Маніторынг запасу - маніторыце ваш запас і атрымлівайце апавяшчэнні, калі ён "
 "будзе вычэрпвацца"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:16
