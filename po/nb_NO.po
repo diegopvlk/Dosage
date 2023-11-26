@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-25 22:33-0300\n"
-"PO-Revision-Date: 2023-11-07 13:17+0000\n"
+"PO-Revision-Date: 2023-11-26 01:43+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
 "dosage/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"X-Generator: Weblate 5.2.1-rc\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
@@ -36,6 +36,8 @@ msgid ""
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
 "Control"
 msgstr ""
+"Lett administrer behandlinger med Dosering: Varsler, Historikk, Flere doser, "
+"Fleksibel frekvens, Tilpasning, Lagerovervåking og Varighetskontroll"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:8
 msgid "Features:"
@@ -73,53 +75,55 @@ msgstr "Varighet — definer start- og sluttdatoer"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
 msgid "Dosage today window in light theme"
-msgstr ""
+msgstr "Dosering i dag-vinduet i lys tema"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
 msgid "Dosage edit treatment window in light theme"
-msgstr ""
+msgstr "Dosering rediger behandlingsvinduet i lyst tema"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid "Dosage today window in dark theme"
-msgstr ""
+msgstr "Dosering i dag-vinduet i mørkt tema"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:169
 msgid "medication"
-msgstr ""
+msgstr "medisin"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:170
 msgid "tracker"
-msgstr ""
+msgstr "sporingsverktøy"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:171
 msgid "reminder"
-msgstr ""
+msgstr "påminnelse"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:172
 msgid "treatments"
-msgstr ""
+msgstr "behandlinger"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:173
 msgid "pill"
-msgstr ""
+msgstr "tablett"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:174
 msgid "drug"
-msgstr ""
+msgstr "legemiddel"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:175
 msgid "remedy"
-msgstr ""
+msgstr "løsning"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
+"Medisin;Sporingsverktøy;Påminnelse;Idag;Behandlinger;Tablett;Legemiddel;Løsni"
+"ng;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Generelt"
 
 #: data/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
@@ -129,7 +133,7 @@ msgstr "Innstillinger"
 #: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Vis Snarveier"
 
 #: data/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
@@ -508,7 +512,7 @@ msgstr "Allan Nordhøy <epost@anotheragency.no>"
 
 #: src/main.js:139
 msgid "Thanks to these projects!"
-msgstr "Takk til disse prosjektene."
+msgstr "Takk til disse prosjektene!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:172
@@ -579,11 +583,11 @@ msgstr "Du har behandlinger med manko på beholdning"
 
 #: src/window.js:374
 msgid "No treatments added yet!"
-msgstr "Ingen behandlinger lagt til enda."
+msgstr "Ingen behandlinger lagt til enda!"
 
 #: src/window.js:379
 msgid "All done for today!"
-msgstr "Ferdig for i dag."
+msgstr "Ferdig for i dag!"
 
 #: src/window.js:905
 msgid "Edit treatment"
