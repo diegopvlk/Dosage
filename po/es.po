@@ -50,7 +50,7 @@ msgstr "Notificaciones — Reciba recordatorios en el momento oportuno"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
 msgid "History — See which medications you took, skipped or missed"
-msgstr "Historial — vea qué medicamentos ha tomado, omitido u omitido"
+msgstr "Historial — vea qué medicamentos ha tomado, saltó u omitido"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Dosage management — Multiple doses with different times"
