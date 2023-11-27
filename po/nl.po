@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-25 22:33-0300\n"
+"POT-Creation-Date: 2023-11-27 08:48-0300\n"
 "PO-Revision-Date: 2023-11-09 18:55+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/dosage/dosage/nl/"
@@ -49,7 +49,9 @@ msgid "Notifications — Get reminders at the right time"
 msgstr "Meldingen — Ontvang meldingen op de innametijden"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
-msgid "History — See which medications you took or skipped"
+#, fuzzy
+#| msgid "History — See which medications you took or skipped"
+msgid "History — See which medications you took, skipped or missed"
 msgstr ""
 "Geschiedenis — Bekijk welke medicatie u heeft ingenomen of overgeslagen"
 

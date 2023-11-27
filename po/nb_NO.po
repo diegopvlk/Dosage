@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-25 22:33-0300\n"
+"POT-Creation-Date: 2023-11-27 08:48-0300\n"
 "PO-Revision-Date: 2023-11-26 01:43+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
@@ -48,7 +48,9 @@ msgid "Notifications — Get reminders at the right time"
 msgstr "Merknader — få påminnelser til rett tid"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
-msgid "History — See which medications you took or skipped"
+#, fuzzy
+#| msgid "History — See which medications you took or skipped"
+msgid "History — See which medications you took, skipped or missed"
 msgstr "Historikk — ta rede på hvilken medisin du har tatt eller hoppet over"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
@@ -117,8 +119,8 @@ msgstr "løsning"
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
-"Medisin;Sporingsverktøy;Påminnelse;Idag;Behandlinger;Tablett;Legemiddel;Løsni"
-"ng;"
+"Medisin;Sporingsverktøy;Påminnelse;Idag;Behandlinger;Tablett;Legemiddel;"
+"Løsning;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
