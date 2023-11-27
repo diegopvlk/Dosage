@@ -12,6 +12,7 @@ import Gtk from 'gi://Gtk';
 import Xdp from 'gi://Xdp?version=1.0';
 
 import { DosageWindow } from './window.js';
+import './medWindow.js';
 
 pkg.initGettext();
 pkg.initFormat();
