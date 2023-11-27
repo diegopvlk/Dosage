@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-27 08:48-0300\n"
-"PO-Revision-Date: 2023-11-08 09:24+0000\n"
+"PO-Revision-Date: 2023-11-27 17:40+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"X-Generator: Weblate 5.3-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
@@ -49,10 +49,8 @@ msgid "Notifications — Get reminders at the right time"
 msgstr "Aviseringar — Få påminnelser vid rätt tidpunkt"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
-#, fuzzy
-#| msgid "History — See which medications you took or skipped"
 msgid "History — See which medications you took, skipped or missed"
-msgstr "Historik - Se vilka mediciner du tog eller hoppade över"
+msgstr "Historik — Se vilka mediciner du tog, hoppade över eller missade"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Dosage management — Multiple doses with different times"
