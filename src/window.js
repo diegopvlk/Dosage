@@ -782,18 +782,42 @@ class DosageWindow extends Adw.ApplicationWindow {
 			const info = item.info;
 			const lastUpdate = new Date(info.lastUpdate);
 			const lastUp = lastUpdate.setHours(0, 0, 0, 0);
+			const start = new Date(info.duration.start).setHours(0, 0, 0, 0);
 			const today = new Date().setHours(0, 0, 0, 0);
+			
+			function findDate(start) {
+				let nextDtStr;
+				let curr = info.cycle[2];
+				let nextDate = start ? new Date(start) : new Date();
+				nextDate.setHours(0, 0, 0, 0);
 
-			if (info.frequency == 'cycle') {
-				const datesPassed = datesPassedDiff(lastUpdate, new Date());
-				let [active, inactive, current] = info.cycle;
-
-				for (let i = 0; i < datesPassed.length; i++) {
-					current += 1;
-					if (current > active + inactive) current = 1;
+				while (true) {
+					nextDtStr = nextDate.toISOString();
+					const [active, inactive] = info.cycle;
+					if (curr <= active) break;
+					curr += 1;
+					if (curr > active + inactive) curr = 1;
+					nextDate.setDate(nextDate.getDate() + 1);
 				}
 
-				item.info.cycle[2] = current;
+				return nextDtStr;
+			}
+			
+			if (start < today) {
+				if (info.frequency == 'cycle') {
+					const datesPassed = datesPassedDiff(lastUpdate, new Date());
+					let [active, inactive, current] = info.cycle;
+	
+					for (let i = 0; i < datesPassed.length; i++) {
+						current += 1;
+						if (current > active + inactive) current = 1;
+					}
+	
+					item.info.cycle[2] = current;
+					item.info.cycleNextDate = findDate();
+				}
+			} else {
+				item.info.cycleNextDate = findDate(info.duration.start);
 			}
 
 			if (lastUp < today) info.lastUpdate = new Date().toISOString();

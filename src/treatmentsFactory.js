@@ -37,14 +37,14 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 		ellipsize: Pango.EllipsizeMode.END,
 	});
 	labelsBox.append(info);
-	const durationLabel = new Gtk.Label({
+	const durationNextDateLabel = new Gtk.Label({
 		css_classes: ['subtitle'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 		visible: false,
 		margin_top: 1,
 	});
-	labelsBox.append(durationLabel);
+	labelsBox.append(durationNextDateLabel);
 	const inventoryLabel = new Gtk.Label({
 		css_classes: ['rounded-label'],
 		valign: Gtk.Align.CENTER,
@@ -71,7 +71,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	const labelsBox = icon.get_next_sibling();
 	const nameLabel = labelsBox.get_first_child();
 	const infoLabel = nameLabel.get_next_sibling();
-	const durationLabel = infoLabel.get_next_sibling();
+	const durationNextDateLabel = infoLabel.get_next_sibling();
 	const inventoryLabel = box.get_last_child().get_prev_sibling();
 
 	// activate item with space bar
@@ -83,6 +83,11 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		}
 	});
 	row.add_controller(keyController);
+
+	row.remove_css_class('activatable');
+	box.add_css_class('activatable');
+
+	nameLabel.label = item.name;
 
 	const inv = info.inventory;
 	
@@ -98,19 +103,19 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		}
 	}
 
+	const untilDate = new Date(info.duration.end).toLocaleDateString(undefined, {
+		month: 'short',
+		day: 'numeric',
+		year: 'numeric'
+	});
+
+	// TRANSLATORS: label for when duration is enabled
+	const untilLabel = _('Until') + ` ${untilDate}`;
+
 	if (info.duration.enabled) {
-		const localTZ = GLib.TimeZone.new_local();
-		durationLabel.set_visible(true);
-		const end = info.duration.end / 1000;
-		const dt = GLib.DateTime.new_from_unix_utc(end).to_timezone(localTZ);
-		// TRANSLATORS: Keep it short (label for when duration is enabled)
-		durationLabel.label = _('Until') + ` ${dt.format('%x')}`;
+		durationNextDateLabel.set_visible(true);
+		durationNextDateLabel.label = untilLabel;
 	}
-
-	row.remove_css_class('activatable');
-	box.add_css_class('activatable');
-
-	nameLabel.label = item.name;
 
 	switch (info.frequency) {
 		case 'daily':
@@ -129,9 +134,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			} else if (info.days.length === 7) {
 				infoLabel.label = _('Daily');
 			} else {
-				info.days.forEach((day) => {
-					infoLabel.label += getDayLabel(day).slice(0, 3) + ',  ';
-				});
+				info.days.forEach(day => infoLabel.label += getDayLabel(day).slice(0, 3) + ',  ');
 				infoLabel.label = infoLabel.label.slice(0, -3);
 			}
 			function getDayLabel(day) {
@@ -148,6 +151,29 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			}
 			break;
 		case 'cycle':
+			const today = new Date().setHours(0, 0, 0, 0);
+			const nextDt = new Date(item.info.cycleNextDate).setHours(0, 0, 0, 0);
+			const nextDate = new Date(nextDt).toLocaleDateString(undefined, {
+				weekday: 'short',
+				month: 'short',
+				day: 'numeric',
+			});
+
+			if (info.duration.enabled) {
+				durationNextDateLabel.label = untilLabel;
+				if (nextDt > today) {
+					durationNextDateLabel.label += '  •  ' + _('Next dose') + `: ${nextDate}`;
+				}
+			} else if (nextDt > today) {
+				durationNextDateLabel.label = _('Next dose') + `: ${nextDate}`;
+			}
+			
+			if (nextDt <= today && !info.duration.enabled) {
+				durationNextDateLabel.set_visible(false);
+			} else {
+				durationNextDateLabel.set_visible(true);
+			}
+
 			infoLabel.label = _('Cycle') + '  •  ';
 			infoLabel.label += `${info.cycle[0]}` + ' ⊷ ' + `${info.cycle[1]}`;
 			break;
