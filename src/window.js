@@ -15,7 +15,7 @@ import { Medication, HistoryMedication, TodayMedication } from './medication.js'
 import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
 import { historyHeaderFactory, historyItemFactory } from './historyFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
-import openMedicationWindow from './medWindow.js';
+import medicationWindow from './medWindow.js';
 
 import {
 	HistorySorter,
@@ -163,11 +163,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			}
 		}
 
-		try {
-			this._loadJsonContents(fileType, filePath);
-		} catch (err) {
-			console.error(`Failed to load ${fileType} contents: ${err}`);
-		}
+		this._loadJsonContents(fileType, filePath);
 	}
 
 	_createNewFile(filePath) {
@@ -214,7 +210,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				this._treatmentsJson.meds.forEach(med => {
 					treatmentsLS.insert_sorted(
 						new Medication({
-							// condition is for <= v1.2.0
+							// expression is for <= v1.2.0
 							name: med.name || med._name,
 							unit: med.unit || med._unit,
 							info: med.info || med._info,
@@ -245,7 +241,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				this._historyJson.meds.forEach(med => {
 					historyLS.append(
 						new HistoryMedication({
-							// condition is for <= v1.2.0
+							// expression is for <= v1.2.0
 							name: med.name || med._name,
 							unit: med.unit || med._unit,
 							color: med.color || med._color,
@@ -288,26 +284,26 @@ class DosageWindow extends Adw.ApplicationWindow {
 					}
 
 					if (removed) {
-						const itemRmDt = new Date(itemRemoved.date);
-						const date = itemRmDt.setHours(0, 0, 0, 0);
+						const removedDt = new Date(removedItem.date);
+						const date = removedDt.setHours(0, 0, 0, 0);
 						const today = new Date().setHours(0, 0, 0, 0);
 					
 						if (date === today) {
 							for (const item of treatmentsLS) {
-								const sameItem = item.name === itemRemoved.name;
+								const sameItem = item.name === removedItem.name;
 								const info = item.info;
 					
 								if (sameItem) {
 									info.dosage.forEach((timeDose) => {
 										const td = { ...timeDose, lastTaken: undefined };
 										const sameDose =
-											JSON.stringify(td) === JSON.stringify(itemRemoved.info);
+											JSON.stringify(td) === JSON.stringify(removedItem.info);
 										
 										if (sameDose) timeDose.lastTaken = null;
 									});
 					
-									if (info.inventory.enabled && itemRemoved.taken === 'yes') {
-										info.inventory.current += itemRemoved.info.dose;
+									if (info.inventory.enabled && removedItem.taken === 'yes') {
+										info.inventory.current += removedItem.info.dose;
 									}
 								}
 							}
@@ -803,8 +799,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 				return nextDtStr;
 			}
 			
-			if (start < today) {
-				if (info.frequency == 'cycle') {
+			if (info.frequency == 'cycle') {
+				if (start < today) {
 					const datesPassed = datesPassedDiff(lastUpdate, new Date());
 					let [active, inactive, current] = info.cycle;
 	
@@ -815,9 +811,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 	
 					item.info.cycle[2] = current;
 					item.info.cycleNextDate = findDate();
+				} else {
+					item.info.cycleNextDate = findDate(info.duration.start);
 				}
-			} else {
-				item.info.cycleNextDate = findDate(info.duration.start);
 			}
 
 			if (lastUp < today) info.lastUpdate = new Date().toISOString();
@@ -842,6 +838,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_openMedWindow(list, position, oneTime) {
-		openMedicationWindow(this, list, position, oneTime);
+		medicationWindow(this, list, position, oneTime);
 	}
 });

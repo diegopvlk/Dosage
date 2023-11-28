@@ -75,7 +75,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 		const listView = box.get_parent().get_parent();
 		const listStore = listView.get_model().get_model().get_model();
 
-		globalThis.itemRemoved = item;
+		globalThis.removedItem = item;
 		const [, position] = listStore.find(item);
 		listStore.remove(position);
 	});

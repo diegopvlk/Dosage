@@ -17,7 +17,7 @@ import {
 import { Medication, HistoryMedication } from './medication.js';
 import { historyLS, treatmentsLS } from './window.js';
 
-export default function openMedicationWindow(DosageWindow, list, position, oneTime) {
+export default function medicationWindow(DosageWindow, list, position, oneTime) {
     const builder = Gtk.Builder.new_from_resource(
         '/io/github/diegopvlk/Dosage/ui/med-window.ui'
     );
