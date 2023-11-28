@@ -33,6 +33,16 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.4.0" date="2023-11-28">
+			<description translatable="no">
+				<ul>
+					<li>New: the cycle next active date will be displayed on inactive days (on treatment list)</li>
+					<li>New: option to add one-time entry as confirmed, skipped or missed</li>
+					<li>Fixed issues with cycle mode and missed items</li>
+					<li>Added Finnish translation (by Jiri Grönroos)</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.3.2" date="2023-11-26">
 			<description translatable="no">
 				<ul>
