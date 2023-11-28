@@ -9,6 +9,7 @@ data/ui/window.blp
 src/historyFactory.js
 src/main.js
 src/medication.js
+src/medWindow.js
 src/todayFactory.js
 src/treatmentsFactory.js
 src/utils.js
