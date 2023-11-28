@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-27 23:09-0300\n"
-"PO-Revision-Date: 2023-11-27 11:56+0000\n"
+"PO-Revision-Date: 2023-11-28 02:13+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "dosage/dosage/pt_BR/>\n"
@@ -612,10 +612,8 @@ msgid "Saturday"
 msgstr "Sábado"
 
 #: src/treatmentsFactory.js:165 src/treatmentsFactory.js:168
-#, fuzzy
-#| msgid "Delete dose"
 msgid "Next dose"
-msgstr "Excluir dose"
+msgstr "Próxima dose"
 
 #: src/utils.js:158
 msgid "Delete dose"
