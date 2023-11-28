@@ -265,16 +265,25 @@ button.one-time-name {
 	border-radius: 10px;
 }
 
-.button-left popover {
+.button-left popover,
+.button-right popover {
 	margin-top: -5px;
+}
+
+.button-left popover {
 	margin-left: -15px;
+}
+
+.button-right popover {
+	margin-right: -15px;
 }
 
 popover > contents {
 	border-radius: 16px;
 }
 
-.button-left popover > contents listview row {
+.button-left popover > contents listview row,
+.button-right popover > contents listview row {
 	border-radius: 10px;
 	padding-top: 7px;
 	padding-bottom: 7px;

@@ -90,7 +90,10 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 		.get_first_child();
 	const dosageExpanderBtn = dosageHeader
 		.get_first_child()
-		.get_last_child();
+		.get_last_child()
+		.get_first_child()
+		.get_next_sibling()
+		.get_next_sibling();
 	dosageHeader.set_activatable(false);
 	dosageExpanderBtn.set_visible(false);
 
@@ -205,6 +208,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 		const frequency = builder.get_object('frequency');
 		const colorIcon = builder.get_object('colorIcon');
 		const oneTimeEntries = builder.get_object('oneTimeEntries');
+		const oneTimeTaken = builder.get_object('oneTimeTaken');
 		const h = new Date().getHours();
 		const m = new Date().getMinutes();
 		
@@ -269,6 +273,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 		medWindow.add_css_class('one-time');
 
 		dateOneEntry.set_visible(true);
+		oneTimeTaken.set_visible(true);
 		medNotes.set_visible(false);
 		dosageIconButton.set_visible(false);
 		frequency.set_visible(false);
@@ -371,9 +376,18 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 
 	function addItemToHistory(histList, sortedHist) {
 		const calOneEntry = builder.get_object('calOneEntry');
+		const oneTimeTaken = builder.get_object('oneTimeTaken');
 		const dt = +calOneEntry.get_date().format('%s') * 1000;
 		const entryDate = new Date(dt);
 		const info = getDoses()[0];
+
+		let taken = 'yes';
+		if (oneTime) {
+			if (oneTimeTaken.get_selected() === 0) taken = 'yes';
+			if (oneTimeTaken.get_selected() === 1) taken = 'no';
+			if (oneTimeTaken.get_selected() === 2) taken = 'miss';
+		}
+
 		entryDate.setHours(info.time[0]);
 		entryDate.setMinutes(info.time[1]);
 		historyLS.insert_sorted(
@@ -381,7 +395,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 				name: medName.text.trim(),
 				unit: medUnit.text.trim(),
 				color: dosageColorButton.get_name(),
-				taken: 'yes',
+				taken: taken,
 				info: info,
 				date: entryDate.toISOString(),
 			}),

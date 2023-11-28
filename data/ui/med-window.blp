@@ -418,6 +418,18 @@ Adw.Window medWindow {
                   icon-name: 'list-add-symbolic';
                   tooltip-text: _("Add dose");
                 }
+                [suffix]
+                DropDown oneTimeTaken {
+                  visible: false;
+                  styles [ 'button-right' ]
+                  model: StringList {
+                    strings [
+                      _("Confirmed"), 
+                      _("Skipped"), 
+                      _("Missed")
+                      ]
+                  };
+                }
               }
 
               Adw.ExpanderRow recurringNotif {
