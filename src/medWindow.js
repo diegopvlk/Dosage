@@ -174,9 +174,6 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 			cycleCurrent.value = current;
 			
 			cycleCurrent.adjustment.set_upper(active + inactive);
-			cycleCurrent.adjustment.set_upper(active + inactive);
-			
-			cycleCurrent.adjustment.set_upper(active + inactive);	
 			
 			frequencyCycle.label = `${active}  ⊷  ${inactive}`;
 		}
