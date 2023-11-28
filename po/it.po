@@ -615,9 +615,7 @@ msgid "Saturday"
 msgstr "Sabato"
 
 #: src/treatmentsFactory.js:165 src/treatmentsFactory.js:168
-#, fuzzy
-#| msgid "Delete dose"
-msgid "Next dose"
+msgid "Prossima dose"
 msgstr "Cancella dose"
 
 #: src/utils.js:158

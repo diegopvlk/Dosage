@@ -623,10 +623,8 @@ msgid "Saturday"
 msgstr "Суббота"
 
 #: src/treatmentsFactory.js:165 src/treatmentsFactory.js:168
-#, fuzzy
-#| msgid "Delete dose"
 msgid "Next dose"
-msgstr "Удалить дозу"
+msgstr "Следующая дозу"
 
 #: src/utils.js:158
 msgid "Delete dose"

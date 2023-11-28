@@ -606,10 +606,8 @@ msgid "Saturday"
 msgstr "Lauantai"
 
 #: src/treatmentsFactory.js:165 src/treatmentsFactory.js:168
-#, fuzzy
-#| msgid "Delete dose"
 msgid "Next dose"
-msgstr "Poista annos"
+msgstr "Seuraava annos"
 
 #: src/utils.js:158
 msgid "Delete dose"
