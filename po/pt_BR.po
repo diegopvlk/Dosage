@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-27 23:09-0300\n"
+"POT-Creation-Date: 2023-11-28 10:38-0300\n"
 "PO-Revision-Date: 2023-11-28 02:13+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:128 src/window.js:535
+#: src/main.js:128 src/window.js:531
 msgid "Dosage"
 msgstr "Dosagem"
 
@@ -145,7 +145,7 @@ msgstr "Sair"
 msgid "New treatment"
 msgstr "Novo tratamento"
 
-#: data/ui/med-window.blp:19 src/medWindow.js:355
+#: data/ui/med-window.blp:19 src/medWindow.js:360
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -165,7 +165,7 @@ msgstr "Nome"
 msgid "Unit"
 msgstr "Unidade"
 
-#: data/ui/med-window.blp:57 src/medWindow.js:225
+#: data/ui/med-window.blp:57 src/medWindow.js:229
 msgid "Pill(s)"
 msgstr "Comprimido(s)"
 
@@ -181,7 +181,7 @@ msgstr "Após refeição"
 msgid "Color and icon"
 msgstr "Cor e ícone"
 
-#: data/ui/med-window.blp:70 src/medWindow.js:268
+#: data/ui/med-window.blp:70 src/medWindow.js:272
 msgid "Color"
 msgstr "Cor"
 
@@ -295,8 +295,8 @@ msgstr "Ciclo"
 msgid "When necessary"
 msgstr "Quando necessário"
 
-#: data/ui/med-window.blp:308 data/ui/med-window.blp:481
-#: data/ui/med-window.blp:497 data/ui/med-window.blp:515
+#: data/ui/med-window.blp:308 data/ui/med-window.blp:493
+#: data/ui/med-window.blp:509 data/ui/med-window.blp:527
 msgid "Choose"
 msgstr "Escolha"
 
@@ -350,55 +350,70 @@ msgstr "Hora e quantidade"
 msgid "Add dose"
 msgstr "Adicionar dose"
 
-#: data/ui/med-window.blp:424
+#. TRANSLATORS: Keep it short
+#: data/ui/med-window.blp:427 src/historyFactory.js:126
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. TRANSLATORS: Keep it short
+#: data/ui/med-window.blp:428 src/historyFactory.js:129
+msgid "Skipped"
+msgstr "Ignorado"
+
+#. TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
+#: data/ui/med-window.blp:429 src/historyFactory.js:132
+msgid "Missed"
+msgstr "Perdido"
+
+#: data/ui/med-window.blp:436
 msgid "Recurring notifications"
 msgstr "Notificações recorrentes"
 
-#: data/ui/med-window.blp:425
+#: data/ui/med-window.blp:437
 msgid "Renotify until it's confirmed or skipped"
 msgstr "Renotificar até ser confirmado ou ignorado"
 
-#: data/ui/med-window.blp:429
+#: data/ui/med-window.blp:441
 msgid "Interval in minutes"
 msgstr "Intervalo em minutos"
 
-#: data/ui/med-window.blp:441
+#: data/ui/med-window.blp:453
 msgid "Inventory"
 msgstr "Inventário"
 
-#: data/ui/med-window.blp:442
+#: data/ui/med-window.blp:454
 msgid "Manage your stock"
 msgstr "Gerencie seu estoque"
 
-#: data/ui/med-window.blp:447
+#: data/ui/med-window.blp:459
 msgid "Current"
 msgstr "Atual"
 
-#: data/ui/med-window.blp:458
+#: data/ui/med-window.blp:470
 msgid "Remind me at"
 msgstr "Lembrar na quantidade"
 
-#: data/ui/med-window.blp:471
+#: data/ui/med-window.blp:483
 msgid "Duration"
 msgstr "Duração"
 
-#: data/ui/med-window.blp:472
+#: data/ui/med-window.blp:484
 msgid "Set a start and end date"
 msgstr "Defina datas para começar e terminar"
 
-#: data/ui/med-window.blp:476
+#: data/ui/med-window.blp:488
 msgid "Starts on"
 msgstr "Começa em"
 
-#: data/ui/med-window.blp:492
+#: data/ui/med-window.blp:504
 msgid "Ends on"
 msgstr "Termina em"
 
-#: data/ui/med-window.blp:510
+#: data/ui/med-window.blp:522
 msgid "Date"
 msgstr "Data"
 
-#: data/ui/med-window.blp:534 src/historyFactory.js:41 src/medWindow.js:356
+#: data/ui/med-window.blp:546 src/historyFactory.js:41 src/medWindow.js:361
 msgid "Delete"
 msgstr "Excluir"
 
@@ -434,11 +449,11 @@ msgstr "Botões da notificação"
 msgid "Show or hide confirm/skip"
 msgstr "Mostrar ou ocultar confirmar/ignorar"
 
-#: data/ui/preferences.blp:47 src/window.js:463 src/window.js:588
+#: data/ui/preferences.blp:47 src/window.js:459 src/window.js:584
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:467
+#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:463
 msgid "Skip"
 msgstr "Ignorar"
 
@@ -454,7 +469,7 @@ msgstr "Hoje"
 msgid "Unselect"
 msgstr "Desmarcar"
 
-#: data/ui/window.blp:70 src/window.js:588
+#: data/ui/window.blp:70 src/window.js:584
 msgid "One-time entry"
 msgstr "Registro único"
 
@@ -482,21 +497,6 @@ msgstr "Sobre o Dosagem"
 msgid "Quit"
 msgstr "Sair"
 
-#. TRANSLATORS: Keep it short
-#: src/historyFactory.js:126
-msgid "Confirmed"
-msgstr "Confirmado"
-
-#. TRANSLATORS: Keep it short
-#: src/historyFactory.js:129
-msgid "Skipped"
-msgstr "Ignorado"
-
-#. TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
-#: src/historyFactory.js:132
-msgid "Missed"
-msgstr "Perdido"
-
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:137
 msgid "translator-credits"
@@ -512,49 +512,49 @@ msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 "Aceite para permitir a execução em segundo plano e receber notificações"
 
-#: src/medWindow.js:118
+#: src/medWindow.js:121
 msgid "Edit treatment"
 msgstr "Editar tratamento"
 
-#: src/medWindow.js:119
+#: src/medWindow.js:122
 msgid "Save"
 msgstr "Salvar"
 
-#: src/medWindow.js:215
+#: src/medWindow.js:219
 msgid "New"
 msgstr "Novo"
 
-#: src/medWindow.js:265
+#: src/medWindow.js:269
 msgid "New entry"
 msgstr "Novo registro"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/medWindow.js:267
+#: src/medWindow.js:271
 msgid "Add to history"
 msgstr "Adc. ao histórico"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:350
+#: src/medWindow.js:355
 msgid "Are you sure?"
 msgstr "Tem certeza?"
 
-#: src/medWindow.js:577
+#: src/medWindow.js:591
 msgid "Empty name"
 msgstr "Nome vazio"
 
-#: src/medWindow.js:581
+#: src/medWindow.js:595
 msgid "Empty unit"
 msgstr "Unidade vazia"
 
-#: src/medWindow.js:587
+#: src/medWindow.js:601
 msgid "Choose at least one day"
 msgstr "Escolha pelo menos um dia"
 
-#: src/medWindow.js:597
+#: src/medWindow.js:611
 msgid "Name already exists"
 msgstr "Nome já existe"
 
-#: src/medWindow.js:611
+#: src/medWindow.js:625
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 
@@ -624,11 +624,11 @@ msgstr "Excluir dose"
 msgid "You have treatments low in stock"
 msgstr "Você tem tratamentos com pouco estoque"
 
-#: src/window.js:387
+#: src/window.js:383
 msgid "No treatments added yet!"
 msgstr "Nenhum tratamento adicionado ainda!"
 
-#: src/window.js:392
+#: src/window.js:388
 msgid "All done for today!"
 msgstr "Tudo feito por hoje!"
 
