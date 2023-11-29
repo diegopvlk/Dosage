@@ -210,8 +210,9 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 		const oneTimeTaken = builder.get_object('oneTimeTaken');
 		const h = new Date().getHours();
 		const m = new Date().getMinutes();
-		
-		dosage.add_row(doseRow({ time: [h, m], dose: 1 }));
+		const doseRowOne = doseRow({ time: [h, m], dose: 1 });
+
+		dosage.add_row(doseRowOne);
 
 		const btnNew = new Gtk.Button({
 			css_classes: ['flat'],
@@ -228,6 +229,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 			medUnit.text = _('Pill(s)');
 			removeCssColors(dosageColorButton);
 			dosageColorButton.name = 'default';
+			doseRowOne.set_value(1);
 			medName.sensitive = true;
 			medUnit.sensitive = true;
 			colorIcon.sensitive = true;
@@ -255,6 +257,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 					medName.text = item.name;
 					medUnit.text = item.unit;
 					dosageColorButton.name = item.info.color;
+					doseRowOne.set_value(item.info.dosage[0].dose);
 
 					medName.sensitive = false;
 					medUnit.sensitive = false;
