@@ -18,13 +18,16 @@ historyHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const item = listHeaderItem.get_item();
 	const dateLabel = listHeaderItem.get_child();
-	const localTZ = GLib.TimeZone.new_local();
-	const dateTime = GLib.DateTime.new_from_iso8601(item.date, null);
-	const localDT = dateTime.to_timezone(localTZ);
-
-	let date = localDT.format('%A  •  %x');
-	date = date.charAt(0).toUpperCase() + date.slice(1);
-	dateLabel.label = date;
+	const date = new Date(item.date);
+	let formattedDt = `${date.toLocaleDateString(undefined, {
+		weekday: 'long',
+	})}  •  ${date.toLocaleDateString(undefined, {
+		month: 'short',
+		day: 'numeric',
+		year: 'numeric',
+	})}`;
+	formattedDt = formattedDt.charAt(0).toUpperCase() + formattedDt.slice(1);
+	dateLabel.label = formattedDt;
 });
 
 historyItemFactory.connect('setup', (factory, listItem) => {
@@ -128,7 +131,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 		// TRANSLATORS: Keep it short
 		takenLabel.label = _('Skipped');
 	} else if (item.taken === 'miss') {
-		// TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
+		// TRANSLATORS: Keep it short
 		takenLabel.label = _('Missed');
 	}
 
