@@ -12,6 +12,7 @@ import {
 	getTimeBtnInput,
 	handleCalendarSelect,
 	removeCssColors,
+	getDayLabel
 } from './utils.js';
 
 import { Medication, HistoryMedication } from './medication.js';
@@ -70,6 +71,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 
 	const frequencyMenu = builder.get_object('frequencyMenu');
 	const frequencySpecificDays = builder.get_object('frequencySpecificDays');
+	const specificDaysBox = builder.get_object('specificDaysBox');
 	const freqChooseDaysLabel = frequencySpecificDays
 		.get_first_child()
 		.get_first_child()
@@ -321,6 +323,8 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 		medWindow.default_height -= 12;
 	}
 
+	setSpecificDaysLabels();
+
 	medWindow.present();
 
 	cancelButton.connect('clicked', () => medWindow.destroy());
@@ -522,8 +526,6 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 
 	function getSpecificDays() {
 		const days = [];
-		const specificDaysBox = builder.get_object('specificDaysBox');
-
 		let day = 0;
 		for (const button of specificDaysBox) {
 			if (button.get_active()) {
@@ -534,6 +536,14 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 			day++;
 		}
 		return days;
+	}
+
+	function setSpecificDaysLabels() {
+		let day = 0;
+		for (const button of specificDaysBox) {
+			button.label = getDayLabel(day);
+			day++;
+		}
 	}
 
 	function handleCycle() {

@@ -261,8 +261,11 @@ button.one-time-name {
 	min-width: 90px;
 }
 
-.button-right popover button.circular {
+button.specific-day {
 	border-radius: 10px;
+	min-width: 46px;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .button-left popover,
