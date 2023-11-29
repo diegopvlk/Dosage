@@ -40,149 +40,137 @@ template $DosageWindow : Adw.ApplicationWindow {
         name: 'page1';
         title: _("Today");
         icon-name: 'today-icn-symbolic';
-        child:
-          Overlay {
-            ScrolledWindow {
-              Adw.ClampScrollable {
-                ListView todayList {
-                  styles [ 'custom-list' ]
-                  activate => $_selectTodayItems();
-                  single-click-activate: true;
-                }
-              }
-            }
-            [overlay]
-            Box {
-              halign: center;
-              valign: end;
-              margin-bottom: 16;
-              spacing: 8;
-              Button unselectBtn {
-                styles [ 'pill', 'skip' ]
-                tooltip-text: _("Unselect");
-                visible: false;
-                icon-name: 'unselect-meds-symbolic';
-              }
-              Button entryBtn {
-                styles [ 'pill' ]
-                clicked => $_addTodayToHistory();
-                name: 'yes';
-                label: _("One-time entry");
-              }
-              Button skipBtn {
-                styles [ 'pill', 'skip' ]
-                clicked => $_addTodayToHistory();
-                name: 'no';
-                tooltip-text: _("Skip");
-                visible: false;
-                icon-name: 'skip-med-symbolic';
-              }
-            }
-            [overlay]
-            Box emptyTodayBox {
-              visible: false;
-              margin-bottom: 64;
-              orientation: vertical;
-              halign: center;
-              valign: center;
-              Image allDoneIcon {
-                styles [ 'empty-icon' ]
-                icon-name: 'all-done-symbolic';
-                visible: false;
-              }
-              Label emptyToday {
-                  styles [ 'empty-today' ]
-                  visible: false;
-                  margin-start: 30;
-                  margin-end: 30;
+        child: Overlay {
+          ScrolledWindow {
+            Adw.ClampScrollable {
+              ListView todayList {
+                styles [ 'custom-list' ]
+                activate => $_selectTodayItems();
+                single-click-activate: true;
               }
             }
           }
-        ;
+          [overlay]
+          Box {
+            halign: center;
+            valign: end;
+            margin-bottom: 16;
+            spacing: 8;
+            Button unselectBtn {
+              styles [ 'pill', 'skip' ]
+              tooltip-text: _("Unselect");
+              visible: false;
+              icon-name: 'unselect-meds-symbolic';
+            }
+            Button entryBtn {
+              styles [ 'pill' ]
+              clicked => $_addTodayToHistory();
+              name: 'yes';
+              label: _("One-time entry");
+            }
+            Button skipBtn {
+              styles [ 'pill', 'skip' ]
+              clicked => $_addTodayToHistory();
+              name: 'no';
+              tooltip-text: _("Skip");
+              visible: false;
+              icon-name: 'skip-med-symbolic';
+            }
+          }
+          [overlay]
+          Box emptyTodayBox {
+            visible: false;
+            margin-bottom: 64;
+            orientation: vertical;
+            halign: center;
+            valign: center;
+            Image allDoneIcon {
+              styles [ 'empty-icon' ]
+              icon-name: 'all-done-symbolic';
+              visible: false;
+            }
+            Label emptyToday {
+                styles [ 'empty-today' ]
+                visible: false;
+                margin-start: 30;
+                margin-end: 30;
+            }
+          }
+        };  
       }
 
       Adw.ViewStackPage historyPage {
         name: 'page2';
         title: _("History");
         icon-name: 'history-symbolic';
-        child:
-          Overlay {
-            ScrolledWindow {
-              Adw.ClampScrollable {
-                ListView historyList {
-                  styles [ 'custom-list', 'history' ]
-                }
+        child: Overlay {
+          ScrolledWindow {
+            Adw.ClampScrollable {
+              ListView historyList {
+                styles [ 'custom-list', 'history' ]
               }
             }
-            [overlay]
-            Label emptyHistory {
-              styles [ 'empty-history' ]
-              visible: false;
-              label: _("Empty history");
-              margin-start: 30;
-              margin-end: 30;
-              margin-bottom: 64;
-            }
           }
-        ;
+          [overlay]
+          Label emptyHistory {
+            styles [ 'empty-history' ]
+            visible: false;
+            label: _("Empty history");
+            margin-start: 30;
+            margin-end: 30;
+            margin-bottom: 64;
+          }
+        };
       }
 
       Adw.ViewStackPage treatmentsPage {
         name: 'page3';
         title: _("Treatments");
         icon-name: 'treatments-symbolic';
-        child:
-          Overlay {
-            ScrolledWindow {
-              Adw.ClampScrollable {
-                vexpand: true;
-                ListView treatmentsList {
-                  styles [ 'custom-list' ]
-                  activate => $_openMedWindow();
-                  single-click-activate: true;
-                }
+        child: Overlay {
+          ScrolledWindow {
+            Adw.ClampScrollable {
+              vexpand: true;
+              ListView treatmentsList {
+                styles [ 'custom-list' ]
+                activate => $_openMedWindow();
+                single-click-activate: true;
               }
-            }
-            [overlay]
-            Box {
-              halign: center;
-              valign: end;
-              Button addNewMedication {
-                halign: center;
-                valign: end;
-                margin-bottom: 16;
-                clicked => $_openMedWindow();
-                styles [ 'pill', 'suggested-action' ]
-                child: Adw.ButtonContent {
-                  icon-name: 'list-add-symbolic';
-                  label: _("Add");
-                };
-              }
-            }
-            [overlay]
-            Label emptyTreatments {
-                styles [ 'empty-treatments' ]
-                label: _("Click the button below to add some");
-                visible: false;
-                margin-start: 30;
-                margin-end: 30;
-                margin-bottom: 64;
             }
           }
-        ;
+          [overlay]
+          Box {
+            halign: center;
+            valign: end;
+            Button addNewMedication {
+              halign: center;
+              valign: end;
+              margin-bottom: 16;
+              clicked => $_openMedWindow();
+              styles [ 'pill', 'suggested-action' ]
+              child: Adw.ButtonContent {
+                icon-name: 'list-add-symbolic';
+                label: _("Add");
+              };
+            }
+          }
+          [overlay]
+          Label emptyTreatments {
+              styles [ 'empty-treatments' ]
+              label: _("Click the button below to add some");
+              visible: false;
+              margin-start: 30;
+              margin-end: 30;
+              margin-bottom: 64;
+          }
+        };
       }
-    }
-
-    ;
-
+    };
     [bottom]
     Adw.ViewSwitcherBar switcherBar {
       stack: stack;
     }
-  }
-
-  ;
-
+  };
 }
 
 menu appMenu {

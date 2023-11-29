@@ -279,7 +279,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 							if (sameItem) {
 								item.info.inventory.current -= itemAdded.info.dose;
-							}		
+							}
 						}
 					}
 
@@ -310,7 +310,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 						}
 						this._updateEverything();
 						this._scheduleNotifications('removing');
-					}				
+					}
 				});
 			}
 		} catch (err) {
@@ -404,16 +404,17 @@ class DosageWindow extends Adw.ApplicationWindow {
 		
 		for (let i = 0; i < todayLength; i++) {
 			this._addToBeNotified(this._todayModel.get_item(i), action);
-		}		
+		}
 	}
 
 	_addToBeNotified(item, action) {
+		const info = item.info;
 		const now = new Date();
 		const hours = now.getHours();
 		const minutes = now.getMinutes();
 		const seconds = now.getSeconds();
-		const itemHour = item.info.dosage.time[0];
-		const itemMin = item.info.dosage.time[1];
+		const itemHour = info.dosage.time[0];
+		const itemMin = info.dosage.time[1];
 
 		// milliseconds
 		let timeDiff =
@@ -438,8 +439,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 			};
 
 			const [notification, app] = this._getNotification();
-			let h = item.info.dosage.time[0];
-			let m = item.info.dosage.time[1];
+			let h = info.dosage.time[0];
+			let m = info.dosage.time[1];
 			let period = '';
 			
 			if (clockIs12) {
@@ -490,12 +491,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 		
 		// v1.1.0 only has recurring: boolean
-		const recurringEnabled =
-			item.info.recurring &&
-			item.info.recurring.enabled || item.info.recurring === true;	
+		const recurringEnabled = info.recurring?.enabled || info.recurring === true;
 			
 		if (recurringEnabled) {
-			const interval = item.info.recurring.interval || 5;
+			const interval = info.recurring.interval || 5;
 			const minutes = interval * 60 * 1000;
 			const recurringNotify = (pseudoId, timeDiff) => {
 				this._scheduledItems[pseudoId] = setTimeout(() => {
@@ -620,7 +619,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				this._updateEverything(null, 'notifAction');
 				this._scheduleNotifications('adding');
 			}
-		}	
+		}
 	}
 
 	_insertItemToHistory(item, taken, missedDate) {
@@ -637,7 +636,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		);
 
 		// update lastTaken of treatment dose when confirming/skipping
-		if (!missedDate) {	
+		if (!missedDate) {
 			for (const item of treatmentsLS) {
 				item.info.dosage.forEach(timeDose => {
 					const tempObj = { ...timeDose, lastTaken: undefined };

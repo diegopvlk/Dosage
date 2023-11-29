@@ -102,10 +102,10 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 
 	if (localDT.format('%F') == dateNow.format('%F')) {
 		deleteButton.icon_name = 'edit-undo-symbolic';
-		deleteButton.tooltip_text = _("Restore");
+		deleteButton.tooltip_text = _('Restore');
 	} else {
 		deleteButton.icon_name = 'user-trash-symbolic';
-		deleteButton.tooltip_text = _("Delete");
+		deleteButton.tooltip_text = _('Delete');
 	}
 
 	let [hours, minutes] = item.info.time;

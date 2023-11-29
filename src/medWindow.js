@@ -12,7 +12,7 @@ import {
 	getTimeBtnInput,
 	handleCalendarSelect,
 	removeCssColors,
-	getDayLabel
+	getDayLabel,
 } from './utils.js';
 
 import { Medication, HistoryMedication } from './medication.js';
@@ -140,7 +140,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 		for (const icn of dosageIconBox) {
 			if (icn.get_icon_name() === info.icon) {
 				dosageIconButton.set_icon_name(info.icon);
-			}	
+			}
 		}
 
 		setFreqMenuVisibility(item);
@@ -163,7 +163,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 			for (const btn of specificDaysBox) {
 				for (const d of info.days) {
 					if (d === day) btn.set_active(true);
-				}	
+				}
 				day++;
 			}
 		}
@@ -261,7 +261,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 					colorIcon.sensitive = false;
 					existingEntry = true;
 				});
-				oneTimeEntries.append(btn);	
+				oneTimeEntries.append(btn);
 			}
 		}
 
@@ -531,7 +531,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 			if (button.get_active()) {
 				if (!days.includes(day)) {
 					days.push(day)
-				}	
+				}
 			};
 			day++;
 		}
@@ -552,7 +552,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 		cycleCurrent.adjustment.set_upper(sum);
 		if (cycleCurrent.adjustment.value > sum) {
 			cycleCurrent.adjustment.value = sum;
-		}		
+		}
 	}
 
 	function setFreqMenuVisibility(item) {

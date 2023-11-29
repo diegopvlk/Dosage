@@ -19,7 +19,7 @@ export function removeCssColors(colorBtn) {
 	for (const c of colors) {
 		if (c.includes('-clr')) {
 			colorBtn.remove_css_class(c);
-		}		
+		}
 	}
 }
 
@@ -83,7 +83,7 @@ export function isTodayMedDay(item, histModel) {
 
 	if (info.duration.enabled && (start > today || end < today)) {
 		return false;
-	}	
+	}
 	
 	if (histModel.get_n_items() > 0) {
 		for (let i = 0; i < lastSectionAmount; i++) {
