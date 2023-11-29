@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-29 10:43-0300\n"
+"POT-Creation-Date: 2023-11-29 11:35-0300\n"
 "PO-Revision-Date: 2023-11-26 20:29+0000\n"
 "Last-Translator: Yahor <k1llo2810@protonmail.com>\n"
 "Language-Team: Belarusian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -327,17 +327,17 @@ msgid "Add dose"
 msgstr "Дадаць дозу"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:419 src/historyFactory.js:129
+#: data/ui/med-window.blp:419 src/historyFactory.js:136
 msgid "Confirmed"
 msgstr "Пацверджана"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:420 src/historyFactory.js:132
+#: data/ui/med-window.blp:420 src/historyFactory.js:139
 msgid "Skipped"
 msgstr "Прапушчана"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:421 src/historyFactory.js:135
+#: data/ui/med-window.blp:421 src/historyFactory.js:142
 msgid "Missed"
 msgstr "Адсутнічае"
 
@@ -390,7 +390,7 @@ msgstr "Сканчаецца"
 msgid "Date"
 msgstr "Дата"
 
-#: data/ui/med-window.blp:538 src/historyFactory.js:44 src/medWindow.js:362
+#: data/ui/med-window.blp:538 src/historyFactory.js:108 src/medWindow.js:362
 msgid "Delete"
 msgstr "Выдаліць"
 
@@ -473,6 +473,10 @@ msgstr "Пра Дазоўку"
 #: data/ui/window.blp:198
 msgid "Quit"
 msgstr "Выйсці"
+
+#: src/historyFactory.js:105
+msgid "Restore"
+msgstr ""
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:137
