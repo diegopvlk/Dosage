@@ -103,18 +103,8 @@ list > row.activatable.header:active {
 	min-width: 60px;
 }
 
-#dosage-med-window.one-time list > row:only-child button.remove-row {
-	color: transparent;
-	background-color: transparent;
-	padding: 0;
-	margin: 0;
-	min-width: 0;
-	min-height: 0;
-	-gtk-icon-size: 1px;
-}
-
 #dosage-med-window.one-time .time > .arrow-button {
-	margin-left: -11px;
+	margin-left: -6px;
 }
 
 #dosage-med-window {

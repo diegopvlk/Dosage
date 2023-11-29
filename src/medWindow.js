@@ -212,6 +212,14 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 		const m = new Date().getMinutes();
 		const doseRowOne = doseRow({ time: [h, m], dose: 1 });
 
+		// hide the remove dose button
+		doseRowOne
+			.get_first_child()
+			.get_first_child()
+			.get_first_child()
+			.get_first_child()
+			.set_visible(false);
+
 		dosage.add_row(doseRowOne);
 
 		const btnNew = new Gtk.Button({
