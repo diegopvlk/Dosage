@@ -279,6 +279,15 @@ export function getTimeBtnInput(currentDoseRow) {
 	return [hours, minutes, ampm, timeButton];
 }
 
+export function getDayLabel(day, long) {
+	const date = new Date();
+	date.setDate(date.getDate() + (day - date.getDay()));
+	const dayLabel = new Date(date).toLocaleDateString(undefined, {
+		weekday: long || 'short',
+	});
+	return dayLabel.charAt(0).toUpperCase() + dayLabel.slice(1).replace('.', '');
+}
+
 export const HistorySectionSorter = GObject.registerClass(
 {},	class HistorySectionSorter extends Gtk.Sorter {
 		_init(params) {	super._init(params) }
