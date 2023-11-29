@@ -40,8 +40,6 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 		valign: Gtk.Align.CENTER,
 		halign: Gtk.Align.CENTER,
 		margin_start: 12,
-		icon_name: 'user-trash-symbolic',
-		tooltip_text: _('Delete'),
 	});
 	box.append(deleteButton);
 	const labelsBox = new Gtk.Box({
@@ -88,14 +86,27 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const item = listItem.get_item();
 	const box = listItem.get_child();
 	const row = box.get_parent();
+	const deleteButton = box.get_first_child();
 	const labelsBox = box.get_first_child().get_next_sibling();
 	const nameLabel = labelsBox.get_first_child();
 	const doseLabel = nameLabel.get_next_sibling();
 	const takenLabel = box.get_last_child();
+	const localTZ = GLib.TimeZone.new_local();
+	const dateTime = GLib.DateTime.new_from_iso8601(item.date, null);
+	const localDT = dateTime.to_timezone(localTZ);
+	const dateNow = GLib.DateTime.new_now_local();
 
 	listItem.set_focusable(false);
 	listItem.set_activatable(false);
 	row.remove_css_class('activatable');
+
+	if (localDT.format('%F') == dateNow.format('%F')) {
+		deleteButton.icon_name = 'edit-undo-symbolic';
+		deleteButton.tooltip_text = _("Restore");
+	} else {
+		deleteButton.icon_name = 'user-trash-symbolic';
+		deleteButton.tooltip_text = _("Delete");
+	}
 
 	let [hours, minutes] = item.info.time;
 	let period = '';
@@ -110,10 +121,6 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 
 	nameLabel.label = item.name;
 	doseLabel.label = `${item.info.dose} ${item.unit}  •  ${h}∶${m}` + period;
-
-	const localTZ = GLib.TimeZone.new_local();
-	const dateTime = GLib.DateTime.new_from_iso8601(item.date, null);
-	const localDT = dateTime.to_timezone(localTZ);
 
 	let takenTime = localDT.format('%X').replace(':', '∶');
 	let parts = takenTime.split(' ');
