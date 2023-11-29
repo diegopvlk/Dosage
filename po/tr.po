@@ -474,7 +474,7 @@ msgstr "Çık"
 
 #: src/historyFactory.js:105
 msgid "Restore"
-msgstr ""
+msgstr "Geri yükle"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:137

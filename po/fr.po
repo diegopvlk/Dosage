@@ -470,7 +470,7 @@ msgstr "Quitter"
 
 #: src/historyFactory.js:105
 msgid "Restore"
-msgstr ""
+msgstr "Restaurer"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:137
