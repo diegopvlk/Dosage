@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-28 10:38-0300\n"
+"POT-Creation-Date: 2023-11-29 10:43-0300\n"
 "PO-Revision-Date: 2023-11-26 20:29+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
@@ -21,7 +21,7 @@ msgstr ""
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
-#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:402
 #: src/main.js:128 src/window.js:531
 msgid "Dosage"
 msgstr "Dosage"
@@ -82,31 +82,31 @@ msgstr ""
 msgid "Dosage today window in dark theme"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:169
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:179
 msgid "medication"
 msgstr "lääkitys"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:170
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:180
 msgid "tracker"
 msgstr "seuranta"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:171
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:181
 msgid "reminder"
 msgstr "muistutus"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:172
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:182
 msgid "treatments"
 msgstr "hoidot"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:173
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:183
 msgid "pill"
 msgstr "pilleri"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:174
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:184
 msgid "drug"
 msgstr "lääke"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:175
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:185
 msgid "remedy"
 msgstr ""
 
@@ -139,7 +139,7 @@ msgstr "Lopeta"
 msgid "New treatment"
 msgstr "Uusi hoito"
 
-#: data/ui/med-window.blp:19 src/medWindow.js:360
+#: data/ui/med-window.blp:19 src/medWindow.js:361
 msgid "Cancel"
 msgstr "Peru"
 
@@ -159,7 +159,7 @@ msgstr "Nimi"
 msgid "Unit"
 msgstr "Yksikkö"
 
-#: data/ui/med-window.blp:57 src/medWindow.js:229
+#: data/ui/med-window.blp:57 src/medWindow.js:228
 msgid "Pill(s)"
 msgstr "Pilleri(t)"
 
@@ -175,7 +175,7 @@ msgstr "Aterian jälkeen"
 msgid "Color and icon"
 msgstr "Väri ja kuvake"
 
-#: data/ui/med-window.blp:70 src/medWindow.js:272
+#: data/ui/med-window.blp:70 src/medWindow.js:271
 msgid "Color"
 msgstr "Väri"
 
@@ -281,133 +281,104 @@ msgstr "Päivittäin"
 msgid "Specific days"
 msgstr "Valitut päivät"
 
-#: data/ui/med-window.blp:299 src/treatmentsFactory.js:177
+#: data/ui/med-window.blp:299 src/treatmentsFactory.js:164
 msgid "Cycle"
 msgstr "Sykli"
 
-#: data/ui/med-window.blp:300 src/treatmentsFactory.js:181
+#: data/ui/med-window.blp:300 src/treatmentsFactory.js:168
 msgid "When necessary"
 msgstr "Tarvittaessa"
 
-#: data/ui/med-window.blp:308 data/ui/med-window.blp:493
-#: data/ui/med-window.blp:509 data/ui/med-window.blp:527
+#: data/ui/med-window.blp:308 data/ui/med-window.blp:485
+#: data/ui/med-window.blp:501 data/ui/med-window.blp:519
 msgid "Choose"
 msgstr "Valitse"
 
-#. TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa)
-#: data/ui/med-window.blp:317
-msgid "Su"
-msgstr "Su"
-
-#: data/ui/med-window.blp:323
-msgid "Mo"
-msgstr "Ma"
-
-#: data/ui/med-window.blp:329
-msgid "Tu"
-msgstr "Ti"
-
-#: data/ui/med-window.blp:335
-msgid "We"
-msgstr "Ke"
-
-#: data/ui/med-window.blp:341
-msgid "Th"
-msgstr "To"
-
-#: data/ui/med-window.blp:347
-msgid "Fr"
-msgstr "Pe"
-
-#: data/ui/med-window.blp:353
-msgid "Sa"
-msgstr "La"
-
-#: data/ui/med-window.blp:370
+#: data/ui/med-window.blp:362
 msgid "Days active"
 msgstr "Aktiiviset päivät"
 
-#: data/ui/med-window.blp:382
+#: data/ui/med-window.blp:374
 msgid "Days inactive"
 msgstr "Passiiviset päivät"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
-#: data/ui/med-window.blp:395
+#: data/ui/med-window.blp:387
 msgid "Today is cycle day…"
 msgstr "Tänään syklin päivä…"
 
-#: data/ui/med-window.blp:411
+#: data/ui/med-window.blp:403
 msgid "Time and amount"
 msgstr "Aika ja määrä"
 
-#: data/ui/med-window.blp:419
+#: data/ui/med-window.blp:411
 msgid "Add dose"
 msgstr "Lisää annos"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:427 src/historyFactory.js:126
+#: data/ui/med-window.blp:419 src/historyFactory.js:129
 msgid "Confirmed"
 msgstr "Vahvistettu"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:428 src/historyFactory.js:129
+#: data/ui/med-window.blp:420 src/historyFactory.js:132
 msgid "Skipped"
 msgstr "Ohitettu"
 
-#. TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
-#: data/ui/med-window.blp:429 src/historyFactory.js:132
+#. TRANSLATORS: Keep it short
+#: data/ui/med-window.blp:421 src/historyFactory.js:135
 msgid "Missed"
 msgstr "Jäänyt huomiotta"
 
-#: data/ui/med-window.blp:436
+#: data/ui/med-window.blp:428
 msgid "Recurring notifications"
 msgstr "Toistuvat ilmoitukset"
 
-#: data/ui/med-window.blp:437
+#: data/ui/med-window.blp:429
 msgid "Renotify until it's confirmed or skipped"
 msgstr "Muistuta uudelleen, kunnes on saatu vahvistus tai ohitus"
 
-#: data/ui/med-window.blp:441
+#: data/ui/med-window.blp:433
 msgid "Interval in minutes"
 msgstr "Väli minuuteissa"
 
-#: data/ui/med-window.blp:453
+#: data/ui/med-window.blp:445
 msgid "Inventory"
 msgstr "Inventaario"
 
-#: data/ui/med-window.blp:454
+#: data/ui/med-window.blp:446
 msgid "Manage your stock"
 msgstr "Hallitse varastoa"
 
-#: data/ui/med-window.blp:459
+#: data/ui/med-window.blp:451
 msgid "Current"
 msgstr "Nykyinen"
 
-#: data/ui/med-window.blp:470
+#: data/ui/med-window.blp:462
 msgid "Remind me at"
 msgstr "Muistuta kun jäljellä"
 
-#: data/ui/med-window.blp:483
+#: data/ui/med-window.blp:475
 msgid "Duration"
 msgstr "Kesto"
 
-#: data/ui/med-window.blp:484
+#: data/ui/med-window.blp:476
 msgid "Set a start and end date"
 msgstr "Aseta alku- ja loppupäivä"
 
-#: data/ui/med-window.blp:488
+#: data/ui/med-window.blp:480
 msgid "Starts on"
 msgstr "Alkaa"
 
-#: data/ui/med-window.blp:504
+#: data/ui/med-window.blp:496
 msgid "Ends on"
 msgstr "Loppuu"
 
-#: data/ui/med-window.blp:522
+#: data/ui/med-window.blp:514
 msgid "Date"
 msgstr "Päivä"
 
-#: data/ui/med-window.blp:546 src/historyFactory.js:41 src/medWindow.js:361
+#: data/ui/med-window.blp:538 src/historyFactory.js:44 src/medWindow.js:362
 msgid "Delete"
 msgstr "Poista"
 
@@ -506,49 +477,49 @@ msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 "Hyväksy, jotta suoritus taustalla ja ilmoitusten vastaanottaminen sallitaan"
 
-#: src/medWindow.js:121
+#: src/medWindow.js:123
 msgid "Edit treatment"
 msgstr "Muokkaa hoitoa"
 
-#: src/medWindow.js:122
+#: src/medWindow.js:124
 msgid "Save"
 msgstr "Tallenna"
 
-#: src/medWindow.js:219
+#: src/medWindow.js:218
 msgid "New"
 msgstr "Uusi"
 
-#: src/medWindow.js:269
+#: src/medWindow.js:268
 msgid "New entry"
 msgstr "Uusi merkintä"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/medWindow.js:271
+#: src/medWindow.js:270
 msgid "Add to history"
 msgstr "Lisää historiaan"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:355
+#: src/medWindow.js:356
 msgid "Are you sure?"
 msgstr "Oletko varma?"
 
-#: src/medWindow.js:591
+#: src/medWindow.js:598
 msgid "Empty name"
 msgstr "Tyhjä nimi"
 
-#: src/medWindow.js:595
+#: src/medWindow.js:602
 msgid "Empty unit"
 msgstr "Tyhjä yksikkö"
 
-#: src/medWindow.js:601
+#: src/medWindow.js:608
 msgid "Choose at least one day"
 msgstr "Valitse vähintään yksi päivä"
 
-#: src/medWindow.js:611
+#: src/medWindow.js:618
 msgid "Name already exists"
 msgstr "Nimi on jo olemassa"
 
-#: src/medWindow.js:625
+#: src/medWindow.js:632
 msgid "Duplicated time"
 msgstr "Päällekkäinen aika"
 
@@ -577,35 +548,7 @@ msgstr "Viikonloppuisin"
 msgid "Weekdays"
 msgstr "Viikonpäivät"
 
-#: src/treatmentsFactory.js:142
-msgid "Sunday"
-msgstr "Sunnuntai"
-
-#: src/treatmentsFactory.js:143
-msgid "Monday"
-msgstr "Maanantai"
-
-#: src/treatmentsFactory.js:144
-msgid "Tuesday"
-msgstr "Tiistai"
-
-#: src/treatmentsFactory.js:145
-msgid "Wednesday"
-msgstr "Keskiviikko"
-
-#: src/treatmentsFactory.js:146
-msgid "Thursday"
-msgstr "Torstai"
-
-#: src/treatmentsFactory.js:147
-msgid "Friday"
-msgstr "Perjantai"
-
-#: src/treatmentsFactory.js:148
-msgid "Saturday"
-msgstr "Lauantai"
-
-#: src/treatmentsFactory.js:165 src/treatmentsFactory.js:168
+#: src/treatmentsFactory.js:152 src/treatmentsFactory.js:155
 msgid "Next dose"
 msgstr "Seuraava annos"
 
@@ -625,3 +568,45 @@ msgstr "Hoitoja ei ole vielä lisätty!"
 #: src/window.js:388
 msgid "All done for today!"
 msgstr "Kaikki kunnossa tämän päivän osalta!"
+
+#~ msgid "Su"
+#~ msgstr "Su"
+
+#~ msgid "Mo"
+#~ msgstr "Ma"
+
+#~ msgid "Tu"
+#~ msgstr "Ti"
+
+#~ msgid "We"
+#~ msgstr "Ke"
+
+#~ msgid "Th"
+#~ msgstr "To"
+
+#~ msgid "Fr"
+#~ msgstr "Pe"
+
+#~ msgid "Sa"
+#~ msgstr "La"
+
+#~ msgid "Sunday"
+#~ msgstr "Sunnuntai"
+
+#~ msgid "Monday"
+#~ msgstr "Maanantai"
+
+#~ msgid "Tuesday"
+#~ msgstr "Tiistai"
+
+#~ msgid "Wednesday"
+#~ msgstr "Keskiviikko"
+
+#~ msgid "Thursday"
+#~ msgstr "Torstai"
+
+#~ msgid "Friday"
+#~ msgstr "Perjantai"
+
+#~ msgid "Saturday"
+#~ msgstr "Lauantai"

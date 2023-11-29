@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-28 10:38-0300\n"
+"POT-Creation-Date: 2023-11-29 10:43-0300\n"
 "PO-Revision-Date: 2023-10-31 01:26+0000\n"
 "Last-Translator: volkov <d2oo1dle2x@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -22,7 +22,7 @@ msgstr ""
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
-#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:402
 #: src/main.js:128 src/window.js:531
 msgid "Dosage"
 msgstr "Дозування"
@@ -94,31 +94,31 @@ msgstr "Розділ \"Курси лікування\" Дозування у с�
 msgid "Dosage today window in dark theme"
 msgstr "Розділ \"Сьогодні\" Дозування у темному стилі"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:169
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:179
 msgid "medication"
 msgstr "ліки"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:170
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:180
 msgid "tracker"
 msgstr "відстежування"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:171
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:181
 msgid "reminder"
 msgstr "нагадування"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:172
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:182
 msgid "treatments"
 msgstr "курси лікування"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:173
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:183
 msgid "pill"
 msgstr "пігулка"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:174
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:184
 msgid "drug"
 msgstr "ліки"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:175
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:185
 msgid "remedy"
 msgstr "ліки"
 
@@ -154,7 +154,7 @@ msgstr "Вийти"
 msgid "New treatment"
 msgstr "Новий курс лікування"
 
-#: data/ui/med-window.blp:19 src/medWindow.js:360
+#: data/ui/med-window.blp:19 src/medWindow.js:361
 msgid "Cancel"
 msgstr "Скасувати"
 
@@ -174,7 +174,7 @@ msgstr "Назва запису"
 msgid "Unit"
 msgstr "Одиниця виміру"
 
-#: data/ui/med-window.blp:57 src/medWindow.js:229
+#: data/ui/med-window.blp:57 src/medWindow.js:228
 msgid "Pill(s)"
 msgstr "Пігулка(и)"
 
@@ -190,7 +190,7 @@ msgstr "Після прийому їжі"
 msgid "Color and icon"
 msgstr "Колір та піктограма"
 
-#: data/ui/med-window.blp:70 src/medWindow.js:272
+#: data/ui/med-window.blp:70 src/medWindow.js:271
 msgid "Color"
 msgstr "Колір"
 
@@ -296,133 +296,104 @@ msgstr "Кожного дня"
 msgid "Specific days"
 msgstr "Конкретні дні"
 
-#: data/ui/med-window.blp:299 src/treatmentsFactory.js:177
+#: data/ui/med-window.blp:299 src/treatmentsFactory.js:164
 msgid "Cycle"
 msgstr "Цикл"
 
-#: data/ui/med-window.blp:300 src/treatmentsFactory.js:181
+#: data/ui/med-window.blp:300 src/treatmentsFactory.js:168
 msgid "When necessary"
 msgstr "Коли треба"
 
-#: data/ui/med-window.blp:308 data/ui/med-window.blp:493
-#: data/ui/med-window.blp:509 data/ui/med-window.blp:527
+#: data/ui/med-window.blp:308 data/ui/med-window.blp:485
+#: data/ui/med-window.blp:501 data/ui/med-window.blp:519
 msgid "Choose"
 msgstr "Обрати"
 
-#. TRANSLATORS: Short days of the week: Sunday to Saturday (Su, Mo, Tu, We, Th, Fr, Sa)
-#: data/ui/med-window.blp:317
-msgid "Su"
-msgstr "Нд"
-
-#: data/ui/med-window.blp:323
-msgid "Mo"
-msgstr "Пн"
-
-#: data/ui/med-window.blp:329
-msgid "Tu"
-msgstr "Вт"
-
-#: data/ui/med-window.blp:335
-msgid "We"
-msgstr "Ср"
-
-#: data/ui/med-window.blp:341
-msgid "Th"
-msgstr "Чт"
-
-#: data/ui/med-window.blp:347
-msgid "Fr"
-msgstr "Пт"
-
-#: data/ui/med-window.blp:353
-msgid "Sa"
-msgstr "Сб"
-
-#: data/ui/med-window.blp:370
+#: data/ui/med-window.blp:362
 msgid "Days active"
 msgstr "Активних днів"
 
-#: data/ui/med-window.blp:382
+#: data/ui/med-window.blp:374
 msgid "Days inactive"
 msgstr "Неактивних днів"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
-#: data/ui/med-window.blp:395
+#: data/ui/med-window.blp:387
 msgid "Today is cycle day…"
 msgstr "Сьогодні день циклу…"
 
-#: data/ui/med-window.blp:411
+#: data/ui/med-window.blp:403
 msgid "Time and amount"
 msgstr "Час прийому та розмір дози"
 
-#: data/ui/med-window.blp:419
+#: data/ui/med-window.blp:411
 msgid "Add dose"
 msgstr "Додати дозу"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:427 src/historyFactory.js:126
+#: data/ui/med-window.blp:419 src/historyFactory.js:129
 msgid "Confirmed"
 msgstr "Підтверджено"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:428 src/historyFactory.js:129
+#: data/ui/med-window.blp:420 src/historyFactory.js:132
 msgid "Skipped"
 msgstr "Пропущено"
 
-#. TRANSLATORS: Keep it short. When the user forgets to confirm or skip, will show on history (it's not used at moment but will be in the future)
-#: data/ui/med-window.blp:429 src/historyFactory.js:132
+#. TRANSLATORS: Keep it short
+#: data/ui/med-window.blp:421 src/historyFactory.js:135
 msgid "Missed"
 msgstr "Пропущено"
 
-#: data/ui/med-window.blp:436
+#: data/ui/med-window.blp:428
 msgid "Recurring notifications"
 msgstr "Повторювані сповіщення"
 
-#: data/ui/med-window.blp:437
+#: data/ui/med-window.blp:429
 msgid "Renotify until it's confirmed or skipped"
 msgstr "Повторно повідомляти, доки не буде підтверджено або пропущено"
 
-#: data/ui/med-window.blp:441
+#: data/ui/med-window.blp:433
 msgid "Interval in minutes"
 msgstr "Інтервал у хвилинах"
 
-#: data/ui/med-window.blp:453
+#: data/ui/med-window.blp:445
 msgid "Inventory"
 msgstr "Запас"
 
-#: data/ui/med-window.blp:454
+#: data/ui/med-window.blp:446
 msgid "Manage your stock"
 msgstr "Керування вашим запасом ліків"
 
-#: data/ui/med-window.blp:459
+#: data/ui/med-window.blp:451
 msgid "Current"
 msgstr "Поточний запас ліків"
 
-#: data/ui/med-window.blp:470
+#: data/ui/med-window.blp:462
 msgid "Remind me at"
 msgstr "Сповістити мене, коли запас ліків зменшиться до"
 
-#: data/ui/med-window.blp:483
+#: data/ui/med-window.blp:475
 msgid "Duration"
 msgstr "Тривалість"
 
-#: data/ui/med-window.blp:484
+#: data/ui/med-window.blp:476
 msgid "Set a start and end date"
 msgstr "Обрати початкову та кінцеві дати курсу лікування"
 
-#: data/ui/med-window.blp:488
+#: data/ui/med-window.blp:480
 msgid "Starts on"
 msgstr "Розпочинається"
 
-#: data/ui/med-window.blp:504
+#: data/ui/med-window.blp:496
 msgid "Ends on"
 msgstr "Закінчується"
 
-#: data/ui/med-window.blp:522
+#: data/ui/med-window.blp:514
 msgid "Date"
 msgstr "Дата прийому"
 
-#: data/ui/med-window.blp:546 src/historyFactory.js:41 src/medWindow.js:361
+#: data/ui/med-window.blp:538 src/historyFactory.js:44 src/medWindow.js:362
 msgid "Delete"
 msgstr "Видалити"
 
@@ -522,49 +493,49 @@ msgstr ""
 "Прийміть, щоб додаток міг працювати у фоновому режимі і відправляти "
 "сповіщення"
 
-#: src/medWindow.js:121
+#: src/medWindow.js:123
 msgid "Edit treatment"
 msgstr "Редагувати курс лікування"
 
-#: src/medWindow.js:122
+#: src/medWindow.js:124
 msgid "Save"
 msgstr "Зберегти"
 
-#: src/medWindow.js:219
+#: src/medWindow.js:218
 msgid "New"
 msgstr "Новий"
 
-#: src/medWindow.js:269
+#: src/medWindow.js:268
 msgid "New entry"
 msgstr "Новий запис"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/medWindow.js:271
+#: src/medWindow.js:270
 msgid "Add to history"
 msgstr "Додати до історії"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:355
+#: src/medWindow.js:356
 msgid "Are you sure?"
 msgstr "Ви впевнені?"
 
-#: src/medWindow.js:591
+#: src/medWindow.js:598
 msgid "Empty name"
 msgstr "Відсутня назва запису"
 
-#: src/medWindow.js:595
+#: src/medWindow.js:602
 msgid "Empty unit"
 msgstr "Відсутня одиниця виміру"
 
-#: src/medWindow.js:601
+#: src/medWindow.js:608
 msgid "Choose at least one day"
 msgstr "Виберіть хоча б один день"
 
-#: src/medWindow.js:611
+#: src/medWindow.js:618
 msgid "Name already exists"
 msgstr "Ця назва вже зайнята"
 
-#: src/medWindow.js:625
+#: src/medWindow.js:632
 msgid "Duplicated time"
 msgstr "Однакові часи у прийомів доз"
 
@@ -593,35 +564,7 @@ msgstr "Вихідні"
 msgid "Weekdays"
 msgstr "Будні"
 
-#: src/treatmentsFactory.js:142
-msgid "Sunday"
-msgstr "Неділя"
-
-#: src/treatmentsFactory.js:143
-msgid "Monday"
-msgstr "Понеділок"
-
-#: src/treatmentsFactory.js:144
-msgid "Tuesday"
-msgstr "Вівторок"
-
-#: src/treatmentsFactory.js:145
-msgid "Wednesday"
-msgstr "Середа"
-
-#: src/treatmentsFactory.js:146
-msgid "Thursday"
-msgstr "Четвер"
-
-#: src/treatmentsFactory.js:147
-msgid "Friday"
-msgstr "П'ятниця"
-
-#: src/treatmentsFactory.js:148
-msgid "Saturday"
-msgstr "Субота"
-
-#: src/treatmentsFactory.js:165 src/treatmentsFactory.js:168
+#: src/treatmentsFactory.js:152 src/treatmentsFactory.js:155
 msgid "Next dose"
 msgstr "Наступна дозу"
 
@@ -641,6 +584,48 @@ msgstr "Ще не було додано жодного курсу лікуван
 #: src/window.js:388
 msgid "All done for today!"
 msgstr "Ви прийняли усі ліки на сьогодні!"
+
+#~ msgid "Su"
+#~ msgstr "Нд"
+
+#~ msgid "Mo"
+#~ msgstr "Пн"
+
+#~ msgid "Tu"
+#~ msgstr "Вт"
+
+#~ msgid "We"
+#~ msgstr "Ср"
+
+#~ msgid "Th"
+#~ msgstr "Чт"
+
+#~ msgid "Fr"
+#~ msgstr "Пт"
+
+#~ msgid "Sa"
+#~ msgstr "Сб"
+
+#~ msgid "Sunday"
+#~ msgstr "Неділя"
+
+#~ msgid "Monday"
+#~ msgstr "Понеділок"
+
+#~ msgid "Tuesday"
+#~ msgstr "Вівторок"
+
+#~ msgid "Wednesday"
+#~ msgstr "Середа"
+
+#~ msgid "Thursday"
+#~ msgstr "Четвер"
+
+#~ msgid "Friday"
+#~ msgstr "П'ятниця"
+
+#~ msgid "Saturday"
+#~ msgstr "Субота"
 
 #~ msgid "Keyboard Shortcuts"
 #~ msgstr "Клавіатурні скорочення"
