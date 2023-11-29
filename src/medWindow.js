@@ -40,7 +40,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 		}
 	});
 	medWindow.add_controller(keyController);
-	
+
 	const cancelButton = builder.get_object('cancelButton');
 	const saveButton = builder.get_object('saveButton');
 	const deleteButton = builder.get_object('deleteMedication');
@@ -318,7 +318,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 		-1
 	);
 	medWindow.default_height = medWindowBoxHeight + 58;
-	
+
 	if (deleteButton.get_visible()) {
 		medWindow.default_height -= 12;
 	}

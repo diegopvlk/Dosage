@@ -71,7 +71,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const timeFormat = currentTime.format('%X').slice(-2);
 		globalThis.clockIs12 = timeFormat === 'AM' || timeFormat === 'PM';
 	}
-	
+
 	#start() {
 		const treatmentsFile = DataDir.get_child('dosage-treatments.json');
 		const historyFile = DataDir.get_child('dosage-history.json');
@@ -133,27 +133,27 @@ class DosageWindow extends Adw.ApplicationWindow {
 				lastDate = now;
 			}
 		}
-	
+
 		setInterval(tick, 2500);
 	}
 
 	_handleSuspension() {
 		const onWakingUp = () => this._scheduleNotifications('sleep');
 		this._connection = Gio.bus_get_sync(Gio.BusType.SYSTEM, null);
-        this._connection.signal_subscribe(
-            'org.freedesktop.login1',
-            'org.freedesktop.login1.Manager',
-            'PrepareForSleep',
-            '/org/freedesktop/login1',
-            null,
-            Gio.DBusSignalFlags.NONE,
-            onWakingUp,
-        );
+		this._connection.signal_subscribe(
+			'org.freedesktop.login1',
+			'org.freedesktop.login1.Manager',
+			'PrepareForSleep',
+			'/org/freedesktop/login1',
+			null,
+			Gio.DBusSignalFlags.NONE,
+			onWakingUp
+		);
 	}
 
 	_createLoadJsonFile(fileType, file) {
 		const filePath = file.get_path();
-	
+
 		if (!file.query_exists(null)) {
 			try {
 				this._createNewFile(filePath);
@@ -251,7 +251,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 						})
 					);
 				});
-				
+
 				this._sortedHistoryModel = new Gtk.SortListModel({
 					model: historyLS,
 					section_sorter: new HistorySectionSorter(),
@@ -287,12 +287,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 						const removedDt = new Date(removedItem.date);
 						const date = removedDt.setHours(0, 0, 0, 0);
 						const today = new Date().setHours(0, 0, 0, 0);
-					
+
 						if (date === today) {
 							for (const item of treatmentsLS) {
 								const sameItem = item.name === removedItem.name;
 								const info = item.info;
-					
+
 								if (sameItem) {
 									info.dosage.forEach((timeDose) => {
 										const td = { ...timeDose, lastTaken: undefined };
@@ -301,7 +301,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 										
 										if (sameDose) timeDose.lastTaken = null;
 									});
-					
+
 									if (info.inventory.enabled && removedItem.taken === 'yes') {
 										info.inventory.current += removedItem.info.dose;
 									}
@@ -489,10 +489,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			app.send_notification(pseudoId, notification);
 		}
-		
+
 		// v1.1.0 only has recurring: boolean
 		const recurringEnabled = info.recurring?.enabled || info.recurring === true;
-			
+
 		if (recurringEnabled) {
 			const interval = info.recurring.interval || 5;
 			const minutes = interval * 60 * 1000;
@@ -552,7 +552,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					} else {
 						this._todayItems.splice(index, 1);
 					}
-					
+
 					check.set_active(!check.get_active());
 				}
 				rowItemPos++;
@@ -562,7 +562,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		this._unselectBtn.connect('clicked', () => {
 			let currentRow = list.get_first_child();
-			
+
 			while (currentRow) {
 				if (currentRow.get_name() === 'GtkListItemWidget') {
 					const topBox = currentRow.get_first_child();
@@ -574,7 +574,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			}
 			this._updateEntryBtn(false);
 		});
-		
+
 		const hasTodayItems = this._todayItems.length > 0;
 		this._updateEntryBtn(hasTodayItems);
 	}
@@ -657,7 +657,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const fileName = `dosage-${type}.json`;
 		const file = DataDir.get_child(fileName);
 		const tempFile = createTempFile(type, listStore);
-		
+
 		const updateFile = () => {
 			return new Promise((resolve, reject) => {
 				const byteArray = new TextEncoder().encode(JSON.stringify(tempFile));
@@ -728,7 +728,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			
 			while (nextDate < today) {
 				const [active, inactive] = info.cycle;
-	
+
 				info.dosage.forEach(timeDose => {
 					const tempItem = {};
 					tempItem.name = item.name;
@@ -762,7 +762,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				if (current > active + inactive) current = 1;
 				
 				nextDate.setDate(nextDate.getDate() + 1);
-			}	
+			}
 		}
 
 		if (itemsAdded) {
@@ -779,7 +779,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			const lastUp = lastUpdate.setHours(0, 0, 0, 0);
 			const start = new Date(info.duration.start).setHours(0, 0, 0, 0);
 			const today = new Date().setHours(0, 0, 0, 0);
-			
+
 			function findDate(start) {
 				let nextDtStr;
 				let curr = info.cycle[2];
@@ -802,12 +802,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 				if (start < today) {
 					const datesPassed = datesPassedDiff(lastUpdate, new Date());
 					let [active, inactive, current] = info.cycle;
-	
+
 					for (let i = 0; i < datesPassed.length; i++) {
 						current += 1;
 						if (current > active + inactive) current = 1;
 					}
-	
+
 					item.info.cycle[2] = current;
 					item.info.cycleNextDate = findDate();
 				} else {

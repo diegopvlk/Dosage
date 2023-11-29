@@ -84,7 +84,7 @@ export function isTodayMedDay(item, histModel) {
 	if (info.duration.enabled && (start > today || end < today)) {
 		return false;
 	}
-	
+
 	if (histModel.get_n_items() > 0) {
 		for (let i = 0; i < lastSectionAmount; i++) {
 			const name = histModel.get_item(i).name;

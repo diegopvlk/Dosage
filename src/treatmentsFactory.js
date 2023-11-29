@@ -124,7 +124,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		case 'specific-days':
 			const isWeekend = info.days.every(day => [0, 6].includes(day));
 			const isWeekdays = info.days.every(day => [1, 2, 3, 4, 5].includes(day));
-	
+
 			if (info.days.length === 1) {
 				infoLabel.label = getDayLabel(info.days[0], 'long');
 			} else if (isWeekend) {
