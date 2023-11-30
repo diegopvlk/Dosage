@@ -253,7 +253,7 @@ button.one-time-name {
 
 button.specific-day {
 	border-radius: 10px;
-	min-width: 46px;
+	min-width: 40px;
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -265,10 +265,6 @@ button.specific-day {
 
 .button-left popover {
 	margin-left: -15px;
-}
-
-.button-right popover {
-	margin-right: -15px;
 }
 
 popover > contents {
