@@ -9,5 +9,6 @@
     <file>todayFactory.js</file>
     <file>historyFactory.js</file>
     <file>treatmentsFactory.js</file>
+    <file>releaseNotes.js</file>
   </gresource>
 </gresources>

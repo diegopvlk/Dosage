@@ -12,6 +12,7 @@ import Gtk from 'gi://Gtk';
 import Xdp from 'gi://Xdp?version=1.0';
 
 import { DosageWindow } from './window.js';
+import { releaseNotes } from './releaseNotes.js';
 
 pkg.initGettext();
 pkg.initFormat();
@@ -135,6 +136,7 @@ export const DosageApplication = GObject.registerClass(
 					copyright: '© 2023 Diego Povliuk',
 					// TRANSLATORS: 'Your Name <your@email.com>'
 					translator_credits: _('translator-credits'),
+					release_notes: releaseNotes,
 				};
 				const aboutWindow = new Adw.AboutWindow(aboutParams);
 				aboutWindow.add_acknowledgement_section(_('Thanks to these projects!'), [
