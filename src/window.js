@@ -109,6 +109,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					// TRANSLATORS: Notification text for for when the inventory is low
 					notification.set_body(_('You have treatments low in stock'));
 					app.send_notification('low-stock', notification);	
+					break;
 				}
 			}
 		}
