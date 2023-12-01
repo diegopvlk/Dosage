@@ -485,7 +485,7 @@ msgstr "Восстановить"
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:138
 msgid "translator-credits"
-msgstr "volkov <volkovissocool@gmail.com>"
+msgstr "volkov <volkovissocool@gmail.com>\n Anton Palgunov <toxblh@gmail.com>\n Aleksandr Melman <alexmelman88@gmail.com>"
 
 #: src/main.js:142
 msgid "Thanks to these projects!"

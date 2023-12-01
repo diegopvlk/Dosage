@@ -475,7 +475,7 @@ msgstr "Restaurer"
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:138
 msgid "translator-credits"
-msgstr "Xenelio <xenelio@gmail.com>"
+msgstr "Xenelio <xenelio@gmail.com>\n rene-coty <irenee.thirion@e.email>"
 
 #: src/main.js:142
 msgid "Thanks to these projects!"
