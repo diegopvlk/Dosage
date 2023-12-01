@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-30 22:39-0300\n"
-"PO-Revision-Date: 2023-11-29 14:50+0000\n"
+"PO-Revision-Date: 2023-12-01 14:41+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/es/"
 ">\n"
@@ -580,7 +580,7 @@ msgstr "Aún no se han añadido tratamientos"
 
 #: src/window.js:397
 msgid "All done for today"
-msgstr "Todo listo por hoy"
+msgstr "Todo hecho por hoy"
 
 #~ msgid "Su"
 #~ msgstr "Do"
