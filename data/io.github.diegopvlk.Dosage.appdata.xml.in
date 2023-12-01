@@ -33,7 +33,7 @@
 	</screenshots>
 
 	<releases>
-		<release version="1.4.1" date="2023-11-01">
+		<release version="1.4.1" date="2023-12-01">
 			<description translatable="no">
 				<ul>
 					<li>Fixed an issue when adding a treatment using one-time entry with the today date being marked as missed if the time was the same from today list</li>
