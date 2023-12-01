@@ -76,12 +76,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const treatmentsFile = DataDir.get_child('dosage-treatments.json');
 		const historyFile = DataDir.get_child('dosage-history.json');
 
-		this._createLoadJsonFile('treatments', treatmentsFile);
-		this._createLoadJsonFile('history', historyFile);
-
 		try {
-			this._loadTreatments();
-			this._loadHistory();
+			this._createOrLoadJson('treatments', treatmentsFile);
+			this._createOrLoadJson('history', historyFile);
 			this._updateItems();
 			this._addMissedItems();
 			this._updateCycleAndLastUp();
@@ -108,7 +105,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					const [notification, app] = this._getNotification();
 					// TRANSLATORS: Notification text for when the inventory is low
 					notification.set_body(_('You have treatments low in stock'));
-					app.send_notification('low-stock', notification);	
+					app.send_notification('low-stock', notification);
 					break;
 				}
 			}
@@ -140,8 +137,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 	_handleSuspension() {
 		const onWakingUp = () => this._scheduleNotifications('sleep');
-		this._connection = Gio.bus_get_sync(Gio.BusType.SYSTEM, null);
-		this._connection.signal_subscribe(
+		const connection = Gio.bus_get_sync(Gio.BusType.SYSTEM, null);
+		connection.signal_subscribe(
 			'org.freedesktop.login1',
 			'org.freedesktop.login1.Manager',
 			'PrepareForSleep',
@@ -152,7 +149,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		);
 	}
 
-	_createLoadJsonFile(fileType, file) {
+	_createOrLoadJson(fileType, file) {
 		const filePath = file.get_path();
 
 		if (!file.query_exists(null)) {
@@ -193,9 +190,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 			if (success) {
 				const contentString = decoder.decode(contents);
 				if (fileType === 'treatments') {
-					this._treatmentsJson = JSON.parse(contentString);
+					this._loadTreatments(JSON.parse(contentString))
 				} else if (fileType === 'history') {
-					this._historyJson = JSON.parse(contentString);
+					this._loadHistory(JSON.parse(contentString))
 				}
 			} else {
 				log('Failed to read file contents.');
@@ -205,10 +202,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 	}
 
-	_loadTreatments() {
+	_loadTreatments(treatmentsJson) {
 		try {
 			if (treatmentsLS.get_n_items() === 0) {
-				this._treatmentsJson.meds.forEach(med => {
+				treatmentsJson.meds.forEach(med => {
 					treatmentsLS.insert_sorted(
 						new Medication({
 							// expression is for <= v1.2.0
@@ -222,8 +219,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 							return name1.localeCompare(name2);
 						}
 					);
-				});	
-				this._treatmentsList.set_factory(treatmentsFactory);	
+				});
+
+				this._treatmentsList.set_factory(treatmentsFactory);
 				this._treatmentsList.remove_css_class('view');
 				this._treatmentsList.add_css_class('background');
 
@@ -236,10 +234,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 	}
 
-	_loadHistory() {
+	_loadHistory(historyJson) {
 		try {
 			if (historyLS.get_n_items() === 0) {
-				this._historyJson.meds.forEach(med => {
+				historyJson.meds.forEach(med => {
 					historyLS.append(
 						new HistoryMedication({
 							// expression is for <= v1.2.0
@@ -253,19 +251,18 @@ class DosageWindow extends Adw.ApplicationWindow {
 					);
 				});
 
-				this._sortedHistoryModel = new Gtk.SortListModel({
+				const sortedHistoryModel = new Gtk.SortListModel({
 					model: historyLS,
 					section_sorter: new HistorySectionSorter(),
 					sorter: new HistorySorter(),
 				});
 
 				this._historyList.model = new Gtk.NoSelection({
-					model: this._sortedHistoryModel,
+					model: sortedHistoryModel,
 				});
 	
 				this._historyList.remove_css_class('view');
 				this._historyList.add_css_class('background');
-		
 				this._historyList.set_header_factory(historyHeaderFactory);
 				this._historyList.set_factory(historyItemFactory);
 
@@ -296,7 +293,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 								if (sameItem) {
 									info.dosage.forEach((timeDose) => {
-										for (const i of this._todayLS) {
+										for (const i of this.todayLS) {
 											const sameName = 
 												item.name === removedItem.name;
 											const sameTime =
@@ -331,7 +328,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_loadToday() {
-		this._todayLS = Gio.ListStore.new(TodayMedication);
+		this.todayLS = Gio.ListStore.new(TodayMedication);
 		const tempFile = createTempFile('treatments', treatmentsLS);
 
 		tempFile.meds.forEach(med => {
@@ -341,7 +338,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					time: [timeDose.time[0], timeDose.time[1]],
 					dose: timeDose.dose,
 				};
-				this._todayLS.append(
+				this.todayLS.append(
 					new TodayMedication({
 						name: med.name,
 						unit: med.unit,
@@ -351,8 +348,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 			});
 		})
 
-		this._filterTodayModel = new Gtk.FilterListModel({
-			model: this._todayLS,
+		const filterTodayModel = new Gtk.FilterListModel({
+			model: this.todayLS,
 			filter: Gtk.CustomFilter.new(item => {
 				return isTodayMedDay(
 					item,
@@ -361,23 +358,21 @@ class DosageWindow extends Adw.ApplicationWindow {
 			}),
 		});
 
-		this._sortedTodayModel = new Gtk.SortListModel({
-			model: this._filterTodayModel,
+		const sortedTodayModel = new Gtk.SortListModel({
+			model: filterTodayModel,
 			section_sorter: new TodaySectionSorter(),
 		});
 
-		this._todayModel = new Gtk.NoSelection({ model: this._sortedTodayModel });
-		this._todayList.model = this._todayModel;
+		this.todayItems = [];
+		this.todayModel = new Gtk.NoSelection({ model: sortedTodayModel });
 
+		this._todayList.model = this.todayModel;
 		this._todayList.remove_css_class('view');
 		this._todayList.add_css_class('background');
-
 		this._todayList.set_header_factory(todayHeaderFactory);
 		this._todayList.set_factory(todayItemFactory);
 
-		this._todayItems = [];
-
-		const noItems = this._sortedTodayModel.get_n_items() === 0;
+		const noItems = sortedTodayModel.get_n_items() === 0;
 		const noTreatments = this._treatmentsList.model.get_n_items() === 0;
 
 		this._emptyTreatments.ellipsize = Pango.EllipsizeMode.END;
@@ -403,16 +398,16 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_scheduleNotifications(action) {
-		for (const id in this._scheduledItems) {
-			clearTimeout(this._scheduledItems[id]);
+		for (const id in this.scheduledItems) {
+			clearTimeout(this.scheduledItems[id]);
 		}
 
-		this._scheduledItems = {};
+		this.scheduledItems = {};
 		
-		const todayLength = this._todayModel.get_n_items();
+		const todayLength = this.todayModel.get_n_items();
 		
 		for (let i = 0; i < todayLength; i++) {
-			this._addToBeNotified(this._todayModel.get_item(i), action);
+			this._addToBeNotified(this.todayModel.get_item(i), action);
 		}
 	}
 
@@ -451,7 +446,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			let h = info.dosage.time[0];
 			let m = info.dosage.time[1];
 			let period = '';
-			
+
 			if (clockIs12) {
 				period = ' AM';
 				if (h >= 12) period = ' PM';
@@ -506,7 +501,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			const interval = info.recurring.interval || 5;
 			const minutes = interval * 60 * 1000;
 			const recurringNotify = (pseudoId, timeDiff) => {
-				this._scheduledItems[pseudoId] = setTimeout(() => {
+				this.scheduledItems[pseudoId] = setTimeout(() => {
 					notify();
 					recurringNotify(pseudoId, minutes);
 				}, timeDiff);
@@ -516,7 +511,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			return;
 		}
 
-		this._scheduledItems[pseudoId] = setTimeout(notify, timeDiff);
+		this.scheduledItems[pseudoId] = setTimeout(notify, timeDiff);
 	}
 
 	_getNotification() {
@@ -554,12 +549,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 					const labelsBox = topBox.get_first_child().get_next_sibling();
 					const check = labelsBox.get_next_sibling().get_next_sibling();
 					const item = model.get_item(position);
-					const index = this._todayItems.lastIndexOf(item);
+					const index = this.todayItems.lastIndexOf(item);
 
 					if (check.get_active() === false) {
-						this._todayItems.push(item);
+						this.todayItems.push(item);
 					} else {
-						this._todayItems.splice(index, 1);
+						this.todayItems.splice(index, 1);
 					}
 
 					check.set_active(!check.get_active());
@@ -584,7 +579,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._updateEntryBtn(false);
 		});
 
-		const hasTodayItems = this._todayItems.length > 0;
+		const hasTodayItems = this.todayItems.length > 0;
 		this._updateEntryBtn(hasTodayItems);
 	}
 
@@ -597,15 +592,15 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._entryBtn.add_css_class('suggested-action');
 		} else {
 			this._entryBtn.remove_css_class('suggested-action');
-			this._todayItems = [];
+			this.todayItems = [];
 		}
 	}
 
 	_addTodayToHistory(btn) {
 		const taken = btn.get_name(); // yes or no
 
-		if (this._todayItems.length > 0) {
-			this._todayItems.forEach(item => 
+		if (this.todayItems.length > 0) {
+			this.todayItems.forEach(item => 
 				this._insertItemToHistory(item, taken)
 			);
 
@@ -620,10 +615,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_addNotifItemToHistory(item, taken) {
-		const todayLength = this._todayModel.get_n_items();
+		const todayLength = this.todayModel.get_n_items();
 		// only insert to history if item is not in today list
 		for (let i = 0; i < todayLength; i++) {
-			if (item === this._todayModel.get_item(i)) {
+			if (item === this.todayModel.get_item(i)) {
 				this._insertItemToHistory(item, taken);
 				this._updateEverything(null, 'notifAction');
 				this._scheduleNotifications('adding');
@@ -651,7 +646,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					const tempObj = { ...timeDose, lastTaken: undefined };
 					const treatDose = JSON.stringify(tempObj);
 
-					this._todayItems.forEach(i => {
+					this.todayItems.forEach(i => {
 						const todayDose = JSON.stringify(i.info.dosage);
 						if (treatDose === todayDose && i.name === item.name) {
 							timeDose.lastTaken = new Date().toISOString();
