@@ -402,19 +402,40 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 
 		entryDate.setHours(info.time[0]);
 		entryDate.setMinutes(info.time[1]);
+
+		const item = new HistoryMedication({
+			name: medName.text.trim(),
+			unit: medUnit.text.trim(),
+			color: dosageColorButton.get_name(),
+			taken: taken,
+			info: info,
+			date: entryDate.toISOString(),
+		});
+
 		historyLS.insert_sorted(
-			new HistoryMedication({
-				name: medName.text.trim(),
-				unit: medUnit.text.trim(),
-				color: dosageColorButton.get_name(),
-				taken: taken,
-				info: info,
-				date: entryDate.toISOString(),
-			}),
+			item,
 			(obj1, obj2) => {
 				return obj1.date > obj2.date ? -1 : 0;
 			}
 		);
+
+		const todayDt = new Date().setHours(0, 0, 0, 0);
+		const entryDt = entryDate.setHours(0, 0, 0, 0);
+
+		if (todayDt !== entryDt) return;
+
+		// if it's the time as of an existing item
+		// update lastTaken if entryDate is today
+		for (const i of treatmentsLS) {
+			i.info.dosage.forEach(timeDose => {
+					const sameName = i.name === item.name;
+					const sameTime = String(timeDose.time) === String(item.info.time);
+					if (sameName && sameTime) {
+						timeDose.lastTaken = new Date().toISOString();
+					}
+				}
+			);
+		}
 
 		// reload-ish of history, so the item don't get inserted 
 		// on a separate section (with the same day) 

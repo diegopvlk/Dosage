@@ -296,11 +296,19 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 								if (sameItem) {
 									info.dosage.forEach((timeDose) => {
-										const td = { ...timeDose, lastTaken: undefined };
-										const sameDose =
-											JSON.stringify(td) === JSON.stringify(removedItem.info);
-										
-										if (sameDose) timeDose.lastTaken = null;
+										for (const i of this._todayLS) {
+											const sameName = 
+												item.name === removedItem.name;
+											const sameTime =
+												String(i.info.dosage.time) ===
+												String(removedItem.info.time);
+
+											// update lastTaken when removing an item
+											// with the same name, time and date of today items
+											if (sameName && sameTime) {
+												timeDose.lastTaken = null;
+											}
+										}
 									});
 
 									if (info.inventory.enabled && removedItem.taken === 'yes') {
@@ -323,7 +331,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_loadToday() {
-		const todayLS = Gio.ListStore.new(TodayMedication);
+		this._todayLS = Gio.ListStore.new(TodayMedication);
 		const tempFile = createTempFile('treatments', treatmentsLS);
 
 		tempFile.meds.forEach(med => {
@@ -333,7 +341,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					time: [timeDose.time[0], timeDose.time[1]],
 					dose: timeDose.dose,
 				};
-				todayLS.append(
+				this._todayLS.append(
 					new TodayMedication({
 						name: med.name,
 						unit: med.unit,
@@ -344,7 +352,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		})
 
 		this._filterTodayModel = new Gtk.FilterListModel({
-			model: todayLS,
+			model: this._todayLS,
 			filter: Gtk.CustomFilter.new(item => {
 				return isTodayMedDay(
 					item,
