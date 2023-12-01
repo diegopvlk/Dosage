@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-30 22:39-0300\n"
-"PO-Revision-Date: 2023-11-01 11:39+0000\n"
+"PO-Revision-Date: 2023-12-02 18:29+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"X-Generator: Weblate 5.3-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
@@ -49,10 +49,8 @@ msgid "Notifications — Get reminders at the right time"
 msgstr "Notifiche — Ricevi promemoria al momento giusto"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
-#, fuzzy
-#| msgid "History — See which medications you took or skipped"
 msgid "History — See which medications you took, skipped or missed"
-msgstr "Cronologia — Controlla quali farmaci hai preso o saltato"
+msgstr "Cronologia: guarda quali farmaci hai preso, saltati o dimenticati"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
 msgid "Dosage management — Multiple doses with different times"
@@ -562,10 +560,8 @@ msgid "Weekdays"
 msgstr "Giorni della settimana"
 
 #: src/treatmentsFactory.js:152 src/treatmentsFactory.js:155
-#, fuzzy
-#| msgid "Delete dose"
 msgid "Next dose"
-msgstr "Cancella dose"
+msgstr "Prossima dose"
 
 #: src/utils.js:158
 msgid "Delete dose"
