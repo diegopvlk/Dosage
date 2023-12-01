@@ -555,8 +555,8 @@ msgid "Daily"
 msgstr "Dagelijks"
 
 #: src/treatmentsFactory.js:131
-msgid "Weekend"
-msgstr "Weekend"
+msgid "Weekends"
+msgstr "Weekends"
 
 #: src/treatmentsFactory.js:133
 msgid "Weekdays"
@@ -570,18 +570,18 @@ msgstr "Volgende dosis"
 msgid "Delete dose"
 msgstr "Dosering verwijderen"
 
-#. TRANSLATORS: Notification text for for when the inventory is low
+#. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:110
 msgid "You have treatments low in stock"
 msgstr "De voorraad van enkele medicatie is laag"
 
 #: src/window.js:383
-msgid "No treatments added yet!"
-msgstr "U heeft nog niets toegevoegd!"
+msgid "No treatments added yet"
+msgstr "U heeft nog niets toegevoegd"
 
 #: src/window.js:388
-msgid "All done for today!"
-msgstr "U bent klaar voor vandaag!"
+msgid "All done for today"
+msgstr "U bent klaar voor vandaag"
 
 #~ msgid "Su"
 #~ msgstr "Zo"

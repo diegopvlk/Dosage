@@ -106,7 +106,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 				if (!this.get_visible() && !notifAction) {
 					const [notification, app] = this._getNotification();
-					// TRANSLATORS: Notification text for for when the inventory is low
+					// TRANSLATORS: Notification text for when the inventory is low
 					notification.set_body(_('You have treatments low in stock'));
 					app.send_notification('low-stock', notification);	
 					break;
@@ -389,12 +389,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 			this._emptyTodayBox.set_visible(true);
 			this._emptyToday.set_visible(true);
 			this._allDoneIcon.set_visible(false);
-			this._emptyToday.label = _('No treatments added yet!');
+			this._emptyToday.label = _('No treatments added yet');
 		} else if (noItems) {
 			this._emptyTodayBox.set_visible(true);
 			this._allDoneIcon.set_visible(true);
 			this._emptyToday.set_visible(true);
-			this._emptyToday.label = _('All done for today!');
+			this._emptyToday.label = _('All done for today');
 		} else {
 			this._emptyTodayBox.set_visible(false);
 			this._allDoneIcon.set_visible(false);

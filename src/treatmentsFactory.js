@@ -128,7 +128,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			if (info.days.length === 1) {
 				infoLabel.label = getDayLabel(info.days[0], 'long');
 			} else if (isWeekend) {
-				infoLabel.label = _('Weekend');
+				infoLabel.label = _('Weekends');
 			} else if (isWeekdays && info.days.length === 5) {
 				infoLabel.label = _('Weekdays');
 			} else if (info.days.length === 7) {

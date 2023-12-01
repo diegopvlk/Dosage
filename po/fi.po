@@ -545,7 +545,7 @@ msgid "Daily"
 msgstr "Päivittäin"
 
 #: src/treatmentsFactory.js:131
-msgid "Weekend"
+msgid "Weekends"
 msgstr "Viikonloppuisin"
 
 #: src/treatmentsFactory.js:133
@@ -560,18 +560,18 @@ msgstr "Seuraava annos"
 msgid "Delete dose"
 msgstr "Poista annos"
 
-#. TRANSLATORS: Notification text for for when the inventory is low
+#. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:110
 msgid "You have treatments low in stock"
 msgstr "Hoitoannokset ovat käymässä vähiin"
 
 #: src/window.js:383
-msgid "No treatments added yet!"
-msgstr "Hoitoja ei ole vielä lisätty!"
+msgid "No treatments added yet"
+msgstr "Hoitoja ei ole vielä lisätty"
 
 #: src/window.js:388
-msgid "All done for today!"
-msgstr "Kaikki kunnossa tämän päivän osalta!"
+msgid "All done for today"
+msgstr "Kaikki kunnossa tämän päivän osalta"
 
 #~ msgid "Su"
 #~ msgstr "Su"

@@ -130,7 +130,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 		medName.text = item.name;
 		medUnit.text = item.unit;
 		medNotes.text = info.notes ? info.notes : '';
-		
+
 		for (const clr of dosageColorBox) {
 			if (clr.get_name() === info.color) {
 				dosageColorButton.add_css_class(info.color + '-clr');
@@ -170,13 +170,13 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 
 		if (info.cycle && info.cycle.length !== 0) {
 			const [active, inactive, current] = info.cycle;
-			
+
 			cycleActive.value = active;
 			cycleInactive.value = inactive;
 			cycleCurrent.value = current;
-			
+
 			cycleCurrent.adjustment.set_upper(active + inactive);
-			
+
 			frequencyCycle.label = `${active}  ⊷  ${inactive}`;
 		}
 
@@ -317,7 +317,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 	globalThis.removeRow = doseRow => {
 		const firstDoseRow = listRows.get_first_child();
 		const lastDoseRow = listRows.get_last_child();
-		
+
 		if (firstDoseRow != lastDoseRow) {
 			dosage.remove(doseRow);
 		}
