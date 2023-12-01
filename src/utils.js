@@ -280,12 +280,10 @@ export function getTimeBtnInput(currentDoseRow) {
 }
 
 export function getDayLabel(day, long) {
-	const date = new Date();
-	date.setDate(date.getDate() + (day - date.getDay()));
-	const dayLabel = new Date(date).toLocaleDateString(undefined, {
-		weekday: long || 'short',
-	});
-	return dayLabel.charAt(0).toUpperCase() + dayLabel.slice(1).replace('.', '');
+	const now = GLib.DateTime.new_now_local();
+	const date = now.add_days((day - now.get_day_of_week() + 7) % 7);
+	const dayLabel = date.format(long ? '%A' : '%a');
+	return dayLabel.charAt(0).toUpperCase() + dayLabel.slice(1);
 }
 
 export const HistorySectionSorter = GObject.registerClass(
