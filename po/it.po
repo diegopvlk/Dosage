@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-29 11:35-0300\n"
+"POT-Creation-Date: 2023-11-30 22:39-0300\n"
 "PO-Revision-Date: 2023-11-01 11:39+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:402
-#: src/main.js:128 src/window.js:531
+#: src/main.js:129 src/window.js:539
 msgid "Dosage"
 msgstr "Dosaggio"
 
@@ -149,11 +149,11 @@ msgstr "Esci"
 msgid "New treatment"
 msgstr "Nuovo trattamento"
 
-#: data/ui/med-window.blp:19 src/medWindow.js:361
+#: data/ui/med-window.blp:19 src/medWindow.js:372
 msgid "Cancel"
 msgstr "Annulla"
 
-#: data/ui/med-window.blp:25 data/ui/window.blp:158
+#: data/ui/med-window.blp:25 data/ui/window.blp:153
 msgid "Add"
 msgstr "Aggiungi"
 
@@ -169,7 +169,7 @@ msgstr "Nome"
 msgid "Unit"
 msgstr "Unità"
 
-#: data/ui/med-window.blp:57 src/medWindow.js:228
+#: data/ui/med-window.blp:57 src/medWindow.js:237
 msgid "Pill(s)"
 msgstr "Pillola(e)"
 
@@ -185,7 +185,7 @@ msgstr "Dopo il pasto"
 msgid "Color and icon"
 msgstr "Colore e icona"
 
-#: data/ui/med-window.blp:70 src/medWindow.js:271
+#: data/ui/med-window.blp:70 src/medWindow.js:282
 msgid "Color"
 msgstr "Colore"
 
@@ -326,17 +326,17 @@ msgid "Add dose"
 msgstr "Aggiungi dose"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:419 src/historyFactory.js:136
+#: data/ui/med-window.blp:419 src/historyFactory.js:133
 msgid "Confirmed"
 msgstr "Confermato"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:420 src/historyFactory.js:139
+#: data/ui/med-window.blp:420 src/historyFactory.js:136
 msgid "Skipped"
 msgstr "Saltato"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:421 src/historyFactory.js:142
+#: data/ui/med-window.blp:421 src/historyFactory.js:139
 msgid "Missed"
 msgstr "Perso"
 
@@ -388,11 +388,11 @@ msgstr "Finisce il"
 msgid "Date"
 msgstr "Data"
 
-#: data/ui/med-window.blp:538 src/historyFactory.js:108 src/medWindow.js:362
+#: data/ui/med-window.blp:538 src/historyFactory.js:105 src/medWindow.js:373
 msgid "Delete"
 msgstr "Cancella"
 
-#: data/ui/preferences.blp:9 data/ui/window.blp:190
+#: data/ui/preferences.blp:9 data/ui/window.blp:178
 msgid "Preferences"
 msgstr "Preferenze"
 
@@ -424,11 +424,11 @@ msgstr "Pulsanti di notifica"
 msgid "Show or hide confirm/skip"
 msgstr "Mostra o nascondi conferma/salta"
 
-#: data/ui/preferences.blp:47 src/window.js:459 src/window.js:584
+#: data/ui/preferences.blp:47 src/window.js:469 src/window.js:592
 msgid "Confirm"
 msgstr "Conferma"
 
-#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:463
+#: data/ui/preferences.blp:56 data/ui/window.blp:75 src/window.js:473
 msgid "Skip"
 msgstr "Salta"
 
@@ -440,53 +440,53 @@ msgstr "Menu Principale"
 msgid "Today"
 msgstr "Oggi"
 
-#: data/ui/window.blp:62
+#: data/ui/window.blp:61
 msgid "Unselect"
 msgstr "Non selezionato"
 
-#: data/ui/window.blp:70 src/window.js:584
+#: data/ui/window.blp:69 src/window.js:592
 msgid "One-time entry"
 msgstr "Unica voce"
 
-#: data/ui/window.blp:106
+#: data/ui/window.blp:104
 msgid "History"
 msgstr "Cronologia"
 
-#: data/ui/window.blp:121
+#: data/ui/window.blp:118
 msgid "Empty history"
 msgstr "Cronologia vuota"
 
-#: data/ui/window.blp:132
+#: data/ui/window.blp:128
 msgid "Treatments"
 msgstr "Trattamenti"
 
-#: data/ui/window.blp:165
+#: data/ui/window.blp:160
 msgid "Click the button below to add some"
 msgstr "Fai clic sul pulsante qui sotto per aggiungerne alcuni"
 
-#: data/ui/window.blp:194
+#: data/ui/window.blp:182
 msgid "About Dosage"
 msgstr "Informazioni su Dosaggio"
 
-#: data/ui/window.blp:198
+#: data/ui/window.blp:186
 msgid "Quit"
 msgstr "Esci"
 
-#: src/historyFactory.js:105
+#: src/historyFactory.js:102
 msgid "Restore"
 msgstr "Ristabilire"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:137
+#: src/main.js:138
 msgid "translator-credits"
 msgstr "Albano Battistella <albanobattistella@gmail.com>"
 
-#: src/main.js:140
+#: src/main.js:142
 msgid "Thanks to these projects!"
 msgstr "Grazie a questi progetti!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:173
+#: src/main.js:175
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Accetta per consentire l'esecuzione in background e ricevere notifiche"
 
@@ -498,41 +498,41 @@ msgstr "Modifica trattamento"
 msgid "Save"
 msgstr "Salva"
 
-#: src/medWindow.js:218
+#: src/medWindow.js:227
 msgid "New"
 msgstr "Nuovo"
 
-#: src/medWindow.js:268
+#: src/medWindow.js:279
 msgid "New entry"
 msgstr "Nuova voce"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/medWindow.js:270
+#: src/medWindow.js:281
 msgid "Add to history"
 msgstr "Agg. alla cronologia"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:356
+#: src/medWindow.js:367
 msgid "Are you sure?"
 msgstr "Sei sicuro?"
 
-#: src/medWindow.js:598
+#: src/medWindow.js:630
 msgid "Empty name"
 msgstr "Nome vuoto"
 
-#: src/medWindow.js:602
+#: src/medWindow.js:634
 msgid "Empty unit"
 msgstr "Unità vuota"
 
-#: src/medWindow.js:608
+#: src/medWindow.js:640
 msgid "Choose at least one day"
 msgstr "Scegli almeno un giorno"
 
-#: src/medWindow.js:618
+#: src/medWindow.js:650
 msgid "Name already exists"
 msgstr "Il nome esiste già"
 
-#: src/medWindow.js:632
+#: src/medWindow.js:664
 msgid "Duplicated time"
 msgstr "Tempo duplicato"
 
@@ -576,11 +576,11 @@ msgstr "Cancella dose"
 msgid "You have treatments low in stock"
 msgstr "Hai trattamenti in esaurimento"
 
-#: src/window.js:383
+#: src/window.js:392
 msgid "No treatments added yet"
 msgstr "Nessun trattamento ancora aggiunto"
 
-#: src/window.js:388
+#: src/window.js:397
 msgid "All done for today"
 msgstr "Tutto fatto per oggi"
 

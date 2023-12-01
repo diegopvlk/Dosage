@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-29 11:35-0300\n"
+"POT-Creation-Date: 2023-11-30 22:39-0300\n"
 "PO-Revision-Date: 2023-10-31 01:26+0000\n"
 "Last-Translator: volkov <d2oo1dle2x@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
@@ -23,7 +23,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:402
-#: src/main.js:128 src/window.js:531
+#: src/main.js:129 src/window.js:539
 msgid "Dosage"
 msgstr "Дозировка"
 
@@ -153,11 +153,11 @@ msgstr "Выйти"
 msgid "New treatment"
 msgstr "Новый курс лечения"
 
-#: data/ui/med-window.blp:19 src/medWindow.js:361
+#: data/ui/med-window.blp:19 src/medWindow.js:372
 msgid "Cancel"
 msgstr "Отменить"
 
-#: data/ui/med-window.blp:25 data/ui/window.blp:158
+#: data/ui/med-window.blp:25 data/ui/window.blp:153
 msgid "Add"
 msgstr "Добавить"
 
@@ -173,7 +173,7 @@ msgstr "Название"
 msgid "Unit"
 msgstr "Единица измерения"
 
-#: data/ui/med-window.blp:57 src/medWindow.js:228
+#: data/ui/med-window.blp:57 src/medWindow.js:237
 msgid "Pill(s)"
 msgstr "Таблетка(и)"
 
@@ -189,7 +189,7 @@ msgstr "После приема пищи"
 msgid "Color and icon"
 msgstr "Цвет и иконка"
 
-#: data/ui/med-window.blp:70 src/medWindow.js:271
+#: data/ui/med-window.blp:70 src/medWindow.js:282
 msgid "Color"
 msgstr "Цвет"
 
@@ -330,17 +330,17 @@ msgid "Add dose"
 msgstr "Добавить дозу"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:419 src/historyFactory.js:136
+#: data/ui/med-window.blp:419 src/historyFactory.js:133
 msgid "Confirmed"
 msgstr "Подтверджено"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:420 src/historyFactory.js:139
+#: data/ui/med-window.blp:420 src/historyFactory.js:136
 msgid "Skipped"
 msgstr "Пропущено"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:421 src/historyFactory.js:142
+#: data/ui/med-window.blp:421 src/historyFactory.js:139
 msgid "Missed"
 msgstr "Отсутствует"
 
@@ -394,11 +394,11 @@ msgstr "Заканчивается"
 msgid "Date"
 msgstr "Дата приема"
 
-#: data/ui/med-window.blp:538 src/historyFactory.js:108 src/medWindow.js:362
+#: data/ui/med-window.blp:538 src/historyFactory.js:105 src/medWindow.js:373
 msgid "Delete"
 msgstr "Удалить"
 
-#: data/ui/preferences.blp:9 data/ui/window.blp:190
+#: data/ui/preferences.blp:9 data/ui/window.blp:178
 msgid "Preferences"
 msgstr "Настройки"
 
@@ -430,11 +430,11 @@ msgstr "Кнопки уведомлений"
 msgid "Show or hide confirm/skip"
 msgstr "Показать или скрыть подтвердить/пропустить"
 
-#: data/ui/preferences.blp:47 src/window.js:459 src/window.js:584
+#: data/ui/preferences.blp:47 src/window.js:469 src/window.js:592
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:463
+#: data/ui/preferences.blp:56 data/ui/window.blp:75 src/window.js:473
 msgid "Skip"
 msgstr "Пропустить"
 
@@ -446,53 +446,53 @@ msgstr "Главное меню"
 msgid "Today"
 msgstr "Сегодня"
 
-#: data/ui/window.blp:62
+#: data/ui/window.blp:61
 msgid "Unselect"
 msgstr "Отменить выбор"
 
-#: data/ui/window.blp:70 src/window.js:584
+#: data/ui/window.blp:69 src/window.js:592
 msgid "One-time entry"
 msgstr "Одноразовый прием"
 
-#: data/ui/window.blp:106
+#: data/ui/window.blp:104
 msgid "History"
 msgstr "История"
 
-#: data/ui/window.blp:121
+#: data/ui/window.blp:118
 msgid "Empty history"
 msgstr "История пуста"
 
-#: data/ui/window.blp:132
+#: data/ui/window.blp:128
 msgid "Treatments"
 msgstr "Курсы лечения"
 
-#: data/ui/window.blp:165
+#: data/ui/window.blp:160
 msgid "Click the button below to add some"
 msgstr "Нажмите кнопку ниже, чтобы добавить"
 
-#: data/ui/window.blp:194
+#: data/ui/window.blp:182
 msgid "About Dosage"
 msgstr "О приложении"
 
-#: data/ui/window.blp:198
+#: data/ui/window.blp:186
 msgid "Quit"
 msgstr "Выйти"
 
-#: src/historyFactory.js:105
+#: src/historyFactory.js:102
 msgid "Restore"
 msgstr "Восстановить"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:137
+#: src/main.js:138
 msgid "translator-credits"
 msgstr "volkov <volkovissocool@gmail.com>"
 
-#: src/main.js:140
+#: src/main.js:142
 msgid "Thanks to these projects!"
 msgstr "Огромное спасибо этим проектам!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:173
+#: src/main.js:175
 msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 "Разрешите, чтобы приложение могло работать в фоновом режиме и отправлять "
@@ -506,41 +506,41 @@ msgstr "Редактировать курс лечения"
 msgid "Save"
 msgstr "Сохранить"
 
-#: src/medWindow.js:218
+#: src/medWindow.js:227
 msgid "New"
 msgstr "Новая"
 
-#: src/medWindow.js:268
+#: src/medWindow.js:279
 msgid "New entry"
 msgstr "Новая запись"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/medWindow.js:270
+#: src/medWindow.js:281
 msgid "Add to history"
 msgstr "Добавить в историю"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:356
+#: src/medWindow.js:367
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
-#: src/medWindow.js:598
+#: src/medWindow.js:630
 msgid "Empty name"
 msgstr "Отсутствует название записи"
 
-#: src/medWindow.js:602
+#: src/medWindow.js:634
 msgid "Empty unit"
 msgstr "Пустая единица измерения"
 
-#: src/medWindow.js:608
+#: src/medWindow.js:640
 msgid "Choose at least one day"
 msgstr "Выберите хотя бы один день"
 
-#: src/medWindow.js:618
+#: src/medWindow.js:650
 msgid "Name already exists"
 msgstr "Это название уже занято"
 
-#: src/medWindow.js:632
+#: src/medWindow.js:664
 msgid "Duplicated time"
 msgstr "Одинаковое время у приемов доз"
 
@@ -582,11 +582,11 @@ msgstr "Удалить дозу"
 msgid "You have treatments low in stock"
 msgstr "У вас осталось мало лекарств в запасе"
 
-#: src/window.js:383
+#: src/window.js:392
 msgid "No treatments added yet"
 msgstr "Ни одного курса лечения еще не было добавлено"
 
-#: src/window.js:388
+#: src/window.js:397
 msgid "All done for today"
 msgstr "Вы приняли все лекарства на сегодня"
 

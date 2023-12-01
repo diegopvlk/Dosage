@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-29 11:35-0300\n"
+"POT-Creation-Date: 2023-11-30 22:39-0300\n"
 "PO-Revision-Date: 2023-11-27 17:40+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:402
-#: src/main.js:128 src/window.js:531
+#: src/main.js:129 src/window.js:539
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -146,11 +146,11 @@ msgstr "Avsluta"
 msgid "New treatment"
 msgstr "Ny behandling"
 
-#: data/ui/med-window.blp:19 src/medWindow.js:361
+#: data/ui/med-window.blp:19 src/medWindow.js:372
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: data/ui/med-window.blp:25 data/ui/window.blp:158
+#: data/ui/med-window.blp:25 data/ui/window.blp:153
 msgid "Add"
 msgstr "Lägg till"
 
@@ -166,7 +166,7 @@ msgstr "Namn"
 msgid "Unit"
 msgstr "Enhet"
 
-#: data/ui/med-window.blp:57 src/medWindow.js:228
+#: data/ui/med-window.blp:57 src/medWindow.js:237
 msgid "Pill(s)"
 msgstr "Piller"
 
@@ -182,7 +182,7 @@ msgstr "Efter måltid"
 msgid "Color and icon"
 msgstr "Färg och ikon"
 
-#: data/ui/med-window.blp:70 src/medWindow.js:271
+#: data/ui/med-window.blp:70 src/medWindow.js:282
 msgid "Color"
 msgstr "Färg"
 
@@ -323,17 +323,17 @@ msgid "Add dose"
 msgstr "Lägg till dosering"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:419 src/historyFactory.js:136
+#: data/ui/med-window.blp:419 src/historyFactory.js:133
 msgid "Confirmed"
 msgstr "Bekräftad"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:420 src/historyFactory.js:139
+#: data/ui/med-window.blp:420 src/historyFactory.js:136
 msgid "Skipped"
 msgstr "Hoppade över"
 
 #. TRANSLATORS: Keep it short
-#: data/ui/med-window.blp:421 src/historyFactory.js:142
+#: data/ui/med-window.blp:421 src/historyFactory.js:139
 msgid "Missed"
 msgstr "Glömd"
 
@@ -385,11 +385,11 @@ msgstr "Slutar"
 msgid "Date"
 msgstr "Datum"
 
-#: data/ui/med-window.blp:538 src/historyFactory.js:108 src/medWindow.js:362
+#: data/ui/med-window.blp:538 src/historyFactory.js:105 src/medWindow.js:373
 msgid "Delete"
 msgstr "Radera"
 
-#: data/ui/preferences.blp:9 data/ui/window.blp:190
+#: data/ui/preferences.blp:9 data/ui/window.blp:178
 msgid "Preferences"
 msgstr "Inställningar"
 
@@ -421,11 +421,11 @@ msgstr "Aviseringsknappar"
 msgid "Show or hide confirm/skip"
 msgstr "Visa eller dölj bekräfta/hoppa över"
 
-#: data/ui/preferences.blp:47 src/window.js:459 src/window.js:584
+#: data/ui/preferences.blp:47 src/window.js:469 src/window.js:592
 msgid "Confirm"
 msgstr "Bekräfta"
 
-#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:463
+#: data/ui/preferences.blp:56 data/ui/window.blp:75 src/window.js:473
 msgid "Skip"
 msgstr "Hoppa över"
 
@@ -437,53 +437,53 @@ msgstr "Huvudmeny"
 msgid "Today"
 msgstr "I dag"
 
-#: data/ui/window.blp:62
+#: data/ui/window.blp:61
 msgid "Unselect"
 msgstr "Välja bort"
 
-#: data/ui/window.blp:70 src/window.js:584
+#: data/ui/window.blp:69 src/window.js:592
 msgid "One-time entry"
 msgstr "Engångsinträde"
 
-#: data/ui/window.blp:106
+#: data/ui/window.blp:104
 msgid "History"
 msgstr "Historik"
 
-#: data/ui/window.blp:121
+#: data/ui/window.blp:118
 msgid "Empty history"
 msgstr "Tom historik"
 
-#: data/ui/window.blp:132
+#: data/ui/window.blp:128
 msgid "Treatments"
 msgstr "Behandlingar"
 
-#: data/ui/window.blp:165
+#: data/ui/window.blp:160
 msgid "Click the button below to add some"
 msgstr "Tryck på knappen för att lägga till behandlingar"
 
-#: data/ui/window.blp:194
+#: data/ui/window.blp:182
 msgid "About Dosage"
 msgstr "Om Dosering"
 
-#: data/ui/window.blp:198
+#: data/ui/window.blp:186
 msgid "Quit"
 msgstr "Avsluta"
 
-#: src/historyFactory.js:105
+#: src/historyFactory.js:102
 msgid "Restore"
 msgstr "Återställa"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:137
+#: src/main.js:138
 msgid "translator-credits"
 msgstr "skøldis <turtle@turtle.garden>"
 
-#: src/main.js:140
+#: src/main.js:142
 msgid "Thanks to these projects!"
 msgstr "Tack vare dessa projekt!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:173
+#: src/main.js:175
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Acceptera för att tillåta körning i bakgrunden och ta emot aviseringar"
 
@@ -495,41 +495,41 @@ msgstr "Redigera behandling"
 msgid "Save"
 msgstr "Spara"
 
-#: src/medWindow.js:218
+#: src/medWindow.js:227
 msgid "New"
 msgstr "Ny"
 
-#: src/medWindow.js:268
+#: src/medWindow.js:279
 msgid "New entry"
 msgstr "Ny notering"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/medWindow.js:270
+#: src/medWindow.js:281
 msgid "Add to history"
 msgstr "Lägg till i historik"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:356
+#: src/medWindow.js:367
 msgid "Are you sure?"
 msgstr "Är du säker?"
 
-#: src/medWindow.js:598
+#: src/medWindow.js:630
 msgid "Empty name"
 msgstr "Tömt namn"
 
-#: src/medWindow.js:602
+#: src/medWindow.js:634
 msgid "Empty unit"
 msgstr "Töm enhet"
 
-#: src/medWindow.js:608
+#: src/medWindow.js:640
 msgid "Choose at least one day"
 msgstr "Välj åtminstone en dag"
 
-#: src/medWindow.js:618
+#: src/medWindow.js:650
 msgid "Name already exists"
 msgstr "Namnet finns redan"
 
-#: src/medWindow.js:632
+#: src/medWindow.js:664
 msgid "Duplicated time"
 msgstr "Duplicerad tid"
 
@@ -571,11 +571,11 @@ msgstr "Radera dosering"
 msgid "You have treatments low in stock"
 msgstr "Du har behandlingar som har lågt lager"
 
-#: src/window.js:383
+#: src/window.js:392
 msgid "No treatments added yet"
 msgstr "Inga behandlingar har lagts till ännu"
 
-#: src/window.js:388
+#: src/window.js:397
 msgid "All done for today"
 msgstr "Färdig för i dag"
 
