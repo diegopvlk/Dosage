@@ -127,6 +127,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			if (now > lastDate) {
 				this._addMissedItems();
 				this._updateEverything();
+				this._historyList.scroll_to(0, null, null);
 				this._scheduleNotifications();
 				lastDate = now;
 			}
