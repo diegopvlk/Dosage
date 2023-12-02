@@ -403,9 +403,9 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 
 		this.scheduledItems = {};
-		
+
 		const todayLength = this.todayModel.get_n_items();
-		
+
 		for (let i = 0; i < todayLength; i++) {
 			this._addToBeNotified(this.todayModel.get_item(i), action);
 		}
@@ -483,12 +483,21 @@ class DosageWindow extends Adw.ApplicationWindow {
 			app.add_action(confirmAction);
 			app.add_action(skipAction);
 
-			if (settings.get_boolean('sound') && action != 'sleep') {
+			if (settings.get_boolean('sound') && action != 'sleep' && !this.played) {
 				const ding = Gio.File.new_for_uri(
 					'resource:///io/github/diegopvlk/Dosage/sounds/ding.ogg'
 				);
 				const mediaFile = Gtk.MediaFile.new_for_file(ding);
 				mediaFile.play();
+
+				// when using notification buttons, assuming the app is not visible,
+				// all past items from today will be notified, so the user can see them all
+				// so avoid playing the sound at every notification
+				(async () => {
+					this.played = true;
+					await new Promise((res) => setTimeout(res, 5000));
+					this.played = false;
+				})();
 			}
 
 			app.send_notification(pseudoId, notification);
@@ -618,10 +627,15 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const todayLength = this.todayModel.get_n_items();
 		// only insert to history if item is not in today list
 		for (let i = 0; i < todayLength; i++) {
-			if (item === this.todayModel.get_item(i)) {
+			const it = this.todayModel.get_item(i);
+			const sameName = item.name === it?.name;
+			const sameTime =
+				String(item.info.dosage.time) === String(it?.info.dosage.time);
+
+			if (sameName && sameTime) {
 				this._insertItemToHistory(item, taken);
 				this._updateEverything(null, 'notifAction');
-				this._scheduleNotifications('adding');
+				this._scheduleNotifications();
 			}
 		}
 	}
@@ -801,7 +815,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 				return nextDtStr;
 			}
-			
+
 			if (info.frequency == 'cycle') {
 				if (start < today) {
 					const datesPassed = datesPassedDiff(lastUpdate, new Date());
