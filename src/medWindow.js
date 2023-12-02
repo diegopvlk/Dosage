@@ -352,9 +352,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		}
 
 		if (oneTime) {
-			const historyList = DosageWindow._historyList;
-			const sortedHistory = DosageWindow.sortedHistoryModel;
-			addItemToHistory(historyList, sortedHistory);
+			addItemToHistory();
 			DosageWindow._updateJsonFile('history', historyLS);
 		} else {
 			addOrUpdateTreatment();
@@ -390,7 +388,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		});
 	});
 
-	function addItemToHistory(histList, sortedHist) {
+	function addItemToHistory() {
 		const calOneEntry = builder.get_object('calOneEntry');
 		const oneTimeTaken = builder.get_object('oneTimeTaken');
 		const dt = +calOneEntry.get_date().format('%s') * 1000;
@@ -444,11 +442,11 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		// reload-ish of history, so the item don't get inserted 
 		// on a separate section (with the same day) 
 		// when the time is less than the first one of same section
-		histList.model = new Gtk.NoSelection({
-			model: sortedHist,
+		DosageWindow._historyList.model = new Gtk.NoSelection({
+			model: DosageWindow.sortedHistoryModel,
 		});
 
-		histList.scroll_to(0, null, null);
+		DosageWindow._historyList.scroll_to(0, null, null);
 	}
 
 	function addOrUpdateTreatment() {
