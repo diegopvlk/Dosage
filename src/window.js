@@ -439,7 +439,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			// because it needs to be rescheduled at every action
 			// so don't send notifications in this case
 			if (action && action != 'sleep' && timeDiff < 0) {
-				// timeDiff = 0;
+				timeDiff = 0;
 				return;
 			};
 
