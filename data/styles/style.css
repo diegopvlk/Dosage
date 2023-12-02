@@ -36,6 +36,19 @@
 	opacity: 0.75;
 }
 
+/*
+When using ListView.scroll_to(0) the view will scroll
+to the first item instead of the first header.
+The same thing happens in today list when confirming
+so use this little hack to scroll to header instead
+*/
+listview.scroll-to-top-hack > :nth-child(1){
+	margin-bottom: -36px;
+}
+listview.scroll-to-top-hack > :nth-child(2) {
+	margin-top: 36px;
+}
+
 listview > header {
 	padding-top: 14px;
 	padding-bottom: 1px;

@@ -447,6 +447,8 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		histList.model = new Gtk.NoSelection({
 			model: sortedHist,
 		});
+
+		histList.scroll_to(0, null, null);
 	}
 
 	function addOrUpdateTreatment() {

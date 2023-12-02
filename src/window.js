@@ -615,6 +615,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 			this._updateEverything();
 			this._scheduleNotifications('adding');
+			this._historyList.scroll_to(0, null, null);
 		} else {
 			// one-time entry
 			this._openMedWindow(null, null, true);
@@ -636,6 +637,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				this._insertItemToHistory(item, taken);
 				this._updateEverything(null, 'notifAction');
 				this._scheduleNotifications();
+				this._historyList.scroll_to(0, null, null);
 			}
 		}
 	}
