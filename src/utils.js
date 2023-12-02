@@ -1,3 +1,7 @@
+/* 
+ * Copyright 2023 Diego Povliuk
+ * SPDX-License-Identifier: GPL-3.0-only 
+ */
 'use strict';
 
 import Adw from 'gi://Adw?version=1';

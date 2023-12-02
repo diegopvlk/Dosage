@@ -1,3 +1,7 @@
+/* 
+ * Copyright 2023 Diego Povliuk
+ * SPDX-License-Identifier: GPL-3.0-only 
+ */
 'use strict';
 
 import Adw from 'gi://Adw?version=1';
@@ -18,7 +22,7 @@ import {
 import { Medication, HistoryMedication } from './medication.js';
 import { historyLS, treatmentsLS } from './window.js';
 
-export default function medicationWindow(DosageWindow, list, position, oneTime) {
+export default function openMedicationWindow(DosageWindow, list, position, oneTime) {
 	const builder = Gtk.Builder.new_from_resource(
 		'/io/github/diegopvlk/Dosage/ui/med-window.ui'
 	);
@@ -349,7 +353,7 @@ export default function medicationWindow(DosageWindow, list, position, oneTime) 
 
 		if (oneTime) {
 			const historyList = DosageWindow._historyList;
-			const sortedHistory = DosageWindow._sortedHistoryModel;
+			const sortedHistory = DosageWindow.sortedHistoryModel;
 			addItemToHistory(historyList, sortedHistory);
 			DosageWindow._updateJsonFile('history', historyLS);
 		} else {

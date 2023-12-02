@@ -15,7 +15,7 @@ import { Medication, HistoryMedication, TodayMedication } from './medication.js'
 import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
 import { historyHeaderFactory, historyItemFactory } from './historyFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
-import medicationWindow from './medWindow.js';
+import openMedicationWindow from './medWindow.js';
 
 import {
 	HistorySorter,
@@ -251,16 +251,16 @@ class DosageWindow extends Adw.ApplicationWindow {
 					);
 				});
 
-				const sortedHistoryModel = new Gtk.SortListModel({
+				this.sortedHistoryModel = new Gtk.SortListModel({
 					model: historyLS,
 					section_sorter: new HistorySectionSorter(),
 					sorter: new HistorySorter(),
 				});
 
 				this._historyList.model = new Gtk.NoSelection({
-					model: sortedHistoryModel,
+					model: this.sortedHistoryModel,
 				});
-	
+
 				this._historyList.remove_css_class('view');
 				this._historyList.add_css_class('background');
 				this._historyList.set_header_factory(historyHeaderFactory);
@@ -438,7 +438,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 			// because it needs to be rescheduled at every action
 			// so don't send notifications in this case
 			if (action && action != 'sleep' && timeDiff < 0) {
-				timeDiff = 0;
+				// timeDiff = 0;
 				return;
 			};
 
@@ -841,6 +841,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_openMedWindow(list, position, oneTime) {
-		medicationWindow(this, list, position, oneTime);
+		openMedicationWindow(this, list, position, oneTime);
 	}
 });

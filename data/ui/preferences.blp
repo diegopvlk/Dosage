@@ -1,14 +1,14 @@
 using Gtk 4.0;
 using Adw 1;
 
-Adw.PreferencesWindow prefWindow {
-  name: 'dosage-pref-window';
+Adw.PreferencesWindow prefsWindow {
+  name: 'dosage-prefs-window';
   default-width: 300;
   default-height: 440;
   search-enabled: false;
   title: _("Preferences");
 
-  Adw.PreferencesPage prefPage{
+  Adw.PreferencesPage prefsPage {
     valign: center;
     Adw.PreferencesGroup {
       Adw.ActionRow autostartRow {
@@ -39,7 +39,7 @@ Adw.PreferencesWindow prefWindow {
           valign: center;
         }
       }
-      Adw.ExpanderRow {
+      Adw.ExpanderRow notifBtns {
         title: _("Notification buttons");
         subtitle: _("Show or hide confirm/skip");
         expanded: true;

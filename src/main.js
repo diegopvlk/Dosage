@@ -11,6 +11,7 @@ import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 import Xdp from 'gi://Xdp?version=1.0';
 
+import openPrefsWindow from './prefsWindow.js';
 import { DosageWindow } from './window.js';
 import { releaseNotes } from './releaseNotes.js';
 
@@ -26,12 +27,7 @@ export const DosageApplication = GObject.registerClass(
 				resource_base_path: '/io/github/diegopvlk/Dosage/',
 			});
 
-			const quitAction = new Gio.SimpleAction({ name: 'quit' });
-			quitAction.connect('activate', () => this.quit());
-			this.add_action(quitAction);
-			this.set_accels_for_action('app.quit', ['<primary>q']);
-
-			this._hidden = false;
+			this.hidden = false;
 
 			const container = GLib.getenv('container');
 
@@ -58,74 +54,14 @@ export const DosageApplication = GObject.registerClass(
 			}
 
 			const showPrefAction = new Gio.SimpleAction({ name: 'preferences' });
-			showPrefAction.connect('activate', () => {
-				const builder = Gtk.Builder.new_from_resource(
-					'/io/github/diegopvlk/Dosage/ui/preferences.ui'
-				);
-				
-				const prefWindow = builder.get_object('prefWindow');
-				const autostartRow = builder.get_object('autostartRow');
-				const autostartSwitch = builder.get_object('autostartSwitch');
-				const prioritySwitch = builder.get_object('prioritySwitch');
-				const notifSoundSwitch = builder.get_object('notifSoundSwitch');
-				const confirmSwitch = builder.get_object('confirmSwitch');
-				const skipSwitch = builder.get_object('skipSwitch');
-
-				if (container === 'flatpak') {
-					autostartSwitch.set_active(settings.get_boolean('autostart'));
-					autostartSwitch.connect('state-set', () => {
-						const state = autostartSwitch.get_active();
-						settings.set_boolean('autostart', state);
-						this._requestBackground(state);
-					});
-				} else {
-					// no option to disable auto-start
-					autostartRow.set_visible(false);
-				}
-				
-				prioritySwitch.set_active(settings.get_boolean('priority'));
-				
-				prioritySwitch.connect('state-set', () => {
-					const state = prioritySwitch.get_active();
-					settings.set_boolean('priority', state);
-				});
-
-				notifSoundSwitch.set_active(settings.get_boolean('sound'));
-
-				notifSoundSwitch.connect('state-set', () => {
-					const state = notifSoundSwitch.get_active();
-					settings.set_boolean('sound', state);
-				});
-
-				confirmSwitch.set_active(settings.get_boolean('confirm-button'));
-				skipSwitch.set_active(settings.get_boolean('skip-button'));
-
-				confirmSwitch.connect('state-set', () => {
-					const state = confirmSwitch.get_active();
-					settings.set_boolean('confirm-button', state);
-				});
-				skipSwitch.connect('state-set', () => {
-					const state = skipSwitch.get_active();
-					settings.set_boolean('skip-button', state);
-				});
-
-				const prefPage = builder.get_object('prefPage');
-				const [prefPageHeight] = prefPage
-					.get_first_child()
-					.get_first_child()
-					.measure(Gtk.Orientation.VERTICAL, -1);
-				prefWindow.default_height = prefPageHeight + 64;
-
-				prefWindow.set_transient_for(this.active_window);
-				prefWindow.present();
-			});
+			showPrefAction.connect('activate', () => openPrefsWindow(this, container));
 			this.add_action(showPrefAction);
 			this.set_accels_for_action('app.preferences', ['<primary>comma']);
 			
 			const showAboutAction = new Gio.SimpleAction({ name: 'about' });
 			showAboutAction.connect('activate', () => {
 				let aboutParams = {
-					transient_for: this.active_window,
+					transient_for: this.activeWindow,
 					application_name: _('Dosage'),
 					application_icon: 'io.github.diegopvlk.Dosage',
 					developer_name: 'Diego Povliuk',
@@ -140,10 +76,10 @@ export const DosageApplication = GObject.registerClass(
 				};
 				const aboutWindow = new Adw.AboutWindow(aboutParams);
 				aboutWindow.add_acknowledgement_section(_('Thanks to these projects!'), [
-					'GNOME https://www.gnome.org/', 
-					'GTK https://www.gtk.org/', 
-					'Libadwaita https://gnome.pages.gitlab.gnome.org/libadwaita/', 
-					'Workbench https://apps.gnome.org/Workbench/', 
+					'GNOME https://www.gnome.org/',
+					'GTK https://www.gtk.org/',
+					'Libadwaita https://gnome.pages.gitlab.gnome.org/libadwaita/',
+					'Workbench https://apps.gnome.org/Workbench/',
 					'Blueprint https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/index.html',
 					'GTK4 + GJS Book https://rmnvgr.gitlab.io/gtk4-gjs-book/',
 					'GJS Guide https://gjs.guide/',
@@ -153,6 +89,11 @@ export const DosageApplication = GObject.registerClass(
 				aboutWindow.present();
 			});
 			this.add_action(showAboutAction);
+
+			const quitAction = new Gio.SimpleAction({ name: 'quit' });
+			quitAction.connect('activate', () => this.quit());
+			this.add_action(quitAction);
+			this.set_accels_for_action('app.quit', ['<primary>q']);
 
 			this.add_main_option(
 				'startup',
@@ -182,24 +123,24 @@ export const DosageApplication = GObject.registerClass(
 
 		vfunc_handle_local_options(options) {
 			if (options.contains('startup')) {
-				this._hidden = true;
+				this.hidden = true;
 			}
 			return -1; // continue execution
 		}
 
 		vfunc_activate() {
-			let { active_window } = this;
+			let { activeWindow } = this;
 
-			if (!active_window) {
-				active_window = new DosageWindow(this);
-				active_window.set_hide_on_close(true);
+			if (!activeWindow) {
+				activeWindow = new DosageWindow(this);
+				activeWindow.set_hide_on_close(true);
 			}
 
-			if (this._hidden) {
-				active_window.hide();
-				this._hidden = false;
+			if (this.hidden) {
+				activeWindow.hide();
+				this.hidden = false;
 			} else {
-				active_window.present();
+				activeWindow.present();
 			}
 		}
 	}
