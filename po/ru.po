@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-02 15:28-0300\n"
+"POT-Creation-Date: 2023-12-02 16:25-0300\n"
 "PO-Revision-Date: 2023-10-31 01:26+0000\n"
 "Last-Translator: volkov <d2oo1dle2x@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
@@ -23,7 +23,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:402
-#: src/main.js:65 src/window.js:543
+#: src/main.js:65 src/window.js:544
 msgid "Dosage"
 msgstr "Дозировка"
 
@@ -430,11 +430,11 @@ msgstr "Кнопки уведомлений"
 msgid "Show or hide confirm/skip"
 msgstr "Показать или скрыть подтвердить/пропустить"
 
-#: data/ui/preferences.blp:47 src/window.js:464 src/window.js:596
+#: data/ui/preferences.blp:47 src/window.js:465 src/window.js:597
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: data/ui/preferences.blp:56 data/ui/window.blp:75 src/window.js:468
+#: data/ui/preferences.blp:56 data/ui/window.blp:75 src/window.js:469
 msgid "Skip"
 msgstr "Пропустить"
 
@@ -450,7 +450,7 @@ msgstr "Сегодня"
 msgid "Unselect"
 msgstr "Отменить выбор"
 
-#: data/ui/window.blp:69 src/window.js:596
+#: data/ui/window.blp:69 src/window.js:597
 msgid "One-time entry"
 msgstr "Одноразовый прием"
 
@@ -585,11 +585,11 @@ msgstr "Удалить дозу"
 msgid "You have treatments low in stock"
 msgstr "У вас осталось мало лекарств в запасе"
 
-#: src/window.js:387
+#: src/window.js:388
 msgid "No treatments added yet"
 msgstr "Ни одного курса лечения еще не было добавлено"
 
-#: src/window.js:392
+#: src/window.js:393
 msgid "All done for today"
 msgstr "Вы приняли все лекарства на сегодня"
 
