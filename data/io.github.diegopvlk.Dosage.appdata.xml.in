@@ -33,6 +33,13 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.4.4" date="2023-12-04">
+			<description translatable="no">
+				<ul>
+					<li>Fixed an issue with suspension</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.4.3" date="2023-12-03">
 			<description translatable="no">
 				<ul>
