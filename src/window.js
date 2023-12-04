@@ -138,8 +138,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 	_handleSuspension() {
 		const onWakingUp = () => this._scheduleNotifications('sleep');
-		const connection = Gio.bus_get_sync(Gio.BusType.SYSTEM, null);
-		connection.signal_subscribe(
+		this._connection = Gio.bus_get_sync(Gio.BusType.SYSTEM, null);
+		this._connection.signal_subscribe(
 			'org.freedesktop.login1',
 			'org.freedesktop.login1.Manager',
 			'PrepareForSleep',
