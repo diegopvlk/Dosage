@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-02 16:25-0300\n"
+"POT-Creation-Date: 2023-12-05 16:45-0300\n"
 "PO-Revision-Date: 2023-11-26 20:29+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:402
-#: src/main.js:65 src/window.js:544
+#: src/main.js:65 src/window.js:543
 msgid "Dosage"
 msgstr "Dosage"
 
@@ -82,31 +82,31 @@ msgstr ""
 msgid "Dosage today window in dark theme"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:188
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:209
 msgid "medication"
 msgstr "lääkitys"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:189
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:210
 msgid "tracker"
 msgstr "seuranta"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:190
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:211
 msgid "reminder"
 msgstr "muistutus"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:191
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:212
 msgid "treatments"
 msgstr "hoidot"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:192
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:213
 msgid "pill"
 msgstr "pilleri"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:193
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:214
 msgid "drug"
 msgstr "lääke"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:194
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:215
 msgid "remedy"
 msgstr ""
 
@@ -414,11 +414,11 @@ msgstr "Ilmoituksen painikkeet"
 msgid "Show or hide confirm/skip"
 msgstr "Näytä tai piilota vahvistus- ja ohituspainikkeet"
 
-#: data/ui/preferences.blp:47 src/window.js:465 src/window.js:597
+#: data/ui/preferences.blp:47 src/window.js:464 src/window.js:623
 msgid "Confirm"
 msgstr "Vahvista"
 
-#: data/ui/preferences.blp:56 data/ui/window.blp:75 src/window.js:469
+#: data/ui/preferences.blp:56 data/ui/window.blp:75 src/window.js:468
 msgid "Skip"
 msgstr "Ohita"
 
@@ -434,7 +434,7 @@ msgstr "Tänään"
 msgid "Unselect"
 msgstr "Älä valitse"
 
-#: data/ui/window.blp:69 src/window.js:597
+#: data/ui/window.blp:69 src/window.js:623
 msgid "One-time entry"
 msgstr "Kertakirjaus"
 
@@ -527,6 +527,12 @@ msgstr "Nimi on jo olemassa"
 msgid "Duplicated time"
 msgstr "Päällekkäinen aika"
 
+#: src/todayFactory.js:92
+#, fuzzy
+#| msgid "Next dose"
+msgid "Change dose"
+msgstr "Seuraava annos"
+
 #: src/treatmentsFactory.js:102
 msgid "Remaining"
 msgstr "Jäljellä"
@@ -565,11 +571,11 @@ msgstr "Poista annos"
 msgid "You have treatments low in stock"
 msgstr "Hoitoannokset ovat käymässä vähiin"
 
-#: src/window.js:388
+#: src/window.js:387
 msgid "No treatments added yet"
 msgstr "Hoitoja ei ole vielä lisätty"
 
-#: src/window.js:393
+#: src/window.js:392
 msgid "All done for today"
 msgstr "Kaikki kunnossa tämän päivän osalta"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-02 16:25-0300\n"
+"POT-Creation-Date: 2023-12-05 16:45-0300\n"
 "PO-Revision-Date: 2023-10-31 01:26+0000\n"
 "Last-Translator: volkov <d2oo1dle2x@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -23,7 +23,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:402
-#: src/main.js:65 src/window.js:544
+#: src/main.js:65 src/window.js:543
 msgid "Dosage"
 msgstr "Дозування"
 
@@ -94,31 +94,31 @@ msgstr "Розділ \"Курси лікування\" Дозування у с�
 msgid "Dosage today window in dark theme"
 msgstr "Розділ \"Сьогодні\" Дозування у темному стилі"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:188
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:209
 msgid "medication"
 msgstr "ліки"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:189
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:210
 msgid "tracker"
 msgstr "відстежування"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:190
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:211
 msgid "reminder"
 msgstr "нагадування"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:191
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:212
 msgid "treatments"
 msgstr "курси лікування"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:192
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:213
 msgid "pill"
 msgstr "пігулка"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:193
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:214
 msgid "drug"
 msgstr "ліки"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:194
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:215
 msgid "remedy"
 msgstr "ліки"
 
@@ -429,11 +429,11 @@ msgstr "Кнопки сповіщень"
 msgid "Show or hide confirm/skip"
 msgstr "Показати чи приховати підтвердити/пропустити"
 
-#: data/ui/preferences.blp:47 src/window.js:465 src/window.js:597
+#: data/ui/preferences.blp:47 src/window.js:464 src/window.js:623
 msgid "Confirm"
 msgstr "Підтвердити"
 
-#: data/ui/preferences.blp:56 data/ui/window.blp:75 src/window.js:469
+#: data/ui/preferences.blp:56 data/ui/window.blp:75 src/window.js:468
 msgid "Skip"
 msgstr "Пропустити"
 
@@ -449,7 +449,7 @@ msgstr "Сьогодні"
 msgid "Unselect"
 msgstr "Скасувати вибір"
 
-#: data/ui/window.blp:69 src/window.js:597
+#: data/ui/window.blp:69 src/window.js:623
 msgid "One-time entry"
 msgstr "Одноразовий прийом"
 
@@ -543,6 +543,12 @@ msgstr "Ця назва вже зайнята"
 msgid "Duplicated time"
 msgstr "Однакові часи у прийомів доз"
 
+#: src/todayFactory.js:92
+#, fuzzy
+#| msgid "Next dose"
+msgid "Change dose"
+msgstr "Наступна дозу"
+
 #: src/treatmentsFactory.js:102
 msgid "Remaining"
 msgstr "Залишилося"
@@ -581,11 +587,11 @@ msgstr "Видалити дозу"
 msgid "You have treatments low in stock"
 msgstr "У вас залишилося мало ліків у запасі"
 
-#: src/window.js:388
+#: src/window.js:387
 msgid "No treatments added yet"
 msgstr "Ще не було додано жодного курсу лікування"
 
-#: src/window.js:393
+#: src/window.js:392
 msgid "All done for today"
 msgstr "Ви прийняли усі ліки на сьогодні"
 
