@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-05 16:45-0300\n"
-"PO-Revision-Date: 2023-11-28 02:13+0000\n"
+"PO-Revision-Date: 2023-12-05 19:50+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "dosage/dosage/pt_BR/>\n"
@@ -534,10 +534,8 @@ msgid "Duplicated time"
 msgstr "Hora duplicada"
 
 #: src/todayFactory.js:92
-#, fuzzy
-#| msgid "Next dose"
 msgid "Change dose"
-msgstr "Próxima dose"
+msgstr "Alterar dose"
 
 #: src/treatmentsFactory.js:102
 msgid "Remaining"
