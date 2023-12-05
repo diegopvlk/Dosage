@@ -363,6 +363,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		});
 
 		this.todayItems = [];
+		this.todayDosesHolder = [];
 		this.todayModel = new Gtk.NoSelection({ model: sortedTodayModel });
 
 		this._todayList.model = this.todayModel;
@@ -555,17 +556,42 @@ class DosageWindow extends Adw.ApplicationWindow {
 				if (position === rowItemPos) {
 					const topBox = currentRow.get_first_child();
 					const labelsBox = topBox.get_first_child().get_next_sibling();
-					const check = labelsBox.get_next_sibling().get_next_sibling();
+					const doseLabel = labelsBox
+						.get_next_sibling()
+						.get_first_child()
+						.get_next_sibling();
+					const amountBtn = labelsBox.get_next_sibling().get_next_sibling();
+					const amtSpinRow = amountBtn
+						.get_popover()
+						.get_first_child()
+						.get_first_child()
+						.get_first_child();
+					const check = amountBtn.get_next_sibling();
 					const item = model.get_item(position);
-					const index = this.todayItems.lastIndexOf(item);
+					const indexToRemove = this.todayItems.indexOf(item);
+					const isActive = check.get_active();
+					const dosage = item.info.dosage;
 
-					if (check.get_active() === false) {
+					if (!isActive) {
+						const d = dosage.dose;
 						this.todayItems.push(item);
+						this.todayDosesHolder.push(d);
 					} else {
-						this.todayItems.splice(index, 1);
+						const storedDose = this.todayDosesHolder[indexToRemove];
+						dosage.dose = storedDose;
+						doseLabel.label = doseLabel.label.replace(/^[^\s]+/, dosage.dose);
+						this.todayItems.splice(indexToRemove, 1);
+						this.todayDosesHolder.splice(indexToRemove, 1);
 					}
 
-					check.set_active(!check.get_active());
+					amtSpinRow.set_value(dosage.dose);
+					amtSpinRow.connect('output', row => {
+						doseLabel.label = doseLabel.label.replace(/^[^\s]+/, row.get_value());
+						item.info.dosage.dose = row.get_value();
+					});
+
+					check.set_active(!isActive);
+					amountBtn.set_visible(!isActive);
 				}
 				rowItemPos++;
 			}
@@ -579,8 +605,10 @@ class DosageWindow extends Adw.ApplicationWindow {
 				if (currentRow.get_name() === 'GtkListItemWidget') {
 					const topBox = currentRow.get_first_child();
 					const labelsBox = topBox.get_first_child().get_next_sibling();
-					const check = labelsBox.get_next_sibling().get_next_sibling();
+					const amountBtn = labelsBox.get_next_sibling().get_next_sibling();
+					const check = amountBtn.get_next_sibling();
 					check.set_active(false);
+					this._loadToday();
 				}
 				currentRow = currentRow.get_next_sibling();
 			}
@@ -601,6 +629,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		} else {
 			this._entryBtn.remove_css_class('suggested-action');
 			this.todayItems = [];
+			this.todayDosesHolder = []; 
 		}
 	}
 
@@ -656,14 +685,12 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 		// update lastTaken of treatment dose when confirming/skipping
 		if (!missedDate) {
-			for (const item of treatmentsLS) {
-				item.info.dosage.forEach(timeDose => {
-					const tempObj = { ...timeDose, lastTaken: undefined };
-					const treatDose = JSON.stringify(tempObj);
-
-					this.todayItems.forEach(i => {
-						const todayDose = JSON.stringify(i.info.dosage);
-						if (treatDose === todayDose && i.name === item.name) {
+			for (const it of treatmentsLS) {
+				it.info.dosage.forEach((timeDose) => {
+					this.todayItems.forEach(_i => {
+						const sameTime =
+							String(item.info.dosage.time) === String(timeDose.time);
+						if (sameTime && item.name === it.name) {
 							timeDose.lastTaken = new Date().toISOString();
 						}
 					});

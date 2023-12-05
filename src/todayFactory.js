@@ -4,6 +4,7 @@
  */
 'use strict';
 
+import Adw from 'gi://Adw?version=1';
 import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
@@ -75,8 +76,33 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 		ellipsize: Pango.EllipsizeMode.END,
 	});
 	labelsBox.append(doseAndNotes);
+	const amountBox = new Gtk.Box({
+		css_classes: ['spin-box', 'spin-today-amount'],
+	});
+	const amountRow = new Adw.SpinRow({
+		digits: 2,
+		adjustment: new Gtk.Adjustment({
+			lower: 0.25,
+			upper: 999,
+			step_increment: 0.25
+		}),
+	});
+	amountBox.append(amountRow)
+	const amountBtn = new Gtk.MenuButton({
+		tooltip_text: _('Change dose'),
+		css_classes: ['circular', 'today-amount'],
+		icon_name: 'view-more-horizontal-symbolic',
+		valign: Gtk.Align.CENTER,
+		halign: Gtk.Align.CENTER,
+		margin_end: 10,
+		visible: false,
+		popover: new Gtk.Popover({
+			child: amountBox,
+		}),
+	});
+	box.append(amountBtn);
 	const checkButton = new Gtk.CheckButton({
-		css_classes: ['flat', 'circular', 'selection-mode'],
+		css_classes: ['selection-mode'],
 		valign: Gtk.Align.CENTER,
 		halign: Gtk.Align.CENTER,
 		margin_end: 12,

@@ -374,11 +374,20 @@ button.suggested-action:focus {
 	min-height: 24px;
 }
 
-.cycle-box > row.spin > box {
+.today-amount > button {
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.spin-box > row.spin > box {
 	margin: -3px 4px -3px 8px;
 }
 
-.cycle-box row.spin {
+.spin-today-amount > row.spin > box {
+	margin-left: -16px;
+}
+
+.spin-box row.spin {
 	outline: none;
 }
 
