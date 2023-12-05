@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-02 16:25-0300\n"
+"POT-Creation-Date: 2023-12-05 16:45-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:402
-#: src/main.js:65 src/window.js:544
+#: src/main.js:65 src/window.js:543
 msgid "Dosage"
 msgstr ""
 
@@ -80,31 +80,31 @@ msgstr ""
 msgid "Dosage today window in dark theme"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:188
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:209
 msgid "medication"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:189
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:210
 msgid "tracker"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:190
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:211
 msgid "reminder"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:191
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:212
 msgid "treatments"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:192
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:213
 msgid "pill"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:193
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:214
 msgid "drug"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:194
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:215
 msgid "remedy"
 msgstr ""
 
@@ -410,11 +410,11 @@ msgstr ""
 msgid "Show or hide confirm/skip"
 msgstr ""
 
-#: data/ui/preferences.blp:47 src/window.js:465 src/window.js:597
+#: data/ui/preferences.blp:47 src/window.js:464 src/window.js:623
 msgid "Confirm"
 msgstr ""
 
-#: data/ui/preferences.blp:56 data/ui/window.blp:75 src/window.js:469
+#: data/ui/preferences.blp:56 data/ui/window.blp:75 src/window.js:468
 msgid "Skip"
 msgstr ""
 
@@ -430,7 +430,7 @@ msgstr ""
 msgid "Unselect"
 msgstr ""
 
-#: data/ui/window.blp:69 src/window.js:597
+#: data/ui/window.blp:69 src/window.js:623
 msgid "One-time entry"
 msgstr ""
 
@@ -522,6 +522,10 @@ msgstr ""
 msgid "Duplicated time"
 msgstr ""
 
+#: src/todayFactory.js:92
+msgid "Change dose"
+msgstr ""
+
 #: src/treatmentsFactory.js:102
 msgid "Remaining"
 msgstr ""
@@ -560,10 +564,10 @@ msgstr ""
 msgid "You have treatments low in stock"
 msgstr ""
 
-#: src/window.js:388
+#: src/window.js:387
 msgid "No treatments added yet"
 msgstr ""
 
-#: src/window.js:393
+#: src/window.js:392
 msgid "All done for today"
 msgstr ""
