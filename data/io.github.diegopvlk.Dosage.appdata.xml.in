@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
+
+	<id>io.github.diegopvlk.Dosage.desktop</id>
+	<content_rating type="oars-1.1" />
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0-only</project_license>
+	<developer_name translatable="no">Diego Povliuk</developer_name>
+	<update_contact>diego.pvlk@gmail.com</update_contact>
+	<launchable type="desktop-id">io.github.diegopvlk.Dosage.desktop</launchable>
+	<translation type="gettext">dosage</translation>
+    <keywords>
+		<keyword translate="no">dosage</keyword>
+		<keyword>medication</keyword>
+		<keyword>tracker</keyword>
+		<keyword>reminder</keyword>
+		<keyword>treatments</keyword>
+		<keyword>pill</keyword>
+		<keyword>drug</keyword>
+		<keyword>remedy</keyword>
+	</keywords>
+	<categories>
+		<category>GTK</category>
+		<category>GNOME</category>
+		<category>Utility</category>
+		<category>MedicalSoftware</category>
+		<category>Calendar</category>
+	</categories>
+	<url type="homepage">https://github.com/diegopvlk/Dosage</url>
+	<url type="bugtracker">https://github.com/diegopvlk/Dosage/issues</url>
+	<url type="vcs-browser">https://github.com/diegopvlk/Dosage</url>
+	<url type="translate">https://hosted.weblate.org/projects/dosage/dosage/</url>
+	<url type="donation">https://github.com/diegopvlk/Dosage#donate</url>
+	
 	<name>Dosage</name>
 	<summary>Keep track of your treatments</summary>
 
@@ -196,34 +228,4 @@
 		</release>
 	</releases>
 
-	<id>io.github.diegopvlk.Dosage.desktop</id>
-	<content_rating type="oars-1.1" />
-	<metadata_license>CC0-1.0</metadata_license>
-	<project_license>GPL-3.0-only</project_license>
-	<developer_name translatable="no">Diego Povliuk</developer_name>
-	<update_contact>diego.pvlk@gmail.com</update_contact>
-	<launchable type="desktop-id">io.github.diegopvlk.Dosage.desktop</launchable>
-	<translation type="gettext">dosage</translation>
-    <keywords>
-		<keyword translate="no">dosage</keyword>
-		<keyword>medication</keyword>
-		<keyword>tracker</keyword>
-		<keyword>reminder</keyword>
-		<keyword>treatments</keyword>
-		<keyword>pill</keyword>
-		<keyword>drug</keyword>
-		<keyword>remedy</keyword>
-	</keywords>
-	<categories>
-		<category>GTK</category>
-		<category>GNOME</category>
-		<category>Utility</category>
-		<category>MedicalSoftware</category>
-		<category>Calendar</category>
-	</categories>
-	<url type="homepage">https://github.com/diegopvlk/Dosage</url>
-	<url type="bugtracker">https://github.com/diegopvlk/Dosage/issues</url>
-	<url type="vcs-browser">https://github.com/diegopvlk/Dosage</url>
-	<url type="translate">https://hosted.weblate.org/projects/dosage/dosage/</url>
-	<url type="donation">https://github.com/diegopvlk/Dosage#donate</url>
 </component>
