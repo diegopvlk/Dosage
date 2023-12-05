@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-05 16:45-0300\n"
+"POT-Creation-Date: 2023-12-05 17:50-0300\n"
 "PO-Revision-Date: 2023-11-25 18:39+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
@@ -21,18 +21,46 @@ msgstr ""
 "X-Generator: Weblate 5.2.1-rc\n"
 "X-Project-Style: gnome\n"
 
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
+msgid "medication"
+msgstr "tedavi"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
+msgid "tracker"
+msgstr "izleyici"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:16
+msgid "reminder"
+msgstr "hatırlatıcı"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:17
+msgid "treatments"
+msgstr "İlaçlar"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
+msgid "pill"
+msgstr "ilaç"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:19
+msgid "drug"
+msgstr "ilaç"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
+msgid "remedy"
+msgstr "çare"
+
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:35
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:402
 #: src/main.js:65 src/window.js:543
 msgid "Dosage"
 msgstr "Doz"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:36
 msgid "Keep track of your treatments"
 msgstr "İlaçlarınızı takip edin"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:39
 msgid ""
 "Easily manage track treatments with Dosage: Notifications, History, Multiple "
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
@@ -41,82 +69,54 @@ msgstr ""
 "Dozaj ile tedavi takibini kolayca yönetin: Bildirimler, Geçmiş, Çoklu "
 "Dozlar, Esnek Sıklık, Özelleştirme, Stok İzleme ve Süre Kontrolü"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:8
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:40
 msgid "Features:"
 msgstr "Özellikler:"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
 msgid "Notifications — Get reminders at the right time"
 msgstr "Bildirimler - Doğru zamanda hatırlatıcılar"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:43
 #, fuzzy
 #| msgid "History — See which medications you took or skipped"
 msgid "History — See which medications you took, skipped or missed"
 msgstr "Geçmiş - Hangi ilaçları aldığınızı ya da atladığınızı görün"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage management — Multiple doses with different times"
 msgstr "Dozaj yönetimi - Farklı zamanlarda çoklu doz"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid ""
 "Frequency modes — Every day, specific days, cycle or just when necessary"
 msgstr ""
 "Sıklık kipleri - Her gün, belirli günler, döngü ya da yalnızca ihtiyaç "
 "olduğunda"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:46
 msgid "Color and icon — Give a shape for your treatment"
 msgstr "Renk ve simge - İlacınızı şekillerle belirtin"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:47
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr "Envanter takibi - İlaç stoğunuzu izleyin ve azaldığında hatırlatılsın"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:16
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:48
 msgid "Duration — Define the start and end dates"
 msgstr "Süre - Başlangıç ve bitiş tarihlerini tanımlayın"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:54
 msgid "Dosage today window in light theme"
 msgstr "Bugün penceresi açık tema ile"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:58
 msgid "Dosage edit treatment window in light theme"
 msgstr "İlaç düzenle penceresi açık tema ile"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:62
 msgid "Dosage today window in dark theme"
 msgstr "Bugün penceresi koyu tema ile"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:209
-msgid "medication"
-msgstr "tedavi"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:210
-msgid "tracker"
-msgstr "izleyici"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:211
-msgid "reminder"
-msgstr "hatırlatıcı"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:212
-msgid "treatments"
-msgstr "İlaçlar"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:213
-msgid "pill"
-msgstr "ilaç"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:214
-msgid "drug"
-msgstr "ilaç"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:215
-msgid "remedy"
-msgstr "çare"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11

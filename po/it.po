@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-05 16:45-0300\n"
+"POT-Creation-Date: 2023-12-05 17:50-0300\n"
 "PO-Revision-Date: 2023-12-02 18:29+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
@@ -19,18 +19,46 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.3-dev\n"
 
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
+msgid "medication"
+msgstr "farmaco"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
+msgid "tracker"
+msgstr "Tracciatore"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:16
+msgid "reminder"
+msgstr "promemoria"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:17
+msgid "treatments"
+msgstr "trattamenti"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
+msgid "pill"
+msgstr "pillola"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:19
+msgid "drug"
+msgstr "Medicinale"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
+msgid "remedy"
+msgstr "rimedio"
+
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:35
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:402
 #: src/main.js:65 src/window.js:543
 msgid "Dosage"
 msgstr "Dosaggio"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:36
 msgid "Keep track of your treatments"
 msgstr "Tieni traccia dei tuoi trattamenti"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:39
 msgid ""
 "Easily manage track treatments with Dosage: Notifications, History, Multiple "
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
@@ -40,82 +68,54 @@ msgstr ""
 "cronologia, dosi multiple, frequenza flessibile, personalizzazione, "
 "monitoraggio delle scorte e controllo della durata"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:8
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:40
 msgid "Features:"
 msgstr "Funzionalità:"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
 msgid "Notifications — Get reminders at the right time"
 msgstr "Notifiche — Ricevi promemoria al momento giusto"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:43
 msgid "History — See which medications you took, skipped or missed"
 msgstr "Cronologia: guarda quali farmaci hai preso, saltati o dimenticati"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage management — Multiple doses with different times"
 msgstr "Gestione del dosaggio — Dosi multiple con tempi diversi"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid ""
 "Frequency modes — Every day, specific days, cycle or just when necessary"
 msgstr ""
 "Modalità di frequenza — Ogni giorno, giorni specifici, ciclicamente o solo "
 "quando necessario"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:46
 msgid "Color and icon — Give a shape for your treatment"
 msgstr "Colore e icona — Dai una forma al tuo trattamento"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:47
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
 "Monitoraggio dell'inventario — Monitora le tue scorte e ricevi un promemoria "
 "quando sono in esaurimento"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:16
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:48
 msgid "Duration — Define the start and end dates"
 msgstr "Durata — Definisci le date di inizio e di fine"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:54
 msgid "Dosage today window in light theme"
 msgstr "Finestra di Dosaggio oggi in tema chiaro"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:58
 msgid "Dosage edit treatment window in light theme"
 msgstr "Finestra di modifica del dosaggio del trattamento in tema chiaro"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:62
 msgid "Dosage today window in dark theme"
 msgstr "Finestra di Dosaggio oggi in tema scuro"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:209
-msgid "medication"
-msgstr "farmaco"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:210
-msgid "tracker"
-msgstr "Tracciatore"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:211
-msgid "reminder"
-msgstr "promemoria"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:212
-msgid "treatments"
-msgstr "trattamenti"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:213
-msgid "pill"
-msgstr "pillola"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:214
-msgid "drug"
-msgstr "Medicinale"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:215
-msgid "remedy"
-msgstr "rimedio"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11

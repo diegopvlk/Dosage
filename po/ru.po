@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-05 16:45-0300\n"
+"POT-Creation-Date: 2023-12-05 17:50-0300\n"
 "PO-Revision-Date: 2023-12-04 18:24+0000\n"
 "Last-Translator: Anton Palgunov <toxblh@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
@@ -20,18 +20,46 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 5.3-dev\n"
 
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
+msgid "medication"
+msgstr "лекарства"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
+msgid "tracker"
+msgstr "трекер"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:16
+msgid "reminder"
+msgstr "напоминание"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:17
+msgid "treatments"
+msgstr "kурсы лечения"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
+msgid "pill"
+msgstr "таблетка"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:19
+msgid "drug"
+msgstr "лекарства"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
+msgid "remedy"
+msgstr "целебная"
+
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:3
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:35
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:402
 #: src/main.js:65 src/window.js:543
 msgid "Dosage"
 msgstr "Дозировка"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:4
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:36
 msgid "Keep track of your treatments"
 msgstr "Следите за вашими курсами лечения"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:7
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:39
 msgid ""
 "Easily manage track treatments with Dosage: Notifications, History, Multiple "
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
@@ -41,84 +69,56 @@ msgstr ""
 "многодозные приемы, настройка частоты приемов, кастомизация, мониторинг "
 "запаса и контроль длительности курсов"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:8
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:40
 msgid "Features:"
 msgstr "Функции:"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:10
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
 msgid "Notifications — Get reminders at the right time"
 msgstr "Уведомления — получайте уведомления вовремя"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:11
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:43
 msgid "History — See which medications you took, skipped or missed"
 msgstr ""
 "История — просматривайте список лекарств которые вы приняли или пропустили"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:12
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage management — Multiple doses with different times"
 msgstr "Управление дозами — несколько доз в разное время"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:13
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid ""
 "Frequency modes — Every day, specific days, cycle or just when necessary"
 msgstr ""
 "Частота приема — каждый день, выбранные дни, циклы или просто когда нужно"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:46
 msgid "Color and icon — Give a shape for your treatment"
 msgstr ""
 "Цвет и иконка — чтобы выбрать иконку и цвет для записи в списке курсов "
 "лечения"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:15
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:47
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
 "Мониторинг инвентаря — мониторьте ваш запас и получайте уведомления, когда "
 "он будет иссякать"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:16
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:48
 msgid "Duration — Define the start and end dates"
 msgstr "Длительность — определите начальную и последню даты"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:54
 msgid "Dosage today window in light theme"
 msgstr "Раздел \"Сегодня\" Дозировки в светлой теме"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:58
 msgid "Dosage edit treatment window in light theme"
 msgstr "Раздел \"Курсы лечения\" Дозировки в светлой теме"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:62
 msgid "Dosage today window in dark theme"
 msgstr "Раздел \"Сегодня\" Дозировки в темной теме"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:209
-msgid "medication"
-msgstr "лекарства"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:210
-msgid "tracker"
-msgstr "трекер"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:211
-msgid "reminder"
-msgstr "напоминание"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:212
-msgid "treatments"
-msgstr "kурсы лечения"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:213
-msgid "pill"
-msgstr "таблетка"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:214
-msgid "drug"
-msgstr "лекарства"
-
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:215
-msgid "remedy"
-msgstr "целебная"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
