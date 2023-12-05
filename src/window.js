@@ -293,16 +293,14 @@ class DosageWindow extends Adw.ApplicationWindow {
 								const info = item.info;
 
 								if (sameItem) {
-									info.dosage.forEach((timeDose) => {
-										for (const i of this.todayLS) {
-											const sameName = 
-												item.name === removedItem.name;
+									info.dosage.forEach(timeDose => {
+										for (const _i of this.todayLS) {
+											const sameName = item.name === removedItem.name;
 											const sameTime =
-												String(i.info.dosage.time) ===
-												String(removedItem.info.time);
+												String(timeDose.time) === String(removedItem.info.time);
 
 											// update lastTaken when removing an item
-											// with the same name, time and date of today items
+											// with the same name, time and date of today item
 											if (sameName && sameTime) {
 												timeDose.lastTaken = null;
 											}
