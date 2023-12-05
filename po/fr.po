@@ -533,10 +533,8 @@ msgid "Duplicated time"
 msgstr "Heure dupliquée"
 
 #: src/todayFactory.js:92
-#, fuzzy
-#| msgid "Next dose"
 msgid "Change dose"
-msgstr "Prochaine dose"
+msgstr "Changer la dose"
 
 #: src/treatmentsFactory.js:102
 msgid "Remaining"

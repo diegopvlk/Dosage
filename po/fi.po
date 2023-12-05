@@ -528,10 +528,8 @@ msgid "Duplicated time"
 msgstr "Päällekkäinen aika"
 
 #: src/todayFactory.js:92
-#, fuzzy
-#| msgid "Next dose"
 msgid "Change dose"
-msgstr "Seuraava annos"
+msgstr "Muuta annos"
 
 #: src/treatmentsFactory.js:102
 msgid "Remaining"

@@ -534,10 +534,8 @@ msgid "Duplicated time"
 msgstr "Duplicerad tid"
 
 #: src/todayFactory.js:92
-#, fuzzy
-#| msgid "Next dose"
 msgid "Change dose"
-msgstr "Nästa dos"
+msgstr "Ändra dos"
 
 #: src/treatmentsFactory.js:102
 msgid "Remaining"

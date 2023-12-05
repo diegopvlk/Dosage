@@ -538,10 +538,8 @@ msgid "Duplicated time"
 msgstr "Dit tijdstip is al gekozen"
 
 #: src/todayFactory.js:92
-#, fuzzy
-#| msgid "Next dose"
 msgid "Change dose"
-msgstr "Volgende dosis"
+msgstr "Verander dosis"
 
 #: src/treatmentsFactory.js:102
 msgid "Remaining"

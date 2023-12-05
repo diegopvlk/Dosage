@@ -537,10 +537,8 @@ msgid "Duplicated time"
 msgstr "Yinelenen zaman"
 
 #: src/todayFactory.js:92
-#, fuzzy
-#| msgid "Next dose"
 msgid "Change dose"
-msgstr "Sonraki doz"
+msgstr "Dozu değiştir"
 
 #: src/treatmentsFactory.js:102
 msgid "Remaining"
