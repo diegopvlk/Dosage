@@ -52,7 +52,7 @@
 	<screenshots>
 		<screenshot type="default">
 			<caption>Dosage today window in light theme</caption>
-			<image>https://raw.githubusercontent.com/diegopvlk/Dosage/558ce4159756d5a4410d22ef9b10c5dfc75946df/screenshots/today-light.png</image>
+			<image>https://raw.githubusercontent.com/diegopvlk/Dosage/f962e4321686948b53c2254287a4d797b3e21579/screenshots/today-light.png</image>
 		</screenshot>
 		<screenshot>
 			<caption>Dosage edit treatment window in light theme</caption>
@@ -60,11 +60,19 @@
 		</screenshot>
 		<screenshot>
 			<caption>Dosage today window in dark theme</caption>
-			<image>https://raw.githubusercontent.com/diegopvlk/Dosage/558ce4159756d5a4410d22ef9b10c5dfc75946df/screenshots/today-dark.png</image>
+			<image>https://raw.githubusercontent.com/diegopvlk/Dosage/f962e4321686948b53c2254287a4d797b3e21579/screenshots/today-dark.png</image>
 		</screenshot>
 	</screenshots>
 
 	<releases>
+		<release version="1.4.5" date="2023-12-06">
+			<description translatable="no">
+				<ul>
+					<li>New: when selecting a today treatment, you can now change it's dose</li>
+					<li>Fixed an issue of treatment being marked as missed if had multiple doses, was removed from history and confirmed again</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.4.4" date="2023-12-04">
 			<description translatable="no">
 				<ul>

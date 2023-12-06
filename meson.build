@@ -1,5 +1,5 @@
 project('dosage',
-	version: '1.4.4',
+	version: '1.4.5',
 	meson_version: '>= 0.62.0',
 	default_options: [ 'warning_level=2', 'werror=false', ],
 )
