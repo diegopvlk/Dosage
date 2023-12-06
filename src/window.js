@@ -598,25 +598,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 			currentRow = currentRow.get_next_sibling();
 		}
 
-		this._unselectBtn.connect('clicked', () => {
-			let currentRow = list.get_first_child();
-
-			while (currentRow) {
-				if (currentRow.get_name() === 'GtkListItemWidget') {
-					const topBox = currentRow.get_first_child();
-					const labelsBox = topBox.get_first_child().get_next_sibling();
-					const amountBtn = labelsBox.get_next_sibling().get_next_sibling();
-					const check = amountBtn.get_next_sibling();
-					check.set_active(false);
-					this._loadToday();
-				}
-				currentRow = currentRow.get_next_sibling();
-			}
-			this._updateEntryBtn(false);
-		});
-
 		const hasTodayItems = this.todayItems.length > 0;
 		this._updateEntryBtn(hasTodayItems);
+	}
+
+	_unselectTodayItems() {
+		this._loadToday();
+		this._updateEntryBtn(false);
 	}
 
 	_updateEntryBtn(hasTodayItems) {

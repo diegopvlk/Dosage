@@ -58,6 +58,7 @@ template $DosageWindow : Adw.ApplicationWindow {
             spacing: 8;
             Button unselectBtn {
               styles [ 'pill', 'skip' ]
+              clicked => $_unselectTodayItems();
               tooltip-text: _("Unselect");
               visible: false;
               icon-name: 'unselect-meds-symbolic';
