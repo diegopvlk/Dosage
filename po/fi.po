@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-05 17:50-0300\n"
+"POT-Creation-Date: 2023-12-05 22:13-0300\n"
 "PO-Revision-Date: 2023-11-26 20:29+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
@@ -143,7 +143,7 @@ msgstr "Uusi hoito"
 msgid "Cancel"
 msgstr "Peru"
 
-#: data/ui/med-window.blp:25 data/ui/window.blp:153
+#: data/ui/med-window.blp:25 data/ui/window.blp:154
 msgid "Add"
 msgstr "Lisää"
 
@@ -382,7 +382,7 @@ msgstr "Päivä"
 msgid "Delete"
 msgstr "Poista"
 
-#: data/ui/preferences.blp:9 data/ui/window.blp:178
+#: data/ui/preferences.blp:9 data/ui/window.blp:179
 msgid "Preferences"
 msgstr "Asetukset"
 
@@ -414,11 +414,11 @@ msgstr "Ilmoituksen painikkeet"
 msgid "Show or hide confirm/skip"
 msgstr "Näytä tai piilota vahvistus- ja ohituspainikkeet"
 
-#: data/ui/preferences.blp:47 src/window.js:464 src/window.js:623
+#: data/ui/preferences.blp:47 src/window.js:464 src/window.js:611
 msgid "Confirm"
 msgstr "Vahvista"
 
-#: data/ui/preferences.blp:56 data/ui/window.blp:75 src/window.js:468
+#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:468
 msgid "Skip"
 msgstr "Ohita"
 
@@ -430,35 +430,35 @@ msgstr "Päävalikko"
 msgid "Today"
 msgstr "Tänään"
 
-#: data/ui/window.blp:61
+#: data/ui/window.blp:62
 msgid "Unselect"
 msgstr "Älä valitse"
 
-#: data/ui/window.blp:69 src/window.js:623
+#: data/ui/window.blp:70 src/window.js:611
 msgid "One-time entry"
 msgstr "Kertakirjaus"
 
-#: data/ui/window.blp:104
+#: data/ui/window.blp:105
 msgid "History"
 msgstr "Historia"
 
-#: data/ui/window.blp:118
+#: data/ui/window.blp:119
 msgid "Empty history"
 msgstr "Historia on tyhjä"
 
-#: data/ui/window.blp:128
+#: data/ui/window.blp:129
 msgid "Treatments"
 msgstr "Hoidot"
 
-#: data/ui/window.blp:160
+#: data/ui/window.blp:161
 msgid "Click the button below to add some"
 msgstr "Napsauta alla olevaa painiketta lisätäksesi"
 
-#: data/ui/window.blp:182
+#: data/ui/window.blp:183
 msgid "About Dosage"
 msgstr "Tietoja - Dosage"
 
-#: data/ui/window.blp:186
+#: data/ui/window.blp:187
 msgid "Quit"
 msgstr "Lopeta"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-05 17:50-0300\n"
+"POT-Creation-Date: 2023-12-05 22:13-0300\n"
 "PO-Revision-Date: 2023-12-01 14:41+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/es/"
@@ -152,7 +152,7 @@ msgstr "Nuevo tratamiento"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: data/ui/med-window.blp:25 data/ui/window.blp:153
+#: data/ui/med-window.blp:25 data/ui/window.blp:154
 msgid "Add"
 msgstr "Añadir"
 
@@ -391,7 +391,7 @@ msgstr "Fecha"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: data/ui/preferences.blp:9 data/ui/window.blp:178
+#: data/ui/preferences.blp:9 data/ui/window.blp:179
 msgid "Preferences"
 msgstr "Preferencias"
 
@@ -423,11 +423,11 @@ msgstr "Botones de notificación"
 msgid "Show or hide confirm/skip"
 msgstr "Mostrar u ocultar confirmar/saltar"
 
-#: data/ui/preferences.blp:47 src/window.js:464 src/window.js:623
+#: data/ui/preferences.blp:47 src/window.js:464 src/window.js:611
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: data/ui/preferences.blp:56 data/ui/window.blp:75 src/window.js:468
+#: data/ui/preferences.blp:56 data/ui/window.blp:76 src/window.js:468
 msgid "Skip"
 msgstr "Omitir"
 
@@ -439,35 +439,35 @@ msgstr "Menú principal"
 msgid "Today"
 msgstr "Hoy"
 
-#: data/ui/window.blp:61
+#: data/ui/window.blp:62
 msgid "Unselect"
 msgstr "Deseleccionar"
 
-#: data/ui/window.blp:69 src/window.js:623
+#: data/ui/window.blp:70 src/window.js:611
 msgid "One-time entry"
 msgstr "Entrada única"
 
-#: data/ui/window.blp:104
+#: data/ui/window.blp:105
 msgid "History"
 msgstr "Historial"
 
-#: data/ui/window.blp:118
+#: data/ui/window.blp:119
 msgid "Empty history"
 msgstr "Historial vacío"
 
-#: data/ui/window.blp:128
+#: data/ui/window.blp:129
 msgid "Treatments"
 msgstr "Tratamientos"
 
-#: data/ui/window.blp:160
+#: data/ui/window.blp:161
 msgid "Click the button below to add some"
 msgstr "Haga clic en el botón de abajo para añadir"
 
-#: data/ui/window.blp:182
+#: data/ui/window.blp:183
 msgid "About Dosage"
 msgstr "Acerca de Dosis"
 
-#: data/ui/window.blp:186
+#: data/ui/window.blp:187
 msgid "Quit"
 msgstr "Salir"
 
