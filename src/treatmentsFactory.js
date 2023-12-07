@@ -97,7 +97,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	nameLabel.label = item.name;
 
 	const inv = info.inventory;
-	
+
 	if (inv.enabled) {
 		let currInv = inv.current < 0 ? 0 : inv.current;
 
@@ -114,7 +114,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	const startLabel = _('Starts on') + ` ${formatDate(info.duration.start)}`;
 	const untilLabel = _('Until') + ` ${formatDate(info.duration.end)}`;
 
-	if (info.duration.enabled) {
+	if (info.duration.enabled && info.frequency !== 'when-needed') {
 		durationNextDateLabel.set_visible(true);
 		durationNextDateLabel.label = untilLabel;
 		if (start > today) {
@@ -182,7 +182,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		'green', 'cyan', 'blue', 'purple'
 	];
 	colors.forEach(c => box.remove_css_class(c));
-	
+
 	box.add_css_class(info.color);
 
 	icon.icon_name = info.icon;
@@ -201,5 +201,5 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			day: 'numeric',
 			year: 'numeric'
 		});
-	}	
+	}
 });
