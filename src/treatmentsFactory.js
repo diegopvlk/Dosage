@@ -77,6 +77,9 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	const infoLabel = nameLabel.get_next_sibling();
 	const durationNextDateLabel = infoLabel.get_next_sibling();
 	const inventoryLabel = box.get_last_child().get_prev_sibling();
+	const today = new Date().setHours(0, 0, 0, 0);
+	const start = new Date(info.duration.start).setHours(0, 0, 0, 0);
+	const end = new Date(info.duration.end).setHours(0, 0, 0, 0);
 
 	// activate item with space bar
 	const keyController = new Gtk.EventControllerKey();
@@ -107,18 +110,16 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		}
 	}
 
-	const untilDate = new Date(info.duration.end).toLocaleDateString(undefined, {
-		month: 'short',
-		day: 'numeric',
-		year: 'numeric'
-	});
-
 	// TRANSLATORS: label for when duration is enabled
-	const untilLabel = _('Until') + ` ${untilDate}`;
+	const startLabel = _('Starts on') + ` ${formatDate(info.duration.start)}`;
+	const untilLabel = _('Until') + ` ${formatDate(info.duration.end)}`;
 
 	if (info.duration.enabled) {
 		durationNextDateLabel.set_visible(true);
 		durationNextDateLabel.label = untilLabel;
+		if (start > today) {
+			durationNextDateLabel.label = startLabel;
+		}
 	}
 
 	switch (info.frequency) {
@@ -142,17 +143,12 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			}
 			break;
 		case 'cycle':
-			const today = new Date().setHours(0, 0, 0, 0);
 			const nextDt = new Date(item.info.cycleNextDate).setHours(0, 0, 0, 0);
-			const nextDate = new Date(nextDt).toLocaleDateString(undefined, {
-				weekday: 'short',
-				month: 'short',
-				day: 'numeric',
-			});
+			const nextDate = formatDate(nextDt, 'weekday');
 
 			if (info.duration.enabled) {
 				durationNextDateLabel.label = untilLabel;
-				if (nextDt > today) {
+				if (nextDt > today && nextDt <= end) {
 					durationNextDateLabel.label += '  •  ' + _('Next dose') + `: ${nextDate}`;
 				}
 			} else if (nextDt > today) {
@@ -173,6 +169,10 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			break;
 	}
 
+	if (end < today || end < start) {
+		durationNextDateLabel.label = untilLabel;
+	}
+
 	if (info.notes !== '') {
 		infoLabel.label += `  •  ${info.notes}`;
 	}
@@ -186,4 +186,20 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	box.add_css_class(info.color);
 
 	icon.icon_name = info.icon;
+
+	function formatDate(date, weekday) {
+		if (weekday) {
+			return new Date(date).toLocaleDateString(undefined, {
+				weekday: 'short',
+				month: 'short',
+				day: 'numeric',
+			});
+		}
+
+		return new Date(date).toLocaleDateString(undefined, {
+			month: 'short',
+			day: 'numeric',
+			year: 'numeric'
+		});
+	}	
 });
