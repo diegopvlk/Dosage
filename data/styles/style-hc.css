@@ -20,13 +20,13 @@ button.pill:not(.suggested-action) {
 	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.6);
 }
 
-.button-left > button,
-.button-right > button {
+.button-start > button,
+.button-end > button {
 	box-shadow: none;
 }
 
-.button-left > button:hover,
-.button-right > button:hover {
+.button-start > button:hover,
+.button-end > button:hover {
 	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.5);
 }
 

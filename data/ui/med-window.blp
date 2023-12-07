@@ -291,7 +291,7 @@ Adw.Window medWindow {
                 styles [ 'frequency-row' ]
                 [prefix]
                 DropDown frequencyMenu {
-                  styles [ 'button-left' ]
+                  styles [ 'button-start' ]
                   model: StringList {
                     strings [
                       _("Every day"), 
@@ -304,7 +304,7 @@ Adw.Window medWindow {
                 [suffix]
                 MenuButton frequencySpecificDays {
                   visible: false;
-                  styles [ 'flat', 'button-right' ]
+                  styles [ 'flat', 'button-end' ]
                   label: _("Choose");
                   popover: Popover {
                     Box specificDaysBox {
@@ -350,7 +350,7 @@ Adw.Window medWindow {
 
                 MenuButton frequencyCycle {
                   visible: false;
-                  styles [ 'flat', 'button-right', 'cycle' ]
+                  styles [ 'flat', 'button-end', 'cycle' ]
                   label: '21  ⊷  7';
                   popover: Popover {
                     Box {
@@ -413,7 +413,7 @@ Adw.Window medWindow {
                 [suffix]
                 DropDown oneTimeTaken {
                   visible: false;
-                  styles [ 'button-right' ]
+                  styles [ 'button-end' ]
                   model: StringList {
                     strings [
                       _("Confirmed"), 
@@ -481,7 +481,7 @@ Adw.Window medWindow {
                   activatable-widget: calendarStartBtn;
                   [suffix]
                   MenuButton calendarStartBtn {
-                    styles [ 'flat', 'button-right' ]
+                    styles [ 'flat', 'button-end' ]
                     label: _("Choose");
                     popover: Popover {
                       Calendar calendarStart {
@@ -497,7 +497,7 @@ Adw.Window medWindow {
                   activatable-widget: calendarEndBtn;
                   [suffix]
                   MenuButton calendarEndBtn {
-                    styles [ 'flat', 'button-right' ]
+                    styles [ 'flat', 'button-end' ]
                     label: _("Choose");
                     popover: Popover {
                       Calendar calendarEnd {
@@ -515,7 +515,7 @@ Adw.Window medWindow {
                 activatable-widget: calOneEntryBtn;
                 [suffix]
                 MenuButton calOneEntryBtn {
-                  styles [ 'flat', 'button-right' ]
+                  styles [ 'flat', 'button-end' ]
                   label: _("Choose");
                   popover: Popover {
                     Calendar calOneEntry {

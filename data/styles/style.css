@@ -76,8 +76,10 @@ list > row.activatable.header:active {
 	background: @boxed_active;
 }
 
-.button-left > button:hover,
-.button-left > button:checked {
+.button-start > button:hover,
+.button-start > button:checked,
+.button-end:dir(rtl) > button:hover,
+.button-end:dir(rtl) > button:checked {
 	background: linear-gradient(
 		90deg,
 		@boxed_hover 70%,
@@ -85,7 +87,8 @@ list > row.activatable.header:active {
 	);
 }
 
-.button-left > button:active {
+.button-start > button:active,
+.button-end:dir(rtl) > button:active {
 	background: linear-gradient(
 		90deg,
 		@boxed_active 70%,
@@ -93,8 +96,10 @@ list > row.activatable.header:active {
 	);
 }
 
-.button-right > button:hover,
-.button-right > button:checked {
+.button-end > button:hover,
+.button-end > button:checked,
+.button-start:dir(rtl) > button:hover,
+.button-start:dir(rtl) > button:checked {
 	background: linear-gradient(
 		-90deg,
 		@boxed_hover 70%,
@@ -102,7 +107,8 @@ list > row.activatable.header:active {
 	);
 }
 
-.button-right > button:active {
+.button-end > button:active,
+.button-start:dir(rtl) > button:active {
 	background: linear-gradient(
 		-90deg,
 		@boxed_active 70%,
@@ -219,6 +225,11 @@ row:focus {
 	padding: 0;
 }
 
+.ampm-row:dir(rtl) .suffixes spinbutton text {
+	margin-left: 0px;
+	margin-right: -10px;
+}
+
 button.am-pm {
 	font-weight: 400;
 	font-size: 83%;
@@ -233,34 +244,36 @@ button.am-pm {
 	padding-right: 21px;
 }
 
-.button-left > button,
-.button-right > button,
+.button-start > button,
+.button-end > button,
 menubutton:not(.one-time-menu) button.arrow-button,
 button.one-time-name {
 	font-weight: 400;
 }
 
-.button-left > button,
-.button-right > button {
+.button-start > button,
+.button-end > button {
 	margin: -2px;
 	background-color: transparent;
 }
 
-.button-left > button {
+.button-start > button,
+.button-end:dir(rtl) > button {
 	margin-left: -14px;
 	border-radius: 5px;
 	padding: 0 14px;
 	padding-right: 32px;
 }
 
-.button-right > button {
+.button-end > button,
+.button-start:dir(rtl) > button {
 	margin-right: -14px;
 	border-radius: 5px;
 	padding: 0 18px;
 	padding-left: 32px;
 }
 
-.button-right.cycle > button {
+.button-end.cycle > button {
 	min-width: 90px;
 }
 
@@ -271,21 +284,25 @@ button.specific-day {
 	padding-right: 0;
 }
 
-.button-left popover,
-.button-right popover {
+.button-start popover,
+.button-end popover {
 	margin-top: -5px;
 }
 
-.button-left popover {
+.button-start:dir(ltr) popover {
 	margin-left: -15px;
+}
+
+.button-start:dir(rtl) popover {
+	margin-right: -15px;
 }
 
 popover > contents {
 	border-radius: 16px;
 }
 
-.button-left popover > contents listview row,
-.button-right popover > contents listview row {
+.button-start popover > contents listview row,
+.button-end popover > contents listview row {
 	border-radius: 10px;
 	padding-top: 7px;
 	padding-bottom: 7px;
@@ -383,8 +400,12 @@ button.suggested-action:focus {
 	margin: -3px 4px -3px 8px;
 }
 
-.spin-today-amount > row.spin > box {
+.spin-today-amount:dir(ltr) > row.spin > box {
 	margin-left: -16px;
+}
+
+.spin-today-amount:dir(rtl) > row.spin > box {
+	margin-right: -16px;
 }
 
 .spin-box row.spin {
