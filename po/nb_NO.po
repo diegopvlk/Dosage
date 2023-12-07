@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-05 22:13-0300\n"
+"POT-Creation-Date: 2023-12-07 15:27-0300\n"
 "PO-Revision-Date: 2023-11-26 01:43+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
@@ -291,12 +291,12 @@ msgstr "Hver dag"
 msgid "Specific days"
 msgstr "Spesifikke dager"
 
-#: data/ui/med-window.blp:299 src/treatmentsFactory.js:168
+#: data/ui/med-window.blp:299 src/treatmentsFactory.js:164
 #, fuzzy
 msgid "Cycle"
 msgstr "Syklus"
 
-#: data/ui/med-window.blp:300 src/treatmentsFactory.js:172
+#: data/ui/med-window.blp:300 src/treatmentsFactory.js:168
 msgid "When necessary"
 msgstr "Ved behov"
 
@@ -380,7 +380,8 @@ msgstr "Varighet"
 msgid "Set a start and end date"
 msgstr "Sett start- og sluttdato"
 
-#: data/ui/med-window.blp:480
+#. TRANSLATORS: label for when duration is enabled
+#: data/ui/med-window.blp:480 src/treatmentsFactory.js:114
 msgid "Starts on"
 msgstr "Starter"
 
@@ -546,32 +547,31 @@ msgstr "Duplisert tid"
 msgid "Change dose"
 msgstr "Endre dose"
 
-#: src/treatmentsFactory.js:102
+#: src/treatmentsFactory.js:105
 msgid "Remaining"
 msgstr "Gjenstående"
 
-#: src/treatmentsFactory.js:106
+#: src/treatmentsFactory.js:109
 msgid "Low stock"
 msgstr "Lav beholdning"
 
-#. TRANSLATORS: label for when duration is enabled
-#: src/treatmentsFactory.js:117
+#: src/treatmentsFactory.js:115
 msgid "Until"
 msgstr "Til"
 
-#: src/treatmentsFactory.js:126 src/treatmentsFactory.js:139
+#: src/treatmentsFactory.js:127 src/treatmentsFactory.js:140
 msgid "Daily"
 msgstr "Daglig"
 
-#: src/treatmentsFactory.js:135
+#: src/treatmentsFactory.js:136
 msgid "Weekends"
 msgstr "Helger"
 
-#: src/treatmentsFactory.js:137
+#: src/treatmentsFactory.js:138
 msgid "Weekdays"
 msgstr "Ukedager"
 
-#: src/treatmentsFactory.js:156 src/treatmentsFactory.js:159
+#: src/treatmentsFactory.js:152 src/treatmentsFactory.js:155
 msgid "Next dose"
 msgstr "Neste dose"
 

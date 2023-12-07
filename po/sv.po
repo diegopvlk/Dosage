@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-05 22:13-0300\n"
+"POT-Creation-Date: 2023-12-07 15:27-0300\n"
 "PO-Revision-Date: 2023-11-27 17:40+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -288,11 +288,11 @@ msgstr "Varje dag"
 msgid "Specific days"
 msgstr "Särskilda dagar"
 
-#: data/ui/med-window.blp:299 src/treatmentsFactory.js:168
+#: data/ui/med-window.blp:299 src/treatmentsFactory.js:164
 msgid "Cycle"
 msgstr "Cykel"
 
-#: data/ui/med-window.blp:300 src/treatmentsFactory.js:172
+#: data/ui/med-window.blp:300 src/treatmentsFactory.js:168
 msgid "When necessary"
 msgstr "Vid behov"
 
@@ -373,7 +373,8 @@ msgstr "Längd"
 msgid "Set a start and end date"
 msgstr "Ange ett start- och slutdatum"
 
-#: data/ui/med-window.blp:480
+#. TRANSLATORS: label for when duration is enabled
+#: data/ui/med-window.blp:480 src/treatmentsFactory.js:114
 msgid "Starts on"
 msgstr "Börjar"
 
@@ -537,32 +538,31 @@ msgstr "Duplicerad tid"
 msgid "Change dose"
 msgstr "Ändra dos"
 
-#: src/treatmentsFactory.js:102
+#: src/treatmentsFactory.js:105
 msgid "Remaining"
 msgstr "Återstående"
 
-#: src/treatmentsFactory.js:106
+#: src/treatmentsFactory.js:109
 msgid "Low stock"
 msgstr "Lågt lager"
 
-#. TRANSLATORS: label for when duration is enabled
-#: src/treatmentsFactory.js:117
+#: src/treatmentsFactory.js:115
 msgid "Until"
 msgstr "Till"
 
-#: src/treatmentsFactory.js:126 src/treatmentsFactory.js:139
+#: src/treatmentsFactory.js:127 src/treatmentsFactory.js:140
 msgid "Daily"
 msgstr "Daglig"
 
-#: src/treatmentsFactory.js:135
+#: src/treatmentsFactory.js:136
 msgid "Weekends"
 msgstr "Helger"
 
-#: src/treatmentsFactory.js:137
+#: src/treatmentsFactory.js:138
 msgid "Weekdays"
 msgstr "Veckodagar"
 
-#: src/treatmentsFactory.js:156 src/treatmentsFactory.js:159
+#: src/treatmentsFactory.js:152 src/treatmentsFactory.js:155
 msgid "Next dose"
 msgstr "Nästa dos"
 

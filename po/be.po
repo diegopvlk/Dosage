@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-05 22:13-0300\n"
+"POT-Creation-Date: 2023-12-07 15:27-0300\n"
 "PO-Revision-Date: 2023-12-01 08:04+0000\n"
 "Last-Translator: Yahor <k1llo2810@protonmail.com>\n"
 "Language-Team: Belarusian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -290,11 +290,11 @@ msgstr "Кожны дзень"
 msgid "Specific days"
 msgstr "Выбраныя дні"
 
-#: data/ui/med-window.blp:299 src/treatmentsFactory.js:168
+#: data/ui/med-window.blp:299 src/treatmentsFactory.js:164
 msgid "Cycle"
 msgstr "Цыкл"
 
-#: data/ui/med-window.blp:300 src/treatmentsFactory.js:172
+#: data/ui/med-window.blp:300 src/treatmentsFactory.js:168
 msgid "When necessary"
 msgstr "Пры неабходнасці"
 
@@ -376,7 +376,8 @@ msgstr "Працягласць"
 msgid "Set a start and end date"
 msgstr "Устанавіць пачатковую і канчатковыя даты курса лячэння"
 
-#: data/ui/med-window.blp:480
+#. TRANSLATORS: label for when duration is enabled
+#: data/ui/med-window.blp:480 src/treatmentsFactory.js:114
 msgid "Starts on"
 msgstr "Пачынаецца"
 
@@ -540,32 +541,31 @@ msgstr "Аднолькавы час у прыёмаў доз"
 msgid "Change dose"
 msgstr "Зменіць дозу"
 
-#: src/treatmentsFactory.js:102
+#: src/treatmentsFactory.js:105
 msgid "Remaining"
 msgstr "Засталося"
 
-#: src/treatmentsFactory.js:106
+#: src/treatmentsFactory.js:109
 msgid "Low stock"
 msgstr "Нізкі запас"
 
-#. TRANSLATORS: label for when duration is enabled
-#: src/treatmentsFactory.js:117
+#: src/treatmentsFactory.js:115
 msgid "Until"
 msgstr "Да"
 
-#: src/treatmentsFactory.js:126 src/treatmentsFactory.js:139
+#: src/treatmentsFactory.js:127 src/treatmentsFactory.js:140
 msgid "Daily"
 msgstr "Штодзённа"
 
-#: src/treatmentsFactory.js:135
+#: src/treatmentsFactory.js:136
 msgid "Weekends"
 msgstr "Выхадныя"
 
-#: src/treatmentsFactory.js:137
+#: src/treatmentsFactory.js:138
 msgid "Weekdays"
 msgstr "Будні"
 
-#: src/treatmentsFactory.js:156 src/treatmentsFactory.js:159
+#: src/treatmentsFactory.js:152 src/treatmentsFactory.js:155
 msgid "Next dose"
 msgstr "Наступная дозу"
 
