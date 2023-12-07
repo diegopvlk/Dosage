@@ -65,6 +65,15 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.4.6" date="2023-12-08">
+			<description translatable="no">
+				<ul>
+					<li>Fixed UI issues with right-to-left languages</li>
+					<li>Fixed duration date showing if the frequency was 'When necessary'</li>
+					<li>The start date will now shown on treatment list</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.4.5" date="2023-12-06">
 			<description translatable="no">
 				<ul>
@@ -125,7 +134,7 @@
 			<description translatable="no">
 				<ul>
 					<li>Fixed notification sound being played on suspension event</li>
-					<li>Fixed duration date text not being showed in local time</li>
+					<li>Fixed duration date text not being shown in local time</li>
 					<li>Slight changed background color of dark theme</li>
 				</ul>
 			</description>
