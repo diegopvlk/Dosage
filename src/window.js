@@ -646,11 +646,11 @@ class DosageWindow extends Adw.ApplicationWindow {
 		for (let i = 0; i < todayLength; i++) {
 			const it = this.todayModel.get_item(i);
 			const sameName = item.name === it?.name;
-			const sameTime =
-				String(item.info.dosage.time) === String(it?.info.dosage.time);
+			const itemTime = String(item.info.dosage.time);
+			const sameTime = itemTime === String(it?.info.dosage.time);
 
 			if (sameName && sameTime) {
-				this._insertItemToHistory(item, taken);
+				this._insertItemToHistory(item, taken, null, true);
 				this._updateEverything(null, 'notifAction');
 				this._scheduleNotifications();
 				this._historyList.scroll_to(0, null, null);
@@ -658,7 +658,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		}
 	}
 
-	_insertItemToHistory(item, taken, missedDate) {
+	_insertItemToHistory(item, taken, missedDate, isNotif) {
 		historyLS.insert(
 			0,
 			new HistoryMedication({
@@ -674,15 +674,20 @@ class DosageWindow extends Adw.ApplicationWindow {
 		// update lastTaken of treatment dose when confirming/skipping
 		if (!missedDate) {
 			for (const it of treatmentsLS) {
-				it.info.dosage.forEach((timeDose) => {
-					this.todayItems.forEach(_i => {
-						const sameTime =
-							String(item.info.dosage.time) === String(timeDose.time);
-						if (sameTime && item.name === it.name) {
+				const sameName = item.name === it.name;
+				const itemTime = String(item.info.dosage.time);
+
+				if (sameName) {
+					it.info.dosage.forEach(timeDose => {
+						const sameTime = itemTime === String(timeDose.time);
+						const notifItem = isNotif && sameTime;
+						const todayItem = this.todayItems.some(_i => sameName && sameTime);
+
+						if (notifItem || todayItem) {
 							timeDose.lastTaken = new Date().toISOString();
 						}
 					});
-				});
+				}
 			}
 		}
 	}
