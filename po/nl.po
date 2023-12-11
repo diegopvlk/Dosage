@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-07 15:27-0300\n"
-"PO-Revision-Date: 2023-11-09 18:55+0000\n"
+"PO-Revision-Date: 2023-12-12 11:06+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/dosage/dosage/nl/"
-">\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/dosage/dosage/nl/>"
+"\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"X-Generator: Weblate 5.3-dev\n"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "medication"
@@ -77,11 +77,10 @@ msgid "Notifications — Get reminders at the right time"
 msgstr "Meldingen — Ontvang meldingen op de innametijden"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:43
-#, fuzzy
-#| msgid "History — See which medications you took or skipped"
 msgid "History — See which medications you took, skipped or missed"
 msgstr ""
-"Geschiedenis — Bekijk welke medicatie u heeft ingenomen of overgeslagen"
+"Geschiedenis — Bekijk welke medicatie u heeft ingenomen, gemist of "
+"overgeslagen"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage management — Multiple doses with different times"
