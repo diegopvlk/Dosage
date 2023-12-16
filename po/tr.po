@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-07 15:27-0300\n"
-"PO-Revision-Date: 2023-11-25 18:39+0000\n"
+"PO-Revision-Date: 2023-12-17 11:57+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
 ">\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.2.1-rc\n"
+"X-Generator: Weblate 5.3\n"
 "X-Project-Style: gnome\n"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
@@ -78,10 +78,9 @@ msgid "Notifications — Get reminders at the right time"
 msgstr "Bildirimler - Doğru zamanda hatırlatıcılar"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:43
-#, fuzzy
-#| msgid "History — See which medications you took or skipped"
 msgid "History — See which medications you took, skipped or missed"
-msgstr "Geçmiş - Hangi ilaçları aldığınızı ya da atladığınızı görün"
+msgstr ""
+"Geçmiş - Hangi ilaçları aldığınızı, atladığınızı yada unuttuğunuzu görün"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage management — Multiple doses with different times"
@@ -558,10 +557,8 @@ msgid "Daily"
 msgstr "Günlük"
 
 #: src/treatmentsFactory.js:136
-#, fuzzy
-#| msgid "Weekend"
 msgid "Weekends"
-msgstr "Hafta sonu"
+msgstr "Hafta sonları"
 
 #: src/treatmentsFactory.js:138
 msgid "Weekdays"
