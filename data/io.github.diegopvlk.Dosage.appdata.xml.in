@@ -65,6 +65,13 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.4.7" date="2023-12-19">
+			<description translatable="no">
+				<ul>
+					<li>Added Portuguese (Portugal) translation</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.4.6" date="2023-12-08">
 			<description translatable="no">
 				<ul>
