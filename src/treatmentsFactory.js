@@ -7,7 +7,7 @@
 import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
-import { getDayLabel } from './utils.js';
+import { getDayLabel, isoWeekStart } from './utils.js';
 
 export const treatmentsFactory = new Gtk.SignalListItemFactory();
 
@@ -139,7 +139,10 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			} else if (info.days.length === 7) {
 				infoLabel.label = _('Daily');
 			} else {
-				infoLabel.label = info.days.map(day => getDayLabel(day)).join(', ');
+				const days = isoWeekStart
+					? [...info.days.slice(1), info.days[0]]
+					: info.days;
+				infoLabel.label = days.map((day) => getDayLabel(day)).join(', ');
 			}
 			break;
 		case 'cycle':

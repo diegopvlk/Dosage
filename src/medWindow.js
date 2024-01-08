@@ -17,6 +17,7 @@ import {
 	handleCalendarSelect,
 	removeCssColors,
 	getDayLabel,
+	isoWeekStart,
 } from './utils.js';
 
 import { Medication, HistoryMedication } from './medication.js';
@@ -163,12 +164,13 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		if (info.days && info.days.length !== 0) {
 			const specificDaysBox = builder.get_object('specificDaysBox');
 
-			let day = 0;
+			let day = isoWeekStart ? 1 : 0;
+
 			for (const btn of specificDaysBox) {
 				for (const d of info.days) {
 					if (d === day) btn.set_active(true);
 				}
-				day++;
+				day = (day + 1) % 7;
 			}
 		}
 
@@ -562,23 +564,25 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 
 	function getSpecificDays() {
 		const days = [];
-		let day = 0;
+		let day = isoWeekStart ? 1 : 0;
+
 		for (const button of specificDaysBox) {
 			if (button.get_active()) {
 				if (!days.includes(day)) {
-					days.push(day)
+					days.push(day);
 				}
-			};
-			day++;
+			}
+			day = (day + 1) % 7;
 		}
-		return days;
+		return days.sort();
 	}
 
 	function setSpecificDaysLabels() {
-		let day = 0;
+		let day = isoWeekStart ? 1 : 0;
+
 		for (const button of specificDaysBox) {
 			button.label = getDayLabel(day);
-			day++;
+			day = (day + 1) % 7;
 		}
 	}
 

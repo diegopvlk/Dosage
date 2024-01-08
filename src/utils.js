@@ -10,6 +10,19 @@ import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
+export const isoWeekStart = weekStartsMonday();
+
+function weekStartsMonday() {
+	const date = new Date(2000, 9, 0);
+	const startOfYear = new Date(2000, 0, 1);
+	const dayOfYear = Math.floor((date - startOfYear) / 86400000) + 1;
+	const weekNumber = Math.ceil(dayOfYear / 7);
+
+	// 39 = starts on monday
+	// 40 = starts on sunday
+	return weekNumber === 39;
+}
+
 export const DataDir = Gio.file_new_for_path(
 	GLib.build_filenamev([GLib.get_user_data_dir()])
 );
