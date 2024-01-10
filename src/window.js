@@ -335,6 +335,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 				info.dosage = {
 					time: [timeDose.time[0], timeDose.time[1]],
 					dose: timeDose.dose,
+					lastTaken: timeDose.lastTaken,
 				};
 				this.todayLS.append(
 					new TodayMedication({
@@ -349,10 +350,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 		const filterTodayModel = new Gtk.FilterListModel({
 			model: this.todayLS,
 			filter: Gtk.CustomFilter.new(item => {
-				return isTodayMedDay(
-					item,
-					this._historyList.model,
-				);
+				return isTodayMedDay(item);
 			}),
 		});
 

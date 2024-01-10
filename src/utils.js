@@ -91,29 +91,18 @@ export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
 	});
 }
 
-export function isTodayMedDay(item, histModel) {
+export function isTodayMedDay(item) {
 	const info = item.info;
 	const today = new Date().setHours(0, 0, 0, 0);
 	const start = new Date(info.duration.start).setHours(0, 0, 0, 0);
 	const end = new Date(info.duration.end).setHours(0, 0, 0, 0);
-	const lastSectionAmount = histModel.get_section(0)[1];
 
-	if (info.duration.enabled && (start > today || end < today)) {
+	if (info.dosage.lastTaken !== null) {
 		return false;
 	}
 
-	if (histModel.get_n_items() > 0) {
-		for (let i = 0; i < lastSectionAmount; i++) {
-			const name = histModel.get_item(i).name;
-			const time = histModel.get_item(i).info.time;
-			const date = new Date(histModel.get_item(i).date).setHours(0, 0, 0, 0);
-
-			if (date === today && item.name === name) {
-				if (String(info.dosage.time) == String(time)) {
-					return false;
-				}
-			}
-		}
+	if (info.duration.enabled && (start > today || end < today)) {
+		return false;
 	}
 
 	switch (info.frequency) {
