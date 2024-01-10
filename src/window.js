@@ -328,9 +328,8 @@ class DosageWindow extends Adw.ApplicationWindow {
 
 	_loadToday() {
 		this.todayLS = Gio.ListStore.new(TodayMedication);
-		const tempFile = createTempFile('treatments', treatmentsLS);
 
-		tempFile.meds.forEach(med => {
+		for (const med of treatmentsLS) {
 			med.info.dosage.forEach(timeDose => {
 				const info = { ...med.info };
 				info.dosage = {
@@ -345,7 +344,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 					})
 				);
 			});
-		})
+		}
 
 		const filterTodayModel = new Gtk.FilterListModel({
 			model: this.todayLS,
