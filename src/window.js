@@ -23,7 +23,7 @@ import {
 	TodaySectionSorter,
 	DataDir,
 	addLeadZero,
-	createTempFile,
+	createTempObj,
 	isTodayMedDay,
 	datesPassedDiff,
 } from './utils.js';
@@ -690,13 +690,20 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_updateJsonFile(type, listStore) {
+		if (
+			// don't update if these are null
+			// errors in listStore triggers this
+			this._treatmentsList.model === null ||
+			this._historyList.model === null
+		) return;
+
 		const fileName = `dosage-${type}.json`;
 		const file = DataDir.get_child(fileName);
-		const tempFile = createTempFile(type, listStore);
+		const tempObj = createTempObj(type, listStore);
 
 		const updateFile = () => {
 			return new Promise((resolve, reject) => {
-				const byteArray = new TextEncoder().encode(JSON.stringify(tempFile));
+				const byteArray = new TextEncoder().encode(JSON.stringify(tempObj));
 				file.replace_contents_async(
 					GLib.Bytes.new(byteArray),
 					null,

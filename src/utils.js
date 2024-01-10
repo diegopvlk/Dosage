@@ -40,20 +40,21 @@ export function removeCssColors(colorBtn) {
 	}
 }
 
-export function createTempFile(type, listStore) {
-	const tempFile = { meds: [] };
+export function createTempObj(type, listStore) {
+	const tempObj = { meds: [] };
+
 	if (type === 'treatments') {
 		for (const item of listStore) {
-			const tempObj = {
+			const obj = {
 				name: item.name,
 				unit: item.unit,
 				info: item.info,
 			};
-			tempFile.meds.push(tempObj);
+			tempObj.meds.push(obj);
 		}
 	} else if (type === 'history') {
 		for (const item of listStore) {
-			const tempObj = {
+			const obj = {
 				name: item.name,
 				info: item.info,
 				unit: item.unit,
@@ -61,10 +62,10 @@ export function createTempFile(type, listStore) {
 				taken: item.taken,
 				date: item.date,
 			};
-			tempFile.meds.push(tempObj);
+			tempObj.meds.push(obj);
 		}
 	}
-	return tempFile;
+	return tempObj;
 }
 
 export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
