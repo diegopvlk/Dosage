@@ -8,6 +8,8 @@ import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
 
+import { clockIs12 } from './utils.js';
+
 export const historyHeaderFactory = new Gtk.SignalListItemFactory();
 export const historyItemFactory = new Gtk.SignalListItemFactory();
 

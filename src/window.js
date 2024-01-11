@@ -26,6 +26,7 @@ import {
 	createTempObj,
 	isTodayMedDay,
 	datesPassedDiff,
+	clockIs12,
 } from './utils.js';
 
 export const historyLS = Gio.ListStore.new(HistoryMedication);
@@ -53,7 +54,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 	constructor(application) {
 		super({ application });
 		this.#loadSettings();
-		this.#checkClockFormat();
 		this.#start();
 		this.#checkInventory();
 		this.#clockTick();
@@ -64,12 +64,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 		globalThis.settings = new Gio.Settings({ schemaId: appId });
 		settings.bind('window-width', this, 'default-width', Gio.SettingsBindFlags.DEFAULT);
 		settings.bind('window-height', this, 'default-height', Gio.SettingsBindFlags.DEFAULT);
-	}
-
-	#checkClockFormat() {
-		const currentTime = GLib.DateTime.new_now_local();
-		const timeFormat = currentTime.format('%X').slice(-2);
-		globalThis.clockIs12 = timeFormat === 'AM' || timeFormat === 'PM';
 	}
 
 	#start() {

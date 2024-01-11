@@ -9,6 +9,8 @@ import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
 
+import { clockIs12 } from './utils.js';
+
 export const todayHeaderFactory = new Gtk.SignalListItemFactory();
 export const todayItemFactory = new Gtk.SignalListItemFactory();
 

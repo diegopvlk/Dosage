@@ -23,6 +23,14 @@ function weekStartsMonday() {
 	return weekNumber === 39;
 }
 
+export const clockIs12 = checkClock();
+
+function checkClock() {
+	const currentTime = GLib.DateTime.new_now_local();
+	const timeFormat = currentTime.format('%X').slice(-2);
+	return timeFormat === 'AM' || timeFormat === 'PM';
+}
+
 export const DataDir = Gio.file_new_for_path(
 	GLib.build_filenamev([GLib.get_user_data_dir()])
 );
