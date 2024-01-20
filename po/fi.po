@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-07 15:27-0300\n"
-"PO-Revision-Date: 2023-11-26 20:29+0000\n"
+"PO-Revision-Date: 2024-01-21 13:01+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.2.1-rc\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:14
 msgid "medication"
@@ -114,6 +114,8 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
+"Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;lääkitys;piller"
+"i;hoito;lääke;seuranta;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
