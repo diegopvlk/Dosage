@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-28 12:22-0300\n"
-"PO-Revision-Date: 2023-12-17 19:57+0000\n"
-"Last-Translator: ssantos <ssantos@web.de>\n"
+"PO-Revision-Date: 2024-01-28 17:01+0000\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/dosage/dosage/"
 "pt/>\n"
 "Language: pt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.3\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
@@ -150,7 +150,7 @@ msgstr "Após refeição"
 
 #: data/ui/med-window.blp:66
 msgid "Form"
-msgstr ""
+msgstr "Forma"
 
 #: data/ui/med-window.blp:67
 msgid "Color and icon"
@@ -256,15 +256,15 @@ msgstr "Poção"
 
 #: data/ui/med-window.blp:294 src/medWindow.js:637
 msgid "Frequency"
-msgstr ""
+msgstr "Frequência"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
-msgstr ""
+msgstr "Escolha os dias"
 
 #: data/ui/med-window.blp:359
 msgid "Change cycle"
-msgstr ""
+msgstr "Escolha o ciclo"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"
@@ -367,11 +367,11 @@ msgstr "Início automático no login"
 
 #: data/ui/preferences.blp:24
 msgid "Auto-clear history"
-msgstr ""
+msgstr "Limpeza de histórico automática"
 
 #: data/ui/preferences.blp:25
 msgid "Keeps a maximum of 30 group days"
-msgstr ""
+msgstr "Mantém no máximo 30 grupos de dias"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"
