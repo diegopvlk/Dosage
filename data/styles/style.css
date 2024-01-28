@@ -53,7 +53,7 @@ listview.scroll-to-top-hack > :nth-child(2) {
 listview > header {
 	padding-top: 14px;
 	padding-bottom: 1px;
-	margin-left: 1px;
+	min-height: 21px;
 }
 
 listview > header label {
