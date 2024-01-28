@@ -527,8 +527,7 @@ export const DosageWindow = GObject.registerClass(
 				app.send_notification(pseudoId, notification);
 			};
 
-			// v1.1.0 only has recurring: boolean
-			if (item.recurring) {
+			if (item.recurring.enabled) {
 				const interval = item.recurring.interval;
 				const minutes = interval * 60 * 1000;
 				const recurringNotify = (pseudoId, timeDiff) => {
