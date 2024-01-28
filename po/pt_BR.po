@@ -567,6 +567,14 @@ msgstr "Nenhum tratamento adicionado ainda"
 msgid "All done for today"
 msgstr "Tudo feito por hoje"
 
+#: data/ui/preferences.blp:15
+msgid "Autostart at login"
+msgstr "Início automático no login"
+
+#: data/ui/preferences.blp:24
+msgid "Clear history automatically"
+msgstr "Limpar histórico automaticamente"
+
 #~ msgid "medication"
 #~ msgstr "medicação"
 
