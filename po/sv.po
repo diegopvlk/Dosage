@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-28 08:52-0300\n"
+"POT-Creation-Date: 2024-01-28 12:22-0300\n"
 "PO-Revision-Date: 2023-11-27 17:40+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -21,8 +21,8 @@ msgstr ""
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
-#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:408
-#: src/main.js:41 src/window.js:608
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
+#: src/main.js:41 src/window.js:577
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -118,7 +118,7 @@ msgstr "Avsluta"
 msgid "New treatment"
 msgstr "Ny behandling"
 
-#: data/ui/med-window.blp:19 src/medWindow.js:383
+#: data/ui/med-window.blp:19 src/medWindow.js:370
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -138,7 +138,7 @@ msgstr "Namn"
 msgid "Unit"
 msgstr "Enhet"
 
-#: data/ui/med-window.blp:57 src/medWindow.js:245
+#: data/ui/med-window.blp:57 src/medWindow.js:235
 msgid "Pill(s)"
 msgstr "Piller"
 
@@ -158,7 +158,7 @@ msgstr ""
 msgid "Color and icon"
 msgstr "Färg och ikon"
 
-#: data/ui/med-window.blp:72 src/medWindow.js:291
+#: data/ui/med-window.blp:72 src/medWindow.js:281
 msgid "Color"
 msgstr "Färg"
 
@@ -256,102 +256,110 @@ msgstr "Droppe"
 msgid "Potion"
 msgstr "Dryck"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:653
+#: data/ui/med-window.blp:294 src/medWindow.js:637
 msgid "Frequency"
 msgstr ""
 
-#: data/ui/med-window.blp:368
+#: data/ui/med-window.blp:309
+msgid "Choose days"
+msgstr ""
+
+#: data/ui/med-window.blp:359
+msgid "Change cycle"
+msgstr ""
+
+#: data/ui/med-window.blp:370
 msgid "Days active"
 msgstr "Dagar aktiv"
 
-#: data/ui/med-window.blp:380
+#: data/ui/med-window.blp:382
 msgid "Days inactive"
 msgstr "Dagar inaktiv"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
-#: data/ui/med-window.blp:393
+#: data/ui/med-window.blp:395
 msgid "Today is cycle day…"
 msgstr "I dag är cykeldag…"
 
-#: data/ui/med-window.blp:409
+#: data/ui/med-window.blp:411
 msgid "Time and amount"
 msgstr "Tid och antal"
 
-#: data/ui/med-window.blp:417
+#: data/ui/med-window.blp:419
 msgid "Add dose"
 msgstr "Lägg till dosering"
 
-#: data/ui/med-window.blp:425
+#: data/ui/med-window.blp:427
 msgid "Confirmed"
 msgstr "Bekräftad"
 
-#: data/ui/med-window.blp:426 src/historyFactory.js:155
+#: data/ui/med-window.blp:428 src/historyFactory.js:155
 msgid "Skipped"
 msgstr "Hoppade över"
 
-#: data/ui/med-window.blp:427 src/historyFactory.js:159
+#: data/ui/med-window.blp:429 src/historyFactory.js:159
 msgid "Missed"
 msgstr "Glömd"
 
-#: data/ui/med-window.blp:434
+#: data/ui/med-window.blp:436
 msgid "Recurring notifications"
 msgstr "Återkommande aviseringar"
 
-#: data/ui/med-window.blp:435
+#: data/ui/med-window.blp:437
 msgid "Renotify until it's confirmed or skipped"
 msgstr "Meddela igen tills det är bekräftat eller hoppade över"
 
-#: data/ui/med-window.blp:439
+#: data/ui/med-window.blp:441
 msgid "Interval in minutes"
 msgstr "Intervall i minuter"
 
-#: data/ui/med-window.blp:451
+#: data/ui/med-window.blp:453
 msgid "Inventory"
 msgstr "Lager"
 
-#: data/ui/med-window.blp:452
+#: data/ui/med-window.blp:454
 msgid "Manage your stock"
 msgstr "Hantera ditt lager"
 
-#: data/ui/med-window.blp:457
+#: data/ui/med-window.blp:459
 msgid "Current"
 msgstr "Nuvarande"
 
-#: data/ui/med-window.blp:468
+#: data/ui/med-window.blp:470
 msgid "Remind me at"
 msgstr "Påminna mig på"
 
-#: data/ui/med-window.blp:481
+#: data/ui/med-window.blp:483
 msgid "Duration"
 msgstr "Längd"
 
-#: data/ui/med-window.blp:482
+#: data/ui/med-window.blp:484
 #, fuzzy
 #| msgid "Set a start and end date"
 msgid "Set start and end dates"
 msgstr "Ange ett start- och slutdatum"
 
 #. TRANSLATORS: label for when duration is enabled
-#: data/ui/med-window.blp:487 src/treatmentsFactory.js:113
+#: data/ui/med-window.blp:489 src/treatmentsFactory.js:113
 msgid "Starts on"
 msgstr "Börjar"
 
-#: data/ui/med-window.blp:495 data/ui/med-window.blp:516
-#: data/ui/med-window.blp:539
+#: data/ui/med-window.blp:497 data/ui/med-window.blp:518
+#: data/ui/med-window.blp:541
 #, fuzzy
 #| msgid "Choose"
 msgid "Choose date"
 msgstr "Välj"
 
-#: data/ui/med-window.blp:508
+#: data/ui/med-window.blp:510
 msgid "Ends on"
 msgstr "Slutar"
 
-#: data/ui/med-window.blp:530
+#: data/ui/med-window.blp:532
 msgid "Date"
 msgstr "Datum"
 
-#: data/ui/med-window.blp:559 src/historyFactory.js:124 src/medWindow.js:384
+#: data/ui/med-window.blp:561 src/historyFactory.js:124 src/medWindow.js:371
 msgid "Delete"
 msgstr "Radera"
 
@@ -395,11 +403,11 @@ msgstr "Aviseringsknappar"
 msgid "Show or hide confirm/skip"
 msgstr "Visa eller dölj bekräfta/hoppa över"
 
-#: data/ui/preferences.blp:57 src/window.js:528 src/window.js:678
+#: data/ui/preferences.blp:57 src/window.js:505 src/window.js:641
 msgid "Confirm"
 msgstr "Bekräfta"
 
-#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:532
+#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:509
 msgid "Skip"
 msgstr "Hoppa över"
 
@@ -415,7 +423,7 @@ msgstr "I dag"
 msgid "Unselect"
 msgstr "Välja bort"
 
-#: data/ui/window.blp:70 src/window.js:678
+#: data/ui/window.blp:70 src/window.js:641
 msgid "One-time entry"
 msgstr "Engångsinträde"
 
@@ -452,69 +460,70 @@ msgstr "Återställa"
 msgid "translator-credits"
 msgstr "skøldis <turtle@turtle.garden>"
 
-#: src/main.js:55
+#: src/main.js:54
 msgid "Thanks to these projects!"
 msgstr "Tack vare dessa projekt!"
 
-#: src/main.js:99
+#. TRANSLATORS: Confirmation message to allow background permission
+#: src/main.js:90
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Acceptera för att tillåta körning i bakgrunden och ta emot aviseringar"
 
-#: src/medWindow.js:127
+#: src/medWindow.js:117
 msgid "Edit treatment"
 msgstr "Redigera behandling"
 
-#: src/medWindow.js:128
+#: src/medWindow.js:118
 msgid "Save"
 msgstr "Spara"
 
-#: src/medWindow.js:235
+#: src/medWindow.js:225
 msgid "New"
 msgstr "Ny"
 
-#: src/medWindow.js:288
+#: src/medWindow.js:278
 msgid "New entry"
 msgstr "Ny notering"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/medWindow.js:290
+#: src/medWindow.js:280
 msgid "Add to history"
 msgstr "Lägg till i historik"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:378
+#: src/medWindow.js:365
 msgid "Are you sure?"
 msgstr "Är du säker?"
 
-#: src/medWindow.js:615
+#: src/medWindow.js:599
 msgid "Choose"
 msgstr "Välj"
 
-#: src/medWindow.js:647
+#: src/medWindow.js:631
 msgid "Specific days"
 msgstr "Särskilda dagar"
 
-#: src/medWindow.js:650 src/treatmentsFactory.js:151
+#: src/medWindow.js:634 src/treatmentsFactory.js:150
 msgid "Cycle"
 msgstr "Cykel"
 
-#: src/medWindow.js:686
+#: src/medWindow.js:670
 msgid "Empty name"
 msgstr "Tömt namn"
 
-#: src/medWindow.js:690
+#: src/medWindow.js:674
 msgid "Empty unit"
 msgstr "Töm enhet"
 
-#: src/medWindow.js:697
+#: src/medWindow.js:680
 msgid "Choose at least one day"
 msgstr "Välj åtminstone en dag"
 
-#: src/medWindow.js:710
+#: src/medWindow.js:691
 msgid "Name already exists"
 msgstr "Namnet finns redan"
 
-#: src/medWindow.js:725
+#: src/medWindow.js:705
 msgid "Duplicated time"
 msgstr "Duplicerad tid"
 
@@ -538,11 +547,11 @@ msgstr "Till"
 msgid "Daily"
 msgstr "Daglig"
 
-#: src/treatmentsFactory.js:139 src/treatmentsFactory.js:142
+#: src/treatmentsFactory.js:138 src/treatmentsFactory.js:141
 msgid "Next dose"
 msgstr "Nästa dos"
 
-#: src/treatmentsFactory.js:155
+#: src/treatmentsFactory.js:154
 msgid "When necessary"
 msgstr "Vid behov"
 
@@ -554,20 +563,20 @@ msgstr "Helger"
 msgid "Weekdays"
 msgstr "Veckodagar"
 
-#: src/utils.js:200
+#: src/utils.js:201
 msgid "Delete dose"
 msgstr "Radera dosering"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:127
+#: src/window.js:113
 msgid "You have treatments low in stock"
 msgstr "Du har behandlingar som har lågt lager"
 
-#: src/window.js:419
+#: src/window.js:401
 msgid "No treatments added yet"
 msgstr "Inga behandlingar har lagts till ännu"
 
-#: src/window.js:424
+#: src/window.js:406
 msgid "All done for today"
 msgstr "Färdig för i dag"
 
