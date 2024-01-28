@@ -5,14 +5,17 @@
 'use strict';
 
 import Gtk from 'gi://Gtk';
+import Gio from 'gi://Gio';
+import GLib from 'gi://GLib';
 
-export default function openPrefsWindow(DosageApplication, container) {
+export default function openPrefsWindow(DosageApplication) {
+	const container = GLib.getenv('container');
+
 	const builder = Gtk.Builder.new_from_resource(
 		'/io/github/diegopvlk/Dosage/ui/preferences.ui',
 	);
 
 	const prefsWindow = builder.get_object('prefsWindow');
-	const autostartRow = builder.get_object('autostartRow');
 	const autostartSwitch = builder.get_object('autostartSwitch');
 	const clearHistSwitch = builder.get_object('clearHistSwitch');
 	const prioritySwitch = builder.get_object('prioritySwitch');
@@ -34,17 +37,35 @@ export default function openPrefsWindow(DosageApplication, container) {
 	notifBtnsHeader.set_activatable(false);
 	notifBtnsExpanderBtn.set_visible(false);
 
-	if (container === 'flatpak') {
-		autostartSwitch.set_active(settings.get_boolean('autostart'));
-		autostartSwitch.connect('state-set', () => {
-			const state = autostartSwitch.get_active();
-			settings.set_boolean('autostart', state);
+	autostartSwitch.set_active(settings.get_boolean('autostart'));
+
+	autostartSwitch.connect('state-set', () => {
+		const state = autostartSwitch.get_active();
+		settings.set_boolean('autostart', state);
+
+		if (container === 'flatpak') {
 			DosageApplication._requestBackground(state);
-		});
-	} else {
-		// no option to disable auto-start
-		autostartRow.set_visible(false);
-	}
+		} else {
+			const autostartFilePath = GLib.build_filenamev([
+				GLib.get_home_dir(),
+				'.config',
+				'autostart',
+				'dosage-tracker-startup.desktop',
+			]);
+			if (state && !GLib.file_test(autostartFilePath, GLib.FileTest.EXISTS)) {
+				GLib.mkdir_with_parents(
+					GLib.path_get_dirname(autostartFilePath),
+					0o755,
+				);
+				const fileContents =
+					'[Desktop Entry]\nType=Application\nName=io.github.diegopvlk.Dosage\nExec=dosage-tracker --startup';
+				GLib.file_set_contents(autostartFilePath, fileContents);
+			} else {
+				const file = Gio.File.new_for_path(autostartFilePath);
+				if (file) file.delete(null);
+			}
+		}
+	});
 
 	clearHistSwitch.set_active(settings.get_boolean('clear-old-hist'));
 

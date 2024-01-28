@@ -29,34 +29,8 @@ export const DosageApplication = GObject.registerClass(
 
 			this.hidden = false;
 
-			const container = GLib.getenv('container');
-
-			// auto-start for non-flatpak
-			if (container !== 'flatpak') {
-				const autostartDir = GLib.build_filenamev([
-					GLib.get_home_dir(),
-					'.config',
-					'autostart',
-				]);
-				const autostartFilePath = GLib.build_filenamev([
-					autostartDir,
-					'dosage-tracker-startup.desktop',
-				]);
-
-				if (!GLib.file_test(autostartFilePath, GLib.FileTest.EXISTS)) {
-					GLib.mkdir_with_parents(autostartDir, 0o755);
-
-					const fileContents =
-						'[Desktop Entry]\nType=Application\nName=io.github.diegopvlk.Dosage\nExec=dosage-tracker --startup';
-
-					GLib.file_set_contents(autostartFilePath, fileContents);
-				}
-			}
-
 			const showPrefAction = new Gio.SimpleAction({ name: 'preferences' });
-			showPrefAction.connect('activate', () =>
-				openPrefsWindow(this, container),
-			);
+			showPrefAction.connect('activate', () => openPrefsWindow(this));
 			this.add_action(showPrefAction);
 			this.set_accels_for_action('app.preferences', ['<primary>comma']);
 
