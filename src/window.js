@@ -16,6 +16,7 @@ import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
 import { historyHeaderFactory, historyItemFactory } from './historyFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
 import openMedicationWindow from './medWindow.js';
+import upgradeItems from './upgradeItems.js';
 
 import {
 	HistorySorter,
@@ -73,7 +74,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 		try {
 			this._createOrLoadJson('treatments', treatmentsFile);
 			this._createOrLoadJson('history', historyFile);
-			this._updateItems();
 			this._addMissedItems();
 			this._updateCycleAndLastUp();
 			this._updateJsonFile('treatments', treatmentsLS);
@@ -185,9 +185,13 @@ class DosageWindow extends Adw.ApplicationWindow {
 			if (success) {
 				const contentString = decoder.decode(contents);
 				if (fileType === 'treatments') {
-					this._loadTreatments(JSON.parse(contentString))
+					const treatments = JSON.parse(contentString);
+					upgradeItems(treatments, fileType);
+					this._loadTreatments(treatments);
 				} else if (fileType === 'history') {
-					this._loadHistory(JSON.parse(contentString))
+					const history = JSON.parse(contentString);
+					upgradeItems(history, fileType);
+					this._loadHistory(history);
 				}
 			} else {
 				log('Failed to read file contents.');
@@ -722,25 +726,6 @@ class DosageWindow extends Adw.ApplicationWindow {
 		updateFile()
 			.then(result => log(result))
 			.catch(err => console.error('Update failed:', err));
-	}
-
-	_updateItems() {
-		// for compatibility
-		for (const item of treatmentsLS) {
-			const info = item.info;
-			const dur = info.duration;
-
-			// change to int and to parse in ms instead of seconds
-			if (typeof dur.start === 'string') {
-				dur.start = +dur.start * 1000;
-				// add duration.end if doesn't exist
-				dur.end = +dur.end * 1000 || dur.start;
-			}
-
-			if (!info.lastUpdate) {
-				info.lastUpdate = new Date().toISOString();
-			}
-		}
 	}
 
 	_addMissedItems() {

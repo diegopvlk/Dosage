@@ -11,5 +11,6 @@
     <file>historyFactory.js</file>
     <file>treatmentsFactory.js</file>
     <file>releaseNotes.js</file>
+    <file>upgradeItems.js</file>
   </gresource>
 </gresources>
