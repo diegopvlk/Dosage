@@ -21,7 +21,7 @@ Adw.Window medWindow {
         }
         [end]
         Button saveButton {
-          styles [ 'suggested-action' ]
+          styles ['suggested-action']
           label: _("Add");
           name: 'save';
         }
@@ -40,7 +40,7 @@ Adw.Window medWindow {
               styles ['boxed-list']
               selection-mode: none;
               MenuButton oneTimeMenu {
-                styles [ 'flat', 'one-time-menu' ]
+                styles ['flat', 'one-time-menu']
                 label: _("From treatment list");
                 popover: Popover {
                   Box oneTimeEntries {
@@ -62,10 +62,12 @@ Adw.Window medWindow {
               }
 
               Adw.ActionRow colorIcon {
-                title: _("Color and icon");
+                styles ['property']
+                title: _("Form");
+                subtitle: _("Color and icon");
                 [suffix]
                 MenuButton dosageColorButton {
-                  styles [ 'circular', 'dosage-icon'  ]
+                  styles ['circular', 'dosage-icon']
                   valign: center;
                   tooltip-text: _("Color");
                   name: 'default';
@@ -134,7 +136,7 @@ Adw.Window medWindow {
                   };
                 }
                 MenuButton dosageIconButton {
-                  styles [ 'circular', 'dosage-icon'  ]
+                  styles ['circular', 'dosage-icon']
                   valign: center;
                   tooltip-text: _("Icon");
                   icon-name: 'pill-symbolic';
@@ -287,25 +289,26 @@ Adw.Window medWindow {
                 }
               }
 
-              Adw.ActionRow frequency {
-                styles [ 'frequency-row' ]
+              Adw.ComboRow frequencyMenu {
+                styles ['property']
+                title: _("Frequency");
+                use-subtitle: true;
+                model: StringList {
+                  strings [
+                    "Every day",
+                    "Specific days",
+                    "Cycle",
+                    "When necessary",
+                  ]
+                };
                 [prefix]
-                DropDown frequencyMenu {
-                  styles [ 'button-start' ]
-                  model: StringList {
-                    strings [
-                      _("Every day"),
-                      _("Specific days"),
-                      _("Cycle"),
-                      _("When necessary")
-                      ]
-                  };
-                }
-                [suffix]
                 MenuButton frequencySpecificDays {
+                  styles ['circular']
                   visible: false;
-                  styles [ 'flat', 'button-end' ]
-                  label: _("Choose");
+                  valign: center;
+                  Adw.ButtonContent {
+                    icon-name: 'view-more-horizontal-symbolic';
+                  }
                   popover: Popover {
                     Box specificDaysBox {
                       spacing: 4;
@@ -347,14 +350,17 @@ Adw.Window medWindow {
                     }
                   };
                 }
-
+                [prefix]
                 MenuButton frequencyCycle {
+                  styles ['circular']
                   visible: false;
-                  styles [ 'flat', 'button-end', 'cycle' ]
-                  label: '21 ⊷ 7';
+                  valign: center;
+                  Adw.ButtonContent {
+                    icon-name: 'view-more-horizontal-symbolic';
+                  }
                   popover: Popover {
                     Box {
-                      styles ['spin-box' ]
+                      styles ['spin-box']
                       orientation: vertical;
                       Adw.SpinRow cycleActive {
                         activatable: false;
@@ -413,7 +419,7 @@ Adw.Window medWindow {
                 [suffix]
                 DropDown oneTimeTaken {
                   visible: false;
-                  styles [ 'button-end' ]
+                  styles ['button-end']
                   model: StringList {
                     strings [
                       _("Confirmed"),
@@ -477,7 +483,7 @@ Adw.Window medWindow {
                 show-enable-switch: true;
                 enable-expansion: false;
                 Adw.ActionRow calendarStartRow {
-                  styles [ 'property' ]
+                  styles ['property']
                   title: _("Starts on");
                   activatable-widget: calendarStartBtn;
                   [suffix]
@@ -486,8 +492,8 @@ Adw.Window medWindow {
                       icon-name: 'month-symbolic';
                     }
                     valign: center;
-                  	tooltip-text: _("Choose date");
-                    styles [ 'circular' ]
+                    tooltip-text: _("Choose start date");
+                    styles ['circular']
                     popover: Popover {
                       Calendar calendarStart {
                         show-day-names: true;
@@ -498,7 +504,7 @@ Adw.Window medWindow {
                   }
                 }
                 Adw.ActionRow calendarEndRow {
-                  styles [ 'property' ]
+                  styles ['property']
                   title: _("Ends on");
                   activatable-widget: calendarEndBtn;
                   [suffix]
@@ -507,8 +513,8 @@ Adw.Window medWindow {
                       icon-name: 'month-symbolic';
                     }
                     valign: center;
-                  	tooltip-text: _("Choose date");
-                    styles [ 'circular' ]
+                    tooltip-text: _("Choose end date");
+                    styles ['circular']
                     popover: Popover {
                       Calendar calendarEnd {
                         show-day-names: true;
@@ -525,7 +531,7 @@ Adw.Window medWindow {
                 activatable-widget: calOneEntryBtn;
                 [suffix]
                 MenuButton calOneEntryBtn {
-                  styles [ 'flat', 'button-end' ]
+                  styles ['flat', 'button-end']
                   label: _("Choose");
                   popover: Popover {
                     Calendar calOneEntry {
@@ -538,7 +544,7 @@ Adw.Window medWindow {
               }
             }
             Button deleteMedication {
-              styles [ 'destructive-action' ]
+              styles ['destructive-action']
               vexpand: true;
               margin-top: 10;
               visible: false;

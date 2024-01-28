@@ -7,7 +7,7 @@
 import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
-import { getDayLabel, isoWeekStart } from './utils.js';
+import { getSpecificDaysLabel } from './utils.js';
 
 export const treatmentsFactory = new Gtk.SignalListItemFactory();
 
@@ -126,23 +126,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			infoLabel.label = _('Daily');
 			break;
 		case 'specific-days':
-			const isWeekend = item.days.every(day => [0, 6].includes(day));
-			const isWeekdays = item.days.every(day => [1, 2, 3, 4, 5].includes(day));
-
-			if (item.days.length === 1) {
-				infoLabel.label = getDayLabel(item.days[0], 'long');
-			} else if (isWeekend) {
-				infoLabel.label = _('Weekends');
-			} else if (isWeekdays && item.days.length === 5) {
-				infoLabel.label = _('Weekdays');
-			} else if (item.days.length === 7) {
-				infoLabel.label = _('Daily');
-			} else {
-				const days = isoWeekStart
-					? [...item.days.slice(1), item.days[0]]
-					: item.days;
-				infoLabel.label = days.map(day => getDayLabel(day)).join(', ');
-			}
+			infoLabel.label = getSpecificDaysLabel(item);
 			break;
 		case 'cycle':
 			const nextDt = new Date(item.cycleNextDate).setHours(0, 0, 0, 0);

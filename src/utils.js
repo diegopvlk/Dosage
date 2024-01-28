@@ -23,6 +23,29 @@ function weekStartsMonday() {
 	return weekNumber === 39;
 }
 
+export function getSpecificDaysLabel(item) {
+	const isWeekend = item.days.every(day => [0, 6].includes(day));
+	const isWeekdays = item.days.every(day => [1, 2, 3, 4, 5].includes(day));
+	let newLabel;
+
+	if (item.days.length === 1) {
+		newLabel = getDayLabel(item.days[0], 'long');
+	} else if (isWeekend) {
+		newLabel = _('Weekends');
+	} else if (isWeekdays && item.days.length === 5) {
+		newLabel = _('Weekdays');
+	} else if (item.days.length === 7) {
+		newLabel = _('Daily');
+	} else {
+		const days = isoWeekStart
+			? [...item.days.slice(1), item.days[0]]
+			: item.days;
+		newLabel = days.map(day => getDayLabel(day)).join(', ');
+	}
+
+	return newLabel;
+}
+
 export const clockIs12 = checkClock();
 
 function checkClock() {

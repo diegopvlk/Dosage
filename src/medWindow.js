@@ -18,6 +18,7 @@ import {
 	removeCssColors,
 	getDayLabel,
 	isoWeekStart,
+	getSpecificDaysLabel,
 } from './utils.js';
 
 import { MedicationObject } from './medication.js';
@@ -82,11 +83,6 @@ export default function openMedicationWindow(
 	const frequencyMenu = builder.get_object('frequencyMenu');
 	const frequencySpecificDays = builder.get_object('frequencySpecificDays');
 	const specificDaysBox = builder.get_object('specificDaysBox');
-	const freqChooseDaysLabel = frequencySpecificDays
-		.get_first_child()
-		.get_first_child()
-		.get_first_child();
-	freqChooseDaysLabel.ellipsize = Pango.EllipsizeMode.END;
 
 	const frequencyCycle = builder.get_object('frequencyCycle');
 	const cycleActive = builder.get_object('cycleActive');
@@ -154,6 +150,9 @@ export default function openMedicationWindow(
 		}
 
 		setFreqMenuVisibility(item);
+		if (item.frequency === 'specific-days') {
+			frequencyMenu.subtitle = getSpecificDaysLabel(item);
+		}
 
 		item.dosage.forEach(timeDose => {
 			dosage.add_row(doseRow(timeDose));
@@ -186,7 +185,9 @@ export default function openMedicationWindow(
 
 			cycleCurrent.adjustment.set_upper(active + inactive);
 
-			frequencyCycle.label = `${active} ⊷ ${inactive}`;
+			if (item.frequency === 'cycle') {
+				frequencyMenu.subtitle = `${active} ⊷ ${inactive}`;
+			}
 		}
 
 		if (item.inventory.enabled) {
@@ -213,7 +214,7 @@ export default function openMedicationWindow(
 	// when activating one-time entry button
 	let existingEntry = false;
 	if (oneTime) {
-		const frequency = builder.get_object('frequency');
+		const frequencyMenu = builder.get_object('frequencyMenu');
 		const colorIcon = builder.get_object('colorIcon');
 		const oneTimeEntries = builder.get_object('oneTimeEntries');
 		const oneTimeTaken = builder.get_object('oneTimeTaken');
@@ -296,7 +297,7 @@ export default function openMedicationWindow(
 		oneTimeTaken.set_visible(true);
 		medNotes.set_visible(false);
 		dosageIconButton.set_visible(false);
-		frequency.set_visible(false);
+		frequencyMenu.set_visible(false);
 		medDuration.set_visible(false);
 		dosageAddButton.get_parent().get_parent().set_visible(false);
 		medInventory.set_visible(false);
@@ -307,6 +308,10 @@ export default function openMedicationWindow(
 
 	cycleActive.connect('output', handleCycle);
 	cycleInactive.connect('output', handleCycle);
+
+	for (const button of specificDaysBox) {
+		button.connect('toggled', setSpecificDaysFreqLabel);
+	}
 
 	let h = 13;
 	dosageAddButton.connect('clicked', () => {
@@ -344,7 +349,7 @@ export default function openMedicationWindow(
 		medWindow.default_height -= 12;
 	}
 
-	setSpecificDaysLabels();
+	setSpecificDaysButtonOrder();
 
 	medWindow.present();
 
@@ -495,10 +500,10 @@ export default function openMedicationWindow(
 			end = start;
 		}
 
-		(name = medName.text.trim()),
-			(unit = medUnit.text.trim()),
-			(notes = medNotes.text.trim()),
-			(days = getSpecificDays());
+		name = medName.text.trim();
+		unit = medUnit.text.trim();
+		notes = medNotes.text.trim();
+		days = getSpecificDays();
 		doses = getDoses();
 		recurring = {};
 		recurring.enabled = recurringNotif.get_enable_expansion();
@@ -598,7 +603,7 @@ export default function openMedicationWindow(
 		return days.sort();
 	}
 
-	function setSpecificDaysLabels() {
+	function setSpecificDaysButtonOrder() {
 		let day = isoWeekStart ? 1 : 0;
 
 		for (const button of specificDaysBox) {
@@ -607,9 +612,19 @@ export default function openMedicationWindow(
 		}
 	}
 
+	function setSpecificDaysFreqLabel() {
+		if (getSpecificDays().length === 0) {
+			frequencyMenu.subtitle = _('Choose');
+		} else {
+			frequencyMenu.subtitle = getSpecificDaysLabel({
+				days: getSpecificDays(),
+			});
+		}
+	}
+
 	function handleCycle() {
 		const sum = cycleActive.value + cycleInactive.value;
-		frequencyCycle.label = cycleActive.value + ' ⊷ ' + cycleInactive.value;
+		frequencyMenu.subtitle = cycleActive.value + ' ⊷ ' + cycleInactive.value;
 		cycleCurrent.adjustment.set_upper(sum);
 		if (cycleCurrent.adjustment.value > sum) {
 			cycleCurrent.adjustment.value = sum;
@@ -617,25 +632,40 @@ export default function openMedicationWindow(
 	}
 
 	function setFreqMenuVisibility(item) {
+		const frequencyMenu = builder.get_object('frequencyMenu');
+		const freqRowPrefixes = frequencyMenu.get_first_child().get_first_child();
+		freqRowPrefixes.set_visible(
+			frequencyMenu.get_selected() === 1 || frequencyMenu.get_selected() === 2,
+		);
+
 		frequencyMenu.connect('notify::selected-item', () => {
-			const selectedItemPos = frequencyMenu.get_selected();
+			const selected = frequencyMenu.get_selected();
+			frequencySpecificDays.set_visible(selected === 1);
+			freqRowPrefixes.set_visible(selected === 1);
+			frequencyCycle.set_visible(selected === 2);
+			freqRowPrefixes.set_visible(selected === 1 || selected === 2);
 
-			frequencySpecificDays.set_visible(selectedItemPos === 1);
-			frequencyCycle.set_visible(selectedItemPos === 2);
+			if (selected === 1) {
+				frequencyMenu.title = _('Specific days');
+				setSpecificDaysFreqLabel();
+			} else if (selected === 2) {
+				frequencyMenu.title = _('Cycle');
+				handleCycle();
+			} else {
+				frequencyMenu.title = _('Frequency');
+			}
 
-			if (selectedItemPos != 3) {
+			if (selected !== 3) {
 				dosage.set_visible(true);
 				medDuration.set_visible(true);
 				recurringNotif.set_visible(true);
 				return;
 			}
-
 			// if when-needed is selected, hide the dosage, duration and recurring rows
 			dosage.set_visible(false);
 			medDuration.set_visible(false);
 			recurringNotif.set_visible(false);
 		});
-
 		if (item) {
 			if (item.frequency === 'daily') frequencyMenu.set_selected(0);
 			if (item.frequency === 'specific-days') frequencyMenu.set_selected(1);

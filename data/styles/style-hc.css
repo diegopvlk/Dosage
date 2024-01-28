@@ -20,12 +20,10 @@ button.pill:not(.suggested-action) {
 	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.6);
 }
 
-.button-start > button,
 .button-end > button {
 	box-shadow: none;
 }
 
-.button-start > button:hover,
 .button-end > button:hover {
 	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.5);
 }
@@ -42,4 +40,8 @@ row.error {
 .blue-clr,
 .purple-clr {
 	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.85);
+}
+
+row.combo .dropdown-arrow {
+	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.6);
 }

@@ -77,30 +77,8 @@ list > row.activatable.header:active {
 	background: @boxed_active;
 }
 
-.button-start > button:hover,
-.button-start > button:checked,
-.button-end:dir(rtl) > button:hover,
-.button-end:dir(rtl) > button:checked {
-	background: linear-gradient(
-		90deg,
-		@boxed_hover 70%,
-		alpha(@boxed_hover, 0.01) 100%
-	);
-}
-
-.button-start > button:active,
-.button-end:dir(rtl) > button:active {
-	background: linear-gradient(
-		90deg,
-		@boxed_active 70%,
-		alpha(@boxed_active, 0.01) 100%
-	);
-}
-
 .button-end > button:hover,
-.button-end > button:checked,
-.button-start:dir(rtl) > button:hover,
-.button-start:dir(rtl) > button:checked {
+.button-end > button:checked {
 	background: linear-gradient(
 		-90deg,
 		@boxed_hover 70%,
@@ -108,8 +86,7 @@ list > row.activatable.header:active {
 	);
 }
 
-.button-end > button:active,
-.button-start:dir(rtl) > button:active {
+.button-end > button:active {
 	background: linear-gradient(
 		-90deg,
 		@boxed_active 70%,
@@ -255,20 +232,17 @@ button.am-pm {
 	padding-right: 21px;
 }
 
-.button-start > button,
 .button-end > button,
 menubutton:not(.one-time-menu) button.arrow-button,
 button.one-time-name {
 	font-weight: 400;
 }
 
-.button-start > button,
 .button-end > button {
 	margin: -2px;
 	background-color: transparent;
 }
 
-.button-start > button,
 .button-end:dir(rtl) > button {
 	margin-left: -14px;
 	border-radius: 5px;
@@ -276,8 +250,7 @@ button.one-time-name {
 	padding-right: 32px;
 }
 
-.button-end > button,
-.button-start:dir(rtl) > button {
+.button-end > button {
 	margin-right: -14px;
 	border-radius: 5px;
 	padding: 0 18px;
@@ -295,28 +268,27 @@ button.specific-day {
 	padding-right: 0;
 }
 
-.button-start popover,
-.button-end popover {
-	margin-top: -5px;
-}
-
-.button-start:dir(ltr) popover {
-	margin-left: -15px;
-}
-
-.button-start:dir(rtl) popover {
-	margin-right: -15px;
-}
-
 popover > contents {
 	border-radius: 16px;
 }
 
-.button-start popover > contents listview row,
-.button-end popover > contents listview row {
+.button-end popover > contents listview row,
+row.combo popover > contents listview row {
 	border-radius: 10px;
 	padding-top: 7px;
 	padding-bottom: 7px;
+}
+
+row.combo .dropdown-arrow {
+	background-color: alpha(currentColor, 0.1);
+	min-height: 34px;
+	padding: 0 9px;
+	border-radius: 99px;
+	transition: background-color 300ms;
+}
+
+row.combo .dropdown-arrow:hover {
+	background-color: alpha(currentColor, 0.15);
 }
 
 menubutton.numeric button {
