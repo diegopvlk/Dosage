@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-28 12:22-0300\n"
+"POT-Creation-Date: 2024-01-28 14:03-0300\n"
 "PO-Revision-Date: 2023-11-27 17:40+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -346,10 +346,8 @@ msgstr "Börjar"
 
 #: data/ui/med-window.blp:497 data/ui/med-window.blp:518
 #: data/ui/med-window.blp:541
-#, fuzzy
-#| msgid "Choose"
 msgid "Choose date"
-msgstr "Välj"
+msgstr ""
 
 #: data/ui/med-window.blp:510
 msgid "Ends on"
@@ -376,7 +374,7 @@ msgid "Auto-clear history"
 msgstr ""
 
 #: data/ui/preferences.blp:25
-msgid "Keeps a maximum of 30 group days"
+msgid "Keeps a maximum of 30 days"
 msgstr ""
 
 #: data/ui/preferences.blp:34

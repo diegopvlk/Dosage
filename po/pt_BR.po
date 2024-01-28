@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-28 12:22-0300\n"
+"POT-Creation-Date: 2024-01-28 14:03-0300\n"
 "PO-Revision-Date: 2023-12-05 19:50+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -371,8 +371,8 @@ msgid "Auto-clear history"
 msgstr "Limpeza de histórico automática"
 
 #: data/ui/preferences.blp:25
-msgid "Keeps a maximum of 30 group days"
-msgstr "Mantém no máximo 30 grupos de dias"
+msgid "Keeps a maximum of 30 days"
+msgstr "Mantém no máximo 30 dias"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"

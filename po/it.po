@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-28 12:22-0300\n"
+"POT-Creation-Date: 2024-01-28 14:03-0300\n"
 "PO-Revision-Date: 2024-01-28 13:43+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
@@ -262,10 +262,8 @@ msgid "Frequency"
 msgstr "Frequenza"
 
 #: data/ui/med-window.blp:309
-#, fuzzy
-#| msgid "Choose date"
 msgid "Choose days"
-msgstr "Scegli la data"
+msgstr ""
 
 #: data/ui/med-window.blp:359
 msgid "Change cycle"
@@ -375,8 +373,8 @@ msgid "Auto-clear history"
 msgstr "Cancella automaticamente la cronologia"
 
 #: data/ui/preferences.blp:25
-msgid "Keeps a maximum of 30 group days"
-msgstr "Mantiene un massimo di 30 giorni di gruppo"
+msgid "Keeps a maximum of 30 days"
+msgstr "Mantiene un massimo di 30 giorni"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"

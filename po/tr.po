@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-28 12:22-0300\n"
+"POT-Creation-Date: 2024-01-28 14:03-0300\n"
 "PO-Revision-Date: 2024-01-28 17:01+0000\n"
 "Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
@@ -374,7 +374,7 @@ msgid "Auto-clear history"
 msgstr "Geçmişi kendiliğinden temizle"
 
 #: data/ui/preferences.blp:25
-msgid "Keeps a maximum of 30 group days"
+msgid "Keeps a maximum of 30 days"
 msgstr "Azami 30 günü koru"
 
 #: data/ui/preferences.blp:34
