@@ -13,6 +13,8 @@ import { clockIs12 } from './utils.js';
 export const historyHeaderFactory = new Gtk.SignalListItemFactory();
 export const historyItemFactory = new Gtk.SignalListItemFactory();
 
+export let removedItem;
+
 historyHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 	const dateLabel = new Gtk.Label({
 		css_classes: ['numeric'],
@@ -88,7 +90,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 		const listView = box.get_parent().get_parent();
 		const listStore = listView.get_model().get_model().get_model();
 
-		globalThis.removedItem = item;
+		removedItem = item;
 		const [, position] = listStore.find(item);
 		listStore.remove(position);
 	});

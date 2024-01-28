@@ -13,7 +13,11 @@ import Pango from 'gi://Pango';
 
 import { MedicationObject } from './medication.js';
 import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
-import { historyHeaderFactory, historyItemFactory } from './historyFactory.js';
+import {
+	historyHeaderFactory,
+	historyItemFactory,
+	removedItem,
+} from './historyFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
 import openMedicationWindow from './medWindow.js';
 import upgradeItems from './upgradeItems.js';
@@ -76,6 +80,13 @@ export const DosageWindow = GObject.registerClass(
 				'default-height',
 				Gio.SettingsBindFlags.DEFAULT,
 			);
+			settings.connect('changed::clear-old-hist', (sett, key) => {
+				if (sett.get_boolean(key) === true) {
+					this._clearOldHistoryEntries();
+					this._updateJsonFile('history', historyLS);
+					this._historyList.scroll_to(0, null, null);
+				}
+			});
 		}
 
 		#start() {
@@ -85,12 +96,16 @@ export const DosageWindow = GObject.registerClass(
 			try {
 				this._createOrLoadJson('treatments', treatmentsFile);
 				this._createOrLoadJson('history', historyFile);
-				this._addMissedItems();
+				if (this._addMissedItems() | this._clearOldHistoryEntries()) {
+					this._updateJsonFile('history', historyLS);
+				}
+				this._setEmptyHistLabel();
 				this._updateCycleAndLastUp();
 				this._updateJsonFile('treatments', treatmentsLS);
 				this._loadToday();
 				this._handleSuspension();
 				this._scheduleNotifications();
+				this._historyList.scroll_to(0, null, null);
 			} catch (err) {
 				console.error('Error loading treatments/history/today:', err);
 			}
@@ -130,6 +145,7 @@ export const DosageWindow = GObject.registerClass(
 				const now = new Date().setHours(0, 0, 0, 0);
 				// update everything at next midnight
 				if (now > lastDate) {
+					this._clearOldHistoryEntries();
 					this._addMissedItems();
 					this._updateEverything();
 					this._historyList.scroll_to(0, null, null);
@@ -280,6 +296,8 @@ export const DosageWindow = GObject.registerClass(
 					this._historyList.set_factory(historyItemFactory);
 
 					historyLS.connect('items-changed', (model, pos, removed, added) => {
+						if (this.clearHist) return;
+
 						if (added) {
 							const itemAdded = model.get_item(pos).obj;
 							for (const it of treatmentsLS) {
@@ -300,19 +318,16 @@ export const DosageWindow = GObject.registerClass(
 							const removedDt = new Date(removedIt.taken[0]);
 							const date = removedDt.setHours(0, 0, 0, 0);
 							const today = new Date().setHours(0, 0, 0, 0);
-
 							if (date === today) {
 								for (const it of treatmentsLS) {
 									const item = it.obj;
 									const sameItem = item.name === removedIt.name;
-
 									if (sameItem) {
 										item.dosage.forEach(timeDose => {
 											for (const _i of this.todayLS) {
 												const sameName = item.name === removedIt.name;
 												const sameTime =
 													String(timeDose.time) === String(removedIt.time);
-
 												// update lastTaken when removing an item
 												// with the same name, time and date of today item
 												if (sameName && sameTime) {
@@ -320,7 +335,6 @@ export const DosageWindow = GObject.registerClass(
 												}
 											}
 										});
-
 										if (item.inventory.enabled && removedIt.taken[1] === 1) {
 											item.inventory.current += removedIt.dose;
 										}
@@ -413,6 +427,36 @@ export const DosageWindow = GObject.registerClass(
 				this._allDoneIcon.set_visible(false);
 				this._emptyToday.set_visible(false);
 			}
+		}
+
+		_clearOldHistoryEntries() {
+			if (!settings.get_boolean('clear-old-hist')) return;
+
+			this.clearHist = true;
+			const itemsHolder = {};
+
+			for (const it of historyLS) {
+				const item = it.obj;
+				const dateKey = new Date(item.taken[0]).setHours(0, 0, 0, 0);
+				if (!itemsHolder[dateKey]) {
+					itemsHolder[dateKey] = [];
+				}
+				itemsHolder[dateKey].push(item);
+			}
+
+			historyLS.remove_all();
+
+			const dateKeys = Object.keys(itemsHolder);
+
+			for (const date of dateKeys.slice(0, 30)) {
+				itemsHolder[date].forEach(item => {
+					historyLS.append(new MedicationObject({ obj: item }));
+				});
+			}
+
+			this.clearHist = false;
+
+			return true;
 		}
 
 		_scheduleNotifications(action) {
@@ -816,11 +860,7 @@ export const DosageWindow = GObject.registerClass(
 				}
 			}
 
-			if (itemsAdded) {
-				this._updateJsonFile('history', historyLS);
-			}
-
-			this._setEmptyHistLabel();
+			return itemsAdded;
 		}
 
 		_updateCycleAndLastUp() {

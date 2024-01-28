@@ -14,6 +14,7 @@ export default function openPrefsWindow(DosageApplication, container) {
 	const prefsWindow = builder.get_object('prefsWindow');
 	const autostartRow = builder.get_object('autostartRow');
 	const autostartSwitch = builder.get_object('autostartSwitch');
+	const clearHistSwitch = builder.get_object('clearHistSwitch');
 	const prioritySwitch = builder.get_object('prioritySwitch');
 	const notifSoundSwitch = builder.get_object('notifSoundSwitch');
 	const confirmSwitch = builder.get_object('confirmSwitch');
@@ -44,6 +45,13 @@ export default function openPrefsWindow(DosageApplication, container) {
 		// no option to disable auto-start
 		autostartRow.set_visible(false);
 	}
+
+	clearHistSwitch.set_active(settings.get_boolean('clear-old-hist'));
+
+	clearHistSwitch.connect('state-set', () => {
+		const state = clearHistSwitch.get_active();
+		settings.set_boolean('clear-old-hist', state);
+	});
 
 	prioritySwitch.set_active(settings.get_boolean('priority'));
 

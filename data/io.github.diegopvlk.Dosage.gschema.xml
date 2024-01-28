@@ -22,5 +22,8 @@
 		<key name="sound" type="b">
 			<default>false</default>
 		</key>
+		<key name="clear-old-hist" type="b">
+			<default>false</default>
+		</key>
 	</schema>
 </schemalist>

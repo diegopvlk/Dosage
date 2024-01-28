@@ -20,6 +20,16 @@ Adw.PreferencesWindow prefsWindow {
           valign: center;
         }
       }
+			Adw.ActionRow {
+        title: _("Clear history automatically");
+        subtitle: _("Keeps a maximum of 30 group days");
+        activatable-widget: clearHistSwitch;
+        [suffix]
+        Switch clearHistSwitch {
+          halign: center;
+          valign: center;
+        }
+      }
       Adw.ActionRow {
         title: _("Increase notification priority");
         subtitle: _("On GNOME this will make the notification show on fullscreen mode or even if 'Do Not Disturb' is enabled");
