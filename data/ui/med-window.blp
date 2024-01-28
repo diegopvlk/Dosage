@@ -290,7 +290,7 @@ Adw.Window medWindow {
               }
 
               Adw.ComboRow frequencyMenu {
-                styles ['property']
+                styles ['property', 'numeric']
                 title: _("Frequency");
                 use-subtitle: true;
                 model: StringList {
@@ -483,7 +483,7 @@ Adw.Window medWindow {
                 show-enable-switch: true;
                 enable-expansion: false;
                 Adw.ActionRow calendarStartRow {
-                  styles ['property']
+                  styles ['property', 'numeric']
                   title: _("Starts on");
                   activatable-widget: calendarStartBtn;
                   [suffix]
@@ -504,7 +504,7 @@ Adw.Window medWindow {
                   }
                 }
                 Adw.ActionRow calendarEndRow {
-                  styles ['property']
+                  styles ['property', 'numeric']
                   title: _("Ends on");
                   activatable-widget: calendarEndBtn;
                   [suffix]
@@ -526,7 +526,7 @@ Adw.Window medWindow {
                 }
               }
 							Adw.ActionRow dateOneEntry {
-								styles ['property']
+								styles ['property', 'numeric']
 								title: _("Date");
 								visible: false;
 								activatable-widget: calOneEntryBtn;

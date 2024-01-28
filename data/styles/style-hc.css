@@ -2,9 +2,19 @@ popover contents {
 	border: 1px solid alpha(currentColor, 0.6);
 }
 
-.badge {
+.badge-box {
 	border: 1px solid alpha(currentColor, 0.66);
 	opacity: 0.8;
+}
+
+.badge-icon:dir(ltr) {
+	margin-left: -1px;
+	padding-left: 3px;
+}
+
+.badge-icon:dir(rtl) {
+	margin-right: -1px;
+	padding-right: 3px;
 }
 
 .low-stock-badge {

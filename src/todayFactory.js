@@ -16,6 +16,7 @@ export const todayItemFactory = new Gtk.SignalListItemFactory();
 
 todayHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 	const timeLabel = new Gtk.Label({
+		css_classes: ['numeric'],
 		halign: Gtk.Align.START,
 		margin_bottom: 1,
 	});
@@ -73,7 +74,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	});
 	labelsBox.append(name);
 	const doseAndNotes = new Gtk.Label({
-		css_classes: ['subtitle'],
+		css_classes: ['subtitle', 'numeric'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 	});

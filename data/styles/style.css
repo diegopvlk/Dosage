@@ -184,7 +184,8 @@ row:focus {
 	border-radius: 6px;
 }
 
-.badge {
+.badge-box {
+	min-height: 16px;
 	background-color: alpha(currentColor, 0.13);
 	border: 1px solid alpha(currentColor, 0.23);
 	padding: 3px 7px;
@@ -195,14 +196,33 @@ row:focus {
 	opacity: 0.72;
 }
 
-.badge-icon {
-	padding-right: 5px;
+.badge-icon:dir(ltr) {
+	background-color: alpha(currentColor, 0.23);
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	padding-left: 2px;
+	padding-right: 4px;
 }
 
 .badge-icon:dir(rtl) {
-	padding-left: 5px;
+	background-color: alpha(currentColor, 0.23);
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	padding-right: 2px;
+	padding-left: 4px;
 }
 
+.badge-end-border:dir(ltr) {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	padding-right: 4px;
+}
+
+.badge-end-border:dir(rtl) {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	padding-left: 4px;
+}
 .low-stock-badge {
 	background-color: alpha(currentColor, 0.18);
 	border: 1px solid alpha(currentColor, 0.48);

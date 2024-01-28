@@ -15,6 +15,7 @@ export const historyItemFactory = new Gtk.SignalListItemFactory();
 
 historyHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 	const dateLabel = new Gtk.Label({
+		css_classes: ['numeric'],
 		halign: Gtk.Align.START,
 		margin_bottom: 1,
 	});
@@ -59,23 +60,23 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	});
 	labelsBox.append(name);
 	const dose = new Gtk.Label({
-		css_classes: ['subtitle'],
+		css_classes: ['subtitle', 'numeric'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
 	labelsBox.append(dose);
 	const takenBox = new Gtk.Box({
-		css_classes: ['badge'],
 		valign: Gtk.Align.CENTER,
 		margin_end: 15,
 	});
 	const takenLabel = new Gtk.Label({
+		css_classes: ['badge-box', 'numeric'],
 		valign: Gtk.Align.CENTER,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
 	const takenIcon = new Gtk.Image({
-		icon_name: 'check-round-outline-whole-symbolic',
-		margin_start: 3,
+		css_classes: ['badge-box', 'badge-icon'],
+		icon_name: 'check-confirmed',
 	});
 	takenBox.append(takenLabel);
 	takenBox.append(takenIcon);
@@ -147,15 +148,15 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	if (item.taken[1] === 1) {
 		takenLabel.label = `${takenTime}`;
 		takenIcon.set_visible(true);
-		takenBox.add_css_class('badge-icon');
+		takenLabel.add_css_class('badge-end-border');
 	} else if (item.taken[1] === 0) {
 		takenLabel.label = _('Skipped');
 		takenIcon.set_visible(false);
-		takenBox.remove_css_class('badge-icon');
+		takenLabel.remove_css_class('badge-end-border');
 	} else if (item.taken[1] === -1) {
 		takenLabel.label = _('Missed');
 		takenIcon.set_visible(false);
-		takenBox.remove_css_class('badge-icon');
+		takenLabel.remove_css_class('badge-end-border');
 	}
 
 	[

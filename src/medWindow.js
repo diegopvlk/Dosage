@@ -8,7 +8,6 @@ import Adw from 'gi://Adw?version=1';
 import Gdk from 'gi://Gdk';
 import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
-import Pango from 'gi://Pango';
 
 import {
 	addLeadZero,
