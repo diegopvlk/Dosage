@@ -119,7 +119,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 
 	calendarStartBtn.label = GLib.DateTime.new_now_local().format('%x');
 	calendarEndBtn.label = GLib.DateTime.new_now_local().format('%x');
-	  
+
 	handleCalendarSelect(calendarStart, calendarStartBtn);
 	handleCalendarSelect(calendarEnd, calendarEndBtn);
 
@@ -183,7 +183,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 
 			cycleCurrent.adjustment.set_upper(active + inactive);
 
-			frequencyCycle.label = `${active}  ⊷  ${inactive}`;
+			frequencyCycle.label = `${active} ⊷ ${inactive}`;
 		}
 
 		if (info.inventory.enabled) {
@@ -588,7 +588,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 
 	function handleCycle() {
 		const sum = cycleActive.value + cycleInactive.value;
-		frequencyCycle.label = cycleActive.value + '  ⊷  ' + cycleInactive.value;
+		frequencyCycle.label = cycleActive.value + ' ⊷ ' + cycleInactive.value;
 		cycleCurrent.adjustment.set_upper(sum);
 		if (cycleCurrent.adjustment.value > sum) {
 			cycleCurrent.adjustment.value = sum;

@@ -152,7 +152,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			if (info.duration.enabled) {
 				durationNextDateLabel.label = untilLabel;
 				if (nextDt > today && nextDt <= end) {
-					durationNextDateLabel.label += '  •  ' + _('Next dose') + `: ${nextDate}`;
+					durationNextDateLabel.label += ' • ' + _('Next dose') + `: ${nextDate}`;
 				}
 			} else if (nextDt > today) {
 				durationNextDateLabel.label = _('Next dose') + `: ${nextDate}`;
@@ -164,7 +164,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 				durationNextDateLabel.set_visible(true);
 			}
 
-			infoLabel.label = _('Cycle') + '  •  ';
+			infoLabel.label = _('Cycle') + ' • ';
 			infoLabel.label += `${info.cycle[0]}` + ' ⊷ ' + `${info.cycle[1]}`;
 			break;
 		case 'when-needed':
@@ -177,7 +177,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	}
 
 	if (info.notes !== '') {
-		infoLabel.label += `  •  ${info.notes}`;
+		infoLabel.label += ` • ${info.notes}`;
 	}
 
 	const colors = [

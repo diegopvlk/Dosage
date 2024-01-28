@@ -28,7 +28,7 @@ historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const dateTime = GLib.DateTime.new_from_iso8601(item.date, null);
 	const localDT = dateTime.to_timezone(localTZ);
 
-	let date = localDT.format('%A  •  %x');
+	let date = localDT.format('%A • %x');
 	date = date.charAt(0).toUpperCase() + date.slice(1);
 	dateLabel.label = date;
 });
@@ -123,7 +123,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const m = String(minutes).padStart(2, 0);
 
 	nameLabel.label = item.name;
-	doseLabel.label = `${item.info.dose} ${item.unit}  •  ${h}∶${m}` + period;
+	doseLabel.label = `${item.info.dose} ${item.unit} • ${h}∶${m}` + period;
 
 	let takenTime = localDT.format('%X').replace(':', '∶');
 	let parts = takenTime.split(' ');
