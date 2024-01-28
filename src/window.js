@@ -650,6 +650,7 @@ class DosageWindow extends Adw.ApplicationWindow {
 	}
 
 	_insertItemToHistory(item, taken, missedDate, isNotif) {
+		delete item.info.dosage.lastTaken;
 		historyLS.insert(
 			0,
 			new HistoryMedication({
