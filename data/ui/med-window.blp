@@ -525,23 +525,28 @@ Adw.Window medWindow {
                   }
                 }
               }
-              Adw.ActionRow dateOneEntry {
-                visible: false;
-                title: _("Date");
-                activatable-widget: calOneEntryBtn;
-                [suffix]
-                MenuButton calOneEntryBtn {
-                  styles ['flat', 'button-end']
-                  label: _("Choose");
-                  popover: Popover {
-                    Calendar calOneEntry {
-                      show-day-names: true;
-                      show-week-numbers: false;
-                      show-heading: true;
-                    }
-                  };
-                }
-              }
+							Adw.ActionRow dateOneEntry {
+								styles ['property']
+								title: _("Date");
+								visible: false;
+								activatable-widget: calOneEntryBtn;
+								[suffix]
+								MenuButton calOneEntryBtn {
+									Adw.ButtonContent {
+										icon-name: 'month-symbolic';
+									}
+									valign: center;
+									tooltip-text: _("Choose date");
+									styles ['circular']
+									popover: Popover {
+										Calendar calOneEntry {
+											show-day-names: true;
+											show-week-numbers: false;
+											show-heading: true;
+										}
+									};
+								}
+							}
             }
             Button deleteMedication {
               styles ['destructive-action']

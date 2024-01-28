@@ -36,7 +36,6 @@ export default function openMedicationWindow(
 
 	const dateOneEntry = builder.get_object('dateOneEntry');
 	const calOneEntry = builder.get_object('calOneEntry');
-	const calOneEntryBtn = builder.get_object('calOneEntryBtn');
 	const oneTimeMenuRow = builder.get_object('oneTimeMenu').get_parent();
 	oneTimeMenuRow.set_visible(false);
 
@@ -254,8 +253,8 @@ export default function openMedicationWindow(
 			existingEntry = false;
 		});
 
-		calOneEntryBtn.label = GLib.DateTime.new_now_local().format('%x');
-		handleCalendarSelect(calOneEntry, calOneEntryBtn, true);
+		dateOneEntry.subtitle = GLib.DateTime.new_now_local().format('%x');
+		handleCalendarSelect(calOneEntry, dateOneEntry, true);
 
 		if (DosageWindow._treatmentsList.model.get_n_items() > 0) {
 			oneTimeMenuRow.set_visible(true);
@@ -290,7 +289,7 @@ export default function openMedicationWindow(
 		medWindow.title = _('New entry');
 		// TRANSLATORS: Keep it short (button to add one-time entry to history)
 		saveButton.label = _('Add to history');
-		colorIcon.title = _('Color');
+		colorIcon.subtitle = _('Color');
 		medWindow.add_css_class('one-time');
 
 		dateOneEntry.set_visible(true);
