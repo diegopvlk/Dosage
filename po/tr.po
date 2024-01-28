@@ -569,13 +569,11 @@ msgstr "Henüz ilaç eklenmedi"
 msgid "All done for today"
 msgstr "Bugünlük her şey bitti"
 
-#: data/ui/preferences.blp:15
-msgid "Autostart at login"
-msgstr "Girişte kendiliğinden başlat"
+#~ msgid "Autostart at login"
+#~ msgstr "Girişte kendiliğinden başlat"
 
-#: data/ui/preferences.blp:24
-msgid "Clear history automatically"
-msgstr "Geçmişi kendiliğinden temizle"
+#~ msgid "Clear history automatically"
+#~ msgstr "Geçmişi kendiliğinden temizle"
 
 #~ msgid "medication"
 #~ msgstr "tedavi"
