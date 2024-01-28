@@ -118,15 +118,15 @@ export default function openMedicationWindow(
 
 	const medDuration = builder.get_object('duration');
 	const calendarStart = builder.get_object('calendarStart');
-	const calendarStartBtn = builder.get_object('calendarStartBtn');
+	const calendarStartRow = builder.get_object('calendarStartRow');
 	const calendarEnd = builder.get_object('calendarEnd');
-	const calendarEndBtn = builder.get_object('calendarEndBtn');
+	const calendarEndRow = builder.get_object('calendarEndRow');
 
-	calendarStartBtn.label = GLib.DateTime.new_now_local().format('%x');
-	calendarEndBtn.label = GLib.DateTime.new_now_local().format('%x');
+	calendarStartRow.subtitle = GLib.DateTime.new_now_local().format('%x');
+	calendarEndRow.subtitle = GLib.DateTime.new_now_local().format('%x');
 
-	handleCalendarSelect(calendarStart, calendarStartBtn);
-	handleCalendarSelect(calendarEnd, calendarEndBtn);
+	handleCalendarSelect(calendarStart, calendarStartRow);
+	handleCalendarSelect(calendarEnd, calendarEndRow);
 
 	// when opening an existing treatment
 	if (list && position >= 0) {

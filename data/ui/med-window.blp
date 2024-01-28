@@ -473,16 +473,21 @@ Adw.Window medWindow {
 
               Adw.ExpanderRow duration {
                 title: _("Duration");
-                subtitle: _("Set a start and end date");
+                subtitle: _("Set start and end dates");
                 show-enable-switch: true;
                 enable-expansion: false;
-                Adw.ActionRow {
+                Adw.ActionRow calendarStartRow {
+                  styles [ 'property' ]
                   title: _("Starts on");
                   activatable-widget: calendarStartBtn;
                   [suffix]
                   MenuButton calendarStartBtn {
-                    styles [ 'flat', 'button-end' ]
-                    label: _("Choose");
+                    Adw.ButtonContent {
+                      icon-name: 'month-symbolic';
+                    }
+                    valign: center;
+                  	tooltip-text: _("Choose date");
+                    styles [ 'circular' ]
                     popover: Popover {
                       Calendar calendarStart {
                         show-day-names: true;
@@ -492,13 +497,18 @@ Adw.Window medWindow {
                     };
                   }
                 }
-                Adw.ActionRow {
+                Adw.ActionRow calendarEndRow {
+                  styles [ 'property' ]
                   title: _("Ends on");
                   activatable-widget: calendarEndBtn;
                   [suffix]
                   MenuButton calendarEndBtn {
-                    styles [ 'flat', 'button-end' ]
-                    label: _("Choose");
+                    Adw.ButtonContent {
+                      icon-name: 'month-symbolic';
+                    }
+                    valign: center;
+                  	tooltip-text: _("Choose date");
+                    styles [ 'circular' ]
                     popover: Popover {
                       Calendar calendarEnd {
                         show-day-names: true;

@@ -35,6 +35,7 @@
 		<file alias="med-drop-symbolic.svg">icons/ui/med-drop-symbolic.svg</file>
 		<file alias="magic-potion-symbolic.svg">icons/ui/magic-potion-symbolic.svg</file>
 
+		<file alias="month-symbolic.svg">icons/ui/month-symbolic.svg</file>
 		<file alias="check-round-outline-whole-symbolic.svg">icons/ui/check-round-outline-whole-symbolic.svg</file>
 		<file alias="all-done-symbolic.svg">icons/ui/all-done-symbolic.svg</file>
 	</gresource>

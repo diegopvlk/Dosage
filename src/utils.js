@@ -80,7 +80,7 @@ export function createTempObj(type, listStore) {
 	}
 }
 
-export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
+export function handleCalendarSelect(calendar, calendarRow, oneTime) {
 	const today = GLib.DateTime.new_now_local().format('%F');
 	calendar.connect('day-selected', cal => {
 		const selDate = cal.get_date().format('%F');
@@ -100,7 +100,7 @@ export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
 			cal.remove_css_class('calendar-warning');
 		}
 
-		calendarBtn.label = cal.get_date().format('%x');
+		calendarRow.subtitle = cal.get_date().format('%x');
 	});
 }
 
