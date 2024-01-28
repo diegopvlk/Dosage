@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-28 12:22-0300\n"
 "PO-Revision-Date: 2024-01-28 17:01+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/es/"
 ">\n"
 "Language: es\n"
@@ -260,15 +260,15 @@ msgstr "Poción"
 
 #: data/ui/med-window.blp:294 src/medWindow.js:637
 msgid "Frequency"
-msgstr ""
+msgstr "Frecuencia"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
-msgstr ""
+msgstr "Elegir días"
 
 #: data/ui/med-window.blp:359
 msgid "Change cycle"
-msgstr ""
+msgstr "Cambiar de ciclo"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"
@@ -336,10 +336,8 @@ msgid "Duration"
 msgstr "Duración"
 
 #: data/ui/med-window.blp:484
-#, fuzzy
-#| msgid "Set a start and end date"
 msgid "Set start and end dates"
-msgstr "Fijar una fecha de inicio y fin"
+msgstr "Fijar fechas de inicio y fin"
 
 #. TRANSLATORS: label for when duration is enabled
 #: data/ui/med-window.blp:489 src/treatmentsFactory.js:113
@@ -349,7 +347,7 @@ msgstr "Comienza el"
 #: data/ui/med-window.blp:497 data/ui/med-window.blp:518
 #: data/ui/med-window.blp:541
 msgid "Choose date"
-msgstr ""
+msgstr "Elija la fecha"
 
 #: data/ui/med-window.blp:510
 msgid "Ends on"
@@ -373,11 +371,11 @@ msgstr "Arranque automático al iniciar sesión"
 
 #: data/ui/preferences.blp:24
 msgid "Auto-clear history"
-msgstr ""
+msgstr "Borrar historial automáticamente"
 
 #: data/ui/preferences.blp:25
 msgid "Keeps a maximum of 30 group days"
-msgstr ""
+msgstr "Mantener máximo 30 días"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"
