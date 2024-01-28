@@ -439,9 +439,10 @@ export default function openMedicationWindow(
 		// update lastTaken if entryDate is today
 		for (const it of treatmentsLS) {
 			const i = it.obj;
+			const newIt = item.obj;
 			i.dosage.forEach(timeDose => {
-				const sameName = i.name === item.name;
-				const sameTime = String(timeDose.time) === String(i.time);
+				const sameName = i.name === newIt.name;
+				const sameTime = String(timeDose.time) === String(newIt.time);
 				if (sameName && sameTime) {
 					timeDose.lastTaken = new Date().toISOString();
 				}
