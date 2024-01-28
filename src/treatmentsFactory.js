@@ -156,7 +156,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			break;
 	}
 
-	if (end < today || end < start) {
+	if (item.duration.enabled && (end < today || end < start)) {
 		durationNextDateLabel.label = untilLabel;
 	}
 
