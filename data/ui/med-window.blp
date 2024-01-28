@@ -306,6 +306,7 @@ Adw.Window medWindow {
                   styles ['circular']
                   visible: false;
                   valign: center;
+                  tooltip-text: _("Choose days");
                   Adw.ButtonContent {
                     icon-name: 'view-more-horizontal-symbolic';
                   }
@@ -355,6 +356,7 @@ Adw.Window medWindow {
                   styles ['circular']
                   visible: false;
                   valign: center;
+                  tooltip-text: _("Change cycle");
                   Adw.ButtonContent {
                     icon-name: 'view-more-horizontal-symbolic';
                   }
@@ -525,28 +527,28 @@ Adw.Window medWindow {
                   }
                 }
               }
-							Adw.ActionRow dateOneEntry {
-								styles ['property', 'numeric']
-								title: _("Date");
-								visible: false;
-								activatable-widget: calOneEntryBtn;
-								[suffix]
-								MenuButton calOneEntryBtn {
-									Adw.ButtonContent {
-										icon-name: 'month-symbolic';
-									}
-									valign: center;
-									tooltip-text: _("Choose date");
-									styles ['circular']
-									popover: Popover {
-										Calendar calOneEntry {
-											show-day-names: true;
-											show-week-numbers: false;
-											show-heading: true;
-										}
-									};
-								}
-							}
+              Adw.ActionRow dateOneEntry {
+                styles ['property', 'numeric']
+                title: _("Date");
+                visible: false;
+                activatable-widget: calOneEntryBtn;
+                [suffix]
+                MenuButton calOneEntryBtn {
+                  Adw.ButtonContent {
+                    icon-name: 'month-symbolic';
+                  }
+                  valign: center;
+                  tooltip-text: _("Choose date");
+                  styles ['circular']
+                  popover: Popover {
+                    Calendar calOneEntry {
+                      show-day-names: true;
+                      show-week-numbers: false;
+                      show-heading: true;
+                    }
+                  };
+                }
+              }
             }
             Button deleteMedication {
               styles ['destructive-action']
