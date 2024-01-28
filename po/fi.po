@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-27 23:08-0300\n"
+"POT-Creation-Date: 2024-01-28 08:52-0300\n"
 "PO-Revision-Date: 2024-01-21 13:01+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
@@ -355,11 +355,11 @@ msgid "Preferences"
 msgstr "Asetukset"
 
 #: data/ui/preferences.blp:15
-msgid "Autostart at login"
+msgid "Auto-start at login"
 msgstr "Käynnistä kirjautumisen yhteydessä"
 
 #: data/ui/preferences.blp:24
-msgid "Clear history automatically"
+msgid "Auto-clear history"
 msgstr ""
 
 #: data/ui/preferences.blp:25

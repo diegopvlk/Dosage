@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-27 23:08-0300\n"
+"POT-Creation-Date: 2024-01-28 08:52-0300\n"
 "PO-Revision-Date: 2023-12-17 19:57+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -356,11 +356,11 @@ msgid "Preferences"
 msgstr "Preferências"
 
 #: data/ui/preferences.blp:15
-msgid "Autostart at login"
+msgid "Auto-start at login"
 msgstr "Início automático no login"
 
 #: data/ui/preferences.blp:24
-msgid "Clear history automatically"
+msgid "Auto-clear history"
 msgstr ""
 
 #: data/ui/preferences.blp:25

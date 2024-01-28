@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-27 23:08-0300\n"
+"POT-Creation-Date: 2024-01-28 08:52-0300\n"
 "PO-Revision-Date: 2023-12-05 19:50+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -151,7 +151,7 @@ msgstr "Após refeição"
 
 #: data/ui/med-window.blp:66
 msgid "Form"
-msgstr ""
+msgstr "Forma"
 
 #: data/ui/med-window.blp:67
 msgid "Color and icon"
@@ -257,7 +257,7 @@ msgstr "Poção"
 
 #: data/ui/med-window.blp:294 src/medWindow.js:653
 msgid "Frequency"
-msgstr ""
+msgstr "Frequência"
 
 #: data/ui/med-window.blp:368
 msgid "Days active"
@@ -355,16 +355,16 @@ msgid "Preferences"
 msgstr "Preferências"
 
 #: data/ui/preferences.blp:15
-msgid "Autostart at login"
+msgid "Auto-start at login"
 msgstr "Início automático no login"
 
 #: data/ui/preferences.blp:24
-msgid "Clear history automatically"
-msgstr ""
+msgid "Auto-clear history"
+msgstr "Limpeza de histórico automática"
 
 #: data/ui/preferences.blp:25
 msgid "Keeps a maximum of 30 group days"
-msgstr ""
+msgstr "Mantém no máximo 30 grupos de dias"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"

@@ -12,7 +12,7 @@ Adw.PreferencesWindow prefsWindow {
     valign: center;
     Adw.PreferencesGroup {
       Adw.ActionRow {
-        title: _("Autostart at login");
+        title: _("Auto-start at login");
         activatable-widget: autostartSwitch;
         [suffix]
         Switch autostartSwitch {
@@ -20,8 +20,8 @@ Adw.PreferencesWindow prefsWindow {
           valign: center;
         }
       }
-			Adw.ActionRow {
-        title: _("Clear history automatically");
+      Adw.ActionRow {
+        title: _("Auto-clear history");
         subtitle: _("Keeps a maximum of 30 group days");
         activatable-widget: clearHistSwitch;
         [suffix]
