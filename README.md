@@ -1,15 +1,17 @@
 <img style="vertical-align: middle;" src="data/icons/hicolor/scalable/apps/io.github.diegopvlk.Dosage.svg" width="128" height="128" align="left">
 
 ## Dosage
+
 Keep track of your treatments
 
 <br>
 
 </a> <a href='https://flathub.org/apps/io.github.diegopvlk.Dosage'><img width='240' alt='Download on Flathub' src='https://dl.flathub.org/assets/badges/flathub-badge-en.svg'/></a> <a href="https://snapcraft.io/dosage-tracker">
-  <img height='80' alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
+<img height='80' alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
 </a>
 
 ### Features
+
 - **Notifications** — Get reminders at the right time
 - **History** — See which medications you took, skipped or missed
 - **Dosage management** — Multiple doses with different times
@@ -29,12 +31,15 @@ Keep track of your treatments
 </div>
 
 ### Donate
+
 If you want to help with a donation (thank you!), you can use:
+
 - [PayPal](https://www.paypal.com/donate?hosted_button_id=DVL7H35GA66X6)
 - [Ko-fi](https://ko-fi.com/diegopvlk)
 - Pix: diego.pvlk@gmail.com
 
 ### Translations
+
 You can help translate using [Weblate](https://hosted.weblate.org/projects/dosage/dosage/)
 
 <a href="https://hosted.weblate.org/engage/dosage/">
@@ -42,4 +47,5 @@ You can help translate using [Weblate](https://hosted.weblate.org/projects/dosag
 </a>
 
 ### Build from source
+
 Clone the repo in GNOME Builder and press run

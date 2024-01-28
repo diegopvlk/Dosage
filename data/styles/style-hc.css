@@ -1,25 +1,25 @@
 popover contents {
-	border: 1px solid alpha(currentColor, 0.6);
+  border: 1px solid alpha(currentColor, 0.6);
 }
 
 .badge-box {
-	border: 1px solid alpha(currentColor, 0.66);
-	opacity: 0.8;
+  border: 1px solid alpha(currentColor, 0.66);
+  opacity: 0.8;
 }
 
 .badge-icon:dir(ltr) {
-	margin-left: -1px;
-	padding-left: 3px;
+  margin-left: -1px;
+  padding-left: 3px;
 }
 
 .badge-icon:dir(rtl) {
-	margin-right: -1px;
-	padding-right: 3px;
+  margin-right: -1px;
+  padding-right: 3px;
 }
 
 .low-stock-badge {
-	border: 1px solid alpha(currentColor, 0.9);
-	opacity: 1;
+  border: 1px solid alpha(currentColor, 0.9);
+  opacity: 1;
 }
 
 .boxed-list > row,
@@ -27,19 +27,19 @@ popover contents {
 .time-box spinbutton button,
 spinbutton.every-x button,
 button.pill:not(.suggested-action) {
-	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.6);
+  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.6);
 }
 
 .button-end > button {
-	box-shadow: none;
+  box-shadow: none;
 }
 
 .button-end > button:hover {
-	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.5);
+  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.5);
 }
 
 row.error {
-	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.85);
+  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.85);
 }
 
 .red-clr,
@@ -49,9 +49,9 @@ row.error {
 .cyan-clr,
 .blue-clr,
 .purple-clr {
-	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.85);
+  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.85);
 }
 
 row.combo .dropdown-arrow {
-	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.6);
+  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.6);
 }

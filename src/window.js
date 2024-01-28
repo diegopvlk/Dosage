@@ -13,11 +13,7 @@ import Pango from 'gi://Pango';
 
 import { MedicationObject } from './medication.js';
 import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
-import {
-	historyHeaderFactory,
-	historyItemFactory,
-	removedItem,
-} from './historyFactory.js';
+import { historyHeaderFactory, historyItemFactory, removedItem } from './historyFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
 import openMedicationWindow from './medWindow.js';
 import upgradeItems from './upgradeItems.js';
@@ -68,18 +64,8 @@ export const DosageWindow = GObject.registerClass(
 		#loadSettings() {
 			const appId = this.get_application().get_application_id();
 			globalThis.settings = new Gio.Settings({ schemaId: appId });
-			settings.bind(
-				'window-width',
-				this,
-				'default-width',
-				Gio.SettingsBindFlags.DEFAULT,
-			);
-			settings.bind(
-				'window-height',
-				this,
-				'default-height',
-				Gio.SettingsBindFlags.DEFAULT,
-			);
+			settings.bind('window-width', this, 'default-width', Gio.SettingsBindFlags.DEFAULT);
+			settings.bind('window-height', this, 'default-height', Gio.SettingsBindFlags.DEFAULT);
 			settings.connect('changed::clear-old-hist', (sett, key) => {
 				if (sett.get_boolean(key) === true) {
 					this._clearOldHistoryEntries();
@@ -246,14 +232,11 @@ export const DosageWindow = GObject.registerClass(
 			try {
 				if (treatmentsLS.get_n_items() === 0) {
 					treatmentsJson.treatments.forEach(med => {
-						treatmentsLS.insert_sorted(
-							new MedicationObject({ obj: med }),
-							(a, b) => {
-								const name1 = a.obj.name;
-								const name2 = b.obj.name;
-								return name1.localeCompare(name2);
-							},
-						);
+						treatmentsLS.insert_sorted(new MedicationObject({ obj: med }), (a, b) => {
+							const name1 = a.obj.name;
+							const name2 = b.obj.name;
+							return name1.localeCompare(name2);
+						});
 					});
 
 					this._treatmentsList.set_factory(treatmentsFactory);
@@ -326,8 +309,7 @@ export const DosageWindow = GObject.registerClass(
 										item.dosage.forEach(timeDose => {
 											for (const _i of this.todayLS) {
 												const sameName = item.name === removedIt.name;
-												const sameTime =
-													String(timeDose.time) === String(removedIt.time);
+												const sameTime = String(timeDose.time) === String(removedIt.time);
 												// update lastTaken when removing an item
 												// with the same name, time and date of today item
 												if (sameName && sameTime) {
@@ -483,10 +465,7 @@ export const DosageWindow = GObject.registerClass(
 			const itemMin = item.time[1];
 
 			// milliseconds
-			let timeDiff =
-				(itemHour - hours) * 3600000 +
-				(itemMin - minutes) * 60000 -
-				seconds * 1000;
+			let timeDiff = (itemHour - hours) * 3600000 + (itemMin - minutes) * 60000 - seconds * 1000;
 
 			let pseudoId = JSON.stringify({
 				name: item.name,
@@ -519,9 +498,7 @@ export const DosageWindow = GObject.registerClass(
 
 				notification.set_title(item.name);
 				notification.set_body(
-					`${item.dose} ${item.unit} • ` +
-						`${addLeadZero(h)}∶${addLeadZero(m)}` +
-						period,
+					`${item.dose} ${item.unit} • ` + `${addLeadZero(h)}∶${addLeadZero(m)}` + period,
 				);
 
 				if (settings.get_boolean('confirm-button')) {
@@ -535,23 +512,15 @@ export const DosageWindow = GObject.registerClass(
 				const confirmAction = new Gio.SimpleAction({
 					name: `confirm${pseudoId}`,
 				});
-				confirmAction.connect('activate', () =>
-					this._addNotifItemToHistory(item, 1),
-				);
+				confirmAction.connect('activate', () => this._addNotifItemToHistory(item, 1));
 
 				const skipAction = new Gio.SimpleAction({ name: `skip${pseudoId}` });
-				skipAction.connect('activate', () =>
-					this._addNotifItemToHistory(item, 0),
-				);
+				skipAction.connect('activate', () => this._addNotifItemToHistory(item, 0));
 
 				app.add_action(confirmAction);
 				app.add_action(skipAction);
 
-				if (
-					settings.get_boolean('sound') &&
-					action != 'sleep' &&
-					!this.played
-				) {
+				if (settings.get_boolean('sound') && action != 'sleep' && !this.played) {
 					const ding = Gio.File.new_for_uri(
 						'resource:///io/github/diegopvlk/Dosage/sounds/ding.ogg',
 					);
@@ -621,10 +590,7 @@ export const DosageWindow = GObject.registerClass(
 					if (position === rowItemPos) {
 						const topBox = currentRow.get_first_child();
 						const labelsBox = topBox.get_first_child().get_next_sibling();
-						const doseLabel = labelsBox
-							.get_next_sibling()
-							.get_first_child()
-							.get_next_sibling();
+						const doseLabel = labelsBox.get_next_sibling().get_first_child().get_next_sibling();
 						const amountBtn = labelsBox.get_next_sibling().get_next_sibling();
 						const amtSpinRow = amountBtn
 							.get_popover()
@@ -650,10 +616,7 @@ export const DosageWindow = GObject.registerClass(
 
 						amtSpinRow.set_value(item.dose);
 						amtSpinRow.connect('output', row => {
-							doseLabel.label = doseLabel.label.replace(
-								/^[^\s]+/,
-								row.get_value(),
-							);
+							doseLabel.label = doseLabel.label.replace(/^[^\s]+/, row.get_value());
 							item.dose = row.get_value();
 						});
 
@@ -751,9 +714,7 @@ export const DosageWindow = GObject.registerClass(
 						treatItem.dosage.forEach(timeDose => {
 							const sameTime = itemTime === String(timeDose.time);
 							const notifItem = isNotif && sameTime;
-							const todayItem = this.todayItems.some(
-								_i => sameName && sameTime,
-							);
+							const todayItem = this.todayItems.some(_i => sameName && sameTime);
 
 							if (notifItem || todayItem) {
 								timeDose.lastTaken = new Date().toISOString();

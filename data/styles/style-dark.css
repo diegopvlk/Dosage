@@ -16,165 +16,165 @@
 @define-color boxed_active #3c3d49;
 
 .card-stripe {
-	background-image: linear-gradient(
-		alpha(currentColor, 0.15),
-		alpha(currentColor, 0.33)
-	);
+  background-image: linear-gradient(
+    alpha(currentColor, 0.15),
+    alpha(currentColor, 0.33)
+  );
 }
 .needs-attention > indicator label {
-	color: white;
+  color: white;
 }
 
 /* med window buttons */
 .red-clr {
-	background-color: #523535;
-	color: alpha(#ffdad9, 0.35);
+  background-color: #523535;
+  color: alpha(#ffdad9, 0.35);
 }
 
 .orange-clr {
-	background-color: #58402b;
-	color: alpha(#fdddbd, 0.35);
+  background-color: #58402b;
+  color: alpha(#fdddbd, 0.35);
 }
 
 .yellow-clr {
-	background-color: #4c472b;
-	color: alpha(#ece3bd, 0.35);
+  background-color: #4c472b;
+  color: alpha(#ece3bd, 0.35);
 }
 
 .green-clr {
-	background-color: #384b3c;
-	color: alpha(#d2e8d4, 0.35);
+  background-color: #384b3c;
+  color: alpha(#d2e8d4, 0.35);
 }
 
 .cyan-clr {
-	background-color: #33474f;
-	color: alpha(#cfe6f1, 0.35);
+  background-color: #33474f;
+  color: alpha(#cfe6f1, 0.35);
 }
 
 .blue-clr {
-	background-color: #39455c;
-	color: alpha(#d6e4f7, 0.35);
+  background-color: #39455c;
+  color: alpha(#d6e4f7, 0.35);
 }
 
 .purple-clr {
-	background-color: #3f3851;
-	color: alpha(#ebddf7, 0.35);
+  background-color: #3f3851;
+  color: alpha(#ebddf7, 0.35);
 }
 
 /* cards */
 .red {
-	background-color: alpha(#523535, 0.7);
-	color: #ffdad9;
+  background-color: alpha(#523535, 0.7);
+  color: #ffdad9;
 }
 
 .red checkbutton check:checked {
-	background-color: #ffdad9;
+  background-color: #ffdad9;
 }
 
 .orange {
-	background-color: alpha(#58402b, 0.7);
-	color: #fdddbd;
+  background-color: alpha(#58402b, 0.7);
+  color: #fdddbd;
 }
 
 .orange checkbutton check:checked {
-	background-color: #fdddbd;
+  background-color: #fdddbd;
 }
 
 .yellow {
-	background-color: alpha(#4c472b, 0.7);
-	color: #ece3bd;
+  background-color: alpha(#4c472b, 0.7);
+  color: #ece3bd;
 }
 
 .yellow checkbutton check:checked {
-	background-color: #ece3bd;
+  background-color: #ece3bd;
 }
 
 .green {
-	background-color: alpha(#384b3c, 0.7);
-	color: #d2e8d4;
+  background-color: alpha(#384b3c, 0.7);
+  color: #d2e8d4;
 }
 
 .green checkbutton check:checked {
-	background-color: #d2e8d4;
+  background-color: #d2e8d4;
 }
 
 .cyan {
-	background-color: alpha(#33474f, 0.7);
-	color: #cfe6f1;
+  background-color: alpha(#33474f, 0.7);
+  color: #cfe6f1;
 }
 
 .cyan checkbutton check:checked {
-	background-color: #cfe6f1;
+  background-color: #cfe6f1;
 }
 
 .blue {
-	background-color: alpha(#39455c, 0.7);
-	color: #d6e4f7;
+  background-color: alpha(#39455c, 0.7);
+  color: #d6e4f7;
 }
 
 .blue checkbutton check:checked {
-	background-color: #d6e4f7;
+  background-color: #d6e4f7;
 }
 
 .purple {
-	background-color: alpha(#3f3851, 0.7);
-	color: #ebddf7;
+  background-color: alpha(#3f3851, 0.7);
+  color: #ebddf7;
 }
 
 .purple checkbutton check:checked {
-	background-color: #ebddf7;
+  background-color: #ebddf7;
 }
 
 .default {
-	background-color: alpha(#3b3d48, 0.77);
-	color: #dee1f9;
+  background-color: alpha(#3b3d48, 0.77);
+  color: #dee1f9;
 }
 
 .default checkbutton check:checked {
-	background-color: #dee1f9;
+  background-color: #dee1f9;
 }
 
 window.messagedialog,
 popover > contents,
 popover > arrow {
-	border: 1px solid mix(@popover_bg_color, @window_fg_color, 0.066);
+  border: 1px solid mix(@popover_bg_color, @window_fg_color, 0.066);
 }
 
 button.pill:not(.suggested-action) {
-	background-color: #38354a;
-	box-shadow: 0 1px 6px 0px alpha(@dosage_purple_4, 0.2),
-		inset 0 0 0 1px alpha(@dosage_purple_4, 0.15);
+  background-color: #38354a;
+  box-shadow: 0 1px 6px 0px alpha(@dosage_purple_4, 0.2),
+    inset 0 0 0 1px alpha(@dosage_purple_4, 0.15);
 }
 
 button.pill:not(.suggested-action):hover {
-	background-color: #403c58;
+  background-color: #403c58;
 }
 
 button.pill:not(.suggested-action):active {
-	background-color: #494463;
+  background-color: #494463;
 }
 
 button.suggested-action {
-	background: linear-gradient(45deg, @dosage_purple_3 0%, @dosage_purple_2 75%);
-	box-shadow: 0 1px 7px 0px alpha(@dosage_purple_4, 0.2);
+  background: linear-gradient(45deg, @dosage_purple_3 0%, @dosage_purple_2 75%);
+  box-shadow: 0 1px 7px 0px alpha(@dosage_purple_4, 0.2);
 }
 
 button.suggested-action:hover {
-	background: linear-gradient(
-		45deg,
-		lighter(@dosage_purple_3) 0%,
-		lighter(@dosage_purple_2) 55%
-	);
+  background: linear-gradient(
+    45deg,
+    lighter(@dosage_purple_3) 0%,
+    lighter(@dosage_purple_2) 55%
+  );
 }
 
 button.suggested-action:active {
-	background: linear-gradient(
-		45deg,
-		lighter(@dosage_purple_4) 0%,
-		@dosage_purple_3 50%
-	);
+  background: linear-gradient(
+    45deg,
+    lighter(@dosage_purple_4) 0%,
+    @dosage_purple_3 50%
+  );
 }
 
 #dosage-med-window button.suggested-action {
-	box-shadow: 0 1px 3.5px 0px alpha(@dosage_purple_4, 0.2);
+  box-shadow: 0 1px 3.5px 0px alpha(@dosage_purple_4, 0.2);
 }

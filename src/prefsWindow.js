@@ -11,9 +11,7 @@ import GLib from 'gi://GLib';
 export default function openPrefsWindow(DosageApplication) {
 	const container = GLib.getenv('container');
 
-	const builder = Gtk.Builder.new_from_resource(
-		'/io/github/diegopvlk/Dosage/ui/preferences.ui',
-	);
+	const builder = Gtk.Builder.new_from_resource('/io/github/diegopvlk/Dosage/ui/preferences.ui');
 
 	const prefsWindow = builder.get_object('prefsWindow');
 	const autostartSwitch = builder.get_object('autostartSwitch');
@@ -24,10 +22,7 @@ export default function openPrefsWindow(DosageApplication) {
 	const skipSwitch = builder.get_object('skipSwitch');
 	const notifBtns = builder.get_object('notifBtns');
 
-	const notifBtnsHeader = notifBtns
-		.get_first_child()
-		.get_first_child()
-		.get_first_child();
+	const notifBtnsHeader = notifBtns.get_first_child().get_first_child().get_first_child();
 	const notifBtnsExpanderBtn = notifBtnsHeader
 		.get_first_child()
 		.get_last_child()
@@ -53,10 +48,7 @@ export default function openPrefsWindow(DosageApplication) {
 				'dosage-tracker-startup.desktop',
 			]);
 			if (state && !GLib.file_test(autostartFilePath, GLib.FileTest.EXISTS)) {
-				GLib.mkdir_with_parents(
-					GLib.path_get_dirname(autostartFilePath),
-					0o755,
-				);
+				GLib.mkdir_with_parents(GLib.path_get_dirname(autostartFilePath), 0o755);
 				const fileContents =
 					'[Desktop Entry]\nType=Application\nName=io.github.diegopvlk.Dosage\nExec=dosage-tracker --startup';
 				GLib.file_set_contents(autostartFilePath, fileContents);

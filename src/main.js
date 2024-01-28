@@ -51,23 +51,17 @@ export const DosageApplication = GObject.registerClass(
 					release_notes: releaseNotes,
 				};
 				const aboutWindow = new Adw.AboutWindow(aboutParams);
-				aboutWindow.add_acknowledgement_section(
-					_('Thanks to these projects!'),
-					[
-						'GNOME https://www.gnome.org/',
-						'GTK https://www.gtk.org/',
-						'Libadwaita https://gnome.pages.gitlab.gnome.org/libadwaita/',
-						'Workbench https://apps.gnome.org/Workbench/',
-						'Blueprint https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/index.html',
-						'GTK4 + GJS Book https://rmnvgr.gitlab.io/gtk4-gjs-book/',
-						'GJS Guide https://gjs.guide/',
-						'Flatpak https://github.com/flatpak/',
-					],
-				);
-				aboutWindow.add_link(
-					'Donate',
-					'https://github.com/diegopvlk/Dosage#donate',
-				);
+				aboutWindow.add_acknowledgement_section(_('Thanks to these projects!'), [
+					'GNOME https://www.gnome.org/',
+					'GTK https://www.gtk.org/',
+					'Libadwaita https://gnome.pages.gitlab.gnome.org/libadwaita/',
+					'Workbench https://apps.gnome.org/Workbench/',
+					'Blueprint https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/index.html',
+					'GTK4 + GJS Book https://rmnvgr.gitlab.io/gtk4-gjs-book/',
+					'GJS Guide https://gjs.guide/',
+					'Flatpak https://github.com/flatpak/',
+				]);
+				aboutWindow.add_link('Donate', 'https://github.com/diegopvlk/Dosage#donate');
 				aboutWindow.present();
 			});
 			this.add_action(showAboutAction);
@@ -89,15 +83,11 @@ export const DosageApplication = GObject.registerClass(
 
 		_requestBackground(autostart) {
 			const portal = new Xdp.Portal();
-			const setAutostart = autostart
-				? Xdp.BackgroundFlags.AUTOSTART
-				: Xdp.BackgroundFlags.NONE;
+			const setAutostart = autostart ? Xdp.BackgroundFlags.AUTOSTART : Xdp.BackgroundFlags.NONE;
 			portal.request_background(
 				null,
 				// TRANSLATORS: Confirmation message to allow background permission
-				_(
-					'Accept to allow running in the background and receive notifications',
-				),
+				_('Accept to allow running in the background and receive notifications'),
 				['io.github.diegopvlk.Dosage', '--startup'],
 				setAutostart,
 				null,

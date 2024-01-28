@@ -23,15 +23,8 @@ import {
 import { MedicationObject } from './medication.js';
 import { historyLS, treatmentsLS } from './window.js';
 
-export default function openMedicationWindow(
-	DosageWindow,
-	list,
-	position,
-	oneTime,
-) {
-	const builder = Gtk.Builder.new_from_resource(
-		'/io/github/diegopvlk/Dosage/ui/med-window.ui',
-	);
+export default function openMedicationWindow(DosageWindow, list, position, oneTime) {
+	const builder = Gtk.Builder.new_from_resource('/io/github/diegopvlk/Dosage/ui/med-window.ui');
 
 	const dateOneEntry = builder.get_object('dateOneEntry');
 	const calOneEntry = builder.get_object('calOneEntry');
@@ -90,10 +83,7 @@ export default function openMedicationWindow(
 	const dosage = builder.get_object('dosage');
 	dosage.set_expanded(true);
 	const dosageAddButton = builder.get_object('dosageAddButton');
-	const dosageHeader = dosage
-		.get_first_child()
-		.get_first_child()
-		.get_first_child();
+	const dosageHeader = dosage.get_first_child().get_first_child().get_first_child();
 	const dosageExpanderBtn = dosageHeader
 		.get_first_child()
 		.get_last_child()
@@ -337,10 +327,7 @@ export default function openMedicationWindow(
 	};
 
 	const medWindowBox = builder.get_object('medWindowBox');
-	const [medWindowBoxHeight] = medWindowBox.measure(
-		Gtk.Orientation.VERTICAL,
-		-1,
-	);
+	const [medWindowBoxHeight] = medWindowBox.measure(Gtk.Orientation.VERTICAL, -1);
 	medWindow.default_height = medWindowBoxHeight + 58;
 
 	if (deleteButton.get_visible()) {
@@ -382,10 +369,7 @@ export default function openMedicationWindow(
 
 		dialog.add_response('cancel', _('Cancel'));
 		dialog.add_response('delete', _('Delete'));
-		dialog.set_response_appearance(
-			'delete',
-			Adw.ResponseAppearance.DESTRUCTIVE,
-		);
+		dialog.set_response_appearance('delete', Adw.ResponseAppearance.DESTRUCTIVE);
 		dialog.present();
 
 		dialog.connect('response', (_self, response) => {
@@ -693,9 +677,7 @@ export default function openMedicationWindow(
 		}
 
 		if (frequencySpecificDays.get_visible() && getSpecificDays().length == 0) {
-			toastOverlay.add_toast(
-				new Adw.Toast({ title: _('Choose at least one day') }),
-			);
+			toastOverlay.add_toast(new Adw.Toast({ title: _('Choose at least one day') }));
 			return;
 		}
 
@@ -706,9 +688,7 @@ export default function openMedicationWindow(
 				if (i === item) continue;
 			}
 			if (i.name.toLowerCase() === medName.text.trim().toLowerCase()) {
-				toastOverlay.add_toast(
-					new Adw.Toast({ title: _('Name already exists') }),
-				);
+				toastOverlay.add_toast(new Adw.Toast({ title: _('Name already exists') }));
 				medName.add_css_class('error');
 				return;
 			}

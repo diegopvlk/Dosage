@@ -79,8 +79,7 @@ export default function upgradeItems(json, type) {
 				}
 			});
 
-			const takenValue =
-				item.taken === 'yes' ? 1 : item.taken === 'no' ? 0 : -1;
+			const takenValue = item.taken === 'yes' ? 1 : item.taken === 'no' ? 0 : -1;
 
 			hist[dateKey].push({
 				name: item.name,

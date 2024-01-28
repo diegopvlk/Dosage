@@ -1,17 +1,18 @@
 {
-	"arrowParens": "avoid",
-	"tabWidth": 2,
-	"useTabs": true,
-	"endOfLine": "lf",
-	"trailingComma": "all",
-	"quoteProps": "as-needed",
-	"bracketSpacing": true,
-	"overrides": [
-		{
-			"files": ["*.js"],
-			"options": {
-				"singleQuote": true
-			}
-		}
-	]
+  "tabWidth": 2,
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "options": {
+        "printWidth": 100,
+        "singleQuote": true,
+        "arrowParens": "avoid",
+        "endOfLine": "lf",
+        "trailingComma": "all",
+        "quoteProps": "as-needed",
+        "bracketSpacing": true,
+        "useTabs": true
+      }
+    }
+  ]
 }

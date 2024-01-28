@@ -135,8 +135,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			if (item.duration.enabled) {
 				durationNextDateLabel.label = untilLabel;
 				if (nextDt > today && nextDt <= end) {
-					durationNextDateLabel.label +=
-						' • ' + _('Next dose') + `: ${nextDate}`;
+					durationNextDateLabel.label += ' • ' + _('Next dose') + `: ${nextDate}`;
 				}
 			} else if (nextDt > today) {
 				durationNextDateLabel.label = _('Next dose') + `: ${nextDate}`;
@@ -164,16 +163,9 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		infoLabel.label += ` • ${item.notes}`;
 	}
 
-	[
-		'default',
-		'red',
-		'orange',
-		'yellow',
-		'green',
-		'cyan',
-		'blue',
-		'purple',
-	].forEach(c => box.remove_css_class(c));
+	['default', 'red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'].forEach(c =>
+		box.remove_css_class(c),
+	);
 
 	box.add_css_class(item.color);
 

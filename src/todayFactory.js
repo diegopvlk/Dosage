@@ -138,16 +138,9 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	row.remove_css_class('activatable');
 	box.add_css_class('activatable');
 
-	[
-		'default',
-		'red',
-		'orange',
-		'yellow',
-		'green',
-		'cyan',
-		'blue',
-		'purple',
-	].forEach(c => box.remove_css_class(c));
+	['default', 'red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'].forEach(c =>
+		box.remove_css_class(c),
+	);
 
 	box.add_css_class(item.color);
 

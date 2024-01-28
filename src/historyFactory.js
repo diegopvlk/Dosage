@@ -161,16 +161,9 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 		takenLabel.remove_css_class('badge-end-border');
 	}
 
-	[
-		'default',
-		'red',
-		'orange',
-		'yellow',
-		'green',
-		'cyan',
-		'blue',
-		'purple',
-	].forEach(c => box.remove_css_class(c));
+	['default', 'red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'].forEach(c =>
+		box.remove_css_class(c),
+	);
 
 	box.add_css_class(item.color);
 });

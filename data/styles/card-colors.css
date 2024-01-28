@@ -1,26 +1,26 @@
 .card-stripe {
-	background-image: linear-gradient(
-		alpha(currentColor, 0.4),
-		alpha(currentColor, 0.15)
-	);
-	background-repeat: no-repeat;
-	background-size: 3px;
+  background-image: linear-gradient(
+    alpha(currentColor, 0.4),
+    alpha(currentColor, 0.15)
+  );
+  background-repeat: no-repeat;
+  background-size: 3px;
 }
 
 .card-stripe:dir(ltr) {
-	border-top-left-radius: 99px;
-	border-bottom-left-radius: 99px;
+  border-top-left-radius: 99px;
+  border-bottom-left-radius: 99px;
 }
 
 .card-stripe:dir(rtl) {
-	border-top-right-radius: 99px;
-	border-bottom-right-radius: 99px;
-	margin-left: 3px;
+  border-top-right-radius: 99px;
+  border-bottom-right-radius: 99px;
+  margin-left: 3px;
 }
 
 .card checkbutton check:checked {
-	opacity: 0.8;
-	color: @window_bg_color;
+  opacity: 0.8;
+  color: @window_bg_color;
 }
 
 /* buttons */
@@ -31,8 +31,8 @@
 .cyan-clr,
 .blue-clr,
 .purple-clr {
-	border-radius: 99px;
-	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.2);
+  border-radius: 99px;
+  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.2);
 }
 .red-clr:not(menubutton):hover,
 .orange-clr:not(menubutton):hover,
@@ -41,115 +41,115 @@
 .cyan-clr:not(menubutton):hover,
 .blue-clr:not(menubutton):hover,
 .purple-clr:not(menubutton):hover {
-	background-image: linear-gradient(
-		alpha(currentColor, 0.3),
-		alpha(currentColor, 0.3)
-	);
+  background-image: linear-gradient(
+    alpha(currentColor, 0.3),
+    alpha(currentColor, 0.3)
+  );
 }
 
 .red-clr {
-	background-color: #f4d9d8;
-	color: alpha(#680014, 0.35);
+  background-color: #f4d9d8;
+  color: alpha(#680014, 0.35);
 }
 
 .orange-clr {
-	background-color: #f7dfbb;
-	color: alpha(#4d2700, 0.35);
+  background-color: #f7dfbb;
+  color: alpha(#4d2700, 0.35);
 }
 
 .yellow-clr {
-	background-color: #f4ecc6;
-	color: alpha(#3a3000, 0.35);
+  background-color: #f4ecc6;
+  color: alpha(#3a3000, 0.35);
 }
 
 .green-clr {
-	background-color: #dcefdd;
-	color: alpha(#03391c, 0.35);
+  background-color: #dcefdd;
+  color: alpha(#03391c, 0.35);
 }
 
 .cyan-clr {
-	background-color: #ceebf0;
-	color: alpha(#00363d, 0.35);
+  background-color: #ceebf0;
+  color: alpha(#00363d, 0.35);
 }
 
 .blue-clr {
-	background-color: #d6e4f7;
-	color: alpha(#003355, 0.35);
+  background-color: #d6e4f7;
+  color: alpha(#003355, 0.35);
 }
 
 .purple-clr {
-	background-color: #dcdcf5;
-	color: alpha(#361f73, 0.35);
+  background-color: #dcdcf5;
+  color: alpha(#361f73, 0.35);
 }
 
 .red {
-	background-color: alpha(#f4d9d8, 0.75);
-	color: #680014;
+  background-color: alpha(#f4d9d8, 0.75);
+  color: #680014;
 }
 
 .red checkbutton check:checked {
-	background-color: #680014;
+  background-color: #680014;
 }
 
 .orange {
-	background-color: alpha(#f7dfbb, 0.75);
-	color: #4d2700;
+  background-color: alpha(#f7dfbb, 0.75);
+  color: #4d2700;
 }
 
 .orange checkbutton check:checked {
-	background-color: #4d2700;
+  background-color: #4d2700;
 }
 
 .yellow {
-	background-color: alpha(#f4ecc6, 0.75);
-	color: #3a3000;
+  background-color: alpha(#f4ecc6, 0.75);
+  color: #3a3000;
 }
 
 .yellow checkbutton check:checked {
-	background-color: #3a3000;
+  background-color: #3a3000;
 }
 
 .green {
-	background-color: alpha(#dcefdd, 0.75);
-	color: #03391c;
+  background-color: alpha(#dcefdd, 0.75);
+  color: #03391c;
 }
 
 .green checkbutton check:checked {
-	background-color: #03391c;
+  background-color: #03391c;
 }
 
 .cyan {
-	background-color: alpha(#ceebf0, 0.75);
-	color: #00363d;
+  background-color: alpha(#ceebf0, 0.75);
+  color: #00363d;
 }
 
 .cyan checkbutton check:checked {
-	background-color: #00363d;
+  background-color: #00363d;
 }
 
 .blue {
-	background-color: alpha(#d6e4f7, 0.75);
-	color: #003355;
+  background-color: alpha(#d6e4f7, 0.75);
+  color: #003355;
 }
 
 .blue checkbutton check:checked {
-	background-color: #003355;
+  background-color: #003355;
 }
 
 .purple {
-	background-color: alpha(#dcdcf5, 0.75);
-	color: #361f73;
+  background-color: alpha(#dcdcf5, 0.75);
+  color: #361f73;
 }
 
 .purple checkbutton check:checked {
-	background-color: #361f73;
+  background-color: #361f73;
 }
 
 .default {
-	background-color: alpha(#e2e3ec, 0.75);
-	color: #141b2c;
+  background-color: alpha(#e2e3ec, 0.75);
+  color: #141b2c;
 }
 
 .default checkbutton check:checked {
-	background-color: #141b2c;
+  background-color: #141b2c;
 }

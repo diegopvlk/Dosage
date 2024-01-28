@@ -21,19 +21,19 @@
 .empty-history,
 .empty-today,
 .empty-treatments {
-	font-size: 24px;
-	font-weight: 700;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .empty-icon {
-	margin-top: 2px;
-	margin-bottom: 16px;
-	-gtk-icon-size: 64px;
-	opacity: 0.75;
+  margin-top: 2px;
+  margin-bottom: 16px;
+  -gtk-icon-size: 64px;
+  opacity: 0.75;
 }
 
 .needs-attention > indicator {
-	opacity: 0.75;
+  opacity: 0.75;
 }
 
 /*
@@ -43,439 +43,439 @@ The same thing happens in today list when confirming
 so use this little hack to scroll to header instead
 */
 listview.scroll-to-top-hack > :nth-child(1) {
-	margin-bottom: -36px;
+  margin-bottom: -36px;
 }
 
 listview.scroll-to-top-hack > :nth-child(2) {
-	margin-top: 36px;
+  margin-top: 36px;
 }
 
 listview > header {
-	padding-top: 14px;
-	padding-bottom: 1px;
-	min-height: 21px;
+  padding-top: 14px;
+  padding-bottom: 1px;
+  min-height: 21px;
 }
 
 listview > header label {
-	opacity: 0.7;
+  opacity: 0.7;
 }
 
 list.nested,
 list > row.header {
-	background: transparent;
+  background: transparent;
 }
 
 list > row.activatable:hover,
 list.nested > row.activatable:hover,
 list > row.activatable.header:hover {
-	background: @boxed_hover;
+  background: @boxed_hover;
 }
 
 list > row.activatable:active,
 list.nested > row.activatable:active,
 list > row.activatable.header:active {
-	background: @boxed_active;
+  background: @boxed_active;
 }
 
 .button-end > button:hover,
 .button-end > button:checked {
-	background: linear-gradient(
-		-90deg,
-		@boxed_hover 70%,
-		alpha(@boxed_hover, 0.01) 100%
-	);
+  background: linear-gradient(
+    -90deg,
+    @boxed_hover 70%,
+    alpha(@boxed_hover, 0.01) 100%
+  );
 }
 
 .button-end > button:active {
-	background: linear-gradient(
-		-90deg,
-		@boxed_active 70%,
-		alpha(@boxed_active, 0.01) 100%
-	);
+  background: linear-gradient(
+    -90deg,
+    @boxed_active 70%,
+    alpha(@boxed_active, 0.01) 100%
+  );
 }
 
 #dosage-med-window
-	button:not(.circular):not(.image-button):not(.arrow-button):not(.toggle):not(
-		.am-pm
-	) {
-	border-radius: 9px;
-	min-width: 60px;
+  button:not(.circular):not(.image-button):not(.arrow-button):not(.toggle):not(
+    .am-pm
+  ) {
+  border-radius: 9px;
+  min-width: 60px;
 }
 
 #dosage-med-window.one-time .time > .arrow-button {
-	margin-left: -6px;
+  margin-left: -6px;
 }
 
 #dosage-med-window {
-	border-radius: 14px;
+  border-radius: 14px;
 }
 
 headerbar button,
 viewswitcher:not(.narrow) > button {
-	border-radius: 99px;
+  border-radius: 99px;
 }
 
 viewswitcher.narrow > button,
 popover.menu > contents modelbutton {
-	border-radius: 9px;
+  border-radius: 9px;
 }
 
 actionbar viewswitcher.narrow indicatorbin {
-	margin-top: 1px;
-	margin-bottom: 0px;
+  margin-top: 1px;
+  margin-bottom: 0px;
 }
 
 actionbar viewswitcher box.narrow.vertical label:not(.numeric) {
-	margin-bottom: -2px;
+  margin-bottom: -2px;
 }
 
 .boxed-list > row,
 .custom-list > row > box {
-	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.05);
+  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.05);
 }
 
 .custom-list > row:hover > box.activatable {
-	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.1);
+  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.1);
 }
 
 .card,
 .boxed-list {
-	box-shadow: none;
+  box-shadow: none;
 }
 
 .boxed-list {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 .boxed-list > row {
-	background-color: @card_bg_color;
-	border: none;
+  background-color: @card_bg_color;
+  border: none;
 }
 
 .boxed-list > row:not(:last-child) {
-	margin-bottom: 3px;
+  margin-bottom: 3px;
 }
 
 .custom-list row {
-	padding-bottom: 1px;
+  padding-bottom: 1px;
 }
 
 .custom-list {
-	margin: 0px 10px;
-	padding-bottom: 20px;
-	background-color: transparent;
+  margin: 0px 10px;
+  padding-bottom: 20px;
+  background-color: transparent;
 }
 
 .custom-list:not(.history) {
-	padding-bottom: 70px;
+  padding-bottom: 70px;
 }
 
 .custom-list > row {
-	background: none;
+  background: none;
 }
 
 list.boxed-list row {
-	border-bottom-width: 0;
+  border-bottom-width: 0;
 }
 
 list > row,
 .custom-list > row > box,
 row:focus {
-	border-radius: 6px;
+  border-radius: 6px;
 }
 
 .badge-box {
-	min-height: 16px;
-	background-color: alpha(currentColor, 0.13);
-	border: 1px solid alpha(currentColor, 0.23);
-	padding: 3px 7px;
-	border-radius: 99px;
-	text-transform: capitalize;
-	font-weight: 500;
-	font-size: 90%;
-	opacity: 0.72;
+  min-height: 16px;
+  background-color: alpha(currentColor, 0.13);
+  border: 1px solid alpha(currentColor, 0.23);
+  padding: 3px 7px;
+  border-radius: 99px;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 90%;
+  opacity: 0.72;
 }
 
 .badge-icon:dir(ltr) {
-	background-color: alpha(currentColor, 0.23);
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-	padding-left: 2px;
-	padding-right: 4px;
+  background-color: alpha(currentColor, 0.23);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 2px;
+  padding-right: 4px;
 }
 
 .badge-icon:dir(rtl) {
-	background-color: alpha(currentColor, 0.23);
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-	padding-right: 2px;
-	padding-left: 4px;
+  background-color: alpha(currentColor, 0.23);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-right: 2px;
+  padding-left: 4px;
 }
 
 .badge-end-border:dir(ltr) {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-	padding-right: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-right: 4px;
 }
 
 .badge-end-border:dir(rtl) {
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-	padding-left: 4px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 4px;
 }
 .low-stock-badge {
-	background-color: alpha(currentColor, 0.18);
-	border: 1px solid alpha(currentColor, 0.48);
+  background-color: alpha(currentColor, 0.18);
+  border: 1px solid alpha(currentColor, 0.48);
 }
 
 .ampm-row .suffixes spinbutton text {
-	margin-left: -20px;
-	padding: 0;
+  margin-left: -20px;
+  padding: 0;
 }
 
 .ampm-row:dir(rtl) .suffixes spinbutton text {
-	margin-left: 0px;
-	margin-right: -10px;
+  margin-left: 0px;
+  margin-right: -10px;
 }
 
 button.am-pm {
-	font-weight: 400;
-	font-size: 83%;
-	padding: 0px;
-	min-height: 26px;
-	min-width: 26px;
+  font-weight: 400;
+  font-size: 83%;
+  padding: 0px;
+  min-height: 26px;
+  min-width: 26px;
 }
 
 .one-time-menu > button {
-	background-color: transparent;
-	padding-left: 36px;
-	padding-right: 21px;
+  background-color: transparent;
+  padding-left: 36px;
+  padding-right: 21px;
 }
 
 .button-end > button,
 menubutton:not(.one-time-menu) button.arrow-button,
 button.one-time-name {
-	font-weight: 400;
+  font-weight: 400;
 }
 
 .button-end > button {
-	margin: -2px;
-	background-color: transparent;
+  margin: -2px;
+  background-color: transparent;
 }
 
 .button-end:dir(rtl) > button {
-	margin-left: -14px;
-	border-radius: 5px;
-	padding: 0 14px;
-	padding-right: 32px;
+  margin-left: -14px;
+  border-radius: 5px;
+  padding: 0 14px;
+  padding-right: 32px;
 }
 
 .button-end > button {
-	margin-right: -14px;
-	border-radius: 5px;
-	padding: 0 18px;
-	padding-left: 32px;
+  margin-right: -14px;
+  border-radius: 5px;
+  padding: 0 18px;
+  padding-left: 32px;
 }
 
 .button-end.cycle > button {
-	min-width: 90px;
+  min-width: 90px;
 }
 
 button.specific-day {
-	border-radius: 10px;
-	min-width: 40px;
-	padding-left: 0;
-	padding-right: 0;
+  border-radius: 10px;
+  min-width: 40px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 popover > contents {
-	border-radius: 16px;
+  border-radius: 16px;
 }
 
 .button-end popover > contents listview row,
 row.combo popover > contents listview row {
-	border-radius: 10px;
-	padding-top: 7px;
-	padding-bottom: 7px;
+  border-radius: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
 
 row.combo .dropdown-arrow {
-	background-color: alpha(currentColor, 0.1);
-	min-height: 34px;
-	padding: 0 9px;
-	border-radius: 99px;
-	transition: background-color 300ms;
+  background-color: alpha(currentColor, 0.1);
+  min-height: 34px;
+  padding: 0 9px;
+  border-radius: 99px;
+  transition: background-color 300ms;
 }
 
 row.combo .dropdown-arrow:hover {
-	background-color: alpha(currentColor, 0.15);
+  background-color: alpha(currentColor, 0.15);
 }
 
 menubutton.numeric button {
-	border-radius: 10px;
-	padding: 4px 6px;
-	padding-right: 4px;
-	margin-left: 3px;
+  border-radius: 10px;
+  padding: 4px 6px;
+  padding-right: 4px;
+  margin-left: 3px;
 }
 
 list > row:only-child button.remove-row {
-	opacity: 0.5;
+  opacity: 0.5;
 }
 
 button.pill.skip {
-	padding-left: 10px;
-	padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 button.pill:not(.suggested-action) {
-	filter: grayscale(0.25);
-	background-color: #efeeff;
-	box-shadow: 0 1px 6px 0px alpha(@dosage_purple_4, 0.15),
-		inset 0 0 0 1px alpha(@dosage_purple_4, 0.2);
+  filter: grayscale(0.25);
+  background-color: #efeeff;
+  box-shadow: 0 1px 6px 0px alpha(@dosage_purple_4, 0.15),
+    inset 0 0 0 1px alpha(@dosage_purple_4, 0.2);
 }
 
 button.pill:not(.suggested-action):hover {
-	background-color: #e4e3f6;
+  background-color: #e4e3f6;
 }
 
 button.pill:not(.suggested-action):active {
-	background-color: #dbdaf2;
+  background-color: #dbdaf2;
 }
 
 button.suggested-action {
-	background: linear-gradient(45deg, @dosage_purple_4 0%, @dosage_purple_2 75%);
-	box-shadow: 0 1px 7px 0px alpha(@dosage_purple_4, 0.6);
-	color: white;
+  background: linear-gradient(45deg, @dosage_purple_4 0%, @dosage_purple_2 75%);
+  box-shadow: 0 1px 7px 0px alpha(@dosage_purple_4, 0.6);
+  color: white;
 }
 
 button.suggested-action:hover {
-	background: linear-gradient(
-		45deg,
-		lighter(@dosage_purple_4) 0%,
-		lighter(@dosage_purple_2) 55%
-	);
+  background: linear-gradient(
+    45deg,
+    lighter(@dosage_purple_4) 0%,
+    lighter(@dosage_purple_2) 55%
+  );
 }
 
 button.suggested-action:active {
-	background: linear-gradient(
-		45deg,
-		darker(@dosage_purple_4) 0%,
-		darker(@dosage_purple_2) 55%
-	);
+  background: linear-gradient(
+    45deg,
+    darker(@dosage_purple_4) 0%,
+    darker(@dosage_purple_2) 55%
+  );
 }
 
 button.suggested-action:focus {
-	outline-offset: 1px;
+  outline-offset: 1px;
 }
 
 #dosage-med-window button.suggested-action {
-	box-shadow: 0 1px 4px 0px alpha(@dosage_purple_4, 0.35);
+  box-shadow: 0 1px 4px 0px alpha(@dosage_purple_4, 0.35);
 }
 
 .time-box spinbutton button {
-	padding: 0;
-	margin: 0;
-	min-height: 30px;
-	min-width: 30px;
-	border-radius: 99px;
-	border-bottom: none;
-	background-color: alpha(currentColor, 0.1);
+  padding: 0;
+  margin: 0;
+  min-height: 30px;
+  min-width: 30px;
+  border-radius: 99px;
+  border-bottom: none;
+  background-color: alpha(currentColor, 0.1);
 }
 
 .time-box spinbutton button:hover {
-	background-color: alpha(currentColor, 0.15);
+  background-color: alpha(currentColor, 0.15);
 }
 
 .time-box spinbutton button:active {
-	background-color: alpha(currentColor, 0.2);
+  background-color: alpha(currentColor, 0.2);
 }
 
 .time-box spinbutton text {
-	min-height: 24px;
+  min-height: 24px;
 }
 
 .today-amount > button {
-	min-width: 30px;
-	min-height: 30px;
+  min-width: 30px;
+  min-height: 30px;
 }
 
 .spin-box > row.spin > box {
-	margin: -3px 4px -3px 8px;
+  margin: -3px 4px -3px 8px;
 }
 
 .spin-today-amount:dir(ltr) > row.spin > box {
-	margin-left: -16px;
+  margin-left: -16px;
 }
 
 .spin-today-amount:dir(rtl) > row.spin > box {
-	margin-right: -16px;
+  margin-right: -16px;
 }
 
 .spin-box row.spin {
-	outline: none;
+  outline: none;
 }
 
 preferencespage scrolledwindow viewport {
-	margin-top: -24px;
-	margin-bottom: -11px;
+  margin-top: -24px;
+  margin-bottom: -11px;
 }
 
 calendar button,
 calendar .day-number {
-	border-radius: 99px;
+  border-radius: 99px;
 }
 
 calendar button,
 calendar .month,
 calendar .year {
-	margin-bottom: 5px;
-	margin-top: -1px;
+  margin-bottom: 5px;
+  margin-top: -1px;
 }
 
 calendar .day-name {
-	opacity: 0.5;
+  opacity: 0.5;
 }
 
 calendar .day-number.today:not(:selected) {
-	background-color: alpha(@view_fg_color, 0.05);
+  background-color: alpha(@view_fg_color, 0.05);
 }
 
 row.error {
-	box-shadow: inset 0 0 0 1px alpha(currentColor, 0.5);
+  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.5);
 }
 
 .time-error {
-	animation: flashTime 0.7s ease-in-out 2;
+  animation: flashTime 0.7s ease-in-out 2;
 }
 
 @keyframes flashTime {
-	0% {
-		background-color: transparent;
-		border-radius: 99px;
-	}
+  0% {
+    background-color: transparent;
+    border-radius: 99px;
+  }
 
-	10% {
-		background-color: alpha(@red_2, 0.5);
-	}
+  10% {
+    background-color: alpha(@red_2, 0.5);
+  }
 }
 
 .calendar-error {
-	border-radius: 10px;
-	animation: flashCalendar 0.4s ease-in-out;
+  border-radius: 10px;
+  animation: flashCalendar 0.4s ease-in-out;
 }
 
 @keyframes flashCalendar {
-	0% {
-		box-shadow: none;
-		color: currentColor;
-	}
+  0% {
+    box-shadow: none;
+    color: currentColor;
+  }
 
-	10% {
-		box-shadow: 0 0 7px 1px alpha(@red_2, 0.7);
-		color: mix(@window_fg_color, @red_4, 0.7);
-	}
+  10% {
+    box-shadow: 0 0 7px 1px alpha(@red_2, 0.7);
+    color: mix(@window_fg_color, @red_4, 0.7);
+  }
 }
 
 .calendar-warning {
-	color: mix(@window_fg_color, @orange_4, 0.7);
+  color: mix(@window_fg_color, @orange_4, 0.7);
 }

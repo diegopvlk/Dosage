@@ -37,9 +37,7 @@ export function getSpecificDaysLabel(item) {
 	} else if (item.days.length === 7) {
 		newLabel = _('Daily');
 	} else {
-		const days = isoWeekStart
-			? [...item.days.slice(1), item.days[0]]
-			: item.days;
+		const days = isoWeekStart ? [...item.days.slice(1), item.days[0]] : item.days;
 		newLabel = days.map(day => getDayLabel(day)).join(', ');
 	}
 
@@ -54,9 +52,7 @@ function checkClock() {
 	return timeFormat === 'AM' || timeFormat === 'PM';
 }
 
-export const DataDir = Gio.file_new_for_path(
-	GLib.build_filenamev([GLib.get_user_data_dir()]),
-);
+export const DataDir = Gio.file_new_for_path(GLib.build_filenamev([GLib.get_user_data_dir()]));
 
 export function addLeadZero(input) {
 	return String(input).padStart(2, 0);
@@ -73,13 +69,18 @@ export function removeCssColors(colorBtn) {
 
 export function createTempObj(type, listStore) {
 	if (type === 'treatments') {
-		const tempObj = { treatments: [], lastUpdate: new Date().toISOString() };
+		const tempObj = {
+			treatments: [],
+			lastUpdate: new Date().toISOString(),
+		};
 		for (const it of listStore) {
 			tempObj.treatments.push(it.obj);
 		}
 		return tempObj;
 	} else if (type === 'history') {
-		const tempObj = { history: {} };
+		const tempObj = {
+			history: {},
+		};
 		const hist = tempObj.history;
 		for (const it of listStore) {
 			const item = it.obj;
@@ -295,11 +296,7 @@ export function getTimeBtnInput(currentDoseRow) {
 		.get_first_child()
 		.get_first_child()
 		.get_next_sibling();
-	const hourInput = timeButton
-		.get_popover()
-		.get_first_child()
-		.get_first_child()
-		.get_first_child();
+	const hourInput = timeButton.get_popover().get_first_child().get_first_child().get_first_child();
 	const minutesInput = timeButton
 		.get_popover()
 		.get_first_child()
