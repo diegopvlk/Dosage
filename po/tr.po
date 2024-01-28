@@ -154,7 +154,7 @@ msgstr "Yemekten sonra"
 
 #: data/ui/med-window.blp:66
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: data/ui/med-window.blp:67
 msgid "Color and icon"
@@ -260,7 +260,7 @@ msgstr "Karışım"
 
 #: data/ui/med-window.blp:294 src/medWindow.js:653
 msgid "Frequency"
-msgstr ""
+msgstr "Sıklık"
 
 #: data/ui/med-window.blp:368
 msgid "Days active"
@@ -328,8 +328,6 @@ msgid "Duration"
 msgstr "Süre"
 
 #: data/ui/med-window.blp:482
-#, fuzzy
-#| msgid "Set a start and end date"
 msgid "Set start and end dates"
 msgstr "Başlangıç ve bitiş tarihi belirle"
 
@@ -340,10 +338,8 @@ msgstr "Başlangıç"
 
 #: data/ui/med-window.blp:495 data/ui/med-window.blp:516
 #: data/ui/med-window.blp:539
-#, fuzzy
-#| msgid "Choose"
 msgid "Choose date"
-msgstr "Seç"
+msgstr "Tarih seç"
 
 #: data/ui/med-window.blp:508
 msgid "Ends on"
@@ -371,7 +367,7 @@ msgstr ""
 
 #: data/ui/preferences.blp:25
 msgid "Keeps a maximum of 30 group days"
-msgstr ""
+msgstr "Azami 30 günü koru"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"
@@ -572,6 +568,14 @@ msgstr "Henüz ilaç eklenmedi"
 #: src/window.js:424
 msgid "All done for today"
 msgstr "Bugünlük her şey bitti"
+
+#: data/ui/preferences.blp:15
+msgid "Autostart at login"
+msgstr "Girişte kendiliğinden başlat"
+
+#: data/ui/preferences.blp:24
+msgid "Clear history automatically"
+msgstr "Geçmişi kendiliğinden temizle"
 
 #~ msgid "medication"
 #~ msgstr "tedavi"
