@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-27 22:51-0300\n"
+"POT-Creation-Date: 2024-01-27 23:08-0300\n"
 "PO-Revision-Date: 2024-01-21 13:01+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
@@ -331,27 +331,20 @@ msgstr "Aseta alku- ja loppupäivä"
 msgid "Starts on"
 msgstr "Alkaa"
 
-#: data/ui/med-window.blp:495
-msgid "Choose start date"
-msgstr ""
-
-#: data/ui/med-window.blp:508
-msgid "Ends on"
-msgstr "Loppuu"
-
-#: data/ui/med-window.blp:516
-msgid "Choose end date"
-msgstr ""
-
-#: data/ui/med-window.blp:530
-msgid "Date"
-msgstr "Päivä"
-
+#: data/ui/med-window.blp:495 data/ui/med-window.blp:516
 #: data/ui/med-window.blp:539
 #, fuzzy
 #| msgid "Choose"
 msgid "Choose date"
 msgstr "Valitse"
+
+#: data/ui/med-window.blp:508
+msgid "Ends on"
+msgstr "Loppuu"
+
+#: data/ui/med-window.blp:530
+msgid "Date"
+msgstr "Päivä"
 
 #: data/ui/med-window.blp:559 src/historyFactory.js:124 src/medWindow.js:384
 msgid "Delete"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-27 22:51-0300\n"
+"POT-Creation-Date: 2024-01-27 23:08-0300\n"
 "PO-Revision-Date: 2023-12-01 14:41+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/es/"
@@ -338,27 +338,20 @@ msgstr "Fijar una fecha de inicio y fin"
 msgid "Starts on"
 msgstr "Comienza el"
 
-#: data/ui/med-window.blp:495
-msgid "Choose start date"
-msgstr ""
-
-#: data/ui/med-window.blp:508
-msgid "Ends on"
-msgstr "Termina el"
-
-#: data/ui/med-window.blp:516
-msgid "Choose end date"
-msgstr ""
-
-#: data/ui/med-window.blp:530
-msgid "Date"
-msgstr "Fecha"
-
+#: data/ui/med-window.blp:495 data/ui/med-window.blp:516
 #: data/ui/med-window.blp:539
 #, fuzzy
 #| msgid "Choose"
 msgid "Choose date"
 msgstr "Seleccione"
+
+#: data/ui/med-window.blp:508
+msgid "Ends on"
+msgstr "Termina el"
+
+#: data/ui/med-window.blp:530
+msgid "Date"
+msgstr "Fecha"
 
 #: data/ui/med-window.blp:559 src/historyFactory.js:124 src/medWindow.js:384
 msgid "Delete"

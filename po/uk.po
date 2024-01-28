@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-27 22:51-0300\n"
+"POT-Creation-Date: 2024-01-27 23:08-0300\n"
 "PO-Revision-Date: 2024-01-01 12:08+0000\n"
 "Last-Translator: Сергій <sergiy.goncharuk.1@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -343,27 +343,20 @@ msgstr "Обрати початкову та кінцеві дати курсу 
 msgid "Starts on"
 msgstr "Розпочинається"
 
-#: data/ui/med-window.blp:495
-msgid "Choose start date"
-msgstr ""
-
-#: data/ui/med-window.blp:508
-msgid "Ends on"
-msgstr "Закінчується"
-
-#: data/ui/med-window.blp:516
-msgid "Choose end date"
-msgstr ""
-
-#: data/ui/med-window.blp:530
-msgid "Date"
-msgstr "Дата прийому"
-
+#: data/ui/med-window.blp:495 data/ui/med-window.blp:516
 #: data/ui/med-window.blp:539
 #, fuzzy
 #| msgid "Choose"
 msgid "Choose date"
 msgstr "Обрати"
+
+#: data/ui/med-window.blp:508
+msgid "Ends on"
+msgstr "Закінчується"
+
+#: data/ui/med-window.blp:530
+msgid "Date"
+msgstr "Дата прийому"
 
 #: data/ui/med-window.blp:559 src/historyFactory.js:124 src/medWindow.js:384
 msgid "Delete"
