@@ -64,14 +64,22 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 		ellipsize: Pango.EllipsizeMode.END,
 	});
 	labelsBox.append(dose);
-	const takenLabel = new Gtk.Label({
-		css_classes: ['rounded-label'],
+	const takenBox = new Gtk.Box({
+		css_classes: ['badge'],
 		valign: Gtk.Align.CENTER,
 		margin_end: 15,
-		visible: true,
+	});
+	const takenLabel = new Gtk.Label({
+		valign: Gtk.Align.CENTER,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
-	box.append(takenLabel);
+	const takenIcon = new Gtk.Image({
+		icon_name: 'check-round-outline-whole-symbolic',
+		margin_start: 3,
+	});
+	takenBox.append(takenLabel);
+	takenBox.append(takenIcon);
+	box.append(takenBox);
 	listItem.set_child(box);
 
 	deleteButton.connect('clicked', () => {
@@ -93,7 +101,9 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const labelsBox = box.get_first_child().get_next_sibling();
 	const nameLabel = labelsBox.get_first_child();
 	const doseLabel = nameLabel.get_next_sibling();
-	const takenLabel = box.get_last_child();
+	const takenBox = box.get_last_child();
+	const takenLabel = takenBox.get_first_child();
+	const takenIcon = takenLabel.get_next_sibling();
 	const localTZ = GLib.TimeZone.new_local();
 	const dateTime = GLib.DateTime.new_from_unix_utc(item.taken[0] / 1000);
 	const localDT = dateTime.to_timezone(localTZ);
@@ -135,14 +145,17 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	}
 
 	if (item.taken[1] === 1) {
-		// TRANSLATORS: Keep it short
-		takenLabel.label = `${takenTime} │ ` + _('Confirmed');
+		takenLabel.label = `${takenTime}`;
+		takenIcon.set_visible(true);
+		takenBox.add_css_class('badge-icon');
 	} else if (item.taken[1] === 0) {
-		// TRANSLATORS: Keep it short
 		takenLabel.label = _('Skipped');
+		takenIcon.set_visible(false);
+		takenBox.remove_css_class('badge-icon');
 	} else if (item.taken[1] === -1) {
-		// TRANSLATORS: Keep it short
 		takenLabel.label = _('Missed');
+		takenIcon.set_visible(false);
+		takenBox.remove_css_class('badge-icon');
 	}
 
 	[
