@@ -1,6 +1,6 @@
-/* 
+/*
  * Copyright 2023 Diego Povliuk
- * SPDX-License-Identifier: GPL-3.0-only 
+ * SPDX-License-Identifier: GPL-3.0-only
  */
 'use strict';
 
@@ -22,10 +22,10 @@ historyHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 });
 
 historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
-	const item = listHeaderItem.get_item();
+	const item = listHeaderItem.get_item().obj;
 	const dateLabel = listHeaderItem.get_child();
 	const localTZ = GLib.TimeZone.new_local();
-	const dateTime = GLib.DateTime.new_from_iso8601(item.date, null);
+	const dateTime = GLib.DateTime.new_from_unix_utc(item.taken[0] / 1000);
 	const localDT = dateTime.to_timezone(localTZ);
 
 	let date = localDT.format('%A • %x');
@@ -86,7 +86,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 });
 
 historyItemFactory.connect('bind', (factory, listItem) => {
-	const item = listItem.get_item();
+	const item = listItem.get_item().obj;
 	const box = listItem.get_child();
 	const row = box.get_parent();
 	const deleteButton = box.get_first_child();
@@ -95,7 +95,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const doseLabel = nameLabel.get_next_sibling();
 	const takenLabel = box.get_last_child();
 	const localTZ = GLib.TimeZone.new_local();
-	const dateTime = GLib.DateTime.new_from_iso8601(item.date, null);
+	const dateTime = GLib.DateTime.new_from_unix_utc(item.taken[0] / 1000);
 	const localDT = dateTime.to_timezone(localTZ);
 	const dateNow = GLib.DateTime.new_now_local();
 
@@ -111,7 +111,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 		deleteButton.tooltip_text = _('Delete');
 	}
 
-	let [hours, minutes] = item.info.time;
+	let [hours, minutes] = item.time;
 	let period = '';
 	if (clockIs12) {
 		period = ' AM';
@@ -123,30 +123,30 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const m = String(minutes).padStart(2, 0);
 
 	nameLabel.label = item.name;
-	doseLabel.label = `${item.info.dose} ${item.unit} • ${h}∶${m}` + period;
+	doseLabel.label = `${item.dose} ${item.unit} • ${h}∶${m}` + period;
 
 	let takenTime = localDT.format('%X').replace(':', '∶');
 	let parts = takenTime.split(' ');
 	takenTime = parts[0].slice(0, -3);
-		
+
 	if (parts.length > 1) {
 		// if the time has AM/PM
 		takenTime += ' ' + parts[1];
 	}
 
-	if (item.taken === 'yes') {
+	if (item.taken[1] === 1) {
 		// TRANSLATORS: Keep it short
 		takenLabel.label = `${takenTime} │ ` + _('Confirmed');
-	} else if (item.taken === 'no') {
+	} else if (item.taken[1] === 0) {
 		// TRANSLATORS: Keep it short
 		takenLabel.label = _('Skipped');
-	} else if (item.taken === 'miss') {
+	} else if (item.taken[1] === -1) {
 		// TRANSLATORS: Keep it short
 		takenLabel.label = _('Missed');
 	}
 
 	const colors = [
-		'default', 'red', 'orange', 'yellow', 
+		'default', 'red', 'orange', 'yellow',
 		'green', 'cyan', 'blue', 'purple'
 	];
 	colors.forEach(c => box.remove_css_class(c));

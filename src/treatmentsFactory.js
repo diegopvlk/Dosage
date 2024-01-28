@@ -67,8 +67,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 });
 
 treatmentsFactory.connect('bind', (factory, listItem) => {
-	const item = listItem.get_item();
-	const info = item.info;
+	const item = listItem.get_item().obj;
 	const box = listItem.get_child();
 	const row = box.get_parent();
 	const icon = box.get_first_child();
@@ -78,8 +77,8 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	const durationNextDateLabel = infoLabel.get_next_sibling();
 	const inventoryLabel = box.get_last_child().get_prev_sibling();
 	const today = new Date().setHours(0, 0, 0, 0);
-	const start = new Date(info.duration.start).setHours(0, 0, 0, 0);
-	const end = new Date(info.duration.end).setHours(0, 0, 0, 0);
+	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
+	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
 
 	// activate item with space bar
 	const keyController = new Gtk.EventControllerKey();
@@ -96,7 +95,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 
 	nameLabel.label = item.name;
 
-	const inv = info.inventory;
+	const inv = item.inventory;
 
 	if (inv.enabled) {
 		let currInv = inv.current < 0 ? 0 : inv.current;
@@ -111,10 +110,10 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	}
 
 	// TRANSLATORS: label for when duration is enabled
-	const startLabel = _('Starts on') + ` ${formatDate(info.duration.start)}`;
-	const untilLabel = _('Until') + ` ${formatDate(info.duration.end)}`;
+	const startLabel = _('Starts on') + ` ${formatDate(item.duration.start)}`;
+	const untilLabel = _('Until') + ` ${formatDate(item.duration.end)}`;
 
-	if (info.duration.enabled && info.frequency !== 'when-needed') {
+	if (item.duration.enabled && item.frequency !== 'when-needed') {
 		durationNextDateLabel.set_visible(true);
 		durationNextDateLabel.label = untilLabel;
 		if (start > today) {
@@ -122,34 +121,34 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		}
 	}
 
-	switch (info.frequency) {
+	switch (item.frequency) {
 		case 'daily':
 			infoLabel.label = _('Daily');
 			break;
 		case 'specific-days':
-			const isWeekend = info.days.every(day => [0, 6].includes(day));
-			const isWeekdays = info.days.every(day => [1, 2, 3, 4, 5].includes(day));
+			const isWeekend = item.days.every(day => [0, 6].includes(day));
+			const isWeekdays = item.days.every(day => [1, 2, 3, 4, 5].includes(day));
 
-			if (info.days.length === 1) {
-				infoLabel.label = getDayLabel(info.days[0], 'long');
+			if (item.days.length === 1) {
+				infoLabel.label = getDayLabel(item.days[0], 'long');
 			} else if (isWeekend) {
 				infoLabel.label = _('Weekends');
-			} else if (isWeekdays && info.days.length === 5) {
+			} else if (isWeekdays && item.days.length === 5) {
 				infoLabel.label = _('Weekdays');
-			} else if (info.days.length === 7) {
+			} else if (item.days.length === 7) {
 				infoLabel.label = _('Daily');
 			} else {
 				const days = isoWeekStart
-					? [...info.days.slice(1), info.days[0]]
-					: info.days;
+					? [...item.days.slice(1), item.days[0]]
+					: item.days;
 				infoLabel.label = days.map((day) => getDayLabel(day)).join(', ');
 			}
 			break;
 		case 'cycle':
-			const nextDt = new Date(item.info.cycleNextDate).setHours(0, 0, 0, 0);
+			const nextDt = new Date(item.cycleNextDate).setHours(0, 0, 0, 0);
 			const nextDate = formatDate(nextDt, 'weekday');
 
-			if (info.duration.enabled) {
+			if (item.duration.enabled) {
 				durationNextDateLabel.label = untilLabel;
 				if (nextDt > today && nextDt <= end) {
 					durationNextDateLabel.label += ' • ' + _('Next dose') + `: ${nextDate}`;
@@ -158,14 +157,14 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 				durationNextDateLabel.label = _('Next dose') + `: ${nextDate}`;
 			}
 			
-			if (nextDt <= today && !info.duration.enabled) {
+			if (nextDt <= today && !item.duration.enabled) {
 				durationNextDateLabel.set_visible(false);
 			} else {
 				durationNextDateLabel.set_visible(true);
 			}
 
 			infoLabel.label = _('Cycle') + ' • ';
-			infoLabel.label += `${info.cycle[0]}` + ' ⊷ ' + `${info.cycle[1]}`;
+			infoLabel.label += `${item.cycle[0]}` + ' ⊷ '+ `${item.cycle[1]}`;
 			break;
 		case 'when-needed':
 			infoLabel.label = _('When necessary');
@@ -176,8 +175,8 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		durationNextDateLabel.label = untilLabel;
 	}
 
-	if (info.notes !== '') {
-		infoLabel.label += ` • ${info.notes}`;
+	if (item.notes !== '') {
+		infoLabel.label += ` • ${item.notes}`;
 	}
 
 	const colors = [
@@ -186,9 +185,9 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	];
 	colors.forEach(c => box.remove_css_class(c));
 
-	box.add_css_class(info.color);
+	box.add_css_class(item.color);
 
-	icon.icon_name = info.icon;
+	icon.icon_name = item.icon;
 
 	function formatDate(date, weekday) {
 		if (weekday) {

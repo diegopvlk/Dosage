@@ -20,7 +20,7 @@ import {
 	isoWeekStart,
 } from './utils.js';
 
-import { Medication, HistoryMedication } from './medication.js';
+import { MedicationObject } from './medication.js';
 import { historyLS, treatmentsLS } from './window.js';
 
 export default function openMedicationWindow(DosageWindow, list, position, oneTime) {
@@ -129,53 +129,51 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		saveButton.label = _('Save');
 		deleteButton.set_visible(true);
 		
-		const item = list.get_model().get_item(position);
-		const info = item.info;
+		const item = list.get_model().get_item(position).obj;
 
 		medName.text = item.name;
 		medUnit.text = item.unit;
-		medNotes.text = info.notes ? info.notes : '';
+		medNotes.text = item.notes ? item.notes : '';
 
 		for (const clr of dosageColorBox) {
-			if (clr.get_name() === info.color) {
-				dosageColorButton.add_css_class(info.color + '-clr');
+			if (clr.get_name() === item.color) {
+				dosageColorButton.add_css_class(item.color + '-clr');
 				dosageColorButton.name = clr.get_name();
 			}
 		}
 		for (const icn of dosageIconBox) {
-			if (icn.get_icon_name() === info.icon) {
-				dosageIconButton.set_icon_name(info.icon);
+			const icon = item.icon + '-symbolic';
+			if (icn.get_icon_name() === icon) {
+				dosageIconButton.set_icon_name(icon);
 			}
 		}
 
 		setFreqMenuVisibility(item);
 
-		info.dosage.forEach(timeDose => {
+		item.dosage.forEach(timeDose => {
 			dosage.add_row(doseRow(timeDose));
 		});
 
-		// v1.1.0 only has recurring: boolean
-		if (info.recurring) {
-			const recurrEnabled = info.recurring.enabled || info.recurring === true;
-			recurringNotif.set_enable_expansion(recurrEnabled);
-			recurringInterval.value = info.recurring.interval || 5;
+		if (item.recurring) {
+			recurringNotif.set_enable_expansion(item.recurring.enabled);
+			recurringInterval.value = item.recurring.interval;
 		}
 
-		if (info.days && info.days.length !== 0) {
+		if (item.days && item.days.length !== 0) {
 			const specificDaysBox = builder.get_object('specificDaysBox');
 
 			let day = isoWeekStart ? 1 : 0;
 
 			for (const btn of specificDaysBox) {
-				for (const d of info.days) {
+				for (const d of item.days) {
 					if (d === day) btn.set_active(true);
 				}
 				day = (day + 1) % 7;
 			}
 		}
 
-		if (info.cycle && info.cycle.length !== 0) {
-			const [active, inactive, current] = info.cycle;
+		if (item.cycle && item.cycle.length !== 0) {
+			const [active, inactive, current] = item.cycle;
 
 			cycleActive.value = active;
 			cycleInactive.value = inactive;
@@ -186,19 +184,19 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 			frequencyCycle.label = `${active} ⊷ ${inactive}`;
 		}
 
-		if (info.inventory.enabled) {
+		if (item.inventory.enabled) {
 			medInventory.set_enable_expansion(true);
 		}
-		medCurrrentInv.value = info.inventory.current;
-		medReminderInv.value = info.inventory.reminder;
+		medCurrrentInv.value = item.inventory.current;
+		medReminderInv.value = item.inventory.reminder;
 
-		if (info.duration.enabled) {
+		if (item.duration.enabled) {
 			medDuration.set_enable_expansion(true);
 
 			// this parsing is in seconds
 			const localTZ = GLib.TimeZone.new_local();
-			const start = GLib.DateTime.new_from_unix_utc(item.info.duration.start / 1000);
-			const end = GLib.DateTime.new_from_unix_utc(item.info.duration.end / 1000);
+			const start = GLib.DateTime.new_from_unix_utc(item.duration.start / 1000);
+			const end = GLib.DateTime.new_from_unix_utc(item.duration.end / 1000);
 			const startTZ = start.to_timezone(localTZ);
 			const endTZ = end.to_timezone(localTZ);
 
@@ -255,7 +253,8 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 
 		if (DosageWindow._treatmentsList.model.get_n_items() > 0) {
 			oneTimeMenuRow.set_visible(true);
-			for (const item of treatmentsLS) {
+			for (const it of treatmentsLS) {
+				const item = it.obj;
 				const btn = new Gtk.Button({
 					css_classes: ['flat', 'one-time-name'],
 					label: item.name,
@@ -265,13 +264,13 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 
 				btn.connect('clicked', () => {
 					removeCssColors(dosageColorButton);
-					dosageColorButton.add_css_class(item.info.color + '-clr');
+					dosageColorButton.add_css_class(item.color + '-clr');
 					oneTimeEntries.get_parent().get_parent().popdown();
 
 					medName.text = item.name;
 					medUnit.text = item.unit;
-					dosageColorButton.name = item.info.color;
-					doseRowOne.set_value(item.info.dosage[0].dose);
+					dosageColorButton.name = item.color;
+					doseRowOne.set_value(item.dosage[0].dose);
 
 					medName.sensitive = false;
 					medUnit.sensitive = false;
@@ -373,13 +372,13 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 			transient_for: medWindow,
 		});
 
-		dialog.add_response('no', _('Cancel'));
-		dialog.add_response('yes', _('Delete'));
-		dialog.set_response_appearance('yes', Adw.ResponseAppearance.DESTRUCTIVE);
+		dialog.add_response('cancel', _('Cancel'));
+		dialog.add_response('delete', _('Delete'));
+		dialog.set_response_appearance('delete', Adw.ResponseAppearance.DESTRUCTIVE);
 		dialog.present();
 
 		dialog.connect('response', (_self, response) => {
-			if (response === 'yes') {
+			if (response === 'delete') {
 				const it = DosageWindow._treatmentsList.model.get_item(position);
 				const deletePos = treatmentsLS.find(it)[1];
 				treatmentsLS.remove(deletePos);
@@ -395,31 +394,34 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		const oneTimeTaken = builder.get_object('oneTimeTaken');
 		const dt = +calOneEntry.get_date().format('%s') * 1000;
 		const entryDate = new Date(dt);
-		const info = getDoses()[0];
+		const dosage = getDoses()[0];
 
-		let taken = 'yes';
+		let taken = 1;
 		if (oneTime) {
-			if (oneTimeTaken.get_selected() === 0) taken = 'yes';
-			if (oneTimeTaken.get_selected() === 1) taken = 'no';
-			if (oneTimeTaken.get_selected() === 2) taken = 'miss';
+			if (oneTimeTaken.get_selected() === 0) taken = 1; // confirmed
+			if (oneTimeTaken.get_selected() === 1) taken = 0; // skipped
+			if (oneTimeTaken.get_selected() === 2) taken = -1; // missed
 		}
 
-		entryDate.setHours(info.time[0]);
-		entryDate.setMinutes(info.time[1]);
+		entryDate.setHours(dosage.time[0]);
+		entryDate.setMinutes(dosage.time[1]);
 
-		const item = new HistoryMedication({
-			name: medName.text.trim(),
-			unit: medUnit.text.trim(),
-			color: dosageColorButton.get_name(),
-			taken: taken,
-			info: info,
-			date: entryDate.toISOString(),
+		const item = new MedicationObject({
+			obj: {
+				name: medName.text.trim(),
+				unit: medUnit.text.trim(),
+				icon: dosageIconButton.get_icon_name(),
+				time: [dosage.time[0], dosage.time[1]],
+				dose: dosage.dose,
+				color: dosageColorButton.get_name(),
+				taken: [entryDate.getTime(), taken],
+			},
 		});
 
 		historyLS.insert_sorted(
 			item,
-			(obj1, obj2) => {
-				return obj1.date > obj2.date ? -1 : 0;
+			(a, b) => {
+				return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
 			}
 		);
 
@@ -430,10 +432,11 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 
 		// if it's the time as of an existing item
 		// update lastTaken if entryDate is today
-		for (const i of treatmentsLS) {
-			i.info.dosage.forEach(timeDose => {
+		for (const it of treatmentsLS) {
+			const i = it.obj;
+			i.dosage.forEach(timeDose => {
 					const sameName = i.name === item.name;
-					const sameTime = String(timeDose.time) === String(item.info.time);
+					const sameTime = String(timeDose.time) === String(i.time);
 					if (sameName && sameTime) {
 						timeDose.lastTaken = new Date().toISOString();
 					}
@@ -460,7 +463,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		let cycle = [];
 		let invEnabled = false;
 		let durEnabled = false;
-		let name, unit, notes, color, freq, icon, recurring, lastUpdate,
+		let name, unit, notes, color, freq, icon, recurring,
 			inventory, current, reminder, duration, start, end;
 
 		if (medInventory.get_enable_expansion()) {
@@ -493,7 +496,6 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		reminder = medReminderInv.value;
 		inventory = { enabled: invEnabled, current: current, reminder: reminder };
 		duration = { enabled: durEnabled, start: start, end: end };
-		lastUpdate = new Date().toISOString();
 
 		if (frequencyMenu.get_selected() === 0) freq = 'daily';
 		if (frequencyMenu.get_selected() === 1) freq = 'specific-days';
@@ -509,22 +511,26 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		});
 
 		if (isUpdate) {
-			const item = list.get_model().get_item(position);
+			const item = list.get_model().get_item(position).obj;
 			doses = doses.map((dose, idx) => {
 				return {
 					time: dose.time,
 					dose: dose.dose,
-					lastTaken: item.info.dosage[idx]?.lastTaken || null,
+					lastTaken: item.dosage[idx]?.lastTaken || null,
 				};
 			});
 			treatmentsLS.remove(position);
+		} else {
+			doses.forEach(dose => {
+				dose.lastTaken = null;
+			});
 		}
 
 		treatmentsLS.insert_sorted(
-			new Medication({
-				name: name,
-				unit: unit,
-				info: {
+			new MedicationObject({
+				obj: {
+					name: name,
+					unit: unit,
 					notes: notes,
 					frequency: freq,
 					color: color,
@@ -534,13 +540,12 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 					dosage: doses,
 					recurring: recurring,
 					inventory: inventory,
-					duration: duration,
-					lastUpdate: lastUpdate,
-				},
+					duration: duration
+				}
 			}),
-			(obj1, obj2) => {
-				const name1 = obj1.name;
-				const name2 = obj2.name;
+			(a, b) => {
+				const name1 = a.obj.name;
+				const name2 = b.obj.name;
 				return name1.localeCompare(name2);
 			}
 		);
@@ -616,11 +621,10 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		});
 
 		if (item) {
-			const freq = item.info.frequency;
-			if (freq === 'daily') frequencyMenu.set_selected(0);
-			if (freq === 'specific-days') frequencyMenu.set_selected(1);
-			if (freq === 'cycle') frequencyMenu.set_selected(2);
-			if (freq === 'when-needed') frequencyMenu.set_selected(3);
+			if (item.frequency === 'daily') frequencyMenu.set_selected(0);
+			if (item.frequency === 'specific-days') frequencyMenu.set_selected(1);
+			if (item.frequency === 'cycle') frequencyMenu.set_selected(2);
+			if (item.frequency === 'when-needed') frequencyMenu.set_selected(3);
 		}
 	}
 
@@ -650,11 +654,12 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		}
 
 		for (const it of treatmentsLS) {
+			const i = it.obj;
 			if (isUpdate) {
-				const item = list.get_model().get_item(position);
-				if (it === item) continue;
+				const item = list.get_model().get_item(position).obj;
+				if (i === item) continue;
 			}
-			if (it.name.toLowerCase() === medName.text.trim().toLowerCase()) {
+			if (i.name.toLowerCase() === medName.text.trim().toLowerCase()) {
 				toastOverlay.add_toast(new Adw.Toast({ title: _('Name already exists') }));
 				medName.add_css_class('error');
 				return;

@@ -23,10 +23,10 @@ todayHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 });
 
 todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
-	const item = listHeaderItem.get_item();
+	const item = listHeaderItem.get_item().obj;
 	const timeLabel = listHeaderItem.get_child();
 
-	let [hours, minutes] = item.info.dosage.time;
+	let [hours, minutes] = item.time;
 	let period = '';
 
 	if (clockIs12) {
@@ -116,7 +116,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 });
 
 todayItemFactory.connect('bind', (factory, listItem) => {
-	const item = listItem.get_item();
+	const item = listItem.get_item().obj;
 	const box = listItem.get_child();
 	const row = box.get_parent();
 	const icon = box.get_first_child().get_next_sibling();
@@ -143,14 +143,14 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	];
 	colors.forEach(c => box.remove_css_class(c));
 	
-	box.add_css_class(item.info.color);
+	box.add_css_class(item.color);
 
 	nameLabel.label = item.name;
-	doseLabel.label = `${item.info.dosage.dose} ${item.unit}`;
+	doseLabel.label = `${item.dose} ${item.unit}`;
 
-	if (item.info.notes !== '') {
-		doseLabel.label += ` • ${item.info.notes}`;
+	if (item.notes !== '') {
+		doseLabel.label += ` • ${item.notes}`;
 	}
 
-	icon.icon_name = item.info.icon;
+	icon.icon_name = item.icon;
 });

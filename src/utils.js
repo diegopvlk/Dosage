@@ -1,6 +1,6 @@
-/* 
+/*
  * Copyright 2023 Diego Povliuk
- * SPDX-License-Identifier: GPL-3.0-only 
+ * SPDX-License-Identifier: GPL-3.0-only
  */
 'use strict';
 
@@ -49,31 +49,35 @@ export function removeCssColors(colorBtn) {
 }
 
 export function createTempObj(type, listStore) {
-	const tempObj = { meds: [] };
-
 	if (type === 'treatments') {
-		for (const item of listStore) {
-			const obj = {
-				name: item.name,
-				unit: item.unit,
-				info: item.info,
-			};
-			tempObj.meds.push(obj);
+		const tempObj = { treatments: [], lastUpdate: new Date().toISOString() };
+		for (const it of listStore) {
+			tempObj.treatments.push(it.obj);
 		}
+		return tempObj;
 	} else if (type === 'history') {
-		for (const item of listStore) {
-			const obj = {
+		const tempObj = { history: {} };
+		const hist = tempObj.history;
+		for (const it of listStore) {
+			const item = it.obj;
+			const dateKey = new Date(item.taken[0]).setHours(0, 0, 0, 0);
+
+			if (!hist[dateKey]) {
+				hist[dateKey] = [];
+			}
+
+			hist[dateKey].push({
 				name: item.name,
-				info: item.info,
 				unit: item.unit,
+				icon: item.icon,
+				time: item.time,
+				dose: item.dose,
 				color: item.color,
 				taken: item.taken,
-				date: item.date,
-			};
-			tempObj.meds.push(obj);
+			});
 		}
+		return tempObj;
 	}
-	return tempObj;
 }
 
 export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
@@ -100,31 +104,31 @@ export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
 	});
 }
 
-export function isTodayMedDay(item) {
-	const info = item.info;
+export function isTodayMedDay(med) {
+	const item = med.obj;
 	const today = new Date().setHours(0, 0, 0, 0);
-	const start = new Date(info.duration.start).setHours(0, 0, 0, 0);
-	const end = new Date(info.duration.end).setHours(0, 0, 0, 0);
+	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
+	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
 
-	if (info.dosage.lastTaken !== null) {
+	if (item.lastTaken !== null) {
 		return false;
 	}
 
-	if (info.duration.enabled && (start > today || end < today)) {
+	if (item.duration.enabled && (start > today || end < today)) {
 		return false;
 	}
 
-	switch (info.frequency) {
+	switch (item.frequency) {
 		case 'daily':
 			return true;
 		case 'specific-days':
-			return info.days.includes(new Date().getDay());
+			return item.days.includes(new Date().getDay());
 		case 'cycle':
-			const [active, inactive, current] = info.cycle;
+			const [active, inactive, current] = item.cycle;
 			return current <= active;
 		case 'when-needed':
 			return false;
-	}	
+	}
 }
 
 export function datesPassedDiff(startDate, endDate) {
@@ -143,8 +147,8 @@ export function datesPassedDiff(startDate, endDate) {
 	return datesPassed;
 }
 
-export function doseRow(info) {
-	let [hours, minutes] = info.time;
+export function doseRow(timeDose) {
+	let [hours, minutes] = timeDose.time;
 	let period = '';
 
 	if (clockIs12) {
@@ -160,7 +164,7 @@ export function doseRow(info) {
 			lower: 0.25,
 			upper: 999,
 			step_increment: 0.25,
-			value: info.dose,
+			value: timeDose.dose,
 		}),
 	});
 	const doseBox = new Gtk.Box();
@@ -305,11 +309,11 @@ export const HistorySectionSorter = GObject.registerClass(
 {},	class HistorySectionSorter extends Gtk.Sorter {
 		_init(params) {	super._init(params) }
 
-		vfunc_compare(obj1, obj2) {
-			const dt1 = new Date(obj1.date).setHours(0, 0, 0, 0);
-			const dt2 = new Date(obj2.date).setHours(0, 0, 0, 0);
+		vfunc_compare(a, b) {
+			const dtA = new Date(a.obj.taken[0]).setHours(0, 0, 0, 0);
+			const dtB = new Date(b.obj.taken[0]).setHours(0, 0, 0, 0);
 
-			return dt1 === dt2 ? 0 : dt1 < dt2 ? 1 : -1;
+			return dtA === dtB ? 0 : dtA < dtB ? 1 : -1;
 		}
 	}
 );
@@ -318,8 +322,8 @@ export const HistorySorter = GObject.registerClass(
 {},	class HistorySorter extends Gtk.Sorter {
 		_init(params) {	super._init(params) }
 
-		vfunc_compare(obj1, obj2) {
-			return obj1.date > obj2.date ? -1 : 0;
+		vfunc_compare(a, b) {
+			return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
 		}
 	}
 );
@@ -328,9 +332,9 @@ export const TodaySectionSorter = GObject.registerClass(
 {},	class TodaySectionSorter extends Gtk.Sorter {
 		_init(params) { super._init(params) }
 
-		vfunc_compare(obj1, obj2) {
-			const [h1, m1] = obj1.info.dosage.time;
-			const [h2, m2] = obj2.info.dosage.time;
+		vfunc_compare(a, b) {
+			const [h1, m1] = a.obj.time;
+			const [h2, m2] = b.obj.time;
 
 			const hm1 = `${addLeadZero(h1)}${addLeadZero(m1)}`;
 			const hm2 = `${addLeadZero(h2)}${addLeadZero(m2)}`;

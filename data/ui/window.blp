@@ -66,13 +66,13 @@ template $DosageWindow : Adw.ApplicationWindow {
             Button entryBtn {
               styles [ 'pill' ]
               clicked => $_addTodayToHistory();
-              name: 'yes';
+              name: '1';
               label: _("One-time entry");
             }
             Button skipBtn {
               styles [ 'pill', 'skip' ]
               clicked => $_addTodayToHistory();
-              name: 'no';
+              name: '0';
               tooltip-text: _("Skip");
               visible: false;
               icon-name: 'skip-med-symbolic';
