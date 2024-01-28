@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/io/github/diegopvlk/Dosage">
-    <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
-    <file alias="style.css">styles/style.css</file>
-    <file alias="style-hc.css">styles/style-hc.css</file>
-    <file alias="style-dark.css">styles/style-dark.css</file>
-    <file alias="card-colors.css">styles/card-colors.css</file>
-    <file>sounds/ding.ogg</file>
-    <file>ui/window.ui</file>
-    <file>ui/med-window.ui</file>
-    <file>ui/preferences.ui</file>
-  </gresource>
-  <gresource prefix="/io/github/diegopvlk/Dosage/icons/scalable/actions">
-    <file alias="today-icn-symbolic.svg">icons/ui/today-icn-symbolic.svg</file>
-    <file alias="history-symbolic.svg">icons/ui/history-symbolic.svg</file>
-    <file alias="treatments-symbolic.svg">icons/ui/treatments-symbolic.svg</file>
-    <file alias="unselect-meds-symbolic.svg">icons/ui/unselect-meds-symbolic.svg</file>
-    <file alias="skip-med-symbolic.svg">icons/ui/skip-med-symbolic.svg</file>
+	<gresource prefix="/io/github/diegopvlk/Dosage">
+		<file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
+		<file alias="style.css">styles/style.css</file>
+		<file alias="style-hc.css">styles/style-hc.css</file>
+		<file alias="style-dark.css">styles/style-dark.css</file>
+		<file alias="card-colors.css">styles/card-colors.css</file>
+		<file>sounds/ding.ogg</file>
+		<file>ui/window.ui</file>
+		<file>ui/med-window.ui</file>
+		<file>ui/preferences.ui</file>
+	</gresource>
+	<gresource prefix="/io/github/diegopvlk/Dosage/icons/scalable/actions">
+		<file alias="today-icn-symbolic.svg">icons/ui/today-icn-symbolic.svg</file>
+		<file alias="history-symbolic.svg">icons/ui/history-symbolic.svg</file>
+		<file alias="treatments-symbolic.svg">icons/ui/treatments-symbolic.svg</file>
+		<file alias="unselect-meds-symbolic.svg">icons/ui/unselect-meds-symbolic.svg</file>
+		<file alias="skip-med-symbolic.svg">icons/ui/skip-med-symbolic.svg</file>
 
-    <file alias="cross-large-symbolic.svg">icons/ui/cross-large-symbolic.svg</file>
-    <file alias="color-filled-symbolic.svg">icons/ui/color-filled-symbolic.svg</file>
-    <file alias="pill-symbolic.svg">icons/ui/pill-symbolic.svg</file>
-    <file alias="pill-alt-symbolic.svg">icons/ui/pill-alt-symbolic.svg</file>
-    <file alias="pill-capsule-symbolic.svg">icons/ui/pill-capsule-symbolic.svg</file>
-    <file alias="pill-round-symbolic.svg">icons/ui/pill-round-symbolic.svg</file>
-    <file alias="pill-round-alt-symbolic.svg">icons/ui/pill-round-alt-symbolic.svg</file>
-    <file alias="ampoule-symbolic.svg">icons/ui/ampoule-symbolic.svg</file>
-    <file alias="injection-symbolic.svg">icons/ui/injection-symbolic.svg</file>
-    <file alias="pill-square-symbolic.svg">icons/ui/pill-square-symbolic.svg</file>
-    <file alias="pill-square-alt-symbolic.svg">icons/ui/pill-square-alt-symbolic.svg</file>
-    <file alias="pill-triangle-symbolic.svg">icons/ui/pill-triangle-symbolic.svg</file>
-    <file alias="pill-triangle-alt-symbolic.svg">icons/ui/pill-triangle-alt-symbolic.svg</file>
-    <file alias="med-bottle-symbolic.svg">icons/ui/med-bottle-symbolic.svg</file>
-    <file alias="med-drop-symbolic.svg">icons/ui/med-drop-symbolic.svg</file>
-    <file alias="magic-potion-symbolic.svg">icons/ui/magic-potion-symbolic.svg</file>
-    
-    <file alias="all-done-symbolic.svg">icons/ui/all-done-symbolic.svg</file>
+		<file alias="cross-large-symbolic.svg">icons/ui/cross-large-symbolic.svg</file>
+		<file alias="color-filled-symbolic.svg">icons/ui/color-filled-symbolic.svg</file>
+		<file alias="pill-symbolic.svg">icons/ui/pill-symbolic.svg</file>
+		<file alias="pill-alt-symbolic.svg">icons/ui/pill-alt-symbolic.svg</file>
+		<file alias="pill-capsule-symbolic.svg">icons/ui/pill-capsule-symbolic.svg</file>
+		<file alias="pill-round-symbolic.svg">icons/ui/pill-round-symbolic.svg</file>
+		<file alias="pill-round-alt-symbolic.svg">icons/ui/pill-round-alt-symbolic.svg</file>
+		<file alias="ampoule-symbolic.svg">icons/ui/ampoule-symbolic.svg</file>
+		<file alias="injection-symbolic.svg">icons/ui/injection-symbolic.svg</file>
+		<file alias="pill-square-symbolic.svg">icons/ui/pill-square-symbolic.svg</file>
+		<file alias="pill-square-alt-symbolic.svg">icons/ui/pill-square-alt-symbolic.svg</file>
+		<file alias="pill-triangle-symbolic.svg">icons/ui/pill-triangle-symbolic.svg</file>
+		<file alias="pill-triangle-alt-symbolic.svg">icons/ui/pill-triangle-alt-symbolic.svg</file>
+		<file alias="med-bottle-symbolic.svg">icons/ui/med-bottle-symbolic.svg</file>
+		<file alias="med-drop-symbolic.svg">icons/ui/med-drop-symbolic.svg</file>
+		<file alias="magic-potion-symbolic.svg">icons/ui/magic-potion-symbolic.svg</file>
+
+		<file alias="all-done-symbolic.svg">icons/ui/all-done-symbolic.svg</file>
 	</gresource>
 </gresources>

@@ -1,6 +1,6 @@
-/* 
+/*
  * Copyright 2023 Diego Povliuk
- * SPDX-License-Identifier: GPL-3.0-only 
+ * SPDX-License-Identifier: GPL-3.0-only
  */
 'use strict';
 
@@ -102,7 +102,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 
 		inventoryLabel.set_visible(true);
 		inventoryLabel.label = `${currInv} ` + _('Remaining');
-		
+
 		if (inv.current <= inv.reminder) {
 			inventoryLabel.add_css_class('low-stock-label');
 			inventoryLabel.label = `${currInv} ↓ ` + _('Low stock');
@@ -141,7 +141,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 				const days = isoWeekStart
 					? [...item.days.slice(1), item.days[0]]
 					: item.days;
-				infoLabel.label = days.map((day) => getDayLabel(day)).join(', ');
+				infoLabel.label = days.map(day => getDayLabel(day)).join(', ');
 			}
 			break;
 		case 'cycle':
@@ -151,12 +151,13 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			if (item.duration.enabled) {
 				durationNextDateLabel.label = untilLabel;
 				if (nextDt > today && nextDt <= end) {
-					durationNextDateLabel.label += ' • ' + _('Next dose') + `: ${nextDate}`;
+					durationNextDateLabel.label +=
+						' • ' + _('Next dose') + `: ${nextDate}`;
 				}
 			} else if (nextDt > today) {
 				durationNextDateLabel.label = _('Next dose') + `: ${nextDate}`;
 			}
-			
+
 			if (nextDt <= today && !item.duration.enabled) {
 				durationNextDateLabel.set_visible(false);
 			} else {
@@ -164,7 +165,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 			}
 
 			infoLabel.label = _('Cycle') + ' • ';
-			infoLabel.label += `${item.cycle[0]}` + ' ⊷ '+ `${item.cycle[1]}`;
+			infoLabel.label += `${item.cycle[0]}` + ' ⊷ ' + `${item.cycle[1]}`;
 			break;
 		case 'when-needed':
 			infoLabel.label = _('When necessary');
@@ -179,11 +180,16 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		infoLabel.label += ` • ${item.notes}`;
 	}
 
-	const colors = [
-		'default', 'red', 'orange', 'yellow',
-		'green', 'cyan', 'blue', 'purple'
-	];
-	colors.forEach(c => box.remove_css_class(c));
+	[
+		'default',
+		'red',
+		'orange',
+		'yellow',
+		'green',
+		'cyan',
+		'blue',
+		'purple',
+	].forEach(c => box.remove_css_class(c));
 
 	box.add_css_class(item.color);
 
@@ -201,7 +207,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		return new Date(date).toLocaleDateString(undefined, {
 			month: 'short',
 			day: 'numeric',
-			year: 'numeric'
+			year: 'numeric',
 		});
 	}
 });

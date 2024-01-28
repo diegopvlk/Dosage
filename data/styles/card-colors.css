@@ -41,7 +41,10 @@
 .cyan-clr:not(menubutton):hover,
 .blue-clr:not(menubutton):hover,
 .purple-clr:not(menubutton):hover {
-  background-image: linear-gradient(alpha(currentColor, .3), alpha(currentColor, .3));
+	background-image: linear-gradient(
+		alpha(currentColor, 0.3),
+		alpha(currentColor, 0.3)
+	);
 }
 
 .red-clr {

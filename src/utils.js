@@ -32,7 +32,7 @@ function checkClock() {
 }
 
 export const DataDir = Gio.file_new_for_path(
-	GLib.build_filenamev([GLib.get_user_data_dir()])
+	GLib.build_filenamev([GLib.get_user_data_dir()]),
 );
 
 export function addLeadZero(input) {
@@ -88,7 +88,7 @@ export function handleCalendarSelect(calendar, calendarBtn, oneTime) {
 		if (oneTime && selDate > today) {
 			(async function () {
 				cal.add_css_class('calendar-error');
-				await new Promise((res) => setTimeout(res, 500));
+				await new Promise(res => setTimeout(res, 500));
 				cal.remove_css_class('calendar-error');
 			})();
 			cal.select_day(GLib.DateTime.new_now_local());
@@ -306,8 +306,11 @@ export function getDayLabel(day, long) {
 }
 
 export const HistorySectionSorter = GObject.registerClass(
-{},	class HistorySectionSorter extends Gtk.Sorter {
-		_init(params) {	super._init(params) }
+	{},
+	class HistorySectionSorter extends Gtk.Sorter {
+		_init(params) {
+			super._init(params);
+		}
 
 		vfunc_compare(a, b) {
 			const dtA = new Date(a.obj.taken[0]).setHours(0, 0, 0, 0);
@@ -315,22 +318,28 @@ export const HistorySectionSorter = GObject.registerClass(
 
 			return dtA === dtB ? 0 : dtA < dtB ? 1 : -1;
 		}
-	}
+	},
 );
 
 export const HistorySorter = GObject.registerClass(
-{},	class HistorySorter extends Gtk.Sorter {
-		_init(params) {	super._init(params) }
+	{},
+	class HistorySorter extends Gtk.Sorter {
+		_init(params) {
+			super._init(params);
+		}
 
 		vfunc_compare(a, b) {
 			return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
 		}
-	}
+	},
 );
 
 export const TodaySectionSorter = GObject.registerClass(
-{},	class TodaySectionSorter extends Gtk.Sorter {
-		_init(params) { super._init(params) }
+	{},
+	class TodaySectionSorter extends Gtk.Sorter {
+		_init(params) {
+			super._init(params);
+		}
 
 		vfunc_compare(a, b) {
 			const [h1, m1] = a.obj.time;
@@ -341,5 +350,5 @@ export const TodaySectionSorter = GObject.registerClass(
 
 			return hm1 === hm2 ? 0 : hm1 > hm2 ? 1 : -1;
 		}
-	}
+	},
 );

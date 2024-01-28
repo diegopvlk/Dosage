@@ -1,6 +1,6 @@
-/* 
+/*
  * Copyright 2023 Diego Povliuk
- * SPDX-License-Identifier: GPL-3.0-only 
+ * SPDX-License-Identifier: GPL-3.0-only
  */
 'use strict';
 
@@ -86,10 +86,10 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 		adjustment: new Gtk.Adjustment({
 			lower: 0.25,
 			upper: 999,
-			step_increment: 0.25
+			step_increment: 0.25,
 		}),
 	});
-	amountBox.append(amountRow)
+	amountBox.append(amountRow);
 	const amountBtn = new Gtk.MenuButton({
 		tooltip_text: _('Change dose'),
 		css_classes: ['circular', 'today-amount'],
@@ -137,12 +137,17 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	row.remove_css_class('activatable');
 	box.add_css_class('activatable');
 
-	const colors = [
-		'default', 'red', 'orange', 'yellow',
-		'green', 'cyan', 'blue', 'purple'
-	];
-	colors.forEach(c => box.remove_css_class(c));
-	
+	[
+		'default',
+		'red',
+		'orange',
+		'yellow',
+		'green',
+		'cyan',
+		'blue',
+		'purple',
+	].forEach(c => box.remove_css_class(c));
+
 	box.add_css_class(item.color);
 
 	nameLabel.label = item.name;

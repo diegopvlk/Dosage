@@ -42,9 +42,10 @@ to the first item instead of the first header.
 The same thing happens in today list when confirming
 so use this little hack to scroll to header instead
 */
-listview.scroll-to-top-hack > :nth-child(1){
+listview.scroll-to-top-hack > :nth-child(1) {
 	margin-bottom: -36px;
 }
+
 listview.scroll-to-top-hack > :nth-child(2) {
 	margin-top: 36px;
 }
@@ -117,7 +118,9 @@ list > row.activatable.header:active {
 }
 
 #dosage-med-window
-	button:not(.circular):not(.image-button):not(.arrow-button):not(.toggle):not(.am-pm) {
+	button:not(.circular):not(.image-button):not(.arrow-button):not(.toggle):not(
+		.am-pm
+	) {
 	border-radius: 9px;
 	min-width: 60px;
 }
@@ -392,8 +395,8 @@ button.suggested-action:focus {
 }
 
 .today-amount > button {
-  min-width: 30px;
-  min-height: 30px;
+	min-width: 30px;
+	min-height: 30px;
 }
 
 .spin-box > row.spin > box {
@@ -419,22 +422,22 @@ preferencespage scrolledwindow viewport {
 
 calendar button,
 calendar .day-number {
-  border-radius: 99px;
+	border-radius: 99px;
 }
 
 calendar button,
 calendar .month,
 calendar .year {
-  margin-bottom: 5px;
-  margin-top: -1px;
+	margin-bottom: 5px;
+	margin-top: -1px;
 }
 
 calendar .day-name {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 
 calendar .day-number.today:not(:selected) {
-  background-color: alpha(@view_fg_color, 0.05);
+	background-color: alpha(@view_fg_color, 0.05);
 }
 
 row.error {
@@ -450,6 +453,7 @@ row.error {
 		background-color: transparent;
 		border-radius: 99px;
 	}
+
 	10% {
 		background-color: alpha(@red_2, 0.5);
 	}
@@ -465,6 +469,7 @@ row.error {
 		box-shadow: none;
 		color: currentColor;
 	}
+
 	10% {
 		box-shadow: 0 0 7px 1px alpha(@red_2, 0.7);
 		color: mix(@window_fg_color, @red_4, 0.7);

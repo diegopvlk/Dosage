@@ -1,6 +1,6 @@
-/* 
+/*
  * Copyright 2023 Diego Povliuk
- * SPDX-License-Identifier: GPL-3.0-only 
+ * SPDX-License-Identifier: GPL-3.0-only
  */
 'use strict';
 
@@ -8,7 +8,7 @@ import Gtk from 'gi://Gtk';
 
 export default function openPrefsWindow(DosageApplication, container) {
 	const builder = Gtk.Builder.new_from_resource(
-		'/io/github/diegopvlk/Dosage/ui/preferences.ui'
+		'/io/github/diegopvlk/Dosage/ui/preferences.ui',
 	);
 
 	const prefsWindow = builder.get_object('prefsWindow');

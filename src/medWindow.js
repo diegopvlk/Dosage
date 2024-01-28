@@ -1,6 +1,6 @@
-/* 
+/*
  * Copyright 2023 Diego Povliuk
- * SPDX-License-Identifier: GPL-3.0-only 
+ * SPDX-License-Identifier: GPL-3.0-only
  */
 'use strict';
 
@@ -23,9 +23,14 @@ import {
 import { MedicationObject } from './medication.js';
 import { historyLS, treatmentsLS } from './window.js';
 
-export default function openMedicationWindow(DosageWindow, list, position, oneTime) {
+export default function openMedicationWindow(
+	DosageWindow,
+	list,
+	position,
+	oneTime,
+) {
 	const builder = Gtk.Builder.new_from_resource(
-		'/io/github/diegopvlk/Dosage/ui/med-window.ui'
+		'/io/github/diegopvlk/Dosage/ui/med-window.ui',
 	);
 
 	const dateOneEntry = builder.get_object('dateOneEntry');
@@ -83,7 +88,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		.get_first_child();
 	freqChooseDaysLabel.ellipsize = Pango.EllipsizeMode.END;
 
-	const frequencyCycle = builder.get_object('frequencyCycle');	
+	const frequencyCycle = builder.get_object('frequencyCycle');
 	const cycleActive = builder.get_object('cycleActive');
 	const cycleInactive = builder.get_object('cycleInactive');
 	const cycleCurrent = builder.get_object('cycleCurrent');
@@ -128,7 +133,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		medWindow.title = _('Edit treatment');
 		saveButton.label = _('Save');
 		deleteButton.set_visible(true);
-		
+
 		const item = list.get_model().get_item(position).obj;
 
 		medName.text = item.name;
@@ -326,12 +331,12 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		if (firstDoseRow != lastDoseRow) {
 			dosage.remove(doseRow);
 		}
-	}
+	};
 
 	const medWindowBox = builder.get_object('medWindowBox');
 	const [medWindowBoxHeight] = medWindowBox.measure(
 		Gtk.Orientation.VERTICAL,
-		-1
+		-1,
 	);
 	medWindow.default_height = medWindowBoxHeight + 58;
 
@@ -361,7 +366,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 
 		DosageWindow._updateEverything('skipHistUp');
 		DosageWindow._scheduleNotifications('saving');
-		medWindow.destroy();	
+		medWindow.destroy();
 	});
 
 	deleteButton.connect('clicked', () => {
@@ -374,7 +379,10 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 
 		dialog.add_response('cancel', _('Cancel'));
 		dialog.add_response('delete', _('Delete'));
-		dialog.set_response_appearance('delete', Adw.ResponseAppearance.DESTRUCTIVE);
+		dialog.set_response_appearance(
+			'delete',
+			Adw.ResponseAppearance.DESTRUCTIVE,
+		);
 		dialog.present();
 
 		dialog.connect('response', (_self, response) => {
@@ -418,12 +426,9 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 			},
 		});
 
-		historyLS.insert_sorted(
-			item,
-			(a, b) => {
-				return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
-			}
-		);
+		historyLS.insert_sorted(item, (a, b) => {
+			return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
+		});
 
 		const todayDt = new Date().setHours(0, 0, 0, 0);
 		const entryDt = entryDate.setHours(0, 0, 0, 0);
@@ -435,17 +440,16 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		for (const it of treatmentsLS) {
 			const i = it.obj;
 			i.dosage.forEach(timeDose => {
-					const sameName = i.name === item.name;
-					const sameTime = String(timeDose.time) === String(i.time);
-					if (sameName && sameTime) {
-						timeDose.lastTaken = new Date().toISOString();
-					}
+				const sameName = i.name === item.name;
+				const sameTime = String(timeDose.time) === String(i.time);
+				if (sameName && sameTime) {
+					timeDose.lastTaken = new Date().toISOString();
 				}
-			);
+			});
 		}
 
-		// reload-ish of history, so the item don't get inserted 
-		// on a separate section (with the same day) 
+		// reload-ish of history, so the item don't get inserted
+		// on a separate section (with the same day)
 		// when the time is less than the first one of same section
 		DosageWindow._historyList.model = new Gtk.NoSelection({
 			model: DosageWindow.sortedHistoryModel,
@@ -456,15 +460,26 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 
 	function addOrUpdateTreatment() {
 		const isUpdate = list && position >= 0;
-		const today = new GLib.DateTime;
+		const today = new GLib.DateTime();
 
 		let days = [];
 		let doses = [];
 		let cycle = [];
 		let invEnabled = false;
 		let durEnabled = false;
-		let name, unit, notes, color, freq, icon, recurring,
-			inventory, current, reminder, duration, start, end;
+		let name,
+			unit,
+			notes,
+			color,
+			freq,
+			icon,
+			recurring,
+			inventory,
+			current,
+			reminder,
+			duration,
+			start,
+			end;
 
 		if (medInventory.get_enable_expansion()) {
 			invEnabled = true;
@@ -479,10 +494,10 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 			end = start;
 		}
 
-		name = medName.text.trim(),
-		unit = medUnit.text.trim(),
-		notes = medNotes.text.trim(),
-		days = getSpecificDays();
+		(name = medName.text.trim()),
+			(unit = medUnit.text.trim()),
+			(notes = medNotes.text.trim()),
+			(days = getSpecificDays());
 		doses = getDoses();
 		recurring = {};
 		recurring.enabled = recurringNotif.get_enable_expansion();
@@ -540,14 +555,14 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 					dosage: doses,
 					recurring: recurring,
 					inventory: inventory,
-					duration: duration
-				}
+					duration: duration,
+				},
 			}),
 			(a, b) => {
 				const name1 = a.obj.name;
 				const name2 = b.obj.name;
 				return name1.localeCompare(name2);
-			}
+			},
 		);
 	}
 
@@ -613,7 +628,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 				recurringNotif.set_visible(true);
 				return;
 			}
-			
+
 			// if when-needed is selected, hide the dosage, duration and recurring rows
 			dosage.set_visible(false);
 			medDuration.set_visible(false);
@@ -634,7 +649,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		const toastOverlay = builder.get_object('toastOverlay');
 		medName.connect('changed', name => name.remove_css_class('error'));
 		medUnit.connect('changed', unit => unit.remove_css_class('error'));
-		
+
 		const emptyName = medName.text.trim() == '';
 		const emptyUnit = medUnit.text.trim() == '';
 
@@ -649,7 +664,9 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		}
 
 		if (frequencySpecificDays.get_visible() && getSpecificDays().length == 0) {
-			toastOverlay.add_toast(new Adw.Toast({ title: _('Choose at least one day') }));
+			toastOverlay.add_toast(
+				new Adw.Toast({ title: _('Choose at least one day') }),
+			);
 			return;
 		}
 
@@ -660,7 +677,9 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 				if (i === item) continue;
 			}
 			if (i.name.toLowerCase() === medName.text.trim().toLowerCase()) {
-				toastOverlay.add_toast(new Adw.Toast({ title: _('Name already exists') }));
+				toastOverlay.add_toast(
+					new Adw.Toast({ title: _('Name already exists') }),
+				);
 				medName.add_css_class('error');
 				return;
 			}
@@ -671,11 +690,11 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 
 		while (currentDoseRow) {
 			const [hours, minutes, ampm, timeBtn] = getTimeBtnInput(currentDoseRow);
-			const time = String([hours, minutes])
+			const time = String([hours, minutes]);
 
 			if (rows.includes(time)) {
 				toastOverlay.add_toast(new Adw.Toast({ title: _('Duplicated time') }));
-				(async function() {
+				(async function () {
 					timeBtn.add_css_class('time-error');
 					ampm.add_css_class('time-error');
 					await new Promise(res => setTimeout(res, 1400));

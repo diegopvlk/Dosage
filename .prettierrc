@@ -1,0 +1,17 @@
+{
+	"arrowParens": "avoid",
+	"tabWidth": 2,
+	"useTabs": true,
+	"endOfLine": "lf",
+	"trailingComma": "all",
+	"quoteProps": "as-needed",
+	"bracketSpacing": true,
+	"overrides": [
+		{
+			"files": ["*.js"],
+			"options": {
+				"singleQuote": true
+			}
+		}
+	]
+}

@@ -10,11 +10,11 @@ Keep track of your treatments
 </a>
 
 ### Features
-- **Notifications** — Get reminders at the right time  
-- **History** — See which medications you took, skipped or missed  
+- **Notifications** — Get reminders at the right time
+- **History** — See which medications you took, skipped or missed
 - **Dosage management** — Multiple doses with different times
-- **Frequency modes** — Every day, selected days, cycle or just when necessary    
-- **Color and icon** — Give a shape for your treatment    
+- **Frequency modes** — Every day, selected days, cycle or just when necessary
+- **Color and icon** — Give a shape for your treatment
 - **Inventory tracking** — Monitor your stock and get reminded when it's low
 - **Duration** — Define the start and end dates
 

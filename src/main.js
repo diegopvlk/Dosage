@@ -1,6 +1,6 @@
-/* 
+/*
  * Copyright 2023 Diego Povliuk
- * SPDX-License-Identifier: GPL-3.0-only 
+ * SPDX-License-Identifier: GPL-3.0-only
  */
 'use strict';
 
@@ -48,16 +48,18 @@ export const DosageApplication = GObject.registerClass(
 
 					const fileContents =
 						'[Desktop Entry]\nType=Application\nName=io.github.diegopvlk.Dosage\nExec=dosage-tracker --startup';
-					
+
 					GLib.file_set_contents(autostartFilePath, fileContents);
 				}
 			}
 
 			const showPrefAction = new Gio.SimpleAction({ name: 'preferences' });
-			showPrefAction.connect('activate', () => openPrefsWindow(this, container));
+			showPrefAction.connect('activate', () =>
+				openPrefsWindow(this, container),
+			);
 			this.add_action(showPrefAction);
 			this.set_accels_for_action('app.preferences', ['<primary>comma']);
-			
+
 			const showAboutAction = new Gio.SimpleAction({ name: 'about' });
 			showAboutAction.connect('activate', () => {
 				let aboutParams = {
@@ -75,17 +77,23 @@ export const DosageApplication = GObject.registerClass(
 					release_notes: releaseNotes,
 				};
 				const aboutWindow = new Adw.AboutWindow(aboutParams);
-				aboutWindow.add_acknowledgement_section(_('Thanks to these projects!'), [
-					'GNOME https://www.gnome.org/',
-					'GTK https://www.gtk.org/',
-					'Libadwaita https://gnome.pages.gitlab.gnome.org/libadwaita/',
-					'Workbench https://apps.gnome.org/Workbench/',
-					'Blueprint https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/index.html',
-					'GTK4 + GJS Book https://rmnvgr.gitlab.io/gtk4-gjs-book/',
-					'GJS Guide https://gjs.guide/',
-					'Flatpak https://github.com/flatpak/',
-				]);
-				aboutWindow.add_link('Donate', 'https://github.com/diegopvlk/Dosage#donate');
+				aboutWindow.add_acknowledgement_section(
+					_('Thanks to these projects!'),
+					[
+						'GNOME https://www.gnome.org/',
+						'GTK https://www.gtk.org/',
+						'Libadwaita https://gnome.pages.gitlab.gnome.org/libadwaita/',
+						'Workbench https://apps.gnome.org/Workbench/',
+						'Blueprint https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/index.html',
+						'GTK4 + GJS Book https://rmnvgr.gitlab.io/gtk4-gjs-book/',
+						'GJS Guide https://gjs.guide/',
+						'Flatpak https://github.com/flatpak/',
+					],
+				);
+				aboutWindow.add_link(
+					'Donate',
+					'https://github.com/diegopvlk/Dosage#donate',
+				);
 				aboutWindow.present();
 			});
 			this.add_action(showAboutAction);
@@ -101,7 +109,7 @@ export const DosageApplication = GObject.registerClass(
 				GLib.OptionFlags.NONE,
 				GLib.OptionArg.NONE,
 				'Start app hidden at startup',
-				null
+				null,
 			);
 		}
 
@@ -113,11 +121,13 @@ export const DosageApplication = GObject.registerClass(
 			portal.request_background(
 				null,
 				// TRANSLATORS: Confirmation message to allow background permission
-				_('Accept to allow running in the background and receive notifications'),
+				_(
+					'Accept to allow running in the background and receive notifications',
+				),
 				['io.github.diegopvlk.Dosage', '--startup'],
 				setAutostart,
 				null,
-				null
+				null,
 			);
 		}
 
@@ -143,7 +153,7 @@ export const DosageApplication = GObject.registerClass(
 				activeWindow.present();
 			}
 		}
-	}
+	},
 );
 
 export function main(argv) {
