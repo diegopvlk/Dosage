@@ -153,7 +153,7 @@ msgstr "Na de maaltijd"
 
 #: data/ui/med-window.blp:66
 msgid "Form"
-msgstr ""
+msgstr "Vorm"
 
 #: data/ui/med-window.blp:67
 msgid "Color and icon"
@@ -259,15 +259,15 @@ msgstr "Drankje"
 
 #: data/ui/med-window.blp:294 src/medWindow.js:637
 msgid "Frequency"
-msgstr ""
+msgstr "Frequentie"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
-msgstr ""
+msgstr "Dagen kiezen"
 
 #: data/ui/med-window.blp:359
 msgid "Change cycle"
-msgstr ""
+msgstr "Verander cyclus"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"
@@ -348,7 +348,7 @@ msgstr "Begint op"
 #: data/ui/med-window.blp:497 data/ui/med-window.blp:518
 #: data/ui/med-window.blp:541
 msgid "Choose date"
-msgstr ""
+msgstr "Kies datum"
 
 #: data/ui/med-window.blp:510
 msgid "Ends on"
@@ -372,11 +372,11 @@ msgstr "Automatisch opstarten"
 
 #: data/ui/preferences.blp:24
 msgid "Auto-clear history"
-msgstr ""
+msgstr "Automatisch geschiedenis wissen"
 
 #: data/ui/preferences.blp:25
 msgid "Keeps a maximum of 30 days"
-msgstr ""
+msgstr "Bewaart maximaal 30 dagen"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"

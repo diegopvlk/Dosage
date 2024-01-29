@@ -157,7 +157,7 @@ msgstr "После приема пищи"
 
 #: data/ui/med-window.blp:66
 msgid "Form"
-msgstr ""
+msgstr "Форма"
 
 #: data/ui/med-window.blp:67
 msgid "Color and icon"
@@ -263,15 +263,15 @@ msgstr "Микстура"
 
 #: data/ui/med-window.blp:294 src/medWindow.js:637
 msgid "Frequency"
-msgstr ""
+msgstr "Частота"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
-msgstr ""
+msgstr "Выберите дни"
 
 #: data/ui/med-window.blp:359
 msgid "Change cycle"
-msgstr ""
+msgstr "Изменить цикл"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"
@@ -354,7 +354,7 @@ msgstr "Начинается"
 #: data/ui/med-window.blp:497 data/ui/med-window.blp:518
 #: data/ui/med-window.blp:541
 msgid "Choose date"
-msgstr ""
+msgstr "Выберите дату"
 
 #: data/ui/med-window.blp:510
 msgid "Ends on"
@@ -378,11 +378,11 @@ msgstr "Автоматический запуск приложения при в
 
 #: data/ui/preferences.blp:24
 msgid "Auto-clear history"
-msgstr ""
+msgstr "Автоматически очищать историю"
 
 #: data/ui/preferences.blp:25
 msgid "Keeps a maximum of 30 days"
-msgstr ""
+msgstr "Сохраняет максимум 30 дней"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"

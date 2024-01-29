@@ -153,7 +153,7 @@ msgstr "Po jídle"
 
 #: data/ui/med-window.blp:66
 msgid "Form"
-msgstr ""
+msgstr "Forma"
 
 #: data/ui/med-window.blp:67
 msgid "Color and icon"
@@ -259,15 +259,15 @@ msgstr "Nápoj"
 
 #: data/ui/med-window.blp:294 src/medWindow.js:637
 msgid "Frequency"
-msgstr ""
+msgstr "Frekvence"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
-msgstr ""
+msgstr "Vybrat dny"
 
 #: data/ui/med-window.blp:359
 msgid "Change cycle"
-msgstr ""
+msgstr "Změnit cyklus"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"
@@ -348,7 +348,7 @@ msgstr "Počáteční datum"
 #: data/ui/med-window.blp:497 data/ui/med-window.blp:518
 #: data/ui/med-window.blp:541
 msgid "Choose date"
-msgstr ""
+msgstr "Vyberte datum"
 
 #: data/ui/med-window.blp:510
 msgid "Ends on"
@@ -372,11 +372,11 @@ msgstr "Zapnout při přihlášení"
 
 #: data/ui/preferences.blp:24
 msgid "Auto-clear history"
-msgstr ""
+msgstr "Automaticky vymazat historii"
 
 #: data/ui/preferences.blp:25
 msgid "Keeps a maximum of 30 days"
-msgstr ""
+msgstr "Uchovává maximálně 30 dní"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"

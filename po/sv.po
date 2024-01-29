@@ -152,7 +152,7 @@ msgstr "Efter måltid"
 
 #: data/ui/med-window.blp:66
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: data/ui/med-window.blp:67
 msgid "Color and icon"
@@ -258,15 +258,15 @@ msgstr "Dryck"
 
 #: data/ui/med-window.blp:294 src/medWindow.js:637
 msgid "Frequency"
-msgstr ""
+msgstr "Frekvens"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
-msgstr ""
+msgstr "Välj dagar"
 
 #: data/ui/med-window.blp:359
 msgid "Change cycle"
-msgstr ""
+msgstr "Ändra cykeln"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"
@@ -347,7 +347,7 @@ msgstr "Börjar"
 #: data/ui/med-window.blp:497 data/ui/med-window.blp:518
 #: data/ui/med-window.blp:541
 msgid "Choose date"
-msgstr ""
+msgstr "Välj datum"
 
 #: data/ui/med-window.blp:510
 msgid "Ends on"
@@ -371,11 +371,11 @@ msgstr "Börja automatiskt på inloggning"
 
 #: data/ui/preferences.blp:24
 msgid "Auto-clear history"
-msgstr ""
+msgstr "Automatisk rensa historik"
 
 #: data/ui/preferences.blp:25
 msgid "Keeps a maximum of 30 days"
-msgstr ""
+msgstr "Behåller högst 30 dagar"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"

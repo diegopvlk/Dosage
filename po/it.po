@@ -263,11 +263,11 @@ msgstr "Frequenza"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
-msgstr ""
+msgstr "Scegli i giorni"
 
 #: data/ui/med-window.blp:359
 msgid "Change cycle"
-msgstr ""
+msgstr "Cambia il ciclo"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"

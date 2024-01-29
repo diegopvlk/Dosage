@@ -154,7 +154,7 @@ msgstr "Пасля ежы"
 
 #: data/ui/med-window.blp:66
 msgid "Form"
-msgstr ""
+msgstr "Форма"
 
 #: data/ui/med-window.blp:67
 msgid "Color and icon"
@@ -260,15 +260,15 @@ msgstr "Мікстура"
 
 #: data/ui/med-window.blp:294 src/medWindow.js:637
 msgid "Frequency"
-msgstr ""
+msgstr "Частата"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
-msgstr ""
+msgstr "Выберыце дні"
 
 #: data/ui/med-window.blp:359
 msgid "Change cycle"
-msgstr ""
+msgstr "Змяніць цыкл"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"
@@ -350,7 +350,7 @@ msgstr "Пачынаецца"
 #: data/ui/med-window.blp:497 data/ui/med-window.blp:518
 #: data/ui/med-window.blp:541
 msgid "Choose date"
-msgstr ""
+msgstr "Выберыце дату"
 
 #: data/ui/med-window.blp:510
 msgid "Ends on"
@@ -374,11 +374,11 @@ msgstr "Аўтаматычны запуск праграмы пры ўваход
 
 #: data/ui/preferences.blp:24
 msgid "Auto-clear history"
-msgstr ""
+msgstr "Аўтаматычна ачышчаць гісторыю"
 
 #: data/ui/preferences.blp:25
 msgid "Keeps a maximum of 30 days"
-msgstr ""
+msgstr "Захоўвае максімум 30 дзён"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"

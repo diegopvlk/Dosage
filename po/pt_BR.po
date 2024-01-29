@@ -265,7 +265,7 @@ msgstr "Escolha os dias"
 
 #: data/ui/med-window.blp:359
 msgid "Change cycle"
-msgstr "Mudar o ciclo"
+msgstr "Mudar ciclo"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"

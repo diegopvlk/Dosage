@@ -147,7 +147,7 @@ msgstr "Aterian jälkeen"
 
 #: data/ui/med-window.blp:66
 msgid "Form"
-msgstr ""
+msgstr "Muoto"
 
 #: data/ui/med-window.blp:67
 msgid "Color and icon"
@@ -253,15 +253,15 @@ msgstr "Lääkeannos"
 
 #: data/ui/med-window.blp:294 src/medWindow.js:637
 msgid "Frequency"
-msgstr ""
+msgstr "Taajuus"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
-msgstr ""
+msgstr "Valitse päivät"
 
 #: data/ui/med-window.blp:359
 msgid "Change cycle"
-msgstr ""
+msgstr "Vaihda sykli"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"
@@ -342,7 +342,7 @@ msgstr "Alkaa"
 #: data/ui/med-window.blp:497 data/ui/med-window.blp:518
 #: data/ui/med-window.blp:541
 msgid "Choose date"
-msgstr ""
+msgstr "Valitse päivämäärä"
 
 #: data/ui/med-window.blp:510
 msgid "Ends on"
@@ -366,11 +366,11 @@ msgstr "Käynnistä kirjautumisen yhteydessä"
 
 #: data/ui/preferences.blp:24
 msgid "Auto-clear history"
-msgstr ""
+msgstr "Automaattinen historian tyhjennys"
 
 #: data/ui/preferences.blp:25
 msgid "Keeps a maximum of 30 days"
-msgstr ""
+msgstr "Säilyy enintään 30 päivää"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"
