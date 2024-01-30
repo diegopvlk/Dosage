@@ -3,23 +3,19 @@ popover contents {
 }
 
 .badge-box {
-  border: 1px solid alpha(currentColor, 0.66);
-  opacity: 0.8;
+  border: 1px solid alpha(currentColor, 0.8);
 }
 
 .badge-icon:dir(ltr) {
   margin-left: -1px;
   padding-left: 3px;
+  padding-right: 4px;
 }
 
 .badge-icon:dir(rtl) {
   margin-right: -1px;
+  padding-left: 4px;
   padding-right: 3px;
-}
-
-.low-stock-badge {
-  border: 1px solid alpha(currentColor, 0.9);
-  opacity: 1;
 }
 
 .boxed-list > row,
