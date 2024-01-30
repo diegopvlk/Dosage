@@ -47,7 +47,7 @@ export default function openPrefsWindow(DosageApplication) {
 				'autostart',
 				'dosage-tracker-startup.desktop',
 			]);
-			if (state && !GLib.file_test(autostartFilePath, GLib.FileTest.EXISTS)) {
+			if (state) {
 				GLib.mkdir_with_parents(GLib.path_get_dirname(autostartFilePath), 0o755);
 				const fileContents =
 					'[Desktop Entry]\nType=Application\nName=io.github.diegopvlk.Dosage\nExec=dosage-tracker --startup';
