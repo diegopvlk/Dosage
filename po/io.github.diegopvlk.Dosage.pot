@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 18:47-0300\n"
+"POT-Creation-Date: 2024-01-31 19:30-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:41 src/window.js:579
+#: src/main.js:41 src/window.js:582
 msgid "Dosage"
 msgstr ""
 
@@ -385,12 +385,12 @@ msgid "Show or hide confirm/skip"
 msgstr ""
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: data/ui/preferences.blp:57 src/medWindow.js:279 src/window.js:507
-#: src/window.js:643
+#: data/ui/preferences.blp:57 src/medWindow.js:279 src/window.js:510
+#: src/window.js:646
 msgid "Confirm"
 msgstr ""
 
-#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:511
+#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:514
 msgid "Skip"
 msgstr ""
 
@@ -406,7 +406,7 @@ msgstr ""
 msgid "Unselect"
 msgstr ""
 
-#: data/ui/window.blp:70 src/window.js:643
+#: data/ui/window.blp:70 src/window.js:646
 msgid "One-time entry"
 msgstr ""
 
@@ -558,10 +558,10 @@ msgstr ""
 msgid "You have treatments low in stock"
 msgstr ""
 
-#: src/window.js:403
+#: src/window.js:406
 msgid "No treatments added yet"
 msgstr ""
 
-#: src/window.js:408
+#: src/window.js:411
 msgid "All done for today"
 msgstr ""
