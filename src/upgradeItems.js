@@ -7,9 +7,9 @@ export default function upgradeItems(json, type) {
 		};
 
 		json.meds.forEach(item => {
-			const info = item.info;
+			const info = item.info || item._info;
 			const dur = info.duration;
-			const icon = item.info.icon.replace('-symbolic', '');
+			const icon = info.icon.replace('-symbolic', '');
 
 			// change to int and to parse in ms instead of seconds
 			if (typeof dur.start === 'string') {
@@ -27,8 +27,8 @@ export default function upgradeItems(json, type) {
 			const rcInterval = info.recurring.interval || 5;
 
 			const newMed = {
-				name: item.name,
-				unit: item.unit,
+				name: item.name || item._name,
+				unit: item.unit || item._unit,
 				notes: info.notes,
 				frequency: info.frequency,
 				color: info.color,
@@ -58,21 +58,24 @@ export default function upgradeItems(json, type) {
 		const hist = newHistory.history;
 
 		json.meds.forEach(item => {
-			const dateKey = new Date(item.date).setHours(0, 0, 0, 0);
+			const date = item.date || item._date;
+			const info = item.info || item._info;
+			const dateKey = new Date(date).setHours(0, 0, 0, 0);
 
 			if (!hist[dateKey]) {
 				hist[dateKey] = [];
 			}
 
-			const takenValue = item.taken === 'yes' ? 1 : item.taken === 'no' ? 0 : -1;
+			const taken = item.taken || item._taken;
+			const takenValue = taken === 'yes' ? 1 : taken === 'no' ? 0 : -1;
 
 			hist[dateKey].push({
-				name: item.name,
-				unit: item.unit,
-				time: item.info.time,
-				dose: item.info.dose,
-				color: item.color,
-				taken: [new Date(item.date).getTime(), takenValue],
+				name: item.name || item._name,
+				unit: item.unit || item._unit,
+				time: info.time,
+				dose: info.dose,
+				color: item.color || item._color,
+				taken: [new Date(date).getTime(), takenValue],
 			});
 		});
 

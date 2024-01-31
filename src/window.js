@@ -221,6 +221,9 @@ export const DosageWindow = GObject.registerClass(
 							history = upgradedHistory;
 						}
 						this._loadHistory(history);
+						if (upgradedHistory) {
+							this._updateJsonFile('history', historyLS);
+						}
 					}
 				} else {
 					log('Failed to read file contents.');
@@ -767,6 +770,7 @@ export const DosageWindow = GObject.registerClass(
 
 		_addMissedItems() {
 			let itemsAdded = false;
+			skip.itemsChanged = true;
 
 			const insert = (timeDose, tempItem, nextDate) => {
 				if (!timeDose.lastTaken) {
@@ -815,6 +819,7 @@ export const DosageWindow = GObject.registerClass(
 				}
 			}
 
+			skip.itemsChanged = false;
 			return itemsAdded;
 		}
 
