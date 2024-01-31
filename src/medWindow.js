@@ -21,9 +21,9 @@ import {
 } from './utils.js';
 
 import { MedicationObject } from './medication.js';
-import { historyLS, treatmentsLS } from './window.js';
+import { historyLS, treatmentsLS, skip } from './window.js';
 
-export default function openMedicationWindow(DosageWindow, list, position, oneTime) {
+export default function openMedicationWindow(DosageWindow, list, position, mode) {
 	const builder = Gtk.Builder.new_from_resource('/io/github/diegopvlk/Dosage/ui/med-window.ui');
 
 	const dateOneEntry = builder.get_object('dateOneEntry');
@@ -113,7 +113,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 	handleCalendarSelect(calendarEnd, calendarEndRow);
 
 	// when opening an existing treatment
-	if (list && position >= 0) {
+	if (list && position >= 0 && !mode) {
 		medWindow.title = _('Edit treatment');
 		saveButton.label = _('Save');
 		deleteButton.set_visible(true);
@@ -201,11 +201,10 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 
 	// when activating one-time entry button
 	let existingEntry = false;
-	if (oneTime) {
+	if (mode === 'one-time') {
 		const frequencyMenu = builder.get_object('frequencyMenu');
 		const colorIcon = builder.get_object('colorIcon');
 		const oneTimeEntries = builder.get_object('oneTimeEntries');
-		const oneTimeTaken = builder.get_object('oneTimeTaken');
 		const h = new Date().getHours();
 		const m = new Date().getMinutes();
 		const doseRowOne = doseRow({ time: [h, m], dose: 1 });
@@ -277,12 +276,66 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 
 		medWindow.title = _('New entry');
 		// TRANSLATORS: Keep it short (button to add one-time entry to history)
-		saveButton.label = _('Add to history');
+		saveButton.label = _('Confirm');
 		colorIcon.subtitle = _('Color');
+		colorIcon.title = '';
 		medWindow.add_css_class('one-time');
 
 		dateOneEntry.set_visible(true);
-		oneTimeTaken.set_visible(true);
+		medNotes.set_visible(false);
+		dosageIconButton.set_visible(false);
+		frequencyMenu.set_visible(false);
+		medDuration.set_visible(false);
+		dosageAddButton.get_parent().get_parent().set_visible(false);
+		medInventory.set_visible(false);
+		recurringNotif.set_visible(false);
+	}
+
+	// when editing history entry
+	if (mode === 'edit-hist') {
+		const item = list.get_model().get_item(position).obj;
+		const frequencyMenu = builder.get_object('frequencyMenu');
+		const colorIcon = builder.get_object('colorIcon');
+
+		const takenButtons = builder.get_object('takenButtons');
+		const histBtnSkipped = builder.get_object('histBtnSkipped');
+		const histBtnConfirmed = builder.get_object('histBtnConfirmed');
+		existingEntry = true;
+
+		const date = new Date(item.taken[0]);
+		let h = item.time[0];
+		let m = item.time[1];
+
+		if (item.taken[1] !== -1) {
+			h = date.getHours();
+			m = date.getMinutes();
+		}
+
+		const doseRowOne = doseRow({ time: [h, m], dose: item.dose });
+
+		if (item.taken[1] === 1) histBtnConfirmed.set_active(true);
+		if (item.taken[1] === 0) histBtnSkipped.set_active(histBtnConfirmed);
+
+		// hide the remove dose button
+		doseRowOne
+			.get_first_child()
+			.get_first_child()
+			.get_first_child()
+			.get_first_child()
+			.set_visible(false);
+
+		dosage.add_row(doseRowOne);
+
+		medWindow.title = _('Edit entry');
+		saveButton.label = _('Save');
+		medWindow.add_css_class('one-time');
+		medWindow.height_request = 192;
+
+		takenButtons.set_visible(true);
+		medName.set_visible(false);
+		medUnit.set_visible(false);
+		medNotes.set_visible(false);
+		colorIcon.set_visible(false);
 		medNotes.set_visible(false);
 		dosageIconButton.set_visible(false);
 		frequencyMenu.set_visible(false);
@@ -347,9 +400,13 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 			return;
 		}
 
-		if (oneTime) {
+		if (mode === 'one-time') {
 			addItemToHistory();
 			DosageWindow._updateJsonFile('history', historyLS);
+		} else if (mode === 'edit-hist') {
+			editHistoryItem();
+			medWindow.destroy();
+			return;
 		} else {
 			addOrUpdateTreatment();
 		}
@@ -384,19 +441,75 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		});
 	});
 
+	function editHistoryItem() {
+		const histBtnSkipped = builder.get_object('histBtnSkipped');
+		const histBtnConfirmed = builder.get_object('histBtnConfirmed');
+		const item = list.get_model().get_item(position).obj;
+
+		let missedDose = 0;
+		if (item.taken[1] === -1) missedDose = +item.dose;
+		let skippedDose = 0;
+		if (item.taken[1] === 0) skippedDose = +item.dose;
+		let confirmedDose = 0;
+		if (item.taken[1] === 1) confirmedDose = +item.dose;
+
+		if (histBtnSkipped.get_active()) item.taken[1] = 0;
+		if (histBtnConfirmed.get_active()) item.taken[1] = 1;
+		if (item.taken[1] === -1) return;
+
+		const dateTaken = new Date(item.taken[0]);
+		dateTaken.setHours(getDoses()[0].time[0]);
+		dateTaken.setMinutes(getDoses()[0].time[1]);
+
+		item.taken[0] = dateTaken.getTime();
+
+		const updatedItem = new MedicationObject({
+			obj: {
+				name: item.name,
+				unit: item.unit,
+				time: item.time,
+				dose: getDoses()[0].dose,
+				color: item.color,
+				taken: [dateTaken.getTime(), item.taken[1]],
+			},
+		});
+
+		skip.itemsChanged = true;
+
+		const it = list.get_model().get_item(position);
+		const [, pos] = historyLS.find(it);
+		historyLS.splice(pos, 1, [updatedItem]);
+		historyLS.sort(() => null);
+
+		skip.itemsChanged = false;
+
+		for (const i of treatmentsLS) {
+			const sameItem = i.obj.name === item.name && i.obj.inventory.enabled;
+
+			if (sameItem) {
+				let tempInv = i.obj.inventory.current;
+				if (item.taken[1] === 0) {
+					i.obj.inventory.current += confirmedDose;
+				} else {
+					const diff = item.dose - getDoses()[0].dose;
+					const adjusts = skippedDose + missedDose;
+					i.obj.inventory.current += diff - adjusts;
+				}
+				if (tempInv === i.obj.inventory.current) return;
+				DosageWindow._treatmentsList.model = new Gtk.NoSelection({
+					model: treatmentsLS,
+				});
+				DosageWindow._updateJsonFile('history', historyLS);
+				DosageWindow._updateJsonFile('treatments', treatmentsLS);
+			}
+		}
+	}
+
 	function addItemToHistory() {
 		const calOneEntry = builder.get_object('calOneEntry');
-		const oneTimeTaken = builder.get_object('oneTimeTaken');
 		const dt = +calOneEntry.get_date().format('%s') * 1000;
 		const entryDate = new Date(dt);
 		const dosage = getDoses()[0];
-
-		let taken = 1;
-		if (oneTime) {
-			if (oneTimeTaken.get_selected() === 0) taken = 1; // confirmed
-			if (oneTimeTaken.get_selected() === 1) taken = 0; // skipped
-			if (oneTimeTaken.get_selected() === 2) taken = -1; // missed
-		}
 
 		entryDate.setHours(dosage.time[0]);
 		entryDate.setMinutes(dosage.time[1]);
@@ -408,7 +521,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 				time: [dosage.time[0], dosage.time[1]],
 				dose: dosage.dose,
 				color: dosageColorButton.get_name(),
-				taken: [entryDate.getTime(), taken],
+				taken: [entryDate.getTime(), 1],
 			},
 		});
 
@@ -435,13 +548,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 			});
 		}
 
-		// reload-ish of history, so the item don't get inserted
-		// on a separate section (with the same day)
-		// when the time is less than the first one of same section
-		DosageWindow._historyList.model = new Gtk.NoSelection({
-			model: DosageWindow.sortedHistoryModel,
-		});
-
+		historyLS.sort(() => null);
 		DosageWindow._historyList.scroll_to(0, null, null);
 	}
 

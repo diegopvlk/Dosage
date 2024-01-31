@@ -419,16 +419,23 @@ Adw.Window medWindow {
                   tooltip-text: _("Add dose");
                 }
                 [suffix]
-                DropDown oneTimeTaken {
+                Box takenButtons {
                   visible: false;
-                  styles ['button-end']
-                  model: StringList {
-                    strings [
-                      _("Confirmed"),
-                      _("Skipped"),
-                      _("Missed")
-                      ]
-                  };
+                  valign: center;
+                  styles ['linked']
+                  ToggleButton histBtnSkipped {
+                    active: false;
+                    styles ['circular']
+                    icon-name: 'med-skipped-symbolic';
+                    tooltip-text: _("Skipped");
+                    group: histBtnConfirmed;
+                  }
+                  ToggleButton histBtnConfirmed {
+                    active: false;
+                    styles ['circular']
+                    tooltip-text: _("Confirmed");
+                    icon-name: 'med-confirmed-symbolic';
+                  }
                 }
               }
 

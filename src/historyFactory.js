@@ -6,6 +6,7 @@
 
 import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
+import Gdk from 'gi://Gdk';
 import Pango from 'gi://Pango';
 
 import { clockIs12 } from './utils.js';
@@ -113,9 +114,18 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const localDT = dateTime.to_timezone(localTZ);
 	const dateNow = GLib.DateTime.new_now_local();
 
-	listItem.set_focusable(false);
-	listItem.set_activatable(false);
+	// activate item with space bar
+	const keyController = new Gtk.EventControllerKey();
+	keyController.connect('key-pressed', (_, keyval, keycode, state) => {
+		if (keyval === Gdk.KEY_space) {
+			let listView = row.get_parent();
+			listView.emit('activate', listItem.position);
+		}
+	});
+	row.add_controller(keyController);
+
 	row.remove_css_class('activatable');
+	box.add_css_class('activatable');
 
 	if (localDT.format('%F') == dateNow.format('%F')) {
 		deleteButton.icon_name = 'edit-undo-symbolic';

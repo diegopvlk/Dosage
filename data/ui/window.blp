@@ -109,6 +109,8 @@ template $DosageWindow : Adw.ApplicationWindow {
             Adw.ClampScrollable {
               ListView historyList {
                 styles [ 'custom-list', 'history', 'scroll-to-top-hack' ]
+                activate => $_editHistoryItem();
+                single-click-activate: true;
               }
             }
           }

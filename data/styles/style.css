@@ -77,23 +77,6 @@ list > row.activatable.header:active {
   background: @boxed_active;
 }
 
-.button-end > button:hover,
-.button-end > button:checked {
-  background: linear-gradient(
-    -90deg,
-    @boxed_hover 70%,
-    alpha(@boxed_hover, 0.01) 100%
-  );
-}
-
-.button-end > button:active {
-  background: linear-gradient(
-    -90deg,
-    @boxed_active 70%,
-    alpha(@boxed_active, 0.01) 100%
-  );
-}
-
 #dosage-med-window
   button:not(.circular):not(.image-button):not(.arrow-button):not(.toggle):not(
     .am-pm
@@ -108,6 +91,11 @@ list > row.activatable.header:active {
 
 #dosage-med-window {
   border-radius: 14px;
+}
+
+#dosage-med-window.one-time box.linked button {
+  padding: 0 1px;
+  min-height: 30px;
 }
 
 headerbar button,
@@ -185,8 +173,8 @@ row:focus {
 }
 
 .badge-box {
-  min-height: 16px;
   color: alpha(currentColor, 0.8);
+  min-height: 16px;
   box-shadow: 0 0 0 1px alpha(currentColor, 0.23);
   background-color: alpha(currentColor, 0.13);
   border-radius: 99px;
@@ -251,33 +239,9 @@ button.am-pm {
   padding-right: 21px;
 }
 
-.button-end > button,
 menubutton:not(.one-time-menu) button.arrow-button,
 button.one-time-name {
   font-weight: 400;
-}
-
-.button-end > button {
-  margin: -2px;
-  background-color: transparent;
-}
-
-.button-end:dir(rtl) > button {
-  margin-left: -14px;
-  border-radius: 5px;
-  padding: 0 14px;
-  padding-right: 32px;
-}
-
-.button-end > button {
-  margin-right: -14px;
-  border-radius: 5px;
-  padding: 0 18px;
-  padding-left: 32px;
-}
-
-.button-end.cycle > button {
-  min-width: 90px;
 }
 
 button.specific-day {
@@ -291,7 +255,6 @@ popover > contents {
   border-radius: 16px;
 }
 
-.button-end popover > contents listview row,
 row.combo popover > contents listview row {
   border-radius: 10px;
   padding-top: 7px;

@@ -14,14 +14,6 @@ button.pill:not(.suggested-action) {
   box-shadow: inset 0 0 0 1px alpha(currentColor, 0.6);
 }
 
-.button-end > button {
-  box-shadow: none;
-}
-
-.button-end > button:hover {
-  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.5);
-}
-
 row.error {
   box-shadow: inset 0 0 0 1px alpha(currentColor, 0.85);
 }

@@ -33,6 +33,8 @@ import {
 export const historyLS = Gio.ListStore.new(MedicationObject);
 export const treatmentsLS = Gio.ListStore.new(MedicationObject);
 
+export let skip = { itemsChanged: false };
+
 export const DosageWindow = GObject.registerClass(
 	{
 		GTypeName: 'DosageWindow',
@@ -279,7 +281,7 @@ export const DosageWindow = GObject.registerClass(
 					this._historyList.set_factory(historyItemFactory);
 
 					historyLS.connect('items-changed', (model, pos, removed, added) => {
-						if (this.clearHist) return;
+						if (skip.itemsChanged) return;
 
 						if (added) {
 							const itemAdded = model.get_item(pos).obj;
@@ -414,7 +416,7 @@ export const DosageWindow = GObject.registerClass(
 		_clearOldHistoryEntries() {
 			if (!settings.get_boolean('clear-old-hist')) return;
 
-			this.clearHist = true;
+			skip.itemsChanged = true;
 			const itemsHolder = {};
 
 			for (const it of historyLS) {
@@ -436,7 +438,7 @@ export const DosageWindow = GObject.registerClass(
 				});
 			}
 
-			this.clearHist = false;
+			skip.itemsChanged = false;
 
 			return true;
 		}
@@ -662,7 +664,7 @@ export const DosageWindow = GObject.registerClass(
 				this._historyList.scroll_to(0, null, null);
 			} else {
 				// one-time entry
-				this._openMedWindow(null, null, true);
+				this._openMedWindow(null, null, 'one-time');
 			}
 
 			this._updateEntryBtn(false);
@@ -724,6 +726,10 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
+		_editHistoryItem(list, position) {
+			this._openMedWindow(list, position, 'edit-hist');
+		}
+
 		_updateJsonFile(type, listStore) {
 			if (
 				// don't update if these are null
@@ -783,12 +789,9 @@ export const DosageWindow = GObject.registerClass(
 				const today = new Date();
 				today.setHours(0, 0, 0, 0);
 				nextDate.setHours(0, 0, 0, 0);
-
 				let current = item.cycle[2];
-
 				while (nextDate < today) {
 					const [active, inactive] = item.cycle;
-
 					item.dosage.forEach(timeDose => {
 						const tempItem = { ...item };
 						tempItem.time = [timeDose.time[0], timeDose.time[1]];
@@ -812,10 +815,8 @@ export const DosageWindow = GObject.registerClass(
 						// so set lastTaken to null after the first loop
 						timeDose.lastTaken = null;
 					});
-
 					current += 1;
 					if (current > active + inactive) current = 1;
-
 					nextDate.setDate(nextDate.getDate() + 1);
 				}
 			}
@@ -886,8 +887,8 @@ export const DosageWindow = GObject.registerClass(
 			this.#checkInventory(notifAction);
 		}
 
-		_openMedWindow(list, position, oneTime) {
-			openMedicationWindow(this, list, position, oneTime);
+		_openMedWindow(list, position, mode) {
+			openMedicationWindow(this, list, position, mode);
 		}
 	},
 );
