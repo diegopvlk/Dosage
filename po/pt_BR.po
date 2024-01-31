@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-31 18:47-0300\n"
-"PO-Revision-Date: 2023-12-05 19:50+0000\n"
+"PO-Revision-Date: 2024-01-31 21:52+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "dosage/dosage/pt_BR/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.3-dev\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
@@ -375,16 +375,12 @@ msgid "Increase notification priority"
 msgstr "Aumentar a prioridade da notificação"
 
 #: data/ui/preferences.blp:35
-#, fuzzy
-#| msgid ""
-#| "On GNOME this will make the notification show on fullscreen mode or even "
-#| "if 'Do Not Disturb' is enabled"
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
 msgstr ""
-"No GNOME isso fará com que a notificação seja exibida em tela cheia ou mesmo "
-"se o modo 'Não Perturbe' estiver ativado"
+"Faz com que a notificação seja exibida em tela cheia ou mesmo se o modo 'Não "
+"Perturbe' estiver ativado"
 
 #: data/ui/preferences.blp:44
 msgid "Notification sound"
@@ -488,10 +484,8 @@ msgid "New entry"
 msgstr "Novo registro"
 
 #: src/medWindow.js:329
-#, fuzzy
-#| msgid "Edit treatment"
 msgid "Edit entry"
-msgstr "Editar tratamento"
+msgstr "Editar entrada"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
 #: src/medWindow.js:422
