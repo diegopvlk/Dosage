@@ -1,5 +1,3 @@
-const iconsHolder = [];
-
 export default function upgradeItems(json, type) {
 	// change old versions for compatibility
 	if (type === 'treatments' && json.meds) {
@@ -12,11 +10,6 @@ export default function upgradeItems(json, type) {
 			const info = item.info;
 			const dur = info.duration;
 			const icon = item.info.icon.replace('-symbolic', '');
-
-			iconsHolder.push({
-				name: item.name,
-				icon: icon,
-			});
 
 			// change to int and to parse in ms instead of seconds
 			if (typeof dur.start === 'string') {
@@ -71,20 +64,11 @@ export default function upgradeItems(json, type) {
 				hist[dateKey] = [];
 			}
 
-			let icon = 'pill';
-
-			iconsHolder.forEach(i => {
-				if (i.name.toLowerCase() === item.name.toLowerCase()) {
-					icon = i.icon;
-				}
-			});
-
 			const takenValue = item.taken === 'yes' ? 1 : item.taken === 'no' ? 0 : -1;
 
 			hist[dateKey].push({
 				name: item.name,
 				unit: item.unit,
-				icon: icon,
 				time: item.info.time,
 				dose: item.info.dose,
 				color: item.color,

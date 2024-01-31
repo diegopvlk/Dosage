@@ -93,7 +93,6 @@ export function createTempObj(type, listStore) {
 			hist[dateKey].push({
 				name: item.name,
 				unit: item.unit,
-				icon: item.icon,
 				time: item.time,
 				dose: item.dose,
 				color: item.color,

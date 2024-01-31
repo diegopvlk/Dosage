@@ -694,7 +694,6 @@ export const DosageWindow = GObject.registerClass(
 					obj: {
 						name: item.name,
 						unit: item.unit,
-						icon: item.icon,
 						time: item.time,
 						dose: item.dose,
 						color: item.color,

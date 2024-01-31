@@ -405,7 +405,6 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 			obj: {
 				name: medName.text.trim(),
 				unit: medUnit.text.trim(),
-				icon: dosageIconButton.get_icon_name(),
 				time: [dosage.time[0], dosage.time[1]],
 				dose: dosage.dose,
 				color: dosageColorButton.get_name(),
@@ -494,7 +493,7 @@ export default function openMedicationWindow(DosageWindow, list, position, oneTi
 		cycle[1] = cycleInactive.adjustment.value;
 		cycle[2] = cycleCurrent.adjustment.value;
 		color = dosageColorButton.get_name();
-		icon = dosageIconButton.get_icon_name();
+		icon = dosageIconButton.get_icon_name().replace('-symbolic', '');
 		current = medCurrrentInv.value;
 		reminder = medReminderInv.value;
 		inventory = { enabled: invEnabled, current: current, reminder: reminder };
