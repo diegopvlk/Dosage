@@ -3,19 +3,7 @@ popover contents {
 }
 
 .badge-box {
-  border: 1px solid alpha(currentColor, 0.8);
-}
-
-.badge-icon:dir(ltr) {
-  margin-left: -1px;
-  padding-left: 3px;
-  padding-right: 4px;
-}
-
-.badge-icon:dir(rtl) {
-  margin-right: -1px;
-  padding-left: 4px;
-  padding-right: 3px;
+  box-shadow: 0 0 0 1px alpha(currentColor, 0.85);
 }
 
 .boxed-list > row,

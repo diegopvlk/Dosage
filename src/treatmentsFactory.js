@@ -50,7 +50,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 	});
 	labelsBox.append(durationNextDateLabel);
 	const inventoryLabel = new Gtk.Label({
-		css_classes: ['badge-box', 'numeric'],
+		css_classes: ['badge-box', 'badge-content', 'numeric'],
 		valign: Gtk.Align.CENTER,
 		margin_end: 5,
 		visible: false,

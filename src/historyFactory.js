@@ -68,16 +68,17 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	});
 	labelsBox.append(dose);
 	const takenBox = new Gtk.Box({
+		css_classes: ['badge-box'],
 		valign: Gtk.Align.CENTER,
 		margin_end: 15,
 	});
 	const takenLabel = new Gtk.Label({
-		css_classes: ['badge-box', 'numeric'],
+		css_classes: ['badge-content', 'numeric'],
 		valign: Gtk.Align.CENTER,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
 	const takenIcon = new Gtk.Image({
-		css_classes: ['badge-box', 'badge-icon'],
+		css_classes: ['badge-content', 'badge-icon'],
 		icon_name: 'check-confirmed',
 	});
 	takenBox.append(takenLabel);
