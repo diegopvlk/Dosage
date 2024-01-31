@@ -731,17 +731,11 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		_updateJsonFile(type, listStore) {
-			if (
-				// don't update if these are null
-				// errors in listStore triggers this
-				this._treatmentsList.model === null ||
-				this._historyList.model === null
-			)
-				return;
-
 			const fileName = `dosage-${type}.json`;
 			const file = DataDir.get_child(fileName);
 			const tempObj = createTempObj(type, listStore);
+
+			if (!tempObj) return;
 
 			const updateFile = () => {
 				return new Promise((resolve, reject) => {
@@ -749,7 +743,7 @@ export const DosageWindow = GObject.registerClass(
 					file.replace_contents_async(
 						GLib.Bytes.new(byteArray),
 						null,
-						true,
+						false,
 						Gio.FileCreateFlags.REPLACE_DESTINATION,
 						null,
 						(file, result, userData) => {

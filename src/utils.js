@@ -76,6 +76,13 @@ export function createTempObj(type, listStore) {
 		for (const it of listStore) {
 			tempObj.treatments.push(it.obj);
 		}
+		if (
+			tempObj.treatments.some(obj => Object.keys(obj).length === 0) ||
+			tempObj.treatments.length === 0
+		) {
+			log(JSON.stringify(tempObj));
+			return;
+		}
 		return tempObj;
 	} else if (type === 'history') {
 		const tempObj = {
@@ -99,7 +106,17 @@ export function createTempObj(type, listStore) {
 				taken: item.taken,
 			});
 		}
+		if (hasEmptyObject(hist)) {
+			log(JSON.stringify(tempObj));
+			return;
+		}
 		return tempObj;
+	}
+}
+
+function hasEmptyObject(data) {
+	for (const key in data) {
+		return data[key].some(obj => Object.keys(obj).length === 0);
 	}
 }
 
