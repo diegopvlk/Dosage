@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 18:47-0300\n"
+"POT-Creation-Date: 2024-01-31 19:30-0300\n"
 "PO-Revision-Date: 2024-01-28 13:43+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:41 src/window.js:579
+#: src/main.js:41 src/window.js:582
 msgid "Dosage"
 msgstr "Dosaggio"
 
@@ -401,12 +401,12 @@ msgid "Show or hide confirm/skip"
 msgstr "Mostra o nascondi conferma/salta"
 
 #. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: data/ui/preferences.blp:57 src/medWindow.js:279 src/window.js:507
-#: src/window.js:643
+#: data/ui/preferences.blp:57 src/medWindow.js:279 src/window.js:510
+#: src/window.js:646
 msgid "Confirm"
 msgstr "Conferma"
 
-#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:511
+#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:514
 msgid "Skip"
 msgstr "Salta"
 
@@ -422,7 +422,7 @@ msgstr "Oggi"
 msgid "Unselect"
 msgstr "Non selezionato"
 
-#: data/ui/window.blp:70 src/window.js:643
+#: data/ui/window.blp:70 src/window.js:646
 msgid "One-time entry"
 msgstr "Unica voce"
 
@@ -576,11 +576,11 @@ msgstr "Cancella dose"
 msgid "You have treatments low in stock"
 msgstr "Hai trattamenti in esaurimento"
 
-#: src/window.js:403
+#: src/window.js:406
 msgid "No treatments added yet"
 msgstr "Nessun trattamento ancora aggiunto"
 
-#: src/window.js:408
+#: src/window.js:411
 msgid "All done for today"
 msgstr "Tutto fatto per oggi"
 
