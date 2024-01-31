@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 18:57-0300\n"
+"POT-Creation-Date: 2024-01-31 18:47-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:41 src/window.js:577
+#: src/main.js:41 src/window.js:579
 msgid "Dosage"
 msgstr ""
 
@@ -109,11 +109,11 @@ msgstr ""
 msgid "New treatment"
 msgstr ""
 
-#: data/ui/med-window.blp:19 src/medWindow.js:370
+#: data/ui/med-window.blp:19 src/medWindow.js:427
 msgid "Cancel"
 msgstr ""
 
-#: data/ui/med-window.blp:25 data/ui/window.blp:154
+#: data/ui/med-window.blp:25 data/ui/window.blp:156
 msgid "Add"
 msgstr ""
 
@@ -129,7 +129,7 @@ msgstr ""
 msgid "Unit"
 msgstr ""
 
-#: data/ui/med-window.blp:57 src/medWindow.js:235
+#: data/ui/med-window.blp:57 src/medWindow.js:234
 msgid "Pill(s)"
 msgstr ""
 
@@ -149,7 +149,7 @@ msgstr ""
 msgid "Color and icon"
 msgstr ""
 
-#: data/ui/med-window.blp:72 src/medWindow.js:281
+#: data/ui/med-window.blp:72 src/medWindow.js:280
 msgid "Color"
 msgstr ""
 
@@ -247,7 +247,7 @@ msgstr ""
 msgid "Potion"
 msgstr ""
 
-#: data/ui/med-window.blp:294 src/medWindow.js:637
+#: data/ui/med-window.blp:294 src/medWindow.js:743
 msgid "Frequency"
 msgstr ""
 
@@ -280,77 +280,73 @@ msgstr ""
 msgid "Add dose"
 msgstr ""
 
-#: data/ui/med-window.blp:427
-msgid "Confirmed"
-msgstr ""
-
-#: data/ui/med-window.blp:428 src/historyFactory.js:156
+#: data/ui/med-window.blp:430 src/historyFactory.js:166
 msgid "Skipped"
 msgstr ""
 
-#: data/ui/med-window.blp:429 src/historyFactory.js:160
-msgid "Missed"
+#: data/ui/med-window.blp:436
+msgid "Confirmed"
 msgstr ""
 
-#: data/ui/med-window.blp:436
+#: data/ui/med-window.blp:443
 msgid "Recurring notifications"
 msgstr ""
 
-#: data/ui/med-window.blp:437
+#: data/ui/med-window.blp:444
 msgid "Renotify until it's confirmed or skipped"
 msgstr ""
 
-#: data/ui/med-window.blp:441
+#: data/ui/med-window.blp:448
 msgid "Interval in minutes"
 msgstr ""
 
-#: data/ui/med-window.blp:453
+#: data/ui/med-window.blp:460
 msgid "Inventory"
 msgstr ""
 
-#: data/ui/med-window.blp:454
+#: data/ui/med-window.blp:461
 msgid "Manage your stock"
 msgstr ""
 
-#: data/ui/med-window.blp:459
+#: data/ui/med-window.blp:466
 msgid "Current"
 msgstr ""
 
-#: data/ui/med-window.blp:470
+#: data/ui/med-window.blp:477
 msgid "Remind me at"
 msgstr ""
 
-#: data/ui/med-window.blp:483
+#: data/ui/med-window.blp:490
 msgid "Duration"
 msgstr ""
 
-#: data/ui/med-window.blp:484
+#: data/ui/med-window.blp:491
 msgid "Set start and end dates"
 msgstr ""
 
 #. TRANSLATORS: label for when duration is enabled
-#: data/ui/med-window.blp:489 src/treatmentsFactory.js:112
+#: data/ui/med-window.blp:496 src/treatmentsFactory.js:112
 msgid "Starts on"
 msgstr ""
 
-#: data/ui/med-window.blp:497 data/ui/med-window.blp:518
-#: data/ui/med-window.blp:541
+#: data/ui/med-window.blp:504 data/ui/med-window.blp:525
+#: data/ui/med-window.blp:548
 msgid "Choose date"
 msgstr ""
 
-#: data/ui/med-window.blp:510
+#: data/ui/med-window.blp:517
 msgid "Ends on"
 msgstr ""
 
-#: data/ui/med-window.blp:532
+#: data/ui/med-window.blp:539
 msgid "Date"
 msgstr ""
 
-#: data/ui/med-window.blp:561 src/historyFactory.js:125 src/medWindow.js:371
+#: data/ui/med-window.blp:568 src/historyFactory.js:135 src/medWindow.js:428
 msgid "Delete"
 msgstr ""
 
-#: data/ui/preferences.blp:9 data/ui/window.blp:179
+#: data/ui/preferences.blp:9 data/ui/window.blp:181
 msgid "Preferences"
 msgstr ""
 
@@ -372,8 +368,8 @@ msgstr ""
 
 #: data/ui/preferences.blp:35
 msgid ""
-"On GNOME this will make the notification show on fullscreen mode or even if "
-"'Do Not Disturb' is enabled"
+"Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
+"is enabled"
 msgstr ""
 
 #: data/ui/preferences.blp:44
@@ -388,11 +384,13 @@ msgstr ""
 msgid "Show or hide confirm/skip"
 msgstr ""
 
-#: data/ui/preferences.blp:57 src/window.js:505 src/window.js:641
+#. TRANSLATORS: Keep it short (button to add one-time entry to history)
+#: data/ui/preferences.blp:57 src/medWindow.js:279 src/window.js:507
+#: src/window.js:643
 msgid "Confirm"
 msgstr ""
 
-#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:509
+#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:511
 msgid "Skip"
 msgstr ""
 
@@ -408,7 +406,7 @@ msgstr ""
 msgid "Unselect"
 msgstr ""
 
-#: data/ui/window.blp:70 src/window.js:641
+#: data/ui/window.blp:70 src/window.js:643
 msgid "One-time entry"
 msgstr ""
 
@@ -416,28 +414,32 @@ msgstr ""
 msgid "History"
 msgstr ""
 
-#: data/ui/window.blp:119
+#: data/ui/window.blp:121
 msgid "Empty history"
 msgstr ""
 
-#: data/ui/window.blp:129
+#: data/ui/window.blp:131
 msgid "Treatments"
 msgstr ""
 
-#: data/ui/window.blp:161
+#: data/ui/window.blp:163
 msgid "Click the button below to add some"
 msgstr ""
 
-#: data/ui/window.blp:183
+#: data/ui/window.blp:185
 msgid "About Dosage"
 msgstr ""
 
-#: data/ui/window.blp:187
+#: data/ui/window.blp:189
 msgid "Quit"
 msgstr ""
 
-#: src/historyFactory.js:122
+#: src/historyFactory.js:132
 msgid "Restore"
+msgstr ""
+
+#: src/historyFactory.js:170
+msgid "Missed"
 msgstr ""
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
@@ -458,57 +460,56 @@ msgstr ""
 msgid "Edit treatment"
 msgstr ""
 
-#: src/medWindow.js:118
+#: src/medWindow.js:118 src/medWindow.js:330
 msgid "Save"
 msgstr ""
 
-#: src/medWindow.js:225
+#: src/medWindow.js:224
 msgid "New"
 msgstr ""
 
-#: src/medWindow.js:278
+#: src/medWindow.js:277
 msgid "New entry"
 msgstr ""
 
-#. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: src/medWindow.js:280
-msgid "Add to history"
+#: src/medWindow.js:329
+msgid "Edit entry"
 msgstr ""
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:365
+#: src/medWindow.js:422
 msgid "Are you sure?"
 msgstr ""
 
-#: src/medWindow.js:599
+#: src/medWindow.js:705
 msgid "Choose"
 msgstr ""
 
-#: src/medWindow.js:631
+#: src/medWindow.js:737
 msgid "Specific days"
 msgstr ""
 
-#: src/medWindow.js:634 src/treatmentsFactory.js:149
+#: src/medWindow.js:740 src/treatmentsFactory.js:149
 msgid "Cycle"
 msgstr ""
 
-#: src/medWindow.js:670
+#: src/medWindow.js:776
 msgid "Empty name"
 msgstr ""
 
-#: src/medWindow.js:674
+#: src/medWindow.js:780
 msgid "Empty unit"
 msgstr ""
 
-#: src/medWindow.js:680
+#: src/medWindow.js:786
 msgid "Choose at least one day"
 msgstr ""
 
-#: src/medWindow.js:691
+#: src/medWindow.js:797
 msgid "Name already exists"
 msgstr ""
 
-#: src/medWindow.js:705
+#: src/medWindow.js:811
 msgid "Duplicated time"
 msgstr ""
 
@@ -548,19 +549,19 @@ msgstr ""
 msgid "Weekdays"
 msgstr ""
 
-#: src/utils.js:201
+#: src/utils.js:217
 msgid "Delete dose"
 msgstr ""
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:113
+#: src/window.js:115
 msgid "You have treatments low in stock"
 msgstr ""
 
-#: src/window.js:401
+#: src/window.js:403
 msgid "No treatments added yet"
 msgstr ""
 
-#: src/window.js:406
+#: src/window.js:408
 msgid "All done for today"
 msgstr ""
