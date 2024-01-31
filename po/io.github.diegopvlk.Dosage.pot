@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-28 14:03-0300\n"
+"POT-Creation-Date: 2024-01-30 18:57-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -284,11 +284,11 @@ msgstr ""
 msgid "Confirmed"
 msgstr ""
 
-#: data/ui/med-window.blp:428 src/historyFactory.js:155
+#: data/ui/med-window.blp:428 src/historyFactory.js:156
 msgid "Skipped"
 msgstr ""
 
-#: data/ui/med-window.blp:429 src/historyFactory.js:159
+#: data/ui/med-window.blp:429 src/historyFactory.js:160
 msgid "Missed"
 msgstr ""
 
@@ -329,7 +329,7 @@ msgid "Set start and end dates"
 msgstr ""
 
 #. TRANSLATORS: label for when duration is enabled
-#: data/ui/med-window.blp:489 src/treatmentsFactory.js:113
+#: data/ui/med-window.blp:489 src/treatmentsFactory.js:112
 msgid "Starts on"
 msgstr ""
 
@@ -346,7 +346,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: data/ui/med-window.blp:561 src/historyFactory.js:124 src/medWindow.js:371
+#: data/ui/med-window.blp:561 src/historyFactory.js:125 src/medWindow.js:371
 msgid "Delete"
 msgstr ""
 
@@ -436,7 +436,7 @@ msgstr ""
 msgid "Quit"
 msgstr ""
 
-#: src/historyFactory.js:121
+#: src/historyFactory.js:122
 msgid "Restore"
 msgstr ""
 
@@ -488,7 +488,7 @@ msgstr ""
 msgid "Specific days"
 msgstr ""
 
-#: src/medWindow.js:634 src/treatmentsFactory.js:150
+#: src/medWindow.js:634 src/treatmentsFactory.js:149
 msgid "Cycle"
 msgstr ""
 
@@ -520,23 +520,23 @@ msgstr ""
 msgid "Remaining"
 msgstr ""
 
-#: src/treatmentsFactory.js:108
+#: src/treatmentsFactory.js:107
 msgid "Low stock"
 msgstr ""
 
-#: src/treatmentsFactory.js:114
+#: src/treatmentsFactory.js:113
 msgid "Until"
 msgstr ""
 
-#: src/treatmentsFactory.js:126 src/utils.js:38
+#: src/treatmentsFactory.js:125 src/utils.js:38
 msgid "Daily"
 msgstr ""
 
-#: src/treatmentsFactory.js:138 src/treatmentsFactory.js:141
+#: src/treatmentsFactory.js:137 src/treatmentsFactory.js:140
 msgid "Next dose"
 msgstr ""
 
-#: src/treatmentsFactory.js:154
+#: src/treatmentsFactory.js:153
 msgid "When necessary"
 msgstr ""
 
