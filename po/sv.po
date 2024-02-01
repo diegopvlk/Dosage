@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-01 14:50-0300\n"
-"PO-Revision-Date: 2023-11-27 17:40+0000\n"
+"PO-Revision-Date: 2024-02-01 20:44+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.3-dev\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
@@ -81,7 +81,7 @@ msgstr "Dosering idag fönster i ljust tema"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
 msgid "Dosage preferences window in light theme"
-msgstr ""
+msgstr "Dosering inställningsfönster i ljust tema"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid "Dosage edit treatment window in light theme"
@@ -334,10 +334,8 @@ msgid "Duration"
 msgstr "Längd"
 
 #: data/ui/med-window.blp:491
-#, fuzzy
-#| msgid "Set a start and end date"
 msgid "Set start and end dates"
-msgstr "Ange ett start- och slutdatum"
+msgstr "Ställ in start och slutdatum"
 
 #. TRANSLATORS: label for when duration is enabled
 #: data/ui/med-window.blp:496 src/treatmentsFactory.js:112
@@ -382,16 +380,12 @@ msgid "Increase notification priority"
 msgstr "Öka aviseringsprioritet"
 
 #: data/ui/preferences.blp:35
-#, fuzzy
-#| msgid ""
-#| "On GNOME this will make the notification show on fullscreen mode or even "
-#| "if 'Do Not Disturb' is enabled"
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
 msgstr ""
-"På GNOME gör detta en avisering visas i helskärmsläge eller även om \"Stör "
-"ej\" är aktiverat"
+"Får aviseringen att visas i helskärmsläge eller även om \"Stör ej\" är "
+"aktiverat"
 
 #: data/ui/preferences.blp:44
 msgid "Notification sound"
