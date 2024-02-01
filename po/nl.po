@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-01 14:50-0300\n"
-"PO-Revision-Date: 2023-12-12 11:06+0000\n"
-"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/dosage/dosage/nl/"
-">\n"
+"PO-Revision-Date: 2024-02-01 22:04+0000\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/dosage/dosage/nl/>"
+"\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.3-dev\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
@@ -383,16 +383,12 @@ msgid "Increase notification priority"
 msgstr "Meldingsprioriteit verhogen"
 
 #: data/ui/preferences.blp:35
-#, fuzzy
-#| msgid ""
-#| "On GNOME this will make the notification show on fullscreen mode or even "
-#| "if 'Do Not Disturb' is enabled"
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
 msgstr ""
-"Op GNOME zorgt dit er voor dat meldingen in de schermvullende weergave en "
-"niet-storenstand getoond worden"
+"Zorgt ervoor dat de melding op volledig scherm wordt weergegeven of zelfs "
+"als niet-storenstand is ingeschakeld"
 
 #: data/ui/preferences.blp:44
 msgid "Notification sound"
