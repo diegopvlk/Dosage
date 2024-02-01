@@ -35,15 +35,19 @@
   <screenshots>
     <screenshot type="default">
       <caption>Dosage today window in light theme</caption>
-      <image>https://raw.githubusercontent.com/diegopvlk/Dosage/f962e4321686948b53c2254287a4d797b3e21579/screenshots/today-light.png</image>
+      <image>https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/today-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Dosage preferences window in light theme</caption>
+      <image>https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/preferences.png</image>
     </screenshot>
     <screenshot>
       <caption>Dosage edit treatment window in light theme</caption>
-      <image>https://raw.githubusercontent.com/diegopvlk/Dosage/507f6cfcc136380398fb8d9609911e4dbcf4dbaa/screenshots/med-window-light-alt.png</image>
+      <image>https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/med-window-alt.png</image>
     </screenshot>
     <screenshot>
       <caption>Dosage today window in dark theme</caption>
-      <image>https://raw.githubusercontent.com/diegopvlk/Dosage/f962e4321686948b53c2254287a4d797b3e21579/screenshots/today-dark.png</image>
+      <image>https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/today-dark.png</image>
     </screenshot>
   </screenshots>
 
