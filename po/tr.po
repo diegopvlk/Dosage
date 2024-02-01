@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-01 14:50-0300\n"
-"PO-Revision-Date: 2024-01-28 17:01+0000\n"
-"Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
+"PO-Revision-Date: 2024-02-01 20:44+0000\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
 ">\n"
 "Language: tr\n"
@@ -83,7 +83,7 @@ msgstr "Bugün penceresi açık tema ile"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
 msgid "Dosage preferences window in light theme"
-msgstr ""
+msgstr "Doz tercihler penceresi, açık tema"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid "Dosage edit treatment window in light theme"
@@ -382,16 +382,12 @@ msgid "Increase notification priority"
 msgstr "Bildirim önceliğini artır"
 
 #: data/ui/preferences.blp:35
-#, fuzzy
-#| msgid ""
-#| "On GNOME this will make the notification show on fullscreen mode or even "
-#| "if 'Do Not Disturb' is enabled"
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
 msgstr ""
-"Bu işlem, GNOME masaüstünde bildirimin tam ekran kipinde ya da 'Rahatsız "
-"Etme' kipi etkin olsa bile gösterilmesini sağlar"
+"Masaüstünde bildirimin tam ekran kipinde ya da 'Rahatsız Etme' kipi etkin "
+"olsa bile gösterilmesini sağlar"
 
 #: data/ui/preferences.blp:44
 msgid "Notification sound"
