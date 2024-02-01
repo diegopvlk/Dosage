@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-01 12:19-0300\n"
+"POT-Creation-Date: 2024-02-01 14:50-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,10 +73,14 @@ msgid "Dosage today window in light theme"
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
-msgid "Dosage edit treatment window in light theme"
+msgid "Dosage preferences window in light theme"
 msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
+msgid "Dosage edit treatment window in light theme"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage today window in dark theme"
 msgstr ""
 

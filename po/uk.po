@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-01 12:19-0300\n"
+"POT-Creation-Date: 2024-02-01 14:50-0300\n"
 "PO-Revision-Date: 2024-01-01 12:08+0000\n"
 "Last-Translator: Сергій <sergiy.goncharuk.1@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -86,10 +86,14 @@ msgid "Dosage today window in light theme"
 msgstr "Розділ \"Сьогодні\" Дозування у світлому стилі"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
+msgid "Dosage preferences window in light theme"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid "Dosage edit treatment window in light theme"
 msgstr "Розділ \"Курси лікування\" Дозування у світлому стилі"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage today window in dark theme"
 msgstr "Розділ \"Сьогодні\" Дозування у темному стилі"
 

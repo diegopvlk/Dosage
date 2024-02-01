@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-01 12:19-0300\n"
+"POT-Creation-Date: 2024-02-01 14:50-0300\n"
 "PO-Revision-Date: 2024-01-28 17:01+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -80,10 +80,14 @@ msgid "Dosage today window in light theme"
 msgstr "Janela do Dosagem hoje em tema claro"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
+msgid "Dosage preferences window in light theme"
+msgstr "Janela de prefêrencias em tema claro"
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid "Dosage edit treatment window in light theme"
 msgstr "Janela de edição de tratamento em tema claro"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage today window in dark theme"
 msgstr "Janela do Dosagem hoje em tema escuro"
 

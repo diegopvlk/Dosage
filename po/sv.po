@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-01 12:19-0300\n"
+"POT-Creation-Date: 2024-02-01 14:50-0300\n"
 "PO-Revision-Date: 2023-11-27 17:40+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -80,10 +80,14 @@ msgid "Dosage today window in light theme"
 msgstr "Dosering idag fönster i ljust tema"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
+msgid "Dosage preferences window in light theme"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid "Dosage edit treatment window in light theme"
 msgstr "Dosredigeringsbehandlingsfönster i ljust tema"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage today window in dark theme"
 msgstr "Dosering idag fönster i mörkt tema"
 
