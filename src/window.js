@@ -781,20 +781,31 @@ export const DosageWindow = GObject.registerClass(
 				}
 			};
 
+			const lastUpdate = new Date(this.lastUpdate);
+			const today = new Date();
+			const twoMonthsAgo = new Date();
+			twoMonthsAgo.setMonth(today.getMonth() - 2);
+			const difference = Math.abs(lastUpdate - twoMonthsAgo);
+			if (difference >= 5259600000) {
+				// if the app was closed for more than 2 months
+				// only add missed items from the last 2 months
+				this.lastUpdate = twoMonthsAgo.getTime();
+			}
+
+			today.setHours(0, 0, 0, 0);
 			for (const it of treatmentsLS) {
 				const nextDate = new Date(this.lastUpdate);
 				const item = it.obj;
-				const today = new Date();
 				const end = new Date(item.duration.end);
-
-				today.setHours(0, 0, 0, 0);
+				const start = new Date(item.duration.start);
 				nextDate.setHours(0, 0, 0, 0);
 				end.setHours(0, 0, 0, 0);
+				start.setHours(0, 0, 0, 0);
 
 				let current = item.cycle[2];
 
 				while (nextDate < today) {
-					if (item.duration.enabled && end < nextDate) break;
+					if (item.duration.enabled && (start > nextDate || end < nextDate)) break;
 					const [active, inactive] = item.cycle;
 					item.dosage.forEach(timeDose => {
 						const tempItem = { ...item };
