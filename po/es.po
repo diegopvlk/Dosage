@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-01 14:50-0300\n"
-"PO-Revision-Date: 2024-01-28 17:01+0000\n"
-"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
+"PO-Revision-Date: 2024-02-01 22:04+0000\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/es/"
 ">\n"
 "Language: es\n"
@@ -79,19 +79,19 @@ msgstr "Duración — Defina las fechas de inicio y fin"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:37
 msgid "Dosage today window in light theme"
-msgstr "La ventana de la toma para hoy en tema claro"
+msgstr "Ventana de Dosis para hoy en tema claro"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
 msgid "Dosage preferences window in light theme"
-msgstr ""
+msgstr "Ventana de preferencias de Dosis en tema claro"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid "Dosage edit treatment window in light theme"
-msgstr "Ventana del tratamiento de edición de la dosis en tema claro"
+msgstr "Ventana del tratamiento de edición de la Dosis en tema claro"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage today window in dark theme"
-msgstr "Ventana de la toma para hoy en tema oscuro"
+msgstr "Ventana de la Dosis para hoy en tema oscuro"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
@@ -382,16 +382,12 @@ msgid "Increase notification priority"
 msgstr "Aumentar la prioridad de las notificaciones"
 
 #: data/ui/preferences.blp:35
-#, fuzzy
-#| msgid ""
-#| "On GNOME this will make the notification show on fullscreen mode or even "
-#| "if 'Do Not Disturb' is enabled"
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
 msgstr ""
-"En GNOME esto hará que la notificación se muestre en modo de pantalla "
-"completa o incluso si el modo «No molestar» está activado"
+"Hace que la notificación se muestre en modo de pantalla completa o incluso "
+"si el modo «No molestar» está activado"
 
 #: data/ui/preferences.blp:44
 msgid "Notification sound"
