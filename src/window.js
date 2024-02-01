@@ -785,10 +785,16 @@ export const DosageWindow = GObject.registerClass(
 				const nextDate = new Date(this.lastUpdate);
 				const item = it.obj;
 				const today = new Date();
+				const end = new Date(item.duration.end);
+
 				today.setHours(0, 0, 0, 0);
 				nextDate.setHours(0, 0, 0, 0);
+				end.setHours(0, 0, 0, 0);
+
 				let current = item.cycle[2];
+
 				while (nextDate < today) {
+					if (item.duration.enabled && end < nextDate) break;
 					const [active, inactive] = item.cycle;
 					item.dosage.forEach(timeDose => {
 						const tempItem = { ...item };
