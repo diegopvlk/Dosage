@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-01 14:50-0300\n"
-"PO-Revision-Date: 2023-11-26 01:43+0000\n"
+"PO-Revision-Date: 2024-02-01 22:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
 "dosage/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.2.1-rc\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
@@ -388,16 +388,12 @@ msgid "Increase notification priority"
 msgstr "Øk merknadsprioritet"
 
 #: data/ui/preferences.blp:35
-#, fuzzy
-#| msgid ""
-#| "On GNOME this will make the notification show on fullscreen mode or even "
-#| "if 'Do Not Disturb' is enabled"
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
 msgstr ""
-"På GNOME vil dette få varslingen til å vises i fullskjermmodus eller selv om "
-"'Ikke forstyrr' er aktivert"
+"Gjør at varselet vises i fullskjermmodus eller selv om 'Ikke forstyrr' er "
+"aktivert"
 
 #: data/ui/preferences.blp:44
 msgid "Notification sound"
