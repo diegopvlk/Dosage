@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 19:30-0300\n"
+"POT-Creation-Date: 2024-02-01 12:19-0300\n"
 "PO-Revision-Date: 2023-12-04 18:24+0000\n"
 "Last-Translator: Anton Palgunov <toxblh@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
@@ -123,7 +123,7 @@ msgstr "Выйти"
 msgid "New treatment"
 msgstr "Новый курс лечения"
 
-#: data/ui/med-window.blp:19 src/medWindow.js:427
+#: data/ui/med-window.blp:19 src/medWindow.js:426
 msgid "Cancel"
 msgstr "Отменить"
 
@@ -163,7 +163,7 @@ msgstr "Форма"
 msgid "Color and icon"
 msgstr "Цвет и иконка"
 
-#: data/ui/med-window.blp:72 src/medWindow.js:280
+#: data/ui/med-window.blp:72 src/medWindow.js:279
 msgid "Color"
 msgstr "Цвет"
 
@@ -261,7 +261,7 @@ msgstr "Капли"
 msgid "Potion"
 msgstr "Микстура"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:743
+#: data/ui/med-window.blp:294 src/medWindow.js:742
 msgid "Frequency"
 msgstr "Частота"
 
@@ -360,7 +360,7 @@ msgstr "Заканчивается"
 msgid "Date"
 msgstr "Дата приема"
 
-#: data/ui/med-window.blp:568 src/historyFactory.js:135 src/medWindow.js:428
+#: data/ui/med-window.blp:568 src/historyFactory.js:135 src/medWindow.js:427
 msgid "Delete"
 msgstr "Удалить"
 
@@ -408,8 +408,7 @@ msgstr "Кнопки уведомлений"
 msgid "Show or hide confirm/skip"
 msgstr "Показать или скрыть подтвердить/пропустить"
 
-#. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: data/ui/preferences.blp:57 src/medWindow.js:279 src/window.js:510
+#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:510
 #: src/window.js:646
 msgid "Confirm"
 msgstr "Подтвердить"
@@ -489,7 +488,7 @@ msgstr ""
 msgid "Edit treatment"
 msgstr "Редактировать курс лечения"
 
-#: src/medWindow.js:118 src/medWindow.js:330
+#: src/medWindow.js:118 src/medWindow.js:329
 msgid "Save"
 msgstr "Сохранить"
 
@@ -501,46 +500,44 @@ msgstr "Новая"
 msgid "New entry"
 msgstr "Новая запись"
 
-#: src/medWindow.js:329
-#, fuzzy
-#| msgid "Edit treatment"
+#: src/medWindow.js:328
 msgid "Edit entry"
-msgstr "Редактировать курс лечения"
+msgstr "Редактировать запись"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:422
+#: src/medWindow.js:421
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
-#: src/medWindow.js:705
+#: src/medWindow.js:704
 msgid "Choose"
 msgstr "Выбрать"
 
-#: src/medWindow.js:737
+#: src/medWindow.js:736
 msgid "Specific days"
 msgstr "Выбраные дни"
 
-#: src/medWindow.js:740 src/treatmentsFactory.js:149
+#: src/medWindow.js:739 src/treatmentsFactory.js:149
 msgid "Cycle"
 msgstr "Цикл"
 
-#: src/medWindow.js:776
+#: src/medWindow.js:775
 msgid "Empty name"
 msgstr "Отсутствует название записи"
 
-#: src/medWindow.js:780
+#: src/medWindow.js:779
 msgid "Empty unit"
 msgstr "Пустая единица измерения"
 
-#: src/medWindow.js:786
+#: src/medWindow.js:785
 msgid "Choose at least one day"
 msgstr "Выберите хотя бы один день"
 
-#: src/medWindow.js:797
+#: src/medWindow.js:796
 msgid "Name already exists"
 msgstr "Это название уже занято"
 
-#: src/medWindow.js:811
+#: src/medWindow.js:810
 msgid "Duplicated time"
 msgstr "Одинаковое время у приемов доз"
 

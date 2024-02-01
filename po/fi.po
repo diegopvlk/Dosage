@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 19:30-0300\n"
+"POT-Creation-Date: 2024-02-01 12:19-0300\n"
 "PO-Revision-Date: 2024-01-21 13:01+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
@@ -113,7 +113,7 @@ msgstr "Lopeta"
 msgid "New treatment"
 msgstr "Uusi hoito"
 
-#: data/ui/med-window.blp:19 src/medWindow.js:427
+#: data/ui/med-window.blp:19 src/medWindow.js:426
 msgid "Cancel"
 msgstr "Peru"
 
@@ -153,7 +153,7 @@ msgstr "Muoto"
 msgid "Color and icon"
 msgstr "Väri ja kuvake"
 
-#: data/ui/med-window.blp:72 src/medWindow.js:280
+#: data/ui/med-window.blp:72 src/medWindow.js:279
 msgid "Color"
 msgstr "Väri"
 
@@ -251,7 +251,7 @@ msgstr "Tippa"
 msgid "Potion"
 msgstr "Lääkeannos"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:743
+#: data/ui/med-window.blp:294 src/medWindow.js:742
 msgid "Frequency"
 msgstr "Taajuus"
 
@@ -348,7 +348,7 @@ msgstr "Loppuu"
 msgid "Date"
 msgstr "Päivä"
 
-#: data/ui/med-window.blp:568 src/historyFactory.js:135 src/medWindow.js:428
+#: data/ui/med-window.blp:568 src/historyFactory.js:135 src/medWindow.js:427
 msgid "Delete"
 msgstr "Poista"
 
@@ -396,8 +396,7 @@ msgstr "Ilmoituksen painikkeet"
 msgid "Show or hide confirm/skip"
 msgstr "Näytä tai piilota vahvistus- ja ohituspainikkeet"
 
-#. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: data/ui/preferences.blp:57 src/medWindow.js:279 src/window.js:510
+#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:510
 #: src/window.js:646
 msgid "Confirm"
 msgstr "Vahvista"
@@ -473,7 +472,7 @@ msgstr ""
 msgid "Edit treatment"
 msgstr "Muokkaa hoitoa"
 
-#: src/medWindow.js:118 src/medWindow.js:330
+#: src/medWindow.js:118 src/medWindow.js:329
 msgid "Save"
 msgstr "Tallenna"
 
@@ -485,46 +484,44 @@ msgstr "Uusi"
 msgid "New entry"
 msgstr "Uusi merkintä"
 
-#: src/medWindow.js:329
-#, fuzzy
-#| msgid "Edit treatment"
+#: src/medWindow.js:328
 msgid "Edit entry"
-msgstr "Muokkaa hoitoa"
+msgstr "Muokkaa merkintä"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:422
+#: src/medWindow.js:421
 msgid "Are you sure?"
 msgstr "Oletko varma?"
 
-#: src/medWindow.js:705
+#: src/medWindow.js:704
 msgid "Choose"
 msgstr "Valitse"
 
-#: src/medWindow.js:737
+#: src/medWindow.js:736
 msgid "Specific days"
 msgstr "Valitut päivät"
 
-#: src/medWindow.js:740 src/treatmentsFactory.js:149
+#: src/medWindow.js:739 src/treatmentsFactory.js:149
 msgid "Cycle"
 msgstr "Sykli"
 
-#: src/medWindow.js:776
+#: src/medWindow.js:775
 msgid "Empty name"
 msgstr "Tyhjä nimi"
 
-#: src/medWindow.js:780
+#: src/medWindow.js:779
 msgid "Empty unit"
 msgstr "Tyhjä yksikkö"
 
-#: src/medWindow.js:786
+#: src/medWindow.js:785
 msgid "Choose at least one day"
 msgstr "Valitse vähintään yksi päivä"
 
-#: src/medWindow.js:797
+#: src/medWindow.js:796
 msgid "Name already exists"
 msgstr "Nimi on jo olemassa"
 
-#: src/medWindow.js:811
+#: src/medWindow.js:810
 msgid "Duplicated time"
 msgstr "Päällekkäinen aika"
 

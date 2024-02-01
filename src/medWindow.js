@@ -275,7 +275,6 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		}
 
 		medWindow.title = _('New entry');
-		// TRANSLATORS: Keep it short (button to add one-time entry to history)
 		saveButton.label = _('Confirm');
 		colorIcon.subtitle = _('Color');
 		colorIcon.title = '';

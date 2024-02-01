@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 19:30-0300\n"
+"POT-Creation-Date: 2024-02-01 12:19-0300\n"
 "PO-Revision-Date: 2023-11-27 17:40+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -118,7 +118,7 @@ msgstr "Avsluta"
 msgid "New treatment"
 msgstr "Ny behandling"
 
-#: data/ui/med-window.blp:19 src/medWindow.js:427
+#: data/ui/med-window.blp:19 src/medWindow.js:426
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -158,7 +158,7 @@ msgstr "Form"
 msgid "Color and icon"
 msgstr "Färg och ikon"
 
-#: data/ui/med-window.blp:72 src/medWindow.js:280
+#: data/ui/med-window.blp:72 src/medWindow.js:279
 msgid "Color"
 msgstr "Färg"
 
@@ -256,7 +256,7 @@ msgstr "Droppe"
 msgid "Potion"
 msgstr "Dryck"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:743
+#: data/ui/med-window.blp:294 src/medWindow.js:742
 msgid "Frequency"
 msgstr "Frekvens"
 
@@ -353,7 +353,7 @@ msgstr "Slutar"
 msgid "Date"
 msgstr "Datum"
 
-#: data/ui/med-window.blp:568 src/historyFactory.js:135 src/medWindow.js:428
+#: data/ui/med-window.blp:568 src/historyFactory.js:135 src/medWindow.js:427
 msgid "Delete"
 msgstr "Radera"
 
@@ -401,8 +401,7 @@ msgstr "Aviseringsknappar"
 msgid "Show or hide confirm/skip"
 msgstr "Visa eller dölj bekräfta/hoppa över"
 
-#. TRANSLATORS: Keep it short (button to add one-time entry to history)
-#: data/ui/preferences.blp:57 src/medWindow.js:279 src/window.js:510
+#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:510
 #: src/window.js:646
 msgid "Confirm"
 msgstr "Bekräfta"
@@ -477,7 +476,7 @@ msgstr "Acceptera för att tillåta körning i bakgrunden och ta emot aviseringa
 msgid "Edit treatment"
 msgstr "Redigera behandling"
 
-#: src/medWindow.js:118 src/medWindow.js:330
+#: src/medWindow.js:118 src/medWindow.js:329
 msgid "Save"
 msgstr "Spara"
 
@@ -489,46 +488,44 @@ msgstr "Ny"
 msgid "New entry"
 msgstr "Ny notering"
 
-#: src/medWindow.js:329
-#, fuzzy
-#| msgid "Edit treatment"
+#: src/medWindow.js:328
 msgid "Edit entry"
-msgstr "Redigera behandling"
+msgstr "Redigera post"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:422
+#: src/medWindow.js:421
 msgid "Are you sure?"
 msgstr "Är du säker?"
 
-#: src/medWindow.js:705
+#: src/medWindow.js:704
 msgid "Choose"
 msgstr "Välj"
 
-#: src/medWindow.js:737
+#: src/medWindow.js:736
 msgid "Specific days"
 msgstr "Särskilda dagar"
 
-#: src/medWindow.js:740 src/treatmentsFactory.js:149
+#: src/medWindow.js:739 src/treatmentsFactory.js:149
 msgid "Cycle"
 msgstr "Cykel"
 
-#: src/medWindow.js:776
+#: src/medWindow.js:775
 msgid "Empty name"
 msgstr "Tömt namn"
 
-#: src/medWindow.js:780
+#: src/medWindow.js:779
 msgid "Empty unit"
 msgstr "Töm enhet"
 
-#: src/medWindow.js:786
+#: src/medWindow.js:785
 msgid "Choose at least one day"
 msgstr "Välj åtminstone en dag"
 
-#: src/medWindow.js:797
+#: src/medWindow.js:796
 msgid "Name already exists"
 msgstr "Namnet finns redan"
 
-#: src/medWindow.js:811
+#: src/medWindow.js:810
 msgid "Duplicated time"
 msgstr "Duplicerad tid"
 
