@@ -2,9 +2,9 @@ name: dosage-tracker
 base: core22
 adopt-info: dosage-tracker
 grade: stable
-confinement: strict 
-  
-parts:      
+confinement: strict
+
+parts:
   blueprint-compiler:
     source: https://gitlab.gnome.org/jwestman/blueprint-compiler.git
     source-tag: 'v0.10.0'
@@ -14,11 +14,11 @@ parts:
     override-prime: ''
 
   dosage-tracker:
-    after: [ blueprint-compiler ]
+    after: [blueprint-compiler]
     plugin: meson
     # source: snap/local/Dosage
     source: https://github.com/diegopvlk/Dosage.git
-    source-tag: 'v1.4.8'
+    source-tag: 'v1.5.0'
     build-environment:
       - PYTHONPATH: $CRAFT_STAGE/usr/lib/python3/dist-packages:$PYTHONPATH
       - GI_TYPELIB_PATH: /snap/gnome-42-2204-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/girepository-1.0:/snap/gnome-42-2204-sdk/current/usr/lib/girepository-1.0
@@ -27,9 +27,9 @@ parts:
     override-pull: |
       craftctl default
       sed -i -e 's|@GJS@|/snap/dosage-tracker/current/gnome-platform/usr/bin/gjs|g' src/io.github.diegopvlk.Dosage.in
-    organize: 
+    organize:
       snap/dosage-tracker/current: .
-    parse-info: [ usr/share/appdata/io.github.diegopvlk.Dosage.appdata.xml ]
+    parse-info: [usr/share/appdata/io.github.diegopvlk.Dosage.appdata.xml]
     prime:
       - -snap/dosage-tracker
 

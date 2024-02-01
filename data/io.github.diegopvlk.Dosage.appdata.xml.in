@@ -48,6 +48,19 @@
   </screenshots>
 
   <releases>
+    <release version="1.5.0" date="2024-02-02">
+      <description translatable="no">
+        <ul>
+          <li>It's now possible to edit history entries</li>
+          <li>New preference to auto-clear history</li>
+          <li>New row style for select frequency</li>
+          <li>New row style for select date</li>
+          <li>New badge style for history confirmed item</li>
+          <li>(Snap) Added a preference to disable auto-start</li>
+          <li>Fixes, improvements and translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.4.8" date="2023-12-23">
       <description translatable="no">
         <ul>
