@@ -785,11 +785,11 @@ export const DosageWindow = GObject.registerClass(
 			const today = new Date();
 			const twoMonthsAgo = new Date();
 			twoMonthsAgo.setMonth(today.getMonth() - 2);
-			const difference = Math.abs(lastUpdate - twoMonthsAgo);
-			if (difference >= 5259600000) {
+			const daysDiff = Math.floor((today - lastUpdate) / 86400000);
+			if (daysDiff >= 60) {
 				// if the app was closed for more than 2 months
 				// only add missed items from the last 2 months
-				this.lastUpdate = twoMonthsAgo.getTime();
+				this.lastUpdate = twoMonthsAgo.toISOString();
 			}
 
 			today.setHours(0, 0, 0, 0);
