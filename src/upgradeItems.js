@@ -10,6 +10,7 @@ export default function upgradeItems(json, type) {
 			const info = item.info || item._info;
 			const dur = info.duration;
 			const icon = info.icon.replace('-symbolic', '');
+			info.dosage.forEach(d => delete d.updated);
 
 			// change to int and to parse in ms instead of seconds
 			if (typeof dur.start === 'string') {
@@ -24,7 +25,7 @@ export default function upgradeItems(json, type) {
 
 			// v1.1.0 only has recurring: boolean
 			const rcEnabled = info.recurring?.enabled || info.recurring === true;
-			const rcInterval = info.recurring.interval || 5;
+			const rcInterval = info.recurring?.interval || 5;
 
 			const newMed = {
 				name: item.name || item._name,

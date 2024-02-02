@@ -150,7 +150,7 @@ export function isTodayMedDay(med) {
 	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
 	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
 
-	if (item.lastTaken !== null) {
+	if (item.lastTaken) {
 		return false;
 	}
 
