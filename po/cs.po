@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-01 14:50-0300\n"
+"POT-Creation-Date: 2024-02-02 11:29-0300\n"
 "PO-Revision-Date: 2024-02-01 22:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/>"
-"\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/"
+">\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -261,9 +261,25 @@ msgstr "Kapka"
 msgid "Potion"
 msgstr "Nápoj"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:742
+#: data/ui/med-window.blp:294 src/medWindow.js:754
 msgid "Frequency"
 msgstr "Frekvence"
+
+#: data/ui/med-window.blp:298
+msgid "Every day"
+msgstr "Každý den"
+
+#: data/ui/med-window.blp:299 src/medWindow.js:748
+msgid "Specific days"
+msgstr "Vybrané dny"
+
+#: data/ui/med-window.blp:300 src/medWindow.js:751 src/treatmentsFactory.js:149
+msgid "Cycle"
+msgstr "Cyklus"
+
+#: data/ui/med-window.blp:301 src/treatmentsFactory.js:153
+msgid "When necessary"
+msgstr "Když je potřeba"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
@@ -499,35 +515,27 @@ msgstr "Upravit záznam"
 msgid "Are you sure?"
 msgstr "Jste si jistí?"
 
-#: src/medWindow.js:704
+#: src/medWindow.js:716
 msgid "Choose"
 msgstr "Vybrat"
 
-#: src/medWindow.js:736
-msgid "Specific days"
-msgstr "Vybrané dny"
-
-#: src/medWindow.js:739 src/treatmentsFactory.js:149
-msgid "Cycle"
-msgstr "Cyklus"
-
-#: src/medWindow.js:775
+#: src/medWindow.js:787
 msgid "Empty name"
 msgstr "Prázné jméno"
 
-#: src/medWindow.js:779
+#: src/medWindow.js:791
 msgid "Empty unit"
 msgstr "Prázdná jednotka"
 
-#: src/medWindow.js:785
+#: src/medWindow.js:797
 msgid "Choose at least one day"
 msgstr "Vyberte alespoň jeden den"
 
-#: src/medWindow.js:796
+#: src/medWindow.js:808
 msgid "Name already exists"
 msgstr "Jméno již existuje"
 
-#: src/medWindow.js:810
+#: src/medWindow.js:822
 msgid "Duplicated time"
 msgstr "Duplikovaný čas"
 
@@ -554,10 +562,6 @@ msgstr "Denně"
 #: src/treatmentsFactory.js:137 src/treatmentsFactory.js:140
 msgid "Next dose"
 msgstr "Další dávka"
-
-#: src/treatmentsFactory.js:153
-msgid "When necessary"
-msgstr "Když je potřeba"
 
 #: src/utils.js:34
 msgid "Weekends"
@@ -607,6 +611,3 @@ msgstr "Pro dnešek máte hotovo"
 
 #~ msgid "remedy"
 #~ msgstr "prostředek"
-
-#~ msgid "Every day"
-#~ msgstr "Každý den"

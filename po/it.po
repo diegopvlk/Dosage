@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-01 14:50-0300\n"
+"POT-Creation-Date: 2024-02-02 11:29-0300\n"
 "PO-Revision-Date: 2024-02-01 22:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
@@ -261,9 +261,25 @@ msgstr "Gocce"
 msgid "Potion"
 msgstr "Pozione"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:742
+#: data/ui/med-window.blp:294 src/medWindow.js:754
 msgid "Frequency"
 msgstr "Frequenza"
+
+#: data/ui/med-window.blp:298
+msgid "Every day"
+msgstr "Ogni giorno"
+
+#: data/ui/med-window.blp:299 src/medWindow.js:748
+msgid "Specific days"
+msgstr "Giorni specifici"
+
+#: data/ui/med-window.blp:300 src/medWindow.js:751 src/treatmentsFactory.js:149
+msgid "Cycle"
+msgstr "Ciclo"
+
+#: data/ui/med-window.blp:301 src/treatmentsFactory.js:153
+msgid "When necessary"
+msgstr "Quando necessario"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
@@ -496,35 +512,27 @@ msgstr "Modifica voce"
 msgid "Are you sure?"
 msgstr "Sei sicuro?"
 
-#: src/medWindow.js:704
+#: src/medWindow.js:716
 msgid "Choose"
 msgstr "Scegli"
 
-#: src/medWindow.js:736
-msgid "Specific days"
-msgstr "Giorni specifici"
-
-#: src/medWindow.js:739 src/treatmentsFactory.js:149
-msgid "Cycle"
-msgstr "Ciclo"
-
-#: src/medWindow.js:775
+#: src/medWindow.js:787
 msgid "Empty name"
 msgstr "Nome vuoto"
 
-#: src/medWindow.js:779
+#: src/medWindow.js:791
 msgid "Empty unit"
 msgstr "Unità vuota"
 
-#: src/medWindow.js:785
+#: src/medWindow.js:797
 msgid "Choose at least one day"
 msgstr "Scegli almeno un giorno"
 
-#: src/medWindow.js:796
+#: src/medWindow.js:808
 msgid "Name already exists"
 msgstr "Il nome esiste già"
 
-#: src/medWindow.js:810
+#: src/medWindow.js:822
 msgid "Duplicated time"
 msgstr "Tempo duplicato"
 
@@ -551,10 +559,6 @@ msgstr "Giornaliero"
 #: src/treatmentsFactory.js:137 src/treatmentsFactory.js:140
 msgid "Next dose"
 msgstr "Prossima dose"
-
-#: src/treatmentsFactory.js:153
-msgid "When necessary"
-msgstr "Quando necessario"
 
 #: src/utils.js:34
 msgid "Weekends"
@@ -604,9 +608,6 @@ msgstr "Tutto fatto per oggi"
 
 #~ msgid "remedy"
 #~ msgstr "rimedio"
-
-#~ msgid "Every day"
-#~ msgstr "Ogni giorno"
 
 #~ msgid "Su"
 #~ msgstr "Do"

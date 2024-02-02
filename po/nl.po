@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-01 14:50-0300\n"
+"POT-Creation-Date: 2024-02-02 11:29-0300\n"
 "PO-Revision-Date: 2024-02-01 22:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/dosage/dosage/nl/>"
-"\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/dosage/dosage/nl/"
+">\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -261,9 +261,25 @@ msgstr "Druppel"
 msgid "Potion"
 msgstr "Drankje"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:742
+#: data/ui/med-window.blp:294 src/medWindow.js:754
 msgid "Frequency"
 msgstr "Frequentie"
+
+#: data/ui/med-window.blp:298
+msgid "Every day"
+msgstr "Iedere dag"
+
+#: data/ui/med-window.blp:299 src/medWindow.js:748
+msgid "Specific days"
+msgstr "Bepaalde dagen"
+
+#: data/ui/med-window.blp:300 src/medWindow.js:751 src/treatmentsFactory.js:149
+msgid "Cycle"
+msgstr "Cyclus"
+
+#: data/ui/med-window.blp:301 src/treatmentsFactory.js:153
+msgid "When necessary"
+msgstr "Alleen indien nodig"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
@@ -500,35 +516,27 @@ msgstr "Bewerk invoer"
 msgid "Are you sure?"
 msgstr "Weet u het zeker?"
 
-#: src/medWindow.js:704
+#: src/medWindow.js:716
 msgid "Choose"
 msgstr "Kiezen"
 
-#: src/medWindow.js:736
-msgid "Specific days"
-msgstr "Bepaalde dagen"
-
-#: src/medWindow.js:739 src/treatmentsFactory.js:149
-msgid "Cycle"
-msgstr "Cyclus"
-
-#: src/medWindow.js:775
+#: src/medWindow.js:787
 msgid "Empty name"
 msgstr "Naamloos"
 
-#: src/medWindow.js:779
+#: src/medWindow.js:791
 msgid "Empty unit"
 msgstr "Niets ingevoerd"
 
-#: src/medWindow.js:785
+#: src/medWindow.js:797
 msgid "Choose at least one day"
 msgstr "Kies minimaal één dag"
 
-#: src/medWindow.js:796
+#: src/medWindow.js:808
 msgid "Name already exists"
 msgstr "Deze naam is al in gebruik"
 
-#: src/medWindow.js:810
+#: src/medWindow.js:822
 msgid "Duplicated time"
 msgstr "Dit tijdstip is al gekozen"
 
@@ -555,10 +563,6 @@ msgstr "Dagelijks"
 #: src/treatmentsFactory.js:137 src/treatmentsFactory.js:140
 msgid "Next dose"
 msgstr "Volgende dosis"
-
-#: src/treatmentsFactory.js:153
-msgid "When necessary"
-msgstr "Alleen indien nodig"
 
 #: src/utils.js:34
 msgid "Weekends"
@@ -608,9 +612,6 @@ msgstr "U bent klaar voor vandaag"
 
 #~ msgid "remedy"
 #~ msgstr "remedie"
-
-#~ msgid "Every day"
-#~ msgstr "Iedere dag"
 
 #~ msgid "Su"
 #~ msgstr "Zo"

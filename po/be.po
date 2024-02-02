@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-01 14:50-0300\n"
+"POT-Creation-Date: 2024-02-02 11:29-0300\n"
 "PO-Revision-Date: 2024-02-02 14:02+0000\n"
 "Last-Translator: Yahor <k1llo2810@protonmail.com>\n"
 "Language-Team: Belarusian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -262,9 +262,25 @@ msgstr "Кроплі"
 msgid "Potion"
 msgstr "Мікстура"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:742
+#: data/ui/med-window.blp:294 src/medWindow.js:754
 msgid "Frequency"
 msgstr "Частата"
+
+#: data/ui/med-window.blp:298
+msgid "Every day"
+msgstr "Кожны дзень"
+
+#: data/ui/med-window.blp:299 src/medWindow.js:748
+msgid "Specific days"
+msgstr "Выбраныя дні"
+
+#: data/ui/med-window.blp:300 src/medWindow.js:751 src/treatmentsFactory.js:149
+msgid "Cycle"
+msgstr "Цыкл"
+
+#: data/ui/med-window.blp:301 src/treatmentsFactory.js:153
+msgid "When necessary"
+msgstr "Пры неабходнасці"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
@@ -498,35 +514,27 @@ msgstr "Рэдагаваць запіс"
 msgid "Are you sure?"
 msgstr "Вы ўпэўнены?"
 
-#: src/medWindow.js:704
+#: src/medWindow.js:716
 msgid "Choose"
 msgstr "Выбраць"
 
-#: src/medWindow.js:736
-msgid "Specific days"
-msgstr "Выбраныя дні"
-
-#: src/medWindow.js:739 src/treatmentsFactory.js:149
-msgid "Cycle"
-msgstr "Цыкл"
-
-#: src/medWindow.js:775
+#: src/medWindow.js:787
 msgid "Empty name"
 msgstr "Адсутнічае назва запісу"
 
-#: src/medWindow.js:779
+#: src/medWindow.js:791
 msgid "Empty unit"
 msgstr "Пустая адзінка вымярэння"
 
-#: src/medWindow.js:785
+#: src/medWindow.js:797
 msgid "Choose at least one day"
 msgstr "Выберыце хаця б адзін дзень"
 
-#: src/medWindow.js:796
+#: src/medWindow.js:808
 msgid "Name already exists"
 msgstr "Гэта назва ўжо занята"
 
-#: src/medWindow.js:810
+#: src/medWindow.js:822
 msgid "Duplicated time"
 msgstr "Аднолькавы час у прыёмаў доз"
 
@@ -553,10 +561,6 @@ msgstr "Штодзённа"
 #: src/treatmentsFactory.js:137 src/treatmentsFactory.js:140
 msgid "Next dose"
 msgstr "Наступная дозу"
-
-#: src/treatmentsFactory.js:153
-msgid "When necessary"
-msgstr "Пры неабходнасці"
 
 #: src/utils.js:34
 msgid "Weekends"
@@ -606,9 +610,6 @@ msgstr "Вы прынялі ўсе лекі на сёння"
 
 #~ msgid "remedy"
 #~ msgstr "сродак"
-
-#~ msgid "Every day"
-#~ msgstr "Кожны дзень"
 
 #~ msgid "Su"
 #~ msgstr "Нд"

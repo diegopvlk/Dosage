@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-01 14:50-0300\n"
+"POT-Creation-Date: 2024-02-02 11:29-0300\n"
 "PO-Revision-Date: 2024-02-01 20:44+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -260,9 +260,25 @@ msgstr "Droppe"
 msgid "Potion"
 msgstr "Dryck"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:742
+#: data/ui/med-window.blp:294 src/medWindow.js:754
 msgid "Frequency"
 msgstr "Frekvens"
+
+#: data/ui/med-window.blp:298
+msgid "Every day"
+msgstr "Varje dag"
+
+#: data/ui/med-window.blp:299 src/medWindow.js:748
+msgid "Specific days"
+msgstr "Särskilda dagar"
+
+#: data/ui/med-window.blp:300 src/medWindow.js:751 src/treatmentsFactory.js:149
+msgid "Cycle"
+msgstr "Cykel"
+
+#: data/ui/med-window.blp:301 src/treatmentsFactory.js:153
+msgid "When necessary"
+msgstr "Vid behov"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
@@ -495,35 +511,27 @@ msgstr "Redigera post"
 msgid "Are you sure?"
 msgstr "Är du säker?"
 
-#: src/medWindow.js:704
+#: src/medWindow.js:716
 msgid "Choose"
 msgstr "Välj"
 
-#: src/medWindow.js:736
-msgid "Specific days"
-msgstr "Särskilda dagar"
-
-#: src/medWindow.js:739 src/treatmentsFactory.js:149
-msgid "Cycle"
-msgstr "Cykel"
-
-#: src/medWindow.js:775
+#: src/medWindow.js:787
 msgid "Empty name"
 msgstr "Tömt namn"
 
-#: src/medWindow.js:779
+#: src/medWindow.js:791
 msgid "Empty unit"
 msgstr "Töm enhet"
 
-#: src/medWindow.js:785
+#: src/medWindow.js:797
 msgid "Choose at least one day"
 msgstr "Välj åtminstone en dag"
 
-#: src/medWindow.js:796
+#: src/medWindow.js:808
 msgid "Name already exists"
 msgstr "Namnet finns redan"
 
-#: src/medWindow.js:810
+#: src/medWindow.js:822
 msgid "Duplicated time"
 msgstr "Duplicerad tid"
 
@@ -550,10 +558,6 @@ msgstr "Daglig"
 #: src/treatmentsFactory.js:137 src/treatmentsFactory.js:140
 msgid "Next dose"
 msgstr "Nästa dos"
-
-#: src/treatmentsFactory.js:153
-msgid "When necessary"
-msgstr "Vid behov"
 
 #: src/utils.js:34
 msgid "Weekends"
@@ -603,9 +607,6 @@ msgstr "Färdig för i dag"
 
 #~ msgid "remedy"
 #~ msgstr "botemedel"
-
-#~ msgid "Every day"
-#~ msgstr "Varje dag"
 
 #~ msgid "Su"
 #~ msgstr "Sö"
