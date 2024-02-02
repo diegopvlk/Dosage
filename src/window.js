@@ -59,7 +59,6 @@ export const DosageWindow = GObject.registerClass(
 			super({ application });
 			this.#loadSettings();
 			this.#start();
-			this.#checkInventory();
 			this.#clockTick();
 		}
 
@@ -94,12 +93,13 @@ export const DosageWindow = GObject.registerClass(
 				this._handleSuspension();
 				this._scheduleNotifications();
 				this._historyList.scroll_to(0, null, null);
+				this._checkInventory();
 			} catch (err) {
 				console.error('Error loading treatments/history/today:', err);
 			}
 		}
 
-		#checkInventory(notifAction) {
+		_checkInventory(notifAction) {
 			this._treatmentsPage.set_needs_attention(false);
 			this._treatmentsPage.badge_number = 0;
 
@@ -900,7 +900,7 @@ export const DosageWindow = GObject.registerClass(
 			this._loadToday();
 			this._setEmptyHistLabel();
 			this._updateEntryBtn(false);
-			this.#checkInventory(notifAction);
+			this._checkInventory(notifAction);
 		}
 
 		_openMedWindow(list, position, mode) {

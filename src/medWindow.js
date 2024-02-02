@@ -501,6 +501,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 					model: treatmentsLS,
 				});
 				DosageWindow._updateJsonFile('treatments', treatmentsLS);
+				DosageWindow._checkInventory();
 			}
 		}
 
