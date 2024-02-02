@@ -444,6 +444,8 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		const histBtnSkipped = builder.get_object('histBtnSkipped');
 		const histBtnConfirmed = builder.get_object('histBtnConfirmed');
 		const item = list.get_model().get_item(position).obj;
+		const tempTaken0 = item.taken[0];
+		const tempTaken1 = item.taken[1];
 
 		let missedDose = 0;
 		if (item.taken[1] === -1) missedDose = +item.dose;
@@ -494,13 +496,22 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 					const adjusts = skippedDose + missedDose;
 					i.obj.inventory.current += diff - adjusts;
 				}
-				if (tempInv === i.obj.inventory.current) return;
+				if (tempInv === i.obj.inventory.current) break;
 				DosageWindow._treatmentsList.model = new Gtk.NoSelection({
 					model: treatmentsLS,
 				});
-				DosageWindow._updateJsonFile('history', historyLS);
 				DosageWindow._updateJsonFile('treatments', treatmentsLS);
 			}
+		}
+
+		const updItem = updatedItem.obj;
+
+		if (
+			updItem.taken[0] !== tempTaken0 ||
+			updItem.taken[1] !== tempTaken1 ||
+			updItem.dose !== item.dose
+		) {
+			DosageWindow._updateJsonFile('history', historyLS);
 		}
 	}
 
