@@ -52,7 +52,7 @@
   </screenshots>
 
   <releases>
-    <release version="1.5.0" date="2024-02-02">
+    <release version="1.5.1" date="2024-02-02">
       <description translatable="no">
         <ul>
           <li>It's now possible to edit history entries</li>
