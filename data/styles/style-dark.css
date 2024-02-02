@@ -141,22 +141,22 @@ popover > arrow {
 }
 
 button.pill:not(.suggested-action) {
-  background-color: #38354a;
-  box-shadow: 0 1px 6px 0px alpha(@dosage_purple_4, 0.2),
-    inset 0 0 0 1px alpha(@dosage_purple_4, 0.15);
+  background-color: #383642;
+  box-shadow: 0 1px 6px 0px alpha(#1d1c1f, 0.66),
+    inset 0 0 0 1px alpha(@dosage_purple_4, 0.16);
 }
 
 button.pill:not(.suggested-action):hover {
-  background-color: #403c58;
+  background-color: #403d4e;
 }
 
 button.pill:not(.suggested-action):active {
-  background-color: #494463;
+  background-color: #484558;
 }
 
 button.suggested-action {
   background: linear-gradient(45deg, @dosage_purple_3 0%, @dosage_purple_2 75%);
-  box-shadow: 0 1px 7px 0px alpha(@dosage_purple_4, 0.2);
+  box-shadow: 0 1px 7px 0px alpha(#1d1c1f, 0.66);
 }
 
 button.suggested-action:hover {

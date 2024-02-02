@@ -290,18 +290,17 @@ button.pill.skip {
 }
 
 button.pill:not(.suggested-action) {
-  filter: grayscale(0.25);
-  background-color: #efeeff;
+  background-color: rgb(237, 237, 247);
   box-shadow: 0 1px 6px 0px alpha(@dosage_purple_4, 0.15),
-    inset 0 0 0 1px alpha(@dosage_purple_4, 0.2);
+    inset 0 0 0 1px alpha(@dosage_purple_4, 0.17);
 }
 
 button.pill:not(.suggested-action):hover {
-  background-color: #e4e3f6;
+  background-color: #e4e4ef;
 }
 
 button.pill:not(.suggested-action):active {
-  background-color: #dbdaf2;
+  background-color: #dbdbe9;
 }
 
 button.suggested-action {
