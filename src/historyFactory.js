@@ -95,6 +95,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 		removedItem = item;
 		const [, position] = listStore.find(item);
 		listStore.remove(position);
+		removedItem = undefined;
 	});
 });
 

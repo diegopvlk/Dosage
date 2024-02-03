@@ -301,7 +301,7 @@ export const DosageWindow = GObject.registerClass(
 							}
 						}
 
-						if (removed) {
+						if (removed && removedItem) {
 							const removedIt = removedItem.obj;
 							const removedDt = new Date(removedIt.taken[0]);
 							const date = removedDt.setHours(0, 0, 0, 0);
