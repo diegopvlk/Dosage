@@ -52,6 +52,13 @@
   </screenshots>
 
   <releases>
+		<release version="1.5.2" date="2024-02-04">
+      <description translatable="no">
+        <ul>
+          <li>Fixes for history issues</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.5.1" date="2024-02-02">
       <description translatable="no">
         <ul>
