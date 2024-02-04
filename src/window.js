@@ -286,7 +286,7 @@ export const DosageWindow = GObject.registerClass(
 					historyLS.connect('items-changed', (model, pos, removed, added) => {
 						if (skip.itemsChanged) return;
 
-						if (added) {
+						if (added && removed === 0) {
 							const itemAdded = model.get_item(pos).obj;
 							for (const it of treatmentsLS) {
 								const item = it.obj;
