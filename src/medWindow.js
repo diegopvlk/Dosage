@@ -545,8 +545,10 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		const todayDt = new Date().setHours(0, 0, 0, 0);
 		const entryDt = entryDate.setHours(0, 0, 0, 0);
 
-		if (todayDt !== entryDt) return;
+		historyLS.sort(() => null);
+		DosageWindow._historyList.scroll_to(0, null, null);
 
+		if (todayDt !== entryDt) return;
 		// if it's the time as of an existing item
 		// update lastTaken if entryDate is today
 		for (const it of treatmentsLS) {
@@ -560,9 +562,6 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 				}
 			});
 		}
-
-		historyLS.sort(() => null);
-		DosageWindow._historyList.scroll_to(0, null, null);
 	}
 
 	function addOrUpdateTreatment() {
