@@ -71,7 +71,7 @@ export const DosageWindow = GObject.registerClass(
 				if (sett.get_boolean(key) === true) {
 					this._clearOldHistoryEntries();
 					this._updateJsonFile('history', historyLS);
-					this._historyList.scroll_to(0, null, null);
+					historyLS.sort(() => null);
 				}
 			});
 		}
@@ -85,6 +85,7 @@ export const DosageWindow = GObject.registerClass(
 				this._createOrLoadJson('history', historyFile);
 				if (this._addMissedItems() | this._clearOldHistoryEntries()) {
 					this._updateJsonFile('history', historyLS);
+					historyLS.sort(() => null);
 				}
 				this._setEmptyHistLabel();
 				this._updateCycleAndLastUp();
@@ -136,6 +137,7 @@ export const DosageWindow = GObject.registerClass(
 					this._clearOldHistoryEntries();
 					this._addMissedItems();
 					this._updateEverything();
+					historyLS.sort(() => null);
 					this._historyList.scroll_to(0, null, null);
 					this._scheduleNotifications();
 					lastDate = now;
