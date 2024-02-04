@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-02 11:29-0300\n"
-"PO-Revision-Date: 2024-02-01 22:04+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"PO-Revision-Date: 2024-02-04 13:41+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
 ">\n"
 "Language: fi\n"
@@ -345,10 +345,8 @@ msgid "Duration"
 msgstr "Kesto"
 
 #: data/ui/med-window.blp:491
-#, fuzzy
-#| msgid "Set a start and end date"
 msgid "Set start and end dates"
-msgstr "Aseta alku- ja loppupäivä"
+msgstr "Aseta alku- ja loppupäivät"
 
 #. TRANSLATORS: label for when duration is enabled
 #: data/ui/med-window.blp:496 src/treatmentsFactory.js:112
