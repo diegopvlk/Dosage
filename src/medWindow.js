@@ -327,6 +327,8 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 
 		medWindow.title = _('Edit entry');
 		saveButton.label = _('Save');
+		dosage.title = item.name;
+		dosage.subtitle = '';
 		medWindow.add_css_class('one-time');
 		medWindow.height_request = 192;
 
