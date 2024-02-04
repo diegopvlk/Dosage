@@ -148,6 +148,8 @@ button.pill:not(.suggested-action) {
 
 button.pill:not(.suggested-action):hover {
   background-color: #403d4e;
+  box-shadow: 0 1px 8px 0px alpha(#1d1c1f, 0.76),
+    inset 0 0 0 1px alpha(@dosage_purple_4, 0.25);
 }
 
 button.pill:not(.suggested-action):active {
