@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-04 10:40-0300\n"
+"POT-Creation-Date: 2024-02-04 20:45-0300\n"
 "PO-Revision-Date: 2024-02-01 22:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/"
@@ -261,7 +261,7 @@ msgstr "Kapka"
 msgid "Potion"
 msgstr "Nápoj"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:755
+#: data/ui/med-window.blp:294 src/medWindow.js:753
 msgid "Frequency"
 msgstr "Frekvence"
 
@@ -269,11 +269,11 @@ msgstr "Frekvence"
 msgid "Every day"
 msgstr "Každý den"
 
-#: data/ui/med-window.blp:299 src/medWindow.js:749
+#: data/ui/med-window.blp:299 src/medWindow.js:747
 msgid "Specific days"
 msgstr "Vybrané dny"
 
-#: data/ui/med-window.blp:300 src/medWindow.js:752 src/treatmentsFactory.js:149
+#: data/ui/med-window.blp:300 src/medWindow.js:750 src/treatmentsFactory.js:149
 msgid "Cycle"
 msgstr "Cyklus"
 
@@ -310,7 +310,7 @@ msgstr "Čas a množství"
 msgid "Add dose"
 msgstr "Přidat dávku"
 
-#: data/ui/med-window.blp:430 src/historyFactory.js:168
+#: data/ui/med-window.blp:430 src/historyFactory.js:175
 msgid "Skipped"
 msgstr "Přeskočený"
 
@@ -374,7 +374,7 @@ msgstr "Koncové datum"
 msgid "Date"
 msgstr "Datum"
 
-#: data/ui/med-window.blp:568 src/historyFactory.js:137 src/medWindow.js:429
+#: data/ui/med-window.blp:568 src/historyFactory.js:144 src/medWindow.js:429
 msgid "Delete"
 msgstr "Smazat"
 
@@ -467,11 +467,11 @@ msgstr "O Dávkování"
 msgid "Quit"
 msgstr "Konec"
 
-#: src/historyFactory.js:134
+#: src/historyFactory.js:141
 msgid "Restore"
 msgstr "Obnovit"
 
-#: src/historyFactory.js:172
+#: src/historyFactory.js:179
 msgid "Missed"
 msgstr "Zapomenutý"
 
@@ -515,27 +515,27 @@ msgstr "Upravit záznam"
 msgid "Are you sure?"
 msgstr "Jste si jistí?"
 
-#: src/medWindow.js:717
+#: src/medWindow.js:715
 msgid "Choose"
 msgstr "Vybrat"
 
-#: src/medWindow.js:788
+#: src/medWindow.js:786
 msgid "Empty name"
 msgstr "Prázné jméno"
 
-#: src/medWindow.js:792
+#: src/medWindow.js:790
 msgid "Empty unit"
 msgstr "Prázdná jednotka"
 
-#: src/medWindow.js:798
+#: src/medWindow.js:796
 msgid "Choose at least one day"
 msgstr "Vyberte alespoň jeden den"
 
-#: src/medWindow.js:809
+#: src/medWindow.js:807
 msgid "Name already exists"
 msgstr "Jméno již existuje"
 
-#: src/medWindow.js:823
+#: src/medWindow.js:821
 msgid "Duplicated time"
 msgstr "Duplikovaný čas"
 

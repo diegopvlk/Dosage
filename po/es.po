@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-04 10:40-0300\n"
+"POT-Creation-Date: 2024-02-04 20:45-0300\n"
 "PO-Revision-Date: 2024-02-01 22:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/es/"
@@ -262,7 +262,7 @@ msgstr "Caída"
 msgid "Potion"
 msgstr "Poción"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:755
+#: data/ui/med-window.blp:294 src/medWindow.js:753
 msgid "Frequency"
 msgstr "Frecuencia"
 
@@ -270,11 +270,11 @@ msgstr "Frecuencia"
 msgid "Every day"
 msgstr "Cada día"
 
-#: data/ui/med-window.blp:299 src/medWindow.js:749
+#: data/ui/med-window.blp:299 src/medWindow.js:747
 msgid "Specific days"
 msgstr "Días específicos"
 
-#: data/ui/med-window.blp:300 src/medWindow.js:752 src/treatmentsFactory.js:149
+#: data/ui/med-window.blp:300 src/medWindow.js:750 src/treatmentsFactory.js:149
 msgid "Cycle"
 msgstr "Ciclo"
 
@@ -311,7 +311,7 @@ msgstr "Tiempo y cantidad"
 msgid "Add dose"
 msgstr "Añadir dosis"
 
-#: data/ui/med-window.blp:430 src/historyFactory.js:168
+#: data/ui/med-window.blp:430 src/historyFactory.js:175
 msgid "Skipped"
 msgstr "Omitido"
 
@@ -373,7 +373,7 @@ msgstr "Termina el"
 msgid "Date"
 msgstr "Fecha"
 
-#: data/ui/med-window.blp:568 src/historyFactory.js:137 src/medWindow.js:429
+#: data/ui/med-window.blp:568 src/historyFactory.js:144 src/medWindow.js:429
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -466,11 +466,11 @@ msgstr "Acerca de Dosis"
 msgid "Quit"
 msgstr "Salir"
 
-#: src/historyFactory.js:134
+#: src/historyFactory.js:141
 msgid "Restore"
 msgstr "Restaurar"
 
-#: src/historyFactory.js:172
+#: src/historyFactory.js:179
 msgid "Missed"
 msgstr "Perdido"
 
@@ -514,27 +514,27 @@ msgstr "Editar entrada"
 msgid "Are you sure?"
 msgstr "¿Estás seguro?"
 
-#: src/medWindow.js:717
+#: src/medWindow.js:715
 msgid "Choose"
 msgstr "Seleccione"
 
-#: src/medWindow.js:788
+#: src/medWindow.js:786
 msgid "Empty name"
 msgstr "Nombre vacío"
 
-#: src/medWindow.js:792
+#: src/medWindow.js:790
 msgid "Empty unit"
 msgstr "Unidad vacía"
 
-#: src/medWindow.js:798
+#: src/medWindow.js:796
 msgid "Choose at least one day"
 msgstr "Elija al menos un día"
 
-#: src/medWindow.js:809
+#: src/medWindow.js:807
 msgid "Name already exists"
 msgstr "El nombre ya existe"
 
-#: src/medWindow.js:823
+#: src/medWindow.js:821
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 

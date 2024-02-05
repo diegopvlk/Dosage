@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-04 10:40-0300\n"
+"POT-Creation-Date: 2024-02-04 20:45-0300\n"
 "PO-Revision-Date: 2024-02-03 11:55+0000\n"
 "Last-Translator: Сергій <sergiy.goncharuk.1@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -267,7 +267,7 @@ msgstr "Краплі"
 msgid "Potion"
 msgstr "Мікстура"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:755
+#: data/ui/med-window.blp:294 src/medWindow.js:753
 msgid "Frequency"
 msgstr "Частота"
 
@@ -275,11 +275,11 @@ msgstr "Частота"
 msgid "Every day"
 msgstr "Кожного дня"
 
-#: data/ui/med-window.blp:299 src/medWindow.js:749
+#: data/ui/med-window.blp:299 src/medWindow.js:747
 msgid "Specific days"
 msgstr "Конкретні дні"
 
-#: data/ui/med-window.blp:300 src/medWindow.js:752 src/treatmentsFactory.js:149
+#: data/ui/med-window.blp:300 src/medWindow.js:750 src/treatmentsFactory.js:149
 msgid "Cycle"
 msgstr "Цикл"
 
@@ -316,7 +316,7 @@ msgstr "Час прийому та розмір дози"
 msgid "Add dose"
 msgstr "Додати дозу"
 
-#: data/ui/med-window.blp:430 src/historyFactory.js:168
+#: data/ui/med-window.blp:430 src/historyFactory.js:175
 msgid "Skipped"
 msgstr "Пропущено"
 
@@ -378,7 +378,7 @@ msgstr "Закінчується"
 msgid "Date"
 msgstr "Дата прийому"
 
-#: data/ui/med-window.blp:568 src/historyFactory.js:137 src/medWindow.js:429
+#: data/ui/med-window.blp:568 src/historyFactory.js:144 src/medWindow.js:429
 msgid "Delete"
 msgstr "Видалити"
 
@@ -471,11 +471,11 @@ msgstr "Про Дозування"
 msgid "Quit"
 msgstr "Вийти"
 
-#: src/historyFactory.js:134
+#: src/historyFactory.js:141
 msgid "Restore"
 msgstr "Відновлення"
 
-#: src/historyFactory.js:172
+#: src/historyFactory.js:179
 msgid "Missed"
 msgstr "Пропущено"
 
@@ -520,27 +520,27 @@ msgstr "Редагувати запис"
 msgid "Are you sure?"
 msgstr "Ви впевнені?"
 
-#: src/medWindow.js:717
+#: src/medWindow.js:715
 msgid "Choose"
 msgstr "Обрати"
 
-#: src/medWindow.js:788
+#: src/medWindow.js:786
 msgid "Empty name"
 msgstr "Відсутня назва запису"
 
-#: src/medWindow.js:792
+#: src/medWindow.js:790
 msgid "Empty unit"
 msgstr "Відсутня одиниця виміру"
 
-#: src/medWindow.js:798
+#: src/medWindow.js:796
 msgid "Choose at least one day"
 msgstr "Виберіть хоча б один день"
 
-#: src/medWindow.js:809
+#: src/medWindow.js:807
 msgid "Name already exists"
 msgstr "Ця назва вже зайнята"
 
-#: src/medWindow.js:823
+#: src/medWindow.js:821
 msgid "Duplicated time"
 msgstr "Однакові часи у прийомів доз"
 

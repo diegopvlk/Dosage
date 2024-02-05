@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-04 10:40-0300\n"
+"POT-Creation-Date: 2024-02-04 20:45-0300\n"
 "PO-Revision-Date: 2024-02-04 13:41+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
@@ -255,7 +255,7 @@ msgstr "Tippa"
 msgid "Potion"
 msgstr "Lääkeannos"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:755
+#: data/ui/med-window.blp:294 src/medWindow.js:753
 msgid "Frequency"
 msgstr "Taajuus"
 
@@ -263,11 +263,11 @@ msgstr "Taajuus"
 msgid "Every day"
 msgstr "Päivittäin"
 
-#: data/ui/med-window.blp:299 src/medWindow.js:749
+#: data/ui/med-window.blp:299 src/medWindow.js:747
 msgid "Specific days"
 msgstr "Valitut päivät"
 
-#: data/ui/med-window.blp:300 src/medWindow.js:752 src/treatmentsFactory.js:149
+#: data/ui/med-window.blp:300 src/medWindow.js:750 src/treatmentsFactory.js:149
 msgid "Cycle"
 msgstr "Sykli"
 
@@ -304,7 +304,7 @@ msgstr "Aika ja määrä"
 msgid "Add dose"
 msgstr "Lisää annos"
 
-#: data/ui/med-window.blp:430 src/historyFactory.js:168
+#: data/ui/med-window.blp:430 src/historyFactory.js:175
 msgid "Skipped"
 msgstr "Ohitettu"
 
@@ -366,7 +366,7 @@ msgstr "Loppuu"
 msgid "Date"
 msgstr "Päivä"
 
-#: data/ui/med-window.blp:568 src/historyFactory.js:137 src/medWindow.js:429
+#: data/ui/med-window.blp:568 src/historyFactory.js:144 src/medWindow.js:429
 msgid "Delete"
 msgstr "Poista"
 
@@ -459,11 +459,11 @@ msgstr "Tietoja - Dosage"
 msgid "Quit"
 msgstr "Lopeta"
 
-#: src/historyFactory.js:134
+#: src/historyFactory.js:141
 msgid "Restore"
 msgstr "Palauttaa"
 
-#: src/historyFactory.js:172
+#: src/historyFactory.js:179
 msgid "Missed"
 msgstr "Jäänyt huomiotta"
 
@@ -507,27 +507,27 @@ msgstr "Muokkaa merkintä"
 msgid "Are you sure?"
 msgstr "Oletko varma?"
 
-#: src/medWindow.js:717
+#: src/medWindow.js:715
 msgid "Choose"
 msgstr "Valitse"
 
-#: src/medWindow.js:788
+#: src/medWindow.js:786
 msgid "Empty name"
 msgstr "Tyhjä nimi"
 
-#: src/medWindow.js:792
+#: src/medWindow.js:790
 msgid "Empty unit"
 msgstr "Tyhjä yksikkö"
 
-#: src/medWindow.js:798
+#: src/medWindow.js:796
 msgid "Choose at least one day"
 msgstr "Valitse vähintään yksi päivä"
 
-#: src/medWindow.js:809
+#: src/medWindow.js:807
 msgid "Name already exists"
 msgstr "Nimi on jo olemassa"
 
-#: src/medWindow.js:823
+#: src/medWindow.js:821
 msgid "Duplicated time"
 msgstr "Päällekkäinen aika"
 
