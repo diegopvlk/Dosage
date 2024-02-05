@@ -93,9 +93,16 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 		const listStore = listView.get_model().get_model().get_model();
 
 		removedItem = item;
-		const [, position] = listStore.find(item);
+		let [, position] = listStore.find(item);
 		listStore.remove(position);
-		listView.scroll_to(position, Gtk.ListScrollFlags.FOCUS, null);
+		if (listView.get_model().get_n_items() === position) {
+			// if it's the last position, position - 1
+			// otherwise it crashes the app
+			position--;
+		}
+		if (position >= 0) {
+			listView.scroll_to(position, Gtk.ListScrollFlags.FOCUS, null);
+		}
 		removedItem = undefined;
 	});
 });
