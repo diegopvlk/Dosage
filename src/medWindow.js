@@ -538,15 +538,13 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 			},
 		});
 
-		historyLS.insert_sorted(item, (a, b) => {
-			return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
-		});
+		historyLS.insert(0, item);
+		historyLS.sort(() => null);
+
+		DosageWindow._historyList.scroll_to(0, null, null);
 
 		const todayDt = new Date().setHours(0, 0, 0, 0);
 		const entryDt = entryDate.setHours(0, 0, 0, 0);
-
-		historyLS.sort(() => null);
-		DosageWindow._historyList.scroll_to(0, null, null);
 
 		if (todayDt !== entryDt) return;
 		// if it's the time as of an existing item
