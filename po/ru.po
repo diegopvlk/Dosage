@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-04 20:45-0300\n"
-"PO-Revision-Date: 2024-02-01 22:04+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"PO-Revision-Date: 2024-02-07 16:01+0000\n"
+"Last-Translator: volkov <d2oo1dle2x@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
 ">\n"
 "Language: ru\n"
@@ -86,7 +86,7 @@ msgstr "Раздел \"Сегодня\" Дозировки в светлой т�
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
 msgid "Dosage preferences window in light theme"
-msgstr ""
+msgstr "Окно настроек Дозирование в светлой теме"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid "Dosage edit treatment window in light theme"
