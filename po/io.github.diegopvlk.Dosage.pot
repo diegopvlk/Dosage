@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-04 20:45-0300\n"
+"POT-Creation-Date: 2024-02-08 18:58-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:41 src/window.js:584
+#: src/main.js:41 src/window.js:582
 msgid "Dosage"
 msgstr ""
 
@@ -404,12 +404,12 @@ msgstr ""
 msgid "Show or hide confirm/skip"
 msgstr ""
 
-#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:512
-#: src/window.js:648
+#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:510
+#: src/window.js:646
 msgid "Confirm"
 msgstr ""
 
-#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:516
+#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:514
 msgid "Skip"
 msgstr ""
 
@@ -425,7 +425,7 @@ msgstr ""
 msgid "Unselect"
 msgstr ""
 
-#: data/ui/window.blp:70 src/window.js:648
+#: data/ui/window.blp:70 src/window.js:646
 msgid "One-time entry"
 msgstr ""
 
