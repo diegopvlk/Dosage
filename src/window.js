@@ -474,10 +474,8 @@ export const DosageWindow = GObject.registerClass(
 			// milliseconds
 			let timeDiff = (itemHour - hours) * 3600000 + (itemMin - minutes) * 60000 - seconds * 1000;
 
-			let pseudoId = JSON.stringify({
-				name: item.name,
-				dose: item.dose,
-			});
+			let pseudoId = item.name + addLeadZero(itemHour) + addLeadZero(itemMin);
+
 			// remove accents and special characters
 			pseudoId = pseudoId.normalize('NFKD').replace(/[^0-9A-Za-z]/g, '');
 
