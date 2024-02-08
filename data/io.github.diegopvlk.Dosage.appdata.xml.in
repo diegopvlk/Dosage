@@ -52,10 +52,17 @@
   </screenshots>
 
   <releases>
+    <release version="1.5.4" date="2024-02-05">
+      <description translatable="no">
+        <ul>
+          <li>Fixed repeated notifications after confirming/skipping</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.5.3" date="2024-02-05">
       <description translatable="no">
         <ul>
-          <li>Fix crash related to history</li>
+          <li>Fixed crash related to history</li>
         </ul>
       </description>
     </release>
