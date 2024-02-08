@@ -679,7 +679,7 @@ export const DosageWindow = GObject.registerClass(
 			const todayLength = this.todayModel.get_n_items();
 			// only insert to history if item is not in today list
 			for (let i = 0; i < todayLength; i++) {
-				const it = this.todayModel.get_item(i).obj;
+				const it = this.todayModel.get_item(i)?.obj;
 				const sameName = item.name === it?.name;
 				const itemTime = String(item.time);
 				const sameTime = itemTime === String(it?.time);
