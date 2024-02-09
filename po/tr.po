@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-08 18:58-0300\n"
-"PO-Revision-Date: 2024-02-01 20:44+0000\n"
+"PO-Revision-Date: 2024-02-10 18:02+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
 ">\n"
@@ -407,7 +407,7 @@ msgstr ""
 
 #: data/ui/preferences.blp:44
 msgid "Notification sound"
-msgstr "Bilgilendirme sesi"
+msgstr "Bildirim sesi"
 
 #: data/ui/preferences.blp:53
 msgid "Notification buttons"
