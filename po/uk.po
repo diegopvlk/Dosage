@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-08 18:58-0300\n"
-"PO-Revision-Date: 2024-02-03 11:55+0000\n"
-"Last-Translator: Сергій <sergiy.goncharuk.1@gmail.com>\n"
+"PO-Revision-Date: 2024-02-10 18:02+0000\n"
+"Last-Translator: volkov <d2oo1dle2x@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
 "uk/>\n"
 "Language: uk\n"
@@ -400,7 +400,7 @@ msgstr "Зберігає максимум 30 днів"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"
-msgstr "Збільшити пріорітет сповіщень"
+msgstr "Збільшити пріоритет сповіщень"
 
 #: data/ui/preferences.blp:35
 msgid ""
