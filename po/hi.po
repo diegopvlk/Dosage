@@ -8,24 +8,27 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-08 18:58-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-02-09 15:53+0000\n"
+"Last-Translator: Nitin Khalia <weblate.scrambled777@simplelogin.com>\n"
+"Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/>"
+"\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
 #: src/main.js:41 src/window.js:582
 msgid "Dosage"
-msgstr ""
+msgstr "डोसिज"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:19
 msgid "Keep track of your treatments"
-msgstr ""
+msgstr "अपने उपचारों पर नज़र रखें"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
 msgid ""
@@ -33,541 +36,545 @@ msgid ""
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
 "Control"
 msgstr ""
+"डोसिज के साथ आसानी से ट्रैक उपचार प्रबंधित करें: सूचनाएं, इतिहास, एकाधिक खुरा"
+"क, लचीली आवृत्ति, अनुकूलन, स्टॉक निगरानी और अवधि नियंत्रण"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:23
 msgid "Features:"
-msgstr ""
+msgstr "विशेषताएँ:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid "Notifications — Get reminders at the right time"
-msgstr ""
+msgstr "अधिसूचनाएँ - सही समय पर अनुस्मारक प्राप्त करें"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
 msgid "History — See which medications you took, skipped or missed"
-msgstr ""
+msgstr "इतिहास - देखें कि आपने कौन सी दवाएँ लीं, छोड़ीं या छूट गईं"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:27
 msgid "Dosage management — Multiple doses with different times"
-msgstr ""
+msgstr "खुराक प्रबंधन - अलग-अलग समय पर एकाधिक खुराक"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:28
 msgid ""
 "Frequency modes — Every day, specific days, cycle or just when necessary"
-msgstr ""
+msgstr "फ़्रिक्वेंसी मोड - हर दिन, विशिष्ट दिन, चक्र या बस जब आवश्यक हो"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
 msgid "Color and icon — Give a shape for your treatment"
-msgstr ""
+msgstr "रंग और आइकन - अपने उपचार के लिए एक आकार दें"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
+"इन्वेंटरी ट्रैकिंग - अपने स्टॉक की निगरानी करें और कम होने पर याद दिलाएं"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
 msgid "Duration — Define the start and end dates"
-msgstr ""
+msgstr "अवधि - आरंभ और समाप्ति तिथियां परिभाषित करें"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:37
 msgid "Dosage today window in light theme"
-msgstr ""
+msgstr "हल्की थीम में डोसिज आज विंडो"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
 msgid "Dosage preferences window in light theme"
-msgstr ""
+msgstr "हल्की थीम में डोसिज प्राथमिकताएँ विंडो"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid "Dosage edit treatment window in light theme"
-msgstr ""
+msgstr "हल्की थीम में डोसिज उपचार संपादित करें विंडो"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage today window in dark theme"
-msgstr ""
+msgstr "गहरी थीम में डोसिज आज विंडो"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
-msgstr ""
+msgstr "दवा;ट्रैकर;रिमाइंडर;आज;उपचार;गोली;दवा;उपाय;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "जनरल"
 
 #: data/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Preferences"
-msgstr ""
+msgstr "प्राथमिकताएँ"
 
 #: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "शॉर्टकट दिखाएँ"
 
 #: data/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "छोड़ें"
 
 #: data/ui/med-window.blp:11
 msgid "New treatment"
-msgstr ""
+msgstr "नया इलाज"
 
 #: data/ui/med-window.blp:19 src/medWindow.js:428
 msgid "Cancel"
-msgstr ""
+msgstr "रद्द करें"
 
 #: data/ui/med-window.blp:25 data/ui/window.blp:156
 msgid "Add"
-msgstr ""
+msgstr "जोड़ें"
 
 #: data/ui/med-window.blp:44
 msgid "From treatment list"
-msgstr ""
+msgstr "उपचार सूची से"
 
 #: data/ui/med-window.blp:53
 msgid "Name"
-msgstr ""
+msgstr "नाम"
 
 #: data/ui/med-window.blp:56
 msgid "Unit"
-msgstr ""
+msgstr "इकाई"
 
 #: data/ui/med-window.blp:57 src/medWindow.js:234
 msgid "Pill(s)"
-msgstr ""
+msgstr "गोली(याँ)"
 
 #: data/ui/med-window.blp:60
 msgid "Notes"
-msgstr ""
+msgstr "टिप्पणियाँ"
 
 #: data/ui/med-window.blp:61
 msgid "After meal"
-msgstr ""
+msgstr "भोजन के बाद"
 
 #: data/ui/med-window.blp:66
 msgid "Form"
-msgstr ""
+msgstr "रूप"
 
 #: data/ui/med-window.blp:67
 msgid "Color and icon"
-msgstr ""
+msgstr "रंग और आइकन"
 
 #: data/ui/med-window.blp:72 src/medWindow.js:279
 msgid "Color"
-msgstr ""
+msgstr "रंग"
 
 #. TRANSLATORS: Tooltip for the colors (from Default until Purple)
 #: data/ui/med-window.blp:83
 msgid "Default"
-msgstr ""
+msgstr "डिफ़ॉल्ट"
 
 #: data/ui/med-window.blp:90
 msgid "Red"
-msgstr ""
+msgstr "लाल"
 
 #: data/ui/med-window.blp:97
 msgid "Orange"
-msgstr ""
+msgstr "नारंगी"
 
 #: data/ui/med-window.blp:104
 msgid "Yellow"
-msgstr ""
+msgstr "पीला"
 
 #: data/ui/med-window.blp:111
 msgid "Green"
-msgstr ""
+msgstr "हरा"
 
 #: data/ui/med-window.blp:118
 msgid "Cyan"
-msgstr ""
+msgstr "सियान"
 
 #: data/ui/med-window.blp:125
 msgid "Blue"
-msgstr ""
+msgstr "नीला"
 
 #: data/ui/med-window.blp:132
 msgid "Purple"
-msgstr ""
+msgstr "बैंगनी"
 
 #: data/ui/med-window.blp:141
 msgid "Icon"
-msgstr ""
+msgstr "आइकन"
 
 #. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
 #: data/ui/med-window.blp:154
 msgid "Pill"
-msgstr ""
+msgstr "गोली"
 
 #: data/ui/med-window.blp:164
 msgid "Alternative pill"
-msgstr ""
+msgstr "वैकल्पिक गोली"
 
 #: data/ui/med-window.blp:174
 msgid "Capsule"
-msgstr ""
+msgstr "कैप्सूल"
 
 #: data/ui/med-window.blp:184
 msgid "Round pill"
-msgstr ""
+msgstr "गोल गोली"
 
 #: data/ui/med-window.blp:194
 msgid "Alternative round pill"
-msgstr ""
+msgstr "वैकल्पिक गोल गोली"
 
 #: data/ui/med-window.blp:204
 msgid "Ampoule"
-msgstr ""
+msgstr "इंजेक्शन की शीशी"
 
 #: data/ui/med-window.blp:214
 msgid "Injection"
-msgstr ""
+msgstr "इंजेक्शन"
 
 #: data/ui/med-window.blp:225
 msgid "Square pill"
-msgstr ""
+msgstr "चौकोर गोली"
 
 #: data/ui/med-window.blp:235
 msgid "Alternative square pill"
-msgstr ""
+msgstr "वैकल्पिक चौकोर गोली"
 
 #: data/ui/med-window.blp:245
 msgid "Triangle pill"
-msgstr ""
+msgstr "त्रिकोण गोली"
 
 #: data/ui/med-window.blp:255
 msgid "Alternative triangle pill"
-msgstr ""
+msgstr "वैकल्पिक त्रिकोण गोली"
 
 #: data/ui/med-window.blp:265
 msgid "Bottle"
-msgstr ""
+msgstr "बोतल"
 
 #: data/ui/med-window.blp:275
 msgid "Drop"
-msgstr ""
+msgstr "बूँद"
 
 #: data/ui/med-window.blp:285
 msgid "Potion"
-msgstr ""
+msgstr "औषधि"
 
 #: data/ui/med-window.blp:294 src/medWindow.js:753
 msgid "Frequency"
-msgstr ""
+msgstr "आवृत्ति"
 
 #: data/ui/med-window.blp:298
 msgid "Every day"
-msgstr ""
+msgstr "हर दिन"
 
 #: data/ui/med-window.blp:299 src/medWindow.js:747
 msgid "Specific days"
-msgstr ""
+msgstr "विशिष्ट दिन"
 
 #: data/ui/med-window.blp:300 src/medWindow.js:750 src/treatmentsFactory.js:149
 msgid "Cycle"
-msgstr ""
+msgstr "चक्र"
 
 #: data/ui/med-window.blp:301 src/treatmentsFactory.js:153
 msgid "When necessary"
-msgstr ""
+msgstr "जब आवश्यक हो"
 
 #: data/ui/med-window.blp:309
 msgid "Choose days"
-msgstr ""
+msgstr "दिन चुनें"
 
 #: data/ui/med-window.blp:359
 msgid "Change cycle"
-msgstr ""
+msgstr "चक्र बदलें"
 
 #: data/ui/med-window.blp:370
 msgid "Days active"
-msgstr ""
+msgstr "सक्रिय दिन"
 
 #: data/ui/med-window.blp:382
 msgid "Days inactive"
-msgstr ""
+msgstr "निष्क्रिय दिन"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-window.blp:395
 msgid "Today is cycle day…"
-msgstr ""
+msgstr "आज चक्र दिवस है…"
 
 #: data/ui/med-window.blp:411
 msgid "Time and amount"
-msgstr ""
+msgstr "समय एवं राशि"
 
 #: data/ui/med-window.blp:419
 msgid "Add dose"
-msgstr ""
+msgstr "खुराक जोड़ें"
 
 #: data/ui/med-window.blp:430 src/historyFactory.js:175
 msgid "Skipped"
-msgstr ""
+msgstr "छोड़ा गया"
 
 #: data/ui/med-window.blp:436
 msgid "Confirmed"
-msgstr ""
+msgstr "पुष्टि की गई"
 
 #: data/ui/med-window.blp:443
 msgid "Recurring notifications"
-msgstr ""
+msgstr "आवर्ती सूचनाएं"
 
 #: data/ui/med-window.blp:444
 msgid "Renotify until it's confirmed or skipped"
-msgstr ""
+msgstr "इसकी पुष्टि होने या छोड़े जाने तक पुनः सूचित करें"
 
 #: data/ui/med-window.blp:448
 msgid "Interval in minutes"
-msgstr ""
+msgstr "मिनटों में अंतराल"
 
 #: data/ui/med-window.blp:460
 msgid "Inventory"
-msgstr ""
+msgstr "इन्वेंटरी"
 
 #: data/ui/med-window.blp:461
 msgid "Manage your stock"
-msgstr ""
+msgstr "अपना स्टॉक प्रबंधित करें"
 
 #: data/ui/med-window.blp:466
 msgid "Current"
-msgstr ""
+msgstr "मौजूदा"
 
 #: data/ui/med-window.blp:477
 msgid "Remind me at"
-msgstr ""
+msgstr "पर मुझे याद दिलाएं"
 
 #: data/ui/med-window.blp:490
 msgid "Duration"
-msgstr ""
+msgstr "अवधि"
 
 #: data/ui/med-window.blp:491
 msgid "Set start and end dates"
-msgstr ""
+msgstr "शुरू और अंत तिथियां निर्धारित करें"
 
 #. TRANSLATORS: label for when duration is enabled
 #: data/ui/med-window.blp:496 src/treatmentsFactory.js:112
 msgid "Starts on"
-msgstr ""
+msgstr "पर शुरू होता है"
 
 #: data/ui/med-window.blp:504 data/ui/med-window.blp:525
 #: data/ui/med-window.blp:548
 msgid "Choose date"
-msgstr ""
+msgstr "तारीख चुनें"
 
 #: data/ui/med-window.blp:517
 msgid "Ends on"
-msgstr ""
+msgstr "पर समाप्त होता है"
 
 #: data/ui/med-window.blp:539
 msgid "Date"
-msgstr ""
+msgstr "तारीख"
 
 #: data/ui/med-window.blp:568 src/historyFactory.js:144 src/medWindow.js:429
 msgid "Delete"
-msgstr ""
+msgstr "हटाएं"
 
 #: data/ui/preferences.blp:9 data/ui/window.blp:181
 msgid "Preferences"
-msgstr ""
+msgstr "प्राथमिकताएँ"
 
 #: data/ui/preferences.blp:15
 msgid "Auto-start at login"
-msgstr ""
+msgstr "लॉगिन पर ऑटो-स्टार्ट"
 
 #: data/ui/preferences.blp:24
 msgid "Auto-clear history"
-msgstr ""
+msgstr "इतिहास स्वतः साफ़ करें"
 
 #: data/ui/preferences.blp:25
 msgid "Keeps a maximum of 30 days"
-msgstr ""
+msgstr "अधिकतम 30 दिन रखता है"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"
-msgstr ""
+msgstr "अधिसूचना प्राथमिकता बढ़ाएँ"
 
 #: data/ui/preferences.blp:35
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
 msgstr ""
+"अधिसूचना को फ़ुलस्क्रीन मोड में या 'परेशान न करें' सक्षम होने पर भी दिखाता है"
 
 #: data/ui/preferences.blp:44
 msgid "Notification sound"
-msgstr ""
+msgstr "अधिसूचना ध्वनि"
 
 #: data/ui/preferences.blp:53
 msgid "Notification buttons"
-msgstr ""
+msgstr "अधिसूचना बटन"
 
 #: data/ui/preferences.blp:54
 msgid "Show or hide confirm/skip"
-msgstr ""
+msgstr "दिखाएँ या छिपाएँ पुष्टि करें/छोड़ें"
 
 #: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:510
 #: src/window.js:646
 msgid "Confirm"
-msgstr ""
+msgstr "पुष्टि करें"
 
 #: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:514
 msgid "Skip"
-msgstr ""
+msgstr "छोड़ें"
 
 #: data/ui/window.blp:29
 msgid "Main Menu"
-msgstr ""
+msgstr "मुख्य मेन्यू"
 
 #: data/ui/window.blp:41
 msgid "Today"
-msgstr ""
+msgstr "आज"
 
 #: data/ui/window.blp:62
 msgid "Unselect"
-msgstr ""
+msgstr "अचयनित करें"
 
 #: data/ui/window.blp:70 src/window.js:646
 msgid "One-time entry"
-msgstr ""
+msgstr "एक बार प्रवेश"
 
 #: data/ui/window.blp:105
 msgid "History"
-msgstr ""
+msgstr "इतिहास"
 
 #: data/ui/window.blp:121
 msgid "Empty history"
-msgstr ""
+msgstr "इतिहास हटाएँ"
 
 #: data/ui/window.blp:131
 msgid "Treatments"
-msgstr ""
+msgstr "उपचार"
 
 #: data/ui/window.blp:163
 msgid "Click the button below to add some"
-msgstr ""
+msgstr "कुछ जोड़ने के लिए नीचे दिए गए बटन पर क्लिक करें"
 
 #: data/ui/window.blp:185
 msgid "About Dosage"
-msgstr ""
+msgstr "डोसिज के बारे में"
 
 #: data/ui/window.blp:189
 msgid "Quit"
-msgstr ""
+msgstr "छोड़ें"
 
 #: src/historyFactory.js:141
 msgid "Restore"
-msgstr ""
+msgstr "पुनर्स्थापित"
 
 #: src/historyFactory.js:179
 msgid "Missed"
-msgstr ""
+msgstr "चुका हुआ"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:50
 msgid "translator-credits"
-msgstr ""
+msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
 #: src/main.js:54
 msgid "Thanks to these projects!"
-msgstr ""
+msgstr "इन प्रोजेक्टों को धन्यवाद!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:90
 msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
+msgstr "पृष्ठभूमि में चलने और सूचनाएं प्राप्त करने की अनुमति स्वीकार करें"
 
 #: src/medWindow.js:117
 msgid "Edit treatment"
-msgstr ""
+msgstr "उपचार संपादित करें"
 
 #: src/medWindow.js:118 src/medWindow.js:329
 msgid "Save"
-msgstr ""
+msgstr "सहेजें"
 
 #: src/medWindow.js:224
 msgid "New"
-msgstr ""
+msgstr "नया"
 
 #: src/medWindow.js:277
 msgid "New entry"
-msgstr ""
+msgstr "नई प्रविष्टि"
 
 #: src/medWindow.js:328
 msgid "Edit entry"
-msgstr ""
+msgstr "प्रविष्टि संपादित करें"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
 #: src/medWindow.js:423
 msgid "Are you sure?"
-msgstr ""
+msgstr "क्या आप निश्चित हैं?"
 
 #: src/medWindow.js:715
 msgid "Choose"
-msgstr ""
+msgstr "चुनें"
 
 #: src/medWindow.js:786
 msgid "Empty name"
-msgstr ""
+msgstr "खाली नाम"
 
 #: src/medWindow.js:790
 msgid "Empty unit"
-msgstr ""
+msgstr "रिक्त इकाई"
 
 #: src/medWindow.js:796
 msgid "Choose at least one day"
-msgstr ""
+msgstr "कम से कम एक दिन चुनें"
 
 #: src/medWindow.js:807
 msgid "Name already exists"
-msgstr ""
+msgstr "नाम पहले से मौजूद है"
 
 #: src/medWindow.js:821
 msgid "Duplicated time"
-msgstr ""
+msgstr "डुप्लिकेट समय"
 
 #: src/todayFactory.js:95
 msgid "Change dose"
-msgstr ""
+msgstr "खुराक बदलें"
 
 #: src/treatmentsFactory.js:104
 msgid "Remaining"
-msgstr ""
+msgstr "शेष"
 
 #: src/treatmentsFactory.js:107
 msgid "Low stock"
-msgstr ""
+msgstr "कम स्टॉक"
 
 #: src/treatmentsFactory.js:113
 msgid "Until"
-msgstr ""
+msgstr "तक"
 
 #: src/treatmentsFactory.js:125 src/utils.js:38
 msgid "Daily"
-msgstr ""
+msgstr "रोज"
 
 #: src/treatmentsFactory.js:137 src/treatmentsFactory.js:140
 msgid "Next dose"
-msgstr ""
+msgstr "अगली खुराक"
 
 #: src/utils.js:34
 msgid "Weekends"
-msgstr ""
+msgstr "सप्ताहांत"
 
 #: src/utils.js:36
 msgid "Weekdays"
-msgstr ""
+msgstr "कार्यदिवस"
 
 #: src/utils.js:217
 msgid "Delete dose"
-msgstr ""
+msgstr "खुराक हटाएँ"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:116
 msgid "You have treatments low in stock"
-msgstr ""
+msgstr "आपके पास उपचारों का स्टॉक कम है"
 
 #: src/window.js:408
 msgid "No treatments added yet"
-msgstr ""
+msgstr "अभी तक कोई उपचार नहीं जोड़ा गया"
 
 #: src/window.js:413
 msgid "All done for today"
-msgstr ""
+msgstr "आज के लिए सब कुछ हो गया"
