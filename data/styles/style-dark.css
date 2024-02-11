@@ -180,3 +180,9 @@ button.suggested-action:active {
 #dosage-med-window button.suggested-action {
   box-shadow: 0 1px 3.5px 0px alpha(@dosage_purple_4, 0.2);
 }
+
+#dosage-med-window .linked-circular button:checked {
+  background: alpha(white, 0.23);
+  box-shadow: 0 1px 2px 1px alpha(black, 0.14);
+  color: white;
+}

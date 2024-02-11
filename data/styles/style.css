@@ -93,9 +93,28 @@ list > row.activatable.header:active {
   border-radius: 14px;
 }
 
-#dosage-med-window.one-time box.linked button {
-  padding: 0 1px;
+#dosage-med-window .linked-circular {
+  background: alpha(currentColor, 0.1);
+  border-radius: 99px;
+  padding: 3px;
+}
+
+#dosage-med-window .linked-circular button {
   min-height: 30px;
+  min-width: 32px;
+}
+
+#dosage-med-window .linked-circular button:first-child:dir(rtl) {
+  margin-left: 3px;
+}
+
+#dosage-med-window .linked-circular button:first-child:dir(ltr) {
+  margin-right: 3px;
+}
+
+#dosage-med-window .linked-circular button:checked {
+  background: alpha(white, 0.85);
+  box-shadow: 0 1px 2px 1px alpha(black, 0.1);
 }
 
 headerbar button,

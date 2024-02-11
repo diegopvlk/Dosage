@@ -31,3 +31,7 @@ row.error {
 row.combo .dropdown-arrow {
   box-shadow: inset 0 0 0 1px alpha(currentColor, 0.6);
 }
+
+#dosage-med-window .linked-circular button:checked {
+  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.6);
+}

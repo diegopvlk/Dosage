@@ -422,17 +422,17 @@ Adw.Window medWindow {
                 Box takenButtons {
                   visible: false;
                   valign: center;
-                  styles ['linked']
+                  styles ['linked-circular']
                   ToggleButton histBtnSkipped {
                     active: false;
-                    styles ['circular']
+                    styles ['circular', 'flat']
                     icon-name: 'med-skipped-symbolic';
                     tooltip-text: _("Skipped");
                     group: histBtnConfirmed;
                   }
                   ToggleButton histBtnConfirmed {
                     active: false;
-                    styles ['circular']
+                    styles ['circular', 'flat']
                     tooltip-text: _("Confirmed");
                     icon-name: 'med-confirmed-symbolic';
                   }
