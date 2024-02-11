@@ -52,6 +52,13 @@
   </screenshots>
 
   <releases>
+    <release version="1.5.5" date="2024-02-11">
+      <description translatable="no">
+        <ul>
+          <li>Added Hindi translation</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.5.4" date="2024-02-05">
       <description translatable="no">
         <ul>
