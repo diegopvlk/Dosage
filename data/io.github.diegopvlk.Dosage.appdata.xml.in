@@ -1,290 +1,301 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
 
-  <id>io.github.diegopvlk.Dosage.desktop</id>
-  <content_rating type="oars-1.1" />
-  <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-3.0-only</project_license>
-  <developer_name translatable="no">Diego Povliuk</developer_name>
-  <update_contact>diego.pvlk@gmail.com</update_contact>
-  <launchable type="desktop-id">io.github.diegopvlk.Dosage.desktop</launchable>
-  <translation type="gettext">dosage</translation>
-  <url type="homepage">https://github.com/diegopvlk/Dosage</url>
-  <url type="bugtracker">https://github.com/diegopvlk/Dosage/issues</url>
-  <url type="vcs-browser">https://github.com/diegopvlk/Dosage</url>
-  <url type="translate">https://hosted.weblate.org/projects/dosage/dosage/</url>
-  <url type="donation">https://github.com/diegopvlk/Dosage#donate</url>
+	<id>io.github.diegopvlk.Dosage.desktop</id>
+	<content_rating type="oars-1.1" />
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0-only</project_license>
+	<developer_name translatable="no">Diego Povliuk</developer_name>
+	<update_contact>diego.pvlk@gmail.com</update_contact>
+	<launchable type="desktop-id">io.github.diegopvlk.Dosage.desktop</launchable>
+	<translation type="gettext">dosage</translation>
+	<url type="homepage">https://github.com/diegopvlk/Dosage</url>
+	<url type="bugtracker">https://github.com/diegopvlk/Dosage/issues</url>
+	<url type="vcs-browser">https://github.com/diegopvlk/Dosage</url>
+	<url type="translate">https://hosted.weblate.org/projects/dosage/dosage/</url>
+	<url type="donation">https://github.com/diegopvlk/Dosage#donate</url>
 
-  <name>Dosage</name>
-  <summary>Keep track of your treatments</summary>
+	<name>Dosage</name>
+	<summary>Keep track of your treatments</summary>
 
-  <description>
-    <p>Easily manage track treatments with Dosage: Notifications, History, Multiple Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration Control</p>
-    <p>Features:</p>
-    <ul>
-      <li>Notifications — Get reminders at the right time</li>
-      <li>History — See which medications you took, skipped or missed</li>
-      <li>Dosage management — Multiple doses with different times</li>
-      <li>Frequency modes — Every day, specific days, cycle or just when necessary</li>
-      <li>Color and icon — Give a shape for your treatment</li>
-      <li>Inventory tracking — Monitor your stock and get reminded when it's low</li>
-      <li>Duration — Define the start and end dates</li>
-    </ul>
-  </description>
+	<description>
+		<p>Easily manage track treatments with Dosage: Notifications, History, Multiple Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration Control</p>
+		<p>Features:</p>
+		<ul>
+			<li>Notifications — Get reminders at the right time</li>
+			<li>History — See which medications you took, skipped or missed</li>
+			<li>Dosage management — Multiple doses with different times</li>
+			<li>Frequency modes — Every day, specific days, cycle or just when necessary</li>
+			<li>Color and icon — Give a shape for your treatment</li>
+			<li>Inventory tracking — Monitor your stock and get reminded when it's low</li>
+			<li>Duration — Define the start and end dates</li>
+		</ul>
+	</description>
 
-  <screenshots>
-    <screenshot type="default">
-      <caption>Dosage today window in light theme</caption>
-      <image>https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/today-light.png</image>
-    </screenshot>
-    <screenshot>
-      <caption>Dosage preferences window in light theme</caption>
-      <image>https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/preferences.png</image>
-    </screenshot>
-    <screenshot>
-      <caption>Dosage edit treatment window in light theme</caption>
-      <image>https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/med-window-alt.png</image>
-    </screenshot>
-    <screenshot>
-      <caption>Dosage today window in dark theme</caption>
-      <image>https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/today-dark.png</image>
-    </screenshot>
-  </screenshots>
+	<screenshots>
+		<screenshot type="default">
+			<caption>Dosage today window in light theme</caption>
+			<image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/today-light.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Dosage preferences window in light theme</caption>
+			<image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/preferences.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Dosage edit treatment window in light theme</caption>
+			<image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/med-window-alt.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Dosage today window in dark theme</caption>
+			<image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/today-dark.png</image>
+		</screenshot>
+	</screenshots>
 
-  <releases>
-    <release version="1.5.5" date="2024-02-11">
-      <description translatable="no">
-        <ul>
-          <li>Added Hindi translation</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.5.4" date="2024-02-05">
-      <description translatable="no">
-        <ul>
-          <li>Fixed repeated notifications after confirming/skipping</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.5.3" date="2024-02-05">
-      <description translatable="no">
-        <ul>
-          <li>Fixed crash related to history</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.5.2" date="2024-02-04">
-      <description translatable="no">
-        <ul>
-          <li>Fixes for history issues</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.5.1" date="2024-02-02">
-      <description translatable="no">
-        <ul>
-          <li>It's now possible to edit history entries</li>
-          <li>New preference to auto-clear history</li>
-          <li>New row style for select frequency</li>
-          <li>New row style for select date</li>
-          <li>New badge style for history confirmed item</li>
-          <li>(Snap) Added a preference to disable auto-start</li>
-          <li>Fixes, improvements and translation updates</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.4.8" date="2023-12-23">
-      <description translatable="no">
-        <ul>
-          <li>Added Czech translation</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.4.7" date="2023-12-19">
-      <description translatable="no">
-        <ul>
-          <li>Added Portuguese (Portugal) translation</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.4.6" date="2023-12-08">
-      <description translatable="no">
-        <ul>
-          <li>Fixed UI issues with right-to-left languages</li>
-          <li>Fixed duration date showing if the frequency was 'When necessary'</li>
-          <li>The start date will now shown on treatment list</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.4.5" date="2023-12-06">
-      <description translatable="no">
-        <ul>
-          <li>New: when selecting a today treatment, you can now change it's dose</li>
-          <li>Fixed an issue of treatment being marked as missed if had multiple doses, was removed from history and confirmed again</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.4.4" date="2023-12-04">
-      <description translatable="no">
-        <ul>
-          <li>Fixed an issue with suspension</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.4.3" date="2023-12-03">
-      <description translatable="no">
-        <ul>
-          <li>Small bug fix</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.4.2" date="2023-12-02">
-      <description translatable="no">
-        <ul>
-          <li>Fixed an issue of treatments not being confirmed or skipped when using the notification button</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.4.1" date="2023-12-01">
-      <description translatable="no">
-        <ul>
-          <li>Fixed an issue when adding a treatment using one-time entry with the today date being marked as missed if the time was the same from today list</li>
-          <li>UI improvements</li>
-          <li>Added release version history to about window</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.4.0" date="2023-11-28">
-      <description translatable="no">
-        <ul>
-          <li>New: the cycle next active date will be displayed on inactive days (on treatment list)</li>
-          <li>New: option to add one-time entry as confirmed, skipped or missed</li>
-          <li>Fixed issues with cycle mode and missed items</li>
-          <li>Added Finnish translation (by Jiri Grönroos)</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.3.2" date="2023-11-26">
-      <description translatable="no">
-        <ul>
-          <li>New feature: track missed items, when forgetting to confirm/skip the treatment will go to history as missed</li>
-          <li>UI changes, improvements and fixes</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.2.1" date="2023-11-17">
-      <description translatable="no">
-        <ul>
-          <li>Fixed notification sound being played on suspension event</li>
-          <li>Fixed duration date text not being shown in local time</li>
-          <li>Slight changed background color of dark theme</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.2.0" date="2023-11-15">
-      <description translatable="no">
-        <ul>
-          <li>Added a preference for notification sound</li>
-          <li>Added purism form factor tag for mobile</li>
-          <li>Fixed today page reload sometimes being delayed at midnight</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.1.6" date="2023-11-09">
-      <description translatable="no">
-        <ul>
-          <li>Added Dutch translation (by Heimen Stoffels)</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.1.5" date="2023-11-07">
-      <description translatable="no">
-        <ul>
-          <li>Fixed a problem with loading a treatment without recurring notification</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.1.4" date="2023-11-07">
-      <description translatable="no">
-        <ul>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.1.3" date="2023-11-02">
-      <description translatable="no">
-        <ul>
-          <li>Added a preference to disable notification buttons</li>
-          <li>Minor changes to treatment list and other minor fixes</li>
-          <li>Added a donate link in the about window - details</li>
-          <li>Added Belarusian translation (by Yahor Haurylenka)</li>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.1.2" date="2023-10-30">
-      <description translatable="no">
-        <ul>
-          <li>Added notification buttons to confirm or skip</li>
-          <li>When inventory is enabled, it will always be visible on treatment list</li>
-          <li>Added an icon for when it's all done for today</li>
-          <li>Some minor fixes</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.1.1" date="2023-10-24">
-      <description translatable="no">
-        <ul>
-          <li>New: custom interval for recurring notifications</li>
-          <li>Added Spanish translation (by Sergio Varela)</li>
-          <li>Added Turkish translation (by Sabri Ünal)</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.1.0" date="2023-10-18">
-      <description translatable="no">
-        <ul>
-          <li>New feature: recurring notifications</li>
-          <li>Fixed specific days not showing correctly on treatment list</li>
-          <li>Changed notification style and added the time to it</li>
-          <li>Added a description for notification priority</li>
-          <li>Added Russian and Ukrainian translations (by Vovkiv)</li>
-          <li>Added French translation (by Xenelio)</li>
-          <li>Added Norwegian Bokmål translation (by Allan Nordhøy)</li>
-          <li>Added Swedish translation (by skøldis)</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.0.3" date="2023-10-14">
-      <description translatable="no">
-        <ul>
-          <li>Added Italian translation (by Albano Battistella)</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.0.2" date="2023-10-13">
-      <description translatable="no">
-        <ul>
-          <li>Fixed notifications being delayed after suspension</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.0.1" date="2023-10-10">
-      <description translatable="no">
-        <ul>
-          <li>Fixed notifications being sent more than once after saving an existing treatment</li>
-          <li>Added a label to show the frequency on treatments list</li>
-          <li>Brazilian translation updated</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.0.0" date="2023-10-05">
-      <description translatable="no">
-        <ul>
-          <li>Initial Release</li>
-        </ul>
-      </description>
-    </release>
-  </releases>
+	<releases>
+		<release version="1.5.6" date="2024-03-10">
+			<description translatable="no">
+				<ul>
+					<li>Added German translation</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.5.5" date="2024-02-11">
+			<description translatable="no">
+				<ul>
+					<li>Added Hindi translation</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.5.4" date="2024-02-05">
+			<description translatable="no">
+				<ul>
+					<li>Fixed repeated notifications after confirming/skipping</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.5.3" date="2024-02-05">
+			<description translatable="no">
+				<ul>
+					<li>Fixed crash related to history</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.5.2" date="2024-02-04">
+			<description translatable="no">
+				<ul>
+					<li>Fixes for history issues</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.5.1" date="2024-02-02">
+			<description translatable="no">
+				<ul>
+					<li>It's now possible to edit history entries</li>
+					<li>New preference to auto-clear history</li>
+					<li>New row style for select frequency</li>
+					<li>New row style for select date</li>
+					<li>New badge style for history confirmed item</li>
+					<li>(Snap) Added a preference to disable auto-start</li>
+					<li>Fixes, improvements and translation updates</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.8" date="2023-12-23">
+			<description translatable="no">
+				<ul>
+					<li>Added Czech translation</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.7" date="2023-12-19">
+			<description translatable="no">
+				<ul>
+					<li>Added Portuguese (Portugal) translation</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.6" date="2023-12-08">
+			<description translatable="no">
+				<ul>
+					<li>Fixed UI issues with right-to-left languages</li>
+					<li>Fixed duration date showing if the frequency was 'When necessary'</li>
+					<li>The start date will now shown on treatment list</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.5" date="2023-12-06">
+			<description translatable="no">
+				<ul>
+					<li>New: when selecting a today treatment, you can now change it's dose</li>
+					<li>Fixed an issue of treatment being marked as missed if had multiple doses, was removed from history and confirmed again</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.4" date="2023-12-04">
+			<description translatable="no">
+				<ul>
+					<li>Fixed an issue with suspension</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.3" date="2023-12-03">
+			<description translatable="no">
+				<ul>
+					<li>Small bug fix</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.2" date="2023-12-02">
+			<description translatable="no">
+				<ul>
+					<li>Fixed an issue of treatments not being confirmed or skipped when using the notification button</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.1" date="2023-12-01">
+			<description translatable="no">
+				<ul>
+					<li>Fixed an issue when adding a treatment using one-time entry with the today date being marked as missed if the time was the same from today list</li>
+					<li>UI improvements</li>
+					<li>Added release version history to about window</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.0" date="2023-11-28">
+			<description translatable="no">
+				<ul>
+					<li>New: the cycle next active date will be displayed on inactive days (on treatment list)</li>
+					<li>New: option to add one-time entry as confirmed, skipped or missed</li>
+					<li>Fixed issues with cycle mode and missed items</li>
+					<li>Added Finnish translation (by Jiri Grönroos)</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.3.2" date="2023-11-26">
+			<description translatable="no">
+				<ul>
+					<li>New feature: track missed items, when forgetting to confirm/skip the treatment will go to history as missed</li>
+					<li>UI changes, improvements and fixes</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.2.1" date="2023-11-17">
+			<description translatable="no">
+				<ul>
+					<li>Fixed notification sound being played on suspension event</li>
+					<li>Fixed duration date text not being shown in local time</li>
+					<li>Slight changed background color of dark theme</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.2.0" date="2023-11-15">
+			<description translatable="no">
+				<ul>
+					<li>Added a preference for notification sound</li>
+					<li>Added purism form factor tag for mobile</li>
+					<li>Fixed today page reload sometimes being delayed at midnight</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.1.6" date="2023-11-09">
+			<description translatable="no">
+				<ul>
+					<li>Added Dutch translation (by Heimen Stoffels)</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.1.5" date="2023-11-07">
+			<description translatable="no">
+				<ul>
+					<li>Fixed a problem with loading a treatment without recurring notification</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.1.4" date="2023-11-07">
+			<description translatable="no">
+				<ul>
+					<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.1.3" date="2023-11-02">
+			<description translatable="no">
+				<ul>
+					<li>Added a preference to disable notification buttons</li>
+					<li>Minor changes to treatment list and other minor fixes</li>
+					<li>Added a donate link in the about window - details</li>
+					<li>Added Belarusian translation (by Yahor Haurylenka)</li>
+					<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.1.2" date="2023-10-30">
+			<description translatable="no">
+				<ul>
+					<li>Added notification buttons to confirm or skip</li>
+					<li>When inventory is enabled, it will always be visible on treatment list</li>
+					<li>Added an icon for when it's all done for today</li>
+					<li>Some minor fixes</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.1.1" date="2023-10-24">
+			<description translatable="no">
+				<ul>
+					<li>New: custom interval for recurring notifications</li>
+					<li>Added Spanish translation (by Sergio Varela)</li>
+					<li>Added Turkish translation (by Sabri Ünal)</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.1.0" date="2023-10-18">
+			<description translatable="no">
+				<ul>
+					<li>New feature: recurring notifications</li>
+					<li>Fixed specific days not showing correctly on treatment list</li>
+					<li>Changed notification style and added the time to it</li>
+					<li>Added a description for notification priority</li>
+					<li>Added Russian and Ukrainian translations (by Vovkiv)</li>
+					<li>Added French translation (by Xenelio)</li>
+					<li>Added Norwegian Bokmål translation (by Allan Nordhøy)</li>
+					<li>Added Swedish translation (by skøldis)</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.0.3" date="2023-10-14">
+			<description translatable="no">
+				<ul>
+					<li>Added Italian translation (by Albano Battistella)</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.0.2" date="2023-10-13">
+			<description translatable="no">
+				<ul>
+					<li>Fixed notifications being delayed after suspension</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.0.1" date="2023-10-10">
+			<description translatable="no">
+				<ul>
+					<li>Fixed notifications being sent more than once after saving an existing treatment</li>
+					<li>Added a label to show the frequency on treatments list</li>
+					<li>Brazilian translation updated</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.0.0" date="2023-10-05">
+			<description translatable="no">
+				<ul>
+					<li>Initial Release</li>
+				</ul>
+			</description>
+		</release>
+	</releases>
 
 </component>
