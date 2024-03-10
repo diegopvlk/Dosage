@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-08 18:58-0300\n"
-"PO-Revision-Date: 2024-03-09 17:01+0000\n"
+"PO-Revision-Date: 2024-03-10 23:09+0000\n"
 "Last-Translator: Thomas Maeder <maeder+weblate@glue.ch>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/dosage/dosage/de/>"
 "\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
 #: src/main.js:41 src/window.js:582
 msgid "Dosage"
-msgstr "Dosage"
+msgstr "Dosierung"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:19
 msgid "Keep track of your treatments"
@@ -117,7 +117,7 @@ msgstr "Kurzbefehle anzeigen"
 #: data/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr "Verlassen"
+msgstr "Beenden"
 
 #: data/ui/med-window.blp:11
 msgid "New treatment"
@@ -145,109 +145,109 @@ msgstr "Einheit"
 
 #: data/ui/med-window.blp:57 src/medWindow.js:234
 msgid "Pill(s)"
-msgstr ""
+msgstr "Pille(n)"
 
 #: data/ui/med-window.blp:60
 msgid "Notes"
-msgstr ""
+msgstr "Notizen"
 
 #: data/ui/med-window.blp:61
 msgid "After meal"
-msgstr ""
+msgstr "Nach Mahlzeit"
 
 #: data/ui/med-window.blp:66
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: data/ui/med-window.blp:67
 msgid "Color and icon"
-msgstr ""
+msgstr "Farbe und Symbol"
 
 #: data/ui/med-window.blp:72 src/medWindow.js:279
 msgid "Color"
-msgstr ""
+msgstr "Farbe"
 
 #. TRANSLATORS: Tooltip for the colors (from Default until Purple)
 #: data/ui/med-window.blp:83
 msgid "Default"
-msgstr ""
+msgstr "Vorgabe"
 
 #: data/ui/med-window.blp:90
 msgid "Red"
-msgstr ""
+msgstr "Rot"
 
 #: data/ui/med-window.blp:97
 msgid "Orange"
-msgstr ""
+msgstr "Orange"
 
 #: data/ui/med-window.blp:104
 msgid "Yellow"
-msgstr ""
+msgstr "Gelb"
 
 #: data/ui/med-window.blp:111
 msgid "Green"
-msgstr ""
+msgstr "Grün"
 
 #: data/ui/med-window.blp:118
 msgid "Cyan"
-msgstr ""
+msgstr "Cyan"
 
 #: data/ui/med-window.blp:125
 msgid "Blue"
-msgstr ""
+msgstr "Blau"
 
 #: data/ui/med-window.blp:132
 msgid "Purple"
-msgstr ""
+msgstr "Violett"
 
 #: data/ui/med-window.blp:141
 msgid "Icon"
-msgstr ""
+msgstr "Symbol"
 
 #. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
 #: data/ui/med-window.blp:154
 msgid "Pill"
-msgstr ""
+msgstr "Pille"
 
 #: data/ui/med-window.blp:164
 msgid "Alternative pill"
-msgstr ""
+msgstr "Alternative Pille"
 
 #: data/ui/med-window.blp:174
 msgid "Capsule"
-msgstr ""
+msgstr "Kapsel"
 
 #: data/ui/med-window.blp:184
 msgid "Round pill"
-msgstr ""
+msgstr "Runde Pille"
 
 #: data/ui/med-window.blp:194
 msgid "Alternative round pill"
-msgstr ""
+msgstr "Alternative runde Pille"
 
 #: data/ui/med-window.blp:204
 msgid "Ampoule"
-msgstr ""
+msgstr "Ampulle"
 
 #: data/ui/med-window.blp:214
 msgid "Injection"
-msgstr ""
+msgstr "Spritze"
 
 #: data/ui/med-window.blp:225
 msgid "Square pill"
-msgstr ""
+msgstr "Quadratische Pille"
 
 #: data/ui/med-window.blp:235
 msgid "Alternative square pill"
-msgstr ""
+msgstr "Alternative quadratische Pille"
 
 #: data/ui/med-window.blp:245
 msgid "Triangle pill"
-msgstr ""
+msgstr "Dreieckige Pille"
 
 #: data/ui/med-window.blp:255
 msgid "Alternative triangle pill"
-msgstr ""
+msgstr "Alternative dreieckige Pille"
 
 #: data/ui/med-window.blp:265
 msgid "Bottle"
@@ -344,7 +344,7 @@ msgstr "Aktuell"
 
 #: data/ui/med-window.blp:477
 msgid "Remind me at"
-msgstr "Erinnerung um"
+msgstr "Erinnerung bei"
 
 #: data/ui/med-window.blp:490
 msgid "Duration"
@@ -390,7 +390,7 @@ msgstr "Historie automatisch löschen"
 
 #: data/ui/preferences.blp:25
 msgid "Keeps a maximum of 30 days"
-msgstr ""
+msgstr "Hält maximal 30 Tage"
 
 #: data/ui/preferences.blp:34
 msgid "Increase notification priority"
@@ -463,7 +463,7 @@ msgstr "Über Dosage"
 
 #: data/ui/window.blp:189
 msgid "Quit"
-msgstr "Verlassen"
+msgstr "Beenden"
 
 #: src/historyFactory.js:141
 msgid "Restore"
@@ -480,7 +480,7 @@ msgstr "Thomas Maeder"
 
 #: src/main.js:54
 msgid "Thanks to these projects!"
-msgstr "Danke für diese Projekte!"
+msgstr "Danke an diese Projekte!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:90
