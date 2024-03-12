@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-12 11:04-0300\n"
-"PO-Revision-Date: 2024-02-01 22:04+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"PO-Revision-Date: 2024-03-12 19:50+0000\n"
+"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/es/"
 ">\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
@@ -575,10 +575,8 @@ msgid "Delete dose"
 msgstr "Eliminar dosis"
 
 #: src/window.js:115
-#, fuzzy
-#| msgid "reminder"
 msgid "Reminder"
-msgstr "recordatorio"
+msgstr "Recordatorio"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:117
@@ -594,22 +592,18 @@ msgid "All done for today"
 msgstr "Todo hecho por hoy"
 
 #: src/window.js:492
-#, fuzzy
-#| msgid "Confirm"
 msgid "Confirm all"
-msgstr "Confirmar"
+msgstr "Confirmar todo"
 
 #: src/window.js:493
-#, fuzzy
-#| msgid "Skip"
 msgid "Skip all"
-msgstr "Omitir"
+msgstr "Omitir todo"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:530
 #, javascript-format
 msgid "and %d more"
-msgstr ""
+msgstr "y %d más"
 
 #~ msgid "Add to history"
 #~ msgstr "Añadir al historial"
