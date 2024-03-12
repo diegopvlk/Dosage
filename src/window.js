@@ -112,6 +112,7 @@ export const DosageWindow = GObject.registerClass(
 
 					if (!this.get_visible() && !notifAction) {
 						const [notification, app] = this._getNotification();
+						notification.set_title(_('Reminder'));
 						// TRANSLATORS: Notification text for when the inventory is low
 						notification.set_body(_('You have treatments low in stock'));
 						app.send_notification('low-stock', notification);
@@ -454,112 +455,174 @@ export const DosageWindow = GObject.registerClass(
 			}
 
 			this.scheduledItems = {};
+			this.todayGroupedObj = {};
 
 			const todayLength = this.todayModel.get_n_items();
 
 			for (let i = 0; i < todayLength; i++) {
-				this._addToBeNotified(this.todayModel.get_item(i), action);
+				this._groupTodayList(this.todayModel.get_item(i));
 			}
+
+			this._addToBeNotified(action);
 		}
 
-		_addToBeNotified(med, action) {
+		_groupTodayList(med) {
 			const item = med.obj;
-			const now = new Date();
-			const hours = now.getHours();
-			const minutes = now.getMinutes();
-			const seconds = now.getSeconds();
 			const itemHour = item.time[0];
 			const itemMin = item.time[1];
 
-			// milliseconds
-			let timeDiff = (itemHour - hours) * 3600000 + (itemMin - minutes) * 60000 - seconds * 1000;
+			const dateKey = new Date().setHours(itemHour, itemMin, 0, 0);
 
-			let pseudoId = item.name + addLeadZero(itemHour) + addLeadZero(itemMin);
-
-			// remove accents and special characters
-			pseudoId = pseudoId.normalize('NFKD').replace(/[^0-9A-Za-z]/g, '');
-
-			const notify = () => {
-				// notifications from the past will be sent again instantly (setTimeout is < 0)
-				// when performing some action like saving/adding/updating/removing
-				// because it needs to be rescheduled at every action
-				// so don't send notifications in this case
-				if (action && action != 'sleep' && timeDiff < 0) {
-					timeDiff = 0;
-					return;
-				}
-
-				const [notification, app] = this._getNotification();
-				let h = item.time[0];
-				let m = item.time[1];
-				let period = '';
-
-				if (clockIs12) {
-					period = ' AM';
-					if (h >= 12) period = ' PM';
-					if (h > 12) h -= 12;
-					if (h === 0) h = 12;
-				}
-
-				notification.set_title(item.name);
-				notification.set_body(
-					`${item.dose} ${item.unit} • ` + `${addLeadZero(h)}∶${addLeadZero(m)}` + period,
-				);
-
-				if (settings.get_boolean('confirm-button')) {
-					notification.add_button(_('Confirm'), `app.confirm${pseudoId}`);
-				}
-
-				if (settings.get_boolean('skip-button')) {
-					notification.add_button(_('Skip'), `app.skip${pseudoId}`);
-				}
-
-				const confirmAction = new Gio.SimpleAction({
-					name: `confirm${pseudoId}`,
-				});
-				confirmAction.connect('activate', () => this._addNotifItemToHistory(item, 1));
-
-				const skipAction = new Gio.SimpleAction({ name: `skip${pseudoId}` });
-				skipAction.connect('activate', () => this._addNotifItemToHistory(item, 0));
-
-				app.add_action(confirmAction);
-				app.add_action(skipAction);
-
-				if (settings.get_boolean('sound') && action != 'sleep' && !this.played) {
-					const ding = Gio.File.new_for_uri(
-						'resource:///io/github/diegopvlk/Dosage/sounds/ding.ogg',
-					);
-					const mediaFile = Gtk.MediaFile.new_for_file(ding);
-					mediaFile.play();
-
-					// when using notification buttons, assuming the app is not visible,
-					// all past items from today will be notified, so the user can see them all
-					// so avoid playing the sound at every notification
-					(async () => {
-						this.played = true;
-						await new Promise(res => setTimeout(res, 5000));
-						this.played = false;
-					})();
-				}
-
-				app.send_notification(pseudoId, notification);
-			};
-
-			if (item.recurring.enabled) {
-				const interval = item.recurring.interval;
-				const minutes = interval * 60 * 1000;
-				const recurringNotify = (pseudoId, timeDiff) => {
-					this.scheduledItems[pseudoId] = setTimeout(() => {
-						notify();
-						recurringNotify(pseudoId, minutes);
-					}, timeDiff);
-				};
-
-				recurringNotify(pseudoId, timeDiff);
-				return;
+			if (!this.todayGroupedObj[dateKey]) {
+				this.todayGroupedObj[dateKey] = [];
 			}
 
-			this.scheduledItems[pseudoId] = setTimeout(notify, timeDiff);
+			this.todayGroupedObj[dateKey].push(item);
+		}
+
+		_addToBeNotified(action) {
+			for (let dateKey in this.todayGroupedObj) {
+				const groupedObj = this.todayGroupedObj;
+				const now = new Date();
+				const hours = now.getHours();
+				const minutes = now.getMinutes();
+				const seconds = now.getSeconds();
+				const date = new Date(+dateKey);
+				const isSingleItem = groupedObj[dateKey].length === 1;
+				const confirmStr = isSingleItem ? _('Confirm') : _('Confirm all');
+				const skipStr = isSingleItem ? _('Skip') : _('Skip all');
+
+				const itemHour = date.getHours();
+				const itemMin = date.getMinutes();
+				let timeDiff = (itemHour - hours) * 3600000 + (itemMin - minutes) * 60000 - seconds * 1000;
+
+				const notify = () => {
+					// notifications from the past will be sent again instantly (setTimeout is < 0)
+					// when performing some action like saving/adding/updating/removing
+					// because it needs to be rescheduled at every action
+					// so don't send notifications in this case
+					if (action && action != 'sleep' && timeDiff < 0) {
+						timeDiff = 0;
+						return;
+					}
+					const [notification, app] = this._getNotification();
+					let h = itemHour;
+					let m = itemMin;
+					let period = '';
+
+					if (clockIs12) {
+						period = ' AM';
+						if (h >= 12) period = ' PM';
+						if (h > 12) h -= 12;
+						if (h === 0) h = 12;
+					}
+
+					let body = '';
+					const maxLength = 3;
+					const itemsToDisplay = groupedObj[dateKey].slice(0, maxLength);
+
+					body = itemsToDisplay.map(item => `${item.name} ⸱ ${item.dose} ${item.unit}`).join('\r');
+
+					if (groupedObj[dateKey].length > maxLength) {
+						const moreItemsCount = groupedObj[dateKey].length - maxLength;
+						const text = `${itemsToDisplay.map(item => item.name).join(', ')} ${_(
+							// TRANSLATORS: keep the %d it's where the number goes
+							'and %d more',
+						).replace('%d', moreItemsCount)}`;
+						body = text;
+					}
+
+					notification.set_title(`Reminder • ` + `${addLeadZero(h)}∶${addLeadZero(m)}` + period);
+					notification.set_body(body);
+
+					if (settings.get_boolean('confirm-button')) {
+						notification.add_button(confirmStr, `app.confirm${dateKey}`);
+					}
+
+					if (settings.get_boolean('skip-button')) {
+						notification.add_button(skipStr, `app.skip${dateKey}`);
+					}
+
+					const schedule = () => {
+						this._updateEverything(null, 'notifAction');
+						this._scheduleNotifications();
+						this._historyList.scroll_to(0, null, null);
+					};
+
+					const confirmAction = new Gio.SimpleAction({
+						name: `confirm${dateKey}`,
+					});
+					confirmAction.connect('activate', () => {
+						const confirmPromise = new Promise((resolve, reject) => {
+							resolve(
+								groupedObj[dateKey].map(item => {
+									this._addNotifItemToHistory(item, 1);
+								}),
+							);
+						});
+						confirmPromise.then(_ => schedule());
+					});
+
+					const skipAction = new Gio.SimpleAction({ name: `skip${dateKey}` });
+					skipAction.connect('activate', () => {
+						const skipPromise = new Promise((resolve, reject) => {
+							resolve(
+								groupedObj[dateKey].map(item => {
+									this._addNotifItemToHistory(item, 0);
+								}),
+							);
+						});
+						skipPromise.then(_ => schedule());
+					});
+
+					app.add_action(confirmAction);
+					app.add_action(skipAction);
+
+					if (settings.get_boolean('sound') && action != 'sleep' && !this.played) {
+						const ding = Gio.File.new_for_uri(
+							'resource:///io/github/diegopvlk/Dosage/sounds/ding.ogg',
+						);
+						const mediaFile = Gtk.MediaFile.new_for_file(ding);
+						mediaFile.play();
+
+						// when using notification buttons, assuming the app is not visible,
+						// all past items from today will be notified, so the user can see them all
+						// so avoid playing the sound at every notification
+						(async () => {
+							this.played = true;
+							await new Promise(res => setTimeout(res, 5000));
+							this.played = false;
+						})();
+					}
+					app.send_notification(`${dateKey}`, notification);
+				};
+
+				let recurringInterval = 99;
+				let recurringEnabled = false;
+
+				groupedObj[dateKey].map(item => {
+					if (item.recurring.enabled) recurringEnabled = true;
+					if (item.recurring.interval < recurringInterval) {
+						recurringInterval = item.recurring.interval;
+					}
+				});
+
+				if (recurringEnabled) {
+					const interval = recurringInterval;
+					const minutes = interval * 60 * 1000;
+					const recurringNotify = (dateKey, timeDiff) => {
+						this.scheduledItems[dateKey] = setTimeout(() => {
+							notify();
+							recurringNotify(dateKey, minutes);
+						}, timeDiff);
+					};
+
+					recurringNotify(dateKey, timeDiff);
+					continue;
+				}
+
+				this.scheduledItems[dateKey] = setTimeout(notify, timeDiff);
+			}
 		}
 
 		_getNotification() {
@@ -688,9 +751,6 @@ export const DosageWindow = GObject.registerClass(
 
 				if (sameName && sameTime) {
 					this._insertItemToHistory(item, taken, null, true);
-					this._updateEverything(null, 'notifAction');
-					this._scheduleNotifications();
-					this._historyList.scroll_to(0, null, null);
 				}
 			}
 		}
