@@ -584,7 +584,7 @@ export const DosageWindow = GObject.registerClass(
 			return [notification, app];
 		}
 
-		_selectTodayItems(list, position) {
+		_selectTodayItems(list, position, groupCheck) {
 			const model = list.get_model();
 
 			let rowItemPos = 0;
@@ -605,12 +605,16 @@ export const DosageWindow = GObject.registerClass(
 						const check = amountBtn.get_next_sibling();
 						const item = model.get_item(position).obj;
 						const indexToRemove = this.todayItems.indexOf(item);
-						const isActive = check.get_active();
+						let isActive = check.get_active();
+
+						if (groupCheck) isActive = false;
 
 						if (!isActive) {
 							const d = item.dose;
-							this.todayItems.push(item);
-							this.todayDosesHolder.push(d);
+							if (!this.todayItems.includes(item)) {
+								this.todayItems.push(item);
+								this.todayDosesHolder.push(d);
+							}
 						} else {
 							const storedDose = this.todayDosesHolder[indexToRemove];
 							item.dose = storedDose;

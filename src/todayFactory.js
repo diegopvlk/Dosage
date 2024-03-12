@@ -15,18 +15,20 @@ export const todayHeaderFactory = new Gtk.SignalListItemFactory();
 export const todayItemFactory = new Gtk.SignalListItemFactory();
 
 todayHeaderFactory.connect('setup', (factory, listHeaderItem) => {
-	const timeLabel = new Gtk.Label({
-		css_classes: ['numeric'],
-		halign: Gtk.Align.START,
-		margin_bottom: 1,
+	const box = new Gtk.Box({
+		hexpand: true,
 	});
-	listHeaderItem.set_child(timeLabel);
+	const selectTimeGroupBtn = new Gtk.Button({
+		css_classes: ['time-group-selection', 'flat'],
+		valign: Gtk.Align.START,
+	});
+	box.append(selectTimeGroupBtn);
+	listHeaderItem.set_child(box);
 });
 
 todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const item = listHeaderItem.get_item().obj;
-	const timeLabel = listHeaderItem.get_child();
-
+	const selectTimeGroupBtn = listHeaderItem.get_child().get_first_child();
 	let [hours, minutes] = item.time;
 	let period = '';
 
@@ -40,7 +42,21 @@ todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const h = String(hours).padStart(2, 0);
 	const m = String(minutes).padStart(2, 0);
 
-	timeLabel.label = `${h}∶${m}` + period;
+	selectTimeGroupBtn.connect('clicked', _btn => {
+		let DosageWindow = selectTimeGroupBtn;
+		for (let i = 0; i < 10; i++) {
+			DosageWindow = DosageWindow.get_parent();
+		}
+
+		const start = listHeaderItem.get_start();
+		const end = listHeaderItem.get_end();
+
+		for (let i = start; i < end; i++) {
+			DosageWindow._selectTodayItems(DosageWindow._todayList, i, true);
+		}
+	});
+
+	selectTimeGroupBtn.label = `${h}∶${m}` + period;
 });
 
 todayItemFactory.connect('setup', (factory, listItem) => {
