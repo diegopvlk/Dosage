@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 18:58-0300\n"
+"POT-Creation-Date: 2024-03-12 11:04-0300\n"
 "PO-Revision-Date: 2024-03-10 23:09+0000\n"
 "Last-Translator: Thomas Maeder <maeder+weblate@glue.ch>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/dosage/dosage/de/>"
-"\n"
+"Language-Team: German <https://hosted.weblate.org/projects/dosage/dosage/de/"
+">\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:41 src/window.js:582
+#: src/main.js:41 src/window.js:645
 msgid "Dosage"
 msgstr "Dosierung"
 
@@ -81,15 +81,15 @@ msgstr "Dauer - Legen Sie Start- und Enddaten fest"
 msgid "Dosage today window in light theme"
 msgstr "Fenster \"Heute\" in hellem Thema"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
 msgid "Dosage preferences window in light theme"
 msgstr "Dosierungseinstellungen in hellem Thema"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:47
 msgid "Dosage edit treatment window in light theme"
 msgstr "Fenster zur Erfassung von Dosierungen in hellem Thema"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:52
 msgid "Dosage today window in dark theme"
 msgstr "Fenster \"Heute\" in dunklem Thema"
 
@@ -416,12 +416,12 @@ msgstr "Benachrichtigungsschaltflächen"
 msgid "Show or hide confirm/skip"
 msgstr "\"Überspringen\" anzeigen oder verstecken"
 
-#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:510
-#: src/window.js:646
+#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:492
+#: src/window.js:713
 msgid "Confirm"
 msgstr "Bestätigen"
 
-#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:514
+#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:493
 msgid "Skip"
 msgstr "Überspringen"
 
@@ -437,7 +437,7 @@ msgstr "Heute"
 msgid "Unselect"
 msgstr "Abwählen"
 
-#: data/ui/window.blp:70 src/window.js:646
+#: data/ui/window.blp:70 src/window.js:713
 msgid "One-time entry"
 msgstr "Einmal-Eintrag"
 
@@ -536,7 +536,7 @@ msgstr "Name existiert bereits"
 msgid "Duplicated time"
 msgstr "Duplizierte Zeit"
 
-#: src/todayFactory.js:95
+#: src/todayFactory.js:111
 msgid "Change dose"
 msgstr "Dosis ändern"
 
@@ -572,15 +572,39 @@ msgstr "Wochentage"
 msgid "Delete dose"
 msgstr "Dosis löschen"
 
+#: src/window.js:115
+#, fuzzy
+#| msgid "Remind me at"
+msgid "Reminder"
+msgstr "Erinnerung bei"
+
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:116
+#: src/window.js:117
 msgid "You have treatments low in stock"
 msgstr "Der Vorrate einiger Ihrer Medikamente ist knapp"
 
-#: src/window.js:408
+#: src/window.js:409
 msgid "No treatments added yet"
 msgstr "Bisher keine Behandlungen eingegeben"
 
-#: src/window.js:413
+#: src/window.js:414
 msgid "All done for today"
 msgstr "Heute alles erledigt"
+
+#: src/window.js:492
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirm all"
+msgstr "Bestätigen"
+
+#: src/window.js:493
+#, fuzzy
+#| msgid "Skip"
+msgid "Skip all"
+msgstr "Überspringen"
+
+#. TRANSLATORS: keep the %d it's where the number goes
+#: src/window.js:530
+#, javascript-format
+msgid "and %d more"
+msgstr ""

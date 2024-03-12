@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 18:58-0300\n"
+"POT-Creation-Date: 2024-03-12 11:04-0300\n"
 "PO-Revision-Date: 2024-02-10 18:02+0000\n"
 "Last-Translator: Nitin Khalia <weblate.scrambled777@simplelogin.com>\n"
-"Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/>"
-"\n"
+"Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/"
+">\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:41 src/window.js:582
+#: src/main.js:41 src/window.js:645
 msgid "Dosage"
 msgstr "डोसिज"
 
@@ -36,8 +36,8 @@ msgid ""
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
 "Control"
 msgstr ""
-"डोसिज के साथ आसानी से उपचार प्रबंधित करें: सूचनाएं, इतिहास, एकाधिक खुराक, "
-"लचीली आवृत्ति, अनुकूलन, स्टॉक निगरानी और अवधि नियंत्रण"
+"डोसिज के साथ आसानी से उपचार प्रबंधित करें: सूचनाएं, इतिहास, एकाधिक खुराक, लचीली "
+"आवृत्ति, अनुकूलन, स्टॉक निगरानी और अवधि नियंत्रण"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:23
 msgid "Features:"
@@ -66,8 +66,7 @@ msgstr "रंग और आइकन - अपने उपचार को ए�
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
-msgstr ""
-"इन्वेंटरी ट्रैकिंग - अपने स्टॉक की निगरानी करें और कम होने पर याद दिलाएं"
+msgstr "इन्वेंटरी ट्रैकिंग - अपने स्टॉक की निगरानी करें और कम होने पर याद दिलाएं"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
 msgid "Duration — Define the start and end dates"
@@ -77,15 +76,15 @@ msgstr "अवधि - आरंभ और समाप्ति तिथिय
 msgid "Dosage today window in light theme"
 msgstr "हल्की थीम में डोसिज आज विंडो"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
 msgid "Dosage preferences window in light theme"
 msgstr "हल्की थीम में डोसिज प्राथमिकताएँ विंडो"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:47
 msgid "Dosage edit treatment window in light theme"
 msgstr "हल्की थीम में डोसिज उपचार संपादित करें विंडो"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:52
 msgid "Dosage today window in dark theme"
 msgstr "गहरी थीम में डोसिज आज विंडो"
 
@@ -395,8 +394,7 @@ msgstr "अधिसूचना प्राथमिकता बढ़ाए�
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
-msgstr ""
-"अधिसूचना को फ़ुलस्क्रीन मोड में या 'परेशान न करें' सक्षम होने पर भी दिखाता है"
+msgstr "अधिसूचना को फ़ुलस्क्रीन मोड में या 'परेशान न करें' सक्षम होने पर भी दिखाता है"
 
 #: data/ui/preferences.blp:44
 msgid "Notification sound"
@@ -410,12 +408,12 @@ msgstr "अधिसूचना बटन"
 msgid "Show or hide confirm/skip"
 msgstr "दिखाएँ या छिपाएँ पुष्टि करें/छोड़ें"
 
-#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:510
-#: src/window.js:646
+#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:492
+#: src/window.js:713
 msgid "Confirm"
 msgstr "पुष्टि करें"
 
-#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:514
+#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:493
 msgid "Skip"
 msgstr "छोड़ें"
 
@@ -431,7 +429,7 @@ msgstr "आज"
 msgid "Unselect"
 msgstr "अचयनित करें"
 
-#: data/ui/window.blp:70 src/window.js:646
+#: data/ui/window.blp:70 src/window.js:713
 msgid "One-time entry"
 msgstr "एक-बार की प्रविष्टि"
 
@@ -530,7 +528,7 @@ msgstr "नाम पहले से मौजूद है"
 msgid "Duplicated time"
 msgstr "डुप्लिकेट समय"
 
-#: src/todayFactory.js:95
+#: src/todayFactory.js:111
 msgid "Change dose"
 msgstr "खुराक बदलें"
 
@@ -566,15 +564,39 @@ msgstr "कार्यदिवस"
 msgid "Delete dose"
 msgstr "खुराक हटाएँ"
 
+#: src/window.js:115
+#, fuzzy
+#| msgid "Remind me at"
+msgid "Reminder"
+msgstr "मुझे तब याद दिलाएं"
+
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:116
+#: src/window.js:117
 msgid "You have treatments low in stock"
 msgstr "आपके पास उपचारों का स्टॉक कम है"
 
-#: src/window.js:408
+#: src/window.js:409
 msgid "No treatments added yet"
 msgstr "अभी तक कोई उपचार नहीं जोड़ा गया"
 
-#: src/window.js:413
+#: src/window.js:414
 msgid "All done for today"
 msgstr "आज के लिए सब कुछ हो गया"
+
+#: src/window.js:492
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirm all"
+msgstr "पुष्टि करें"
+
+#: src/window.js:493
+#, fuzzy
+#| msgid "Skip"
+msgid "Skip all"
+msgstr "छोड़ें"
+
+#. TRANSLATORS: keep the %d it's where the number goes
+#: src/window.js:530
+#, javascript-format
+msgid "and %d more"
+msgstr ""

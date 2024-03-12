@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 18:58-0300\n"
+"POT-Creation-Date: 2024-03-12 11:04-0300\n"
 "PO-Revision-Date: 2024-03-10 23:09+0000\n"
 "Last-Translator: Jake Blues <unclejake2010@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
@@ -23,7 +23,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:41 src/window.js:582
+#: src/main.js:41 src/window.js:645
 msgid "Dosage"
 msgstr "Дозировка"
 
@@ -84,15 +84,15 @@ msgstr "Длительность — определите начальную и 
 msgid "Dosage today window in light theme"
 msgstr "Раздел \"Сегодня\" Дозировки в светлой теме"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
 msgid "Dosage preferences window in light theme"
 msgstr "Окно настроек Дозирование в светлой теме"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:47
 msgid "Dosage edit treatment window in light theme"
 msgstr "Раздел \"Курсы лечения\" Дозировки в светлой теме"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:52
 msgid "Dosage today window in dark theme"
 msgstr "Раздел \"Сегодня\" Дозировки в темной теме"
 
@@ -422,12 +422,12 @@ msgstr "Кнопки уведомлений"
 msgid "Show or hide confirm/skip"
 msgstr "Показать или скрыть подтвердить/пропустить"
 
-#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:510
-#: src/window.js:646
+#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:492
+#: src/window.js:713
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:514
+#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:493
 msgid "Skip"
 msgstr "Пропустить"
 
@@ -443,7 +443,7 @@ msgstr "Сегодня"
 msgid "Unselect"
 msgstr "Отменить выбор"
 
-#: data/ui/window.blp:70 src/window.js:646
+#: data/ui/window.blp:70 src/window.js:713
 msgid "One-time entry"
 msgstr "Одноразовый прием"
 
@@ -547,7 +547,7 @@ msgstr "Это название уже занято"
 msgid "Duplicated time"
 msgstr "Одинаковое время у приемов доз"
 
-#: src/todayFactory.js:95
+#: src/todayFactory.js:111
 msgid "Change dose"
 msgstr "Изменить дозу"
 
@@ -583,18 +583,42 @@ msgstr "Будни"
 msgid "Delete dose"
 msgstr "Удалить дозу"
 
+#: src/window.js:115
+#, fuzzy
+#| msgid "reminder"
+msgid "Reminder"
+msgstr "напоминание"
+
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:116
+#: src/window.js:117
 msgid "You have treatments low in stock"
 msgstr "У вас осталось мало лекарств в запасе"
 
-#: src/window.js:408
+#: src/window.js:409
 msgid "No treatments added yet"
 msgstr "Ни одного курса лечения еще не было добавлено"
 
-#: src/window.js:413
+#: src/window.js:414
 msgid "All done for today"
 msgstr "Вы приняли все лекарства на сегодня"
+
+#: src/window.js:492
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirm all"
+msgstr "Подтвердить"
+
+#: src/window.js:493
+#, fuzzy
+#| msgid "Skip"
+msgid "Skip all"
+msgstr "Пропустить"
+
+#. TRANSLATORS: keep the %d it's where the number goes
+#: src/window.js:530
+#, javascript-format
+msgid "and %d more"
+msgstr ""
 
 #~ msgid "Add to history"
 #~ msgstr "Добавить в историю"
@@ -604,9 +628,6 @@ msgstr "Вы приняли все лекарства на сегодня"
 
 #~ msgid "tracker"
 #~ msgstr "трекер"
-
-#~ msgid "reminder"
-#~ msgstr "напоминание"
 
 #~ msgid "treatments"
 #~ msgstr "kурсы лечения"

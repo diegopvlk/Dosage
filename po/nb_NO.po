@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 18:58-0300\n"
+"POT-Creation-Date: 2024-03-12 11:04-0300\n"
 "PO-Revision-Date: 2024-02-01 22:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:41 src/window.js:582
+#: src/main.js:41 src/window.js:645
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -79,15 +79,15 @@ msgstr "Varighet — definer start- og sluttdatoer"
 msgid "Dosage today window in light theme"
 msgstr "Dosering i dag-vinduet i lys tema"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
 msgid "Dosage preferences window in light theme"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:47
 msgid "Dosage edit treatment window in light theme"
 msgstr "Dosering rediger behandlingsvinduet i lyst tema"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:52
 msgid "Dosage today window in dark theme"
 msgstr "Dosering i dag-vinduet i mørkt tema"
 
@@ -424,12 +424,12 @@ msgstr "Varselknapper"
 msgid "Show or hide confirm/skip"
 msgstr "Vis eller skjul bekreft/hopp over"
 
-#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:510
-#: src/window.js:646
+#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:492
+#: src/window.js:713
 msgid "Confirm"
 msgstr "Bekreft"
 
-#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:514
+#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:493
 msgid "Skip"
 msgstr "Hopp over"
 
@@ -445,7 +445,7 @@ msgstr "I dag"
 msgid "Unselect"
 msgstr "Fravelg"
 
-#: data/ui/window.blp:70 src/window.js:646
+#: data/ui/window.blp:70 src/window.js:713
 msgid "One-time entry"
 msgstr "Engangsoppføring"
 
@@ -546,7 +546,7 @@ msgstr "Navnet finnes allerede"
 msgid "Duplicated time"
 msgstr "Duplisert tid"
 
-#: src/todayFactory.js:95
+#: src/todayFactory.js:111
 msgid "Change dose"
 msgstr "Endre dose"
 
@@ -582,18 +582,42 @@ msgstr "Ukedager"
 msgid "Delete dose"
 msgstr "Slett dose"
 
+#: src/window.js:115
+#, fuzzy
+#| msgid "reminder"
+msgid "Reminder"
+msgstr "påminnelse"
+
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:116
+#: src/window.js:117
 msgid "You have treatments low in stock"
 msgstr "Du har behandlinger med manko på beholdning"
 
-#: src/window.js:408
+#: src/window.js:409
 msgid "No treatments added yet"
 msgstr "Ingen behandlinger lagt til enda"
 
-#: src/window.js:413
+#: src/window.js:414
 msgid "All done for today"
 msgstr "Ferdig for i dag"
+
+#: src/window.js:492
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirm all"
+msgstr "Bekreft"
+
+#: src/window.js:493
+#, fuzzy
+#| msgid "Skip"
+msgid "Skip all"
+msgstr "Hopp over"
+
+#. TRANSLATORS: keep the %d it's where the number goes
+#: src/window.js:530
+#, javascript-format
+msgid "and %d more"
+msgstr ""
 
 #~ msgid "Add to history"
 #~ msgstr "Legg til i historikk"
@@ -603,9 +627,6 @@ msgstr "Ferdig for i dag"
 
 #~ msgid "tracker"
 #~ msgstr "sporingsverktøy"
-
-#~ msgid "reminder"
-#~ msgstr "påminnelse"
 
 #~ msgid "treatments"
 #~ msgstr "behandlinger"

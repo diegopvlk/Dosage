@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 18:58-0300\n"
+"POT-Creation-Date: 2024-03-12 11:04-0300\n"
 "PO-Revision-Date: 2024-02-01 22:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:41 src/window.js:582
+#: src/main.js:41 src/window.js:645
 msgid "Dosage"
 msgstr "Dávkování"
 
@@ -82,15 +82,15 @@ msgstr "Průběh - Nastavte si počáteční a koncové datum léčby"
 msgid "Dosage today window in light theme"
 msgstr "Dávkování, okno \"Dnes\" ve světlém režimu"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
 msgid "Dosage preferences window in light theme"
 msgstr ""
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:47
 msgid "Dosage edit treatment window in light theme"
 msgstr "Dávkování, okno \"Upravit léčbu\" ve světlém režimu"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:52
 msgid "Dosage today window in dark theme"
 msgstr "Dávkování, okno \"Dnes\" ve tmavém režimu"
 
@@ -418,12 +418,12 @@ msgstr "Akce notifikace"
 msgid "Show or hide confirm/skip"
 msgstr "Zobrazit nebo skrýt tlačítka potvrdit/přeskočit"
 
-#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:510
-#: src/window.js:646
+#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:492
+#: src/window.js:713
 msgid "Confirm"
 msgstr "Potvrdit"
 
-#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:514
+#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:493
 msgid "Skip"
 msgstr "Přeskočit"
 
@@ -439,7 +439,7 @@ msgstr "Dnes"
 msgid "Unselect"
 msgstr "Zrušit výběr"
 
-#: data/ui/window.blp:70 src/window.js:646
+#: data/ui/window.blp:70 src/window.js:713
 msgid "One-time entry"
 msgstr "Jednorázový záznam"
 
@@ -539,7 +539,7 @@ msgstr "Jméno již existuje"
 msgid "Duplicated time"
 msgstr "Duplikovaný čas"
 
-#: src/todayFactory.js:95
+#: src/todayFactory.js:111
 msgid "Change dose"
 msgstr "Změnit dávku"
 
@@ -575,18 +575,42 @@ msgstr "Všední dny"
 msgid "Delete dose"
 msgstr "Smazat dávku"
 
+#: src/window.js:115
+#, fuzzy
+#| msgid "reminder"
+msgid "Reminder"
+msgstr "připomínka"
+
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:116
+#: src/window.js:117
 msgid "You have treatments low in stock"
 msgstr "Docházejí vám léky"
 
-#: src/window.js:408
+#: src/window.js:409
 msgid "No treatments added yet"
 msgstr "Zatím nebyly přidány žádné léčby"
 
-#: src/window.js:413
+#: src/window.js:414
 msgid "All done for today"
 msgstr "Pro dnešek máte hotovo"
+
+#: src/window.js:492
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirm all"
+msgstr "Potvrdit"
+
+#: src/window.js:493
+#, fuzzy
+#| msgid "Skip"
+msgid "Skip all"
+msgstr "Přeskočit"
+
+#. TRANSLATORS: keep the %d it's where the number goes
+#: src/window.js:530
+#, javascript-format
+msgid "and %d more"
+msgstr ""
 
 #~ msgid "Add to history"
 #~ msgstr "Přidat záznam"
@@ -596,9 +620,6 @@ msgstr "Pro dnešek máte hotovo"
 
 #~ msgid "tracker"
 #~ msgstr "Připomínkovač"
-
-#~ msgid "reminder"
-#~ msgstr "připomínka"
 
 #~ msgid "treatments"
 #~ msgstr "léčby"

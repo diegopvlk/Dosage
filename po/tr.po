@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 18:58-0300\n"
+"POT-Creation-Date: 2024-03-12 11:04-0300\n"
 "PO-Revision-Date: 2024-02-20 14:02+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
@@ -24,7 +24,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:41 src/window.js:582
+#: src/main.js:41 src/window.js:645
 msgid "Dosage"
 msgstr "Doz"
 
@@ -81,15 +81,15 @@ msgstr "Süre - Başlangıç ve bitiş tarihlerini tanımlayın"
 msgid "Dosage today window in light theme"
 msgstr "Bugün penceresi açık tema ile"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:41
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
 msgid "Dosage preferences window in light theme"
 msgstr "Doz tercihler penceresi, açık tema"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:47
 msgid "Dosage edit treatment window in light theme"
 msgstr "İlaç düzenle penceresi açık tema ile"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:52
 msgid "Dosage today window in dark theme"
 msgstr "Bugün penceresi koyu tema ile"
 
@@ -417,12 +417,12 @@ msgstr "Bildirim düğmeleri"
 msgid "Show or hide confirm/skip"
 msgstr "Onayla/atla düğmelerini göster ya da gizle"
 
-#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:510
-#: src/window.js:646
+#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:492
+#: src/window.js:713
 msgid "Confirm"
 msgstr "Onayla"
 
-#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:514
+#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:493
 msgid "Skip"
 msgstr "Atla"
 
@@ -438,7 +438,7 @@ msgstr "Bugün"
 msgid "Unselect"
 msgstr "Seçimi Kaldır"
 
-#: data/ui/window.blp:70 src/window.js:646
+#: data/ui/window.blp:70 src/window.js:713
 msgid "One-time entry"
 msgstr "Tek Seferlik Girdi"
 
@@ -537,7 +537,7 @@ msgstr "Ad zaten var"
 msgid "Duplicated time"
 msgstr "Yinelenen zaman"
 
-#: src/todayFactory.js:95
+#: src/todayFactory.js:111
 msgid "Change dose"
 msgstr "Dozu değiştir"
 
@@ -573,18 +573,42 @@ msgstr "Hafta içi"
 msgid "Delete dose"
 msgstr "Dozu sil"
 
+#: src/window.js:115
+#, fuzzy
+#| msgid "reminder"
+msgid "Reminder"
+msgstr "hatırlatıcı"
+
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:116
+#: src/window.js:117
 msgid "You have treatments low in stock"
 msgstr "Stok sayısı azalmış ilaçlarınız var"
 
-#: src/window.js:408
+#: src/window.js:409
 msgid "No treatments added yet"
 msgstr "Henüz ilaç eklenmedi"
 
-#: src/window.js:413
+#: src/window.js:414
 msgid "All done for today"
 msgstr "Bugünlük her şey bitti"
+
+#: src/window.js:492
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirm all"
+msgstr "Onayla"
+
+#: src/window.js:493
+#, fuzzy
+#| msgid "Skip"
+msgid "Skip all"
+msgstr "Atla"
+
+#. TRANSLATORS: keep the %d it's where the number goes
+#: src/window.js:530
+#, javascript-format
+msgid "and %d more"
+msgstr ""
 
 #~ msgid "Add to history"
 #~ msgstr "Geçmişe ekle"
@@ -600,9 +624,6 @@ msgstr "Bugünlük her şey bitti"
 
 #~ msgid "tracker"
 #~ msgstr "izleyici"
-
-#~ msgid "reminder"
-#~ msgstr "hatırlatıcı"
 
 #~ msgid "treatments"
 #~ msgstr "İlaçlar"
