@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-12 11:04-0300\n"
-"PO-Revision-Date: 2024-02-10 18:02+0000\n"
-"Last-Translator: Nitin Khalia <weblate.scrambled777@simplelogin.com>\n"
-"Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/"
-">\n"
+"PO-Revision-Date: 2024-03-12 19:50+0000\n"
+"Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
+"Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/>"
+"\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
@@ -565,10 +565,8 @@ msgid "Delete dose"
 msgstr "खुराक हटाएँ"
 
 #: src/window.js:115
-#, fuzzy
-#| msgid "Remind me at"
 msgid "Reminder"
-msgstr "मुझे तब याद दिलाएं"
+msgstr "रिमाइंडर"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:117
@@ -584,19 +582,15 @@ msgid "All done for today"
 msgstr "आज के लिए सब कुछ हो गया"
 
 #: src/window.js:492
-#, fuzzy
-#| msgid "Confirm"
 msgid "Confirm all"
-msgstr "पुष्टि करें"
+msgstr "सभी पुष्टि करें"
 
 #: src/window.js:493
-#, fuzzy
-#| msgid "Skip"
 msgid "Skip all"
-msgstr "छोड़ें"
+msgstr "सभी को छोड़ें"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:530
 #, javascript-format
 msgid "and %d more"
-msgstr ""
+msgstr "और %d अधिक"
