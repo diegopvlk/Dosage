@@ -568,10 +568,8 @@ msgid "Delete dose"
 msgstr "Poista annos"
 
 #: src/window.js:115
-#, fuzzy
-#| msgid "reminder"
 msgid "Reminder"
-msgstr "muistutus"
+msgstr "Muistutus"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:117
@@ -587,22 +585,18 @@ msgid "All done for today"
 msgstr "Kaikki kunnossa tämän päivän osalta"
 
 #: src/window.js:492
-#, fuzzy
-#| msgid "Confirm"
 msgid "Confirm all"
-msgstr "Vahvista"
+msgstr "Vahvista kaikki"
 
 #: src/window.js:493
-#, fuzzy
-#| msgid "Skip"
 msgid "Skip all"
-msgstr "Ohita"
+msgstr "Ohita kaikki"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:530
 #, javascript-format
 msgid "and %d more"
-msgstr ""
+msgstr "ja vielä %d"
 
 #~ msgid "Add to history"
 #~ msgstr "Lisää historiaan"

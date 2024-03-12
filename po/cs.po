@@ -576,10 +576,8 @@ msgid "Delete dose"
 msgstr "Smazat dávku"
 
 #: src/window.js:115
-#, fuzzy
-#| msgid "reminder"
 msgid "Reminder"
-msgstr "připomínka"
+msgstr "Připomínka"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:117
@@ -595,22 +593,18 @@ msgid "All done for today"
 msgstr "Pro dnešek máte hotovo"
 
 #: src/window.js:492
-#, fuzzy
-#| msgid "Confirm"
 msgid "Confirm all"
-msgstr "Potvrdit"
+msgstr "Potvrdit všechny"
 
 #: src/window.js:493
-#, fuzzy
-#| msgid "Skip"
 msgid "Skip all"
-msgstr "Přeskočit"
+msgstr "Přeskočit všechny"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:530
 #, javascript-format
 msgid "and %d more"
-msgstr ""
+msgstr "a ještě %d"
 
 #~ msgid "Add to history"
 #~ msgstr "Přidat záznam"

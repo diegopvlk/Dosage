@@ -583,10 +583,8 @@ msgid "Delete dose"
 msgstr "Slett dose"
 
 #: src/window.js:115
-#, fuzzy
-#| msgid "reminder"
 msgid "Reminder"
-msgstr "påminnelse"
+msgstr "Påminnelse"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:117
@@ -602,22 +600,18 @@ msgid "All done for today"
 msgstr "Ferdig for i dag"
 
 #: src/window.js:492
-#, fuzzy
-#| msgid "Confirm"
 msgid "Confirm all"
-msgstr "Bekreft"
+msgstr "Bekreft alle"
 
 #: src/window.js:493
-#, fuzzy
-#| msgid "Skip"
 msgid "Skip all"
-msgstr "Hopp over"
+msgstr "Hopp over alle"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:530
 #, javascript-format
 msgid "and %d more"
-msgstr ""
+msgstr "og %d til"
 
 #~ msgid "Add to history"
 #~ msgstr "Legg til i historikk"

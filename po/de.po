@@ -459,7 +459,7 @@ msgstr "Betätigen Sie die Schaltfläche, um hinzuzufügen"
 
 #: data/ui/window.blp:185
 msgid "About Dosage"
-msgstr "Über Dosage"
+msgstr "Über Dosierung"
 
 #: data/ui/window.blp:189
 msgid "Quit"
@@ -573,10 +573,8 @@ msgid "Delete dose"
 msgstr "Dosis löschen"
 
 #: src/window.js:115
-#, fuzzy
-#| msgid "Remind me at"
 msgid "Reminder"
-msgstr "Erinnerung bei"
+msgstr "Erinnerung"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:117
@@ -592,19 +590,15 @@ msgid "All done for today"
 msgstr "Heute alles erledigt"
 
 #: src/window.js:492
-#, fuzzy
-#| msgid "Confirm"
-msgid "Confirm all"
+msgid "Alles bestätigen"
 msgstr "Bestätigen"
 
 #: src/window.js:493
-#, fuzzy
-#| msgid "Skip"
 msgid "Skip all"
-msgstr "Überspringen"
+msgstr "Alles überspringen"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:530
 #, javascript-format
 msgid "and %d more"
-msgstr ""
+msgstr "und noch %d"

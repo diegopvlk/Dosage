@@ -584,10 +584,8 @@ msgid "Delete dose"
 msgstr "Удалить дозу"
 
 #: src/window.js:115
-#, fuzzy
-#| msgid "reminder"
 msgid "Reminder"
-msgstr "напоминание"
+msgstr "Напоминание"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:117
@@ -603,22 +601,18 @@ msgid "All done for today"
 msgstr "Вы приняли все лекарства на сегодня"
 
 #: src/window.js:492
-#, fuzzy
-#| msgid "Confirm"
 msgid "Confirm all"
-msgstr "Подтвердить"
+msgstr "Подтвердить все"
 
 #: src/window.js:493
-#, fuzzy
-#| msgid "Skip"
 msgid "Skip all"
-msgstr "Пропустить"
+msgstr "Пропустить все"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:530
 #, javascript-format
 msgid "and %d more"
-msgstr ""
+msgstr "и ещё %d"
 
 #~ msgid "Add to history"
 #~ msgstr "Добавить в историю"
