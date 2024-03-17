@@ -44,7 +44,7 @@ todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 
 	selectTimeGroupBtn.connect('clicked', _btn => {
 		let DosageWindow = selectTimeGroupBtn;
-		for (let i = 0; i < 10; i++) {
+		for (let i = 0; i < 12; i++) {
 			DosageWindow = DosageWindow.get_parent();
 		}
 

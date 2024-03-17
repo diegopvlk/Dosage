@@ -37,7 +37,6 @@ export const DosageApplication = GObject.registerClass(
 			const showAboutAction = new Gio.SimpleAction({ name: 'about' });
 			showAboutAction.connect('activate', () => {
 				let aboutParams = {
-					transient_for: this.activeWindow,
 					application_name: _('Dosage'),
 					application_icon: 'io.github.diegopvlk.Dosage',
 					developer_name: 'Diego Povliuk',
@@ -50,7 +49,7 @@ export const DosageApplication = GObject.registerClass(
 					translator_credits: _('translator-credits'),
 					release_notes: releaseNotes,
 				};
-				const aboutWindow = new Adw.AboutWindow(aboutParams);
+				const aboutWindow = new Adw.AboutDialog(aboutParams);
 				aboutWindow.add_acknowledgement_section(_('Thanks to these projects!'), [
 					'GNOME https://www.gnome.org/',
 					'GTK https://www.gtk.org/',
@@ -62,7 +61,7 @@ export const DosageApplication = GObject.registerClass(
 					'Flatpak https://github.com/flatpak/',
 				]);
 				aboutWindow.add_link('Donate', 'https://github.com/diegopvlk/Dosage#donate');
-				aboutWindow.present();
+				aboutWindow.present(this.activeWindow);
 			});
 			this.add_action(showAboutAction);
 

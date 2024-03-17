@@ -2,17 +2,17 @@ using Gtk 4.0;
 using Adw 1;
 using Pango 1.0;
 
-Adw.Window medWindow {
+Adw.Dialog medWindow {
   name: 'dosage-med-window';
-  default-width: 434;
-  default-height: 615;
-  width-request: 320;
-  height-request: 280;
+  content-width: 434;
   title: _("New treatment");
+
   Adw.ToastOverlay toastOverlay {
     Adw.ToolbarView {
       [top]
       Adw.HeaderBar headerBar {
+        show-start-title-buttons: false;
+        show-end-title-buttons: false;
         decoration-layout: '';
         [start]
         Button cancelButton {

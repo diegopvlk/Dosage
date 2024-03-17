@@ -32,16 +32,6 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 	oneTimeMenuRow.set_visible(false);
 
 	const medWindow = builder.get_object('medWindow');
-	medWindow.set_modal(true);
-	medWindow.set_transient_for(DosageWindow);
-
-	const keyController = new Gtk.EventControllerKey();
-	keyController.connect('key-pressed', (_, keyval, keycode, state) => {
-		if (keyval === Gdk.KEY_Escape) {
-			medWindow.destroy();
-		}
-	});
-	medWindow.add_controller(keyController);
 
 	const cancelButton = builder.get_object('cancelButton');
 	const saveButton = builder.get_object('saveButton');
@@ -279,6 +269,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		colorIcon.subtitle = _('Color');
 		colorIcon.title = '';
 		medWindow.add_css_class('one-time');
+		medWindow.set_presentation_mode(2);
 
 		dateOneEntry.set_visible(true);
 		medNotes.set_visible(false);
@@ -330,7 +321,6 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		dosage.title = item.name;
 		dosage.subtitle = '';
 		medWindow.add_css_class('one-time');
-		medWindow.height_request = 192;
 
 		takenButtons.set_visible(true);
 		medName.set_visible(false);
@@ -382,17 +372,17 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 
 	const medWindowBox = builder.get_object('medWindowBox');
 	const [medWindowBoxHeight] = medWindowBox.measure(Gtk.Orientation.VERTICAL, -1);
-	medWindow.default_height = medWindowBoxHeight + 58;
+	medWindow.content_height = medWindowBoxHeight + 58;
 
 	if (deleteButton.get_visible()) {
-		medWindow.default_height -= 12;
+		medWindow.content_height -= 12;
 	}
 
 	setSpecificDaysButtonOrder();
 
-	medWindow.present();
+	medWindow.present(DosageWindow);
 
-	cancelButton.connect('clicked', () => medWindow.destroy());
+	cancelButton.connect('clicked', () => medWindow.force_close());
 
 	saveButton.connect('clicked', () => {
 		const isUpdate = list && position >= 0;
@@ -406,7 +396,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 			DosageWindow._updateJsonFile('history', historyLS);
 		} else if (mode === 'edit-hist') {
 			editHistoryItem();
-			medWindow.destroy();
+			medWindow.force_close();
 			return;
 		} else {
 			addOrUpdateTreatment();
@@ -414,21 +404,19 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 
 		DosageWindow._updateEverything('skipHistUp');
 		DosageWindow._scheduleNotifications('saving');
-		medWindow.destroy();
+		medWindow.force_close();
 	});
 
 	deleteButton.connect('clicked', () => {
-		const dialog = new Adw.MessageDialog({
+		const dialog = new Adw.AlertDialog({
 			// TRANSLATORS: Message for confirmation when deleting an item
 			heading: _('Are you sure?'),
-			modal: true,
-			transient_for: medWindow,
 		});
 
 		dialog.add_response('cancel', _('Cancel'));
 		dialog.add_response('delete', _('Delete'));
 		dialog.set_response_appearance('delete', Adw.ResponseAppearance.DESTRUCTIVE);
-		dialog.present();
+		dialog.present(medWindow);
 
 		dialog.connect('response', (_self, response) => {
 			if (response === 'delete') {
@@ -437,7 +425,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 				treatmentsLS.remove(deletePos);
 				DosageWindow._updateEverything('skipHistUp');
 				DosageWindow._scheduleNotifications('deleting');
-				medWindow.destroy();
+				medWindow.force_close();
 			}
 		});
 	});
