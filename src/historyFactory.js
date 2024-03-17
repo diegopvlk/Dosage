@@ -46,7 +46,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 		css_classes: ['circular'],
 		valign: Gtk.Align.CENTER,
 		halign: Gtk.Align.CENTER,
-		margin_start: 12,
+		margin_start: 11,
 	});
 	box.append(deleteButton);
 	const labelsBox = new Gtk.Box({
@@ -71,7 +71,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	const takenBox = new Gtk.Box({
 		css_classes: ['badge-box'],
 		valign: Gtk.Align.CENTER,
-		margin_end: 15,
+		margin_end: 14,
 	});
 	const takenLabel = new Gtk.Label({
 		css_classes: ['badge-content', 'numeric'],

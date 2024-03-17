@@ -164,13 +164,28 @@ actionbar viewswitcher box.narrow.vertical label:not(.numeric) {
   margin-bottom: -2px;
 }
 
-.boxed-list > row,
 .custom-list > row > box {
-  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.05);
+  border: 1px solid alpha(currentColor, 0.05);
 }
 
 .custom-list > row:hover > box.activatable {
-  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.1);
+  border: 1px solid alpha(currentColor, 0.09);
+}
+
+.custom-list > row:active > box.activatable {
+  border: 1px solid alpha(currentColor, 0.14);
+}
+
+.custom-list.today > row > box:dir(ltr),
+.custom-list.today > row:hover > box:dir(ltr),
+.custom-list.today > row:active > box:dir(ltr) {
+  border-left: none;
+}
+
+.custom-list.today:dir(rtl) > row > box,
+.custom-list.today:dir(rtl) > row:hover > box,
+.custom-list.today:dir(rtl) > row:active > box {
+  border-right: none;
 }
 
 .card,
@@ -184,7 +199,7 @@ actionbar viewswitcher box.narrow.vertical label:not(.numeric) {
 
 .boxed-list > row {
   background-color: @card_bg_color;
-  border: none;
+  border: 1px solid #dad8e5;
 }
 
 .boxed-list > row:not(:last-child) {
@@ -213,6 +228,10 @@ list.boxed-list row {
   border-bottom-width: 0;
 }
 
+list.boxed-list > row {
+  border-bottom-width: 1px;
+}
+
 list > row,
 .custom-list > row > box,
 row:focus {
@@ -222,7 +241,7 @@ row:focus {
 .badge-box {
   color: alpha(currentColor, 0.8);
   min-height: 16px;
-  box-shadow: 0 0 0 1px alpha(currentColor, 0.23);
+  border: 1px solid alpha(currentColor, 0.12);
   background-color: alpha(currentColor, 0.13);
   border-radius: 99px;
 }

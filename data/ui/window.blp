@@ -44,7 +44,7 @@ template $DosageWindow : Adw.ApplicationWindow {
           ScrolledWindow {
             Adw.ClampScrollable {
               ListView todayList {
-                styles [ 'custom-list', 'scroll-to-top-hack' ]
+                styles [ 'custom-list', 'scroll-to-top-hack', 'today' ]
                 activate => $_selectTodayItems();
                 single-click-activate: true;
               }

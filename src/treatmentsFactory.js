@@ -17,7 +17,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 		height_request: 64,
 	});
 	const icon = new Gtk.Image({
-		margin_start: 18,
+		margin_start: 16,
 		margin_end: 6,
 		icon_name: 'pill-symbolic',
 	});
@@ -27,7 +27,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 		hexpand: true,
 		orientation: Gtk.Orientation.VERTICAL,
 		margin_start: 8,
-		margin_end: 12,
+		margin_end: 11,
 	});
 	box.append(labelsBox);
 	const name = new Gtk.Label({

@@ -66,13 +66,13 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	});
 	const stripe = new Gtk.Box({
 		css_classes: ['card-stripe'],
-		height_request: 64,
+		height_request: 62,
 		width_request: 6,
 	});
 	box.append(stripe);
 	const icon = new Gtk.Image({
-		margin_start: 12,
-		margin_end: 6,
+		margin_start: 11,
+		margin_end: 5,
 		icon_name: 'pill-symbolic',
 	});
 	box.append(icon);
@@ -124,7 +124,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 		css_classes: ['selection-mode'],
 		valign: Gtk.Align.CENTER,
 		halign: Gtk.Align.CENTER,
-		margin_end: 12,
+		margin_end: 11,
 		can_focus: false,
 		can_target: false,
 	});
