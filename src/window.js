@@ -33,7 +33,7 @@ import {
 export const historyLS = Gio.ListStore.new(MedicationObject);
 export const treatmentsLS = Gio.ListStore.new(MedicationObject);
 
-export let skip = { itemsChanged: false };
+export const flow = { itemsChanged: false, delay: false };
 
 export const DosageWindow = GObject.registerClass(
 	{
@@ -283,7 +283,7 @@ export const DosageWindow = GObject.registerClass(
 					this._historyList.set_factory(historyItemFactory);
 
 					historyLS.connect('items-changed', (model, pos, removed, added) => {
-						if (skip.itemsChanged) return;
+						if (flow.itemsChanged) return;
 
 						if (added && removed === 0) {
 							const itemAdded = model.get_item(pos).obj;
@@ -418,7 +418,7 @@ export const DosageWindow = GObject.registerClass(
 		_clearOldHistoryEntries() {
 			if (!settings.get_boolean('clear-old-hist')) return;
 
-			skip.itemsChanged = true;
+			flow.itemsChanged = true;
 			const itemsHolder = {};
 
 			for (const it of historyLS) {
@@ -440,7 +440,7 @@ export const DosageWindow = GObject.registerClass(
 				});
 			}
 
-			skip.itemsChanged = false;
+			flow.itemsChanged = false;
 
 			return true;
 		}
@@ -831,7 +831,7 @@ export const DosageWindow = GObject.registerClass(
 
 		_addMissedItems() {
 			let itemsAdded = false;
-			skip.itemsChanged = true;
+			flow.itemsChanged = true;
 
 			const insert = (timeDose, tempItem, nextDate) => {
 				if (!timeDose.lastTaken) {
@@ -897,7 +897,7 @@ export const DosageWindow = GObject.registerClass(
 				}
 			}
 
-			skip.itemsChanged = false;
+			flow.itemsChanged = false;
 			return itemsAdded;
 		}
 
@@ -965,7 +965,15 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		_openMedWindow(list, position, mode) {
-			openMedicationWindow(this, list, position, mode);
+			// artificial delay to avoid opening multiple sheets
+			// when double clicking button
+			if (!flow.delay) {
+				openMedicationWindow(this, list, position, mode);
+				flow.delay = true;
+				setTimeout(() => {
+					flow.delay = false;
+				}, 500);
+			}
 		}
 	},
 );

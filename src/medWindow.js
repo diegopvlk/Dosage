@@ -21,7 +21,7 @@ import {
 } from './utils.js';
 
 import { MedicationObject } from './medication.js';
-import { historyLS, treatmentsLS, skip } from './window.js';
+import { historyLS, treatmentsLS, flow } from './window.js';
 
 export default function openMedicationWindow(DosageWindow, list, position, mode) {
 	const builder = Gtk.Builder.new_from_resource('/io/github/diegopvlk/Dosage/ui/med-window.ui');
@@ -416,7 +416,16 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		dialog.add_response('cancel', _('Cancel'));
 		dialog.add_response('delete', _('Delete'));
 		dialog.set_response_appearance('delete', Adw.ResponseAppearance.DESTRUCTIVE);
-		dialog.present(medWindow);
+
+		// artificial delay to avoid opening multiple dialogs
+		// when double clicking button
+		if (!flow.delay) {
+			dialog.present(medWindow);
+			flow.delay = true;
+			setTimeout(() => {
+				flow.delay = false;
+			}, 500);
+		}
 
 		dialog.connect('response', (_self, response) => {
 			if (response === 'delete') {
@@ -465,14 +474,14 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 			},
 		});
 
-		skip.itemsChanged = true;
+		flow.itemsChanged = true;
 
 		const it = list.get_model().get_item(position);
 		const [, pos] = historyLS.find(it);
 		historyLS.splice(pos, 1, [updatedItem]);
 		historyLS.sort(() => null);
 
-		skip.itemsChanged = false;
+		flow.itemsChanged = false;
 
 		for (const i of treatmentsLS) {
 			const sameItem = i.obj.name === item.name && i.obj.inventory.enabled;
