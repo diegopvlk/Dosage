@@ -32,6 +32,11 @@
 		</ul>
 	</description>
 
+	<branding>
+		<color type="primary" scheme_preference="light">#e4e9fc</color>
+		<color type="primary" scheme_preference="dark">#5e6490</color>
+	</branding>
+
 	<screenshots>
 		<screenshot type="default">
 			<caption>Dosage today window in light theme</caption>
