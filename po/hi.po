@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-12 11:04-0300\n"
+"POT-Creation-Date: 2024-03-16 18:46-0300\n"
 "PO-Revision-Date: 2024-03-12 19:50+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
-"Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/>"
-"\n"
+"Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/"
+">\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
-#: src/main.js:41 src/window.js:645
+#: src/main.js:40 src/window.js:642
 msgid "Dosage"
 msgstr "डोसिज"
 
@@ -72,19 +72,19 @@ msgstr "इन्वेंटरी ट्रैकिंग - अपने स�
 msgid "Duration — Define the start and end dates"
 msgstr "अवधि - आरंभ और समाप्ति तिथियां परिभाषित करें"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:37
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
 msgid "Dosage today window in light theme"
 msgstr "हल्की थीम में डोसिज आज विंडो"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:47
 msgid "Dosage preferences window in light theme"
 msgstr "हल्की थीम में डोसिज प्राथमिकताएँ विंडो"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:47
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:52
 msgid "Dosage edit treatment window in light theme"
 msgstr "हल्की थीम में डोसिज उपचार संपादित करें विंडो"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:52
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:57
 msgid "Dosage today window in dark theme"
 msgstr "गहरी थीम में डोसिज आज विंडो"
 
@@ -113,11 +113,11 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "छोड़ें"
 
-#: data/ui/med-window.blp:11
+#: data/ui/med-window.blp:8
 msgid "New treatment"
 msgstr "नया इलाज"
 
-#: data/ui/med-window.blp:19 src/medWindow.js:428
+#: data/ui/med-window.blp:19 src/medWindow.js:416
 msgid "Cancel"
 msgstr "रद्द करें"
 
@@ -137,7 +137,7 @@ msgstr "नाम"
 msgid "Unit"
 msgstr "इकाई"
 
-#: data/ui/med-window.blp:57 src/medWindow.js:234
+#: data/ui/med-window.blp:57 src/medWindow.js:224
 msgid "Pill(s)"
 msgstr "गोली(याँ)"
 
@@ -157,7 +157,7 @@ msgstr "रूप"
 msgid "Color and icon"
 msgstr "रंग और आइकन"
 
-#: data/ui/med-window.blp:72 src/medWindow.js:279
+#: data/ui/med-window.blp:72 src/medWindow.js:269
 msgid "Color"
 msgstr "रंग"
 
@@ -255,7 +255,7 @@ msgstr "बूँद"
 msgid "Potion"
 msgstr "औषधि"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:753
+#: data/ui/med-window.blp:294 src/medWindow.js:741
 msgid "Frequency"
 msgstr "आवृत्ति"
 
@@ -263,11 +263,11 @@ msgstr "आवृत्ति"
 msgid "Every day"
 msgstr "हर दिन"
 
-#: data/ui/med-window.blp:299 src/medWindow.js:747
+#: data/ui/med-window.blp:299 src/medWindow.js:735
 msgid "Specific days"
 msgstr "विशिष्ट दिन"
 
-#: data/ui/med-window.blp:300 src/medWindow.js:750 src/treatmentsFactory.js:149
+#: data/ui/med-window.blp:300 src/medWindow.js:738 src/treatmentsFactory.js:149
 msgid "Cycle"
 msgstr "चक्र"
 
@@ -304,7 +304,7 @@ msgstr "समय एवं राशि"
 msgid "Add dose"
 msgstr "खुराक जोड़ें"
 
-#: data/ui/med-window.blp:430 src/historyFactory.js:175
+#: data/ui/med-window.blp:430 src/historyFactory.js:176
 msgid "Skipped"
 msgstr "छोड़ा गया"
 
@@ -366,54 +366,54 @@ msgstr "समाप्त होता है"
 msgid "Date"
 msgstr "तारीख"
 
-#: data/ui/med-window.blp:568 src/historyFactory.js:144 src/medWindow.js:429
+#: data/ui/med-window.blp:568 src/historyFactory.js:144 src/medWindow.js:417
 msgid "Delete"
 msgstr "हटाएं"
 
-#: data/ui/preferences.blp:9 data/ui/window.blp:181
+#: data/ui/preferences.blp:8 data/ui/window.blp:181
 msgid "Preferences"
 msgstr "प्राथमिकताएँ"
 
-#: data/ui/preferences.blp:15
+#: data/ui/preferences.blp:19
 msgid "Auto-start at login"
 msgstr "लॉगिन पर ऑटो-स्टार्ट"
 
-#: data/ui/preferences.blp:24
+#: data/ui/preferences.blp:28
 msgid "Auto-clear history"
 msgstr "इतिहास स्वतः साफ़ करें"
 
-#: data/ui/preferences.blp:25
+#: data/ui/preferences.blp:29
 msgid "Keeps a maximum of 30 days"
 msgstr "अधिकतम 30 दिन तक रखता है"
 
-#: data/ui/preferences.blp:34
+#: data/ui/preferences.blp:38
 msgid "Increase notification priority"
 msgstr "अधिसूचना प्राथमिकता बढ़ाएँ"
 
-#: data/ui/preferences.blp:35
+#: data/ui/preferences.blp:39
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
 msgstr "अधिसूचना को फ़ुलस्क्रीन मोड में या 'परेशान न करें' सक्षम होने पर भी दिखाता है"
 
-#: data/ui/preferences.blp:44
+#: data/ui/preferences.blp:48
 msgid "Notification sound"
 msgstr "अधिसूचना ध्वनि"
 
-#: data/ui/preferences.blp:53
+#: data/ui/preferences.blp:57
 msgid "Notification buttons"
 msgstr "अधिसूचना बटन"
 
-#: data/ui/preferences.blp:54
+#: data/ui/preferences.blp:58
 msgid "Show or hide confirm/skip"
 msgstr "दिखाएँ या छिपाएँ पुष्टि करें/छोड़ें"
 
-#: data/ui/preferences.blp:57 src/medWindow.js:278 src/window.js:492
-#: src/window.js:713
+#: data/ui/preferences.blp:61 src/medWindow.js:268 src/window.js:488
+#: src/window.js:710
 msgid "Confirm"
 msgstr "पुष्टि करें"
 
-#: data/ui/preferences.blp:66 data/ui/window.blp:76 src/window.js:493
+#: data/ui/preferences.blp:70 data/ui/window.blp:76 src/window.js:489
 msgid "Skip"
 msgstr "छोड़ें"
 
@@ -429,7 +429,7 @@ msgstr "आज"
 msgid "Unselect"
 msgstr "अचयनित करें"
 
-#: data/ui/window.blp:70 src/window.js:713
+#: data/ui/window.blp:70 src/window.js:710
 msgid "One-time entry"
 msgstr "एक-बार की प्रविष्टि"
 
@@ -461,70 +461,70 @@ msgstr "छोड़ें"
 msgid "Restore"
 msgstr "पुनर्स्थापित"
 
-#: src/historyFactory.js:179
+#: src/historyFactory.js:180
 msgid "Missed"
 msgstr "चुका हुआ"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:50
+#: src/main.js:49
 msgid "translator-credits"
 msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
-#: src/main.js:54
+#: src/main.js:53
 msgid "Thanks to these projects!"
 msgstr "इन प्रोजेक्टों को धन्यवाद!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:90
+#: src/main.js:89
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "पृष्ठभूमि में चलने और सूचनाएं प्राप्त करने की अनुमति स्वीकार करें"
 
-#: src/medWindow.js:117
+#: src/medWindow.js:107
 msgid "Edit treatment"
 msgstr "उपचार संपादित करें"
 
-#: src/medWindow.js:118 src/medWindow.js:329
+#: src/medWindow.js:108 src/medWindow.js:320
 msgid "Save"
 msgstr "सहेजें"
 
-#: src/medWindow.js:224
+#: src/medWindow.js:214
 msgid "New"
 msgstr "नया"
 
-#: src/medWindow.js:277
+#: src/medWindow.js:267
 msgid "New entry"
 msgstr "नई प्रविष्टि"
 
-#: src/medWindow.js:328
+#: src/medWindow.js:319
 msgid "Edit entry"
 msgstr "प्रविष्टि संपादित करें"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:423
+#: src/medWindow.js:413
 msgid "Are you sure?"
 msgstr "क्या आप निश्चित हैं?"
 
-#: src/medWindow.js:715
+#: src/medWindow.js:703
 msgid "Choose"
 msgstr "चुनें"
 
-#: src/medWindow.js:786
+#: src/medWindow.js:774
 msgid "Empty name"
 msgstr "खाली नाम"
 
-#: src/medWindow.js:790
+#: src/medWindow.js:778
 msgid "Empty unit"
 msgstr "रिक्त इकाई"
 
-#: src/medWindow.js:796
+#: src/medWindow.js:784
 msgid "Choose at least one day"
 msgstr "कम से कम एक दिन चुनें"
 
-#: src/medWindow.js:807
+#: src/medWindow.js:795
 msgid "Name already exists"
 msgstr "नाम पहले से मौजूद है"
 
-#: src/medWindow.js:821
+#: src/medWindow.js:809
 msgid "Duplicated time"
 msgstr "डुप्लिकेट समय"
 
@@ -560,11 +560,11 @@ msgstr "सप्ताहांत"
 msgid "Weekdays"
 msgstr "कार्यदिवस"
 
-#: src/utils.js:217
+#: src/utils.js:209
 msgid "Delete dose"
 msgstr "खुराक हटाएँ"
 
-#: src/window.js:115
+#: src/window.js:115 src/window.js:532
 msgid "Reminder"
 msgstr "रिमाइंडर"
 
@@ -573,24 +573,24 @@ msgstr "रिमाइंडर"
 msgid "You have treatments low in stock"
 msgstr "आपके पास उपचारों का स्टॉक कम है"
 
-#: src/window.js:409
+#: src/window.js:405
 msgid "No treatments added yet"
 msgstr "अभी तक कोई उपचार नहीं जोड़ा गया"
 
-#: src/window.js:414
+#: src/window.js:410
 msgid "All done for today"
 msgstr "आज के लिए सब कुछ हो गया"
 
-#: src/window.js:492
+#: src/window.js:488
 msgid "Confirm all"
 msgstr "सभी पुष्टि करें"
 
-#: src/window.js:493
+#: src/window.js:489
 msgid "Skip all"
 msgstr "सभी को छोड़ें"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:530
+#: src/window.js:526
 #, javascript-format
 msgid "and %d more"
 msgstr "और %d अधिक"
