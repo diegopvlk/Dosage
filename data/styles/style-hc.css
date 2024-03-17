@@ -3,7 +3,7 @@ popover contents {
 }
 
 .badge-box {
-  box-shadow: 0 0 0 1px alpha(currentColor, 0.85);
+  border: 1px solid alpha(currentColor, 0.85);
 }
 
 .boxed-list > row,
@@ -11,11 +11,11 @@ popover contents {
 .time-box spinbutton button,
 spinbutton.every-x button,
 button.pill:not(.suggested-action) {
-  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.6);
+  border: 1px solid alpha(currentColor, 0.6);
 }
 
 row.error {
-  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.85);
+  border: 1px solid alpha(currentColor, 0.85);
 }
 
 .red-clr,

@@ -23,6 +23,10 @@ button.time-group-selection:hover {
   border: 1px solid #373840;
 }
 
+row.error {
+  border: 1px solid alpha(currentColor, 0.5);
+}
+
 .card-stripe {
   background-image: linear-gradient(
     alpha(currentColor, 0.15),
