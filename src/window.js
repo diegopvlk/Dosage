@@ -532,7 +532,8 @@ export const DosageWindow = GObject.registerClass(
 						body = text;
 					}
 
-					notification.set_title(`Reminder • ` + `${addLeadZero(h)}∶${addLeadZero(m)}` + period);
+					h = clockIs12 ? String(h) : addLeadZero(h);
+					notification.set_title(_('Reminder') + ` • ` + `${h}∶${addLeadZero(m)}` + period);
 					notification.set_body(body);
 
 					if (settings.get_boolean('confirm-button')) {

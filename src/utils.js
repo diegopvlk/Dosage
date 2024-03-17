@@ -253,7 +253,7 @@ export function doseRow(timeDose) {
 	doseTimeBox.append(spinButtonSeparator);
 	doseTimeBox.append(spinButtonMinutes);
 
-	const leadZeroHours = addLeadZero(adjHours.value);
+	const leadZeroHours = clockIs12 ? String(adjHours.value) : addLeadZero(adjHours.value);
 	const leadZeroMinutes = addLeadZero(adjMinutes.value);
 	const doseTimeButton = new Gtk.MenuButton({
 		css_classes: ['flat', 'numeric', 'time'],
@@ -265,7 +265,7 @@ export function doseRow(timeDose) {
 	});
 
 	spinButtonHours.connect('output', h => {
-		spinButtonHours.text = addLeadZero(h.adjustment.value);
+		spinButtonHours.text = clockIs12 ? String(h.adjustment.value) : addLeadZero(h.adjustment.value);
 		doseTimeButton.label = `${spinButtonHours.text}∶${spinButtonMinutes.text}`;
 		return true;
 	});

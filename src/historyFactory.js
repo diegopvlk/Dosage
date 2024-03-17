@@ -152,7 +152,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 		if (hours > 12) hours -= 12;
 		if (hours === 0) hours = 12;
 	}
-	const h = String(hours).padStart(2, 0);
+	const h = clockIs12 ? String(hours) : String(hours).padStart(2, 0);
 	const m = String(minutes).padStart(2, 0);
 
 	nameLabel.label = item.name;
@@ -165,6 +165,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	if (parts.length > 1) {
 		// if the time has AM/PM
 		takenTime += ' ' + parts[1];
+		takenTime = takenTime[0] !== '0' ? takenTime : takenTime.substring(1);
 	}
 
 	if (item.taken[1] === 1) {
