@@ -338,14 +338,14 @@ button.pill.skip {
 
 button.pill:not(.suggested-action) {
   background-color: rgb(237, 237, 247);
-  box-shadow: 0 1px 6px 0px alpha(@dosage_purple_4, 0.15),
-    inset 0 0 0 1px alpha(@dosage_purple_4, 0.17);
+  box-shadow: 0 1px 4px 0px alpha(@dosage_purple_1, 0.25),
+    inset 0 0 0 1px alpha(@dosage_purple_2, 0.13);
 }
 
 button.pill:not(.suggested-action):hover {
   background-color: #e4e4ef;
-  box-shadow: 0 1px 8px 0px alpha(@dosage_purple_4, 0.3),
-    inset 0 0 0 1px alpha(@dosage_purple_4, 0.2);
+  box-shadow: 0 1px 8px 0px alpha(@dosage_purple_1, 0.27),
+    inset 0 0 0 1px alpha(@dosage_purple_2, 0.16);
 }
 
 button.pill:not(.suggested-action):active {
@@ -354,7 +354,7 @@ button.pill:not(.suggested-action):active {
 
 button.suggested-action {
   background: linear-gradient(45deg, @dosage_purple_4 0%, @dosage_purple_2 75%);
-  box-shadow: 0 1px 7px 0px alpha(@dosage_purple_4, 0.6);
+  box-shadow: 0 1px 6px 0px alpha(@dosage_purple_4, 0.7);
   color: white;
 }
 
@@ -379,7 +379,7 @@ button.suggested-action:focus {
 }
 
 #dosage-med-window button.suggested-action {
-  box-shadow: 0 1px 4px 0px alpha(@dosage_purple_4, 0.35);
+  box-shadow: 0 1px 4px 0px alpha(@dosage_purple_4, 0.66);
 }
 
 .time-box spinbutton button {

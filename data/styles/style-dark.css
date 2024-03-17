@@ -146,13 +146,13 @@ popover > arrow {
 
 button.pill:not(.suggested-action) {
   background-color: #383642;
-  box-shadow: 0 1px 6px 0px alpha(#1d1c1f, 0.66),
+  box-shadow: 0 1px 6px 0px alpha(#1d1c1f, 0.8),
     inset 0 0 0 1px alpha(@dosage_purple_4, 0.16);
 }
 
 button.pill:not(.suggested-action):hover {
   background-color: #403d4e;
-  box-shadow: 0 1px 8px 0px alpha(#1d1c1f, 0.76),
+  box-shadow: 0 1px 7px 0px alpha(#1d1c1f, 0.76),
     inset 0 0 0 1px alpha(@dosage_purple_4, 0.25);
 }
 
@@ -162,7 +162,7 @@ button.pill:not(.suggested-action):active {
 
 button.suggested-action {
   background: linear-gradient(45deg, @dosage_purple_3 0%, @dosage_purple_2 75%);
-  box-shadow: 0 1px 7px 0px alpha(#1d1c1f, 0.66);
+  box-shadow: 0 1px 6px 0px alpha(#1d1c1f, 0.8);
 }
 
 button.suggested-action:hover {
@@ -179,10 +179,6 @@ button.suggested-action:active {
     lighter(@dosage_purple_4) 0%,
     @dosage_purple_3 50%
   );
-}
-
-#dosage-med-window button.suggested-action {
-  box-shadow: 0 1px 3.5px 0px alpha(@dosage_purple_4, 0.2);
 }
 
 #dosage-med-window .linked-circular button:checked {
