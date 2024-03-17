@@ -263,12 +263,8 @@ export const DosageWindow = GObject.registerClass(
 		_loadHistory(historyJson) {
 			try {
 				if (historyLS.get_n_items() === 0) {
-					const historyObj = historyJson.history;
-					const historyKeys = Object.keys(historyObj);
-					historyKeys.forEach(dateKey => {
-						historyObj[dateKey].forEach(med => {
-							historyLS.append(new MedicationObject({ obj: med }));
-						});
+					historyJson.history.forEach(med => {
+						historyLS.append(new MedicationObject({ obj: med }));
 					});
 
 					this.sortedHistoryModel = new Gtk.SortListModel({

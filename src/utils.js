@@ -80,24 +80,18 @@ export function createTempObj(type, listStore) {
 			tempObj.treatments.some(obj => Object.keys(obj).length === 0) ||
 			tempObj.treatments.length === 0
 		) {
-			log(JSON.stringify(tempObj));
+			log('empty treatments', JSON.stringify(tempObj));
 			return;
 		}
 		return tempObj;
 	} else if (type === 'history') {
 		const tempObj = {
-			history: {},
+			history: [],
 		};
-		const hist = tempObj.history;
+
 		for (const it of listStore) {
 			const item = it.obj;
-			const dateKey = new Date(item.taken[0]).setHours(0, 0, 0, 0);
-
-			if (!hist[dateKey]) {
-				hist[dateKey] = [];
-			}
-
-			hist[dateKey].push({
+			tempObj.history.push({
 				name: item.name,
 				unit: item.unit,
 				time: item.time,
@@ -106,17 +100,15 @@ export function createTempObj(type, listStore) {
 				taken: item.taken,
 			});
 		}
-		if (hasEmptyObject(hist)) {
-			log(JSON.stringify(tempObj));
+		if (
+			tempObj.history.some(obj => Object.keys(obj).length === 0) ||
+			tempObj.history.length === 0
+		) {
+			log('empty history', JSON.stringify(tempObj));
 			return;
 		}
-		return tempObj;
-	}
-}
 
-function hasEmptyObject(data) {
-	for (const key in data) {
-		return data[key].some(obj => Object.keys(obj).length === 0);
+		return tempObj;
 	}
 }
 
@@ -150,7 +142,7 @@ export function isTodayMedDay(med) {
 	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
 	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
 
-	if (item.lastTaken !== null) {
+	if (item.lastTaken != null) {
 		return new Date(item.lastTaken) < today;
 	}
 
