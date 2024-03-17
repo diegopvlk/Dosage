@@ -425,7 +425,7 @@ button.suggested-action:focus {
   outline: none;
 }
 
-preferencespage scrolledwindow viewport {
+preferencespage scrolledwindow viewport clamp {
   margin-top: -24px;
   margin-bottom: -11px;
 }

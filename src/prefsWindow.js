@@ -97,8 +97,7 @@ export default function openPrefsWindow(DosageApplication) {
 		.get_first_child()
 		.get_first_child()
 		.measure(Gtk.Orientation.VERTICAL, -1);
-	prefsWindow.default_height = prefsPageHeight + 64;
+	prefsWindow.content_height = prefsPageHeight + 64;
 
-	prefsWindow.set_transient_for(DosageApplication.activeWindow);
-	prefsWindow.present();
+	prefsWindow.present(DosageApplication.activeWindow);
 }
