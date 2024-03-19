@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-16 18:46-0300\n"
+"POT-Creation-Date: 2024-03-19 08:48-0300\n"
 "PO-Revision-Date: 2024-03-10 23:09+0000\n"
 "Last-Translator: Thomas Maeder <maeder+weblate@glue.ch>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/dosage/dosage/de/"
@@ -261,7 +261,7 @@ msgstr "Tropfen"
 msgid "Potion"
 msgstr "Arznei"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:741
+#: data/ui/med-window.blp:294 src/medWindow.js:750
 msgid "Frequency"
 msgstr "Frequenz"
 
@@ -269,11 +269,11 @@ msgstr "Frequenz"
 msgid "Every day"
 msgstr "Täglich"
 
-#: data/ui/med-window.blp:299 src/medWindow.js:735
+#: data/ui/med-window.blp:299 src/medWindow.js:744
 msgid "Specific days"
 msgstr "An gewissen Tagen"
 
-#: data/ui/med-window.blp:300 src/medWindow.js:738 src/treatmentsFactory.js:149
+#: data/ui/med-window.blp:300 src/medWindow.js:747 src/treatmentsFactory.js:149
 msgid "Cycle"
 msgstr "Zyklus"
 
@@ -512,27 +512,27 @@ msgstr "Eintrag bearbeiten"
 msgid "Are you sure?"
 msgstr "Sind Sie sicher?"
 
-#: src/medWindow.js:703
+#: src/medWindow.js:712
 msgid "Choose"
 msgstr "Auswählen"
 
-#: src/medWindow.js:774
+#: src/medWindow.js:783
 msgid "Empty name"
 msgstr "Leerer Name"
 
-#: src/medWindow.js:778
+#: src/medWindow.js:787
 msgid "Empty unit"
 msgstr "Leere Einheit"
 
-#: src/medWindow.js:784
+#: src/medWindow.js:793
 msgid "Choose at least one day"
 msgstr "Wählen Sie mindestens einen Tag"
 
-#: src/medWindow.js:795
+#: src/medWindow.js:804
 msgid "Name already exists"
 msgstr "Name existiert bereits"
 
-#: src/medWindow.js:809
+#: src/medWindow.js:818
 msgid "Duplicated time"
 msgstr "Duplizierte Zeit"
 
@@ -590,10 +590,8 @@ msgid "All done for today"
 msgstr "Heute alles erledigt"
 
 #: src/window.js:488
-#, fuzzy
-#| msgid "Confirm"
 msgid "Confirm all"
-msgstr "Bestätigen"
+msgstr "Alle bestätigen"
 
 #: src/window.js:489
 msgid "Skip all"
