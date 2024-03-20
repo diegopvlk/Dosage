@@ -41,12 +41,12 @@
 		<screenshot type="default">
 			<caption>Dosage today window in light theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/today-light.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/e6f0ca138706a8eb0e8690c70eeab0d8ee72d756/screenshots/today-light.png</image>
 		</screenshot>
 		<screenshot>
 			<caption>Dosage preferences window in light theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/preferences.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/e6f0ca138706a8eb0e8690c70eeab0d8ee72d756/screenshots/preferences.png</image>
 		</screenshot>
 		<screenshot>
 			<caption>Dosage edit treatment window in light theme</caption>
@@ -56,11 +56,20 @@
 		<screenshot>
 			<caption>Dosage today window in dark theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/c5b6664e68b71a2ff1e8faba01bd1e7d282ef8c8/screenshots/today-dark.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/e6f0ca138706a8eb0e8690c70eeab0d8ee72d756/screenshots/today-dark.png</image>
 		</screenshot>
 	</screenshots>
 
 	<releases>
+		<release version="1.6.0" date="2024-03-20">
+			<description translatable="no">
+				<ul>
+					<li>Notifications are now grouped by the same time</li>
+					<li>You can now select the time group in today tab (by clicking on title time)</li>
+					<li>Ported dialogs to the new Adwaita Adaptive Dialogs</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.5.6" date="2024-03-10">
 			<description translatable="no">
 				<ul>
