@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-19 08:48-0300\n"
-"PO-Revision-Date: 2024-03-14 14:01+0000\n"
+"PO-Revision-Date: 2024-03-22 11:45+0000\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
 ">\n"
@@ -83,7 +83,7 @@ msgstr "Bugün penceresi açık tema ile"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:47
 msgid "Dosage preferences window in light theme"
-msgstr "Doz tercihler penceresi, açık tema"
+msgstr "Doz tercihler penceresi açık tema ile"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:52
 msgid "Dosage edit treatment window in light theme"
@@ -113,7 +113,7 @@ msgstr "Tercihler"
 #: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr "Kısayolları göster"
+msgstr "Kısayolları Göster"
 
 #: data/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
@@ -122,7 +122,7 @@ msgstr "Çık"
 
 #: data/ui/med-window.blp:8
 msgid "New treatment"
-msgstr "Yeni ilaç"
+msgstr "Yeni İlaç"
 
 #: data/ui/med-window.blp:19 src/medWindow.js:416
 msgid "Cancel"
@@ -154,7 +154,7 @@ msgstr "Notlar"
 
 #: data/ui/med-window.blp:61
 msgid "After meal"
-msgstr "Yemekten sonra"
+msgstr "Yemekten Sonra"
 
 #: data/ui/med-window.blp:66
 msgid "Form"
@@ -592,11 +592,11 @@ msgstr "Bugünlük her şey bitti"
 
 #: src/window.js:488
 msgid "Confirm all"
-msgstr "Tümünü onayla"
+msgstr "Tümünü Onayla"
 
 #: src/window.js:489
 msgid "Skip all"
-msgstr "Tümünü atla"
+msgstr "Tümünü Atla"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:526
