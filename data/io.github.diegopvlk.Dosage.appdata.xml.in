@@ -6,6 +6,9 @@
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-only</project_license>
 	<developer_name translate="no">Diego Povliuk</developer_name>
+	<developer id="io.github.diegopvlk">
+		<name translate="no">Diego Povliuk</name>
+	</developer>
 	<update_contact>diego.pvlk@gmail.com</update_contact>
 	<launchable type="desktop-id">io.github.diegopvlk.Dosage.desktop</launchable>
 	<translation type="gettext">dosage</translation>
