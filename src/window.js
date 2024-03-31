@@ -724,7 +724,14 @@ export const DosageWindow = GObject.registerClass(
 			const taken = +btn.get_name(); // 1 or 0
 
 			if (this.todayItems.length > 0) {
-				this.todayItems.forEach(item => this._insertItemToHistory(item, taken));
+				this.todayItems.forEach(item => {
+					this._insertItemToHistory(item, taken);
+					const app = this.get_application();
+					const itemHour = item.time[0];
+					const itemMin = item.time[1];
+					const dateKey = new Date().setHours(itemHour, itemMin, 0, 0);
+					app.withdraw_notification(`${dateKey}`);
+				});
 
 				this._updateEverything();
 				this._scheduleNotifications('adding');
