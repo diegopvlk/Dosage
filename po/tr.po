@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-19 08:48-0300\n"
+"POT-Creation-Date: 2024-05-10 13:37-0300\n"
 "PO-Revision-Date: 2024-03-22 11:45+0000\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
@@ -22,17 +22,17 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:18
-#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:410
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:409
 #: src/main.js:40 src/window.js:642
 msgid "Dosage"
 msgstr "Doz"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:19
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
 msgid "Keep track of your treatments"
 msgstr "İlaçlarınızı takip edin"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid ""
 "Easily manage track treatments with Dosage: Notifications, History, Multiple "
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
@@ -41,55 +41,55 @@ msgstr ""
 "Dozaj ile tedavi takibini kolayca yönetin: Bildirimler, Geçmiş, Çoklu "
 "Dozlar, Esnek Sıklık, Özelleştirme, Stok İzleme ve Süre Kontrolü"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:23
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
 msgid "Features:"
 msgstr "Özellikler:"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:28
 msgid "Notifications — Get reminders at the right time"
 msgstr "Bildirimler - Doğru zamanda hatırlatıcılar"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
 msgid "History — See which medications you took, skipped or missed"
 msgstr ""
 "Geçmiş - Hangi ilaçları aldığınızı, atladığınızı yada unuttuğunuzu görün"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:27
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid "Dosage management — Multiple doses with different times"
 msgstr "Dozaj yönetimi - Farklı zamanlarda çoklu doz"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:28
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
 msgid ""
 "Frequency modes — Every day, specific days, cycle or just when necessary"
 msgstr ""
 "Sıklık kipleri - Her gün, belirli günler, döngü ya da yalnızca ihtiyaç "
 "olduğunda"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:32
 msgid "Color and icon — Give a shape for your treatment"
 msgstr "Renk ve simge - İlacınızı şekillerle belirtin"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr "Envanter takibi - İlaç stoğunuzu izleyin ve azaldığında hatırlatılsın"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:34
 msgid "Duration — Define the start and end dates"
 msgstr "Süre - Başlangıç ve bitiş tarihlerini tanımlayın"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:42
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid "Dosage today window in light theme"
 msgstr "Bugün penceresi açık tema ile"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:47
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:50
 msgid "Dosage preferences window in light theme"
 msgstr "Doz tercihler penceresi açık tema ile"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:52
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:55
 msgid "Dosage edit treatment window in light theme"
 msgstr "İlaç düzenle penceresi açık tema ile"
 
-#: data/io.github.diegopvlk.Dosage.appdata.xml.in:57
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:60
 msgid "Dosage today window in dark theme"
 msgstr "Bugün penceresi koyu tema ile"
 
@@ -120,260 +120,260 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Çık"
 
-#: data/ui/med-window.blp:8
+#: data/ui/med-window.blp:7
 msgid "New treatment"
 msgstr "Yeni İlaç"
 
-#: data/ui/med-window.blp:19 src/medWindow.js:416
+#: data/ui/med-window.blp:18 src/medWindow.js:416
 msgid "Cancel"
 msgstr "İptal"
 
-#: data/ui/med-window.blp:25 data/ui/window.blp:156
+#: data/ui/med-window.blp:24 data/ui/window.blp:156
 msgid "Add"
 msgstr "Ekle"
 
-#: data/ui/med-window.blp:44
+#: data/ui/med-window.blp:43
 msgid "From treatment list"
 msgstr "İlaç listesinden"
 
-#: data/ui/med-window.blp:53
+#: data/ui/med-window.blp:52
 msgid "Name"
 msgstr "Ad"
 
-#: data/ui/med-window.blp:56
+#: data/ui/med-window.blp:55
 msgid "Unit"
 msgstr "Birim"
 
-#: data/ui/med-window.blp:57 src/medWindow.js:224
+#: data/ui/med-window.blp:56 src/medWindow.js:224
 msgid "Pill(s)"
 msgstr "Hap"
 
-#: data/ui/med-window.blp:60
+#: data/ui/med-window.blp:59
 msgid "Notes"
 msgstr "Notlar"
 
-#: data/ui/med-window.blp:61
+#: data/ui/med-window.blp:60
 msgid "After meal"
 msgstr "Yemekten Sonra"
 
-#: data/ui/med-window.blp:66
+#: data/ui/med-window.blp:65
 msgid "Form"
 msgstr "Form"
 
-#: data/ui/med-window.blp:67
+#: data/ui/med-window.blp:66
 msgid "Color and icon"
 msgstr "Renk ve simge"
 
-#: data/ui/med-window.blp:72 src/medWindow.js:269
+#: data/ui/med-window.blp:71 src/medWindow.js:269
 msgid "Color"
 msgstr "Renk"
 
 #. TRANSLATORS: Tooltip for the colors (from Default until Purple)
-#: data/ui/med-window.blp:83
+#: data/ui/med-window.blp:82
 msgid "Default"
 msgstr "Öntanımlı"
 
-#: data/ui/med-window.blp:90
+#: data/ui/med-window.blp:89
 msgid "Red"
 msgstr "Kırmızı"
 
-#: data/ui/med-window.blp:97
+#: data/ui/med-window.blp:96
 msgid "Orange"
 msgstr "Turuncu"
 
-#: data/ui/med-window.blp:104
+#: data/ui/med-window.blp:103
 msgid "Yellow"
 msgstr "Sarı"
 
-#: data/ui/med-window.blp:111
+#: data/ui/med-window.blp:110
 msgid "Green"
 msgstr "Yeşil"
 
-#: data/ui/med-window.blp:118
+#: data/ui/med-window.blp:117
 msgid "Cyan"
 msgstr "Cam göbeği"
 
-#: data/ui/med-window.blp:125
+#: data/ui/med-window.blp:124
 msgid "Blue"
 msgstr "Mavi"
 
-#: data/ui/med-window.blp:132
+#: data/ui/med-window.blp:131
 msgid "Purple"
 msgstr "Mor"
 
-#: data/ui/med-window.blp:141
+#: data/ui/med-window.blp:140
 msgid "Icon"
 msgstr "Simge"
 
 #. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
-#: data/ui/med-window.blp:154
+#: data/ui/med-window.blp:153
 msgid "Pill"
 msgstr "Hap"
 
-#: data/ui/med-window.blp:164
+#: data/ui/med-window.blp:163
 msgid "Alternative pill"
 msgstr "Alternatif hap"
 
-#: data/ui/med-window.blp:174
+#: data/ui/med-window.blp:173
 msgid "Capsule"
 msgstr "Kapsül"
 
-#: data/ui/med-window.blp:184
+#: data/ui/med-window.blp:183
 msgid "Round pill"
 msgstr "Yuvarlak hap"
 
-#: data/ui/med-window.blp:194
+#: data/ui/med-window.blp:193
 msgid "Alternative round pill"
 msgstr "Alternatif yuvarlak hap"
 
-#: data/ui/med-window.blp:204
+#: data/ui/med-window.blp:203
 msgid "Ampoule"
 msgstr "Ampül"
 
-#: data/ui/med-window.blp:214
+#: data/ui/med-window.blp:213
 msgid "Injection"
 msgstr "İğne"
 
-#: data/ui/med-window.blp:225
+#: data/ui/med-window.blp:224
 msgid "Square pill"
 msgstr "Kare hap"
 
-#: data/ui/med-window.blp:235
+#: data/ui/med-window.blp:234
 msgid "Alternative square pill"
 msgstr "Alternatif kare hap"
 
-#: data/ui/med-window.blp:245
+#: data/ui/med-window.blp:244
 msgid "Triangle pill"
 msgstr "Üçgen hap"
 
-#: data/ui/med-window.blp:255
+#: data/ui/med-window.blp:254
 msgid "Alternative triangle pill"
 msgstr "Alternatif üçgen hap"
 
-#: data/ui/med-window.blp:265
+#: data/ui/med-window.blp:264
 msgid "Bottle"
 msgstr "Şişe"
 
-#: data/ui/med-window.blp:275
+#: data/ui/med-window.blp:274
 msgid "Drop"
 msgstr "Damla"
 
-#: data/ui/med-window.blp:285
+#: data/ui/med-window.blp:284
 msgid "Potion"
 msgstr "Karışım"
 
-#: data/ui/med-window.blp:294 src/medWindow.js:750
+#: data/ui/med-window.blp:293 src/medWindow.js:750
 msgid "Frequency"
 msgstr "Sıklık"
 
-#: data/ui/med-window.blp:298
+#: data/ui/med-window.blp:297
 msgid "Every day"
 msgstr "Her gün"
 
-#: data/ui/med-window.blp:299 src/medWindow.js:744
+#: data/ui/med-window.blp:298 src/medWindow.js:744
 msgid "Specific days"
 msgstr "Belirli günler"
 
-#: data/ui/med-window.blp:300 src/medWindow.js:747 src/treatmentsFactory.js:149
+#: data/ui/med-window.blp:299 src/medWindow.js:747 src/treatmentsFactory.js:149
 msgid "Cycle"
 msgstr "Döngü"
 
-#: data/ui/med-window.blp:301 src/treatmentsFactory.js:153
+#: data/ui/med-window.blp:300 src/treatmentsFactory.js:153
 msgid "When necessary"
 msgstr "Gerektiğinde"
 
-#: data/ui/med-window.blp:309
+#: data/ui/med-window.blp:308
 msgid "Choose days"
 msgstr "Gün seç"
 
-#: data/ui/med-window.blp:359
+#: data/ui/med-window.blp:358
 msgid "Change cycle"
 msgstr "Döngüyü değiştir"
 
-#: data/ui/med-window.blp:370
+#: data/ui/med-window.blp:369
 msgid "Days active"
 msgstr "Aktif günler"
 
-#: data/ui/med-window.blp:382
+#: data/ui/med-window.blp:381
 msgid "Days inactive"
 msgstr "Aktif olmayan günler"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
-#: data/ui/med-window.blp:395
+#: data/ui/med-window.blp:394
 msgid "Today is cycle day…"
 msgstr "Bugün döngü günü…"
 
-#: data/ui/med-window.blp:411
+#: data/ui/med-window.blp:410
 msgid "Time and amount"
 msgstr "Zaman ve miktar"
 
-#: data/ui/med-window.blp:419
+#: data/ui/med-window.blp:418
 msgid "Add dose"
 msgstr "Doz ekle"
 
-#: data/ui/med-window.blp:430 src/historyFactory.js:176
+#: data/ui/med-window.blp:429 src/historyFactory.js:176
 msgid "Skipped"
 msgstr "Atlandı"
 
-#: data/ui/med-window.blp:436
+#: data/ui/med-window.blp:435
 msgid "Confirmed"
 msgstr "Onaylandı"
 
-#: data/ui/med-window.blp:443
+#: data/ui/med-window.blp:442
 msgid "Recurring notifications"
 msgstr "Yinelenen bildirimler"
 
-#: data/ui/med-window.blp:444
+#: data/ui/med-window.blp:443
 msgid "Renotify until it's confirmed or skipped"
 msgstr "Onaylanana ya da atlanana kadar yeniden bildir"
 
-#: data/ui/med-window.blp:448
+#: data/ui/med-window.blp:447
 msgid "Interval in minutes"
 msgstr "Aralık (dakika olarak)"
 
-#: data/ui/med-window.blp:460
+#: data/ui/med-window.blp:459
 msgid "Inventory"
 msgstr "Envanter"
 
-#: data/ui/med-window.blp:461
+#: data/ui/med-window.blp:460
 msgid "Manage your stock"
 msgstr "Stoğunuzu yönetin"
 
-#: data/ui/med-window.blp:466
+#: data/ui/med-window.blp:465
 msgid "Current"
 msgstr "Geçerli"
 
-#: data/ui/med-window.blp:477
+#: data/ui/med-window.blp:476
 msgid "Remind me at"
 msgstr "Bana hatırlat"
 
-#: data/ui/med-window.blp:490
+#: data/ui/med-window.blp:489
 msgid "Duration"
 msgstr "Süre"
 
-#: data/ui/med-window.blp:491
+#: data/ui/med-window.blp:490
 msgid "Set start and end dates"
 msgstr "Başlangıç ve bitiş tarihi belirle"
 
 #. TRANSLATORS: label for when duration is enabled
-#: data/ui/med-window.blp:496 src/treatmentsFactory.js:112
+#: data/ui/med-window.blp:495 src/treatmentsFactory.js:112
 msgid "Starts on"
 msgstr "Başlangıç"
 
-#: data/ui/med-window.blp:504 data/ui/med-window.blp:525
-#: data/ui/med-window.blp:548
+#: data/ui/med-window.blp:503 data/ui/med-window.blp:524
+#: data/ui/med-window.blp:547
 msgid "Choose date"
 msgstr "Tarih seç"
 
-#: data/ui/med-window.blp:517
+#: data/ui/med-window.blp:516
 msgid "Ends on"
 msgstr "Bitiş"
 
-#: data/ui/med-window.blp:539
+#: data/ui/med-window.blp:538
 msgid "Date"
 msgstr "Tarih"
 
-#: data/ui/med-window.blp:568 src/historyFactory.js:144 src/medWindow.js:417
+#: data/ui/med-window.blp:567 src/historyFactory.js:144 src/medWindow.js:417
 msgid "Delete"
 msgstr "Sil"
 
