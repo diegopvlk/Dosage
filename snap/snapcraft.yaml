@@ -7,18 +7,18 @@ confinement: strict
 parts:
   blueprint-compiler:
     source: https://gitlab.gnome.org/jwestman/blueprint-compiler.git
-    source-tag: 'v0.10.0'
+    source-tag: "v0.10.0"
     plugin: meson
     meson-parameters:
       - --prefix=/usr
-    override-prime: ''
+    override-prime: ""
 
   dosage-tracker:
     after: [blueprint-compiler]
     plugin: meson
     # source: snap/local/Dosage
     source: https://github.com/diegopvlk/Dosage.git
-    source-tag: 'v1.6.0'
+    source-tag: "v1.6.1"
     build-environment:
       - PYTHONPATH: $CRAFT_STAGE/usr/lib/python3/dist-packages:$PYTHONPATH
       - GI_TYPELIB_PATH: /snap/gnome-42-2204-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/girepository-1.0:/snap/gnome-42-2204-sdk/current/usr/lib/girepository-1.0
