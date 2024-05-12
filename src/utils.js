@@ -13,14 +13,19 @@ import Gtk from 'gi://Gtk';
 export const isoWeekStart = weekStartsMonday();
 
 function weekStartsMonday() {
-	const date = new Date(2000, 9, 0);
-	const startOfYear = new Date(2000, 0, 1);
-	const dayOfYear = Math.floor((date - startOfYear) / 86400000) + 1;
-	const weekNumber = Math.ceil(dayOfYear / 7);
+	let weekStart;
 
-	// 39 = starts on monday
-	// 40 = starts on sunday
-	return weekNumber === 39;
+	const [success, output, error] = GLib.spawn_command_line_sync('locale first_weekday');
+	if (success) {
+		const decoder = new TextDecoder('utf-8');
+		weekStart = +decoder.decode(output);
+	} else {
+		log(`Error getting locale: ${error}`);
+	}
+
+	// 1 = starts on sunday
+	// 2 = starts on monday
+	return weekStart === 2;
 }
 
 export function getSpecificDaysLabel(item) {
