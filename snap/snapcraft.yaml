@@ -1,5 +1,5 @@
 name: dosage-tracker
-base: core22
+base: core24
 adopt-info: dosage-tracker
 grade: stable
 confinement: strict
@@ -21,7 +21,7 @@ parts:
     source-tag: "v1.6.1"
     build-environment:
       - PYTHONPATH: $CRAFT_STAGE/usr/lib/python3/dist-packages:$PYTHONPATH
-      - GI_TYPELIB_PATH: /snap/gnome-42-2204-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/girepository-1.0:/snap/gnome-42-2204-sdk/current/usr/lib/girepository-1.0
+      - GI_TYPELIB_PATH: /snap/gnome-46-2404-sdk/current/usr/lib/girepository-1.0:/snap/gnome-46-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/girepository-1.0:/snap/gnome-46-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/gjs/girepository-1.0:$GI_TYPELIB_PATH
     meson-parameters:
       - --prefix=/snap/dosage-tracker/current/usr
     override-pull: |
@@ -46,7 +46,7 @@ apps:
     autostart: dosage-tracker-startup.desktop
     common-id: io.github.diegopvlk.Dosage
     environment:
-      GI_TYPELIB_PATH: $SNAP/gnome-platform/usr/lib/$CRAFT_ARCH_TRIPLET/girepository-1.0:$SNAP/gnome-platform/usr/lib/$CRAFT_ARCH_TRIPLET/gjs/girepository-1.0
+      GI_TYPELIB_PATH: $SNAP/gnome-platform/usr/lib/$CRAFT_ARCH_TRIPLET/gjs/girepository-1.0:$GI_TYPELIB_PATH
     extensions:
       - gnome
     plugs:
