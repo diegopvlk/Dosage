@@ -1,8 +1,10 @@
 <img style="vertical-align: middle;" src="data/icons/hicolor/scalable/apps/io.github.diegopvlk.Dosage.svg" width="128" height="128" align="left">
 
+# This is an edited README for seeing if GitButler can detect the changes.
+
 ## Dosage
 
-Keep track of your treatments
+Keep track of your treatments on Linux effortlessly!
 
 <br>
 
