@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-10 13:37-0300\n"
-"PO-Revision-Date: 2024-02-04 13:41+0000\n"
+"PO-Revision-Date: 2024-06-24 18:09+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.6-rc\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
@@ -36,6 +36,9 @@ msgid ""
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
 "Control"
 msgstr ""
+"Seuraa vaivatta hoitoja tällä sovelluksella: ilmoitukset, historia, useat "
+"annostukset, joustavat toistot, mukautus, varastonhallinta ja vaikutuksen "
+"valvonta"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
 msgid "Features:"
@@ -43,48 +46,52 @@ msgstr "Ominaisuudet:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:28
 msgid "Notifications — Get reminders at the right time"
-msgstr ""
+msgstr "Ilmoitukset — Muistutukset oikea-aikaisesti"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
 msgid "History — See which medications you took, skipped or missed"
-msgstr ""
+msgstr "Historia — Tarkista mitkä lääkkeet otit, jätit ottamatta tai unohdit"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid "Dosage management — Multiple doses with different times"
-msgstr ""
+msgstr "Annostelun seuranta — Useita annoksia eri aikoihin"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
 msgid ""
 "Frequency modes — Every day, specific days, cycle or just when necessary"
 msgstr ""
+"Toistuvuusvälit — Päivittäin, tiettyinä päivinä, jaksottain tai vain tarpeen "
+"vaatiessa"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:32
 msgid "Color and icon — Give a shape for your treatment"
-msgstr ""
+msgstr "Väri ja kuvake — Anna hoidolle ilme"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
+"Varastonseuranta — Seuraa jäljellä olevia lääkkeitä ja vastaanota ilmoitus, "
+"kun lääkkeet ovat vähissä"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:34
 msgid "Duration — Define the start and end dates"
-msgstr ""
+msgstr "Kesto — Määritä aloitus- ja lopetuspäivät"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid "Dosage today window in light theme"
-msgstr ""
+msgstr "Sovelluksen Tänään-ikkuna vaalealla teemalla"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:50
 msgid "Dosage preferences window in light theme"
-msgstr ""
+msgstr "Sovelluksen Asetukset-ikkuna vaalealla teemalla"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:55
 msgid "Dosage edit treatment window in light theme"
-msgstr ""
+msgstr "Hoidon muokkausikkuna vaalealla teemalla"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:60
 msgid "Dosage today window in dark theme"
-msgstr ""
+msgstr "Sovelluksen Tänään-ikkuna tummalla teemalla"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
