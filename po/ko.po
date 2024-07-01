@@ -1,0 +1,591 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023 Diego Povliuk
+# This file is distributed under the license GPLv3-or-later.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.diegopvlk.Dosage\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-10 13:37-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. TRANSLATORS: App name, translate to your language and follow the capitalization
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:409
+#: src/main.js:40 src/window.js:642
+msgid "Dosage"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
+msgid "Keep track of your treatments"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
+msgid ""
+"Easily manage track treatments with Dosage: Notifications, History, Multiple "
+"Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
+"Control"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
+msgid "Features:"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:28
+msgid "Notifications — Get reminders at the right time"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
+msgid "History — See which medications you took, skipped or missed"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
+msgid "Dosage management — Multiple doses with different times"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
+msgid ""
+"Frequency modes — Every day, specific days, cycle or just when necessary"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:32
+msgid "Color and icon — Give a shape for your treatment"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
+msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:34
+msgid "Duration — Define the start and end dates"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
+msgid "Dosage today window in light theme"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:50
+msgid "Dosage preferences window in light theme"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:55
+msgid "Dosage edit treatment window in light theme"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:60
+msgid "Dosage today window in dark theme"
+msgstr ""
+
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.diegopvlk.Dosage.desktop.in:11
+msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
+msgstr ""
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: data/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr ""
+
+#: data/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: data/gtk/help-overlay.blp:24
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: data/ui/med-window.blp:7
+msgid "New treatment"
+msgstr ""
+
+#: data/ui/med-window.blp:18 src/medWindow.js:416
+msgid "Cancel"
+msgstr ""
+
+#: data/ui/med-window.blp:24 data/ui/window.blp:156
+msgid "Add"
+msgstr ""
+
+#: data/ui/med-window.blp:43
+msgid "From treatment list"
+msgstr ""
+
+#: data/ui/med-window.blp:52
+msgid "Name"
+msgstr ""
+
+#: data/ui/med-window.blp:55
+msgid "Unit"
+msgstr ""
+
+#: data/ui/med-window.blp:56 src/medWindow.js:224
+msgid "Pill(s)"
+msgstr ""
+
+#: data/ui/med-window.blp:59
+msgid "Notes"
+msgstr ""
+
+#: data/ui/med-window.blp:60
+msgid "After meal"
+msgstr ""
+
+#: data/ui/med-window.blp:65
+msgid "Form"
+msgstr ""
+
+#: data/ui/med-window.blp:66
+msgid "Color and icon"
+msgstr ""
+
+#: data/ui/med-window.blp:71 src/medWindow.js:269
+msgid "Color"
+msgstr ""
+
+#. TRANSLATORS: Tooltip for the colors (from Default until Purple)
+#: data/ui/med-window.blp:82
+msgid "Default"
+msgstr ""
+
+#: data/ui/med-window.blp:89
+msgid "Red"
+msgstr ""
+
+#: data/ui/med-window.blp:96
+msgid "Orange"
+msgstr ""
+
+#: data/ui/med-window.blp:103
+msgid "Yellow"
+msgstr ""
+
+#: data/ui/med-window.blp:110
+msgid "Green"
+msgstr ""
+
+#: data/ui/med-window.blp:117
+msgid "Cyan"
+msgstr ""
+
+#: data/ui/med-window.blp:124
+msgid "Blue"
+msgstr ""
+
+#: data/ui/med-window.blp:131
+msgid "Purple"
+msgstr ""
+
+#: data/ui/med-window.blp:140
+msgid "Icon"
+msgstr ""
+
+#. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
+#: data/ui/med-window.blp:153
+msgid "Pill"
+msgstr ""
+
+#: data/ui/med-window.blp:163
+msgid "Alternative pill"
+msgstr ""
+
+#: data/ui/med-window.blp:173
+msgid "Capsule"
+msgstr ""
+
+#: data/ui/med-window.blp:183
+msgid "Round pill"
+msgstr ""
+
+#: data/ui/med-window.blp:193
+msgid "Alternative round pill"
+msgstr ""
+
+#: data/ui/med-window.blp:203
+msgid "Ampoule"
+msgstr ""
+
+#: data/ui/med-window.blp:213
+msgid "Injection"
+msgstr ""
+
+#: data/ui/med-window.blp:224
+msgid "Square pill"
+msgstr ""
+
+#: data/ui/med-window.blp:234
+msgid "Alternative square pill"
+msgstr ""
+
+#: data/ui/med-window.blp:244
+msgid "Triangle pill"
+msgstr ""
+
+#: data/ui/med-window.blp:254
+msgid "Alternative triangle pill"
+msgstr ""
+
+#: data/ui/med-window.blp:264
+msgid "Bottle"
+msgstr ""
+
+#: data/ui/med-window.blp:274
+msgid "Drop"
+msgstr ""
+
+#: data/ui/med-window.blp:284
+msgid "Potion"
+msgstr ""
+
+#: data/ui/med-window.blp:293 src/medWindow.js:750
+msgid "Frequency"
+msgstr ""
+
+#: data/ui/med-window.blp:297
+msgid "Every day"
+msgstr ""
+
+#: data/ui/med-window.blp:298 src/medWindow.js:744
+msgid "Specific days"
+msgstr ""
+
+#: data/ui/med-window.blp:299 src/medWindow.js:747 src/treatmentsFactory.js:149
+msgid "Cycle"
+msgstr ""
+
+#: data/ui/med-window.blp:300 src/treatmentsFactory.js:153
+msgid "When necessary"
+msgstr ""
+
+#: data/ui/med-window.blp:308
+msgid "Choose days"
+msgstr ""
+
+#: data/ui/med-window.blp:358
+msgid "Change cycle"
+msgstr ""
+
+#: data/ui/med-window.blp:369
+msgid "Days active"
+msgstr ""
+
+#: data/ui/med-window.blp:381
+msgid "Days inactive"
+msgstr ""
+
+#. TRANSLATORS: Day in cycle, try to keep it short
+#: data/ui/med-window.blp:394
+msgid "Today is cycle day…"
+msgstr ""
+
+#: data/ui/med-window.blp:410
+msgid "Time and amount"
+msgstr ""
+
+#: data/ui/med-window.blp:418
+msgid "Add dose"
+msgstr ""
+
+#: data/ui/med-window.blp:429 src/historyFactory.js:176
+msgid "Skipped"
+msgstr ""
+
+#: data/ui/med-window.blp:435
+msgid "Confirmed"
+msgstr ""
+
+#: data/ui/med-window.blp:442
+msgid "Recurring notifications"
+msgstr ""
+
+#: data/ui/med-window.blp:443
+msgid "Renotify until it's confirmed or skipped"
+msgstr ""
+
+#: data/ui/med-window.blp:447
+msgid "Interval in minutes"
+msgstr ""
+
+#: data/ui/med-window.blp:459
+msgid "Inventory"
+msgstr ""
+
+#: data/ui/med-window.blp:460
+msgid "Manage your stock"
+msgstr ""
+
+#: data/ui/med-window.blp:465
+msgid "Current"
+msgstr ""
+
+#: data/ui/med-window.blp:476
+msgid "Remind me at"
+msgstr ""
+
+#: data/ui/med-window.blp:489
+msgid "Duration"
+msgstr ""
+
+#: data/ui/med-window.blp:490
+msgid "Set start and end dates"
+msgstr ""
+
+#. TRANSLATORS: label for when duration is enabled
+#: data/ui/med-window.blp:495 src/treatmentsFactory.js:112
+msgid "Starts on"
+msgstr ""
+
+#: data/ui/med-window.blp:503 data/ui/med-window.blp:524
+#: data/ui/med-window.blp:547
+msgid "Choose date"
+msgstr ""
+
+#: data/ui/med-window.blp:516
+msgid "Ends on"
+msgstr ""
+
+#: data/ui/med-window.blp:538
+msgid "Date"
+msgstr ""
+
+#: data/ui/med-window.blp:567 src/historyFactory.js:144 src/medWindow.js:417
+msgid "Delete"
+msgstr ""
+
+#: data/ui/preferences.blp:8 data/ui/window.blp:181
+msgid "Preferences"
+msgstr ""
+
+#: data/ui/preferences.blp:19
+msgid "Auto-start at login"
+msgstr ""
+
+#: data/ui/preferences.blp:28
+msgid "Auto-clear history"
+msgstr ""
+
+#: data/ui/preferences.blp:29
+msgid "Keeps a maximum of 30 days"
+msgstr ""
+
+#: data/ui/preferences.blp:38
+msgid "Increase notification priority"
+msgstr ""
+
+#: data/ui/preferences.blp:39
+msgid ""
+"Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
+"is enabled"
+msgstr ""
+
+#: data/ui/preferences.blp:48
+msgid "Notification sound"
+msgstr ""
+
+#: data/ui/preferences.blp:57
+msgid "Notification buttons"
+msgstr ""
+
+#: data/ui/preferences.blp:58
+msgid "Show or hide confirm/skip"
+msgstr ""
+
+#: data/ui/preferences.blp:61 src/medWindow.js:268 src/window.js:488
+#: src/window.js:710
+msgid "Confirm"
+msgstr ""
+
+#: data/ui/preferences.blp:70 data/ui/window.blp:76 src/window.js:489
+msgid "Skip"
+msgstr ""
+
+#: data/ui/window.blp:29
+msgid "Main Menu"
+msgstr ""
+
+#: data/ui/window.blp:41
+msgid "Today"
+msgstr ""
+
+#: data/ui/window.blp:62
+msgid "Unselect"
+msgstr ""
+
+#: data/ui/window.blp:70 src/window.js:710
+msgid "One-time entry"
+msgstr ""
+
+#: data/ui/window.blp:105
+msgid "History"
+msgstr ""
+
+#: data/ui/window.blp:121
+msgid "Empty history"
+msgstr ""
+
+#: data/ui/window.blp:131
+msgid "Treatments"
+msgstr ""
+
+#: data/ui/window.blp:163
+msgid "Click the button below to add some"
+msgstr ""
+
+#: data/ui/window.blp:185
+msgid "About Dosage"
+msgstr ""
+
+#: data/ui/window.blp:189
+msgid "Quit"
+msgstr ""
+
+#: src/historyFactory.js:141
+msgid "Restore"
+msgstr ""
+
+#: src/historyFactory.js:180
+msgid "Missed"
+msgstr ""
+
+#. TRANSLATORS: 'Your Name <your@email.com>'
+#: src/main.js:49
+msgid "translator-credits"
+msgstr ""
+
+#: src/main.js:53
+msgid "Thanks to these projects!"
+msgstr ""
+
+#. TRANSLATORS: Confirmation message to allow background permission
+#: src/main.js:89
+msgid "Accept to allow running in the background and receive notifications"
+msgstr ""
+
+#: src/medWindow.js:107
+msgid "Edit treatment"
+msgstr ""
+
+#: src/medWindow.js:108 src/medWindow.js:320
+msgid "Save"
+msgstr ""
+
+#: src/medWindow.js:214
+msgid "New"
+msgstr ""
+
+#: src/medWindow.js:267
+msgid "New entry"
+msgstr ""
+
+#: src/medWindow.js:319
+msgid "Edit entry"
+msgstr ""
+
+#. TRANSLATORS: Message for confirmation when deleting an item
+#: src/medWindow.js:413
+msgid "Are you sure?"
+msgstr ""
+
+#: src/medWindow.js:712
+msgid "Choose"
+msgstr ""
+
+#: src/medWindow.js:783
+msgid "Empty name"
+msgstr ""
+
+#: src/medWindow.js:787
+msgid "Empty unit"
+msgstr ""
+
+#: src/medWindow.js:793
+msgid "Choose at least one day"
+msgstr ""
+
+#: src/medWindow.js:804
+msgid "Name already exists"
+msgstr ""
+
+#: src/medWindow.js:818
+msgid "Duplicated time"
+msgstr ""
+
+#: src/todayFactory.js:111
+msgid "Change dose"
+msgstr ""
+
+#: src/treatmentsFactory.js:104
+msgid "Remaining"
+msgstr ""
+
+#: src/treatmentsFactory.js:107
+msgid "Low stock"
+msgstr ""
+
+#: src/treatmentsFactory.js:113
+msgid "Until"
+msgstr ""
+
+#: src/treatmentsFactory.js:125 src/utils.js:38
+msgid "Daily"
+msgstr ""
+
+#: src/treatmentsFactory.js:137 src/treatmentsFactory.js:140
+msgid "Next dose"
+msgstr ""
+
+#: src/utils.js:34
+msgid "Weekends"
+msgstr ""
+
+#: src/utils.js:36
+msgid "Weekdays"
+msgstr ""
+
+#: src/utils.js:209
+msgid "Delete dose"
+msgstr ""
+
+#: src/window.js:115 src/window.js:532
+msgid "Reminder"
+msgstr ""
+
+#. TRANSLATORS: Notification text for when the inventory is low
+#: src/window.js:117
+msgid "You have treatments low in stock"
+msgstr ""
+
+#: src/window.js:405
+msgid "No treatments added yet"
+msgstr ""
+
+#: src/window.js:410
+msgid "All done for today"
+msgstr ""
+
+#: src/window.js:488
+msgid "Confirm all"
+msgstr ""
+
+#: src/window.js:489
+msgid "Skip all"
+msgstr ""
+
+#. TRANSLATORS: keep the %d it's where the number goes
+#: src/window.js:526
+#, javascript-format
+msgid "and %d more"
+msgstr ""
