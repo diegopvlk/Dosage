@@ -103,22 +103,29 @@ export const DosageWindow = GObject.registerClass(
 		_checkInventory(notifAction) {
 			this._treatmentsPage.set_needs_attention(false);
 			this._treatmentsPage.badge_number = 0;
+			let notify = false;
 
 			for (const it of treatmentsLS) {
-				const inv = it.obj.inventory;
+				const item = it.obj;
+				const whenNeeded = item.frequency === 'when-needed';
+				const today = new Date().setHours(0, 0, 0, 0);
+				const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
+				const ended = item.duration.enabled && end < today;
+				const inv = item.inventory;
+
 				if (inv.enabled && inv.current <= inv.reminder) {
 					this._treatmentsPage.set_needs_attention(true);
 					this._treatmentsPage.badge_number += 1;
-
-					if (!this.get_visible() && !notifAction) {
-						const [notification, app] = this._getNotification();
-						notification.set_title(_('Reminder'));
-						// TRANSLATORS: Notification text for when the inventory is low
-						notification.set_body(_('You have treatments low in stock'));
-						app.send_notification('low-stock', notification);
-						break;
-					}
+					if (!notify) notify = !ended && !whenNeeded;
 				}
+			}
+
+			if (!this.get_visible() && !notifAction && notify) {
+				const [notification, app] = this._getNotification();
+				notification.set_title(_('Reminder'));
+				// TRANSLATORS: Notification text for when the inventory is low
+				notification.set_body(_('You have treatments low in stock'));
+				app.send_notification('low-stock', notification);
 			}
 
 			// reload-ish of treatments list
