@@ -27,12 +27,12 @@
     {
       "name": "libportal",
       "buildsystem": "meson",
-      "config-opts": ["-Ddocs=false", "-Dvapi=false", "-Dbackends=gtk4"],
-      "sources": [
+      "config-opts": ["-Ddocs=false", "-Dvapi=false"],
+			"sources": [
         {
-          "type": "archive",
-          "url": "https://github.com/flatpak/libportal/releases/download/0.6/libportal-0.6.tar.xz",
-          "sha256": "88a12c3ba71bc31acff7238c280de697d609cebc50830c3766776ec35abc6566"
+          "type": "git",
+          "url": "https://github.com/flatpak/libportal/",
+          "tag": "0.7.1"
         }
       ]
     },
@@ -44,7 +44,7 @@
         {
           "type": "git",
           "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-          "tag": "v0.10.0"
+          "tag": "v0.12.0"
         }
       ]
     },
