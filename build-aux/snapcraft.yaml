@@ -4,17 +4,14 @@ adopt-info: dosage-tracker
 grade: stable
 confinement: strict
 
-platforms:
-  amd64:
-  arm64:
-  armhf:
-
 parts:
   dosage-tracker:
     after: [blueprint-compiler]
     plugin: meson
     source: https://github.com/diegopvlk/Dosage.git
-    source-tag: "v1.6.6"
+    source-depth: 1
+    build-environment:
+      - GI_TYPELIB_PATH: $SNAP/gnome-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/gjs/girepository-1.0:$GI_TYPELIB_PATH
     meson-parameters:
       - --prefix=/snap/dosage-tracker/current/usr
     build-snaps:
@@ -38,7 +35,7 @@ apps:
     autostart: dosage-tracker-startup.desktop
     common-id: io.github.diegopvlk.Dosage
     environment:
-      GI_TYPELIB_PATH: $SNAP/gnome-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/gjs/girepository-1.0:$GI_TYPELIB_PATH
+      GI_TYPELIB_PATH: $SNAP/gnome-platform/usr/lib/$CRAFT_ARCH_TRIPLET/gjs/girepository-1.0:$GI_TYPELIB_PATH
     extensions:
       - gnome
     plugs:
