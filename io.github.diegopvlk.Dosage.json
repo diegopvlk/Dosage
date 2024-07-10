@@ -31,7 +31,7 @@
 			"sources": [
         {
           "type": "git",
-          "url": "https://github.com/flatpak/libportal/",
+          "url": "https://github.com/flatpak/libportal",
           "tag": "0.7.1"
         }
       ]
