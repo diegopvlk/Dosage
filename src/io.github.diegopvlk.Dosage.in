@@ -1,4 +1,4 @@
-#!@GJS@ -m
+#!/usr/bin/env gjs -m
 
 import { exit, programArgs, programInvocationName } from "system";
 

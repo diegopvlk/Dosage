@@ -17,10 +17,9 @@ jobs:
       - name: Build Snap
         uses: snapcore/action-build@v1
         id: snapcraft-build
-        env:
-          SNAPCRAFT_ENABLE_EXPERIMENTAL_EXTENSIONS: 1
         with:
           snapcraft-args: "--verbosity debug"
+          path: "build-aux"
       - uses: actions/upload-artifact@v4
         with:
           name: dosage-snap
