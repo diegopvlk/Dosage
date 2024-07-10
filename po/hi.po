@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-10 13:37-0300\n"
+"POT-Creation-Date: 2024-07-10 10:53-0300\n"
 "PO-Revision-Date: 2024-05-23 09:01+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
-"Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/>"
-"\n"
+"Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/"
+">\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:409
-#: src/main.js:40 src/window.js:642
+#: src/main.js:40 src/window.js:649
 msgid "Dosage"
 msgstr "डोसिज"
 
@@ -408,12 +408,12 @@ msgstr "अधिसूचना बटन"
 msgid "Show or hide confirm/skip"
 msgstr "दिखाएं या छिपाएं पुष्टि करें/छोड़ें"
 
-#: data/ui/preferences.blp:61 src/medWindow.js:268 src/window.js:488
-#: src/window.js:710
+#: data/ui/preferences.blp:61 src/medWindow.js:268 src/window.js:495
+#: src/window.js:717
 msgid "Confirm"
 msgstr "पुष्टि करें"
 
-#: data/ui/preferences.blp:70 data/ui/window.blp:76 src/window.js:489
+#: data/ui/preferences.blp:70 data/ui/window.blp:76 src/window.js:496
 msgid "Skip"
 msgstr "छोड़ें"
 
@@ -429,7 +429,7 @@ msgstr "आज"
 msgid "Unselect"
 msgstr "अचयनित करें"
 
-#: data/ui/window.blp:70 src/window.js:710
+#: data/ui/window.blp:70 src/window.js:717
 msgid "One-time entry"
 msgstr "एक-बार की प्रविष्टि"
 
@@ -544,7 +544,7 @@ msgstr "कम स्टॉक"
 msgid "Until"
 msgstr "तक"
 
-#: src/treatmentsFactory.js:125 src/utils.js:38
+#: src/treatmentsFactory.js:125 src/utils.js:43
 msgid "Daily"
 msgstr "रोज"
 
@@ -552,45 +552,45 @@ msgstr "रोज"
 msgid "Next dose"
 msgstr "अगली खुराक"
 
-#: src/utils.js:34
+#: src/utils.js:39
 msgid "Weekends"
 msgstr "सप्ताहांत"
 
-#: src/utils.js:36
+#: src/utils.js:41
 msgid "Weekdays"
 msgstr "कार्यदिवस"
 
-#: src/utils.js:209
+#: src/utils.js:214
 msgid "Delete dose"
 msgstr "खुराक मिटाएं"
 
-#: src/window.js:115 src/window.js:532
+#: src/window.js:125 src/window.js:539
 msgid "Reminder"
 msgstr "रिमाइंडर"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:117
+#: src/window.js:127
 msgid "You have treatments low in stock"
 msgstr "आपके पास उपचारों का स्टॉक कम है"
 
-#: src/window.js:405
+#: src/window.js:412
 msgid "No treatments added yet"
 msgstr "अभी तक कोई उपचार नहीं जोड़ा गया"
 
-#: src/window.js:410
+#: src/window.js:417
 msgid "All done for today"
 msgstr "आज के लिए सब कुछ हो गया"
 
-#: src/window.js:488
+#: src/window.js:495
 msgid "Confirm all"
 msgstr "सभी पुष्टि करें"
 
-#: src/window.js:489
+#: src/window.js:496
 msgid "Skip all"
 msgstr "सभी को छोड़ें"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:526
+#: src/window.js:533
 #, javascript-format
 msgid "and %d more"
 msgstr "और %d अधिक"

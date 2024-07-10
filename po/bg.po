@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-10 13:37-0300\n"
+"POT-Creation-Date: 2024-07-10 10:53-0300\n"
 "PO-Revision-Date: 2024-05-05 16:40+0200\n"
 "Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:409
-#: src/main.js:40 src/window.js:642
+#: src/main.js:40 src/window.js:649
 msgid "Dosage"
 msgstr "Дозировка"
 
@@ -414,12 +414,12 @@ msgstr "Бутони за известията"
 msgid "Show or hide confirm/skip"
 msgstr "Скриване или показване на потвърждаване/пропускане"
 
-#: data/ui/preferences.blp:61 src/medWindow.js:268 src/window.js:488
-#: src/window.js:710
+#: data/ui/preferences.blp:61 src/medWindow.js:268 src/window.js:495
+#: src/window.js:717
 msgid "Confirm"
 msgstr "Потвърждаване"
 
-#: data/ui/preferences.blp:70 data/ui/window.blp:76 src/window.js:489
+#: data/ui/preferences.blp:70 data/ui/window.blp:76 src/window.js:496
 msgid "Skip"
 msgstr "Пропускане"
 
@@ -435,7 +435,7 @@ msgstr "Днес"
 msgid "Unselect"
 msgstr "Демаркиране"
 
-#: data/ui/window.blp:70 src/window.js:710
+#: data/ui/window.blp:70 src/window.js:717
 msgid "One-time entry"
 msgstr "Еднократен запис"
 
@@ -551,7 +551,7 @@ msgstr "Свършва запаса"
 msgid "Until"
 msgstr "До"
 
-#: src/treatmentsFactory.js:125 src/utils.js:38
+#: src/treatmentsFactory.js:125 src/utils.js:43
 msgid "Daily"
 msgstr "Ежедневно"
 
@@ -559,45 +559,45 @@ msgstr "Ежедневно"
 msgid "Next dose"
 msgstr "Следваща доза"
 
-#: src/utils.js:34
+#: src/utils.js:39
 msgid "Weekends"
 msgstr "Почивни дни"
 
-#: src/utils.js:36
+#: src/utils.js:41
 msgid "Weekdays"
 msgstr "Делнични дни"
 
-#: src/utils.js:209
+#: src/utils.js:214
 msgid "Delete dose"
 msgstr "Изтриване на дозата"
 
-#: src/window.js:115 src/window.js:532
+#: src/window.js:125 src/window.js:539
 msgid "Reminder"
 msgstr "Напомняне"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:117
+#: src/window.js:127
 msgid "You have treatments low in stock"
 msgstr "Имате лечения с малко запас"
 
-#: src/window.js:405
+#: src/window.js:412
 msgid "No treatments added yet"
 msgstr "Все още няма добавени лечения"
 
-#: src/window.js:410
+#: src/window.js:417
 msgid "All done for today"
 msgstr "Всичко е готово за днес"
 
-#: src/window.js:488
+#: src/window.js:495
 msgid "Confirm all"
 msgstr "Потвърждаване на всички"
 
-#: src/window.js:489
+#: src/window.js:496
 msgid "Skip all"
 msgstr "Пропускане на всички"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:526
+#: src/window.js:533
 #, javascript-format
 msgid "and %d more"
 msgstr "и още %d"
