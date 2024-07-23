@@ -606,7 +606,7 @@ export const DosageWindow = GObject.registerClass(
 
 				groupedObj[dateKey].map(item => {
 					if (item.recurring.enabled) recurringEnabled = true;
-					if (item.recurring.interval < recurringInterval) {
+					if (item.recurring.enabled && item.recurring.interval < recurringInterval) {
 						recurringInterval = item.recurring.interval;
 					}
 				});
