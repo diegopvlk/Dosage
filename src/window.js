@@ -827,7 +827,6 @@ export const DosageWindow = GObject.registerClass(
 						(file, result, userData) => {
 							try {
 								file.replace_contents_finish(result);
-								resolve(`${fileName} updated`);
 							} catch (err) {
 								console.error(`Update of ${fileName} failed: ${err}`);
 								reject(err);
@@ -839,7 +838,7 @@ export const DosageWindow = GObject.registerClass(
 			};
 
 			updateFile()
-				.then(result => log(result))
+				.then(() => {})
 				.catch(err => console.error('Update failed:', err));
 		}
 
