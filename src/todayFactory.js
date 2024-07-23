@@ -90,6 +90,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	});
 	labelsBox.append(name);
 	const doseAndNotes = new Gtk.Label({
+		name: 'doseAndNotes',
 		css_classes: ['subtitle', 'numeric'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
@@ -99,6 +100,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 		css_classes: ['spin-box', 'spin-today-amount'],
 	});
 	const amountRow = new Adw.SpinRow({
+		name: 'amtSpinRow',
 		digits: 2,
 		adjustment: new Gtk.Adjustment({
 			lower: 0.25,
@@ -108,6 +110,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	});
 	amountBox.append(amountRow);
 	const amountBtn = new Gtk.MenuButton({
+		name: 'amountBtn',
 		tooltip_text: _('Change dose'),
 		css_classes: ['circular', 'today-amount'],
 		icon_name: 'view-more-horizontal-symbolic',
@@ -121,6 +124,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	});
 	box.append(amountBtn);
 	const checkButton = new Gtk.CheckButton({
+		name: 'checkButton',
 		css_classes: ['selection-mode'],
 		valign: Gtk.Align.CENTER,
 		halign: Gtk.Align.CENTER,

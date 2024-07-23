@@ -27,6 +27,7 @@ import {
 	isTodayMedDay,
 	datesPassedDiff,
 	clockIs12,
+	getWidgetByName,
 } from './utils.js';
 
 export const historyLS = Gio.ListStore.new(MedicationObject);
@@ -660,19 +661,13 @@ export const DosageWindow = GObject.registerClass(
 			while (currentRow) {
 				if (currentRow.get_name() === 'GtkListItemWidget') {
 					if (position === rowItemPos) {
-						const topBox = currentRow.get_first_child();
-						const labelsBox = topBox.get_first_child().get_next_sibling();
-						const doseLabel = labelsBox.get_next_sibling().get_first_child().get_next_sibling();
-						const amountBtn = labelsBox.get_next_sibling().get_next_sibling();
-						const amtSpinRow = amountBtn
-							.get_popover()
-							.get_first_child()
-							.get_first_child()
-							.get_first_child();
-						const check = amountBtn.get_next_sibling();
+						const doseAndNotes = getWidgetByName(currentRow, 'doseAndNotes');
+						const checkButton = getWidgetByName(currentRow, 'checkButton');
+						const amountBtn = getWidgetByName(currentRow, 'amountBtn');
+						const amtSpinRow = getWidgetByName(currentRow, 'amtSpinRow');
 						const item = model.get_item(position).obj;
 						const indexToRemove = this.todayItems.indexOf(item);
-						let isActive = check.get_active();
+						let isActive = checkButton.get_active();
 
 						if (groupCheck) isActive = false;
 
@@ -685,18 +680,18 @@ export const DosageWindow = GObject.registerClass(
 						} else {
 							const storedDose = this.todayDosesHolder[indexToRemove];
 							item.dose = storedDose;
-							doseLabel.label = doseLabel.label.replace(/^[^\s]+/, item.dose);
+							doseAndNotes.label = doseAndNotes.label.replace(/^[^\s]+/, item.dose);
 							this.todayItems.splice(indexToRemove, 1);
 							this.todayDosesHolder.splice(indexToRemove, 1);
 						}
 
 						amtSpinRow.set_value(item.dose);
 						amtSpinRow.connect('output', row => {
-							doseLabel.label = doseLabel.label.replace(/^[^\s]+/, row.get_value());
+							doseAndNotes.label = doseAndNotes.label.replace(/^[^\s]+/, row.get_value());
 							item.dose = row.get_value();
 						});
 
-						check.set_active(!isActive);
+						checkButton.set_active(!isActive);
 						amountBtn.set_visible(!isActive);
 					}
 					rowItemPos++;

@@ -10,50 +10,48 @@ import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
-export const weekStart = getWeekStart();
+export const firstWeekday = getWeekdays()[0];
+const firstWorkDay = getWeekdays()[1];
 
-function getWeekStart() {
-	let weekStart;
+function getWeekdays() {
+	let firstWeekday;
+	let firstWorkDay;
 
-	const [success, output, error] = GLib.spawn_command_line_sync('locale first_weekday');
-	if (success) {
+	const [success0, output0, error0] = GLib.spawn_command_line_sync('locale first_weekday');
+	const [success1, output1, error1] = GLib.spawn_command_line_sync('locale first_workday');
+
+	if (success0 && success1) {
 		const decoder = new TextDecoder('utf-8');
-		weekStart = +decoder.decode(output);
+		// minus 1 because `locale` days are 1 to 7
+		firstWeekday = +decoder.decode(output0) - 1;
+		firstWorkDay = +decoder.decode(output1) - 1;
 	} else {
-		log(`Error getting locale: ${error}`);
+		log(`Error getting locale: ${(error0, error1)}`);
 	}
-	// locale first_weekday results:
-	// 1 = starts on Sunday
-	// 2 = starts on Monday
-	// 7 = starts on Saturday
 
-	// minus 1 because JS days starts at 0
-	return weekStart - 1;
+	return [firstWeekday, firstWorkDay];
 }
 
 export function getSpecificDaysLabel(item) {
-	const isWeekend = item.days.every(day => [0, 6].includes(day));
-	const isWeekdays = item.days.every(day => [1, 2, 3, 4, 5].includes(day));
+	const workdays = Array.from({ length: 5 }, (_, idx) => (firstWorkDay + idx) % 7);
+	const weekends = [0, 6].filter(day => !workdays.includes(day));
+	const isWeekend = item.days.every(day => weekends.includes(day));
+	const isWeekdays = item.days.every(day => workdays.includes(day));
+	const days = item.days;
 	let newLabel;
 
 	if (item.days.length === 1) {
 		newLabel = getDayLabel(item.days[0], 'long');
-	} else if (isWeekend) {
+	} else if (isWeekend && item.days.length === 2) {
 		newLabel = _('Weekends');
 	} else if (isWeekdays && item.days.length === 5) {
 		newLabel = _('Weekdays');
 	} else if (item.days.length === 7) {
 		newLabel = _('Daily');
 	} else {
-		let days;
-		if (weekStart === 0) {
-			days = item.days;
-		} else if (weekStart === 1) {
-			days = [...item.days.slice(1), item.days[0]];
-		} else if (weekStart === 6) {
-			days = [item.days[item.days.length - 1], ...item.days.slice(0, item.days.length - 1)];
-		}
-		newLabel = days.map(day => getDayLabel(day)).join(', ');
+		const idx = days.indexOf(firstWeekday);
+		const sortedDays = days.slice(idx).concat(days.slice(0, idx));
+		newLabel = sortedDays.map(day => getDayLabel(day)).join(', ');
 	}
 
 	return newLabel;
@@ -194,6 +192,39 @@ export function datesPassedDiff(startDate, endDate) {
 	return datesPassed;
 }
 
+/**
+ * Find a widget by it's name.
+ * @param {widget} parent - The parent widget to search.
+ * @param {string} name - The name to be found.
+ * @returns {widget} The widget found.
+ */
+export function getWidgetByName(parent, name, visited = new Set()) {
+	if (!parent || visited.has(parent)) return undefined;
+
+	visited.add(parent);
+
+	if (parent.get_name() === name) return parent;
+
+	let result = getWidgetByName(parent.get_first_child(), name, visited);
+	if (result) return result;
+
+	let sibling = parent.get_next_sibling();
+	while (sibling) {
+		result = getWidgetByName(sibling, name, visited);
+		if (result) return result;
+
+		sibling = sibling.get_next_sibling();
+	}
+
+	try {
+		let popover = parent.get_popover();
+		if (popover) {
+			result = getWidgetByName(popover, name, visited);
+			if (result) return result;
+		}
+	} catch (e) {}
+}
+
 export function doseRow(timeDose) {
 	let [hours, minutes] = timeDose.time;
 	let period = '';
@@ -216,6 +247,7 @@ export function doseRow(timeDose) {
 	});
 	const doseBox = new Gtk.Box();
 	const removeDoseButton = new Gtk.Button({
+		name: 'removeDoseButton',
 		css_classes: ['circular', 'destructive-action', 'remove-row'],
 		opacity: 0.85,
 		valign: Gtk.Align.CENTER,
@@ -233,6 +265,7 @@ export function doseRow(timeDose) {
 		value: hours,
 	});
 	const spinButtonHours = new Gtk.SpinButton({
+		name: 'spinButtonHours',
 		orientation: Gtk.Orientation.VERTICAL,
 		valign: Gtk.Align.CENTER,
 		numeric: true,
@@ -246,6 +279,7 @@ export function doseRow(timeDose) {
 		value: minutes,
 	});
 	const spinButtonMinutes = new Gtk.SpinButton({
+		name: 'spinButtonMinutes',
 		orientation: Gtk.Orientation.VERTICAL,
 		valign: Gtk.Align.CENTER,
 		numeric: true,
@@ -263,6 +297,7 @@ export function doseRow(timeDose) {
 	const leadZeroHours = clockIs12 ? String(adjHours.value) : addLeadZero(adjHours.value);
 	const leadZeroMinutes = addLeadZero(adjMinutes.value);
 	const doseTimeButton = new Gtk.MenuButton({
+		name: 'doseTimeButton',
 		css_classes: ['flat', 'numeric', 'time'],
 		label: `${leadZeroHours}∶${leadZeroMinutes}`,
 		valign: Gtk.Align.CENTER,
@@ -283,6 +318,7 @@ export function doseRow(timeDose) {
 	});
 
 	const amPmButton = new Gtk.Button({
+		name: 'amPmButton',
 		css_classes: ['am-pm', 'circular', 'flat'],
 		valign: Gtk.Align.CENTER,
 		label: period,
@@ -312,25 +348,14 @@ export function doseRow(timeDose) {
 }
 
 export function getTimeBtnInput(currentDoseRow) {
-	// TODO: need a better way to get these widgets
-	const timeButton = currentDoseRow
-		.get_first_child()
-		.get_first_child()
-		.get_first_child()
-		.get_first_child()
-		.get_next_sibling();
-	const hourInput = timeButton.get_popover().get_first_child().get_first_child().get_first_child();
-	const minutesInput = timeButton
-		.get_popover()
-		.get_first_child()
-		.get_first_child()
-		.get_last_child();
+	const doseTimeButton = getWidgetByName(currentDoseRow, 'doseTimeButton');
+	const spinButtonHours = getWidgetByName(currentDoseRow, 'spinButtonHours');
+	const spinButtonMinutes = getWidgetByName(currentDoseRow, 'spinButtonMinutes');
+	const amPmButton = getWidgetByName(currentDoseRow, 'amPmButton');
+	const period = amPmButton.label;
 
-	const ampm = timeButton.get_next_sibling();
-	const period = ampm.label;
-
-	let hours = hourInput.get_value();
-	let minutes = minutesInput.get_value();
+	let hours = spinButtonHours.get_value();
+	let minutes = spinButtonMinutes.get_value();
 
 	// The time is stored in 24h format
 	if (clockIs12) {
@@ -338,7 +363,7 @@ export function getTimeBtnInput(currentDoseRow) {
 		if (period === 'PM' && hours !== 12) hours += 12;
 	}
 
-	return [hours, minutes, ampm, timeButton];
+	return [hours, minutes, amPmButton, doseTimeButton];
 }
 
 export function getDayLabel(day, long) {

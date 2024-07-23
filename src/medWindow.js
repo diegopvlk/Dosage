@@ -15,8 +15,9 @@ import {
 	handleCalendarSelect,
 	removeCssColors,
 	getDayLabel,
-	weekStart,
+	firstWeekday,
 	getSpecificDaysLabel,
+	getWidgetByName,
 } from './utils.js';
 
 import { MedicationObject } from './medication.js';
@@ -143,7 +144,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		if (item.days && item.days.length !== 0) {
 			const specificDaysBox = builder.get_object('specificDaysBox');
 
-			let day = weekStart;
+			let day = firstWeekday;
 
 			for (const btn of specificDaysBox) {
 				for (const d of item.days) {
@@ -198,13 +199,8 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		const m = new Date().getMinutes();
 		const doseRowOne = doseRow({ time: [h, m], dose: 1 });
 
-		// hide the remove dose button
-		doseRowOne
-			.get_first_child()
-			.get_first_child()
-			.get_first_child()
-			.get_first_child()
-			.set_visible(false);
+		const removeDoseButton = getWidgetByName(doseRowOne, 'removeDoseButton');
+		removeDoseButton.set_visible(false);
 
 		dosage.add_row(doseRowOne);
 
@@ -305,13 +301,8 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		if (item.taken[1] === 1) histBtnConfirmed.set_active(true);
 		if (item.taken[1] === 0) histBtnSkipped.set_active(histBtnConfirmed);
 
-		// hide the remove dose button
-		doseRowOne
-			.get_first_child()
-			.get_first_child()
-			.get_first_child()
-			.get_first_child()
-			.set_visible(false);
+		const removeDoseButton = getWidgetByName(doseRowOne, 'removeDoseButton');
+		removeDoseButton.set_visible(false);
 
 		dosage.add_row(doseRowOne);
 
@@ -691,7 +682,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 
 	function getSpecificDays() {
 		const days = [];
-		let day = weekStart;
+		let day = firstWeekday;
 
 		for (const button of specificDaysBox) {
 			if (button.get_active()) {
@@ -705,7 +696,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 	}
 
 	function setSpecificDaysButtonOrder() {
-		let day = weekStart;
+		let day = firstWeekday;
 
 		for (const button of specificDaysBox) {
 			button.label = getDayLabel(day);
