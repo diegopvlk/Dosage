@@ -28,7 +28,7 @@
       "name": "libportal",
       "buildsystem": "meson",
       "config-opts": ["-Ddocs=false", "-Dvapi=false"],
-			"sources": [
+      "sources": [
         {
           "type": "git",
           "url": "https://github.com/flatpak/libportal",

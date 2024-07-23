@@ -10,9 +10,9 @@ import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
-export const isoWeekStart = weekStartsMonday();
+export const weekStart = getWeekStart();
 
-function weekStartsMonday() {
+function getWeekStart() {
 	let weekStart;
 
 	const [success, output, error] = GLib.spawn_command_line_sync('locale first_weekday');
@@ -22,10 +22,13 @@ function weekStartsMonday() {
 	} else {
 		log(`Error getting locale: ${error}`);
 	}
+	// locale first_weekday results:
+	// 1 = starts on Sunday
+	// 2 = starts on Monday
+	// 7 = starts on Saturday
 
-	// 1 = starts on sunday
-	// 2 = starts on monday
-	return weekStart === 2;
+	// minus 1 because JS days starts at 0
+	return weekStart - 1;
 }
 
 export function getSpecificDaysLabel(item) {
@@ -42,7 +45,14 @@ export function getSpecificDaysLabel(item) {
 	} else if (item.days.length === 7) {
 		newLabel = _('Daily');
 	} else {
-		const days = isoWeekStart ? [...item.days.slice(1), item.days[0]] : item.days;
+		let days;
+		if (weekStart === 0) {
+			days = item.days;
+		} else if (weekStart === 1) {
+			days = [...item.days.slice(1), item.days[0]];
+		} else if (weekStart === 6) {
+			days = [item.days[item.days.length - 1], ...item.days.slice(0, item.days.length - 1)];
+		}
 		newLabel = days.map(day => getDayLabel(day)).join(', ');
 	}
 

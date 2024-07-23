@@ -9,7 +9,6 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
-import Pango from 'gi://Pango';
 
 import { MedicationObject } from './medication.js';
 import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
@@ -44,11 +43,10 @@ export const DosageWindow = GObject.registerClass(
 			'historyList',
 			'treatmentsList',
 			'treatmentsPage',
-			'emptyTodayBox',
 			'emptyToday',
 			'emptyHistory',
 			'emptyTreatments',
-			'allDoneIcon',
+			'headerBarSpinner',
 			'skipBtn',
 			'entryBtn',
 			'unselectBtn',
@@ -71,32 +69,37 @@ export const DosageWindow = GObject.registerClass(
 				if (sett.get_boolean(key) === true) {
 					this._clearOldHistoryEntries();
 					this._updateJsonFile('history', historyLS);
-					historyLS.sort(() => null);
 				}
 			});
 		}
 
 		#start() {
-			const treatmentsFile = DataDir.get_child('dosage-treatments.json');
-			const historyFile = DataDir.get_child('dosage-history.json');
-
-			try {
-				this._createOrLoadJson('treatments', treatmentsFile);
-				this._createOrLoadJson('history', historyFile);
-				if (this._addMissedItems() | this._clearOldHistoryEntries()) {
-					this._updateJsonFile('history', historyLS);
-					historyLS.sort(() => null);
-				}
+			const load = () => {
+				this._loadData();
 				this._setEmptyHistLabel();
 				this._updateCycleAndLastUp();
 				this._updateJsonFile('treatments', treatmentsLS);
 				this._loadToday();
 				this._handleSuspension();
 				this._scheduleNotifications();
-				this._historyList.scroll_to(0, null, null);
 				this._checkInventory();
-			} catch (err) {
-				console.error('Error loading treatments/history/today:', err);
+			};
+
+			const loadPromise = new Promise((resolve, reject) => resolve());
+			loadPromise.then(_ => {
+				setTimeout(() => load(), 100);
+			});
+		}
+
+		_loadData() {
+			const treatmentsFile = DataDir.get_child('dosage-treatments.json');
+			const historyFile = DataDir.get_child('dosage-history.json');
+
+			this._createOrLoadJson('treatments', treatmentsFile);
+			this._createOrLoadJson('history', historyFile);
+			if (this._addMissedItems() | this._clearOldHistoryEntries()) {
+				this._updateJsonFile('history', historyLS);
+				this._historyList.scroll_to(0, null, null);
 			}
 		}
 
@@ -145,7 +148,6 @@ export const DosageWindow = GObject.registerClass(
 					this._clearOldHistoryEntries();
 					this._addMissedItems();
 					this._updateEverything();
-					historyLS.sort(() => null);
 					this._historyList.scroll_to(0, null, null);
 					this._scheduleNotifications();
 					lastDate = now;
@@ -267,18 +269,26 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		_loadHistory(historyJson) {
+		async _loadHistory(historyJson) {
 			try {
 				if (historyLS.get_n_items() === 0) {
 					historyJson.history.forEach(med => {
 						historyLS.append(new MedicationObject({ obj: med }));
 					});
 
-					this.sortedHistoryModel = new Gtk.SortListModel({
-						model: historyLS,
-						section_sorter: new HistorySectionSorter(),
-						sorter: new HistorySorter(),
+					this.sortedHistoryModel = await new Promise(resolve => {
+						setTimeout(() => {
+							resolve(
+								new Gtk.SortListModel({
+									model: historyLS,
+									section_sorter: new HistorySectionSorter(),
+									sorter: new HistorySorter(),
+								}),
+							);
+						}, 100);
 					});
+
+					this._headerBarSpinner.set_visible(false);
 
 					this._historyList.model = new Gtk.NoSelection({
 						model: this.sortedHistoryModel,
@@ -344,7 +354,6 @@ export const DosageWindow = GObject.registerClass(
 			}
 
 			this._setEmptyHistLabel();
-			this._emptyHistory.ellipsize = Pango.EllipsizeMode.END;
 		}
 
 		_loadToday() {
@@ -400,24 +409,17 @@ export const DosageWindow = GObject.registerClass(
 			const noItems = sortedTodayModel.get_n_items() === 0;
 			const noTreatments = this._treatmentsList.model.get_n_items() === 0;
 
-			this._emptyTreatments.ellipsize = Pango.EllipsizeMode.END;
-			this._emptyToday.ellipsize = Pango.EllipsizeMode.END;
-
 			this._emptyTreatments.set_visible(noTreatments);
 
 			if (noItems && noTreatments) {
-				this._emptyTodayBox.set_visible(true);
 				this._emptyToday.set_visible(true);
-				this._allDoneIcon.set_visible(false);
-				this._emptyToday.label = _('No treatments added yet');
+				this._emptyToday.set_icon_name('pill-symbolic');
+				this._emptyToday.title = _('No treatments added yet');
 			} else if (noItems) {
-				this._emptyTodayBox.set_visible(true);
-				this._allDoneIcon.set_visible(true);
 				this._emptyToday.set_visible(true);
-				this._emptyToday.label = _('All done for today');
+				this._emptyToday.set_icon_name('all-done-symbolic');
+				this._emptyToday.title = _('All done for today');
 			} else {
-				this._emptyTodayBox.set_visible(false);
-				this._allDoneIcon.set_visible(false);
 				this._emptyToday.set_visible(false);
 			}
 		}
@@ -434,7 +436,7 @@ export const DosageWindow = GObject.registerClass(
 				if (!itemsHolder[dateKey]) {
 					itemsHolder[dateKey] = [];
 				}
-				itemsHolder[dateKey].push(item);
+				itemsHolder[dateKey].push(new MedicationObject({ obj: item }));
 			}
 
 			historyLS.remove_all();
@@ -442,13 +444,11 @@ export const DosageWindow = GObject.registerClass(
 			const dateKeys = Object.keys(itemsHolder);
 
 			for (const date of dateKeys.slice(0, 30)) {
-				itemsHolder[date].forEach(item => {
-					historyLS.append(new MedicationObject({ obj: item }));
-				});
+				const itemsToAdd = itemsHolder[date];
+				historyLS.splice(0, 0, itemsToAdd);
 			}
 
 			flow.itemsChanged = false;
-
 			return true;
 		}
 
@@ -768,8 +768,7 @@ export const DosageWindow = GObject.registerClass(
 
 		_insertItemToHistory(item, taken, missedDate, isNotif) {
 			// taken values: -1 = missed, 0 = skipped, 1 = confirmed
-			historyLS.insert(
-				0,
+			historyLS.insert_sorted(
 				new MedicationObject({
 					obj: {
 						name: item.name,
@@ -780,6 +779,9 @@ export const DosageWindow = GObject.registerClass(
 						taken: [missedDate || new Date().getTime(), taken],
 					},
 				}),
+				(a, b) => {
+					return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
+				},
 			);
 
 			// update lastTaken of treatment dose when confirming/skipping

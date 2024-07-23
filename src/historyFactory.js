@@ -91,15 +91,18 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 		const item = listItem.get_item();
 		const listView = box.get_parent().get_parent();
 		const listStore = listView.get_model().get_model().get_model();
+		let position = listItem.get_position();
 
 		removedItem = item;
-		let [, position] = listStore.find(item);
-		listStore.remove(position);
+		let [, pos] = listStore.find(item);
+		listStore.remove(pos);
+
 		if (listView.get_model().get_n_items() === position) {
 			// if it's the last position, position - 1
-			// otherwise it crashes the app
+			// otherwise it causes a crash
 			position--;
 		}
+
 		if (position >= 0) {
 			listView.scroll_to(position, Gtk.ListScrollFlags.FOCUS, null);
 		}

@@ -21,6 +21,12 @@ template $DosageWindow : Adw.ApplicationWindow {
   Adw.ToolbarView {
     [top]
     Adw.HeaderBar headerBar {
+			[start]
+			Spinner headerBarSpinner {
+				spinning: true;
+				margin-start: 9;
+				margin-end: 9;
+			}
       [end]
       MenuButton buttonMenu {
         menu-model: appMenu;
@@ -79,24 +85,10 @@ template $DosageWindow : Adw.ApplicationWindow {
             }
           }
           [overlay]
-          Box emptyTodayBox {
-            visible: false;
-            margin-bottom: 64;
-            orientation: vertical;
-            halign: center;
-            valign: center;
-            Image allDoneIcon {
-              styles [ 'empty-icon' ]
-              icon-name: 'all-done-symbolic';
-              visible: false;
-            }
-            Label emptyToday {
-                styles [ 'empty-today' ]
-                visible: false;
-                margin-start: 30;
-                margin-end: 30;
-            }
-          }
+          Adw.StatusPage emptyToday {
+						margin-bottom: 70;
+						visible: true;
+					}
         };
       }
 
@@ -115,14 +107,12 @@ template $DosageWindow : Adw.ApplicationWindow {
             }
           }
           [overlay]
-          Label emptyHistory {
-            styles [ 'empty-history' ]
-            visible: false;
-            label: _("Empty history");
-            margin-start: 30;
-            margin-end: 30;
-            margin-bottom: 64;
-          }
+          Adw.StatusPage emptyHistory {
+						margin-bottom: 70;
+						icon-name: 'history-empty-symbolic';
+						title: _("Empty history");
+						visible: false;
+					}
         };
       }
 
@@ -158,14 +148,12 @@ template $DosageWindow : Adw.ApplicationWindow {
             }
           }
           [overlay]
-          Label emptyTreatments {
-              styles [ 'empty-treatments' ]
-              label: _("Click the button below to add some");
-              visible: false;
-              margin-start: 30;
-              margin-end: 30;
-              margin-bottom: 64;
-          }
+					Adw.StatusPage emptyTreatments {
+						margin-bottom: 70;
+						icon-name: 'plus-circle-outline-symbolic';
+						title: _("Click the button below to add some");
+						visible: false;
+					}
         };
       }
     };

@@ -5,7 +5,6 @@
 'use strict';
 
 import Adw from 'gi://Adw?version=1';
-import Gdk from 'gi://Gdk';
 import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
 
@@ -16,7 +15,7 @@ import {
 	handleCalendarSelect,
 	removeCssColors,
 	getDayLabel,
-	isoWeekStart,
+	weekStart,
 	getSpecificDaysLabel,
 } from './utils.js';
 
@@ -144,7 +143,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		if (item.days && item.days.length !== 0) {
 			const specificDaysBox = builder.get_object('specificDaysBox');
 
-			let day = isoWeekStart ? 1 : 0;
+			let day = weekStart;
 
 			for (const btn of specificDaysBox) {
 				for (const d of item.days) {
@@ -478,8 +477,14 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 
 		const it = list.get_model().get_item(position);
 		const [, pos] = historyLS.find(it);
-		historyLS.splice(pos, 1, [updatedItem]);
-		historyLS.sort(() => null);
+
+		historyLS.remove(pos);
+
+		historyLS.insert_sorted(updatedItem, (a, b) => {
+			return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
+		});
+
+		list.scroll_to(Math.max(0, position - 1), Gtk.ListScrollFlags.FOCUS, null);
 
 		flow.itemsChanged = false;
 
@@ -535,8 +540,9 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 			},
 		});
 
-		historyLS.insert(0, item);
-		historyLS.sort(() => null);
+		historyLS.insert_sorted(item, (a, b) => {
+			return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
+		});
 
 		DosageWindow._historyList.scroll_to(0, null, null);
 
@@ -685,7 +691,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 
 	function getSpecificDays() {
 		const days = [];
-		let day = isoWeekStart ? 1 : 0;
+		let day = weekStart;
 
 		for (const button of specificDaysBox) {
 			if (button.get_active()) {
@@ -699,7 +705,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 	}
 
 	function setSpecificDaysButtonOrder() {
-		let day = isoWeekStart ? 1 : 0;
+		let day = weekStart;
 
 		for (const button of specificDaysBox) {
 			button.label = getDayLabel(day);

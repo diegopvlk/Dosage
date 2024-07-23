@@ -14,6 +14,8 @@
   <gresource prefix="/io/github/diegopvlk/Dosage/icons/scalable/actions">
     <file alias="today-icn-symbolic.svg">icons/ui/today-icn-symbolic.svg</file>
     <file alias="history-symbolic.svg">icons/ui/history-symbolic.svg</file>
+    <file alias="history-empty-symbolic.svg">icons/ui/history-empty-symbolic.svg</file>
+    <file alias="plus-circle-outline-symbolic.svg">icons/ui/plus-circle-outline-symbolic.svg</file>
     <file alias="treatments-symbolic.svg">icons/ui/treatments-symbolic.svg</file>
     <file alias="unselect-meds-symbolic.svg">icons/ui/unselect-meds-symbolic.svg</file>
     <file alias="skip-med-symbolic.svg">icons/ui/skip-med-symbolic.svg</file>
