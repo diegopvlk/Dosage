@@ -250,6 +250,10 @@ row:focus {
   font-size: 90%;
 }
 
+.history .badge-content  {
+  text-transform: none;
+}
+
 .badge-icon {
   background-color: alpha(currentColor, 0.1);
   padding: 0 4px;

@@ -9,7 +9,7 @@ import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
 
-import { clockIs12 } from './utils.js';
+import { amPmStr, clockIs12 } from './utils.js';
 
 export const todayHeaderFactory = new Gtk.SignalListItemFactory();
 export const todayItemFactory = new Gtk.SignalListItemFactory();
@@ -33,8 +33,8 @@ todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	let period = '';
 
 	if (clockIs12) {
-		period = ' AM';
-		if (hours >= 12) period = ' PM';
+		period = ` ${amPmStr[0]}`;
+		if (hours >= 12) period = ` ${amPmStr[1]}`;
 		if (hours > 12) hours -= 12;
 		if (hours === 0) hours = 12;
 	}

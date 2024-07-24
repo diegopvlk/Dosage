@@ -28,6 +28,7 @@ import {
 	datesPassedDiff,
 	clockIs12,
 	getWidgetByName,
+	amPmStr,
 } from './utils.js';
 
 export const historyLS = Gio.ListStore.new(MedicationObject);
@@ -515,8 +516,8 @@ export const DosageWindow = GObject.registerClass(
 					let period = '';
 
 					if (clockIs12) {
-						period = ' AM';
-						if (h >= 12) period = ' PM';
+						period = ` ${amPmStr[0]}`;
+						if (h >= 12) period = ` ${amPmStr[1]}`;
 						if (h > 12) h -= 12;
 						if (h === 0) h = 12;
 					}

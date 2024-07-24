@@ -9,7 +9,7 @@ import Gtk from 'gi://Gtk';
 import Gdk from 'gi://Gdk';
 import Pango from 'gi://Pango';
 
-import { clockIs12 } from './utils.js';
+import { amPmStr, clockIs12 } from './utils.js';
 
 export const historyHeaderFactory = new Gtk.SignalListItemFactory();
 export const historyItemFactory = new Gtk.SignalListItemFactory();
@@ -150,26 +150,22 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	let [hours, minutes] = item.time;
 	let period = '';
 	if (clockIs12) {
-		period = ' AM';
-		if (hours >= 12) period = ' PM';
+		period = ` ${amPmStr[0]}`;
+		if (hours >= 12) period = ` ${amPmStr[1]}`;
 		if (hours > 12) hours -= 12;
 		if (hours === 0) hours = 12;
 	}
+
 	const h = clockIs12 ? String(hours) : String(hours).padStart(2, 0);
 	const m = String(minutes).padStart(2, 0);
 
 	nameLabel.label = item.name;
 	doseLabel.label = `${item.dose} ${item.unit} • ${h}∶${m}` + period;
 
-	let takenTime = localDT.format('%X').replace(':', '∶');
-	let parts = takenTime.split(' ');
-	takenTime = parts[0].slice(0, -3);
-
-	if (parts.length > 1) {
-		// if the time has AM/PM
-		takenTime += ' ' + parts[1];
-		takenTime = takenTime[0] !== '0' ? takenTime : takenTime.substring(1);
-	}
+	let takenH = clockIs12 ? localDT.format('%l') : localDT.format('%k');
+	takenH = takenH.replace(' ', '');
+	let takenM = localDT.format('%M');
+	const takenTime = `${takenH}∶${takenM}` + period;
 
 	if (item.taken[1] === 1) {
 		takenLabel.label = `${takenTime}`;

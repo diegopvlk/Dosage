@@ -10,23 +10,24 @@ import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
-export const firstWeekday = getWeekdays()[0];
-const firstWorkDay = getWeekdays()[1];
+const decoder = new TextDecoder('utf-8');
+
+const [firstWeekday, firstWorkDay] = getWeekdays();
+export { firstWeekday, firstWorkDay };
 
 function getWeekdays() {
-	let firstWeekday;
-	let firstWorkDay;
+	let firstWeekday = 1;
+	let firstWorkDay = 2;
 
-	const [success0, output0, error0] = GLib.spawn_command_line_sync('locale first_weekday');
-	const [success1, output1, error1] = GLib.spawn_command_line_sync('locale first_workday');
+	try {
+		const [, weekdayOutput] = GLib.spawn_command_line_sync('locale first_weekday');
+		const [, workDayOutput] = GLib.spawn_command_line_sync('locale first_workday');
 
-	if (success0 && success1) {
-		const decoder = new TextDecoder('utf-8');
 		// minus 1 because `locale` days are 1 to 7
-		firstWeekday = +decoder.decode(output0) - 1;
-		firstWorkDay = +decoder.decode(output1) - 1;
-	} else {
-		log(`Error getting locale: ${(error0, error1)}`);
+		firstWeekday = +decoder.decode(weekdayOutput) - 1;
+		firstWorkDay = +decoder.decode(workDayOutput) - 1;
+	} catch (error) {
+		console.error(error);
 	}
 
 	return [firstWeekday, firstWorkDay];
@@ -57,12 +58,26 @@ export function getSpecificDaysLabel(item) {
 	return newLabel;
 }
 
-export const clockIs12 = checkClock();
+const [clockIs12, amPmStr] = checkClock();
+export { clockIs12, amPmStr };
 
 function checkClock() {
-	const currentTime = GLib.DateTime.new_now_local();
-	const timeFormat = currentTime.format('%X').slice(-2);
-	return timeFormat === 'AM' || timeFormat === 'PM';
+	let is12 = false;
+	let amPmStr = '';
+
+	try {
+		const [, out] = GLib.spawn_command_line_sync('locale am_pm');
+		const output = decoder.decode(out).replace('\n', '');
+		const timeFormat = GLib.DateTime.new_now_local().format('%X');
+
+		amPmStr = output === ';' ? amPmStr : output;
+		amPmStr = amPmStr.split(';');
+		is12 = amPmStr.length > 1 && amPmStr.some(str => timeFormat.includes(str));
+	} catch (error) {
+		console.error(error);
+	}
+
+	return [is12, amPmStr];
 }
 
 export const DataDir = Gio.file_new_for_path(GLib.build_filenamev([GLib.get_user_data_dir()]));
@@ -230,7 +245,7 @@ export function doseRow(timeDose) {
 	let period = '';
 
 	if (clockIs12) {
-		period = hours < 12 ? 'AM' : 'PM';
+		period = hours < 12 ? `${amPmStr[0]}` : `${amPmStr[1]}`;
 		if (hours > 12) hours -= 12;
 		if (hours === 0) hours = 12;
 	}
@@ -325,7 +340,7 @@ export function doseRow(timeDose) {
 		visible: clockIs12,
 	});
 	amPmButton.connect('clicked', btn => {
-		btn.label = btn.label === 'AM' ? 'PM' : 'AM';
+		btn.label = btn.label === `${amPmStr[0]}` ? `${amPmStr[1]}` : `${amPmStr[0]}`;
 	});
 
 	if (clockIs12) {
@@ -359,8 +374,8 @@ export function getTimeBtnInput(currentDoseRow) {
 
 	// The time is stored in 24h format
 	if (clockIs12) {
-		if (period === 'AM' && hours === 12) hours = 0;
-		if (period === 'PM' && hours !== 12) hours += 12;
+		if (period === `${amPmStr[0]}` && hours === 12) hours = 0;
+		if (period === `${amPmStr[1]}` && hours !== 12) hours += 12;
 	}
 
 	return [hours, minutes, amPmButton, doseTimeButton];
