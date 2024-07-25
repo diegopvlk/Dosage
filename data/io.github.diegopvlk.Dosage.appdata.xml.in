@@ -64,6 +64,13 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.6.3" date="2024-07-25">
+			<description translate="no">
+				<ul>
+					<li>Improvements and fixed issues with displayed time</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.6.2" date="2024-07-10">
 			<description translate="no">
 				<ul>
