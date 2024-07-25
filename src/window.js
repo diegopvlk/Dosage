@@ -203,7 +203,8 @@ export const DosageWindow = GObject.registerClass(
 			});
 
 			if (fileType === 'treatments') {
-				outputStream.put_string('{ "treatments": [], "lastUpdate": "" }', null);
+				this.lastUpdate = new Date().toISOString();
+				outputStream.put_string(`{ "treatments": [], "lastUpdate": "${this.lastUpdate}" }`, null);
 			} else if (fileType === 'history') {
 				outputStream.put_string('{ "history": {} }', null);
 			}
