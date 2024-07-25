@@ -9,7 +9,7 @@ import Gtk from 'gi://Gtk';
 import Gdk from 'gi://Gdk';
 import Pango from 'gi://Pango';
 
-import { amPmStr, clockIs12 } from './utils.js';
+import { amPmStr, clockIs12, timeDot } from './utils.js';
 
 export const historyHeaderFactory = new Gtk.SignalListItemFactory();
 export const historyItemFactory = new Gtk.SignalListItemFactory();
@@ -18,7 +18,6 @@ export let removedItem;
 
 historyHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 	const dateLabel = new Gtk.Label({
-		css_classes: ['numeric'],
 		halign: Gtk.Align.START,
 		margin_bottom: 1,
 	});
@@ -63,7 +62,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	});
 	labelsBox.append(name);
 	const dose = new Gtk.Label({
-		css_classes: ['subtitle', 'numeric'],
+		css_classes: ['subtitle'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
@@ -74,7 +73,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 		margin_end: 14,
 	});
 	const takenLabel = new Gtk.Label({
-		css_classes: ['badge-content', 'numeric'],
+		css_classes: ['badge-content'],
 		valign: Gtk.Align.CENTER,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
@@ -159,13 +158,18 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const h = clockIs12 ? String(hours) : String(hours).padStart(2, 0);
 	const m = String(minutes).padStart(2, 0);
 
+	let time = `${h}:${m}`;
+	if (timeDot) time = time.replace(':', '.');
+
 	nameLabel.label = item.name;
-	doseLabel.label = `${item.dose} ${item.unit} • ${h}∶${m}` + period;
+	doseLabel.label = `${item.dose} ${item.unit} • ${time}` + period;
 
 	let takenH = clockIs12 ? localDT.format('%l') : localDT.format('%k');
 	takenH = takenH.replace(' ', '');
 	let takenM = localDT.format('%M');
-	const takenTime = `${takenH}∶${takenM}` + period;
+	let timeTk = `${takenH}:${takenM}`;
+	if (timeDot) timeTk = timeTk.replace(':', '.');
+	const takenTime = `${timeTk}` + period;
 
 	if (item.taken[1] === 1) {
 		takenLabel.label = `${takenTime}`;

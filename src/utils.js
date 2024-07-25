@@ -16,8 +16,8 @@ const [firstWeekday, firstWorkDay] = getWeekdays();
 export { firstWeekday, firstWorkDay };
 
 function getWeekdays() {
-	let firstWeekday = 1;
-	let firstWorkDay = 2;
+	let firstWeekday = 0;
+	let firstWorkDay = 1;
 
 	try {
 		const [, weekdayOutput] = GLib.spawn_command_line_sync('locale first_weekday');
@@ -58,26 +58,30 @@ export function getSpecificDaysLabel(item) {
 	return newLabel;
 }
 
-const [clockIs12, amPmStr] = checkClock();
-export { clockIs12, amPmStr };
+const [clockIs12, amPmStr, timeDot] = checkClock();
+export { clockIs12, amPmStr, timeDot };
 
 function checkClock() {
 	let is12 = false;
 	let amPmStr = '';
+	let timeDot = false;
 
 	try {
-		const [, out] = GLib.spawn_command_line_sync('locale am_pm');
-		const output = decoder.decode(out).replace('\n', '');
-		const timeFormat = GLib.DateTime.new_now_local().format('%X');
+		const [, outAmPm] = GLib.spawn_command_line_sync('locale am_pm');
+		const [, outTimeFmt] = GLib.spawn_command_line_sync('locale t_fmt');
 
-		amPmStr = output === ';' ? amPmStr : output;
+		const outputAmPm = decoder.decode(outAmPm).replace('\n', '');
+		const timeFormat = decoder.decode(outTimeFmt).replace('\n', '');
+
+		amPmStr = outputAmPm === ';' ? amPmStr : outputAmPm;
 		amPmStr = amPmStr.split(';');
-		is12 = amPmStr.length > 1 && amPmStr.some(str => timeFormat.includes(str));
+		is12 = timeFormat.includes('%r') || timeFormat.includes('%p');
+		timeDot = timeFormat.includes('.');
 	} catch (error) {
 		console.error(error);
 	}
 
-	return [is12, amPmStr];
+	return [is12, amPmStr, timeDot];
 }
 
 export const DataDir = Gio.file_new_for_path(GLib.build_filenamev([GLib.get_user_data_dir()]));
@@ -314,7 +318,7 @@ export function doseRow(timeDose) {
 	const doseTimeButton = new Gtk.MenuButton({
 		name: 'doseTimeButton',
 		css_classes: ['flat', 'numeric', 'time'],
-		label: `${leadZeroHours}∶${leadZeroMinutes}`,
+		label: timeDot ? `${leadZeroHours}.${leadZeroMinutes}` : `${leadZeroHours}:${leadZeroMinutes}`,
 		valign: Gtk.Align.CENTER,
 		popover: new Gtk.Popover({
 			child: doseTimeBox,
@@ -323,12 +327,14 @@ export function doseRow(timeDose) {
 
 	spinButtonHours.connect('output', h => {
 		spinButtonHours.text = clockIs12 ? String(h.adjustment.value) : addLeadZero(h.adjustment.value);
-		doseTimeButton.label = `${spinButtonHours.text}∶${spinButtonMinutes.text}`;
+		doseTimeButton.label = `${spinButtonHours.text}:${spinButtonMinutes.text}`;
+		if (timeDot) doseTimeButton.label = doseTimeButton.label.replace(':', '.');
 		return true;
 	});
 	spinButtonMinutes.connect('output', m => {
 		spinButtonMinutes.text = addLeadZero(m.adjustment.value);
-		doseTimeButton.label = `${spinButtonHours.text}∶${spinButtonMinutes.text}`;
+		doseTimeButton.label = `${spinButtonHours.text}:${spinButtonMinutes.text}`;
+		if (timeDot) doseTimeButton.label = doseTimeButton.label.replace(':', '.');
 		return true;
 	});
 

@@ -9,7 +9,7 @@ import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
 
-import { amPmStr, clockIs12 } from './utils.js';
+import { amPmStr, clockIs12, timeDot } from './utils.js';
 
 export const todayHeaderFactory = new Gtk.SignalListItemFactory();
 export const todayItemFactory = new Gtk.SignalListItemFactory();
@@ -56,7 +56,10 @@ todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 		}
 	});
 
-	selectTimeGroupBtn.label = `${h}∶${m}` + period;
+	let time = `${h}:${m}`;
+	if (timeDot) time = time.replace(':', '.');
+
+	selectTimeGroupBtn.label = time + period;
 });
 
 todayItemFactory.connect('setup', (factory, listItem) => {
@@ -91,7 +94,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	labelsBox.append(name);
 	const doseAndNotes = new Gtk.Label({
 		name: 'doseAndNotes',
-		css_classes: ['subtitle', 'numeric'],
+		css_classes: ['subtitle'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
