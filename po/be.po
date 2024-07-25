@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-10 10:53-0300\n"
+"POT-Creation-Date: 2024-07-24 22:41-0300\n"
 "PO-Revision-Date: 2024-02-02 14:02+0000\n"
 "Last-Translator: Yahor <k1llo2810@protonmail.com>\n"
 "Language-Team: Belarusian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -23,7 +23,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:409
-#: src/main.js:40 src/window.js:649
+#: src/main.js:40 src/window.js:656
 msgid "Dosage"
 msgstr "Дазоўка"
 
@@ -124,11 +124,11 @@ msgstr "Выйсці"
 msgid "New treatment"
 msgstr "Новы курс лячэння"
 
-#: data/ui/med-window.blp:18 src/medWindow.js:416
+#: data/ui/med-window.blp:18 src/medWindow.js:406
 msgid "Cancel"
 msgstr "Скасаваць"
 
-#: data/ui/med-window.blp:24 data/ui/window.blp:156
+#: data/ui/med-window.blp:24 data/ui/window.blp:146
 msgid "Add"
 msgstr "Дадаць"
 
@@ -144,7 +144,7 @@ msgstr "Назва"
 msgid "Unit"
 msgstr "Адзінка вымярэння"
 
-#: data/ui/med-window.blp:56 src/medWindow.js:224
+#: data/ui/med-window.blp:56 src/medWindow.js:219
 msgid "Pill(s)"
 msgstr "Таблетка(і)"
 
@@ -164,7 +164,7 @@ msgstr "Форма"
 msgid "Color and icon"
 msgstr "Колер і значок"
 
-#: data/ui/med-window.blp:71 src/medWindow.js:269
+#: data/ui/med-window.blp:71 src/medWindow.js:264
 msgid "Color"
 msgstr "Колер"
 
@@ -262,7 +262,7 @@ msgstr "Кроплі"
 msgid "Potion"
 msgstr "Мікстура"
 
-#: data/ui/med-window.blp:293 src/medWindow.js:750
+#: data/ui/med-window.blp:293 src/medWindow.js:747
 msgid "Frequency"
 msgstr "Частата"
 
@@ -270,11 +270,11 @@ msgstr "Частата"
 msgid "Every day"
 msgstr "Кожны дзень"
 
-#: data/ui/med-window.blp:298 src/medWindow.js:744
+#: data/ui/med-window.blp:298 src/medWindow.js:741
 msgid "Specific days"
 msgstr "Выбраныя дні"
 
-#: data/ui/med-window.blp:299 src/medWindow.js:747 src/treatmentsFactory.js:149
+#: data/ui/med-window.blp:299 src/medWindow.js:744 src/treatmentsFactory.js:149
 msgid "Cycle"
 msgstr "Цыкл"
 
@@ -311,7 +311,7 @@ msgstr "Час прыёму і памер дозы"
 msgid "Add dose"
 msgstr "Дадаць дозу"
 
-#: data/ui/med-window.blp:429 src/historyFactory.js:176
+#: data/ui/med-window.blp:429 src/historyFactory.js:179
 msgid "Skipped"
 msgstr "Прапушчана"
 
@@ -374,11 +374,11 @@ msgstr "Сканчаецца"
 msgid "Date"
 msgstr "Дата"
 
-#: data/ui/med-window.blp:567 src/historyFactory.js:144 src/medWindow.js:417
+#: data/ui/med-window.blp:567 src/historyFactory.js:146 src/medWindow.js:407
 msgid "Delete"
 msgstr "Выдаліць"
 
-#: data/ui/preferences.blp:8 data/ui/window.blp:181
+#: data/ui/preferences.blp:8 data/ui/window.blp:169
 msgid "Preferences"
 msgstr "Налады"
 
@@ -418,60 +418,60 @@ msgstr "Кнопкі апавяшчэнняў"
 msgid "Show or hide confirm/skip"
 msgstr "Паказаць або схаваць пацвярджэнне/пропуск"
 
-#: data/ui/preferences.blp:61 src/medWindow.js:268 src/window.js:495
-#: src/window.js:717
+#: data/ui/preferences.blp:61 src/medWindow.js:263 src/window.js:499
+#: src/window.js:718
 msgid "Confirm"
 msgstr "Пацвердзіць"
 
-#: data/ui/preferences.blp:70 data/ui/window.blp:76 src/window.js:496
+#: data/ui/preferences.blp:70 data/ui/window.blp:82 src/window.js:500
 msgid "Skip"
 msgstr "Прапусціць"
 
-#: data/ui/window.blp:29
+#: data/ui/window.blp:35
 msgid "Main Menu"
 msgstr "Галоўнае меню"
 
-#: data/ui/window.blp:41
+#: data/ui/window.blp:47
 msgid "Today"
 msgstr "Сёння"
 
-#: data/ui/window.blp:62
+#: data/ui/window.blp:68
 msgid "Unselect"
 msgstr "Скасаваць выбар"
 
-#: data/ui/window.blp:70 src/window.js:717
+#: data/ui/window.blp:76 src/window.js:718
 msgid "One-time entry"
 msgstr "Аднаразовы прыём"
 
-#: data/ui/window.blp:105
+#: data/ui/window.blp:97
 msgid "History"
 msgstr "Гісторыя"
 
-#: data/ui/window.blp:121
+#: data/ui/window.blp:113
 msgid "Empty history"
 msgstr "Гісторыя пустая"
 
-#: data/ui/window.blp:131
+#: data/ui/window.blp:121
 msgid "Treatments"
 msgstr "Курсы лячэння"
 
-#: data/ui/window.blp:163
+#: data/ui/window.blp:154
 msgid "Click the button below to add some"
 msgstr "Націсніце кнопку ніжэй, каб дадаць"
 
-#: data/ui/window.blp:185
+#: data/ui/window.blp:173
 msgid "About Dosage"
 msgstr "Пра Дазоўку"
 
-#: data/ui/window.blp:189
+#: data/ui/window.blp:177
 msgid "Quit"
 msgstr "Выйсці"
 
-#: src/historyFactory.js:141
+#: src/historyFactory.js:143
 msgid "Restore"
 msgstr "Аднавіць"
 
-#: src/historyFactory.js:180
+#: src/historyFactory.js:183
 msgid "Missed"
 msgstr "Адсутнічае"
 
@@ -493,52 +493,52 @@ msgstr "Дазвольце праграме працаваць у фонавым
 msgid "Edit treatment"
 msgstr "Рэдагаваць курс лячэння"
 
-#: src/medWindow.js:108 src/medWindow.js:320
+#: src/medWindow.js:108 src/medWindow.js:310
 msgid "Save"
 msgstr "Захаваць"
 
-#: src/medWindow.js:214
+#: src/medWindow.js:209
 msgid "New"
 msgstr "Новы"
 
-#: src/medWindow.js:267
+#: src/medWindow.js:262
 msgid "New entry"
 msgstr "Новы запіс"
 
-#: src/medWindow.js:319
+#: src/medWindow.js:309
 msgid "Edit entry"
 msgstr "Рэдагаваць запіс"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:413
+#: src/medWindow.js:403
 msgid "Are you sure?"
 msgstr "Вы ўпэўнены?"
 
-#: src/medWindow.js:712
+#: src/medWindow.js:709
 msgid "Choose"
 msgstr "Выбраць"
 
-#: src/medWindow.js:783
+#: src/medWindow.js:780
 msgid "Empty name"
 msgstr "Адсутнічае назва запісу"
 
-#: src/medWindow.js:787
+#: src/medWindow.js:784
 msgid "Empty unit"
 msgstr "Пустая адзінка вымярэння"
 
-#: src/medWindow.js:793
+#: src/medWindow.js:790
 msgid "Choose at least one day"
 msgstr "Выберыце хаця б адзін дзень"
 
-#: src/medWindow.js:804
+#: src/medWindow.js:801
 msgid "Name already exists"
 msgstr "Гэта назва ўжо занята"
 
-#: src/medWindow.js:818
+#: src/medWindow.js:815
 msgid "Duplicated time"
 msgstr "Аднолькавы час у прыёмаў доз"
 
-#: src/todayFactory.js:111
+#: src/todayFactory.js:117
 msgid "Change dose"
 msgstr "Зменіць дозу"
 
@@ -554,7 +554,7 @@ msgstr "Нізкі запас"
 msgid "Until"
 msgstr "Да"
 
-#: src/treatmentsFactory.js:125 src/utils.js:43
+#: src/treatmentsFactory.js:125 src/utils.js:51
 msgid "Daily"
 msgstr "Штодзённа"
 
@@ -562,45 +562,45 @@ msgstr "Штодзённа"
 msgid "Next dose"
 msgstr "Наступная дозу"
 
-#: src/utils.js:39
+#: src/utils.js:47
 msgid "Weekends"
 msgstr "Выхадныя"
 
-#: src/utils.js:41
+#: src/utils.js:49
 msgid "Weekdays"
 msgstr "Будні"
 
-#: src/utils.js:214
+#: src/utils.js:275
 msgid "Delete dose"
 msgstr "Выдаліць дозу"
 
-#: src/window.js:125 src/window.js:539
+#: src/window.js:131 src/window.js:545
 msgid "Reminder"
 msgstr "Напамін"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:127
+#: src/window.js:133
 msgid "You have treatments low in stock"
 msgstr "У вас засталося мала лекаў у запасе"
 
-#: src/window.js:412
+#: src/window.js:421
 msgid "No treatments added yet"
 msgstr "Ніводнага курса лячэння яшчэ не было дададзена"
 
-#: src/window.js:417
+#: src/window.js:425
 msgid "All done for today"
 msgstr "Вы прынялі ўсе лекі на сёння"
 
-#: src/window.js:495
+#: src/window.js:499
 msgid "Confirm all"
 msgstr "Пацвердзіць усё"
 
-#: src/window.js:496
+#: src/window.js:500
 msgid "Skip all"
 msgstr "Прапусціць усё"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:533
+#: src/window.js:537
 #, javascript-format
 msgid "and %d more"
 msgstr "і яшчэ %d"
