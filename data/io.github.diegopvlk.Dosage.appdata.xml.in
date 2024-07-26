@@ -64,6 +64,13 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.6.4" date="2024-07-26">
+			<description translate="no">
+				<ul>
+					<li>Fixed an issue that was removing some recent history entries when auto-clear history was on</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.6.3" date="2024-07-25">
 			<description translate="no">
 				<ul>
