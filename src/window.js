@@ -445,7 +445,7 @@ export const DosageWindow = GObject.registerClass(
 
 			historyLS.remove_all();
 
-			const dateKeys = Object.keys(itemsHolder);
+			const dateKeys = Object.keys(itemsHolder).sort((a, b) => b.localeCompare(a));
 
 			for (const date of dateKeys.slice(0, 30)) {
 				const itemsToAdd = itemsHolder[date];
