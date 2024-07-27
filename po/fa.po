@@ -595,4 +595,4 @@ msgstr "پرش همه"
 #: src/window.js:537
 #, javascript-format
 msgid "and %d more"
-msgstr "و %Id بیش‌تر"
+msgstr "و %d بیش‌تر"

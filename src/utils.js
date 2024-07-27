@@ -277,6 +277,7 @@ export function doseRow(timeDose) {
 	const doseTimeBox = new Gtk.Box({
 		css_classes: ['time-box'],
 	});
+	doseTimeBox.set_direction(Gtk.TextDirection.LTR);
 	const adjHours = new Gtk.Adjustment({
 		lower: 0,
 		upper: 23,

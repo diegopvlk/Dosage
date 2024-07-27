@@ -113,6 +113,10 @@ list > row.activatable.header:active {
   margin-left: -6px;
 }
 
+#dosage-med-window.one-time .time > .arrow-button:dir(rtl) {
+  margin-left: 0px;
+}
+
 #dosage-med-window {
   border-radius: 14px;
 }
@@ -434,10 +438,6 @@ button.suggested-action:focus {
 
 .spin-today-amount:dir(ltr) > row.spin > box {
   margin-left: -16px;
-}
-
-.spin-today-amount:dir(rtl) > row.spin > box {
-  margin-right: -16px;
 }
 
 .spin-box row.spin {
