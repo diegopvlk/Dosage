@@ -166,6 +166,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 
 	let takenH = clockIs12 ? localDT.format('%l') : localDT.format('%k');
 	takenH = takenH.replace(' ', '');
+	takenH = clockIs12 ? takenH : takenH.padStart(2, 0);
 	let takenM = localDT.format('%M');
 	let timeTk = `${takenH}:${takenM}`;
 	if (timeDot) timeTk = timeTk.replace(':', '.');
