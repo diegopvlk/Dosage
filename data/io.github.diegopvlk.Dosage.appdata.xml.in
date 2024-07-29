@@ -64,6 +64,13 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.6.5" date="2024-07-29">
+			<description translate="no">
+				<ul>
+					<li>Added Persian translation</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.6.4" date="2024-07-26">
 			<description translate="no">
 				<ul>
