@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-24 22:41-0300\n"
+"POT-Creation-Date: 2024-07-29 09:04-0300\n"
 "PO-Revision-Date: 2024-03-22 00:03+0000\n"
 "Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
 "Language-Team: English - United Kingdom <en_GB@li.org>\n"
@@ -306,7 +306,7 @@ msgstr "Time and amount"
 msgid "Add dose"
 msgstr "Add dose"
 
-#: data/ui/med-window.blp:429 src/historyFactory.js:179
+#: data/ui/med-window.blp:429 src/historyFactory.js:180
 msgid "Skipped"
 msgstr "Skipped"
 
@@ -465,7 +465,7 @@ msgstr "Quit"
 msgid "Restore"
 msgstr "Restore"
 
-#: src/historyFactory.js:183
+#: src/historyFactory.js:184
 msgid "Missed"
 msgstr "Missed"
 

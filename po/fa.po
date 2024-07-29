@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-24 22:41-0300\n"
+"POT-Creation-Date: 2024-07-29 09:04-0300\n"
 "PO-Revision-Date: 2024-07-28 17:09+0000\n"
 "Last-Translator: Parsa Nobahari <parsa.nobahari@gmail.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/dosage/dosage/fa/"
@@ -92,8 +92,8 @@ msgstr "پنجرهٔ امروز چنده در زمینهٔ تیره"
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
-"Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;درمان;دارو;ردیا"
-"ب;یادآور;امروز;قرص;دوا;"
+"Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;درمان;دارو;"
+"ردیاب;یادآور;امروز;قرص;دوا;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -306,7 +306,7 @@ msgstr "زمان و مقدار"
 msgid "Add dose"
 msgstr "افزودن چنده"
 
-#: data/ui/med-window.blp:429 src/historyFactory.js:179
+#: data/ui/med-window.blp:429 src/historyFactory.js:180
 msgid "Skipped"
 msgstr "پریده"
 
@@ -463,7 +463,7 @@ msgstr "خروج"
 msgid "Restore"
 msgstr "بازآوری"
 
-#: src/historyFactory.js:183
+#: src/historyFactory.js:184
 msgid "Missed"
 msgstr "از دست رفته"
 

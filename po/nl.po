@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-24 22:41-0300\n"
+"POT-Creation-Date: 2024-07-29 09:04-0300\n"
 "PO-Revision-Date: 2024-03-16 18:56+0000\n"
 "Last-Translator: Mikachu <micah.sh@proton.me>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/dosage/dosage/nl/"
@@ -310,7 +310,7 @@ msgstr "Tijdstip en hoeveelheid"
 msgid "Add dose"
 msgstr "Dosering toevoegen"
 
-#: data/ui/med-window.blp:429 src/historyFactory.js:179
+#: data/ui/med-window.blp:429 src/historyFactory.js:180
 msgid "Skipped"
 msgstr "Overgeslagen"
 
@@ -469,7 +469,7 @@ msgstr "Afsluiten"
 msgid "Restore"
 msgstr "Herstellen"
 
-#: src/historyFactory.js:183
+#: src/historyFactory.js:184
 msgid "Missed"
 msgstr "Vergeten"
 

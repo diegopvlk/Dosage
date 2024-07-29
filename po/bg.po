@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-24 22:41-0300\n"
+"POT-Creation-Date: 2024-07-29 09:04-0300\n"
 "PO-Revision-Date: 2024-05-05 16:40+0200\n"
 "Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
@@ -308,7 +308,7 @@ msgstr "Време и количество"
 msgid "Add dose"
 msgstr "Добавяне на доза"
 
-#: data/ui/med-window.blp:429 src/historyFactory.js:179
+#: data/ui/med-window.blp:429 src/historyFactory.js:180
 msgid "Skipped"
 msgstr "Пропуснати"
 
@@ -467,7 +467,7 @@ msgstr "Спиране на програмата"
 msgid "Restore"
 msgstr "Възстановяване"
 
-#: src/historyFactory.js:183
+#: src/historyFactory.js:184
 msgid "Missed"
 msgstr "Изпуснати"
 
