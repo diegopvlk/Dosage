@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-29 09:04-0300\n"
+"POT-Creation-Date: 2024-07-30 17:04-0300\n"
 "PO-Revision-Date: 2024-05-23 09:01+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:409
-#: src/main.js:40 src/window.js:656
+#: src/main.js:40 src/window.js:659
 msgid "Dosage"
 msgstr "डोसिज"
 
@@ -304,7 +304,7 @@ msgstr "समय एवं राशि"
 msgid "Add dose"
 msgstr "खुराक जोड़ें"
 
-#: data/ui/med-window.blp:429 src/historyFactory.js:180
+#: data/ui/med-window.blp:429 src/historyFactory.js:186
 msgid "Skipped"
 msgstr "छोड़ा गया"
 
@@ -366,7 +366,7 @@ msgstr "समाप्त होता है"
 msgid "Date"
 msgstr "तारीख"
 
-#: data/ui/med-window.blp:567 src/historyFactory.js:146 src/medWindow.js:407
+#: data/ui/med-window.blp:567 src/historyFactory.js:152 src/medWindow.js:407
 msgid "Delete"
 msgstr "मिटाएं"
 
@@ -408,12 +408,12 @@ msgstr "अधिसूचना बटन"
 msgid "Show or hide confirm/skip"
 msgstr "दिखाएं या छिपाएं पुष्टि करें/छोड़ें"
 
-#: data/ui/preferences.blp:61 src/medWindow.js:263 src/window.js:499
-#: src/window.js:718
+#: data/ui/preferences.blp:61 src/medWindow.js:263 src/window.js:502
+#: src/window.js:721
 msgid "Confirm"
 msgstr "पुष्टि करें"
 
-#: data/ui/preferences.blp:70 data/ui/window.blp:82 src/window.js:500
+#: data/ui/preferences.blp:70 data/ui/window.blp:82 src/window.js:503
 msgid "Skip"
 msgstr "छोड़ें"
 
@@ -429,7 +429,7 @@ msgstr "आज"
 msgid "Unselect"
 msgstr "अचयनित करें"
 
-#: data/ui/window.blp:76 src/window.js:718
+#: data/ui/window.blp:76 src/window.js:721
 msgid "One-time entry"
 msgstr "एक-बार की प्रविष्टि"
 
@@ -457,11 +457,11 @@ msgstr "डोसिज के बारे में"
 msgid "Quit"
 msgstr "छोड़ें"
 
-#: src/historyFactory.js:143
+#: src/historyFactory.js:149
 msgid "Restore"
 msgstr "पुनर्स्थापित करें"
 
-#: src/historyFactory.js:184
+#: src/historyFactory.js:190
 msgid "Missed"
 msgstr "छुट्टा हुआ"
 
@@ -564,33 +564,33 @@ msgstr "कार्यदिवस"
 msgid "Delete dose"
 msgstr "खुराक मिटाएं"
 
-#: src/window.js:131 src/window.js:545
+#: src/window.js:132 src/window.js:548
 msgid "Reminder"
 msgstr "रिमाइंडर"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:133
+#: src/window.js:134
 msgid "You have treatments low in stock"
 msgstr "आपके पास उपचारों का स्टॉक कम है"
 
-#: src/window.js:421
+#: src/window.js:424
 msgid "No treatments added yet"
 msgstr "अभी तक कोई उपचार नहीं जोड़ा गया"
 
-#: src/window.js:425
+#: src/window.js:428
 msgid "All done for today"
 msgstr "आज के लिए सब कुछ हो गया"
 
-#: src/window.js:499
+#: src/window.js:502
 msgid "Confirm all"
 msgstr "सभी पुष्टि करें"
 
-#: src/window.js:500
+#: src/window.js:503
 msgid "Skip all"
 msgstr "सभी को छोड़ें"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:537
+#: src/window.js:540
 #, javascript-format
 msgid "and %d more"
 msgstr "और %d अधिक"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-29 09:04-0300\n"
+"POT-Creation-Date: 2024-07-30 17:04-0300\n"
 "PO-Revision-Date: 2024-02-01 20:44+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:409
-#: src/main.js:40 src/window.js:656
+#: src/main.js:40 src/window.js:659
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -309,7 +309,7 @@ msgstr "Tid och antal"
 msgid "Add dose"
 msgstr "Lägg till dosering"
 
-#: data/ui/med-window.blp:429 src/historyFactory.js:180
+#: data/ui/med-window.blp:429 src/historyFactory.js:186
 msgid "Skipped"
 msgstr "Hoppade över"
 
@@ -371,7 +371,7 @@ msgstr "Slutar"
 msgid "Date"
 msgstr "Datum"
 
-#: data/ui/med-window.blp:567 src/historyFactory.js:146 src/medWindow.js:407
+#: data/ui/med-window.blp:567 src/historyFactory.js:152 src/medWindow.js:407
 msgid "Delete"
 msgstr "Radera"
 
@@ -415,12 +415,12 @@ msgstr "Aviseringsknappar"
 msgid "Show or hide confirm/skip"
 msgstr "Visa eller dölj bekräfta/hoppa över"
 
-#: data/ui/preferences.blp:61 src/medWindow.js:263 src/window.js:499
-#: src/window.js:718
+#: data/ui/preferences.blp:61 src/medWindow.js:263 src/window.js:502
+#: src/window.js:721
 msgid "Confirm"
 msgstr "Bekräfta"
 
-#: data/ui/preferences.blp:70 data/ui/window.blp:82 src/window.js:500
+#: data/ui/preferences.blp:70 data/ui/window.blp:82 src/window.js:503
 msgid "Skip"
 msgstr "Hoppa över"
 
@@ -436,7 +436,7 @@ msgstr "I dag"
 msgid "Unselect"
 msgstr "Välja bort"
 
-#: data/ui/window.blp:76 src/window.js:718
+#: data/ui/window.blp:76 src/window.js:721
 msgid "One-time entry"
 msgstr "Engångsinträde"
 
@@ -464,11 +464,11 @@ msgstr "Om Dosering"
 msgid "Quit"
 msgstr "Avsluta"
 
-#: src/historyFactory.js:143
+#: src/historyFactory.js:149
 msgid "Restore"
 msgstr "Återställa"
 
-#: src/historyFactory.js:184
+#: src/historyFactory.js:190
 msgid "Missed"
 msgstr "Glömd"
 
@@ -571,33 +571,33 @@ msgstr "Veckodagar"
 msgid "Delete dose"
 msgstr "Radera dosering"
 
-#: src/window.js:131 src/window.js:545
+#: src/window.js:132 src/window.js:548
 msgid "Reminder"
 msgstr "Påminnelse"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:133
+#: src/window.js:134
 msgid "You have treatments low in stock"
 msgstr "Du har behandlingar som har lågt lager"
 
-#: src/window.js:421
+#: src/window.js:424
 msgid "No treatments added yet"
 msgstr "Inga behandlingar har lagts till ännu"
 
-#: src/window.js:425
+#: src/window.js:428
 msgid "All done for today"
 msgstr "Färdig för i dag"
 
-#: src/window.js:499
+#: src/window.js:502
 msgid "Confirm all"
 msgstr "Bekräfta alla"
 
-#: src/window.js:500
+#: src/window.js:503
 msgid "Skip all"
 msgstr "Hoppa över alla"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:537
+#: src/window.js:540
 #, javascript-format
 msgid "and %d more"
 msgstr "och %d till"

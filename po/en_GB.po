@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-29 09:04-0300\n"
+"POT-Creation-Date: 2024-07-30 17:04-0300\n"
 "PO-Revision-Date: 2024-03-22 00:03+0000\n"
 "Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
 "Language-Team: English - United Kingdom <en_GB@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:409
-#: src/main.js:40 src/window.js:656
+#: src/main.js:40 src/window.js:659
 msgid "Dosage"
 msgstr "Dosage"
 
@@ -306,7 +306,7 @@ msgstr "Time and amount"
 msgid "Add dose"
 msgstr "Add dose"
 
-#: data/ui/med-window.blp:429 src/historyFactory.js:180
+#: data/ui/med-window.blp:429 src/historyFactory.js:186
 msgid "Skipped"
 msgstr "Skipped"
 
@@ -368,7 +368,7 @@ msgstr "Ends on"
 msgid "Date"
 msgstr "Date"
 
-#: data/ui/med-window.blp:567 src/historyFactory.js:146 src/medWindow.js:407
+#: data/ui/med-window.blp:567 src/historyFactory.js:152 src/medWindow.js:407
 msgid "Delete"
 msgstr "Delete"
 
@@ -412,12 +412,12 @@ msgstr "Notification buttons"
 msgid "Show or hide confirm/skip"
 msgstr "Show or hide confirm/skip"
 
-#: data/ui/preferences.blp:61 src/medWindow.js:263 src/window.js:499
-#: src/window.js:718
+#: data/ui/preferences.blp:61 src/medWindow.js:263 src/window.js:502
+#: src/window.js:721
 msgid "Confirm"
 msgstr "Confirm"
 
-#: data/ui/preferences.blp:70 data/ui/window.blp:82 src/window.js:500
+#: data/ui/preferences.blp:70 data/ui/window.blp:82 src/window.js:503
 msgid "Skip"
 msgstr "Skip"
 
@@ -433,7 +433,7 @@ msgstr "Today"
 msgid "Unselect"
 msgstr "Unselect"
 
-#: data/ui/window.blp:76 src/window.js:718
+#: data/ui/window.blp:76 src/window.js:721
 msgid "One-time entry"
 msgstr "One-time entry"
 
@@ -461,11 +461,11 @@ msgstr "About Dosage"
 msgid "Quit"
 msgstr "Quit"
 
-#: src/historyFactory.js:143
+#: src/historyFactory.js:149
 msgid "Restore"
 msgstr "Restore"
 
-#: src/historyFactory.js:184
+#: src/historyFactory.js:190
 msgid "Missed"
 msgstr "Missed"
 
@@ -568,33 +568,33 @@ msgstr "Weekdays"
 msgid "Delete dose"
 msgstr "Delete dose"
 
-#: src/window.js:131 src/window.js:545
+#: src/window.js:132 src/window.js:548
 msgid "Reminder"
 msgstr "Reminder"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:133
+#: src/window.js:134
 msgid "You have treatments low in stock"
 msgstr "You have treatments low in stock"
 
-#: src/window.js:421
+#: src/window.js:424
 msgid "No treatments added yet"
 msgstr "No treatments added yet"
 
-#: src/window.js:425
+#: src/window.js:428
 msgid "All done for today"
 msgstr "All done for today"
 
-#: src/window.js:499
+#: src/window.js:502
 msgid "Confirm all"
 msgstr "Confirm all"
 
-#: src/window.js:500
+#: src/window.js:503
 msgid "Skip all"
 msgstr "Skip all"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:537
+#: src/window.js:540
 #, javascript-format
 msgid "and %d more"
 msgstr "and %d more"
