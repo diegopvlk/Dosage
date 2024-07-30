@@ -126,12 +126,15 @@ export const DosageWindow = GObject.registerClass(
 				}
 			}
 
+			const [notification, app] = this._getNotification();
+
 			if (!this.get_visible() && !notifAction && notify) {
-				const [notification, app] = this._getNotification();
 				notification.set_title(_('Reminder'));
 				// TRANSLATORS: Notification text for when the inventory is low
 				notification.set_body(_('You have treatments low in stock'));
 				app.send_notification('low-stock', notification);
+			} else if (!notify) {
+				app.withdraw_notification('low-stock');
 			}
 
 			// reload-ish of treatments list
