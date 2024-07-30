@@ -30,8 +30,14 @@ historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const localTZ = GLib.TimeZone.new_local();
 	const dateTime = GLib.DateTime.new_from_unix_utc(item.taken[0] / 1000);
 	const localDT = dateTime.to_timezone(localTZ);
+	const dayName = localDT.format('%A');
+	let dateFormat = localDT.format('%Ex');
+	dateFormat = dateFormat
+		.replace(`${dayName}, `, '')
+		.replace(`${dayName} `, '')
+		.replace(`${dayName}`, '');
 
-	let date = localDT.format('%A • %x');
+	let date = dayName + ' • ' + dateFormat;
 	date = date.charAt(0).toUpperCase() + date.slice(1);
 	dateLabel.label = date;
 });
@@ -121,8 +127,8 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const takenLabel = takenBox.get_first_child();
 	const takenIcon = takenLabel.get_next_sibling();
 	const localTZ = GLib.TimeZone.new_local();
-	const dateTime = GLib.DateTime.new_from_unix_utc(item.taken[0] / 1000);
-	const localDT = dateTime.to_timezone(localTZ);
+	const dateTimeTaken = GLib.DateTime.new_from_unix_utc(item.taken[0] / 1000);
+	const timeTaken = dateTimeTaken.to_timezone(localTZ);
 	const dateNow = GLib.DateTime.new_now_local();
 
 	// activate item with space bar
@@ -138,7 +144,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	row.remove_css_class('activatable');
 	box.add_css_class('activatable');
 
-	if (localDT.format('%F') == dateNow.format('%F')) {
+	if (timeTaken.format('%F') == dateNow.format('%F')) {
 		deleteButton.icon_name = 'edit-undo-symbolic';
 		deleteButton.tooltip_text = _('Restore');
 	} else {
@@ -164,13 +170,13 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	nameLabel.label = item.name;
 	doseLabel.label = `${item.dose} ${item.unit} • ${time}` + period;
 
-	let takenH = clockIs12 ? localDT.format('%l') : localDT.format('%k');
+	let takenH = clockIs12 ? timeTaken.format('%l') : timeTaken.format('%k');
 	takenH = takenH.replace(' ', '');
 	takenH = clockIs12 ? takenH : takenH.padStart(2, 0);
-	let takenM = localDT.format('%M');
+	let takenM = timeTaken.format('%M');
 	let timeTk = `${takenH}:${takenM}`;
 	if (timeDot) timeTk = timeTk.replace(':', '.');
-	const takenTime = `${timeTk}` + period;
+	const takenTime = clockIs12 ? `${timeTk} ${timeTaken.format('%p')}` : `${timeTk}`;
 
 	if (item.taken[1] === 1) {
 		takenLabel.label = `${takenTime}`;
