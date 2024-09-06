@@ -3,8 +3,7 @@ using Adw 1;
 
 Adw.Dialog prefsWindow {
   name: 'dosage-prefs-window';
-  content-width: 368;
-  content-height: 470;
+  content-width: 490;
   title: _("Preferences");
 
   Adw.ToolbarView {
@@ -13,8 +12,8 @@ Adw.Dialog prefsWindow {
 
     content:
     Adw.PreferencesPage prefsPage {
-      valign: center;
       Adw.PreferencesGroup {
+        separate-rows: true;
         Adw.ActionRow {
           title: _("Auto-start at login");
           activatable-widget: autostartSwitch;

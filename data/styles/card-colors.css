@@ -1,26 +1,32 @@
-.card-stripe {
-  background-image: linear-gradient(
-    alpha(currentColor, 0.4),
-    alpha(currentColor, 0.15)
-  );
-  background-repeat: no-repeat;
-  background-size: 3px;
-}
+:root {
+  --red-bg: color-mix(in srgb, #f4d9d8 97%, var(--accent-color));
+  --red-fg: #680014;
 
-.card-stripe:dir(ltr) {
-  border-top-left-radius: 99px;
-  border-bottom-left-radius: 99px;
-}
+  --orange-bg: color-mix(in srgb, #f7dfbb 97%, var(--accent-color));
+  --orange-fg: #4d2700;
 
-.card-stripe:dir(rtl) {
-  border-top-right-radius: 99px;
-  border-bottom-right-radius: 99px;
-  margin-left: 3px;
+  --yellow-bg: color-mix(in srgb, #f4ecc6 97%, var(--accent-color));
+  --yellow-fg: #3a3000;
+
+  --green-bg: color-mix(in srgb, #dcefdd 97%, var(--accent-color));
+  --green-fg: #03391c;
+
+  --cyan-bg: color-mix(in srgb, #ceebf0 97%, var(--accent-color));
+  --cyan-fg: #00363d;
+
+  --blue-bg: color-mix(in srgb, #d6e4f7 97%, var(--accent-color));
+  --blue-fg: #003355;
+
+  --purple-bg: color-mix(in srgb, #dcdcf5 97%, var(--accent-color));
+  --purple-fg: #361f73;
+
+  --default-bg: rgb(from currentColor r g b / calc(alpha * 0.13));
+  --default-fg: var(--card-fg-color);
 }
 
 .card checkbutton check:checked {
   opacity: 0.8;
-  color: @window_bg_color;
+  color: var(--window-bg-color);
 }
 
 /* buttons */
@@ -32,7 +38,8 @@
 .blue-clr,
 .purple-clr {
   border-radius: 99px;
-  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.2);
+  box-shadow: inset 0 0 5px 1px
+    color-mix(in srgb, currentColor 12%, transparent);
 }
 .red-clr:not(menubutton):hover,
 .orange-clr:not(menubutton):hover,
@@ -42,114 +49,100 @@
 .blue-clr:not(menubutton):hover,
 .purple-clr:not(menubutton):hover {
   background-image: linear-gradient(
-    alpha(currentColor, 0.3),
-    alpha(currentColor, 0.3)
+    color-mix(in srgb, currentColor 15%, transparent),
+    color-mix(in srgb, currentColor 15%, transparent)
   );
 }
 
 .red-clr {
-  background-color: #f4d9d8;
-  color: alpha(#680014, 0.35);
+  background-color: var(--red-bg);
+  color: color-mix(in srgb, var(--red-fg) 70%, transparent);
 }
-
 .orange-clr {
-  background-color: #f7dfbb;
-  color: alpha(#4d2700, 0.35);
+  background-color: var(--orange-bg);
+  color: color-mix(in srgb, var(--orange-fg) 70%, transparent);
 }
-
 .yellow-clr {
-  background-color: #f4ecc6;
-  color: alpha(#3a3000, 0.35);
+  background-color: var(--yellow-bg);
+  color: color-mix(in srgb, var(--yellow-fg) 70%, transparent);
 }
-
 .green-clr {
-  background-color: #dcefdd;
-  color: alpha(#03391c, 0.35);
+  background-color: var(--green-bg);
+  color: color-mix(in srgb, var(--green-fg) 70%, transparent);
 }
-
 .cyan-clr {
-  background-color: #ceebf0;
-  color: alpha(#00363d, 0.35);
+  background-color: var(--cyan-bg);
+  color: color-mix(in srgb, var(--cyan-fg) 70%, transparent);
 }
-
 .blue-clr {
-  background-color: #d6e4f7;
-  color: alpha(#003355, 0.35);
+  background-color: var(--blue-bg);
+  color: color-mix(in srgb, var(--blue-fg) 70%, transparent);
 }
-
 .purple-clr {
-  background-color: #dcdcf5;
-  color: alpha(#361f73, 0.35);
+  background-color: var(--purple-bg);
+  color: color-mix(in srgb, var(--purple-fg) 70%, transparent);
 }
 
 .red {
-  background-color: alpha(#f4d9d8, 0.75);
-  color: #680014;
+  background-color: color-mix(in srgb, var(--red-bg) 75%, transparent);
+  color: var(--red-fg);
 }
-
 .red checkbutton check:checked {
-  background-color: #680014;
+  background-color: var(--red-fg);
 }
 
 .orange {
-  background-color: alpha(#f7dfbb, 0.75);
-  color: #4d2700;
+  background-color: color-mix(in srgb, var(--orange-bg) 75%, transparent);
+  color: var(--orange-fg);
 }
-
 .orange checkbutton check:checked {
-  background-color: #4d2700;
+  background-color: var(--orange-fg);
 }
 
 .yellow {
-  background-color: alpha(#f4ecc6, 0.75);
-  color: #3a3000;
+  background-color: color-mix(in srgb, var(--yellow-bg) 75%, transparent);
+  color: var(--yellow-fg);
 }
-
 .yellow checkbutton check:checked {
-  background-color: #3a3000;
+  background-color: var(--yellow-fg);
 }
 
 .green {
-  background-color: alpha(#dcefdd, 0.75);
-  color: #03391c;
+  background-color: color-mix(in srgb, var(--green-bg) 75%, transparent);
+  color: var(--green-fg);
 }
-
 .green checkbutton check:checked {
-  background-color: #03391c;
+  background-color: var(--green-fg);
 }
 
 .cyan {
-  background-color: alpha(#ceebf0, 0.75);
-  color: #00363d;
+  background-color: color-mix(in srgb, var(--cyan-bg) 75%, transparent);
+  color: var(--cyan-fg);
 }
-
 .cyan checkbutton check:checked {
-  background-color: #00363d;
+  background-color: var(--cyan-fg);
 }
 
 .blue {
-  background-color: alpha(#d6e4f7, 0.75);
-  color: #003355;
+  background-color: color-mix(in srgb, var(--blue-bg) 75%, transparent);
+  color: var(--blue-fg);
 }
-
 .blue checkbutton check:checked {
-  background-color: #003355;
+  background-color: var(--blue-fg);
 }
 
 .purple {
-  background-color: alpha(#dcdcf5, 0.75);
-  color: #361f73;
+  background-color: color-mix(in srgb, var(--purple-bg) 75%, transparent);
+  color: var(--purple-fg);
 }
-
 .purple checkbutton check:checked {
-  background-color: #361f73;
+  background-color: var(--purple-fg);
 }
 
 .default {
-  background-color: alpha(#e2e3ec, 0.75);
-  color: #141b2c;
+  background-color: color-mix(in srgb, var(--default-bg) 75%, transparent);
+  color: var(--default-fg);
 }
-
 .default checkbutton check:checked {
-  background-color: #141b2c;
+  background-color: var(--default-fg);
 }

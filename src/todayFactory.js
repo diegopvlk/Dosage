@@ -67,15 +67,9 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 		css_classes: ['card'],
 		height_request: 64,
 	});
-	const stripe = new Gtk.Box({
-		css_classes: ['card-stripe'],
-		height_request: 62,
-		width_request: 6,
-	});
-	box.append(stripe);
 	const icon = new Gtk.Image({
-		margin_start: 11,
-		margin_end: 5,
+		margin_start: 17,
+		margin_end: 4,
 		icon_name: 'pill-symbolic',
 	});
 	box.append(icon);
@@ -83,7 +77,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 		valign: Gtk.Align.CENTER,
 		hexpand: true,
 		orientation: Gtk.Orientation.VERTICAL,
-		margin_start: 8,
+		margin_start: 9,
 		margin_end: 12,
 	});
 	box.append(labelsBox);
@@ -143,7 +137,7 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	const item = listItem.get_item().obj;
 	const box = listItem.get_child();
 	const row = box.get_parent();
-	const icon = box.get_first_child().get_next_sibling();
+	const icon = box.get_first_child();
 	const labelsBox = icon.get_next_sibling();
 	const nameLabel = labelsBox.get_first_child();
 	const doseLabel = nameLabel.get_next_sibling();

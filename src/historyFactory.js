@@ -181,14 +181,17 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 		takenLabel.label = `${takenTime}`;
 		takenIcon.set_visible(true);
 		takenLabel.add_css_class('badge-end-border');
+		takenBox.add_css_class('confirmed');
 	} else if (item.taken[1] === 0) {
 		takenLabel.label = _('Skipped');
 		takenIcon.set_visible(false);
 		takenLabel.remove_css_class('badge-end-border');
+		takenBox.remove_css_class('confirmed');
 	} else if (item.taken[1] === -1) {
 		takenLabel.label = _('Missed');
 		takenIcon.set_visible(false);
 		takenLabel.remove_css_class('badge-end-border');
+		takenBox.remove_css_class('confirmed');
 	}
 
 	['default', 'red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'].forEach(c =>

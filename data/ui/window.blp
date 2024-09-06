@@ -3,10 +3,6 @@ using Adw 1;
 
 template $DosageWindow : Adw.ApplicationWindow {
   name: 'dosage-window';
-  // default-width: 800;
-  // default-height: 591;
-  width-request: 320;
-  height-request: 280;
   title: 'Dosage';
 
   Adw.Breakpoint {
@@ -21,12 +17,12 @@ template $DosageWindow : Adw.ApplicationWindow {
   Adw.ToolbarView {
     [top]
     Adw.HeaderBar headerBar {
-			[start]
-			Spinner headerBarSpinner {
-				spinning: true;
-				margin-start: 9;
-				margin-end: 9;
-			}
+      [start]
+      Spinner headerBarSpinner {
+        spinning: true;
+        margin-start: 9;
+        margin-end: 9;
+      }
       [end]
       MenuButton buttonMenu {
         menu-model: appMenu;
@@ -50,7 +46,7 @@ template $DosageWindow : Adw.ApplicationWindow {
           ScrolledWindow {
             Adw.ClampScrollable {
               ListView todayList {
-                styles [ 'custom-list', 'scroll-to-top-hack', 'today' ]
+                styles [ 'dosage-list', 'scroll-to-top-hack', 'today' ]
                 activate => $_selectTodayItems();
                 single-click-activate: true;
               }
@@ -63,20 +59,20 @@ template $DosageWindow : Adw.ApplicationWindow {
             margin-bottom: 16;
             spacing: 8;
             Button unselectBtn {
-              styles [ 'pill', 'skip' ]
+              styles [ 'pill', 'secondary', 'floating' ]
               clicked => $_unselectTodayItems();
               tooltip-text: _("Unselect");
               visible: false;
               icon-name: 'unselect-meds-symbolic';
             }
             Button entryBtn {
-              styles [ 'pill' ]
+              styles [ 'pill', 'floating'  ]
               clicked => $_addTodayToHistory();
               name: '1';
               label: _("One-time entry");
             }
             Button skipBtn {
-              styles [ 'pill', 'skip' ]
+              styles [ 'pill', 'secondary', 'floating'  ]
               clicked => $_addTodayToHistory();
               name: '0';
               tooltip-text: _("Skip");
@@ -86,9 +82,9 @@ template $DosageWindow : Adw.ApplicationWindow {
           }
           [overlay]
           Adw.StatusPage emptyToday {
-						margin-bottom: 70;
-						visible: true;
-					}
+            margin-bottom: 70;
+            visible: true;
+          }
         };
       }
 
@@ -100,7 +96,7 @@ template $DosageWindow : Adw.ApplicationWindow {
           ScrolledWindow {
             Adw.ClampScrollable {
               ListView historyList {
-                styles [ 'custom-list', 'history', 'scroll-to-top-hack' ]
+                styles [ 'dosage-list', 'history', 'scroll-to-top-hack' ]
                 activate => $_editHistoryItem();
                 single-click-activate: true;
               }
@@ -108,11 +104,11 @@ template $DosageWindow : Adw.ApplicationWindow {
           }
           [overlay]
           Adw.StatusPage emptyHistory {
-						margin-bottom: 70;
-						icon-name: 'history-empty-symbolic';
-						title: _("Empty history");
-						visible: false;
-					}
+            margin-bottom: 70;
+            icon-name: 'history-empty-symbolic';
+            title: _("Empty history");
+            visible: false;
+          }
         };
       }
 
@@ -125,7 +121,7 @@ template $DosageWindow : Adw.ApplicationWindow {
             Adw.ClampScrollable {
               vexpand: true;
               ListView treatmentsList {
-                styles [ 'custom-list' ]
+                styles [ 'dosage-list' ]
                 activate => $_openMedWindow();
                 single-click-activate: true;
               }
@@ -140,7 +136,7 @@ template $DosageWindow : Adw.ApplicationWindow {
               valign: end;
               margin-bottom: 16;
               clicked => $_openMedWindow();
-              styles [ 'pill', 'suggested-action' ]
+              styles [ 'pill', 'suggested-action', 'floating' ]
               child: Adw.ButtonContent {
                 icon-name: 'list-add-symbolic';
                 label: _("Add");
@@ -148,12 +144,12 @@ template $DosageWindow : Adw.ApplicationWindow {
             }
           }
           [overlay]
-					Adw.StatusPage emptyTreatments {
-						margin-bottom: 70;
-						icon-name: 'plus-circle-outline-symbolic';
-						title: _("Click the button below to add some");
-						visible: false;
-					}
+          Adw.StatusPage emptyTreatments {
+            margin-bottom: 70;
+            icon-name: 'plus-circle-outline-symbolic';
+            title: _("Click the button below to add some");
+            visible: false;
+          }
         };
       }
     };

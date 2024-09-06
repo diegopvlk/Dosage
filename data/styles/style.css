@@ -1,336 +1,168 @@
 @import "./card-colors.css";
 
-@define-color dosage_purple_1 #2D207A;
-@define-color dosage_purple_2 #443992;
-@define-color dosage_purple_3 #5C52AB;
-@define-color dosage_purple_4 #756BC6;
-
-@define-color window_bg_color #FAFAFC;
-@define-color window_fg_color #211D40;
-@define-color dialog_bg_color @window_bg_color;
-@define-color accent_color @dosage_purple_2;
-@define-color accent_bg_color @dosage_purple_3;
-@define-color popover_bg_color @window_bg_color;
-@define-color popover_fg_color @window_fg_color;
-@define-color card_bg_color alpha(#DBD8E8, 0.7);
-@define-color card_fg_color @window_fg_color;
-
-@define-color boxed_hover #d7d5e8;
-@define-color boxed_active #d2cfe4;
-
-button.time-group-selection {
-  transition: all 150ms;
-  min-height: 18px;
-  border-radius: 99px;
-  padding: 2px 3px;
-  margin: -2px -2px;
-  background-size: 10px;
-  background-repeat: no-repeat;
+:root {
+  --window-bg-color: color-mix(in srgb, #fafafa 99%, var(--accent-color));
+  --window-fg-color: color-mix(in srgb, #323232 85%, var(--accent-color));
+  --popover-bg-color: color-mix(
+    in srgb,
+    var(--view-bg-color) 100%,
+    var(--window-fg-color) 2%
+  );
+  --popover-fg-color: var(--window-fg-color);
+  --dialog-bg-color: var(--popover-bg-color);
+  --dialog-fg-color: var(--popover-fg-color);
+  --card-bg-color: rgb(from currentColor r g b / calc(alpha * 0.09));
+  --card-fg-color: var(--window-fg-color);
+  --list-border-radius: 8px;
 }
-
-button.time-group-selection:dir(ltr) {
-  background-position: 92% 50%;
-}
-button.time-group-selection:dir(rtl) {
-  background-position: 6% 50%;
-}
-
-button.time-group-selection:hover:dir(ltr) {
-  padding-right: 18px;
-}
-button.time-group-selection:hover:dir(rtl) {
-  padding-left: 18px;
-}
-
-button.time-group-selection:hover {
-  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='16px' viewBox='0 0 16 16' width='16px'%3E%3Cfilter id='a' height='100%25' width='100%25' x='0%25' y='0%25'%3E%3CfeColorMatrix color-interpolation-filters='sRGB' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Cmask id='b'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='0.5'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='c'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='d'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='0.7'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='e'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='f'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='0.35'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='g'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cpath d='m 15 3.484375 l -1 -1 l -7.46875 7.515625 l -3.414062 -3.476562 l -2 2 l 5.414062 5.476562 l 9.46875 -9.515625 z m 0 0' fill='%23211d40'/%3E%3Cg mask='url(%23b)'%3E%3Cg clip-path='url(%23c)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 550 182 c -0.351562 0.003906 -0.695312 0.101562 -1 0.28125 v 3.4375 c 0.304688 0.179688 0.648438 0.277344 1 0.28125 c 1.105469 0 2 -0.894531 2 -2 s -0.894531 -2 -2 -2 z m 0 5 c -0.339844 0 -0.679688 0.058594 -1 0.175781 v 6.824219 h 4 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23d)'%3E%3Cg clip-path='url(%23e)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 569 182 v 4 c 1.105469 0 2 -0.894531 2 -2 s -0.894531 -2 -2 -2 z m 0 5 v 7 h 3 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23f)'%3E%3Cg clip-path='url(%23g)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 573 182.269531 v 3.449219 c 0.613281 -0.355469 0.996094 -1.007812 1 -1.71875 c 0 -0.714844 -0.382812 -1.375 -1 -1.730469 z m 0 4.90625 v 6.824219 h 2 v -4 c 0 -1.269531 -0.800781 -2.402344 -2 -2.824219 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
-}
-
 statuspage .title {
-	font-weight: 700;
-	font-size: 24px;
+  font-weight: 700;
+  font-size: 24px;
 }
-
 statuspage .icon {
   -gtk-icon-size: 96px;
   margin-bottom: 6px;
 }
-
-.needs-attention > indicator {
-  opacity: 0.75;
+preferencespage scrolledwindow viewport clamp {
+  margin-top: -24px;
+  margin-bottom: -4px;
 }
-
-/*
-When using ListView.scroll_to(0) the view will scroll
-to the first item instead of the first header.
-The same thing happens in today list when confirming
-so use this little hack to scroll to header instead
-*/
-listview.scroll-to-top-hack > :nth-child(1) {
-  margin-bottom: -36px;
+box.card {
+  box-shadow: none;
+  border-radius: var(--list-border-radius);
 }
-
-listview.scroll-to-top-hack > :nth-child(2) {
-  margin-top: 36px;
+dialog.about .boxed-list {
+  box-shadow: inset 0 0 0 1px
+    rgb(from var(--border-color) r g b / calc(alpha * 0.42));
+  border-radius: var(--list-border-radius);
 }
-
+dialog.about .main-page box.vertical {
+  border-spacing: 5px;
+}
+dialog.about sheet scrolledwindow clamp {
+  padding: 0 3px;
+}
 listview > header {
+  padding: 2px;
   padding-top: 14px;
   padding-bottom: 1px;
   min-height: 21px;
 }
-
 listview > header label {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
-list.nested,
-list > row.header {
-  background: transparent;
+.dosage-list > row > box {
+  box-shadow: inset 0 0 0 1px
+    rgb(from var(--border-color) r g b / calc(alpha * 0.42));
+  border-radius: var(--list-border-radius);
 }
-
-list > row.activatable:hover,
-list.nested > row.activatable:hover,
-list > row.activatable.header:hover {
-  background: @boxed_hover;
+.dosage-list.today > row > box:dir(ltr),
+.dosage-list.today > row:hover > box:dir(ltr),
+.dosage-list.today > row:active > box:dir(ltr) {
+  box-shadow: inset 23px 0 0 -20px rgb(from currentColor r g b /
+          calc(alpha * 0.25)),
+    inset 0 0 0 1px rgb(from var(--border-color) r g b / calc(alpha * 0.42));
 }
-
-list > row.activatable:active,
-list.nested > row.activatable:active,
-list > row.activatable.header:active {
-  background: @boxed_active;
+.dosage-list.today > row > box:dir(rtl),
+.dosage-list.today > row:hover > box:dir(rtl),
+.dosage-list.today > row:active > box:dir(rtl) {
+  box-shadow: inset -23px 0 0 -20px
+      rgb(from currentColor r g b / calc(alpha * 0.25)),
+    inset 0 0 0 1px rgb(from var(--border-color) r g b / calc(alpha * 0.42));
 }
-
-#dosage-med-window
-  button:not(.circular):not(.image-button):not(.arrow-button):not(.toggle):not(
-    .am-pm
-  ) {
-  border-radius: 9px;
-  min-width: 60px;
+.dosage-list > row:focus {
+  border-radius: calc(var(--list-border-radius) + 2px);
 }
-
-#dosage-med-window.one-time .time > .arrow-button {
-  margin-left: -6px;
-}
-
-#dosage-med-window.one-time .time > .arrow-button:dir(rtl) {
-  margin-left: 0px;
-}
-
-#dosage-med-window {
-  border-radius: 14px;
-}
-
-#dosage-med-window .linked-circular {
-  background: alpha(currentColor, 0.1);
-  border-radius: 99px;
-  padding: 3px;
-}
-
-#dosage-med-window .linked-circular button {
-  min-height: 30px;
-  min-width: 32px;
-}
-
-#dosage-med-window .linked-circular button:first-child:dir(rtl) {
-  margin-left: 3px;
-}
-
-#dosage-med-window .linked-circular button:first-child:dir(ltr) {
-  margin-right: 3px;
-}
-
-#dosage-med-window .linked-circular button:checked {
-  background: alpha(white, 0.85);
-  box-shadow: 0 1px 2px 1px alpha(black, 0.1);
-}
-
-headerbar button,
-viewswitcher:not(.narrow) > button {
-  border-radius: 99px;
-}
-
-viewswitcher.narrow > button,
-popover.menu > contents modelbutton {
-  border-radius: 9px;
-}
-
-actionbar viewswitcher.narrow indicatorbin {
-  margin-top: 1px;
-  margin-bottom: 0px;
-}
-
-actionbar viewswitcher box.narrow.vertical label:not(.numeric) {
-  margin-bottom: -2px;
-}
-
-.custom-list > row > box {
-  border: 1px solid alpha(currentColor, 0.05);
-}
-
-.custom-list > row:hover > box.activatable {
-  border: 1px solid alpha(currentColor, 0.09);
-}
-
-.custom-list > row:active > box.activatable {
-  border: 1px solid alpha(currentColor, 0.14);
-}
-
-.custom-list.today > row > box:dir(ltr),
-.custom-list.today > row:hover > box:dir(ltr),
-.custom-list.today > row:active > box:dir(ltr) {
-  border-left: none;
-}
-
-.custom-list.today:dir(rtl) > row > box,
-.custom-list.today:dir(rtl) > row:hover > box,
-.custom-list.today:dir(rtl) > row:active > box {
-  border-right: none;
-}
-
-.card,
-.boxed-list {
-  box-shadow: none;
-}
-
-.boxed-list {
-  background-color: transparent;
-}
-
-.boxed-list > row {
-  background-color: @card_bg_color;
-  border: 1px solid #dad8e5;
-}
-
-.boxed-list > row:not(:last-child) {
-  margin-bottom: 3px;
-}
-
-.custom-list row {
+.dosage-list > row {
   padding-bottom: 1px;
+  background: none;
 }
-
-.custom-list {
-  margin: 0px 10px;
+.dosage-list {
+  margin: 0 10px;
   padding-bottom: 20px;
   background-color: transparent;
 }
-
-.custom-list:not(.history) {
-  padding-bottom: 70px;
+.dosage-list:not(.history) {
+  padding-bottom: 75px;
 }
-
-.custom-list > row {
-  background: none;
+list.boxed-list-separate > row.expander row.header {
+  border-top-left-radius: var(--list-border-radius);
+  border-top-right-radius: var(--list-border-radius);
 }
-
-list.boxed-list row {
-  border-bottom-width: 0;
+list.boxed-list-separate > row.expander:not(:checked) row.header,
+list.boxed-list-separate > row.expander.expander:checked list.nested,
+list.boxed-list-separate
+  > row.expander.expander:checked
+  list.nested
+  > row:last-child {
+  border-bottom-left-radius: var(--list-border-radius);
+  border-bottom-right-radius: var(--list-border-radius);
 }
-
-list.boxed-list > row {
-  border-bottom-width: 1px;
+.dose-time > button {
+  padding: 4px 6px;
 }
-
-list > row,
-.custom-list > row > box,
-row:focus {
-  border-radius: 6px;
+.dose-time > button:dir(ltr) {
+  margin-left: 3px;
 }
-
-.badge-box {
-  color: alpha(currentColor, 0.8);
-  min-height: 16px;
-  border: 1px solid alpha(currentColor, 0.12);
-  background-color: alpha(currentColor, 0.13);
-  border-radius: 99px;
+.dose-time > button:dir(rtl) {
+  margin-right: 3px;
 }
-
-.badge-content {
-  padding: 3px 7px;
-  border-radius: 99px;
-  text-transform: capitalize;
-  font-weight: 500;
-  font-size: 90%;
+#dosage-med-window.floating.one-time .dose-time > button {
+  margin-top: 3px;
+  min-height: 18px;
 }
-
-.history .badge-content  {
-  text-transform: none;
+#dosage-med-window.floating.one-time:dir(rtl) .dose-time > button:dir(rtl) {
+  margin-right: -6px;
 }
-
-.badge-icon {
-  background-color: alpha(currentColor, 0.1);
-  padding: 0 4px;
-}
-
-.badge-icon:dir(ltr) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.badge-icon:dir(rtl) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.badge-end-border:dir(ltr) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  padding-right: 4px;
-}
-
-.badge-end-border:dir(rtl) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding-left: 4px;
-}
-
-.ampm-row .suffixes spinbutton text {
-  margin-left: -20px;
-  padding: 0;
-}
-
-.ampm-row:dir(rtl) .suffixes spinbutton text {
-  margin-left: 0px;
-  margin-right: -10px;
-}
-
 button.am-pm {
   font-weight: 400;
-  font-size: 83%;
-  padding: 0px;
-  min-height: 26px;
-  min-width: 26px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
-
-.one-time-menu > button {
-  background-color: transparent;
-  padding-left: 36px;
-  padding-right: 21px;
+.boxed-list-separate > row {
+  box-shadow: inset 0 0 0 1px
+    rgb(from var(--border-color) r g b / calc(alpha * 0.42));
+  border-radius: var(--list-border-radius);
+  margin: 2px;
 }
-
-menubutton:not(.one-time-menu) button.arrow-button,
-button.one-time-name {
-  font-weight: 400;
-}
-
 button.specific-day {
-  border-radius: 10px;
   min-width: 40px;
   padding-left: 0;
   padding-right: 0;
 }
-
-popover > contents {
-  border-radius: 16px;
+.one-time-menu > button {
+  background-color: transparent;
+  padding-left: 36px;
+  padding-right: 21px;
+  min-height: 30px;
 }
-
+.one-time-menu.popup popover contents:dir(ltr) {
+  padding-right: 0;
+}
+.one-time-menu.popup popover contents:dir(rtl) {
+  padding-left: 0;
+}
+menubutton:not(.one-time-menu) button.arrow-button,
+button.one-time-name {
+  font-weight: 400;
+}
 row.combo popover > contents listview row {
-  border-radius: 10px;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
-
+.time-error {
+  animation: flashTime 0.7s ease-in-out 2;
+}
+@keyframes flashTime {
+  10% {
+    text-shadow: 0 0 16px var(--error-bg-color);
+    color: var(--error-bg-color);
+  }
+}
+#dosage-med-window.one-time .time > .arrow-button {
+  margin-left: -6px;
+}
 row.combo .dropdown-arrow {
   background-color: alpha(currentColor, 0.1);
   min-height: 34px;
@@ -338,73 +170,42 @@ row.combo .dropdown-arrow {
   border-radius: 99px;
   transition: background-color 300ms;
 }
-
 row.combo .dropdown-arrow:hover {
   background-color: alpha(currentColor, 0.15);
 }
-
-menubutton.numeric button {
-  border-radius: 10px;
-  padding: 4px 6px;
-  padding-right: 4px;
-  margin-left: 3px;
+listview.scroll-to-top-hack > :nth-child(1) {
+  margin-bottom: -36px;
 }
-
-list > row:only-child button.remove-row {
-  opacity: 0.5;
+listview.scroll-to-top-hack > :nth-child(2) {
+  margin-top: 36px;
 }
-
-button.pill.skip {
-  padding-left: 10px;
-  padding-right: 10px;
+.hist-entry-taken-label {
+  margin-top: 5px;
+  margin-bottom: -2px;
 }
-
-button.pill:not(.suggested-action) {
-  background-color: rgb(237, 237, 247);
-  box-shadow: 0 1px 4px 0px alpha(@dosage_purple_1, 0.25),
-    inset 0 0 0 1px alpha(@dosage_purple_2, 0.13);
+button.time-group-selection {
+  transition: all 150ms;
+  min-height: 18px;
+  padding: 2px;
+  margin: 0 -2px -1px;
+  background-size: 10px;
+  background-repeat: no-repeat;
 }
-
-button.pill:not(.suggested-action):hover {
-  background-color: #e4e4ef;
-  box-shadow: 0 1px 8px 0px alpha(@dosage_purple_1, 0.27),
-    inset 0 0 0 1px alpha(@dosage_purple_2, 0.16);
+button.time-group-selection:dir(ltr) {
+  background-position: 92% 50%;
 }
-
-button.pill:not(.suggested-action):active {
-  background-color: #dbdbe9;
+button.time-group-selection:dir(rtl) {
+  background-position: 6% 50%;
 }
-
-button.suggested-action {
-  background: linear-gradient(45deg, @dosage_purple_4 0%, @dosage_purple_2 75%);
-  box-shadow: 0 1px 6px 0px alpha(@dosage_purple_4, 0.7);
-  color: white;
+button.time-group-selection:hover:dir(ltr) {
+  padding-right: 18px;
 }
-
-button.suggested-action:hover {
-  background: linear-gradient(
-    45deg,
-    lighter(@dosage_purple_4) 0%,
-    lighter(@dosage_purple_2) 55%
-  );
+button.time-group-selection:hover:dir(rtl) {
+  padding-left: 18px;
 }
-
-button.suggested-action:active {
-  background: linear-gradient(
-    45deg,
-    darker(@dosage_purple_4) 0%,
-    darker(@dosage_purple_2) 55%
-  );
+button.time-group-selection:hover {
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='16px' viewBox='0 0 16 16' width='16px'%3E%3Cfilter id='a' height='100%25' width='100%25' x='0%25' y='0%25'%3E%3CfeColorMatrix color-interpolation-filters='sRGB' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Cmask id='b'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='.5'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='c'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='d'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='.7'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='e'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='f'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='.35'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='g'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cpath d='m 15 3.484375 l -1 -1 l -7.46875 7.515625 l -3.414062 -3.476562 l -2 2 l 5.414062 5.476562 l 9.46875 -9.515625 z m 0 0' fill='%23404040'/%3E%3Cg mask='url(%23b)'%3E%3Cg clip-path='url(%23c)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 550 182 c -.351562 .003906 -.695312 .101562 -1 .28125 v 3.4375 c .304688 .179688 .648438 .277344 1 .28125 c 1.105469 0 2 -.894531 2 -2 s -.894531 -2 -2 -2 z m 0 5 c -.339844 0 -.679688 .058594 -1 .175781 v 6.824219 h 4 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23d)'%3E%3Cg clip-path='url(%23e)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 569 182 v 4 c 1.105469 0 2 -.894531 2 -2 s -.894531 -2 -2 -2 z m 0 5 v 7 h 3 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23f)'%3E%3Cg clip-path='url(%23g)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 573 182.269531 v 3.449219 c .613281 -.355469 .996094 -1.007812 1 -1.71875 c 0 -.714844 -.382812 -1.375 -1 -1.730469 z m 0 4.90625 v 6.824219 h 2 v -4 c 0 -1.269531 -.800781 -2.402344 -2 -2.824219 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
 }
-
-button.suggested-action:focus {
-  outline-offset: 1px;
-}
-
-#dosage-med-window button.suggested-action {
-  box-shadow: 0 1px 4px 0px alpha(@dosage_purple_4, 0.66);
-}
-
 .time-box spinbutton button {
   padding: 0;
   margin: 0;
@@ -412,99 +213,165 @@ button.suggested-action:focus {
   min-width: 30px;
   border-radius: 99px;
   border-bottom: none;
-  background-color: alpha(currentColor, 0.1);
+  background-color: rgb(from currentColor r g b / calc(alpha * 0.1));
 }
-
 .time-box spinbutton button:hover {
-  background-color: alpha(currentColor, 0.15);
+  background-color: rgb(from currentColor r g b / calc(alpha * 0.15));
 }
-
 .time-box spinbutton button:active {
-  background-color: alpha(currentColor, 0.2);
+  background-color: rgb(from currentColor r g b / calc(alpha * 0.2));
 }
-
 .time-box spinbutton text {
   min-height: 24px;
 }
-
 .today-amount > button {
   min-width: 30px;
   min-height: 30px;
 }
-
 .spin-box > row.spin > box {
   margin: -3px 4px -3px 8px;
 }
-
 .spin-today-amount:dir(ltr) > row.spin > box {
   margin-left: -16px;
 }
-
 .spin-box row.spin {
   outline: none;
 }
 
-preferencespage scrolledwindow viewport clamp {
-  margin-top: -24px;
-  margin-bottom: -11px;
+.badge-box.confirmed,
+.badge-box.low-stock {
+  box-shadow: inset 0 0 0 1px var(--border-color);
+}
+.badge-box {
+  color: rgb(from currentColor r g b / calc(alpha * 0.85));
+  min-height: 16px;
+  background-color: rgb(from currentColor r g b / calc(alpha * 0.13));
+  border-radius: 99px;
+}
+.badge-content {
+  padding: 4px 7px;
+  border-radius: 99px;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 0.933em;
+}
+.history .badge-content {
+  text-transform: none;
+}
+.badge-icon {
+  background-color: rgb(from currentColor r g b / calc(alpha * 0.11));
+  padding: 0 5px;
+}
+.badge-icon:dir(ltr) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 4px;
+}
+.badge-icon:dir(rtl) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-right: 4px;
+}
+.badge-end-border:dir(ltr) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-right: 4px;
+}
+.badge-end-border:dir(rtl) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 4px;
 }
 
+.empty-history,
+.empty-today,
+.empty-treatments {
+  font-size: 24px;
+  font-weight: 700;
+}
+.empty-icon {
+  margin-top: 2px;
+  margin-bottom: 16px;
+  -gtk-icon-size: 64px;
+  opacity: 0.75;
+}
+
+button.secondary.floating {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+button.floating {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+button.floating:hover {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+button.floating:not(.suggested-action) {
+  background-color: rgb(
+    from color-mix(in srgb, #ececec 97%, var(--accent-bg-color)) r g b /
+      calc(alpha * 0.93)
+  );
+}
+button.floating:not(.suggested-action):hover {
+  background-color: rgb(
+    from color-mix(in srgb, #e1e1e1 97%, var(--accent-bg-color)) r g b /
+      calc(alpha * 0.96)
+  );
+}
+button.floating:not(.suggested-action):active {
+  background-color: rgb(
+    from color-mix(in srgb, #d6d6d6 97%, var(--accent-bg-color)) r g b /
+      calc(alpha * 1)
+  );
+}
+
+#dosage-med-window
+  button:not(.circular):not(.image-button):not(.arrow-button):not(.toggle):not(.am-pm) {
+  min-width: 60px;
+}
+#dosage-med-window .linked-circular {
+  background: alpha(currentColor, 0.1);
+  border-radius: 99px;
+  padding: 3px;
+}
+#dosage-med-window .linked-circular button {
+  min-height: 30px;
+  min-width: 32px;
+}
+#dosage-med-window .linked-circular button:first-child:dir(rtl) {
+  margin-left: 3px;
+}
+#dosage-med-window .linked-circular button:first-child:dir(ltr) {
+  margin-right: 3px;
+}
+#dosage-med-window .linked-circular button:checked {
+  background: alpha(white, 0.85);
+  box-shadow: 0 1px 2px 1px alpha(black, 0.1);
+}
 calendar button,
 calendar .day-number {
   border-radius: 99px;
 }
-
 calendar button,
 calendar .month,
 calendar .year {
   margin-bottom: 5px;
   margin-top: -1px;
 }
-
 calendar .day-name {
   opacity: 0.5;
 }
-
-calendar .day-number.today:not(:selected) {
-  background-color: alpha(@view_fg_color, 0.05);
-}
-
-row.error {
-  border: 1px solid alpha(currentColor, 0.5);
-}
-
-.time-error {
-  animation: flashTime 0.7s ease-in-out 2;
-}
-
-@keyframes flashTime {
-  0% {
-    background-color: transparent;
-    border-radius: 99px;
-  }
-
-  10% {
-    background-color: alpha(@red_2, 0.5);
-  }
-}
-
 .calendar-error {
   border-radius: 10px;
-  animation: flashCalendar 0.4s ease-in-out;
+  animation: flashCalendar 0.5s ease-in-out;
 }
-
 @keyframes flashCalendar {
-  0% {
-    box-shadow: none;
-    color: currentColor;
-  }
-
   10% {
-    box-shadow: 0 0 7px 1px alpha(@red_2, 0.7);
-    color: mix(@window_fg_color, @red_4, 0.7);
+    text-shadow: 0 0 16px
+      rgb(from var(--error-bg-color) r g b / calc(alpha * 0.5));
+    color: var(--error-bg-color);
   }
 }
-
 .calendar-warning {
-  color: mix(@window_fg_color, @orange_4, 0.7);
+  color: color-mix(in srgb, var(--window-fg-color) 30%, var(--orange-4));
 }

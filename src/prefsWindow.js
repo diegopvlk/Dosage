@@ -92,12 +92,5 @@ export default function openPrefsWindow(DosageApplication) {
 		settings.set_boolean('skip-button', state);
 	});
 
-	const prefsPage = builder.get_object('prefsPage');
-	const [prefsPageHeight] = prefsPage
-		.get_first_child()
-		.get_first_child()
-		.measure(Gtk.Orientation.VERTICAL, -1);
-	prefsWindow.content_height = prefsPageHeight + 64;
-
 	prefsWindow.present(DosageApplication.activeWindow);
 }

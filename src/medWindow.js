@@ -187,6 +187,38 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 			calendarStart.select_day(startTZ);
 			calendarEnd.select_day(endTZ);
 		}
+
+		deleteButton.connect('activated', () => {
+			const dialog = new Adw.AlertDialog({
+				// TRANSLATORS: Message for confirmation when deleting an item
+				heading: _('Are you sure?'),
+			});
+
+			dialog.add_response('cancel', _('Cancel'));
+			dialog.add_response('delete', _('Delete'));
+			dialog.set_response_appearance('delete', Adw.ResponseAppearance.DESTRUCTIVE);
+
+			// artificial delay to avoid opening multiple dialogs
+			// when double clicking button
+			if (!flow.delay) {
+				dialog.present(medWindow);
+				flow.delay = true;
+				setTimeout(() => {
+					flow.delay = false;
+				}, 500);
+			}
+
+			dialog.connect('response', (_self, response) => {
+				if (response === 'delete') {
+					const it = DosageWindow._treatmentsList.model.get_item(position);
+					const deletePos = treatmentsLS.find(it)[1];
+					treatmentsLS.remove(deletePos);
+					DosageWindow._updateEverything('skipHistUp');
+					DosageWindow._scheduleNotifications('deleting');
+					medWindow.force_close();
+				}
+			});
+		});
 	}
 
 	// when activating one-time entry button
@@ -195,6 +227,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		const frequencyMenu = builder.get_object('frequencyMenu');
 		const colorIcon = builder.get_object('colorIcon');
 		const oneTimeEntries = builder.get_object('oneTimeEntries');
+		const oneTimePopover = builder.get_object('oneTimePopover');
 		const h = new Date().getHours();
 		const m = new Date().getMinutes();
 		const doseRowOne = doseRow({ time: [h, m], dose: 1 });
@@ -214,7 +247,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		oneTimeEntries.append(btnNew);
 
 		btnNew.connect('clicked', () => {
-			oneTimeEntries.get_parent().get_parent().popdown();
+			oneTimePopover.popdown();
 			medName.text = '';
 			medUnit.text = _('Pill(s)');
 			removeCssColors(dosageColorButton);
@@ -243,7 +276,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 				btn.connect('clicked', () => {
 					removeCssColors(dosageColorButton);
 					dosageColorButton.add_css_class(item.color + '-clr');
-					oneTimeEntries.get_parent().get_parent().popdown();
+					oneTimePopover.popdown();
 
 					medName.text = item.name;
 					medUnit.text = item.unit;
@@ -298,12 +331,32 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 
 		const doseRowOne = doseRow({ time: [h, m], dose: item.dose });
 
-		if (item.taken[1] === 1) histBtnConfirmed.set_active(true);
-		if (item.taken[1] === 0) histBtnSkipped.set_active(histBtnConfirmed);
+		const doseBox = getWidgetByName(doseRowOne, 'doseBox');
+		doseBox.set_orientation(Gtk.Orientation.VERTICAL);
 
 		const removeDoseButton = getWidgetByName(doseRowOne, 'removeDoseButton');
+		const takenLabel = getWidgetByName(doseRowOne, 'takenLabel');
 		removeDoseButton.set_visible(false);
+		takenLabel.set_visible(true);
 
+		if (item.taken[1] === 1) {
+			histBtnConfirmed.set_active(true);
+			takenLabel.label = _('Confirmed at');
+		}
+		if (item.taken[1] === 0) {
+			histBtnSkipped.set_active(histBtnConfirmed);
+			takenLabel.label = _('Skipped at');
+		}
+		if (item.taken[1] === -1) {
+			takenLabel.label = _('Missed(?) at');
+		}
+
+		histBtnConfirmed.connect('clicked', () => {
+			takenLabel.label = _('Confirmed at');
+		});
+		histBtnSkipped.connect('clicked', () => {
+			takenLabel.label = _('Skipped at');
+		});
 		dosage.add_row(doseRowOne);
 
 		medWindow.title = _('Edit entry');
@@ -362,11 +415,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 
 	const medWindowBox = builder.get_object('medWindowBox');
 	const [medWindowBoxHeight] = medWindowBox.measure(Gtk.Orientation.VERTICAL, -1);
-	medWindow.content_height = medWindowBoxHeight + 58;
-
-	if (deleteButton.get_visible()) {
-		medWindow.content_height -= 12;
-	}
+	medWindow.content_height = medWindowBoxHeight + 48;
 
 	setSpecificDaysButtonOrder();
 
@@ -395,38 +444,6 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		DosageWindow._updateEverything('skipHistUp');
 		DosageWindow._scheduleNotifications('saving');
 		medWindow.force_close();
-	});
-
-	deleteButton.connect('clicked', () => {
-		const dialog = new Adw.AlertDialog({
-			// TRANSLATORS: Message for confirmation when deleting an item
-			heading: _('Are you sure?'),
-		});
-
-		dialog.add_response('cancel', _('Cancel'));
-		dialog.add_response('delete', _('Delete'));
-		dialog.set_response_appearance('delete', Adw.ResponseAppearance.DESTRUCTIVE);
-
-		// artificial delay to avoid opening multiple dialogs
-		// when double clicking button
-		if (!flow.delay) {
-			dialog.present(medWindow);
-			flow.delay = true;
-			setTimeout(() => {
-				flow.delay = false;
-			}, 500);
-		}
-
-		dialog.connect('response', (_self, response) => {
-			if (response === 'delete') {
-				const it = DosageWindow._treatmentsList.model.get_item(position);
-				const deletePos = treatmentsLS.find(it)[1];
-				treatmentsLS.remove(deletePos);
-				DosageWindow._updateEverything('skipHistUp');
-				DosageWindow._scheduleNotifications('deleting');
-				medWindow.force_close();
-			}
-		});
 	});
 
 	function editHistoryItem() {
@@ -808,17 +825,15 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		const rows = [];
 
 		while (currentDoseRow) {
-			const [hours, minutes, ampm, timeBtn] = getTimeBtnInput(currentDoseRow);
+			const [hours, minutes, timeBtn] = getTimeBtnInput(currentDoseRow);
 			const time = String([hours, minutes]);
 
 			if (rows.includes(time)) {
 				toastOverlay.add_toast(new Adw.Toast({ title: _('Duplicated time') }));
 				(async function () {
 					timeBtn.add_css_class('time-error');
-					ampm.add_css_class('time-error');
 					await new Promise(res => setTimeout(res, 1400));
 					timeBtn.remove_css_class('time-error');
-					ampm.remove_css_class('time-error');
 				})();
 				return;
 			} else {

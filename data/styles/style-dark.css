@@ -1,195 +1,74 @@
-@define-color dosage_purple_1 #2D207A;
-@define-color dosage_purple_2 #443992;
-@define-color dosage_purple_3 #5C52AB;
-@define-color dosage_purple_4 #756BC6;
+:root {
+  --window-bg-color: color-mix(in srgb, #1c1c1c 99.25%, var(--accent-color));
+  --window-fg-color: color-mix(in srgb, #ffffff 85%, var(--accent-color));
 
-@define-color window_bg_color #1d1c1f;
-@define-color window_fg_color #d5d5e3;
-@define-color accent_color lighter(@dosage_purple_4);
-@define-color accent_bg_color lighter(lighter(@dosage_purple_2));
-@define-color accent_fg_color black;
-@define-color popover_bg_color lighter(@window_bg_color);
-@define-color card_bg_color alpha(#373841, 0.7);
-@define-color card_fg_color @window_fg_color;
+  --red-bg: color-mix(in srgb, #523535 97%, var(--accent-color));
+  --red-fg: #ffdad9;
 
-@define-color boxed_hover #383a44;
-@define-color boxed_active #3c3d49;
+  --orange-bg: color-mix(in srgb, #58402b 97%, var(--accent-color));
+  --orange-fg: #fdddbd;
+
+  --yellow-bg: color-mix(in srgb, #4c472b 97%, var(--accent-color));
+  --yellow-fg: #ece3bd;
+
+  --green-bg: color-mix(in srgb, #384b3c 97%, var(--accent-color));
+  --green-fg: #d2e8d4;
+
+  --cyan-bg: color-mix(in srgb, #33474f 97%, var(--accent-color));
+  --cyan-fg: #cfe6f1;
+
+  --blue-bg: color-mix(in srgb, #39455c 97%, var(--accent-color));
+  --blue-fg: #d6e4f7;
+
+  --purple-bg: color-mix(in srgb, #3f3851 97%, var(--accent-color));
+  --purple-fg: #ebddf7;
+
+  --default-bg: rgb(from currentColor r g b / calc(alpha * 0.16));
+  --default-fg: var(--card-fg-color);
+
+  --popover-bg-color: color-mix(
+    in srgb,
+    var(--window-bg-color) 100%,
+    var(--window-fg-color) 12%
+  );
+  --popover-fg-color: var(--window-fg-color);
+}
+
+row.expander list.nested {
+  background-color: color-mix(
+    in srgb,
+    var(--card-shade-color) 35%,
+    transparent
+  );
+}
+
+button.floating {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+button.floating:hover {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.25);
+}
+button.floating:not(.suggested-action) {
+  background-color: rgb(
+    from color-mix(in srgb, #464646 96%, var(--accent-bg-color)) r g b /
+      calc(alpha * 0.93)
+  );
+}
+button.floating:not(.suggested-action):hover {
+  background-color: rgb(
+    from color-mix(in srgb, #545454 96%, var(--accent-bg-color)) r g b /
+      calc(alpha * 0.95)
+  );
+}
+button.floating:not(.suggested-action):active {
+  background-color: rgb(
+    from color-mix(in srgb, #5e5e5e 96%, var(--accent-bg-color)) r g b /
+      calc(alpha * 1)
+  );
+}
 
 button.time-group-selection:hover {
-  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='16px' viewBox='0 0 16 16' width='16px'%3E%3Cfilter id='a' height='100%25' width='100%25' x='0%25' y='0%25'%3E%3CfeColorMatrix color-interpolation-filters='sRGB' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Cmask id='b'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='0.5'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='c'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='d'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='0.7'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='e'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='f'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='0.35'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='g'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cpath d='m 15 3.484375 l -1 -1 l -7.46875 7.515625 l -3.414062 -3.476562 l -2 2 l 5.414062 5.476562 l 9.46875 -9.515625 z m 0 0' fill='%23d1d1df'/%3E%3Cg mask='url(%23b)'%3E%3Cg clip-path='url(%23c)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 550 182 c -0.351562 0.003906 -0.695312 0.101562 -1 0.28125 v 3.4375 c 0.304688 0.179688 0.648438 0.277344 1 0.28125 c 1.105469 0 2 -0.894531 2 -2 s -0.894531 -2 -2 -2 z m 0 5 c -0.339844 0 -0.679688 0.058594 -1 0.175781 v 6.824219 h 4 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23d)'%3E%3Cg clip-path='url(%23e)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 569 182 v 4 c 1.105469 0 2 -0.894531 2 -2 s -0.894531 -2 -2 -2 z m 0 5 v 7 h 3 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23f)'%3E%3Cg clip-path='url(%23g)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 573 182.269531 v 3.449219 c 0.613281 -0.355469 0.996094 -1.007812 1 -1.71875 c 0 -0.714844 -0.382812 -1.375 -1 -1.730469 z m 0 4.90625 v 6.824219 h 2 v -4 c 0 -1.269531 -0.800781 -2.402344 -2 -2.824219 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
-}
-
-.boxed-list > row {
-  border: 1px solid #373840;
-}
-
-row.error {
-  border: 1px solid alpha(currentColor, 0.5);
-}
-
-.card-stripe {
-  background-image: linear-gradient(
-    alpha(currentColor, 0.15),
-    alpha(currentColor, 0.33)
-  );
-}
-.needs-attention > indicator label {
-  color: white;
-}
-
-/* med window buttons */
-.red-clr {
-  background-color: #523535;
-  color: alpha(#ffdad9, 0.35);
-}
-
-.orange-clr {
-  background-color: #58402b;
-  color: alpha(#fdddbd, 0.35);
-}
-
-.yellow-clr {
-  background-color: #4c472b;
-  color: alpha(#ece3bd, 0.35);
-}
-
-.green-clr {
-  background-color: #384b3c;
-  color: alpha(#d2e8d4, 0.35);
-}
-
-.cyan-clr {
-  background-color: #33474f;
-  color: alpha(#cfe6f1, 0.35);
-}
-
-.blue-clr {
-  background-color: #39455c;
-  color: alpha(#d6e4f7, 0.35);
-}
-
-.purple-clr {
-  background-color: #3f3851;
-  color: alpha(#ebddf7, 0.35);
-}
-
-/* cards */
-.red {
-  background-color: alpha(#523535, 0.7);
-  color: #ffdad9;
-}
-
-.red checkbutton check:checked {
-  background-color: #ffdad9;
-}
-
-.orange {
-  background-color: alpha(#58402b, 0.7);
-  color: #fdddbd;
-}
-
-.orange checkbutton check:checked {
-  background-color: #fdddbd;
-}
-
-.yellow {
-  background-color: alpha(#4c472b, 0.7);
-  color: #ece3bd;
-}
-
-.yellow checkbutton check:checked {
-  background-color: #ece3bd;
-}
-
-.green {
-  background-color: alpha(#384b3c, 0.7);
-  color: #d2e8d4;
-}
-
-.green checkbutton check:checked {
-  background-color: #d2e8d4;
-}
-
-.cyan {
-  background-color: alpha(#33474f, 0.7);
-  color: #cfe6f1;
-}
-
-.cyan checkbutton check:checked {
-  background-color: #cfe6f1;
-}
-
-.blue {
-  background-color: alpha(#39455c, 0.7);
-  color: #d6e4f7;
-}
-
-.blue checkbutton check:checked {
-  background-color: #d6e4f7;
-}
-
-.purple {
-  background-color: alpha(#3f3851, 0.7);
-  color: #ebddf7;
-}
-
-.purple checkbutton check:checked {
-  background-color: #ebddf7;
-}
-
-.default {
-  background-color: alpha(#3b3d48, 0.77);
-  color: #dee1f9;
-}
-
-.default checkbutton check:checked {
-  background-color: #dee1f9;
-}
-
-popover > contents,
-popover > arrow {
-  border: 1px solid mix(@popover_bg_color, @window_fg_color, 0.066);
-}
-
-dialog.alert floating-sheet sheet {
-  border: 1px solid mix(@popover_bg_color, @window_fg_color, 0.033);
-}
-
-button.pill:not(.suggested-action) {
-  background-color: #383642;
-  box-shadow: 0 1px 6px 0px alpha(#1d1c1f, 0.8),
-    inset 0 0 0 1px alpha(@dosage_purple_4, 0.16);
-}
-
-button.pill:not(.suggested-action):hover {
-  background-color: #403d4e;
-  box-shadow: 0 1px 7px 0px alpha(#1d1c1f, 0.76),
-    inset 0 0 0 1px alpha(@dosage_purple_4, 0.25);
-}
-
-button.pill:not(.suggested-action):active {
-  background-color: #484558;
-}
-
-button.suggested-action {
-  background: linear-gradient(45deg, @dosage_purple_3 0%, @dosage_purple_2 75%);
-  box-shadow: 0 1px 6px 0px alpha(#1d1c1f, 0.8);
-}
-
-button.suggested-action:hover {
-  background: linear-gradient(
-    45deg,
-    lighter(@dosage_purple_3) 0%,
-    lighter(@dosage_purple_2) 55%
-  );
-}
-
-button.suggested-action:active {
-  background: linear-gradient(
-    45deg,
-    lighter(@dosage_purple_4) 0%,
-    @dosage_purple_3 50%
-  );
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='16px' viewBox='0 0 16 16' width='16px'%3E%3Cfilter id='a' height='100%25' width='100%25' x='0%25' y='0%25'%3E%3CfeColorMatrix color-interpolation-filters='sRGB' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Cmask id='b'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='0.5'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='c'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='d'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='0.7'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='e'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='f'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='0.35'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='g'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cpath d='m 15 3.484375 l -1 -1 l -7.46875 7.515625 l -3.414062 -3.476562 l -2 2 l 5.414062 5.476562 l 9.46875 -9.515625 z m 0 0' fill='%23dedede'/%3E%3Cg mask='url(%23b)'%3E%3Cg clip-path='url(%23c)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 550 182 c -0.351562 0.003906 -0.695312 0.101562 -1 0.28125 v 3.4375 c 0.304688 0.179688 0.648438 0.277344 1 0.28125 c 1.105469 0 2 -0.894531 2 -2 s -0.894531 -2 -2 -2 z m 0 5 c -0.339844 0 -0.679688 0.058594 -1 0.175781 v 6.824219 h 4 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23d)'%3E%3Cg clip-path='url(%23e)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 569 182 v 4 c 1.105469 0 2 -0.894531 2 -2 s -0.894531 -2 -2 -2 z m 0 5 v 7 h 3 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23f)'%3E%3Cg clip-path='url(%23g)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 573 182.269531 v 3.449219 c 0.613281 -0.355469 0.996094 -1.007812 1 -1.71875 c 0 -0.714844 -0.382812 -1.375 -1 -1.730469 z m 0 4.90625 v 6.824219 h 2 v -4 c 0 -1.269531 -0.800781 -2.402344 -2 -2.824219 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
 }
 
 #dosage-med-window .linked-circular button:checked {

@@ -34,17 +34,24 @@ Adw.Dialog medWindow {
             margin-start: 10;
             margin-end: 10;
             margin-top: 15;
-            margin-bottom: 10;
+            margin-bottom: 20;
             ListBox {
-              styles ['boxed-list']
+              styles ['boxed-list-separate']
               selection-mode: none;
               MenuButton oneTimeMenu {
                 styles ['flat', 'one-time-menu']
                 label: _("From treatment list");
-                popover: Popover {
-                  Box oneTimeEntries {
-                    orientation: vertical;
-                    halign: start;
+                popover: Popover oneTimePopover {
+                  ScrolledWindow {
+                    propagate-natural-height: true;
+                    propagate-natural-width: true;
+                    hscrollbar-policy: never;
+                    max-content-height: 336;
+                    Box oneTimeEntries {
+                      orientation: vertical;
+                      halign: start;
+                      margin-end: 10;
+                    }
                   }
                 };
               }
@@ -80,7 +87,7 @@ Adw.Dialog medWindow {
                         name: 'default';
                         // TRANSLATORS: Tooltip for the colors (from Default until Purple)
                         tooltip-text: _("Default");
-                        icon-name: 'cross-large-symbolic';
+                        icon-name: 'color-filled-symbolic';
                       }
                       Button {
                         styles ['circular', 'red-clr']
@@ -555,17 +562,13 @@ Adw.Dialog medWindow {
                   };
                 }
               }
-            }
-            Button deleteMedication {
-              styles ['destructive-action']
-              vexpand: true;
-              margin-top: 10;
-              visible: false;
-              opacity: 0.85;
-              halign: center;
-              valign: end;
-              label: _("Delete");
-              name: 'delete';
+              Adw.ButtonRow deleteMedication {
+                styles ['destructive-action']
+                start-icon-name: 'user-trash-symbolic';
+                title: _("Delete");
+                name: 'delete';
+                visible: false;
+              }
             }
           }
         }
