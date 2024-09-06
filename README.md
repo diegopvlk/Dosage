@@ -26,7 +26,7 @@ Keep track of your treatments
   <details>
     <summary>Other screenshots</summary><br>
       <p align="center"><img src="https://raw.githubusercontent.com/diegopvlk/Dosage/main/screenshots/preferences.png"/></p>
-      <p align="center"><img style="height:700px;" src="https://raw.githubusercontent.com/diegopvlk/Dosage/main/screenshots/med-window.png"/></p>
+      <p align="center"><img style="height:700px;" src="https://raw.githubusercontent.com/diegopvlk/Dosage/main/screenshots/med-dialog-bigger.png"/></p>
       <p align="center"><img src="https://raw.githubusercontent.com/diegopvlk/Dosage/main/screenshots/today-dark.png"/></p>
   </details>
 </div>
