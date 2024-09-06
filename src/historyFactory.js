@@ -31,15 +31,14 @@ historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const dateTime = GLib.DateTime.new_from_unix_utc(item.taken[0] / 1000);
 	const localDT = dateTime.to_timezone(localTZ);
 	const dayName = localDT.format('%A');
-	let dateFormat = localDT.format('%Ex');
+	let dateFormat = localDT.format('%x');
 	dateFormat = dateFormat
 		.replace(`${dayName}, `, '')
 		.replace(`${dayName} `, '')
 		.replace(`${dayName}`, '');
 
-	let date = dayName + ' • ' + dateFormat;
-	date = date.charAt(0).toUpperCase() + date.slice(1);
-	dateLabel.label = date;
+	const date = dayName + ' • ' + dateFormat;
+	dateLabel.label = date.charAt(0).toUpperCase() + date.slice(1);
 });
 
 historyItemFactory.connect('setup', (factory, listItem) => {
