@@ -20,7 +20,7 @@
   --purple-bg: color-mix(in srgb, #dcdcf5 97%, var(--accent-color));
   --purple-fg: #361f73;
 
-  --default-bg: rgb(from currentColor r g b / calc(alpha * 0.13));
+  --default-bg: rgb(from currentColor r g b / calc(alpha * 0.12));
   --default-fg: var(--card-fg-color);
 }
 

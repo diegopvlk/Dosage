@@ -14,6 +14,10 @@
   --card-bg-color: rgb(from currentColor r g b / calc(alpha * 0.09));
   --card-fg-color: var(--window-fg-color);
   --list-border-radius: 8px;
+  --list-border: inset 0 0 0 1px
+    rgb(from var(--border-color) r g b / calc(alpha * 0.4));
+  --list-shadow: 0 1px 2px
+    rgb(from var(--border-color) r g b / calc(alpha * 0.45));
 }
 statuspage .title {
   font-weight: 700;
@@ -32,8 +36,7 @@ box.card {
   border-radius: var(--list-border-radius);
 }
 dialog.about .boxed-list {
-  box-shadow: inset 0 0 0 1px
-    rgb(from var(--border-color) r g b / calc(alpha * 0.42));
+  box-shadow: var(--list-border), var(--list-shadow);
   border-radius: var(--list-border-radius);
 }
 dialog.about .main-page box.vertical {
@@ -53,29 +56,24 @@ listview > header label {
 }
 
 .dosage-list > row > box {
-  box-shadow: inset 0 0 0 1px
-    rgb(from var(--border-color) r g b / calc(alpha * 0.42));
+  box-shadow: var(--list-border), var(--list-shadow);
   border-radius: var(--list-border-radius);
 }
-.dosage-list.today > row > box:dir(ltr),
-.dosage-list.today > row:hover > box:dir(ltr),
-.dosage-list.today > row:active > box:dir(ltr) {
-  box-shadow: inset 23px 0 0 -20px rgb(from currentColor r g b /
-          calc(alpha * 0.25)),
-    inset 0 0 0 1px rgb(from var(--border-color) r g b / calc(alpha * 0.42));
+
+/* today list card stripe */
+.dosage-list.today > row > box:dir(ltr) {
+  box-shadow: var(--list-border), var(--list-shadow),
+    inset 23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.25));
 }
-.dosage-list.today > row > box:dir(rtl),
-.dosage-list.today > row:hover > box:dir(rtl),
-.dosage-list.today > row:active > box:dir(rtl) {
-  box-shadow: inset -23px 0 0 -20px
-      rgb(from currentColor r g b / calc(alpha * 0.25)),
-    inset 0 0 0 1px rgb(from var(--border-color) r g b / calc(alpha * 0.42));
+.dosage-list.today > row > box:dir(rtl) {
+  box-shadow: var(--list-border), var(--list-shadow),
+    inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.25));
 }
+
 .dosage-list > row:focus {
   border-radius: calc(var(--list-border-radius) + 2px);
 }
 .dosage-list > row {
-  margin-bottom: -1px;
   background: none;
 }
 .dosage-list {
@@ -121,8 +119,7 @@ button.am-pm {
   padding-right: 6px;
 }
 .boxed-list-separate > row {
-  box-shadow: inset 0 0 0 1px
-    rgb(from var(--border-color) r g b / calc(alpha * 0.42));
+  box-shadow: var(--list-border), var(--list-shadow);
   border-radius: var(--list-border-radius);
   margin: 2px;
 }
@@ -164,14 +161,14 @@ row.combo popover > contents listview row {
   margin-left: -6px;
 }
 row.combo .dropdown-arrow {
-  background-color: alpha(currentColor, 0.1);
+  background-color: rgb(from currentColor r g b / calc(alpha * 0.1));
   min-height: 34px;
   padding: 0 9px;
   border-radius: 99px;
   transition: background-color 300ms;
 }
 row.combo .dropdown-arrow:hover {
-  background-color: alpha(currentColor, 0.15);
+  background-color: rgb(from currentColor r g b / calc(alpha * 0.15));
 }
 
 /*
@@ -311,10 +308,12 @@ button.secondary.floating {
   padding-right: 10px;
 }
 button.floating {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
 }
 button.floating:hover {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 button.floating:not(.suggested-action) {
   background-color: rgb(
@@ -340,7 +339,7 @@ button.floating:not(.suggested-action):active {
   min-width: 60px;
 }
 #medication-dialog .linked-circular {
-  background: alpha(currentColor, 0.1);
+  background: rgb(from currentColor r g b / calc(alpha * 0.1));
   border-radius: 99px;
   padding: 3px;
 }
@@ -355,8 +354,8 @@ button.floating:not(.suggested-action):active {
   margin-right: 3px;
 }
 #medication-dialog .linked-circular button:checked {
-  background: alpha(white, 0.85);
-  box-shadow: 0 1px 2px 1px alpha(black, 0.1);
+  background: rgb(from white r g b / calc(alpha * 0.85));
+  box-shadow: 0 1px 2px 1px rgb(from black r g b / calc(alpha * 0.1));
 }
 calendar button,
 calendar .day-number {

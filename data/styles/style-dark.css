@@ -23,8 +23,10 @@
   --purple-bg: color-mix(in srgb, #3f3851 97%, var(--accent-color));
   --purple-fg: #ebddf7;
 
-  --default-bg: rgb(from currentColor r g b / calc(alpha * 0.16));
+  --default-bg: rgb(from currentColor r g b / calc(alpha * 0.17));
   --default-fg: var(--card-fg-color);
+
+  --card-bg-color: rgb(from currentColor r g b / calc(alpha * 0.1));
 
   --popover-bg-color: color-mix(
     in srgb,
@@ -32,6 +34,8 @@
     var(--window-fg-color) 12%
   );
   --popover-fg-color: var(--window-fg-color);
+
+  --list-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 row.expander list.nested {
@@ -43,10 +47,12 @@ row.expander list.nested {
 }
 
 button.floating {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 button.floating:hover {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
 }
 button.floating:not(.suggested-action) {
   background-color: rgb(
@@ -72,7 +78,7 @@ button.time-group-selection:hover {
 }
 
 #medication-dialog .linked-circular button:checked {
-  background: alpha(white, 0.23);
-  box-shadow: 0 1px 2px 1px alpha(black, 0.14);
+  background: rgb(from white r g b / calc(alpha * 0.23));
+  box-shadow: 0 1px 2px 1px rgb(from black r g b / calc(alpha * 0.14));
   color: white;
 }
