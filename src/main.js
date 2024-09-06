@@ -11,7 +11,7 @@ import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 import Xdp from 'gi://Xdp?version=1.0';
 
-import openPrefsWindow from './prefsWindow.js';
+import openPrefsDialog from './prefsDialog.js';
 import { DosageWindow } from './window.js';
 import { releaseNotes } from './releaseNotes.js';
 
@@ -30,7 +30,7 @@ export const DosageApplication = GObject.registerClass(
 			this.hidden = false;
 
 			const showPrefAction = new Gio.SimpleAction({ name: 'preferences' });
-			showPrefAction.connect('activate', () => openPrefsWindow(this));
+			showPrefAction.connect('activate', () => openPrefsDialog(this));
 			this.add_action(showPrefAction);
 			this.set_accels_for_action('app.preferences', ['<primary>comma']);
 
@@ -49,8 +49,8 @@ export const DosageApplication = GObject.registerClass(
 					translator_credits: _('translator-credits'),
 					release_notes: releaseNotes,
 				};
-				const aboutWindow = new Adw.AboutDialog(aboutParams);
-				aboutWindow.add_acknowledgement_section(_('Thanks to these projects!'), [
+				const aboutDialog = new Adw.AboutDialog(aboutParams);
+				aboutDialog.add_acknowledgement_section(_('Thanks to these projects!'), [
 					'GNOME https://www.gnome.org/',
 					'GTK https://www.gtk.org/',
 					'Libadwaita https://gnome.pages.gitlab.gnome.org/libadwaita/',
@@ -60,8 +60,8 @@ export const DosageApplication = GObject.registerClass(
 					'GJS Guide https://gjs.guide/',
 					'Flatpak https://github.com/flatpak/',
 				]);
-				aboutWindow.add_link('Donate', 'https://github.com/diegopvlk/Dosage#donate');
-				aboutWindow.present(this.activeWindow);
+				aboutDialog.add_link('Donate', 'https://github.com/diegopvlk/Dosage#donate');
+				aboutDialog.present(this.activeWindow);
 			});
 			this.add_action(showAboutAction);
 

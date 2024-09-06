@@ -2,15 +2,15 @@ data/io.github.diegopvlk.Dosage.appdata.xml.in
 data/io.github.diegopvlk.Dosage.desktop.in
 
 data/gtk/help-overlay.blp
-data/ui/med-window.blp
+data/ui/med-dialog.blp
 data/ui/preferences.blp
 data/ui/window.blp
 
 src/historyFactory.js
 src/main.js
 src/medication.js
-src/medWindow.js
-src/prefsWindow.js
+src/medDialog.js
+src/prefsDialog.js
 src/todayFactory.js
 src/treatmentsFactory.js
 src/utils.js

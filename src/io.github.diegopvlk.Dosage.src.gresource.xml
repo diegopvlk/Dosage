@@ -4,8 +4,8 @@
     <file>main.js</file>
     <file>utils.js</file>
     <file>window.js</file>
-    <file>medWindow.js</file>
-    <file>prefsWindow.js</file>
+    <file>medDialog.js</file>
+    <file>prefsDialog.js</file>
     <file>medication.js</file>
     <file>todayFactory.js</file>
     <file>historyFactory.js</file>

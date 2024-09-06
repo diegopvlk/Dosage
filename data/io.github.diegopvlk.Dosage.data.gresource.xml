@@ -8,7 +8,7 @@
     <file alias="card-colors.css">styles/card-colors.css</file>
     <file>sounds/ding.ogg</file>
     <file>ui/window.ui</file>
-    <file>ui/med-window.ui</file>
+    <file>ui/med-dialog.ui</file>
     <file>ui/preferences.ui</file>
   </gresource>
   <gresource prefix="/io/github/diegopvlk/Dosage/icons/scalable/actions">

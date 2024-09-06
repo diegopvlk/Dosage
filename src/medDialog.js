@@ -23,15 +23,15 @@ import {
 import { MedicationObject } from './medication.js';
 import { historyLS, treatmentsLS, flow } from './window.js';
 
-export default function openMedicationWindow(DosageWindow, list, position, mode) {
-	const builder = Gtk.Builder.new_from_resource('/io/github/diegopvlk/Dosage/ui/med-window.ui');
+export default function openMedicationDialog(DosageWindow, list, position, mode) {
+	const builder = Gtk.Builder.new_from_resource('/io/github/diegopvlk/Dosage/ui/med-dialog.ui');
 
 	const dateOneEntry = builder.get_object('dateOneEntry');
 	const calOneEntry = builder.get_object('calOneEntry');
 	const oneTimeMenuRow = builder.get_object('oneTimeMenu').get_parent();
 	oneTimeMenuRow.set_visible(false);
 
-	const medWindow = builder.get_object('medWindow');
+	const medDialog = builder.get_object('medDialog');
 
 	const cancelButton = builder.get_object('cancelButton');
 	const saveButton = builder.get_object('saveButton');
@@ -104,7 +104,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 
 	// when opening an existing treatment
 	if (list && position >= 0 && !mode) {
-		medWindow.title = _('Edit treatment');
+		medDialog.title = _('Edit treatment');
 		saveButton.label = _('Save');
 		deleteButton.set_visible(true);
 
@@ -189,33 +189,33 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		}
 
 		deleteButton.connect('activated', () => {
-			const dialog = new Adw.AlertDialog({
+			const alertDialog = new Adw.AlertDialog({
 				// TRANSLATORS: Message for confirmation when deleting an item
 				heading: _('Are you sure?'),
 			});
 
-			dialog.add_response('cancel', _('Cancel'));
-			dialog.add_response('delete', _('Delete'));
-			dialog.set_response_appearance('delete', Adw.ResponseAppearance.DESTRUCTIVE);
+			alertDialog.add_response('cancel', _('Cancel'));
+			alertDialog.add_response('delete', _('Delete'));
+			alertDialog.set_response_appearance('delete', Adw.ResponseAppearance.DESTRUCTIVE);
 
 			// artificial delay to avoid opening multiple dialogs
 			// when double clicking button
 			if (!flow.delay) {
-				dialog.present(medWindow);
+				alertDialog.present(medDialog);
 				flow.delay = true;
 				setTimeout(() => {
 					flow.delay = false;
 				}, 500);
 			}
 
-			dialog.connect('response', (_self, response) => {
+			alertDialog.connect('response', (_self, response) => {
 				if (response === 'delete') {
 					const it = DosageWindow._treatmentsList.model.get_item(position);
 					const deletePos = treatmentsLS.find(it)[1];
 					treatmentsLS.remove(deletePos);
 					DosageWindow._updateEverything('skipHistUp');
 					DosageWindow._scheduleNotifications('deleting');
-					medWindow.force_close();
+					medDialog.force_close();
 				}
 			});
 		});
@@ -292,12 +292,12 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 			}
 		}
 
-		medWindow.title = _('New entry');
+		medDialog.title = _('New entry');
 		saveButton.label = _('Confirm');
 		colorIcon.subtitle = _('Color');
 		colorIcon.title = '';
-		medWindow.add_css_class('one-time');
-		medWindow.set_presentation_mode(2);
+		medDialog.add_css_class('one-time');
+		medDialog.set_presentation_mode(2);
 
 		dateOneEntry.set_visible(true);
 		medNotes.set_visible(false);
@@ -359,11 +359,11 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		});
 		dosage.add_row(doseRowOne);
 
-		medWindow.title = _('Edit entry');
+		medDialog.title = _('Edit entry');
 		saveButton.label = _('Save');
 		dosage.title = item.name;
 		dosage.subtitle = '';
-		medWindow.add_css_class('one-time');
+		medDialog.add_css_class('one-time');
 
 		takenButtons.set_visible(true);
 		medName.set_visible(false);
@@ -413,15 +413,15 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 		}
 	};
 
-	const medWindowBox = builder.get_object('medWindowBox');
-	const [medWindowBoxHeight] = medWindowBox.measure(Gtk.Orientation.VERTICAL, -1);
-	medWindow.content_height = medWindowBoxHeight + 48;
+	const medDialogBox = builder.get_object('medDialogBox');
+	const [medDialogBoxHeight] = medDialogBox.measure(Gtk.Orientation.VERTICAL, -1);
+	medDialog.content_height = medDialogBoxHeight + 48;
 
 	setSpecificDaysButtonOrder();
 
-	medWindow.present(DosageWindow);
+	medDialog.present(DosageWindow);
 
-	cancelButton.connect('clicked', () => medWindow.force_close());
+	cancelButton.connect('clicked', () => medDialog.force_close());
 
 	saveButton.connect('clicked', () => {
 		const isUpdate = list && position >= 0;
@@ -435,7 +435,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 			DosageWindow._updateJsonFile('history', historyLS);
 		} else if (mode === 'edit-hist') {
 			editHistoryItem();
-			medWindow.force_close();
+			medDialog.force_close();
 			return;
 		} else {
 			addOrUpdateTreatment();
@@ -443,7 +443,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 
 		DosageWindow._updateEverything('skipHistUp');
 		DosageWindow._scheduleNotifications('saving');
-		medWindow.force_close();
+		medDialog.force_close();
 	});
 
 	function editHistoryItem() {

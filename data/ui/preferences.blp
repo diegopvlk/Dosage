@@ -1,8 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-Adw.Dialog prefsWindow {
-  name: 'dosage-prefs-window';
+Adw.Dialog prefsDialog {
   content-width: 490;
   title: _("Preferences");
 
@@ -10,64 +9,76 @@ Adw.Dialog prefsWindow {
     [top]
     Adw.HeaderBar headerBar {}
 
-    content:
-    Adw.PreferencesPage prefsPage {
+    content: Adw.PreferencesPage prefsPage {
       Adw.PreferencesGroup {
         separate-rows: true;
+
         Adw.ActionRow {
           title: _("Auto-start at login");
           activatable-widget: autostartSwitch;
+
           [suffix]
           Switch autostartSwitch {
             halign: center;
             valign: center;
           }
         }
+
         Adw.ActionRow {
           title: _("Auto-clear history");
           subtitle: _("Keeps a maximum of 30 days");
           activatable-widget: clearHistSwitch;
+
           [suffix]
           Switch clearHistSwitch {
             halign: center;
             valign: center;
           }
         }
+
         Adw.ActionRow {
           title: _("Increase notification priority");
           subtitle: _("Makes the notification show in fullscreen mode or even if 'Do Not Disturb' is enabled");
           activatable-widget: prioritySwitch;
+
           [suffix]
           Switch prioritySwitch {
             halign: center;
             valign: center;
           }
         }
+
         Adw.ActionRow {
           title: _("Notification sound");
           activatable-widget: notifSoundSwitch;
+
           [suffix]
           Switch notifSoundSwitch {
             halign: center;
             valign: center;
           }
         }
+
         Adw.ExpanderRow notifBtns {
           title: _("Notification buttons");
           subtitle: _("Show or hide confirm/skip");
           expanded: true;
+
           Adw.ActionRow {
             title: _("Confirm");
             activatable-widget: confirmSwitch;
+
             [suffix]
             Switch confirmSwitch {
               halign: center;
               valign: center;
             }
           }
+
           Adw.ActionRow {
             title: _("Skip");
             activatable-widget: skipSwitch;
+
             [suffix]
             Switch skipSwitch {
               halign: center;

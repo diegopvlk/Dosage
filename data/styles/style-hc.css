@@ -42,7 +42,7 @@ button.floating:not(.suggested-action) {
   box-shadow: inset 0 0 0 1px alpha(currentColor, 0.85);
 }
 
-#dosage-med-window .linked-circular button:checked,
+#medication-dialog .linked-circular button:checked,
 row.combo .dropdown-arrow {
   box-shadow: inset 0 0 0 1px alpha(currentColor, 0.6);
 }

@@ -14,7 +14,7 @@ import { MedicationObject } from './medication.js';
 import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
 import { historyHeaderFactory, historyItemFactory, removedItem } from './historyFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
-import openMedicationWindow from './medWindow.js';
+import openMedicationDialog from './medDialog.js';
 import upgradeItems from './upgradeItems.js';
 
 import {
@@ -295,8 +295,6 @@ export const DosageWindow = GObject.registerClass(
 						}, 100);
 					});
 
-					this._headerBarSpinner.set_visible(false);
-
 					this._historyList.model = new Gtk.NoSelection({
 						model: this.sortedHistoryModel,
 					});
@@ -361,6 +359,7 @@ export const DosageWindow = GObject.registerClass(
 			}
 
 			this._setEmptyHistLabel();
+			this._headerBarSpinner.set_visible(false);
 		}
 
 		_loadToday() {
@@ -749,7 +748,7 @@ export const DosageWindow = GObject.registerClass(
 				this._historyList.scroll_to(0, null, null);
 			} else {
 				// one-time entry
-				this._openMedWindow(null, null, 'one-time');
+				this._openMedDialog(null, null, 'one-time');
 			}
 
 			this._updateEntryBtn(false);
@@ -811,7 +810,7 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		_editHistoryItem(list, position) {
-			this._openMedWindow(list, position, 'edit-hist');
+			this._openMedDialog(list, position, 'edit-hist');
 		}
 
 		_updateJsonFile(type, listStore) {
@@ -983,11 +982,11 @@ export const DosageWindow = GObject.registerClass(
 			this._checkInventory(notifAction);
 		}
 
-		_openMedWindow(list, position, mode) {
+		_openMedDialog(list, position, mode) {
 			// artificial delay to avoid opening multiple sheets
 			// when double clicking button
 			if (!flow.delay) {
-				openMedicationWindow(this, list, position, mode);
+				openMedicationDialog(this, list, position, mode);
 				flow.delay = true;
 				setTimeout(() => {
 					flow.delay = false;

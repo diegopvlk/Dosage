@@ -8,12 +8,12 @@ import Gtk from 'gi://Gtk';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 
-export default function openPrefsWindow(DosageApplication) {
+export default function openPrefsDialog(DosageApplication) {
 	const container = GLib.getenv('container');
 
 	const builder = Gtk.Builder.new_from_resource('/io/github/diegopvlk/Dosage/ui/preferences.ui');
 
-	const prefsWindow = builder.get_object('prefsWindow');
+	const prefsDialog = builder.get_object('prefsDialog');
 	const autostartSwitch = builder.get_object('autostartSwitch');
 	const clearHistSwitch = builder.get_object('clearHistSwitch');
 	const prioritySwitch = builder.get_object('prioritySwitch');
@@ -92,5 +92,5 @@ export default function openPrefsWindow(DosageApplication) {
 		settings.set_boolean('skip-button', state);
 	});
 
-	prefsWindow.present(DosageApplication.activeWindow);
+	prefsDialog.present(DosageApplication.activeWindow);
 }

@@ -1,28 +1,28 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $DosageWindow : Adw.ApplicationWindow {
-  name: 'dosage-window';
+template $DosageWindow: Adw.ApplicationWindow {
+  name: 'io-github-diegopvlk-Dosage';
   title: 'Dosage';
 
   Adw.Breakpoint {
     condition ('max-width: 512sp')
+
     setters {
       switcherBar.reveal: true;
       headerBar.title-widget: null;
     }
   }
 
-  content:
-  Adw.ToolbarView {
+  content: Adw.ToolbarView {
     [top]
     Adw.HeaderBar headerBar {
       [start]
-      Spinner headerBarSpinner {
-        spinning: true;
+      Adw.Spinner headerBarSpinner {
         margin-start: 9;
         margin-end: 9;
       }
+
       [end]
       MenuButton buttonMenu {
         menu-model: appMenu;
@@ -30,49 +30,75 @@ template $DosageWindow : Adw.ApplicationWindow {
         primary: true;
         tooltip-text: _("Main Menu");
       }
+
       title-widget: Adw.ViewSwitcher {
         stack: stack;
         policy: wide;
       };
     }
-    content:
-    Adw.ViewStack stack {
+
+    content: Adw.ViewStack stack {
       vexpand: true;
+
       Adw.ViewStackPage todayPage {
         name: 'page1';
         title: _("Today");
         icon-name: 'today-icn-symbolic';
+
         child: Overlay {
           ScrolledWindow {
             Adw.ClampScrollable {
               ListView todayList {
-                styles [ 'dosage-list', 'scroll-to-top-hack', 'today' ]
+                styles [
+                  'dosage-list',
+                  'scroll-to-top-hack',
+                  'today'
+                ]
+
                 activate => $_selectTodayItems();
                 single-click-activate: true;
               }
             }
           }
+
           [overlay]
           Box {
             halign: center;
             valign: end;
             margin-bottom: 16;
             spacing: 8;
+
             Button unselectBtn {
-              styles [ 'pill', 'secondary', 'floating' ]
+              styles [
+                'pill',
+                'secondary',
+                'floating'
+              ]
+
               clicked => $_unselectTodayItems();
               tooltip-text: _("Unselect");
               visible: false;
               icon-name: 'unselect-meds-symbolic';
             }
+
             Button entryBtn {
-              styles [ 'pill', 'floating'  ]
+              styles [
+                'pill',
+                'floating'
+              ]
+
               clicked => $_addTodayToHistory();
               name: '1';
               label: _("One-time entry");
             }
+
             Button skipBtn {
-              styles [ 'pill', 'secondary', 'floating'  ]
+              styles [
+                'pill',
+                'secondary',
+                'floating'
+              ]
+
               clicked => $_addTodayToHistory();
               name: '0';
               tooltip-text: _("Skip");
@@ -80,6 +106,7 @@ template $DosageWindow : Adw.ApplicationWindow {
               icon-name: 'skip-med-symbolic';
             }
           }
+
           [overlay]
           Adw.StatusPage emptyToday {
             margin-bottom: 70;
@@ -92,16 +119,23 @@ template $DosageWindow : Adw.ApplicationWindow {
         name: 'page2';
         title: _("History");
         icon-name: 'history-symbolic';
+
         child: Overlay {
           ScrolledWindow {
             Adw.ClampScrollable {
               ListView historyList {
-                styles [ 'dosage-list', 'history', 'scroll-to-top-hack' ]
+                styles [
+                  'dosage-list',
+                  'history',
+                  'scroll-to-top-hack'
+                ]
+
                 activate => $_editHistoryItem();
                 single-click-activate: true;
               }
             }
           }
+
           [overlay]
           Adw.StatusPage emptyHistory {
             margin-bottom: 70;
@@ -116,33 +150,47 @@ template $DosageWindow : Adw.ApplicationWindow {
         name: 'page3';
         title: _("Treatments");
         icon-name: 'treatments-symbolic';
+
         child: Overlay {
           ScrolledWindow {
             Adw.ClampScrollable {
               vexpand: true;
+
               ListView treatmentsList {
-                styles [ 'dosage-list' ]
-                activate => $_openMedWindow();
+                styles [
+                  'dosage-list'
+                ]
+
+                activate => $_openMedDialog();
                 single-click-activate: true;
               }
             }
           }
+
           [overlay]
           Box {
             halign: center;
             valign: end;
+
             Button addNewMedication {
               halign: center;
               valign: end;
               margin-bottom: 16;
-              clicked => $_openMedWindow();
-              styles [ 'pill', 'suggested-action', 'floating' ]
+              clicked => $_openMedDialog();
+
+              styles [
+                'pill',
+                'suggested-action',
+                'floating'
+              ]
+
               child: Adw.ButtonContent {
                 icon-name: 'list-add-symbolic';
                 label: _("Add");
               };
             }
           }
+
           [overlay]
           Adw.StatusPage emptyTreatments {
             margin-bottom: 70;
@@ -153,6 +201,7 @@ template $DosageWindow : Adw.ApplicationWindow {
         };
       }
     };
+
     [bottom]
     Adw.ViewSwitcherBar switcherBar {
       stack: stack;
@@ -165,10 +214,12 @@ menu appMenu {
     label: _("Preferences");
     action: 'app.preferences';
   }
+
   item {
     label: _("About Dosage");
     action: 'app.about';
   }
+
   item {
     label: _("Quit");
     action: 'app.quit';
