@@ -545,7 +545,7 @@ export const DosageWindow = GObject.registerClass(
 					h = clockIs12 ? String(h) : addLeadZero(h);
 					let time = `${h}:${addLeadZero(m)}`;
 					if (timeDot) time = time.replace(':', '.');
-					let title = _('Reminder') + ` • ` + time + period;
+					let title = _('Reminder') + ` • ` + time + period;
 					notification.set_title(title);
 					notification.set_body(body);
 

@@ -164,7 +164,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 			cycleCurrent.adjustment.set_upper(active + inactive);
 
 			if (item.frequency === 'cycle') {
-				frequencyMenu.subtitle = `${active} ⊷ ${inactive}`;
+				frequencyMenu.subtitle = `${active} ⊷ ${inactive}`;
 			}
 		}
 
@@ -716,7 +716,7 @@ export default function openMedicationWindow(DosageWindow, list, position, mode)
 
 	function handleCycle() {
 		const sum = cycleActive.value + cycleInactive.value;
-		frequencyMenu.subtitle = cycleActive.value + ' ⊷ ' + cycleInactive.value;
+		frequencyMenu.subtitle = cycleActive.value + ' ⊷ ' + cycleInactive.value;
 		cycleCurrent.adjustment.set_upper(sum);
 		if (cycleCurrent.adjustment.value > sum) {
 			cycleCurrent.adjustment.value = sum;

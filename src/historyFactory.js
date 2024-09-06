@@ -37,7 +37,7 @@ historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 		.replace(`${dayName} `, '')
 		.replace(`${dayName}`, '');
 
-	const date = dayName + ' • ' + dateFormat;
+	const date = dayName + ' • ' + dateFormat;
 	dateLabel.label = date.charAt(0).toUpperCase() + date.slice(1);
 });
 
@@ -167,7 +167,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	if (timeDot) time = time.replace(':', '.');
 
 	nameLabel.label = item.name;
-	doseLabel.label = `${item.dose} ${item.unit} • ${time}` + period;
+	doseLabel.label = `${item.dose} ${item.unit} • ${time}` + period;
 
 	let takenH = clockIs12 ? timeTaken.format('%l') : timeTaken.format('%k');
 	takenH = takenH.replace(' ', '');
