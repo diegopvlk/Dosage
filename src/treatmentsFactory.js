@@ -102,7 +102,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 
 		inventoryLabel.set_visible(true);
 		inventoryLabel.label = `${currInv} ` + _('Remaining');
-		inventoryLabel.remove_css_class('low-stock')
+		inventoryLabel.remove_css_class('low-stock');
 
 		if (inv.current <= inv.reminder) {
 			inventoryLabel.label = `${currInv} ↓ ` + _('Low stock');
@@ -113,6 +113,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	// TRANSLATORS: label for when duration is enabled
 	const startLabel = _('Starts on') + ` ${formatDate(item.duration.start)}`;
 	const untilLabel = _('Until') + ` ${formatDate(item.duration.end)}`;
+	const endedLabel = _('Ended on') + ` ${formatDate(item.duration.end)}`;
 
 	if (item.duration.enabled && item.frequency !== 'when-needed') {
 		durationNextDateLabel.set_visible(true);
@@ -157,7 +158,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	}
 
 	if (item.duration.enabled && (end < today || end < start)) {
-		durationNextDateLabel.label = untilLabel;
+		durationNextDateLabel.label = endedLabel;
 	}
 
 	if (item.notes !== '') {
