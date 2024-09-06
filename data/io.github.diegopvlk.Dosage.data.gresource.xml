@@ -42,5 +42,10 @@
     <file alias="month-symbolic.svg">icons/ui/month-symbolic.svg</file>
     <file alias="check-confirmed-symbolic.svg">icons/ui/check-confirmed-symbolic.svg</file>
     <file alias="all-done-symbolic.svg">icons/ui/all-done-symbolic.svg</file>
+
+    <file alias="dosage-auto-clear-history-symbolic.svg">icons/ui/dosage-auto-clear-history-symbolic.svg</file>
+    <file alias="dosage-auto-start-symbolic.svg">icons/ui/dosage-auto-start-symbolic.svg</file>
+    <file alias="dosage-notification-bell-symbolic.svg">icons/ui/dosage-notification-bell-symbolic.svg</file>
+    <file alias="dosage-notification-sound-symbolic.svg">icons/ui/dosage-notification-sound-symbolic.svg</file>
   </gresource>
 </gresources>
