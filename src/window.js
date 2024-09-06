@@ -283,20 +283,23 @@ export const DosageWindow = GObject.registerClass(
 						historyLS.append(new MedicationObject({ obj: med }));
 					});
 
-					this.sortedHistoryModel = await new Promise(resolve => {
+					const sortedHistModelPromise = new Promise(resolve => {
 						setTimeout(() => {
 							resolve(
-								new Gtk.SortListModel({
+								(this.sortedHistoryModel = new Gtk.SortListModel({
 									model: historyLS,
 									section_sorter: new HistorySectionSorter(),
 									sorter: new HistorySorter(),
-								}),
+								})),
 							);
-						}, 100);
+						}, 500);
 					});
 
-					this._historyList.model = new Gtk.NoSelection({
-						model: this.sortedHistoryModel,
+					sortedHistModelPromise.then(_ => {
+						this._historyList.model = new Gtk.NoSelection({
+							model: this.sortedHistoryModel,
+						});
+						this._headerBarSpinner.set_visible(false);
 					});
 
 					this._historyList.remove_css_class('view');
@@ -359,7 +362,6 @@ export const DosageWindow = GObject.registerClass(
 			}
 
 			this._setEmptyHistLabel();
-			this._headerBarSpinner.set_visible(false);
 		}
 
 		_loadToday() {
