@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-30 17:04-0300\n"
+"POT-Creation-Date: 2024-09-06 15:17-0300\n"
 "PO-Revision-Date: 2024-02-01 22:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/"
@@ -21,8 +21,8 @@ msgstr ""
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
-#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-window.blp:409
-#: src/main.js:40 src/window.js:659
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:634
+#: src/main.js:40 src/window.js:660
 msgid "Dosage"
 msgstr "Dávkování"
 
@@ -119,286 +119,286 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Konec"
 
-#: data/ui/med-window.blp:7
+#: data/ui/med-dialog.blp:7
 msgid "New treatment"
 msgstr "Nová léčba"
 
-#: data/ui/med-window.blp:18 src/medWindow.js:406
+#: data/ui/med-dialog.blp:19 src/medDialog.js:197
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: data/ui/med-window.blp:24 data/ui/window.blp:146
+#: data/ui/med-dialog.blp:29 data/ui/window.blp:189
 msgid "Add"
 msgstr "Přidat"
 
-#: data/ui/med-window.blp:43
+#: data/ui/med-dialog.blp:58
 msgid "From treatment list"
 msgstr "Ze seznamu léčeb"
 
-#: data/ui/med-window.blp:52
+#: data/ui/med-dialog.blp:77
 msgid "Name"
 msgstr "Jméno"
 
-#: data/ui/med-window.blp:55
+#: data/ui/med-dialog.blp:81
 msgid "Unit"
 msgstr "Jednotka"
 
-#: data/ui/med-window.blp:56 src/medWindow.js:219
+#: data/ui/med-dialog.blp:82 src/medDialog.js:252
 msgid "Pill(s)"
 msgstr "Pilulka(y)"
 
-#: data/ui/med-window.blp:59
+#: data/ui/med-dialog.blp:86
 msgid "Notes"
 msgstr "Poznámky"
 
-#: data/ui/med-window.blp:60
+#: data/ui/med-dialog.blp:87
 msgid "After meal"
 msgstr "Po jídle"
 
-#: data/ui/med-window.blp:65
+#: data/ui/med-dialog.blp:95
 msgid "Form"
 msgstr "Forma"
 
-#: data/ui/med-window.blp:66
+#: data/ui/med-dialog.blp:96
 msgid "Color and icon"
 msgstr "Barva a ikona"
 
-#: data/ui/med-window.blp:71 src/medWindow.js:264
+#: data/ui/med-dialog.blp:106 src/medDialog.js:297
 msgid "Color"
 msgstr "Barva"
 
 #. TRANSLATORS: Tooltip for the colors (from Default until Purple)
-#: data/ui/med-window.blp:82
+#: data/ui/med-dialog.blp:123
 msgid "Default"
 msgstr "Výchozí"
 
-#: data/ui/med-window.blp:89
+#: data/ui/med-dialog.blp:135
 msgid "Red"
 msgstr "Červená"
 
-#: data/ui/med-window.blp:96
+#: data/ui/med-dialog.blp:147
 msgid "Orange"
 msgstr "Oranžová"
 
-#: data/ui/med-window.blp:103
+#: data/ui/med-dialog.blp:159
 msgid "Yellow"
 msgstr "Žlutá"
 
-#: data/ui/med-window.blp:110
+#: data/ui/med-dialog.blp:171
 msgid "Green"
 msgstr "Zelená"
 
-#: data/ui/med-window.blp:117
+#: data/ui/med-dialog.blp:183
 msgid "Cyan"
 msgstr "Tyrkysová"
 
-#: data/ui/med-window.blp:124
+#: data/ui/med-dialog.blp:195
 msgid "Blue"
 msgstr "Modrá"
 
-#: data/ui/med-window.blp:131
+#: data/ui/med-dialog.blp:207
 msgid "Purple"
 msgstr "Fialová"
 
-#: data/ui/med-window.blp:140
+#: data/ui/med-dialog.blp:221
 msgid "Icon"
 msgstr "Ikona"
 
 #. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
-#: data/ui/med-window.blp:153
+#: data/ui/med-dialog.blp:240
 msgid "Pill"
 msgstr "Pilulka"
 
-#: data/ui/med-window.blp:163
+#: data/ui/med-dialog.blp:256
 msgid "Alternative pill"
 msgstr "Alternativní pilulka"
 
-#: data/ui/med-window.blp:173
+#: data/ui/med-dialog.blp:272
 msgid "Capsule"
 msgstr "Kapsle"
 
-#: data/ui/med-window.blp:183
+#: data/ui/med-dialog.blp:288
 msgid "Round pill"
 msgstr "Kulatá pilulka"
 
-#: data/ui/med-window.blp:193
+#: data/ui/med-dialog.blp:304
 msgid "Alternative round pill"
 msgstr "Alternativní kulatá pilulka"
 
-#: data/ui/med-window.blp:203
+#: data/ui/med-dialog.blp:320
 msgid "Ampoule"
 msgstr "Ampule"
 
-#: data/ui/med-window.blp:213
+#: data/ui/med-dialog.blp:336
 msgid "Injection"
 msgstr "Injekce"
 
-#: data/ui/med-window.blp:224
+#: data/ui/med-dialog.blp:352
 msgid "Square pill"
 msgstr "Čtvercová pilulka"
 
-#: data/ui/med-window.blp:234
+#: data/ui/med-dialog.blp:368
 msgid "Alternative square pill"
 msgstr "Alternativní čtvercová pilulka"
 
-#: data/ui/med-window.blp:244
+#: data/ui/med-dialog.blp:384
 msgid "Triangle pill"
 msgstr "Trojúhelníková pilulka"
 
-#: data/ui/med-window.blp:254
+#: data/ui/med-dialog.blp:400
 msgid "Alternative triangle pill"
 msgstr "Alternativní trojúhelníková pilulka"
 
-#: data/ui/med-window.blp:264
+#: data/ui/med-dialog.blp:416
 msgid "Bottle"
 msgstr "Láhev"
 
-#: data/ui/med-window.blp:274
+#: data/ui/med-dialog.blp:432
 msgid "Drop"
 msgstr "Kapka"
 
-#: data/ui/med-window.blp:284
+#: data/ui/med-dialog.blp:448
 msgid "Potion"
 msgstr "Nápoj"
 
-#: data/ui/med-window.blp:293 src/medWindow.js:747
+#: data/ui/med-dialog.blp:461 src/medDialog.js:764
 msgid "Frequency"
 msgstr "Frekvence"
 
-#: data/ui/med-window.blp:297
+#: data/ui/med-dialog.blp:466
 msgid "Every day"
 msgstr "Každý den"
 
-#: data/ui/med-window.blp:298 src/medWindow.js:741
+#: data/ui/med-dialog.blp:467 src/medDialog.js:758
 msgid "Specific days"
 msgstr "Vybrané dny"
 
-#: data/ui/med-window.blp:299 src/medWindow.js:744 src/treatmentsFactory.js:149
+#: data/ui/med-dialog.blp:468 src/medDialog.js:761 src/treatmentsFactory.js:152
 msgid "Cycle"
 msgstr "Cyklus"
 
-#: data/ui/med-window.blp:300 src/treatmentsFactory.js:153
+#: data/ui/med-dialog.blp:469 src/treatmentsFactory.js:156
 msgid "When necessary"
 msgstr "Když je potřeba"
 
-#: data/ui/med-window.blp:308
+#: data/ui/med-dialog.blp:481
 msgid "Choose days"
 msgstr "Vybrat dny"
 
-#: data/ui/med-window.blp:358
+#: data/ui/med-dialog.blp:572
 msgid "Change cycle"
 msgstr "Změnit cyklus"
 
-#: data/ui/med-window.blp:369
+#: data/ui/med-dialog.blp:589
 msgid "Days active"
 msgstr "Aktivní dny"
 
-#: data/ui/med-window.blp:381
+#: data/ui/med-dialog.blp:603
 msgid "Days inactive"
 msgstr "Neaktivní dny"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
-#: data/ui/med-window.blp:394
+#: data/ui/med-dialog.blp:618
 msgid "Today is cycle day…"
 msgstr "Dnes je den cyklu…"
 
-#: data/ui/med-window.blp:410
+#: data/ui/med-dialog.blp:635
 msgid "Time and amount"
 msgstr "Čas a množství"
 
-#: data/ui/med-window.blp:418
+#: data/ui/med-dialog.blp:648
 msgid "Add dose"
 msgstr "Přidat dávku"
 
-#: data/ui/med-window.blp:429 src/historyFactory.js:186
+#: data/ui/med-dialog.blp:669 src/historyFactory.js:186
 msgid "Skipped"
 msgstr "Přeskočený"
 
-#: data/ui/med-window.blp:435
+#: data/ui/med-dialog.blp:681
 msgid "Confirmed"
 msgstr "Potvrzený"
 
-#: data/ui/med-window.blp:442
+#: data/ui/med-dialog.blp:688
 msgid "Recurring notifications"
 msgstr "Opakující se upomínky"
 
-#: data/ui/med-window.blp:443
+#: data/ui/med-dialog.blp:689
 msgid "Renotify until it's confirmed or skipped"
 msgstr "Upomínat znova dokud není potvrzený nebo přeskočený"
 
-#: data/ui/med-window.blp:447
+#: data/ui/med-dialog.blp:694
 msgid "Interval in minutes"
 msgstr "Interval v minutách"
 
-#: data/ui/med-window.blp:459
+#: data/ui/med-dialog.blp:707
 msgid "Inventory"
 msgstr "Inventář"
 
-#: data/ui/med-window.blp:460
+#: data/ui/med-dialog.blp:708
 msgid "Manage your stock"
 msgstr "Spravujte své zásoby"
 
-#: data/ui/med-window.blp:465
+#: data/ui/med-dialog.blp:714
 msgid "Current"
 msgstr "Momentálně"
 
-#: data/ui/med-window.blp:476
+#: data/ui/med-dialog.blp:727
 msgid "Remind me at"
 msgstr "Připomeňte mi na"
 
-#: data/ui/med-window.blp:489
+#: data/ui/med-dialog.blp:741
 msgid "Duration"
 msgstr "Průběh"
 
-#: data/ui/med-window.blp:490
+#: data/ui/med-dialog.blp:742
 #, fuzzy
 #| msgid "Set a start and end date"
 msgid "Set start and end dates"
 msgstr "Nastavte počáteční a koncové datum"
 
 #. TRANSLATORS: label for when duration is enabled
-#: data/ui/med-window.blp:495 src/treatmentsFactory.js:112
+#: data/ui/med-dialog.blp:752 src/treatmentsFactory.js:114
 msgid "Starts on"
 msgstr "Počáteční datum"
 
-#: data/ui/med-window.blp:503 data/ui/med-window.blp:524
-#: data/ui/med-window.blp:547
+#: data/ui/med-dialog.blp:762 data/ui/med-dialog.blp:794
+#: data/ui/med-dialog.blp:828
 msgid "Choose date"
 msgstr "Vyberte datum"
 
-#: data/ui/med-window.blp:516
+#: data/ui/med-dialog.blp:784
 msgid "Ends on"
 msgstr "Koncové datum"
 
-#: data/ui/med-window.blp:538
+#: data/ui/med-dialog.blp:817
 msgid "Date"
 msgstr "Datum"
 
-#: data/ui/med-window.blp:567 src/historyFactory.js:152 src/medWindow.js:407
+#: data/ui/med-dialog.blp:850 src/historyFactory.js:151 src/medDialog.js:198
 msgid "Delete"
 msgstr "Smazat"
 
-#: data/ui/preferences.blp:8 data/ui/window.blp:169
+#: data/ui/preferences.blp:6 data/ui/window.blp:214
 msgid "Preferences"
 msgstr "Nastavení"
 
-#: data/ui/preferences.blp:19
+#: data/ui/preferences.blp:20
 msgid "Auto-start at login"
 msgstr "Zapnout při přihlášení"
 
-#: data/ui/preferences.blp:28
+#: data/ui/preferences.blp:36
 msgid "Auto-clear history"
 msgstr "Automaticky vymazat historii"
 
-#: data/ui/preferences.blp:29
+#: data/ui/preferences.blp:37
 msgid "Keeps a maximum of 30 days"
 msgstr "Uchovává maximálně 30 dní"
 
-#: data/ui/preferences.blp:38
+#: data/ui/preferences.blp:53
 msgid "Increase notification priority"
 msgstr "Zvýšit prioritu upomínky"
 
-#: data/ui/preferences.blp:39
+#: data/ui/preferences.blp:54
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
@@ -406,72 +406,72 @@ msgstr ""
 "Způsobí, že se oznámení zobrazí v režimu celé obrazovky nebo i když je "
 "povolena funkce 'Režim Nerušit'"
 
-#: data/ui/preferences.blp:48
+#: data/ui/preferences.blp:70
 msgid "Notification sound"
 msgstr "Zvuk notifikace"
 
-#: data/ui/preferences.blp:57
+#: data/ui/preferences.blp:86
 msgid "Notification buttons"
 msgstr "Akce notifikace"
 
-#: data/ui/preferences.blp:58
+#: data/ui/preferences.blp:87
 msgid "Show or hide confirm/skip"
 msgstr "Zobrazit nebo skrýt tlačítka potvrdit/přeskočit"
 
-#: data/ui/preferences.blp:61 src/medWindow.js:263 src/window.js:502
-#: src/window.js:721
+#: data/ui/preferences.blp:96 src/medDialog.js:296 src/window.js:503
+#: src/window.js:722
 msgid "Confirm"
 msgstr "Potvrdit"
 
-#: data/ui/preferences.blp:70 data/ui/window.blp:82 src/window.js:503
+#: data/ui/preferences.blp:112 data/ui/window.blp:104 src/window.js:504
 msgid "Skip"
 msgstr "Přeskočit"
 
-#: data/ui/window.blp:35
+#: data/ui/window.blp:31
 msgid "Main Menu"
 msgstr "Hlavní Menu"
 
-#: data/ui/window.blp:47
+#: data/ui/window.blp:45
 msgid "Today"
 msgstr "Dnes"
 
-#: data/ui/window.blp:68
+#: data/ui/window.blp:79
 msgid "Unselect"
 msgstr "Zrušit výběr"
 
-#: data/ui/window.blp:76 src/window.js:721
+#: data/ui/window.blp:92 src/window.js:722
 msgid "One-time entry"
 msgstr "Jednorázový záznam"
 
-#: data/ui/window.blp:97
+#: data/ui/window.blp:120
 msgid "History"
 msgstr "Historie"
 
-#: data/ui/window.blp:113
+#: data/ui/window.blp:143
 msgid "Empty history"
 msgstr "Prázdná historie"
 
-#: data/ui/window.blp:121
+#: data/ui/window.blp:151
 msgid "Treatments"
 msgstr "Léčby"
 
-#: data/ui/window.blp:154
+#: data/ui/window.blp:198
 msgid "Click the button below to add some"
 msgstr "Klikněte na tlačítko níže aby jste přidali léčbu"
 
-#: data/ui/window.blp:173
+#: data/ui/window.blp:219
 msgid "About Dosage"
 msgstr "O Dávkování"
 
-#: data/ui/window.blp:177
+#: data/ui/window.blp:224
 msgid "Quit"
 msgstr "Konec"
 
-#: src/historyFactory.js:149
+#: src/historyFactory.js:148
 msgid "Restore"
 msgstr "Obnovit"
 
-#: src/historyFactory.js:190
+#: src/historyFactory.js:191
 msgid "Missed"
 msgstr "Zapomenutý"
 
@@ -490,56 +490,74 @@ msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 "Potvrďte abyste umožnili aplikaci běžet na pozadí a zobrazovat notifikace"
 
-#: src/medWindow.js:107
+#: src/medDialog.js:107
 msgid "Edit treatment"
 msgstr "Upravit léčbu"
 
-#: src/medWindow.js:108 src/medWindow.js:310
+#: src/medDialog.js:108 src/medDialog.js:363
 msgid "Save"
 msgstr "Uložit"
 
-#: src/medWindow.js:209
-msgid "New"
-msgstr "Nový"
-
-#: src/medWindow.js:262
-msgid "New entry"
-msgstr "Nový záznam"
-
-#: src/medWindow.js:309
-msgid "Edit entry"
-msgstr "Upravit záznam"
-
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medWindow.js:403
+#: src/medDialog.js:194
 msgid "Are you sure?"
 msgstr "Jste si jistí?"
 
-#: src/medWindow.js:709
+#: src/medDialog.js:242
+msgid "New"
+msgstr "Nový"
+
+#: src/medDialog.js:295
+msgid "New entry"
+msgstr "Nový záznam"
+
+#: src/medDialog.js:344 src/medDialog.js:355
+#, fuzzy
+#| msgid "Confirmed"
+msgid "Confirmed at"
+msgstr "Potvrzený"
+
+#: src/medDialog.js:348 src/medDialog.js:358
+#, fuzzy
+#| msgid "Skipped"
+msgid "Skipped at"
+msgstr "Přeskočený"
+
+#: src/medDialog.js:351
+#, fuzzy
+#| msgid "Missed"
+msgid "Missed(?) at"
+msgstr "Zapomenutý"
+
+#: src/medDialog.js:362
+msgid "Edit entry"
+msgstr "Upravit záznam"
+
+#: src/medDialog.js:726
 msgid "Choose"
 msgstr "Vybrat"
 
-#: src/medWindow.js:780
+#: src/medDialog.js:797
 msgid "Empty name"
 msgstr "Prázné jméno"
 
-#: src/medWindow.js:784
+#: src/medDialog.js:801
 msgid "Empty unit"
 msgstr "Prázdná jednotka"
 
-#: src/medWindow.js:790
+#: src/medDialog.js:807
 msgid "Choose at least one day"
 msgstr "Vyberte alespoň jeden den"
 
-#: src/medWindow.js:801
+#: src/medDialog.js:818
 msgid "Name already exists"
 msgstr "Jméno již existuje"
 
-#: src/medWindow.js:815
+#: src/medDialog.js:832
 msgid "Duplicated time"
 msgstr "Duplikovaný čas"
 
-#: src/todayFactory.js:117
+#: src/todayFactory.js:111
 msgid "Change dose"
 msgstr "Změnit dávku"
 
@@ -547,19 +565,23 @@ msgstr "Změnit dávku"
 msgid "Remaining"
 msgstr "Zbývá"
 
-#: src/treatmentsFactory.js:107
+#: src/treatmentsFactory.js:108
 msgid "Low stock"
 msgstr "Malá zásoba"
 
-#: src/treatmentsFactory.js:113
+#: src/treatmentsFactory.js:115
 msgid "Until"
 msgstr "Dokud"
 
-#: src/treatmentsFactory.js:125 src/utils.js:51
+#: src/treatmentsFactory.js:116
+msgid "Ended on"
+msgstr ""
+
+#: src/treatmentsFactory.js:128 src/utils.js:51
 msgid "Daily"
 msgstr "Denně"
 
-#: src/treatmentsFactory.js:137 src/treatmentsFactory.js:140
+#: src/treatmentsFactory.js:140 src/treatmentsFactory.js:143
 msgid "Next dose"
 msgstr "Další dávka"
 
@@ -571,11 +593,11 @@ msgstr "O výkendech"
 msgid "Weekdays"
 msgstr "Všední dny"
 
-#: src/utils.js:275
+#: src/utils.js:278
 msgid "Delete dose"
 msgstr "Smazat dávku"
 
-#: src/window.js:132 src/window.js:548
+#: src/window.js:132 src/window.js:549
 msgid "Reminder"
 msgstr "Připomínka"
 
@@ -584,24 +606,24 @@ msgstr "Připomínka"
 msgid "You have treatments low in stock"
 msgstr "Docházejí vám léky"
 
-#: src/window.js:424
+#: src/window.js:425
 msgid "No treatments added yet"
 msgstr "Zatím nebyly přidány žádné léčby"
 
-#: src/window.js:428
+#: src/window.js:429
 msgid "All done for today"
 msgstr "Pro dnešek máte hotovo"
 
-#: src/window.js:502
+#: src/window.js:503
 msgid "Confirm all"
 msgstr "Potvrdit všechny"
 
-#: src/window.js:503
+#: src/window.js:504
 msgid "Skip all"
 msgstr "Přeskočit všechny"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:540
+#: src/window.js:541
 #, javascript-format
 msgid "and %d more"
 msgstr "a ještě %d"

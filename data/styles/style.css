@@ -256,11 +256,11 @@ button.time-group-selection:hover {
   border-radius: 99px;
 }
 .badge-content {
-  padding: 4px 7px;
+  padding: 4px 8px;
   border-radius: 99px;
   text-transform: capitalize;
   font-weight: 500;
-  font-size: 0.933em;
+  font-size: 0.94em;
 }
 .history .badge-content {
   text-transform: none;
