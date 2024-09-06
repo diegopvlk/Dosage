@@ -335,6 +335,7 @@ export function doseRow(timeDose) {
 			? `${leadZeroHours}.${leadZeroMinutes} ${amPmButton.label}`
 			: `${leadZeroHours}:${leadZeroMinutes} ${amPmButton.label}`,
 		valign: Gtk.Align.CENTER,
+		halign: Gtk.Align.START,
 		popover: new Gtk.Popover({
 			child: doseTimeBox,
 		}),
