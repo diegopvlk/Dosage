@@ -106,14 +106,61 @@ export function createTempObj(type, listStore) {
 			lastUpdate: new Date().toISOString(),
 		};
 		for (const it of listStore) {
-			tempObj.treatments.push(it.obj);
-		}
-		if (
-			tempObj.treatments.some(obj => Object.keys(obj).length === 0) ||
-			tempObj.treatments.length === 0
-		) {
-			log('empty treatments', JSON.stringify(tempObj));
-			return;
+			const item = it.obj;
+
+			const isValidItem =
+				typeof item.name === 'string' &&
+				item.name.trim() !== '' && // name cannot be empty
+				typeof item.unit === 'string' &&
+				item.unit.trim() !== '' && // unit cannot be empty
+				typeof item.notes === 'string' &&
+				typeof item.frequency === 'string' &&
+				// frequency cannot be empty
+				(item.frequency !== '' || item.frequency !== 'specific-days') &&
+				// if frequency is 'specific-days', 'days' cannot be empty
+				(item.frequency !== 'specific-days' || item.days.length > 0) &&
+				typeof item.color === 'string' &&
+				item.color !== '' && // color cannot be empty
+				typeof item.icon === 'string' &&
+				item.icon !== '' && // icon cannot be empty
+				Array.isArray(item.days) &&
+				// days must contain only numbers
+				item.days.every(day => typeof day === 'number') &&
+				Array.isArray(item.cycle) &&
+				item.cycle.length > 0 && // cycle cannot be empty
+				// cycle must contain only numbers
+				item.cycle.every(day => typeof day === 'number') &&
+				Array.isArray(item.dosage) &&
+				item.dosage.length > 0 && // dosage must have at least one object
+				item.dosage.every(
+					d =>
+						Array.isArray(d.time) &&
+						d.time.length === 2 &&
+						typeof d.time[0] === 'number' &&
+						typeof d.time[1] === 'number' &&
+						typeof d.dose === 'number' &&
+						(d.lastTaken === null || typeof d.lastTaken === 'string'),
+				) &&
+				typeof item.recurring === 'object' &&
+				typeof item.recurring.enabled === 'boolean' &&
+				typeof item.recurring.interval === 'number' &&
+				typeof item.inventory === 'object' &&
+				typeof item.inventory.enabled === 'boolean' &&
+				typeof item.inventory.current === 'number' &&
+				typeof item.inventory.reminder === 'number' &&
+				typeof item.duration === 'object' &&
+				typeof item.duration.enabled === 'boolean' &&
+				typeof item.duration.start === 'number' &&
+				typeof item.duration.end === 'number' &&
+				// cycleNextDate is present only if frequency is 'cycle'
+				(item.frequency !== 'cycle' || typeof item.cycleNextDate === 'string');
+
+			if (isValidItem) {
+				tempObj.treatments.push(item);
+			} else {
+				log('invalid treatment item:', JSON.stringify(item));
+				return;
+			}
 		}
 		return tempObj;
 	} else if (type === 'history') {
@@ -123,21 +170,37 @@ export function createTempObj(type, listStore) {
 
 		for (const it of listStore) {
 			const item = it.obj;
-			tempObj.history.push({
-				name: item.name,
-				unit: item.unit,
-				time: item.time,
-				dose: item.dose,
-				color: item.color,
-				taken: item.taken,
-			});
-		}
-		if (
-			tempObj.history.some(obj => Object.keys(obj).length === 0) ||
-			tempObj.history.length === 0
-		) {
-			log('empty history', JSON.stringify(tempObj));
-			return;
+
+			const isValidItem =
+				typeof item.name === 'string' &&
+				item.name.trim() !== '' &&
+				typeof item.unit === 'string' &&
+				item.unit.trim() !== '' &&
+				Array.isArray(item.time) &&
+				item.time.length === 2 &&
+				typeof item.time[0] === 'number' &&
+				typeof item.time[1] === 'number' &&
+				typeof item.dose === 'number' &&
+				typeof item.color === 'string' &&
+				item.color !== '' &&
+				Array.isArray(item.taken) &&
+				item.taken.length === 2 &&
+				typeof item.taken[0] === 'number' &&
+				typeof item.taken[1] === 'number';
+
+			if (isValidItem) {
+				tempObj.history.push({
+					name: item.name,
+					unit: item.unit,
+					time: item.time,
+					dose: item.dose,
+					color: item.color,
+					taken: item.taken,
+				});
+			} else {
+				log('invalid history item:', JSON.stringify(item));
+				return;
+			}
 		}
 
 		return tempObj;
