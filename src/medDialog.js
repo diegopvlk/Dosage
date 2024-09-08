@@ -643,10 +643,14 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		if (isUpdate) {
 			const item = list.get_model().get_item(position).obj;
 			doses = doses.map((dose, idx) => {
+				const lastTk = item.dosage.find(
+					itDose => itDose.time[0] === dose.time[0] && itDose.time[1] === dose.time[1],
+				)?.lastTaken;
+
 				return {
 					time: dose.time,
 					dose: dose.dose,
-					lastTaken: item.dosage[idx]?.lastTaken || null,
+					lastTaken: lastTk || null,
 				};
 			});
 			treatmentsLS.remove(position);
