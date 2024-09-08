@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-06 15:17-0300\n"
+"POT-Creation-Date: 2024-09-08 11:23-0300\n"
 "PO-Revision-Date: 2024-03-16 18:56+0000\n"
 "Last-Translator: Mikachu <micah.sh@proton.me>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/dosage/dosage/nl/"
@@ -127,7 +127,7 @@ msgstr "Medicatie toevoegen"
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: data/ui/med-dialog.blp:29 data/ui/window.blp:189
+#: data/ui/med-dialog.blp:29 data/ui/window.blp:194
 msgid "Add"
 msgstr "Toevoegen"
 
@@ -261,7 +261,7 @@ msgstr "Druppel"
 msgid "Potion"
 msgstr "Drankje"
 
-#: data/ui/med-dialog.blp:461 src/medDialog.js:764
+#: data/ui/med-dialog.blp:461 src/medDialog.js:768
 msgid "Frequency"
 msgstr "Frequentie"
 
@@ -269,11 +269,11 @@ msgstr "Frequentie"
 msgid "Every day"
 msgstr "Iedere dag"
 
-#: data/ui/med-dialog.blp:467 src/medDialog.js:758
+#: data/ui/med-dialog.blp:467 src/medDialog.js:762
 msgid "Specific days"
 msgstr "Bepaalde dagen"
 
-#: data/ui/med-dialog.blp:468 src/medDialog.js:761 src/treatmentsFactory.js:152
+#: data/ui/med-dialog.blp:468 src/medDialog.js:765 src/treatmentsFactory.js:152
 msgid "Cycle"
 msgstr "Cyclus"
 
@@ -376,7 +376,7 @@ msgstr "Datum"
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: data/ui/preferences.blp:6 data/ui/window.blp:214
+#: data/ui/preferences.blp:6 data/ui/window.blp:211
 msgid "Preferences"
 msgstr "Voorkeuren"
 
@@ -421,7 +421,7 @@ msgstr "Toon of verberg bevestigen/overslaan"
 msgid "Confirm"
 msgstr "Bevestigen"
 
-#: data/ui/preferences.blp:112 data/ui/window.blp:104 src/window.js:504
+#: data/ui/preferences.blp:112 data/ui/window.blp:109 src/window.js:504
 msgid "Skip"
 msgstr "Overslaan"
 
@@ -433,35 +433,35 @@ msgstr "Hoofdmenu"
 msgid "Today"
 msgstr "Vandaag"
 
-#: data/ui/window.blp:79
+#: data/ui/window.blp:84
 msgid "Unselect"
 msgstr "Niets selecteren"
 
-#: data/ui/window.blp:92 src/window.js:722
+#: data/ui/window.blp:97 src/window.js:722
 msgid "One-time entry"
 msgstr "Eenmalig"
 
-#: data/ui/window.blp:120
+#: data/ui/window.blp:119
 msgid "History"
 msgstr "Geschiedenis"
 
-#: data/ui/window.blp:143
+#: data/ui/window.blp:141
 msgid "Empty history"
 msgstr "Er is geen geschiedenis"
 
-#: data/ui/window.blp:151
+#: data/ui/window.blp:149
 msgid "Treatments"
 msgstr "Medicatie"
 
-#: data/ui/window.blp:198
+#: data/ui/window.blp:171
 msgid "Click the button below to add some"
 msgstr "Klik op onderstaande knop om toe te voegen"
 
-#: data/ui/window.blp:219
+#: data/ui/window.blp:216
 msgid "About Dosage"
 msgstr "Over Dosering"
 
-#: data/ui/window.blp:224
+#: data/ui/window.blp:221
 msgid "Quit"
 msgstr "Afsluiten"
 
@@ -532,27 +532,27 @@ msgstr "Vergeten"
 msgid "Edit entry"
 msgstr "Bewerk invoer"
 
-#: src/medDialog.js:726
+#: src/medDialog.js:730
 msgid "Choose"
 msgstr "Kiezen"
 
-#: src/medDialog.js:797
+#: src/medDialog.js:801
 msgid "Empty name"
 msgstr "Naamloos"
 
-#: src/medDialog.js:801
+#: src/medDialog.js:805
 msgid "Empty unit"
 msgstr "Niets ingevoerd"
 
-#: src/medDialog.js:807
+#: src/medDialog.js:811
 msgid "Choose at least one day"
 msgstr "Kies minimaal één dag"
 
-#: src/medDialog.js:818
-msgid "Name already exists"
-msgstr "Deze naam is al in gebruik"
+#: src/medDialog.js:822
+msgid "Name already on treatment list"
+msgstr ""
 
-#: src/medDialog.js:832
+#: src/medDialog.js:836
 msgid "Duplicated time"
 msgstr "Dit tijdstip is al gekozen"
 
@@ -592,7 +592,7 @@ msgstr "Weekends"
 msgid "Weekdays"
 msgstr "Werkdagen"
 
-#: src/utils.js:278
+#: src/utils.js:341
 msgid "Delete dose"
 msgstr "Dosering verwijderen"
 
@@ -626,6 +626,9 @@ msgstr "Alles overslaan"
 #, javascript-format
 msgid "and %d more"
 msgstr "en nog %d"
+
+#~ msgid "Name already exists"
+#~ msgstr "Deze naam is al in gebruik"
 
 #~ msgid "Add to history"
 #~ msgstr "Tonen in geschiedenis"

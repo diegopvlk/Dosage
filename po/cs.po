@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-06 15:17-0300\n"
+"POT-Creation-Date: 2024-09-08 11:23-0300\n"
 "PO-Revision-Date: 2024-02-01 22:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/"
@@ -127,7 +127,7 @@ msgstr "Nová léčba"
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: data/ui/med-dialog.blp:29 data/ui/window.blp:189
+#: data/ui/med-dialog.blp:29 data/ui/window.blp:194
 msgid "Add"
 msgstr "Přidat"
 
@@ -261,7 +261,7 @@ msgstr "Kapka"
 msgid "Potion"
 msgstr "Nápoj"
 
-#: data/ui/med-dialog.blp:461 src/medDialog.js:764
+#: data/ui/med-dialog.blp:461 src/medDialog.js:768
 msgid "Frequency"
 msgstr "Frekvence"
 
@@ -269,11 +269,11 @@ msgstr "Frekvence"
 msgid "Every day"
 msgstr "Každý den"
 
-#: data/ui/med-dialog.blp:467 src/medDialog.js:758
+#: data/ui/med-dialog.blp:467 src/medDialog.js:762
 msgid "Specific days"
 msgstr "Vybrané dny"
 
-#: data/ui/med-dialog.blp:468 src/medDialog.js:761 src/treatmentsFactory.js:152
+#: data/ui/med-dialog.blp:468 src/medDialog.js:765 src/treatmentsFactory.js:152
 msgid "Cycle"
 msgstr "Cyklus"
 
@@ -378,7 +378,7 @@ msgstr "Datum"
 msgid "Delete"
 msgstr "Smazat"
 
-#: data/ui/preferences.blp:6 data/ui/window.blp:214
+#: data/ui/preferences.blp:6 data/ui/window.blp:211
 msgid "Preferences"
 msgstr "Nastavení"
 
@@ -423,7 +423,7 @@ msgstr "Zobrazit nebo skrýt tlačítka potvrdit/přeskočit"
 msgid "Confirm"
 msgstr "Potvrdit"
 
-#: data/ui/preferences.blp:112 data/ui/window.blp:104 src/window.js:504
+#: data/ui/preferences.blp:112 data/ui/window.blp:109 src/window.js:504
 msgid "Skip"
 msgstr "Přeskočit"
 
@@ -435,35 +435,35 @@ msgstr "Hlavní Menu"
 msgid "Today"
 msgstr "Dnes"
 
-#: data/ui/window.blp:79
+#: data/ui/window.blp:84
 msgid "Unselect"
 msgstr "Zrušit výběr"
 
-#: data/ui/window.blp:92 src/window.js:722
+#: data/ui/window.blp:97 src/window.js:722
 msgid "One-time entry"
 msgstr "Jednorázový záznam"
 
-#: data/ui/window.blp:120
+#: data/ui/window.blp:119
 msgid "History"
 msgstr "Historie"
 
-#: data/ui/window.blp:143
+#: data/ui/window.blp:141
 msgid "Empty history"
 msgstr "Prázdná historie"
 
-#: data/ui/window.blp:151
+#: data/ui/window.blp:149
 msgid "Treatments"
 msgstr "Léčby"
 
-#: data/ui/window.blp:198
+#: data/ui/window.blp:171
 msgid "Click the button below to add some"
 msgstr "Klikněte na tlačítko níže aby jste přidali léčbu"
 
-#: data/ui/window.blp:219
+#: data/ui/window.blp:216
 msgid "About Dosage"
 msgstr "O Dávkování"
 
-#: data/ui/window.blp:224
+#: data/ui/window.blp:221
 msgid "Quit"
 msgstr "Konec"
 
@@ -533,27 +533,27 @@ msgstr "Zapomenutý"
 msgid "Edit entry"
 msgstr "Upravit záznam"
 
-#: src/medDialog.js:726
+#: src/medDialog.js:730
 msgid "Choose"
 msgstr "Vybrat"
 
-#: src/medDialog.js:797
+#: src/medDialog.js:801
 msgid "Empty name"
 msgstr "Prázné jméno"
 
-#: src/medDialog.js:801
+#: src/medDialog.js:805
 msgid "Empty unit"
 msgstr "Prázdná jednotka"
 
-#: src/medDialog.js:807
+#: src/medDialog.js:811
 msgid "Choose at least one day"
 msgstr "Vyberte alespoň jeden den"
 
-#: src/medDialog.js:818
-msgid "Name already exists"
-msgstr "Jméno již existuje"
+#: src/medDialog.js:822
+msgid "Name already on treatment list"
+msgstr ""
 
-#: src/medDialog.js:832
+#: src/medDialog.js:836
 msgid "Duplicated time"
 msgstr "Duplikovaný čas"
 
@@ -593,7 +593,7 @@ msgstr "O výkendech"
 msgid "Weekdays"
 msgstr "Všední dny"
 
-#: src/utils.js:278
+#: src/utils.js:341
 msgid "Delete dose"
 msgstr "Smazat dávku"
 
@@ -627,6 +627,9 @@ msgstr "Přeskočit všechny"
 #, javascript-format
 msgid "and %d more"
 msgstr "a ještě %d"
+
+#~ msgid "Name already exists"
+#~ msgstr "Jméno již existuje"
 
 #~ msgid "Add to history"
 #~ msgstr "Přidat záznam"

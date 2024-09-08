@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-06 15:17-0300\n"
+"POT-Creation-Date: 2024-09-08 11:23-0300\n"
 "PO-Revision-Date: 2024-03-22 00:03+0000\n"
 "Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
 "Language-Team: English - United Kingdom <en_GB@li.org>\n"
@@ -123,7 +123,7 @@ msgstr "New treatment"
 msgid "Cancel"
 msgstr "Cancel"
 
-#: data/ui/med-dialog.blp:29 data/ui/window.blp:189
+#: data/ui/med-dialog.blp:29 data/ui/window.blp:194
 msgid "Add"
 msgstr "Add"
 
@@ -257,7 +257,7 @@ msgstr "Drop"
 msgid "Potion"
 msgstr "Potion"
 
-#: data/ui/med-dialog.blp:461 src/medDialog.js:764
+#: data/ui/med-dialog.blp:461 src/medDialog.js:768
 msgid "Frequency"
 msgstr "Frequency"
 
@@ -265,11 +265,11 @@ msgstr "Frequency"
 msgid "Every day"
 msgstr "Every day"
 
-#: data/ui/med-dialog.blp:467 src/medDialog.js:758
+#: data/ui/med-dialog.blp:467 src/medDialog.js:762
 msgid "Specific days"
 msgstr "Specific days"
 
-#: data/ui/med-dialog.blp:468 src/medDialog.js:761 src/treatmentsFactory.js:152
+#: data/ui/med-dialog.blp:468 src/medDialog.js:765 src/treatmentsFactory.js:152
 msgid "Cycle"
 msgstr "Cycle"
 
@@ -372,7 +372,7 @@ msgstr "Date"
 msgid "Delete"
 msgstr "Delete"
 
-#: data/ui/preferences.blp:6 data/ui/window.blp:214
+#: data/ui/preferences.blp:6 data/ui/window.blp:211
 msgid "Preferences"
 msgstr "Preferences"
 
@@ -417,7 +417,7 @@ msgstr "Show or hide confirm/skip"
 msgid "Confirm"
 msgstr "Confirm"
 
-#: data/ui/preferences.blp:112 data/ui/window.blp:104 src/window.js:504
+#: data/ui/preferences.blp:112 data/ui/window.blp:109 src/window.js:504
 msgid "Skip"
 msgstr "Skip"
 
@@ -429,35 +429,35 @@ msgstr "Main Menu"
 msgid "Today"
 msgstr "Today"
 
-#: data/ui/window.blp:79
+#: data/ui/window.blp:84
 msgid "Unselect"
 msgstr "Unselect"
 
-#: data/ui/window.blp:92 src/window.js:722
+#: data/ui/window.blp:97 src/window.js:722
 msgid "One-time entry"
 msgstr "One-time entry"
 
-#: data/ui/window.blp:120
+#: data/ui/window.blp:119
 msgid "History"
 msgstr "History"
 
-#: data/ui/window.blp:143
+#: data/ui/window.blp:141
 msgid "Empty history"
 msgstr "Empty history"
 
-#: data/ui/window.blp:151
+#: data/ui/window.blp:149
 msgid "Treatments"
 msgstr "Treatments"
 
-#: data/ui/window.blp:198
+#: data/ui/window.blp:171
 msgid "Click the button below to add some"
 msgstr "Click the button below to add some"
 
-#: data/ui/window.blp:219
+#: data/ui/window.blp:216
 msgid "About Dosage"
 msgstr "About Dosage"
 
-#: data/ui/window.blp:224
+#: data/ui/window.blp:221
 msgid "Quit"
 msgstr "Quit"
 
@@ -505,48 +505,42 @@ msgid "New entry"
 msgstr "New entry"
 
 #: src/medDialog.js:344 src/medDialog.js:355
-#, fuzzy
-#| msgid "Confirmed"
 msgid "Confirmed at"
-msgstr "Confirmed"
+msgstr "Confirmed at"
 
 #: src/medDialog.js:348 src/medDialog.js:358
-#, fuzzy
-#| msgid "Skipped"
 msgid "Skipped at"
-msgstr "Skipped"
+msgstr "Skipped at"
 
 #: src/medDialog.js:351
-#, fuzzy
-#| msgid "Missed"
 msgid "Missed(?) at"
-msgstr "Missed"
+msgstr "Missed(?) at"
 
 #: src/medDialog.js:362
 msgid "Edit entry"
 msgstr "Edit entry"
 
-#: src/medDialog.js:726
+#: src/medDialog.js:730
 msgid "Choose"
 msgstr "Choose"
 
-#: src/medDialog.js:797
+#: src/medDialog.js:801
 msgid "Empty name"
 msgstr "Empty name"
 
-#: src/medDialog.js:801
+#: src/medDialog.js:805
 msgid "Empty unit"
 msgstr "Empty unit"
 
-#: src/medDialog.js:807
+#: src/medDialog.js:811
 msgid "Choose at least one day"
 msgstr "Choose at least one day"
 
-#: src/medDialog.js:818
-msgid "Name already exists"
-msgstr "Name already exists"
+#: src/medDialog.js:822
+msgid "Name already on treatment list"
+msgstr "Name already on treatment list"
 
-#: src/medDialog.js:832
+#: src/medDialog.js:836
 msgid "Duplicated time"
 msgstr "Duplicated time"
 
@@ -586,7 +580,7 @@ msgstr "Weekends"
 msgid "Weekdays"
 msgstr "Weekdays"
 
-#: src/utils.js:278
+#: src/utils.js:341
 msgid "Delete dose"
 msgstr "Delete dose"
 
@@ -620,3 +614,6 @@ msgstr "Skip all"
 #, javascript-format
 msgid "and %d more"
 msgstr "and %d more"
+
+#~ msgid "Name already exists"
+#~ msgstr "Name already exists"

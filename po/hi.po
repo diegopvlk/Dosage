@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-06 15:17-0300\n"
+"POT-Creation-Date: 2024-09-08 11:23-0300\n"
 "PO-Revision-Date: 2024-05-23 09:01+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/"
@@ -121,7 +121,7 @@ msgstr "नया इलाज"
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: data/ui/med-dialog.blp:29 data/ui/window.blp:189
+#: data/ui/med-dialog.blp:29 data/ui/window.blp:194
 msgid "Add"
 msgstr "जोड़ें"
 
@@ -255,7 +255,7 @@ msgstr "बूँद"
 msgid "Potion"
 msgstr "औषधि"
 
-#: data/ui/med-dialog.blp:461 src/medDialog.js:764
+#: data/ui/med-dialog.blp:461 src/medDialog.js:768
 msgid "Frequency"
 msgstr "आवृत्ति"
 
@@ -263,11 +263,11 @@ msgstr "आवृत्ति"
 msgid "Every day"
 msgstr "हर दिन"
 
-#: data/ui/med-dialog.blp:467 src/medDialog.js:758
+#: data/ui/med-dialog.blp:467 src/medDialog.js:762
 msgid "Specific days"
 msgstr "विशिष्ट दिन"
 
-#: data/ui/med-dialog.blp:468 src/medDialog.js:761 src/treatmentsFactory.js:152
+#: data/ui/med-dialog.blp:468 src/medDialog.js:765 src/treatmentsFactory.js:152
 msgid "Cycle"
 msgstr "चक्र"
 
@@ -370,7 +370,7 @@ msgstr "तारीख"
 msgid "Delete"
 msgstr "मिटाएं"
 
-#: data/ui/preferences.blp:6 data/ui/window.blp:214
+#: data/ui/preferences.blp:6 data/ui/window.blp:211
 msgid "Preferences"
 msgstr "प्राथमिकताएं"
 
@@ -413,7 +413,7 @@ msgstr "दिखाएं या छिपाएं पुष्टि कर�
 msgid "Confirm"
 msgstr "पुष्टि करें"
 
-#: data/ui/preferences.blp:112 data/ui/window.blp:104 src/window.js:504
+#: data/ui/preferences.blp:112 data/ui/window.blp:109 src/window.js:504
 msgid "Skip"
 msgstr "छोड़ें"
 
@@ -425,35 +425,35 @@ msgstr "मुख्य मेनू"
 msgid "Today"
 msgstr "आज"
 
-#: data/ui/window.blp:79
+#: data/ui/window.blp:84
 msgid "Unselect"
 msgstr "अचयनित करें"
 
-#: data/ui/window.blp:92 src/window.js:722
+#: data/ui/window.blp:97 src/window.js:722
 msgid "One-time entry"
 msgstr "एक-बार की प्रविष्टि"
 
-#: data/ui/window.blp:120
+#: data/ui/window.blp:119
 msgid "History"
 msgstr "इतिहास"
 
-#: data/ui/window.blp:143
+#: data/ui/window.blp:141
 msgid "Empty history"
 msgstr "इतिहास मिटायें"
 
-#: data/ui/window.blp:151
+#: data/ui/window.blp:149
 msgid "Treatments"
 msgstr "उपचार"
 
-#: data/ui/window.blp:198
+#: data/ui/window.blp:171
 msgid "Click the button below to add some"
 msgstr "कुछ जोड़ने के लिए नीचे दिए गए बटन पर क्लिक करें"
 
-#: data/ui/window.blp:219
+#: data/ui/window.blp:216
 msgid "About Dosage"
 msgstr "डोसिज के बारे में"
 
-#: data/ui/window.blp:224
+#: data/ui/window.blp:221
 msgid "Quit"
 msgstr "छोड़ें"
 
@@ -522,27 +522,27 @@ msgstr "छुट्टा हुआ"
 msgid "Edit entry"
 msgstr "प्रविष्टि संपादित करें"
 
-#: src/medDialog.js:726
+#: src/medDialog.js:730
 msgid "Choose"
 msgstr "चुनें"
 
-#: src/medDialog.js:797
+#: src/medDialog.js:801
 msgid "Empty name"
 msgstr "खाली नाम"
 
-#: src/medDialog.js:801
+#: src/medDialog.js:805
 msgid "Empty unit"
 msgstr "रिक्त इकाई"
 
-#: src/medDialog.js:807
+#: src/medDialog.js:811
 msgid "Choose at least one day"
 msgstr "कम से कम एक दिन चुनें"
 
-#: src/medDialog.js:818
-msgid "Name already exists"
-msgstr "नाम पहले से मौजूद है"
+#: src/medDialog.js:822
+msgid "Name already on treatment list"
+msgstr ""
 
-#: src/medDialog.js:832
+#: src/medDialog.js:836
 msgid "Duplicated time"
 msgstr "डुप्लिकेट समय"
 
@@ -582,7 +582,7 @@ msgstr "सप्ताहांत"
 msgid "Weekdays"
 msgstr "कार्यदिवस"
 
-#: src/utils.js:278
+#: src/utils.js:341
 msgid "Delete dose"
 msgstr "खुराक मिटाएं"
 
@@ -616,3 +616,6 @@ msgstr "सभी को छोड़ें"
 #, javascript-format
 msgid "and %d more"
 msgstr "और %d अधिक"
+
+#~ msgid "Name already exists"
+#~ msgstr "नाम पहले से मौजूद है"

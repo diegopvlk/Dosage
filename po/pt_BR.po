@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-06 15:17-0300\n"
+"POT-Creation-Date: 2024-09-08 11:23-0300\n"
 "PO-Revision-Date: 2024-02-02 14:50+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -125,7 +125,7 @@ msgstr "Novo tratamento"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: data/ui/med-dialog.blp:29 data/ui/window.blp:189
+#: data/ui/med-dialog.blp:29 data/ui/window.blp:194
 msgid "Add"
 msgstr "Adicionar"
 
@@ -259,7 +259,7 @@ msgstr "Gota"
 msgid "Potion"
 msgstr "Poção"
 
-#: data/ui/med-dialog.blp:461 src/medDialog.js:764
+#: data/ui/med-dialog.blp:461 src/medDialog.js:768
 msgid "Frequency"
 msgstr "Frequência"
 
@@ -267,11 +267,11 @@ msgstr "Frequência"
 msgid "Every day"
 msgstr "Todos os dias"
 
-#: data/ui/med-dialog.blp:467 src/medDialog.js:758
+#: data/ui/med-dialog.blp:467 src/medDialog.js:762
 msgid "Specific days"
 msgstr "Dias específicos"
 
-#: data/ui/med-dialog.blp:468 src/medDialog.js:761 src/treatmentsFactory.js:152
+#: data/ui/med-dialog.blp:468 src/medDialog.js:765 src/treatmentsFactory.js:152
 msgid "Cycle"
 msgstr "Ciclo"
 
@@ -374,7 +374,7 @@ msgstr "Data"
 msgid "Delete"
 msgstr "Excluir"
 
-#: data/ui/preferences.blp:6 data/ui/window.blp:214
+#: data/ui/preferences.blp:6 data/ui/window.blp:211
 msgid "Preferences"
 msgstr "Preferências"
 
@@ -419,7 +419,7 @@ msgstr "Mostrar ou ocultar confirmar/ignorar"
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: data/ui/preferences.blp:112 data/ui/window.blp:104 src/window.js:504
+#: data/ui/preferences.blp:112 data/ui/window.blp:109 src/window.js:504
 msgid "Skip"
 msgstr "Ignorar"
 
@@ -431,35 +431,35 @@ msgstr "Menu Principal"
 msgid "Today"
 msgstr "Hoje"
 
-#: data/ui/window.blp:79
+#: data/ui/window.blp:84
 msgid "Unselect"
 msgstr "Desmarcar"
 
-#: data/ui/window.blp:92 src/window.js:722
+#: data/ui/window.blp:97 src/window.js:722
 msgid "One-time entry"
 msgstr "Registro único"
 
-#: data/ui/window.blp:120
+#: data/ui/window.blp:119
 msgid "History"
 msgstr "Histórico"
 
-#: data/ui/window.blp:143
+#: data/ui/window.blp:141
 msgid "Empty history"
 msgstr "Histórico vazio"
 
-#: data/ui/window.blp:151
+#: data/ui/window.blp:149
 msgid "Treatments"
 msgstr "Tratamentos"
 
-#: data/ui/window.blp:198
+#: data/ui/window.blp:171
 msgid "Click the button below to add some"
 msgstr "Clique no botão abaixo para adicionar algum"
 
-#: data/ui/window.blp:219
+#: data/ui/window.blp:216
 msgid "About Dosage"
 msgstr "Sobre o Dosagem"
 
-#: data/ui/window.blp:224
+#: data/ui/window.blp:221
 msgid "Quit"
 msgstr "Sair"
 
@@ -523,27 +523,27 @@ msgstr "Perdido(?) às"
 msgid "Edit entry"
 msgstr "Editar registro"
 
-#: src/medDialog.js:726
+#: src/medDialog.js:730
 msgid "Choose"
 msgstr "Escolha"
 
-#: src/medDialog.js:797
+#: src/medDialog.js:801
 msgid "Empty name"
 msgstr "Nome vazio"
 
-#: src/medDialog.js:801
+#: src/medDialog.js:805
 msgid "Empty unit"
 msgstr "Unidade vazia"
 
-#: src/medDialog.js:807
+#: src/medDialog.js:811
 msgid "Choose at least one day"
 msgstr "Escolha pelo menos um dia"
 
-#: src/medDialog.js:818
-msgid "Name already exists"
-msgstr "Nome já existe"
+#: src/medDialog.js:822
+msgid "Name already on treatment list"
+msgstr "Nome já na lista de tratamentos"
 
-#: src/medDialog.js:832
+#: src/medDialog.js:836
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 
@@ -583,7 +583,7 @@ msgstr "Finais de semana"
 msgid "Weekdays"
 msgstr "Dias da semana"
 
-#: src/utils.js:278
+#: src/utils.js:341
 msgid "Delete dose"
 msgstr "Excluir dose"
 
@@ -617,6 +617,9 @@ msgstr "Ignorar todos"
 #, javascript-format
 msgid "and %d more"
 msgstr "e mais %d"
+
+#~ msgid "Name already exists"
+#~ msgstr "Nome já existe"
 
 #~ msgid "Add to history"
 #~ msgstr "Adc. ao histórico"
