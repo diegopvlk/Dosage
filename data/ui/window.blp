@@ -62,6 +62,11 @@ template $DosageWindow: Adw.ApplicationWindow {
           }
 
           [overlay]
+          Adw.StatusPage emptyToday {
+            visible: true;
+          }
+
+          [overlay]
           Box {
             halign: center;
             valign: end;
@@ -106,12 +111,6 @@ template $DosageWindow: Adw.ApplicationWindow {
               icon-name: 'skip-med-symbolic';
             }
           }
-
-          [overlay]
-          Adw.StatusPage emptyToday {
-            margin-bottom: 70;
-            visible: true;
-          }
         };
       }
 
@@ -138,7 +137,6 @@ template $DosageWindow: Adw.ApplicationWindow {
 
           [overlay]
           Adw.StatusPage emptyHistory {
-            margin-bottom: 70;
             icon-name: 'history-empty-symbolic';
             title: _("Empty history");
             visible: false;
@@ -168,6 +166,13 @@ template $DosageWindow: Adw.ApplicationWindow {
           }
 
           [overlay]
+          Adw.StatusPage emptyTreatments {
+            icon-name: 'plus-circle-outline-symbolic';
+            title: _("Click the button below to add some");
+            visible: false;
+          }
+
+          [overlay]
           Box {
             halign: center;
             valign: end;
@@ -189,14 +194,6 @@ template $DosageWindow: Adw.ApplicationWindow {
                 label: _("Add");
               };
             }
-          }
-
-          [overlay]
-          Adw.StatusPage emptyTreatments {
-            margin-bottom: 70;
-            icon-name: 'plus-circle-outline-symbolic';
-            title: _("Click the button below to add some");
-            visible: false;
           }
         };
       }
