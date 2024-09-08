@@ -819,7 +819,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 				if (i === item) continue;
 			}
 			if (i.name.toLowerCase() === medName.text.trim().toLowerCase()) {
-				toastOverlay.add_toast(new Adw.Toast({ title: _('Name already exists') }));
+				toastOverlay.add_toast(new Adw.Toast({ title: _('Name already on treatment list') }));
 				medName.add_css_class('error');
 				return;
 			}
