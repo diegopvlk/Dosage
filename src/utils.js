@@ -403,7 +403,7 @@ export function getTimeBtnInput(currentDoseRow) {
 		if (period === `${amPmStr[1]}` && hours !== 12) hours += 12;
 	}
 
-	return [hours, minutes, amPmButton, doseTimeButton];
+	return [hours, minutes, doseTimeButton];
 }
 
 export function getDayLabel(day, long) {
