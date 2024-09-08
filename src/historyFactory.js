@@ -19,6 +19,7 @@ export let removedItem;
 historyHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 	const dateLabel = new Gtk.Label({
 		halign: Gtk.Align.START,
+		ellipsize: Pango.EllipsizeMode.END,
 		margin_bottom: 1,
 	});
 	listHeaderItem.set_child(dateLabel);
@@ -63,6 +64,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	box.append(labelsBox);
 	const name = new Gtk.Label({
 		halign: Gtk.Align.START,
+		ellipsize: Pango.EllipsizeMode.END,
 		margin_bottom: 1,
 	});
 	labelsBox.append(name);

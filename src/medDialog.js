@@ -239,11 +239,13 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 
 		const btnNew = new Gtk.Button({
 			css_classes: ['flat'],
+			can_shrink: true,
 			label: _('New'),
 		});
 
 		btnNew.remove_css_class('text-button');
 		btnNew.get_first_child().set_halign(Gtk.Align.START);
+		btnNew.get_first_child().set_max_width_chars(50);
 		oneTimeEntries.append(btnNew);
 
 		btnNew.connect('clicked', () => {
@@ -268,8 +270,10 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 				const item = it.obj;
 				const btn = new Gtk.Button({
 					css_classes: ['flat', 'one-time-name'],
+					can_shrink: true,
 					label: item.name,
 				});
+				btn.get_first_child().set_max_width_chars(50);
 				btn.remove_css_class('text-button');
 				btn.get_first_child().set_halign(Gtk.Align.START);
 
@@ -413,9 +417,9 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		}
 	};
 
-	const medDialogBox = builder.get_object('medDialogBox');
-	const [medDialogBoxHeight] = medDialogBox.measure(Gtk.Orientation.VERTICAL, -1);
-	medDialog.content_height = medDialogBoxHeight + 48;
+	const medDialogClamp = builder.get_object('medDialogClamp');
+	const [medDialogClampHeight] = medDialogClamp.measure(Gtk.Orientation.VERTICAL, -1);
+	medDialog.content_height = medDialogClampHeight + 48;
 
 	setSpecificDaysButtonOrder();
 

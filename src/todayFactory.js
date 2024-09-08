@@ -83,6 +83,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	box.append(labelsBox);
 	const name = new Gtk.Label({
 		halign: Gtk.Align.START,
+		ellipsize: Pango.EllipsizeMode.END,
 		margin_bottom: 1,
 	});
 	labelsBox.append(name);
