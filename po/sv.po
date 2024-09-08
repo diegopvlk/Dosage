@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-08 11:23-0300\n"
-"PO-Revision-Date: 2024-02-01 20:44+0000\n"
+"PO-Revision-Date: 2024-09-09 16:09+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.8-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
@@ -508,22 +508,16 @@ msgid "New entry"
 msgstr "Ny notering"
 
 #: src/medDialog.js:344 src/medDialog.js:355
-#, fuzzy
-#| msgid "Confirmed"
 msgid "Confirmed at"
-msgstr "Bekräftad"
+msgstr "Bekräftad vid"
 
 #: src/medDialog.js:348 src/medDialog.js:358
-#, fuzzy
-#| msgid "Skipped"
 msgid "Skipped at"
-msgstr "Hoppade över"
+msgstr "Hoppades över vid"
 
 #: src/medDialog.js:351
-#, fuzzy
-#| msgid "Missed"
 msgid "Missed(?) at"
-msgstr "Glömd"
+msgstr "Glömd(?) vid"
 
 #: src/medDialog.js:362
 msgid "Edit entry"
@@ -547,7 +541,7 @@ msgstr "Välj åtminstone en dag"
 
 #: src/medDialog.js:822
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "Namn finns redan på behandlingslistan"
 
 #: src/medDialog.js:836
 msgid "Duplicated time"
@@ -571,7 +565,7 @@ msgstr "Till"
 
 #: src/treatmentsFactory.js:116
 msgid "Ended on"
-msgstr ""
+msgstr "Avslutades på"
 
 #: src/treatmentsFactory.js:128 src/utils.js:51
 msgid "Daily"
