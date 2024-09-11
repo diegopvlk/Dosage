@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-08 11:23-0300\n"
-"PO-Revision-Date: 2024-02-03 11:55+0000\n"
+"PO-Revision-Date: 2024-09-12 06:11+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.8-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
@@ -509,16 +509,12 @@ msgid "New entry"
 msgstr "Nuova voce"
 
 #: src/medDialog.js:344 src/medDialog.js:355
-#, fuzzy
-#| msgid "Confirmed"
 msgid "Confirmed at"
-msgstr "Confermato"
+msgstr "Confermato a"
 
 #: src/medDialog.js:348 src/medDialog.js:358
-#, fuzzy
-#| msgid "Skipped"
 msgid "Skipped at"
-msgstr "Saltato"
+msgstr "Saltato a"
 
 #: src/medDialog.js:351
 #, fuzzy
@@ -548,7 +544,7 @@ msgstr "Scegli almeno un giorno"
 
 #: src/medDialog.js:822
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "Nome già presente nell'elenco dei trattamenti"
 
 #: src/medDialog.js:836
 msgid "Duplicated time"
@@ -572,7 +568,7 @@ msgstr "Fino a"
 
 #: src/treatmentsFactory.js:116
 msgid "Ended on"
-msgstr ""
+msgstr "Terminato il"
 
 #: src/treatmentsFactory.js:128 src/utils.js:51
 msgid "Daily"
