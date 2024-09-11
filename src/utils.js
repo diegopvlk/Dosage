@@ -479,10 +479,6 @@ export function getDayLabel(day, long) {
 export const HistorySectionSorter = GObject.registerClass(
 	{},
 	class HistorySectionSorter extends Gtk.Sorter {
-		_init(params) {
-			super._init(params);
-		}
-
 		vfunc_compare(a, b) {
 			const dtA = new Date(a.obj.taken[0]).setHours(0, 0, 0, 0);
 			const dtB = new Date(b.obj.taken[0]).setHours(0, 0, 0, 0);
@@ -495,10 +491,6 @@ export const HistorySectionSorter = GObject.registerClass(
 export const HistorySorter = GObject.registerClass(
 	{},
 	class HistorySorter extends Gtk.Sorter {
-		_init(params) {
-			super._init(params);
-		}
-
 		vfunc_compare(a, b) {
 			return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
 		}
@@ -508,10 +500,6 @@ export const HistorySorter = GObject.registerClass(
 export const TodaySectionSorter = GObject.registerClass(
 	{},
 	class TodaySectionSorter extends Gtk.Sorter {
-		_init(params) {
-			super._init(params);
-		}
-
 		vfunc_compare(a, b) {
 			const [h1, m1] = a.obj.time;
 			const [h2, m2] = b.obj.time;
