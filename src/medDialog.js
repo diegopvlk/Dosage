@@ -192,6 +192,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 			const alertDialog = new Adw.AlertDialog({
 				// TRANSLATORS: Message for confirmation when deleting an item
 				heading: _('Are you sure?'),
+				body: `"${item.name}" ` + _('will be deleted'),
 			});
 
 			alertDialog.add_response('cancel', _('Cancel'));
