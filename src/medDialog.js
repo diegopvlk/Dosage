@@ -371,8 +371,12 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		medDialog.title = _('Edit entry');
 		saveButton.label = _('Save');
 		dosage.title = item.name;
-		dosage.subtitle = '';
+		dosage.subtitle = `${item.dose} ${item.unit}`;
 		medDialog.add_css_class('one-time');
+
+		doseRowOne.connect('output', row => {
+			dosage.subtitle = `${row.get_value()} ${item.unit}`;
+		});
 
 		takenButtons.set_visible(true);
 		medName.set_visible(false);
