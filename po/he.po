@@ -1,0 +1,607 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023 Diego Povliuk
+# This file is distributed under the license GPLv3-or-later.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.diegopvlk.Dosage\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-08 11:23-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. TRANSLATORS: App name, translate to your language and follow the capitalization
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:634
+#: src/main.js:40 src/window.js:660
+msgid "Dosage"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
+msgid "Keep track of your treatments"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
+msgid ""
+"Easily manage track treatments with Dosage: Notifications, History, Multiple "
+"Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
+"Control"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
+msgid "Features:"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:28
+msgid "Notifications — Get reminders at the right time"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
+msgid "History — See which medications you took, skipped or missed"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
+msgid "Dosage management — Multiple doses with different times"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
+msgid ""
+"Frequency modes — Every day, specific days, cycle or just when necessary"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:32
+msgid "Color and icon — Give a shape for your treatment"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
+msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:34
+msgid "Duration — Define the start and end dates"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
+msgid "Dosage today window in light theme"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:50
+msgid "Dosage preferences window in light theme"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:55
+msgid "Dosage edit treatment window in light theme"
+msgstr ""
+
+#: data/io.github.diegopvlk.Dosage.appdata.xml.in:60
+msgid "Dosage today window in dark theme"
+msgstr ""
+
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.diegopvlk.Dosage.desktop.in:11
+msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
+msgstr ""
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: data/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr ""
+
+#: data/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: data/gtk/help-overlay.blp:24
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: data/ui/med-dialog.blp:7
+msgid "New treatment"
+msgstr ""
+
+#: data/ui/med-dialog.blp:19 src/medDialog.js:197
+msgid "Cancel"
+msgstr ""
+
+#: data/ui/med-dialog.blp:29 data/ui/window.blp:194
+msgid "Add"
+msgstr ""
+
+#: data/ui/med-dialog.blp:58
+msgid "From treatment list"
+msgstr ""
+
+#: data/ui/med-dialog.blp:77
+msgid "Name"
+msgstr ""
+
+#: data/ui/med-dialog.blp:81
+msgid "Unit"
+msgstr ""
+
+#: data/ui/med-dialog.blp:82 src/medDialog.js:252
+msgid "Pill(s)"
+msgstr ""
+
+#: data/ui/med-dialog.blp:86
+msgid "Notes"
+msgstr ""
+
+#: data/ui/med-dialog.blp:87
+msgid "After meal"
+msgstr ""
+
+#: data/ui/med-dialog.blp:95
+msgid "Form"
+msgstr ""
+
+#: data/ui/med-dialog.blp:96
+msgid "Color and icon"
+msgstr ""
+
+#: data/ui/med-dialog.blp:106 src/medDialog.js:297
+msgid "Color"
+msgstr ""
+
+#. TRANSLATORS: Tooltip for the colors (from Default until Purple)
+#: data/ui/med-dialog.blp:123
+msgid "Default"
+msgstr ""
+
+#: data/ui/med-dialog.blp:135
+msgid "Red"
+msgstr ""
+
+#: data/ui/med-dialog.blp:147
+msgid "Orange"
+msgstr ""
+
+#: data/ui/med-dialog.blp:159
+msgid "Yellow"
+msgstr ""
+
+#: data/ui/med-dialog.blp:171
+msgid "Green"
+msgstr ""
+
+#: data/ui/med-dialog.blp:183
+msgid "Cyan"
+msgstr ""
+
+#: data/ui/med-dialog.blp:195
+msgid "Blue"
+msgstr ""
+
+#: data/ui/med-dialog.blp:207
+msgid "Purple"
+msgstr ""
+
+#: data/ui/med-dialog.blp:221
+msgid "Icon"
+msgstr ""
+
+#. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
+#: data/ui/med-dialog.blp:240
+msgid "Pill"
+msgstr ""
+
+#: data/ui/med-dialog.blp:256
+msgid "Alternative pill"
+msgstr ""
+
+#: data/ui/med-dialog.blp:272
+msgid "Capsule"
+msgstr ""
+
+#: data/ui/med-dialog.blp:288
+msgid "Round pill"
+msgstr ""
+
+#: data/ui/med-dialog.blp:304
+msgid "Alternative round pill"
+msgstr ""
+
+#: data/ui/med-dialog.blp:320
+msgid "Ampoule"
+msgstr ""
+
+#: data/ui/med-dialog.blp:336
+msgid "Injection"
+msgstr ""
+
+#: data/ui/med-dialog.blp:352
+msgid "Square pill"
+msgstr ""
+
+#: data/ui/med-dialog.blp:368
+msgid "Alternative square pill"
+msgstr ""
+
+#: data/ui/med-dialog.blp:384
+msgid "Triangle pill"
+msgstr ""
+
+#: data/ui/med-dialog.blp:400
+msgid "Alternative triangle pill"
+msgstr ""
+
+#: data/ui/med-dialog.blp:416
+msgid "Bottle"
+msgstr ""
+
+#: data/ui/med-dialog.blp:432
+msgid "Drop"
+msgstr ""
+
+#: data/ui/med-dialog.blp:448
+msgid "Potion"
+msgstr ""
+
+#: data/ui/med-dialog.blp:461 src/medDialog.js:768
+msgid "Frequency"
+msgstr ""
+
+#: data/ui/med-dialog.blp:466
+msgid "Every day"
+msgstr ""
+
+#: data/ui/med-dialog.blp:467 src/medDialog.js:762
+msgid "Specific days"
+msgstr ""
+
+#: data/ui/med-dialog.blp:468 src/medDialog.js:765 src/treatmentsFactory.js:152
+msgid "Cycle"
+msgstr ""
+
+#: data/ui/med-dialog.blp:469 src/treatmentsFactory.js:156
+msgid "When necessary"
+msgstr ""
+
+#: data/ui/med-dialog.blp:481
+msgid "Choose days"
+msgstr ""
+
+#: data/ui/med-dialog.blp:572
+msgid "Change cycle"
+msgstr ""
+
+#: data/ui/med-dialog.blp:589
+msgid "Days active"
+msgstr ""
+
+#: data/ui/med-dialog.blp:603
+msgid "Days inactive"
+msgstr ""
+
+#. TRANSLATORS: Day in cycle, try to keep it short
+#: data/ui/med-dialog.blp:618
+msgid "Today is cycle day…"
+msgstr ""
+
+#: data/ui/med-dialog.blp:635
+msgid "Time and amount"
+msgstr ""
+
+#: data/ui/med-dialog.blp:648
+msgid "Add dose"
+msgstr ""
+
+#: data/ui/med-dialog.blp:669 src/historyFactory.js:186
+msgid "Skipped"
+msgstr ""
+
+#: data/ui/med-dialog.blp:681
+msgid "Confirmed"
+msgstr ""
+
+#: data/ui/med-dialog.blp:688
+msgid "Recurring notifications"
+msgstr ""
+
+#: data/ui/med-dialog.blp:689
+msgid "Renotify until it's confirmed or skipped"
+msgstr ""
+
+#: data/ui/med-dialog.blp:694
+msgid "Interval in minutes"
+msgstr ""
+
+#: data/ui/med-dialog.blp:707
+msgid "Inventory"
+msgstr ""
+
+#: data/ui/med-dialog.blp:708
+msgid "Manage your stock"
+msgstr ""
+
+#: data/ui/med-dialog.blp:714
+msgid "Current"
+msgstr ""
+
+#: data/ui/med-dialog.blp:727
+msgid "Remind me at"
+msgstr ""
+
+#: data/ui/med-dialog.blp:741
+msgid "Duration"
+msgstr ""
+
+#: data/ui/med-dialog.blp:742
+msgid "Set start and end dates"
+msgstr ""
+
+#. TRANSLATORS: label for when duration is enabled
+#: data/ui/med-dialog.blp:752 src/treatmentsFactory.js:114
+msgid "Starts on"
+msgstr ""
+
+#: data/ui/med-dialog.blp:762 data/ui/med-dialog.blp:794
+#: data/ui/med-dialog.blp:828
+msgid "Choose date"
+msgstr ""
+
+#: data/ui/med-dialog.blp:784
+msgid "Ends on"
+msgstr ""
+
+#: data/ui/med-dialog.blp:817
+msgid "Date"
+msgstr ""
+
+#: data/ui/med-dialog.blp:850 src/historyFactory.js:151 src/medDialog.js:198
+msgid "Delete"
+msgstr ""
+
+#: data/ui/preferences.blp:6 data/ui/window.blp:211
+msgid "Preferences"
+msgstr ""
+
+#: data/ui/preferences.blp:20
+msgid "Auto-start at login"
+msgstr ""
+
+#: data/ui/preferences.blp:36
+msgid "Auto-clear history"
+msgstr ""
+
+#: data/ui/preferences.blp:37
+msgid "Keeps a maximum of 30 days"
+msgstr ""
+
+#: data/ui/preferences.blp:53
+msgid "Increase notification priority"
+msgstr ""
+
+#: data/ui/preferences.blp:54
+msgid ""
+"Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
+"is enabled"
+msgstr ""
+
+#: data/ui/preferences.blp:70
+msgid "Notification sound"
+msgstr ""
+
+#: data/ui/preferences.blp:86
+msgid "Notification buttons"
+msgstr ""
+
+#: data/ui/preferences.blp:87
+msgid "Show or hide confirm/skip"
+msgstr ""
+
+#: data/ui/preferences.blp:96 src/medDialog.js:296 src/window.js:503
+#: src/window.js:722
+msgid "Confirm"
+msgstr ""
+
+#: data/ui/preferences.blp:112 data/ui/window.blp:109 src/window.js:504
+msgid "Skip"
+msgstr ""
+
+#: data/ui/window.blp:31
+msgid "Main Menu"
+msgstr ""
+
+#: data/ui/window.blp:45
+msgid "Today"
+msgstr ""
+
+#: data/ui/window.blp:84
+msgid "Unselect"
+msgstr ""
+
+#: data/ui/window.blp:97 src/window.js:722
+msgid "One-time entry"
+msgstr ""
+
+#: data/ui/window.blp:119
+msgid "History"
+msgstr ""
+
+#: data/ui/window.blp:141
+msgid "Empty history"
+msgstr ""
+
+#: data/ui/window.blp:149
+msgid "Treatments"
+msgstr ""
+
+#: data/ui/window.blp:171
+msgid "Click the button below to add some"
+msgstr ""
+
+#: data/ui/window.blp:216
+msgid "About Dosage"
+msgstr ""
+
+#: data/ui/window.blp:221
+msgid "Quit"
+msgstr ""
+
+#: src/historyFactory.js:148
+msgid "Restore"
+msgstr ""
+
+#: src/historyFactory.js:191
+msgid "Missed"
+msgstr ""
+
+#. TRANSLATORS: 'Your Name <your@email.com>'
+#: src/main.js:49
+msgid "translator-credits"
+msgstr ""
+
+#: src/main.js:53
+msgid "Thanks to these projects!"
+msgstr ""
+
+#. TRANSLATORS: Confirmation message to allow background permission
+#: src/main.js:89
+msgid "Accept to allow running in the background and receive notifications"
+msgstr ""
+
+#: src/medDialog.js:107
+msgid "Edit treatment"
+msgstr ""
+
+#: src/medDialog.js:108 src/medDialog.js:363
+msgid "Save"
+msgstr ""
+
+#. TRANSLATORS: Message for confirmation when deleting an item
+#: src/medDialog.js:194
+msgid "Are you sure?"
+msgstr ""
+
+#: src/medDialog.js:242
+msgid "New"
+msgstr ""
+
+#: src/medDialog.js:295
+msgid "New entry"
+msgstr ""
+
+#: src/medDialog.js:344 src/medDialog.js:355
+msgid "Confirmed at"
+msgstr ""
+
+#: src/medDialog.js:348 src/medDialog.js:358
+msgid "Skipped at"
+msgstr ""
+
+#: src/medDialog.js:351
+msgid "Missed(?) at"
+msgstr ""
+
+#: src/medDialog.js:362
+msgid "Edit entry"
+msgstr ""
+
+#: src/medDialog.js:730
+msgid "Choose"
+msgstr ""
+
+#: src/medDialog.js:801
+msgid "Empty name"
+msgstr ""
+
+#: src/medDialog.js:805
+msgid "Empty unit"
+msgstr ""
+
+#: src/medDialog.js:811
+msgid "Choose at least one day"
+msgstr ""
+
+#: src/medDialog.js:822
+msgid "Name already on treatment list"
+msgstr ""
+
+#: src/medDialog.js:836
+msgid "Duplicated time"
+msgstr ""
+
+#: src/todayFactory.js:111
+msgid "Change dose"
+msgstr ""
+
+#: src/treatmentsFactory.js:104
+msgid "Remaining"
+msgstr ""
+
+#: src/treatmentsFactory.js:108
+msgid "Low stock"
+msgstr ""
+
+#: src/treatmentsFactory.js:115
+msgid "Until"
+msgstr ""
+
+#: src/treatmentsFactory.js:116
+msgid "Ended on"
+msgstr ""
+
+#: src/treatmentsFactory.js:128 src/utils.js:51
+msgid "Daily"
+msgstr ""
+
+#: src/treatmentsFactory.js:140 src/treatmentsFactory.js:143
+msgid "Next dose"
+msgstr ""
+
+#: src/utils.js:47
+msgid "Weekends"
+msgstr ""
+
+#: src/utils.js:49
+msgid "Weekdays"
+msgstr ""
+
+#: src/utils.js:341
+msgid "Delete dose"
+msgstr ""
+
+#: src/window.js:132 src/window.js:549
+msgid "Reminder"
+msgstr ""
+
+#. TRANSLATORS: Notification text for when the inventory is low
+#: src/window.js:134
+msgid "You have treatments low in stock"
+msgstr ""
+
+#: src/window.js:425
+msgid "No treatments added yet"
+msgstr ""
+
+#: src/window.js:429
+msgid "All done for today"
+msgstr ""
+
+#: src/window.js:503
+msgid "Confirm all"
+msgstr ""
+
+#: src/window.js:504
+msgid "Skip all"
+msgstr ""
+
+#. TRANSLATORS: keep the %d it's where the number goes
+#: src/window.js:541
+#, javascript-format
+msgid "and %d more"
+msgstr ""
