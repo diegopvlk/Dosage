@@ -96,7 +96,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	deleteButton.connect('clicked', () => {
 		const item = listItem.get_item();
 		const listView = box.get_parent().get_parent();
-		const listStore = listView.get_model().get_model().get_model();
+		const listStore = listView.get_model().get_model().get_model().get_model();
 		let position = listItem.get_position();
 
 		removedItem = item;

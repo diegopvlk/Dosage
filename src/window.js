@@ -53,6 +53,10 @@ export const DosageWindow = GObject.registerClass(
 			'skipBtn',
 			'entryBtn',
 			'unselectBtn',
+			'viewStack',
+			'buttonSearch',
+			'searchBar',
+			'searchEntry',
 		],
 	},
 	class DosageWindow extends Adw.ApplicationWindow {
@@ -79,7 +83,6 @@ export const DosageWindow = GObject.registerClass(
 		#start() {
 			const load = () => {
 				this._loadData();
-				this._setEmptyHistLabel();
 				this._updateCycleAndLastUp();
 				this._updateJsonFile('treatments', treatmentsLS);
 				this._loadToday();
@@ -278,16 +281,25 @@ export const DosageWindow = GObject.registerClass(
 
 		async _loadHistory(historyJson) {
 			try {
-				if (historyLS.get_n_items() === 0) {
+				if (!historyLS.get_item(0)) {
 					historyJson.history.forEach(med => {
 						historyLS.append(new MedicationObject({ obj: med }));
 					});
+
+					this.historyFilter = new Gtk.CustomFilter();
+
+					this.filterHistoryModel = new Gtk.FilterListModel({
+						model: historyLS,
+						filter: this.historyFilter,
+					});
+
+					this._setHistorySearch();
 
 					const sortedHistModelPromise = new Promise(resolve => {
 						setTimeout(() => {
 							resolve(
 								(this.sortedHistoryModel = new Gtk.SortListModel({
-									model: historyLS,
+									model: this.filterHistoryModel,
 									section_sorter: new HistorySectionSorter(),
 									sorter: new HistorySorter(),
 								})),
@@ -296,9 +308,12 @@ export const DosageWindow = GObject.registerClass(
 					});
 
 					sortedHistModelPromise.then(_ => {
-						this._historyList.model = new Gtk.NoSelection({
+						this.noSelectionModel = new Gtk.NoSelection({
 							model: this.sortedHistoryModel,
 						});
+
+						this._historyList.model = this.noSelectionModel;
+
 						this._headerBarSpinner.set_visible(false);
 					});
 
@@ -307,7 +322,23 @@ export const DosageWindow = GObject.registerClass(
 					this._historyList.set_header_factory(historyHeaderFactory);
 					this._historyList.set_factory(historyItemFactory);
 
+					const app = this.get_application();
+					this.showSearchAction = new Gio.SimpleAction({ name: 'showSearch' });
+					app.set_accels_for_action('app.showSearch', ['<primary>f']);
+					app.add_action(this.showSearchAction);
+
 					historyLS.connect('items-changed', (model, pos, removed, added) => {
+						if (!historyLS.get_item(0)) {
+							this._searchBar.search_mode_enabled = false;
+							this._setEmptyHistStatus();
+							app.remove_action('showSearch');
+						} else {
+							const histVisible = this._viewStack.get_visible_child_name() === 'history-page';
+							this._buttonSearch.sensitive = true;
+							this._buttonSearch.visible = histVisible;
+							app.add_action(this.showSearchAction);
+						}
+
 						if (flow.itemsChanged) return;
 
 						if (added && removed === 0) {
@@ -361,7 +392,59 @@ export const DosageWindow = GObject.registerClass(
 				console.error('Error loading history:', err);
 			}
 
-			this._setEmptyHistLabel();
+			this._setEmptyHistStatus();
+		}
+
+		_setHistorySearch() {
+			this._buttonSearch.connect('clicked', () => {
+				this._searchBar.search_mode_enabled = !this._searchBar.search_mode_enabled;
+			});
+
+			this._searchBar.connect('notify::search-mode-enabled', searchBar => {
+				this._buttonSearch.active = searchBar.search_mode_enabled;
+			});
+
+			this.filterHistoryModel.connect('items-changed', () => {
+				let noResults = !this.filterHistoryModel.get_item(0);
+				this._emptyHistory.visible = noResults ? true : false;
+				this._emptyHistory.title = noResults ? _('No results found') : _('Empty history');
+			});
+
+			this._searchEntry.connect('search-changed', () => {
+				const removeDiacritics = str => {
+					return str
+						.toLowerCase()
+						.normalize('NFD')
+						.replace(/[\u0300-\u036f]/g, '');
+				};
+
+				const query = removeDiacritics(this._searchEntry.text.trim());
+
+				if (!query) {
+					this.historyFilter.set_filter_func(null);
+					this._emptyHistory.visible = false;
+					this._historyList.scroll_to(0, null, null);
+					return;
+				}
+
+				this.historyFilter.set_filter_func(item => {
+					const itemName = removeDiacritics(item.obj.name);
+					return itemName.includes(query);
+				});
+			});
+
+			this._viewStack.connect('notify::visible-child', viewStack => {
+				const histVisible = viewStack.get_visible_child_name() === 'history-page';
+				this._buttonSearch.visible = histVisible;
+				this._searchBar.visible = histVisible;
+
+				if (histVisible) {
+					this.showSearchAction.connect('activate', () => {
+						this._searchBar.search_mode_enabled = true;
+						this._searchEntry.grab_focus();
+					});
+				}
+			});
 		}
 
 		_loadToday() {
@@ -969,9 +1052,14 @@ export const DosageWindow = GObject.registerClass(
 			if (lastUp < today) this.lastUpdate = new Date().toISOString();
 		}
 
-		_setEmptyHistLabel() {
-			if (historyLS.get_n_items() === 0) this._emptyHistory.set_visible(true);
-			else this._emptyHistory.set_visible(false);
+		_setEmptyHistStatus() {
+			if (!historyLS.get_item(0)) {
+				this._emptyHistory.title = _('Empty history');
+				this._emptyHistory.visible = true;
+				this._buttonSearch.sensitive = false;
+				this._searchBar.search_mode_enabled = false;
+				this.get_application().remove_action('showSearch');
+			}
 		}
 
 		_updateEverything(skipHistUp, notifAction) {
@@ -979,7 +1067,6 @@ export const DosageWindow = GObject.registerClass(
 			this._updateCycleAndLastUp();
 			this._updateJsonFile('treatments', treatmentsLS);
 			this._loadToday();
-			this._setEmptyHistLabel();
 			this._updateEntryBtn(false);
 			this._checkInventory(notifAction);
 		}

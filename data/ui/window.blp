@@ -18,6 +18,12 @@ template $DosageWindow: Adw.ApplicationWindow {
     [top]
     Adw.HeaderBar headerBar {
       [start]
+      ToggleButton buttonSearch {
+        icon-name: "edit-find-symbolic";
+        visible: false;
+      }
+
+      [start]
       Adw.Spinner headerBarSpinner {
         margin-start: 9;
         margin-end: 9;
@@ -32,16 +38,25 @@ template $DosageWindow: Adw.ApplicationWindow {
       }
 
       title-widget: Adw.ViewSwitcher {
-        stack: stack;
+        stack: viewStack;
         policy: wide;
       };
     }
 
-    content: Adw.ViewStack stack {
+    [top]
+    SearchBar searchBar {
+      SearchEntry searchEntry {
+        search-delay: 125;
+        placeholder-text: _("Search…");
+        width-request: 276;
+      }
+    }
+
+    content: Adw.ViewStack viewStack {
       vexpand: true;
 
       Adw.ViewStackPage todayPage {
-        name: 'page1';
+        name: 'today-page';
         title: _("Today");
         icon-name: 'today-icn-symbolic';
 
@@ -115,11 +130,11 @@ template $DosageWindow: Adw.ApplicationWindow {
       }
 
       Adw.ViewStackPage historyPage {
-        name: 'page2';
+        name: 'history-page';
         title: _("History");
         icon-name: 'history-symbolic';
 
-        child: Overlay {
+        child: Overlay historyOverlay {
           ScrolledWindow {
             Adw.ClampScrollable {
               ListView historyList {
@@ -138,14 +153,13 @@ template $DosageWindow: Adw.ApplicationWindow {
           [overlay]
           Adw.StatusPage emptyHistory {
             icon-name: 'history-empty-symbolic';
-            title: _("Empty history");
             visible: false;
           }
         };
       }
 
       Adw.ViewStackPage treatmentsPage {
-        name: 'page3';
+        name: 'treatments-page';
         title: _("Treatments");
         icon-name: 'treatments-symbolic';
 
@@ -201,7 +215,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 
     [bottom]
     Adw.ViewSwitcherBar switcherBar {
-      stack: stack;
+      stack: viewStack;
     }
   };
 }
