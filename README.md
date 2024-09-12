@@ -1,7 +1,6 @@
-<img style="vertical-align: middle;" src="data/icons/hicolor/scalable/apps/io.github.diegopvlk.Dosage.svg" width="128" height="128" align="left">
+<img style="vertical-align: middle;" src="data/icons/hicolor/scalable/apps/io.github.diegopvlk.Dosage.svg" width="112" height="112" align="left">
 
-## Dosage
-
+### Dosage
 Keep track of your treatments
 
 <br>
