@@ -20,12 +20,11 @@
   --purple-bg: color-mix(in srgb, #dcdcf5 97%, var(--accent-color));
   --purple-fg: #361f73;
 
-  --default-bg: rgb(from currentColor r g b / calc(alpha * 0.12));
+  --default-bg: var(--card-bg-color);
   --default-fg: var(--card-fg-color);
 }
 
-.card checkbutton check:checked {
-  opacity: 0.8;
+.item-box checkbutton check:checked {
   color: var(--window-bg-color);
 }
 
@@ -48,38 +47,36 @@
 .cyan-clr:not(menubutton):hover,
 .blue-clr:not(menubutton):hover,
 .purple-clr:not(menubutton):hover {
-  background-image: linear-gradient(
-    color-mix(in srgb, currentColor 15%, transparent),
-    color-mix(in srgb, currentColor 15%, transparent)
-  );
+  box-shadow: inset 0 0 10px 1px
+    color-mix(in srgb, currentColor 42%, transparent);
 }
 
 .red-clr {
-  background-color: var(--red-bg);
+  background-image: image(var(--red-bg));
   color: color-mix(in srgb, var(--red-fg) 70%, transparent);
 }
 .orange-clr {
-  background-color: var(--orange-bg);
+  background-image: image(var(--orange-bg));
   color: color-mix(in srgb, var(--orange-fg) 70%, transparent);
 }
 .yellow-clr {
-  background-color: var(--yellow-bg);
+  background-image: image(var(--yellow-bg));
   color: color-mix(in srgb, var(--yellow-fg) 70%, transparent);
 }
 .green-clr {
-  background-color: var(--green-bg);
+  background-image: image(var(--green-bg));
   color: color-mix(in srgb, var(--green-fg) 70%, transparent);
 }
 .cyan-clr {
-  background-color: var(--cyan-bg);
+  background-image: image(var(--cyan-bg));
   color: color-mix(in srgb, var(--cyan-fg) 70%, transparent);
 }
 .blue-clr {
-  background-color: var(--blue-bg);
+  background-image: image(var(--blue-bg));
   color: color-mix(in srgb, var(--blue-fg) 70%, transparent);
 }
 .purple-clr {
-  background-color: var(--purple-bg);
+  background-image: image(var(--purple-bg));
   color: color-mix(in srgb, var(--purple-fg) 70%, transparent);
 }
 
@@ -88,7 +85,7 @@
   color: var(--red-fg);
 }
 .red checkbutton check:checked {
-  background-color: var(--red-fg);
+  background-color: rgb(from var(--red-fg) r g b / calc(alpha * 0.9));
 }
 
 .orange {
@@ -96,7 +93,7 @@
   color: var(--orange-fg);
 }
 .orange checkbutton check:checked {
-  background-color: var(--orange-fg);
+  background-color: rgb(from var(--orange-fg) r g b / calc(alpha * 0.9));
 }
 
 .yellow {
@@ -104,7 +101,7 @@
   color: var(--yellow-fg);
 }
 .yellow checkbutton check:checked {
-  background-color: var(--yellow-fg);
+  background-color: rgb(from var(--yellow-fg) r g b / calc(alpha * 0.9));
 }
 
 .green {
@@ -112,7 +109,7 @@
   color: var(--green-fg);
 }
 .green checkbutton check:checked {
-  background-color: var(--green-fg);
+  background-color: rgb(from var(--green-fg) r g b / calc(alpha * 0.9));
 }
 
 .cyan {
@@ -120,7 +117,7 @@
   color: var(--cyan-fg);
 }
 .cyan checkbutton check:checked {
-  background-color: var(--cyan-fg);
+  background-color: rgb(from var(--cyan-fg) r g b / calc(alpha * 0.9));
 }
 
 .blue {
@@ -128,7 +125,7 @@
   color: var(--blue-fg);
 }
 .blue checkbutton check:checked {
-  background-color: var(--blue-fg);
+  background-color: rgb(from var(--blue-fg) r g b / calc(alpha * 0.9));
 }
 
 .purple {
@@ -136,13 +133,13 @@
   color: var(--purple-fg);
 }
 .purple checkbutton check:checked {
-  background-color: var(--purple-fg);
+  background-color: rgb(from var(--purple-fg) r g b / calc(alpha * 0.9));
 }
 
 .default {
-  background-color: color-mix(in srgb, var(--default-bg) 75%, transparent);
+  background-color: var(--default-bg);
   color: var(--default-fg);
 }
 .default checkbutton check:checked {
-  background-color: var(--default-fg);
+  background-color: rgb(from var(--default-fg) r g b / calc(alpha * 0.9));
 }

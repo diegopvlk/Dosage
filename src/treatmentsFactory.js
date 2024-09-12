@@ -13,7 +13,7 @@ export const treatmentsFactory = new Gtk.SignalListItemFactory();
 
 treatmentsFactory.connect('setup', (factory, listItem) => {
 	const box = new Gtk.Box({
-		css_classes: ['card'],
+		css_classes: ['item-box'],
 		height_request: 64,
 	});
 	const icon = new Gtk.Image({
@@ -90,9 +90,6 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		}
 	});
 	row.add_controller(keyController);
-
-	row.remove_css_class('activatable');
-	box.add_css_class('activatable');
 
 	nameLabel.label = item.name;
 

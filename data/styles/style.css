@@ -3,22 +3,36 @@
 :root {
   --window-bg-color: color-mix(in srgb, #fafafa 99%, var(--accent-color));
   --window-fg-color: color-mix(in srgb, #323232 85%, var(--accent-color));
+
   --popover-bg-color: color-mix(
     in srgb,
     var(--view-bg-color) 100%,
     var(--window-fg-color) 2%
   );
   --popover-fg-color: var(--window-fg-color);
+
   --dialog-bg-color: var(--popover-bg-color);
   --dialog-fg-color: var(--popover-fg-color);
-  --card-bg-color: rgb(from currentColor r g b / calc(alpha * 0.09));
+
+  --card-bg-color: rgb(from var(--window-fg-color) r g b / calc(alpha * 0.09));
   --card-fg-color: var(--window-fg-color);
+
   --list-border-radius: 8px;
   --list-border: inset 0 0 0 1px
-    rgb(from var(--border-color) r g b / calc(alpha * 0.4));
-  --list-shadow: 0 1px 2px
-    rgb(from var(--border-color) r g b / calc(alpha * 0.45));
+    rgb(from var(--border-color) r g b / calc(alpha * 0.35));
+  --list-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 }
+
+.boxed-list,
+.boxed-list-separate {
+  --card-bg-color: rgb(from var(--window-fg-color) r g b / calc(alpha * 0.08));
+}
+
+#medication-dialog row#delete {
+  --list-border: inset 0 0 0 1px
+    rgb(from var(--card-fg-color) r g b / calc(alpha * 0.043));
+}
+
 statuspage .icon {
   margin-top: -30px;
 }
@@ -28,10 +42,6 @@ statuspage .title {
 preferencespage scrolledwindow viewport clamp {
   margin-top: -24px;
   margin-bottom: -4px;
-}
-box.card {
-  box-shadow: none;
-  border-radius: var(--list-border-radius);
 }
 dialog.about .boxed-list {
   box-shadow: var(--list-border), var(--list-shadow);
@@ -53,25 +63,30 @@ listview > header label {
   opacity: 0.8;
 }
 
-.dosage-list > row > box {
+.item-box {
+  transition: background 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-shadow: var(--list-border), var(--list-shadow);
   border-radius: var(--list-border-radius);
 }
+.item-box:hover {
+  background-image: image(color-mix(in srgb, currentColor 3%, transparent));
+}
+.item-box:active {
+  background-image: image(color-mix(in srgb, currentColor 8%, transparent));
+}
 
 /* today list card stripe */
-.dosage-list.today > row > box:dir(ltr) {
+.dosage-list.today .item-box:dir(ltr) {
   box-shadow: var(--list-border), var(--list-shadow),
     inset 23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.25));
 }
-.dosage-list.today > row > box:dir(rtl) {
+.dosage-list.today .item-box:dir(rtl) {
   box-shadow: var(--list-border), var(--list-shadow),
     inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.25));
 }
 
-.dosage-list > row:focus {
-  border-radius: calc(var(--list-border-radius) + 2px);
-}
 .dosage-list > row {
+  border-radius: calc(var(--list-border-radius) + 2px);
   background: none;
 }
 .dosage-list {
@@ -237,9 +252,8 @@ button.time-group-selection:hover {
   outline: none;
 }
 
-.badge-box.confirmed,
 .badge-box.low-stock {
-  box-shadow: inset 0 0 0 1px var(--border-color);
+  box-shadow: inset 0 0 0 1px rgb(from currentColor r g b / calc(alpha * 0.13));
 }
 .badge-box {
   color: rgb(from currentColor r g b / calc(alpha * 0.85));
@@ -258,7 +272,7 @@ button.time-group-selection:hover {
   text-transform: none;
 }
 .badge-icon {
-  background-color: rgb(from currentColor r g b / calc(alpha * 0.11));
+  background-color: rgb(from currentColor r g b / calc(alpha * 0.1));
   padding: 0 5px;
 }
 .badge-icon:dir(ltr) {

@@ -44,7 +44,7 @@ historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 
 historyItemFactory.connect('setup', (factory, listItem) => {
 	const box = new Gtk.Box({
-		css_classes: ['card'],
+		css_classes: ['item-box'],
 		height_request: 64,
 	});
 	const deleteButton = new Gtk.Button({
@@ -142,9 +142,6 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	});
 	row.add_controller(keyController);
 
-	row.remove_css_class('activatable');
-	box.add_css_class('activatable');
-
 	if (timeTaken.format('%F') == dateNow.format('%F')) {
 		deleteButton.icon_name = 'edit-undo-symbolic';
 		deleteButton.tooltip_text = _('Restore');
@@ -183,17 +180,14 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 		takenLabel.label = `${takenTime}`;
 		takenIcon.set_visible(true);
 		takenLabel.add_css_class('badge-end-border');
-		takenBox.add_css_class('confirmed');
 	} else if (item.taken[1] === 0) {
 		takenLabel.label = _('Skipped');
 		takenIcon.set_visible(false);
 		takenLabel.remove_css_class('badge-end-border');
-		takenBox.remove_css_class('confirmed');
 	} else if (item.taken[1] === -1) {
 		takenLabel.label = _('Missed');
 		takenIcon.set_visible(false);
 		takenLabel.remove_css_class('badge-end-border');
-		takenBox.remove_css_class('confirmed');
 	}
 
 	['default', 'red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'].forEach(c =>

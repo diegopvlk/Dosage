@@ -23,10 +23,7 @@
   --purple-bg: color-mix(in srgb, #3f3851 97%, var(--accent-color));
   --purple-fg: #ebddf7;
 
-  --default-bg: rgb(from currentColor r g b / calc(alpha * 0.17));
-  --default-fg: var(--card-fg-color);
-
-  --card-bg-color: rgb(from currentColor r g b / calc(alpha * 0.1));
+  --card-bg-color: rgb(from var(--window-fg-color) r g b / calc(alpha * 0.125));
 
   --popover-bg-color: color-mix(
     in srgb,
@@ -35,7 +32,21 @@
   );
   --popover-fg-color: var(--window-fg-color);
 
+  --list-border: inset 0 0 0 1px
+    rgb(from var(--border-color) r g b / calc(alpha * 0.3));
   --list-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.boxed-list,
+.boxed-list-separate {
+  --list-border: inset 0 0 0 1px
+    rgb(from var(--border-color) r g b / calc(alpha * 0.2));
+  --card-bg-color: rgb(from var(--window-fg-color) r g b / calc(alpha * 0.09));
+}
+
+#medication-dialog row#delete {
+  --list-border: inset 0 0 0 1px
+    rgb(from var(--card-fg-color) r g b / calc(alpha * 0.03));
 }
 
 row.expander list.nested {

@@ -64,7 +64,7 @@ todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 
 todayItemFactory.connect('setup', (factory, listItem) => {
 	const box = new Gtk.Box({
-		css_classes: ['card'],
+		css_classes: ['item-box'],
 		height_request: 64,
 	});
 	const icon = new Gtk.Image({
@@ -152,9 +152,6 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 		}
 	});
 	row.add_controller(keyController);
-
-	row.remove_css_class('activatable');
-	box.add_css_class('activatable');
 
 	['default', 'red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'].forEach(c =>
 		box.remove_css_class(c),

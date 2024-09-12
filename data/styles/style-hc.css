@@ -1,7 +1,8 @@
-:root {
+:root,
+.boxed-list,
+.boxed-list-separate,
+#medication-dialog row#delete {
   --list-border: inset 0 0 0 1px var(--border-color);
-  --list-shadow: 0 1px 2px
-    rgb(from var(--border-color) r g b / calc(alpha * 0.25));
 }
 
 .time-box spinbutton button {
@@ -9,6 +10,7 @@
     rgb(from var(--border-color) r g b / calc(alpha * 0.8));
 }
 
+.badge-box.low-stock,
 button.floating:not(.suggested-action) {
   box-shadow: inset 0 0 0 1px var(--border-color);
 }
@@ -25,5 +27,6 @@ button.floating:not(.suggested-action) {
 
 #medication-dialog .linked-circular button:checked,
 row.combo .dropdown-arrow {
-  box-shadow: inset 0 0 0 1px rgb(from currentColor r g b / calc(alpha * 0.6));
+  box-shadow: 0 1px 2px 1px rgb(from black r g b / calc(alpha * 0.1)),
+    inset 0 0 0 1px rgb(from currentColor r g b / calc(alpha * 0.6));
 }
