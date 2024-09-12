@@ -28,7 +28,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 
 	const dateOneEntry = builder.get_object('dateOneEntry');
 	const calOneEntry = builder.get_object('calOneEntry');
-	const oneTimeMenuRow = builder.get_object('oneTimeMenu').get_parent();
+	const oneTimeMenuRow = builder.get_object('oneTimeMenu');
 	oneTimeMenuRow.set_visible(false);
 
 	const medDialog = builder.get_object('medDialog');
@@ -264,6 +264,10 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 
 		dateOneEntry.subtitle = GLib.DateTime.new_now_local().format('%x');
 		handleCalendarSelect(calOneEntry, dateOneEntry, true);
+
+		oneTimeMenuRow.get_child().append(oneTimePopover);
+
+		oneTimeMenuRow.connect('activated', _ => oneTimePopover.popup());
 
 		if (DosageWindow._treatmentsList.model.get_n_items() > 0) {
 			oneTimeMenuRow.set_visible(true);

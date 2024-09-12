@@ -35,7 +35,7 @@ Adw.Dialog medDialog {
         Adw.Clamp medDialogClamp {
           maximum-size: 412;
 
-          Box  {
+          Box {
             orientation: vertical;
             margin-start: 10;
             margin-end: 10;
@@ -49,28 +49,13 @@ Adw.Dialog medDialog {
 
               selection-mode: none;
 
-              MenuButton oneTimeMenu {
+              Adw.ButtonRow oneTimeMenu {
                 styles [
-                  'flat',
                   'one-time-menu'
                 ]
 
-                label: _("From treatment list");
-
-                popover: Popover oneTimePopover {
-                  ScrolledWindow {
-                    propagate-natural-height: true;
-                    propagate-natural-width: true;
-                    hscrollbar-policy: never;
-                    max-content-height: 336;
-
-                    Box oneTimeEntries {
-                      orientation: vertical;
-                      halign: start;
-                      margin-end: 10;
-                    }
-                  }
-                };
+                title: _("From treatment list");
+                end-icon-name: "pan-down-symbolic";
               }
 
               Adw.EntryRow name {
@@ -855,6 +840,22 @@ Adw.Dialog medDialog {
           }
         }
       };
+    }
+  }
+}
+
+Popover oneTimePopover {
+  visible: false;
+
+  ScrolledWindow {
+    propagate-natural-height: true;
+    propagate-natural-width: true;
+    max-content-height: 336;
+
+    Box oneTimeEntries {
+      orientation: vertical;
+      halign: start;
+      margin-end: 10;
     }
   }
 }

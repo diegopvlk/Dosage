@@ -126,19 +126,13 @@ button.specific-day {
   padding-left: 0;
   padding-right: 0;
 }
-.one-time-menu > button {
-  background-color: transparent;
-  padding-left: 36px;
-  padding-right: 21px;
-  min-height: 30px;
-}
-.one-time-menu.popup popover contents:dir(ltr) {
+.one-time-menu popover contents:dir(ltr) {
   padding-right: 0;
 }
-.one-time-menu.popup popover contents:dir(rtl) {
+.one-time-menu popover contents:dir(rtl) {
   padding-left: 0;
 }
-menubutton:not(.one-time-menu) button.arrow-button,
+button.arrow-button,
 button.one-time-name {
   font-weight: 400;
 }
