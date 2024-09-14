@@ -358,13 +358,16 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		}
 		if (item.taken[1] === -1) {
 			takenLabel.label = _('Missed(?) at');
+			saveButton.sensitive = false;
 		}
 
 		histBtnConfirmed.connect('clicked', () => {
 			takenLabel.label = _('Confirmed at');
+			saveButton.sensitive = true;
 		});
 		histBtnSkipped.connect('clicked', () => {
 			takenLabel.label = _('Skipped at');
+			saveButton.sensitive = true;
 		});
 		dosage.add_row(doseRowOne);
 

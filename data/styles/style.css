@@ -347,20 +347,20 @@ button.floating:not(.suggested-action):active {
 #medication-dialog .linked-circular {
   background: rgb(from currentColor r g b / calc(alpha * 0.1));
   border-radius: 99px;
-  padding: 3px;
+  padding: 4px;
 }
 #medication-dialog .linked-circular button {
-  min-height: 30px;
+  min-height: 32px;
   min-width: 32px;
 }
 #medication-dialog .linked-circular button:first-child:dir(rtl) {
-  margin-left: 3px;
+  margin-left: 2px;
 }
 #medication-dialog .linked-circular button:first-child:dir(ltr) {
-  margin-right: 3px;
+  margin-right: 2px;
 }
 #medication-dialog .linked-circular button:checked {
-  background: rgb(from white r g b / calc(alpha * 0.85));
+  background: var(--window-bg-color);
   box-shadow: 0 1px 2px 1px rgb(from black r g b / calc(alpha * 0.1));
 }
 calendar button,
