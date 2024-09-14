@@ -189,14 +189,7 @@ export function createTempObj(type, listStore) {
 				typeof item.taken[1] === 'number';
 
 			if (isValidItem) {
-				tempObj.history.push({
-					name: item.name,
-					unit: item.unit,
-					time: item.time,
-					dose: item.dose,
-					color: item.color,
-					taken: item.taken,
-				});
+				tempObj.history.push(item);
 			} else {
 				log('invalid history item:', JSON.stringify(item));
 				return;

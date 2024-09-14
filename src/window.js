@@ -907,6 +907,8 @@ export const DosageWindow = GObject.registerClass(
 			const file = DataDir.get_child(fileName);
 			const tempObj = createTempObj(type, listStore);
 
+			if (type === 'treatments') this.lastUpdate = new Date().toISOString();
+
 			if (!tempObj) return;
 
 			const updateFile = () => {
