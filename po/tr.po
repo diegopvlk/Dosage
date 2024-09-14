@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-12 19:24-0300\n"
+"POT-Creation-Date: 2024-09-14 15:35-0300\n"
 "PO-Revision-Date: 2024-03-22 11:45+0000\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
@@ -128,7 +128,7 @@ msgstr "Yeni İlaç"
 msgid "Cancel"
 msgstr "İptal"
 
-#: data/ui/med-dialog.blp:29 data/ui/window.blp:208
+#: data/ui/med-dialog.blp:29 data/ui/window.blp:209
 msgid "Add"
 msgstr "Ekle"
 
@@ -262,7 +262,7 @@ msgstr "Damla"
 msgid "Potion"
 msgstr "Karışım"
 
-#: data/ui/med-dialog.blp:446 src/medDialog.js:781
+#: data/ui/med-dialog.blp:446 src/medDialog.js:794
 msgid "Frequency"
 msgstr "Sıklık"
 
@@ -270,11 +270,11 @@ msgstr "Sıklık"
 msgid "Every day"
 msgstr "Her gün"
 
-#: data/ui/med-dialog.blp:452 src/medDialog.js:775
+#: data/ui/med-dialog.blp:452 src/medDialog.js:788
 msgid "Specific days"
 msgstr "Belirli günler"
 
-#: data/ui/med-dialog.blp:453 src/medDialog.js:778 src/treatmentsFactory.js:150
+#: data/ui/med-dialog.blp:453 src/medDialog.js:791 src/treatmentsFactory.js:150
 msgid "Cycle"
 msgstr "Döngü"
 
@@ -377,7 +377,7 @@ msgstr "Tarih"
 msgid "Delete"
 msgstr "Sil"
 
-#: data/ui/preferences.blp:6 data/ui/window.blp:225
+#: data/ui/preferences.blp:6 data/ui/window.blp:226
 msgid "Preferences"
 msgstr "Tercihler"
 
@@ -422,47 +422,51 @@ msgstr "Onayla/atla düğmelerini göster ya da gizle"
 msgid "Confirm"
 msgstr "Onayla"
 
-#: data/ui/preferences.blp:112 data/ui/window.blp:124 src/window.js:587
+#: data/ui/preferences.blp:112 data/ui/window.blp:125 src/window.js:587
 msgid "Skip"
 msgstr "Atla"
 
-#: data/ui/window.blp:37
+#: data/ui/window.blp:24
+msgid "Search"
+msgstr "Ara"
+
+#: data/ui/window.blp:38
 msgid "Main Menu"
 msgstr "Ana Menü"
 
-#: data/ui/window.blp:50
+#: data/ui/window.blp:51
 msgid "Search…"
 msgstr "Ara…"
 
-#: data/ui/window.blp:60
+#: data/ui/window.blp:61
 msgid "Today"
 msgstr "Bugün"
 
-#: data/ui/window.blp:99
+#: data/ui/window.blp:100
 msgid "Unselect"
 msgstr "Seçimi Kaldır"
 
-#: data/ui/window.blp:112 src/window.js:805
+#: data/ui/window.blp:113 src/window.js:805
 msgid "One-time entry"
 msgstr "Tek Seferlik Girdi"
 
-#: data/ui/window.blp:134
+#: data/ui/window.blp:135
 msgid "History"
 msgstr "Geçmiş"
 
-#: data/ui/window.blp:163
+#: data/ui/window.blp:164
 msgid "Treatments"
 msgstr "İlaçlar"
 
-#: data/ui/window.blp:185
+#: data/ui/window.blp:186
 msgid "Click the button below to add some"
 msgstr "Eklemek için aşağıdaki düğmeye tıklayın"
 
-#: data/ui/window.blp:230
+#: data/ui/window.blp:231
 msgid "About Dosage"
 msgstr "Doz Hakkında"
 
-#: data/ui/window.blp:235
+#: data/ui/window.blp:236
 msgid "Quit"
 msgstr "Çık"
 
@@ -492,7 +496,7 @@ msgstr "Arka planda çalışmaya izin vermeyi ve bildirim almayı kabul et"
 msgid "Edit treatment"
 msgstr "İlaç düzenle"
 
-#: src/medDialog.js:108 src/medDialog.js:372
+#: src/medDialog.js:108 src/medDialog.js:375
 msgid "Save"
 msgstr "Kaydet"
 
@@ -513,13 +517,13 @@ msgstr "Yeni"
 msgid "New entry"
 msgstr "Yeni girdi"
 
-#: src/medDialog.js:353 src/medDialog.js:364
+#: src/medDialog.js:353 src/medDialog.js:365
 #, fuzzy
 #| msgid "Confirmed"
 msgid "Confirmed at"
 msgstr "Onaylandı"
 
-#: src/medDialog.js:357 src/medDialog.js:367
+#: src/medDialog.js:357 src/medDialog.js:369
 #, fuzzy
 #| msgid "Skipped"
 msgid "Skipped at"
@@ -531,31 +535,31 @@ msgstr "Atlandı"
 msgid "Missed(?) at"
 msgstr "Unutuldu"
 
-#: src/medDialog.js:371
+#: src/medDialog.js:374
 msgid "Edit entry"
 msgstr "Girdiyi Düzenle"
 
-#: src/medDialog.js:743
+#: src/medDialog.js:756
 msgid "Choose"
 msgstr "Seç"
 
-#: src/medDialog.js:814
+#: src/medDialog.js:827
 msgid "Empty name"
 msgstr "Boş ad"
 
-#: src/medDialog.js:818
+#: src/medDialog.js:831
 msgid "Empty unit"
 msgstr "Boş birim"
 
-#: src/medDialog.js:824
+#: src/medDialog.js:837
 msgid "Choose at least one day"
 msgstr "En az bir gün seçin"
 
-#: src/medDialog.js:835
+#: src/medDialog.js:848
 msgid "Name already on treatment list"
 msgstr ""
 
-#: src/medDialog.js:849
+#: src/medDialog.js:862
 msgid "Duplicated time"
 msgstr "Yinelenen zaman"
 
@@ -595,16 +599,16 @@ msgstr "Hafta sonları"
 msgid "Weekdays"
 msgstr "Hafta içi"
 
-#: src/utils.js:341
+#: src/utils.js:334
 msgid "Delete dose"
 msgstr "Dozu sil"
 
-#: src/window.js:135 src/window.js:632
+#: src/window.js:134 src/window.js:632
 msgid "Reminder"
 msgstr "Hatırlatıcı"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:137
+#: src/window.js:136
 msgid "You have treatments low in stock"
 msgstr "Stok sayısı azalmış ilaçlarınız var"
 
@@ -612,7 +616,7 @@ msgstr "Stok sayısı azalmış ilaçlarınız var"
 msgid "No results found"
 msgstr "Sonuç bulunamadı"
 
-#: src/window.js:410 src/window.js:1057
+#: src/window.js:410 src/window.js:1063
 msgid "Empty history"
 msgstr "Geçmiş boş"
 

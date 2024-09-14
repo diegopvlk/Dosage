@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-12 19:24-0300\n"
+"POT-Creation-Date: 2024-09-14 15:35-0300\n"
 "PO-Revision-Date: 2024-09-09 16:09+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/es/"
@@ -128,7 +128,7 @@ msgstr "Nuevo tratamiento"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: data/ui/med-dialog.blp:29 data/ui/window.blp:208
+#: data/ui/med-dialog.blp:29 data/ui/window.blp:209
 msgid "Add"
 msgstr "Añadir"
 
@@ -262,7 +262,7 @@ msgstr "Caída"
 msgid "Potion"
 msgstr "Poción"
 
-#: data/ui/med-dialog.blp:446 src/medDialog.js:781
+#: data/ui/med-dialog.blp:446 src/medDialog.js:794
 msgid "Frequency"
 msgstr "Frecuencia"
 
@@ -270,11 +270,11 @@ msgstr "Frecuencia"
 msgid "Every day"
 msgstr "Cada día"
 
-#: data/ui/med-dialog.blp:452 src/medDialog.js:775
+#: data/ui/med-dialog.blp:452 src/medDialog.js:788
 msgid "Specific days"
 msgstr "Días específicos"
 
-#: data/ui/med-dialog.blp:453 src/medDialog.js:778 src/treatmentsFactory.js:150
+#: data/ui/med-dialog.blp:453 src/medDialog.js:791 src/treatmentsFactory.js:150
 msgid "Cycle"
 msgstr "Ciclo"
 
@@ -377,7 +377,7 @@ msgstr "Fecha"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: data/ui/preferences.blp:6 data/ui/window.blp:225
+#: data/ui/preferences.blp:6 data/ui/window.blp:226
 msgid "Preferences"
 msgstr "Preferencias"
 
@@ -422,47 +422,51 @@ msgstr "Mostrar u ocultar confirmar/saltar"
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: data/ui/preferences.blp:112 data/ui/window.blp:124 src/window.js:587
+#: data/ui/preferences.blp:112 data/ui/window.blp:125 src/window.js:587
 msgid "Skip"
 msgstr "Omitir"
 
-#: data/ui/window.blp:37
+#: data/ui/window.blp:24
+msgid "Search"
+msgstr "Buscar"
+
+#: data/ui/window.blp:38
 msgid "Main Menu"
 msgstr "Menú principal"
 
-#: data/ui/window.blp:50
+#: data/ui/window.blp:51
 msgid "Search…"
 msgstr "Buscar…"
 
-#: data/ui/window.blp:60
+#: data/ui/window.blp:61
 msgid "Today"
 msgstr "Hoy"
 
-#: data/ui/window.blp:99
+#: data/ui/window.blp:100
 msgid "Unselect"
 msgstr "Deseleccionar"
 
-#: data/ui/window.blp:112 src/window.js:805
+#: data/ui/window.blp:113 src/window.js:805
 msgid "One-time entry"
 msgstr "Entrada única"
 
-#: data/ui/window.blp:134
+#: data/ui/window.blp:135
 msgid "History"
 msgstr "Historial"
 
-#: data/ui/window.blp:163
+#: data/ui/window.blp:164
 msgid "Treatments"
 msgstr "Tratamientos"
 
-#: data/ui/window.blp:185
+#: data/ui/window.blp:186
 msgid "Click the button below to add some"
 msgstr "Haga clic en el botón de abajo para añadir"
 
-#: data/ui/window.blp:230
+#: data/ui/window.blp:231
 msgid "About Dosage"
 msgstr "Acerca de Dosis"
 
-#: data/ui/window.blp:235
+#: data/ui/window.blp:236
 msgid "Quit"
 msgstr "Salir"
 
@@ -493,7 +497,7 @@ msgstr ""
 msgid "Edit treatment"
 msgstr "Editar tratamiento"
 
-#: src/medDialog.js:108 src/medDialog.js:372
+#: src/medDialog.js:108 src/medDialog.js:375
 msgid "Save"
 msgstr "Guardar"
 
@@ -514,11 +518,11 @@ msgstr "Nuevo"
 msgid "New entry"
 msgstr "Nueva entrada"
 
-#: src/medDialog.js:353 src/medDialog.js:364
+#: src/medDialog.js:353 src/medDialog.js:365
 msgid "Confirmed at"
 msgstr "Confirmado en"
 
-#: src/medDialog.js:357 src/medDialog.js:367
+#: src/medDialog.js:357 src/medDialog.js:369
 msgid "Skipped at"
 msgstr "Omitido en"
 
@@ -526,31 +530,31 @@ msgstr "Omitido en"
 msgid "Missed(?) at"
 msgstr "Perdido(?) en"
 
-#: src/medDialog.js:371
+#: src/medDialog.js:374
 msgid "Edit entry"
 msgstr "Editar entrada"
 
-#: src/medDialog.js:743
+#: src/medDialog.js:756
 msgid "Choose"
 msgstr "Seleccione"
 
-#: src/medDialog.js:814
+#: src/medDialog.js:827
 msgid "Empty name"
 msgstr "Nombre vacío"
 
-#: src/medDialog.js:818
+#: src/medDialog.js:831
 msgid "Empty unit"
 msgstr "Unidad vacía"
 
-#: src/medDialog.js:824
+#: src/medDialog.js:837
 msgid "Choose at least one day"
 msgstr "Elija al menos un día"
 
-#: src/medDialog.js:835
+#: src/medDialog.js:848
 msgid "Name already on treatment list"
 msgstr "Nombre ya incluido en la lista de tratamiento"
 
-#: src/medDialog.js:849
+#: src/medDialog.js:862
 msgid "Duplicated time"
 msgstr "Hora duplicada"
 
@@ -590,16 +594,16 @@ msgstr "Fines de semana"
 msgid "Weekdays"
 msgstr "Días laborables"
 
-#: src/utils.js:341
+#: src/utils.js:334
 msgid "Delete dose"
 msgstr "Eliminar dosis"
 
-#: src/window.js:135 src/window.js:632
+#: src/window.js:134 src/window.js:632
 msgid "Reminder"
 msgstr "Recordatorio"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:137
+#: src/window.js:136
 msgid "You have treatments low in stock"
 msgstr "Dispone de tratamientos bajos en stock"
 
@@ -607,7 +611,7 @@ msgstr "Dispone de tratamientos bajos en stock"
 msgid "No results found"
 msgstr "No se encontraron resultados"
 
-#: src/window.js:410 src/window.js:1057
+#: src/window.js:410 src/window.js:1063
 msgid "Empty history"
 msgstr "Historial vacío"
 

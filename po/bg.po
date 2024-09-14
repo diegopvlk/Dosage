@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-12 19:24-0300\n"
+"POT-Creation-Date: 2024-09-14 15:35-0300\n"
 "PO-Revision-Date: 2024-05-05 16:40+0200\n"
 "Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
@@ -125,7 +125,7 @@ msgstr "Ново лечение"
 msgid "Cancel"
 msgstr "Отказване"
 
-#: data/ui/med-dialog.blp:29 data/ui/window.blp:208
+#: data/ui/med-dialog.blp:29 data/ui/window.blp:209
 msgid "Add"
 msgstr "Добавяне"
 
@@ -259,7 +259,7 @@ msgstr "Капка"
 msgid "Potion"
 msgstr "Отвара"
 
-#: data/ui/med-dialog.blp:446 src/medDialog.js:781
+#: data/ui/med-dialog.blp:446 src/medDialog.js:794
 msgid "Frequency"
 msgstr "Период"
 
@@ -267,11 +267,11 @@ msgstr "Период"
 msgid "Every day"
 msgstr "Всяки ден"
 
-#: data/ui/med-dialog.blp:452 src/medDialog.js:775
+#: data/ui/med-dialog.blp:452 src/medDialog.js:788
 msgid "Specific days"
 msgstr "Конкретни дни"
 
-#: data/ui/med-dialog.blp:453 src/medDialog.js:778 src/treatmentsFactory.js:150
+#: data/ui/med-dialog.blp:453 src/medDialog.js:791 src/treatmentsFactory.js:150
 msgid "Cycle"
 msgstr "Цикъл"
 
@@ -374,7 +374,7 @@ msgstr "Дата"
 msgid "Delete"
 msgstr "Изтриване"
 
-#: data/ui/preferences.blp:6 data/ui/window.blp:225
+#: data/ui/preferences.blp:6 data/ui/window.blp:226
 msgid "Preferences"
 msgstr "Настройки"
 
@@ -419,47 +419,51 @@ msgstr "Скриване или показване на потвърждаван
 msgid "Confirm"
 msgstr "Потвърждаване"
 
-#: data/ui/preferences.blp:112 data/ui/window.blp:124 src/window.js:587
+#: data/ui/preferences.blp:112 data/ui/window.blp:125 src/window.js:587
 msgid "Skip"
 msgstr "Пропускане"
 
-#: data/ui/window.blp:37
+#: data/ui/window.blp:24
+msgid "Search"
+msgstr "Търсене"
+
+#: data/ui/window.blp:38
 msgid "Main Menu"
 msgstr "Основно меню"
 
-#: data/ui/window.blp:50
+#: data/ui/window.blp:51
 msgid "Search…"
 msgstr "Търсене…"
 
-#: data/ui/window.blp:60
+#: data/ui/window.blp:61
 msgid "Today"
 msgstr "Днес"
 
-#: data/ui/window.blp:99
+#: data/ui/window.blp:100
 msgid "Unselect"
 msgstr "Демаркиране"
 
-#: data/ui/window.blp:112 src/window.js:805
+#: data/ui/window.blp:113 src/window.js:805
 msgid "One-time entry"
 msgstr "Еднократен запис"
 
-#: data/ui/window.blp:134
+#: data/ui/window.blp:135
 msgid "History"
 msgstr "История"
 
-#: data/ui/window.blp:163
+#: data/ui/window.blp:164
 msgid "Treatments"
 msgstr "Лечения"
 
-#: data/ui/window.blp:185
+#: data/ui/window.blp:186
 msgid "Click the button below to add some"
 msgstr "Натиснете бутона по-долу, за да добавите лечения"
 
-#: data/ui/window.blp:230
+#: data/ui/window.blp:231
 msgid "About Dosage"
 msgstr "Относно „Дозировка“"
 
-#: data/ui/window.blp:235
+#: data/ui/window.blp:236
 msgid "Quit"
 msgstr "Спиране на програмата"
 
@@ -490,7 +494,7 @@ msgstr ""
 msgid "Edit treatment"
 msgstr "Редактиране на лечението"
 
-#: src/medDialog.js:108 src/medDialog.js:372
+#: src/medDialog.js:108 src/medDialog.js:375
 msgid "Save"
 msgstr "Запазване"
 
@@ -511,13 +515,13 @@ msgstr "Ново"
 msgid "New entry"
 msgstr "Нов запис"
 
-#: src/medDialog.js:353 src/medDialog.js:364
+#: src/medDialog.js:353 src/medDialog.js:365
 #, fuzzy
 #| msgid "Confirmed"
 msgid "Confirmed at"
 msgstr "Потвърдено"
 
-#: src/medDialog.js:357 src/medDialog.js:367
+#: src/medDialog.js:357 src/medDialog.js:369
 #, fuzzy
 #| msgid "Skipped"
 msgid "Skipped at"
@@ -529,31 +533,31 @@ msgstr "Пропуснати"
 msgid "Missed(?) at"
 msgstr "Изпуснати"
 
-#: src/medDialog.js:371
+#: src/medDialog.js:374
 msgid "Edit entry"
 msgstr "Редактиране на запис"
 
-#: src/medDialog.js:743
+#: src/medDialog.js:756
 msgid "Choose"
 msgstr "Избиране"
 
-#: src/medDialog.js:814
+#: src/medDialog.js:827
 msgid "Empty name"
 msgstr "Празно име"
 
-#: src/medDialog.js:818
+#: src/medDialog.js:831
 msgid "Empty unit"
 msgstr "Празна единица"
 
-#: src/medDialog.js:824
+#: src/medDialog.js:837
 msgid "Choose at least one day"
 msgstr "Изберете поне един ден"
 
-#: src/medDialog.js:835
+#: src/medDialog.js:848
 msgid "Name already on treatment list"
 msgstr ""
 
-#: src/medDialog.js:849
+#: src/medDialog.js:862
 msgid "Duplicated time"
 msgstr "Дублирано време"
 
@@ -593,16 +597,16 @@ msgstr "Почивни дни"
 msgid "Weekdays"
 msgstr "Делнични дни"
 
-#: src/utils.js:341
+#: src/utils.js:334
 msgid "Delete dose"
 msgstr "Изтриване на дозата"
 
-#: src/window.js:135 src/window.js:632
+#: src/window.js:134 src/window.js:632
 msgid "Reminder"
 msgstr "Напомняне"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:137
+#: src/window.js:136
 msgid "You have treatments low in stock"
 msgstr "Имате лечения с малко запас"
 
@@ -610,7 +614,7 @@ msgstr "Имате лечения с малко запас"
 msgid "No results found"
 msgstr "Не са намерени резултати"
 
-#: src/window.js:410 src/window.js:1057
+#: src/window.js:410 src/window.js:1063
 msgid "Empty history"
 msgstr "Изчистване на историята"
 
