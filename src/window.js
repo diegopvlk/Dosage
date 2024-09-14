@@ -18,7 +18,6 @@ import openMedicationDialog from './medDialog.js';
 import upgradeItems from './upgradeItems.js';
 
 import {
-	HistorySorter,
 	HistorySectionSorter,
 	TodaySectionSorter,
 	DataDir,
@@ -282,6 +281,8 @@ export const DosageWindow = GObject.registerClass(
 		async _loadHistory(historyJson) {
 			try {
 				if (!historyLS.get_item(0)) {
+					historyJson.history.sort((a, b) => b.taken[0] - a.taken[0]);
+
 					historyJson.history.forEach(med => {
 						historyLS.append(new MedicationObject({ obj: med }));
 					});
@@ -301,10 +302,9 @@ export const DosageWindow = GObject.registerClass(
 								(this.sortedHistoryModel = new Gtk.SortListModel({
 									model: this.filterHistoryModel,
 									section_sorter: new HistorySectionSorter(),
-									sorter: new HistorySorter(),
 								})),
 							);
-						}, 500);
+						}, 200);
 					});
 
 					sortedHistModelPromise.then(_ => {
@@ -868,7 +868,11 @@ export const DosageWindow = GObject.registerClass(
 					},
 				}),
 				(a, b) => {
-					return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
+					const dateA = a.obj.taken[0];
+					const dateB = b.obj.taken[0];
+					if (dateA < dateB) return 1;
+					else if (dateA > dateB) return -1;
+					else return 0;
 				},
 			);
 

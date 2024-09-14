@@ -502,7 +502,11 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		historyLS.remove(pos);
 
 		historyLS.insert_sorted(updatedItem, (a, b) => {
-			return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
+			const dateA = a.obj.taken[0];
+			const dateB = b.obj.taken[0];
+			if (dateA < dateB) return 1;
+			else if (dateA > dateB) return -1;
+			else return 0;
 		});
 
 		list.scroll_to(Math.max(0, position - 1), Gtk.ListScrollFlags.FOCUS, null);
@@ -549,6 +553,8 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 
 		entryDate.setHours(dosage.time[0]);
 		entryDate.setMinutes(dosage.time[1]);
+		entryDate.setSeconds(new Date().getSeconds());
+		entryDate.setMilliseconds(new Date().getMilliseconds());
 
 		const item = new MedicationObject({
 			obj: {
@@ -562,7 +568,11 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		});
 
 		historyLS.insert_sorted(item, (a, b) => {
-			return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
+			const dateA = a.obj.taken[0];
+			const dateB = b.obj.taken[0];
+			if (dateA < dateB) return 1;
+			else if (dateA > dateB) return -1;
+			else return 0;
 		});
 
 		DosageWindow._historyList.scroll_to(0, null, null);

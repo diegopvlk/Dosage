@@ -488,15 +488,6 @@ export const HistorySectionSorter = GObject.registerClass(
 	},
 );
 
-export const HistorySorter = GObject.registerClass(
-	{},
-	class HistorySorter extends Gtk.Sorter {
-		vfunc_compare(a, b) {
-			return a.obj.taken[0] > b.obj.taken[0] ? -1 : 0;
-		}
-	},
-);
-
 export const TodaySectionSorter = GObject.registerClass(
 	{},
 	class TodaySectionSorter extends Gtk.Sorter {
