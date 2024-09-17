@@ -467,7 +467,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 			addOrUpdateTreatment();
 		}
 
-		DosageWindow._updateEverything('skipHistUp');
+		DosageWindow._updateEverything(['skipHistUp', updatedItemPosition]);
 		DosageWindow._scheduleNotifications('saving');
 		medDialog.force_close();
 	});
@@ -613,6 +613,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		}
 	}
 
+	let updatedItemPosition = 0;
 	function addOrUpdateTreatment() {
 		const isUpdate = list && position >= 0;
 		const today = new GLib.DateTime();
@@ -700,29 +701,30 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 			});
 		}
 
-		treatmentsLS.insert_sorted(
-			new MedicationObject({
-				obj: {
-					name: name,
-					unit: unit,
-					notes: notes,
-					frequency: freq,
-					color: color,
-					icon: icon,
-					days: days,
-					cycle: cycle,
-					dosage: doses,
-					recurring: recurring,
-					inventory: inventory,
-					duration: duration,
-				},
-			}),
-			(a, b) => {
-				const name1 = a.obj.name;
-				const name2 = b.obj.name;
-				return name1.localeCompare(name2);
+		const newIt = new MedicationObject({
+			obj: {
+				name: name,
+				unit: unit,
+				notes: notes,
+				frequency: freq,
+				color: color,
+				icon: icon,
+				days: days,
+				cycle: cycle,
+				dosage: doses,
+				recurring: recurring,
+				inventory: inventory,
+				duration: duration,
 			},
-		);
+		});
+
+		treatmentsLS.insert_sorted(newIt, (a, b) => {
+			const name1 = a.obj.name;
+			const name2 = b.obj.name;
+			return name1.localeCompare(name2);
+		});
+
+		updatedItemPosition = treatmentsLS.find(newIt)[1];
 	}
 
 	function getDoses() {

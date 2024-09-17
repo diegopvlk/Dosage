@@ -1067,12 +1067,17 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		_updateEverything(skipHistUp, notifAction) {
-			if (!skipHistUp) this._updateJsonFile('history', historyLS);
 			this._updateCycleAndLastUp();
 			this._updateJsonFile('treatments', treatmentsLS);
 			this._loadToday();
 			this._updateEntryBtn(false);
 			this._checkInventory(notifAction);
+			if (skipHistUp) {
+				const pos = Math.max(0, skipHistUp[1] - 1);
+				this._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
+			} else {
+				this._updateJsonFile('history', historyLS);
+			}
 		}
 
 		_openMedDialog(list, position, mode) {
