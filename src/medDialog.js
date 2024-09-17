@@ -96,8 +96,14 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 	const calendarEnd = builder.get_object('calendarEnd');
 	const calendarEndRow = builder.get_object('calendarEndRow');
 
-	calendarStartRow.subtitle = GLib.DateTime.new_now_local().format('%x');
-	calendarEndRow.subtitle = GLib.DateTime.new_now_local().format('%x');
+	const calDateOpt = { month: 'short', day: 'numeric', year: 'numeric' };
+
+	const calendarDate = new Date();
+	let calDate = calendarDate.toLocaleDateString(undefined, calDateOpt);
+	calDate = calDate.charAt(0).toUpperCase() + calDate.slice(1);
+
+	calendarStartRow.subtitle = calDate;
+	calendarEndRow.subtitle = calDate;
 
 	handleCalendarSelect(calendarStart, calendarStartRow);
 	handleCalendarSelect(calendarEnd, calendarEndRow);
@@ -262,7 +268,11 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 			existingEntry = false;
 		});
 
-		dateOneEntry.subtitle = GLib.DateTime.new_now_local().format('%x');
+		const calendarDate = new Date();
+		let calDate = calendarDate.toLocaleDateString(undefined, calDateOpt);
+		calDate = calDate.charAt(0).toUpperCase() + calDate.slice(1);
+
+		dateOneEntry.subtitle = calDate;
 		handleCalendarSelect(calOneEntry, dateOneEntry, true);
 
 		oneTimeMenuRow.get_child().append(oneTimePopover);

@@ -21,14 +21,11 @@ import {
 	HistorySectionSorter,
 	TodaySectionSorter,
 	DataDir,
-	addLeadZero,
 	createTempObj,
 	isTodayMedDay,
 	datesPassedDiff,
 	clockIs12,
 	getWidgetByName,
-	amPmStr,
-	timeDot,
 } from './utils.js';
 
 export const historyLS = Gio.ListStore.new(MedicationObject);
@@ -590,6 +587,9 @@ export const DosageWindow = GObject.registerClass(
 				const itemMin = date.getMinutes();
 				let timeDiff = (itemHour - hours) * 3600000 + (itemMin - minutes) * 60000 - seconds * 1000;
 
+				const formatOpt = { hour: 'numeric', minute: 'numeric', hour12: clockIs12 };
+				const time = date.toLocaleTimeString(undefined, formatOpt);
+
 				const notify = () => {
 					// notifications from the past will be sent again instantly (setTimeout is < 0)
 					// when performing some action like saving/adding/updating/removing
@@ -600,16 +600,6 @@ export const DosageWindow = GObject.registerClass(
 						return;
 					}
 					const [notification, app] = this._getNotification();
-					let h = itemHour;
-					let m = itemMin;
-					let period = '';
-
-					if (clockIs12) {
-						period = ` ${amPmStr[0]}`;
-						if (h >= 12) period = ` ${amPmStr[1]}`;
-						if (h > 12) h -= 12;
-						if (h === 0) h = 12;
-					}
 
 					let body = '';
 					const maxLength = 3;
@@ -626,10 +616,7 @@ export const DosageWindow = GObject.registerClass(
 						body = text;
 					}
 
-					h = clockIs12 ? String(h) : addLeadZero(h);
-					let time = `${h}:${addLeadZero(m)}`;
-					if (timeDot) time = time.replace(':', '.');
-					let title = _('Reminder') + ` • ` + time + period;
+					let title = _('Reminder') + ` • ` + time;
 					notification.set_title(title);
 					notification.set_body(body);
 

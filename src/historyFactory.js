@@ -4,12 +4,11 @@
  */
 'use strict';
 
-import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
 import Gdk from 'gi://Gdk';
 import Pango from 'gi://Pango';
 
-import { amPmStr, clockIs12, timeDot } from './utils.js';
+import { clockIs12 } from './utils.js';
 
 export const historyHeaderFactory = new Gtk.SignalListItemFactory();
 export const historyItemFactory = new Gtk.SignalListItemFactory();
@@ -28,18 +27,14 @@ historyHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const item = listHeaderItem.get_item().obj;
 	const dateLabel = listHeaderItem.get_child();
-	const localTZ = GLib.TimeZone.new_local();
-	const dateTime = GLib.DateTime.new_from_unix_utc(item.taken[0] / 1000);
-	const localDT = dateTime.to_timezone(localTZ);
-	const dayName = localDT.format('%A');
-	let dateFormat = localDT.format('%x');
-	dateFormat = dateFormat
-		.replace(`${dayName}, `, '')
-		.replace(`${dayName} `, '')
-		.replace(`${dayName}`, '');
-
-	const date = dayName + ' • ' + dateFormat;
-	dateLabel.label = date.charAt(0).toUpperCase() + date.slice(1);
+	const date = new Date(item.taken[0]);
+	const formattedDt = date.toLocaleDateString(undefined, {
+		weekday: 'long',
+		month: 'short',
+		day: 'numeric',
+		year: 'numeric',
+	});
+	dateLabel.label = formattedDt.charAt(0).toUpperCase() + formattedDt.slice(1);
 });
 
 historyItemFactory.connect('setup', (factory, listItem) => {
@@ -127,10 +122,13 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const takenBox = box.get_last_child();
 	const takenLabel = takenBox.get_first_child();
 	const takenIcon = takenLabel.get_next_sibling();
-	const localTZ = GLib.TimeZone.new_local();
-	const dateTimeTaken = GLib.DateTime.new_from_unix_utc(item.taken[0] / 1000);
-	const timeTaken = dateTimeTaken.to_timezone(localTZ);
-	const dateNow = GLib.DateTime.new_now_local();
+	const today = new Date();
+	const itemDate = new Date(item.taken[0]);
+	const itemTime = new Date();
+	itemTime.setHours(item.time[0], item.time[1]);
+	const formatOpt = { hour: 'numeric', minute: 'numeric', hour12: clockIs12 };
+	const time = itemTime.toLocaleTimeString(undefined, formatOpt);
+	const timeTaken = itemDate.toLocaleTimeString(undefined, formatOpt);
 
 	// activate item with space bar
 	const keyController = new Gtk.EventControllerKey();
@@ -142,7 +140,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	});
 	row.add_controller(keyController);
 
-	if (timeTaken.format('%F') == dateNow.format('%F')) {
+	if (today.setHours(0, 0, 0, 0) === itemDate.setHours(0, 0, 0, 0)) {
 		deleteButton.icon_name = 'edit-undo-symbolic';
 		deleteButton.tooltip_text = _('Restore');
 	} else {
@@ -150,34 +148,11 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 		deleteButton.tooltip_text = _('Delete');
 	}
 
-	let [hours, minutes] = item.time;
-	let period = '';
-	if (clockIs12) {
-		period = ` ${amPmStr[0]}`;
-		if (hours >= 12) period = ` ${amPmStr[1]}`;
-		if (hours > 12) hours -= 12;
-		if (hours === 0) hours = 12;
-	}
-
-	const h = clockIs12 ? String(hours) : String(hours).padStart(2, 0);
-	const m = String(minutes).padStart(2, 0);
-
-	let time = `${h}:${m}`;
-	if (timeDot) time = time.replace(':', '.');
-
 	nameLabel.label = item.name;
-	doseLabel.label = `${item.dose} ${item.unit} • ${time}` + period;
-
-	let takenH = clockIs12 ? timeTaken.format('%l') : timeTaken.format('%k');
-	takenH = takenH.replace(' ', '');
-	takenH = clockIs12 ? takenH : takenH.padStart(2, 0);
-	let takenM = timeTaken.format('%M');
-	let timeTk = `${takenH}:${takenM}`;
-	if (timeDot) timeTk = timeTk.replace(':', '.');
-	const takenTime = clockIs12 ? `${timeTk} ${timeTaken.format('%p')}` : `${timeTk}`;
+	doseLabel.label = `${item.dose} ${item.unit} • ${time}`;
 
 	if (item.taken[1] === 1) {
-		takenLabel.label = `${takenTime}`;
+		takenLabel.label = `${timeTaken}`;
 		takenIcon.set_visible(true);
 		takenLabel.add_css_class('badge-end-border');
 	} else if (item.taken[1] === 0) {

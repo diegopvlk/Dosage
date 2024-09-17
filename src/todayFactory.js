@@ -9,7 +9,7 @@ import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
 
-import { amPmStr, clockIs12, timeDot } from './utils.js';
+import { clockIs12 } from './utils.js';
 
 export const todayHeaderFactory = new Gtk.SignalListItemFactory();
 export const todayItemFactory = new Gtk.SignalListItemFactory();
@@ -29,18 +29,10 @@ todayHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const item = listHeaderItem.get_item().obj;
 	const selectTimeGroupBtn = listHeaderItem.get_child().get_first_child();
-	let [hours, minutes] = item.time;
-	let period = '';
-
-	if (clockIs12) {
-		period = ` ${amPmStr[0]}`;
-		if (hours >= 12) period = ` ${amPmStr[1]}`;
-		if (hours > 12) hours -= 12;
-		if (hours === 0) hours = 12;
-	}
-
-	const h = clockIs12 ? String(hours) : String(hours).padStart(2, 0);
-	const m = String(minutes).padStart(2, 0);
+	const itemTime = new Date();
+	itemTime.setHours(item.time[0], item.time[1]);
+	const formatOpt = { hour: 'numeric', minute: 'numeric', hour12: clockIs12 };
+	const time = itemTime.toLocaleTimeString(undefined, formatOpt);
 
 	selectTimeGroupBtn.connect('clicked', _btn => {
 		let DosageWindow = selectTimeGroupBtn;
@@ -56,10 +48,7 @@ todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 		}
 	});
 
-	let time = `${h}:${m}`;
-	if (timeDot) time = time.replace(':', '.');
-
-	selectTimeGroupBtn.label = time + period;
+	selectTimeGroupBtn.label = time;
 });
 
 todayItemFactory.connect('setup', (factory, listItem) => {

@@ -220,7 +220,14 @@ export function handleCalendarSelect(calendar, calendarRow, oneTime) {
 			cal.remove_css_class('calendar-warning');
 		}
 
-		calendarRow.subtitle = cal.get_date().format('%x');
+		const calendarDate = new Date(+cal.get_date().format('%s') * 1000);
+		let calDate = calendarDate.toLocaleDateString(undefined, {
+			month: 'short',
+			day: 'numeric',
+			year: 'numeric',
+		});
+		calDate = calDate.charAt(0).toUpperCase() + calDate.slice(1);
+		calendarRow.subtitle = calDate;
 	});
 }
 
@@ -366,7 +373,7 @@ export function doseRow(timeDose) {
 		adjustment: adjMinutes,
 	});
 	const spinButtonSeparator = new Gtk.Label({
-		label: ' : ',
+		label: timeDot ? ' . ' : ' : ',
 	});
 
 	const amPmButton = new Gtk.Button({
