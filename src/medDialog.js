@@ -287,6 +287,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 					css_classes: ['flat', 'one-time-name'],
 					can_shrink: true,
 					label: item.name,
+					width_request: 120,
 				});
 				btn.get_first_child().set_max_width_chars(50);
 				btn.remove_css_class('text-button');
