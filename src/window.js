@@ -25,7 +25,6 @@ import {
 	isTodayMedDay,
 	datesPassedDiff,
 	clockIs12,
-	getWidgetByName,
 } from './utils.js';
 
 export const historyLS = Gio.ListStore.new(MedicationObject);
@@ -706,50 +705,40 @@ export const DosageWindow = GObject.registerClass(
 
 		_selectTodayItems(list, position, groupCheck) {
 			const model = list.get_model();
+			const item = model.get_item(position).obj;
+			const doseAndNotes = item.doseAndNotes;
+			const amtBtn = item.amtBtn;
+			const amtSpinRow = item.amtSpinRow;
+			const checkButton = item.checkButton;
 
-			let rowItemPos = 0;
-			let currentRow = list.get_first_child();
+			const indexToRemove = this.todayItems.indexOf(item);
 
-			while (currentRow) {
-				if (currentRow.get_name() === 'GtkListItemWidget') {
-					if (position === rowItemPos) {
-						const doseAndNotes = getWidgetByName(currentRow, 'doseAndNotes');
-						const checkButton = getWidgetByName(currentRow, 'checkButton');
-						const amountBtn = getWidgetByName(currentRow, 'amountBtn');
-						const amtSpinRow = getWidgetByName(currentRow, 'amtSpinRow');
-						const item = model.get_item(position).obj;
-						const indexToRemove = this.todayItems.indexOf(item);
-						let isActive = checkButton.get_active();
+			let isActive = checkButton.get_active();
 
-						if (groupCheck) isActive = false;
+			if (groupCheck) isActive = false;
 
-						if (!isActive) {
-							const d = item.dose;
-							if (!this.todayItems.includes(item)) {
-								this.todayItems.push(item);
-								this.todayDosesHolder.push(d);
-							}
-						} else {
-							const storedDose = this.todayDosesHolder[indexToRemove];
-							item.dose = storedDose;
-							doseAndNotes.label = doseAndNotes.label.replace(/^[^\s]+/, item.dose);
-							this.todayItems.splice(indexToRemove, 1);
-							this.todayDosesHolder.splice(indexToRemove, 1);
-						}
-
-						amtSpinRow.set_value(item.dose);
-						amtSpinRow.connect('output', row => {
-							doseAndNotes.label = doseAndNotes.label.replace(/^[^\s]+/, row.get_value());
-							item.dose = row.get_value();
-						});
-
-						checkButton.set_active(!isActive);
-						amountBtn.set_visible(!isActive);
-					}
-					rowItemPos++;
+			if (!isActive) {
+				const d = item.dose;
+				if (!this.todayItems.includes(item)) {
+					this.todayItems.push(item);
+					this.todayDosesHolder.push(d);
 				}
-				currentRow = currentRow.get_next_sibling();
+			} else {
+				const storedDose = this.todayDosesHolder[indexToRemove];
+				item.dose = storedDose;
+				doseAndNotes.label = doseAndNotes.label.replace(/^[^\s]+/, item.dose);
+				this.todayItems.splice(indexToRemove, 1);
+				this.todayDosesHolder.splice(indexToRemove, 1);
 			}
+
+			amtSpinRow.set_value(item.dose);
+			amtSpinRow.connect('output', row => {
+				doseAndNotes.label = doseAndNotes.label.replace(/^[^\s]+/, row.get_value());
+				item.dose = row.get_value();
+			});
+
+			checkButton.set_active(!isActive);
+			amtBtn.set_visible(!isActive);
 
 			const hasTodayItems = this.todayItems.length > 0;
 			this._updateEntryBtn(hasTodayItems);

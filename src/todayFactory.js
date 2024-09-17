@@ -8,6 +8,7 @@ import Adw from 'gi://Adw?version=1';
 import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
+import { DosageApplication } from './main.js';
 
 import { clockIs12 } from './utils.js';
 
@@ -35,16 +36,13 @@ todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const time = itemTime.toLocaleTimeString(undefined, formatOpt);
 
 	selectTimeGroupBtn.connect('clicked', _btn => {
-		let DosageWindow = selectTimeGroupBtn;
-		for (let i = 0; i < 12; i++) {
-			DosageWindow = DosageWindow.get_parent();
-		}
+		const DosageWindow = DosageApplication.get_default().activeWindow;
 
 		const start = listHeaderItem.get_start();
 		const end = listHeaderItem.get_end();
 
-		for (let i = start; i < end; i++) {
-			DosageWindow._selectTodayItems(DosageWindow._todayList, i, true);
+		for (let pos = start; pos < end; pos++) {
+			DosageWindow._selectTodayItems(DosageWindow._todayList, pos, true);
 		}
 	});
 
@@ -77,7 +75,6 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	});
 	labelsBox.append(name);
 	const doseAndNotes = new Gtk.Label({
-		name: 'doseAndNotes',
 		css_classes: ['subtitle'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
@@ -87,7 +84,6 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 		css_classes: ['spin-box', 'spin-today-amount'],
 	});
 	const amountRow = new Adw.SpinRow({
-		name: 'amtSpinRow',
 		digits: 2,
 		adjustment: new Gtk.Adjustment({
 			lower: 0.25,
@@ -97,7 +93,6 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	});
 	amountBox.append(amountRow);
 	const amountBtn = new Gtk.MenuButton({
-		name: 'amountBtn',
 		tooltip_text: _('Change dose'),
 		css_classes: ['circular', 'today-amount'],
 		icon_name: 'view-more-horizontal-symbolic',
@@ -111,7 +106,6 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	});
 	box.append(amountBtn);
 	const checkButton = new Gtk.CheckButton({
-		name: 'checkButton',
 		css_classes: ['selection-mode'],
 		valign: Gtk.Align.CENTER,
 		halign: Gtk.Align.CENTER,
@@ -129,8 +123,17 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	const row = box.get_parent();
 	const icon = box.get_first_child();
 	const labelsBox = icon.get_next_sibling();
-	const nameLabel = labelsBox.get_first_child();
-	const doseLabel = nameLabel.get_next_sibling();
+	const amtBtn = labelsBox.get_next_sibling();
+	const amtBtnPopover = amtBtn.get_popover();
+	const amtSpinRow = amtBtnPopover.get_child().get_first_child();
+	const name = labelsBox.get_first_child();
+	const doseAndNotes = name.get_next_sibling();
+	const checkButton = box.get_last_child();
+
+	item.doseAndNotes = doseAndNotes;
+	item.amtBtn = amtBtn;
+	item.amtSpinRow = amtSpinRow;
+	item.checkButton = checkButton;
 
 	// activate item with space bar
 	const keyController = new Gtk.EventControllerKey();
@@ -148,11 +151,11 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 
 	box.add_css_class(item.color);
 
-	nameLabel.label = item.name;
-	doseLabel.label = `${item.dose} ${item.unit}`;
+	name.label = item.name;
+	doseAndNotes.label = `${item.dose} ${item.unit}`;
 
 	if (item.notes !== '') {
-		doseLabel.label += ` • ${item.notes}`;
+		doseAndNotes.label += ` • ${item.notes}`;
 	}
 
 	icon.icon_name = item.icon;
