@@ -31,7 +31,7 @@ import {
 export const historyLS = Gio.ListStore.new(MedicationObject);
 export const treatmentsLS = Gio.ListStore.new(MedicationObject);
 
-export const flow = { itemsChanged: false, delay: false };
+export const flow = { delay: false };
 
 export const DosageWindow = GObject.registerClass(
 	{
@@ -101,7 +101,6 @@ export const DosageWindow = GObject.registerClass(
 			this._createOrLoadJson('history', historyFile);
 			if (this._addMissedItems() | this._clearOldHistoryEntries()) {
 				this._updateJsonFile('history', historyLS);
-				this._historyList.scroll_to(0, null, null);
 			}
 		}
 
@@ -336,23 +335,6 @@ export const DosageWindow = GObject.registerClass(
 							app.add_action(this.showSearchAction);
 						}
 
-						if (flow.itemsChanged) return;
-
-						if (added && removed === 0) {
-							const itemAdded = model.get_item(pos).obj;
-							for (const it of treatmentsLS) {
-								const item = it.obj;
-								const sameItem =
-									item.name === itemAdded.name &&
-									item.inventory.enabled &&
-									itemAdded.taken[1] === 1;
-
-								if (sameItem) {
-									item.inventory.current -= itemAdded.dose;
-								}
-							}
-						}
-
 						if (removed && removedItem) {
 							const removedIt = removedItem.obj;
 							const removedDt = new Date(removedIt.taken[0]);
@@ -515,7 +497,6 @@ export const DosageWindow = GObject.registerClass(
 		_clearOldHistoryEntries() {
 			if (!settings.get_boolean('clear-old-hist')) return;
 
-			flow.itemsChanged = true;
 			const itemsHolder = {};
 
 			for (const it of historyLS) {
@@ -536,7 +517,6 @@ export const DosageWindow = GObject.registerClass(
 				historyLS.splice(0, 0, itemsToAdd);
 			}
 
-			flow.itemsChanged = false;
 			return true;
 		}
 
@@ -639,11 +619,7 @@ export const DosageWindow = GObject.registerClass(
 					});
 					confirmAction.connect('activate', () => {
 						const confirmPromise = new Promise((resolve, reject) => {
-							resolve(
-								groupedObj[dateKey].map(item => {
-									this._addNotifItemToHistory(item, 1);
-								}),
-							);
+							resolve(this._addNotifItemsToHistory(groupedObj[dateKey], 1));
 						});
 						confirmPromise.then(_ => schedule());
 					});
@@ -651,11 +627,7 @@ export const DosageWindow = GObject.registerClass(
 					const skipAction = new Gio.SimpleAction({ name: `skip${dateKey}` });
 					skipAction.connect('activate', () => {
 						const skipPromise = new Promise((resolve, reject) => {
-							resolve(
-								groupedObj[dateKey].map(item => {
-									this._addNotifItemToHistory(item, 0);
-								}),
-							);
+							resolve(this._addNotifItemsToHistory(groupedObj[dateKey], 0));
 						});
 						skipPromise.then(_ => schedule());
 					});
@@ -804,16 +776,33 @@ export const DosageWindow = GObject.registerClass(
 
 		_addTodayToHistory(btn) {
 			const taken = +btn.get_name(); // 1 or 0
+			const app = this.get_application();
+			const itemsToAdd = [];
 
 			if (this.todayItems.length > 0) {
 				this.todayItems.forEach(item => {
-					this._insertItemToHistory(item, taken);
-					const app = this.get_application();
+					itemsToAdd.push(
+						new MedicationObject({
+							obj: {
+								name: item.name,
+								unit: item.unit,
+								time: item.time,
+								dose: item.dose,
+								color: item.color,
+								taken: [new Date().getTime(), taken],
+							},
+						}),
+					);
+
+					this._updateTreatInvAndLastTk(item, taken);
+
 					const itemHour = item.time[0];
 					const itemMin = item.time[1];
 					const dateKey = new Date().setHours(itemHour, itemMin, 0, 0);
 					app.withdraw_notification(`${dateKey}`);
 				});
+
+				historyLS.splice(0, 0, itemsToAdd.reverse());
 
 				this._updateEverything();
 				this._scheduleNotifications('adding');
@@ -826,19 +815,60 @@ export const DosageWindow = GObject.registerClass(
 			this._updateEntryBtn(false);
 		}
 
-		_addNotifItemToHistory(item, taken) {
-			const todayLength = this.todayModel.get_n_items();
-			// only insert to history if item is not in today list
-			for (let i = 0; i < todayLength; i++) {
-				const it = this.todayModel.get_item(i)?.obj;
-				const sameName = item.name === it?.name;
+		_updateTreatInvAndLastTk(item, taken) {
+			for (const it of treatmentsLS) {
+				const treatItem = it.obj;
+				const sameName = item.name === treatItem.name;
 				const itemTime = String(item.time);
-				const sameTime = itemTime === String(it?.time);
+				const updateInv = sameName && treatItem.inventory.enabled && taken === 1;
 
-				if (sameName && sameTime) {
-					this._insertItemToHistory(item, taken, null, true);
+				if (updateInv) treatItem.inventory.current -= item.dose;
+
+				if (sameName) {
+					treatItem.dosage.forEach(timeDose => {
+						const sameTime = itemTime === String(timeDose.time);
+						if (sameTime) {
+							timeDose.lastTaken = new Date().toISOString();
+						}
+					});
+
+					return;
 				}
 			}
+		}
+
+		_addNotifItemsToHistory(groupedArr, taken) {
+			const itemsToAdd = [];
+			const todayLength = this.todayModel.get_n_items();
+
+			groupedArr.forEach(item => {
+				// only insert to history if item is not in today list
+				for (let i = 0; i < todayLength; i++) {
+					const it = this.todayModel.get_item(i)?.obj;
+					const sameName = item.name === it?.name;
+					const itemTime = String(item.time);
+					const sameTime = itemTime === String(it?.time);
+
+					if (sameName && sameTime) {
+						itemsToAdd.push(
+							new MedicationObject({
+								obj: {
+									name: item.name,
+									unit: item.unit,
+									time: item.time,
+									dose: item.dose,
+									color: item.color,
+									taken: [new Date().getTime(), taken],
+								},
+							}),
+						);
+
+						this._updateTreatInvAndLastTk(item, taken);
+					}
+				}
+			});
+
+			historyLS.splice(0, 0, itemsToAdd.reverse());
 		}
 
 		_insertItemToHistory(item, taken, missedDate, isNotif) {
@@ -862,27 +892,6 @@ export const DosageWindow = GObject.registerClass(
 					else return 0;
 				},
 			);
-
-			// update lastTaken of treatment dose when confirming/skipping
-			if (!missedDate) {
-				for (const it of treatmentsLS) {
-					const treatItem = it.obj;
-					const sameName = item.name === treatItem.name;
-					const itemTime = String(item.time);
-
-					if (sameName) {
-						treatItem.dosage.forEach(timeDose => {
-							const sameTime = itemTime === String(timeDose.time);
-							const notifItem = isNotif && sameTime;
-							const todayItem = this.todayItems.some(_i => sameName && sameTime);
-
-							if (notifItem || todayItem) {
-								timeDose.lastTaken = new Date().toISOString();
-							}
-						});
-					}
-				}
-			}
 		}
 
 		_editHistoryItem(list, position) {
@@ -927,13 +936,25 @@ export const DosageWindow = GObject.registerClass(
 
 		_addMissedItems() {
 			let itemsAdded = false;
-			flow.itemsChanged = true;
+			const itemsToAdd = [];
 
 			const insert = (timeDose, tempItem, nextDate) => {
 				if (!timeDose.lastTaken) {
-					const nextDt = new Date(nextDate);
-					nextDt.setHours(23, 59, 59, 999);
-					this._insertItemToHistory(tempItem, -1, nextDt.getTime());
+					const nextDt = new Date(nextDate).setHours(23, 59, 59, 999);
+
+					itemsToAdd.push(
+						new MedicationObject({
+							obj: {
+								name: tempItem.name,
+								unit: tempItem.unit,
+								time: tempItem.time,
+								dose: tempItem.dose,
+								color: tempItem.color,
+								taken: [nextDt, -1],
+							},
+						}),
+					);
+
 					itemsAdded = true;
 				}
 			};
@@ -993,7 +1014,8 @@ export const DosageWindow = GObject.registerClass(
 				}
 			}
 
-			flow.itemsChanged = false;
+			itemsToAdd.sort((a, b) => b.obj.taken[0] - a.obj.taken[0]);
+			historyLS.splice(0, 0, itemsToAdd.reverse());
 			return itemsAdded;
 		}
 

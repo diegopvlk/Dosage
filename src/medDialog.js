@@ -457,7 +457,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		}
 
 		if (mode === 'one-time') {
-			addItemToHistory();
+			addSingleItemToHistory();
 			DosageWindow._updateJsonFile('history', historyLS);
 		} else if (mode === 'edit-hist') {
 			editHistoryItem();
@@ -507,8 +507,6 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 			},
 		});
 
-		flow.itemsChanged = true;
-
 		const it = list.get_model().get_item(position);
 		const [, pos] = historyLS.find(it);
 
@@ -523,8 +521,6 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		});
 
 		list.scroll_to(Math.max(0, position - 1), Gtk.ListScrollFlags.FOCUS, null);
-
-		flow.itemsChanged = false;
 
 		for (const i of treatmentsLS) {
 			const sameItem = i.obj.name === item.name && i.obj.inventory.enabled;
@@ -558,7 +554,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		}
 	}
 
-	function addItemToHistory() {
+	function addSingleItemToHistory() {
 		const calOneEntry = builder.get_object('calOneEntry');
 		const dt = +calOneEntry.get_date().format('%s') * 1000;
 		const entryDate = new Date(dt);
@@ -593,19 +589,27 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		const todayDt = new Date().setHours(0, 0, 0, 0);
 		const entryDt = entryDate.setHours(0, 0, 0, 0);
 
-		if (todayDt !== entryDt) return;
-		// if it's the time as of an existing item
-		// update lastTaken if entryDate is today
 		for (const it of treatmentsLS) {
 			const i = it.obj;
 			const newIt = item.obj;
-			i.dosage.forEach(timeDose => {
-				const sameName = i.name === newIt.name;
-				const sameTime = String(timeDose.time) === String(newIt.time);
-				if (sameName && sameTime) {
-					timeDose.lastTaken = new Date().toISOString();
-				}
-			});
+			const sameName = i.name === newIt.name;
+			const updateInv = sameName && i.inventory.enabled;
+
+			// if it's the time as of an existing item
+			// update lastTaken if entryDate is today
+			if (todayDt === entryDt) {
+				i.dosage.forEach(timeDose => {
+					const sameTime = String(timeDose.time) === String(newIt.time);
+					if (sameName && sameTime) {
+						timeDose.lastTaken = new Date().toISOString();
+					}
+				});
+			}
+
+			if (updateInv) {
+				i.inventory.current -= newIt.dose;
+				break;
+			}
 		}
 	}
 
