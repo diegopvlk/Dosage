@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 20:20-0300\n"
+"POT-Creation-Date: 2024-09-18 08:54-0300\n"
 "PO-Revision-Date: 2024-09-12 06:11+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
@@ -473,7 +473,7 @@ msgstr "Esci"
 msgid "Restore"
 msgstr "Ristabilire"
 
-#: src/historyFactory.js:163
+#: src/historyFactory.js:163 src/medDialog.js:371
 msgid "Missed"
 msgstr "Perso"
 
@@ -523,10 +523,6 @@ msgstr "Confermato a"
 #: src/medDialog.js:368 src/medDialog.js:380
 msgid "Skipped at"
 msgstr "Saltato a"
-
-#: src/medDialog.js:371
-msgid "Missed(?) at"
-msgstr "Perso(?) a"
 
 #: src/medDialog.js:385
 msgid "Edit entry"

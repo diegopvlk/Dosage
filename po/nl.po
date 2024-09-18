@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 20:20-0300\n"
+"POT-Creation-Date: 2024-09-18 08:54-0300\n"
 "PO-Revision-Date: 2024-03-16 18:56+0000\n"
 "Last-Translator: Mikachu <micah.sh@proton.me>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/dosage/dosage/nl/"
@@ -473,7 +473,7 @@ msgstr "Afsluiten"
 msgid "Restore"
 msgstr "Herstellen"
 
-#: src/historyFactory.js:163
+#: src/historyFactory.js:163 src/medDialog.js:371
 msgid "Missed"
 msgstr "Vergeten"
 
@@ -519,22 +519,12 @@ msgid "New entry"
 msgstr "Nieuw invoer"
 
 #: src/medDialog.js:364 src/medDialog.js:376
-#, fuzzy
-#| msgid "Confirmed"
 msgid "Confirmed at"
-msgstr "Bevestigd"
+msgstr "Bevestigd om"
 
 #: src/medDialog.js:368 src/medDialog.js:380
-#, fuzzy
-#| msgid "Skipped"
 msgid "Skipped at"
-msgstr "Overgeslagen"
-
-#: src/medDialog.js:371
-#, fuzzy
-#| msgid "Missed"
-msgid "Missed(?) at"
-msgstr "Vergeten"
+msgstr "Overgeslagen om"
 
 #: src/medDialog.js:385
 msgid "Edit entry"
@@ -558,7 +548,7 @@ msgstr "Kies minimaal één dag"
 
 #: src/medDialog.js:865
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "Naam staat al op de behandellijst"
 
 #: src/medDialog.js:879
 msgid "Duplicated time"
@@ -582,7 +572,7 @@ msgstr "Tot en met"
 
 #: src/treatmentsFactory.js:114
 msgid "Ended on"
-msgstr ""
+msgstr "Beëindigd op"
 
 #: src/treatmentsFactory.js:126 src/utils.js:51
 msgid "Daily"

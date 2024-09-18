@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 20:20-0300\n"
+"POT-Creation-Date: 2024-09-18 08:54-0300\n"
 "PO-Revision-Date: 2024-02-01 22:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
@@ -483,7 +483,7 @@ msgstr "Avslutt"
 msgid "Restore"
 msgstr "Gjenopprett"
 
-#: src/historyFactory.js:163
+#: src/historyFactory.js:163 src/medDialog.js:371
 msgid "Missed"
 msgstr "Glemt"
 
@@ -527,22 +527,12 @@ msgid "New entry"
 msgstr "Ny oppføring"
 
 #: src/medDialog.js:364 src/medDialog.js:376
-#, fuzzy
-#| msgid "Confirmed"
 msgid "Confirmed at"
-msgstr "Bekreftet"
+msgstr "Bekreftet kl"
 
 #: src/medDialog.js:368 src/medDialog.js:380
-#, fuzzy
-#| msgid "Skipped"
 msgid "Skipped at"
-msgstr "Hoppet over"
-
-#: src/medDialog.js:371
-#, fuzzy
-#| msgid "Missed"
-msgid "Missed(?) at"
-msgstr "Glemt"
+msgstr "Hoppet over kl"
 
 #: src/medDialog.js:385
 msgid "Edit entry"
@@ -566,7 +556,7 @@ msgstr "Velg minst én dag"
 
 #: src/medDialog.js:865
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "Navn er allerede på behandlingslisten"
 
 #: src/medDialog.js:879
 msgid "Duplicated time"
@@ -590,7 +580,7 @@ msgstr "Til"
 
 #: src/treatmentsFactory.js:114
 msgid "Ended on"
-msgstr ""
+msgstr "Endte på"
 
 #: src/treatmentsFactory.js:126 src/utils.js:51
 msgid "Daily"

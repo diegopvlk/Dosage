@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 20:20-0300\n"
+"POT-Creation-Date: 2024-09-18 08:54-0300\n"
 "PO-Revision-Date: 2024-02-01 22:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/"
@@ -475,7 +475,7 @@ msgstr "Konec"
 msgid "Restore"
 msgstr "Obnovit"
 
-#: src/historyFactory.js:163
+#: src/historyFactory.js:163 src/medDialog.js:371
 msgid "Missed"
 msgstr "Zapomenutý"
 
@@ -520,22 +520,12 @@ msgid "New entry"
 msgstr "Nový záznam"
 
 #: src/medDialog.js:364 src/medDialog.js:376
-#, fuzzy
-#| msgid "Confirmed"
 msgid "Confirmed at"
-msgstr "Potvrzený"
+msgstr "Potvrzený v"
 
 #: src/medDialog.js:368 src/medDialog.js:380
-#, fuzzy
-#| msgid "Skipped"
 msgid "Skipped at"
-msgstr "Přeskočený"
-
-#: src/medDialog.js:371
-#, fuzzy
-#| msgid "Missed"
-msgid "Missed(?) at"
-msgstr "Zapomenutý"
+msgstr "Přeskočený v"
 
 #: src/medDialog.js:385
 msgid "Edit entry"
@@ -559,7 +549,7 @@ msgstr "Vyberte alespoň jeden den"
 
 #: src/medDialog.js:865
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "Jméno již na seznamu ošetření"
 
 #: src/medDialog.js:879
 msgid "Duplicated time"
@@ -583,7 +573,7 @@ msgstr "Dokud"
 
 #: src/treatmentsFactory.js:114
 msgid "Ended on"
-msgstr ""
+msgstr "Ukončeno dne"
 
 #: src/treatmentsFactory.js:126 src/utils.js:51
 msgid "Daily"

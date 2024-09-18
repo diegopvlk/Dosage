@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 20:20-0300\n"
+"POT-Creation-Date: 2024-09-18 08:54-0300\n"
 "PO-Revision-Date: 2024-08-03 13:09+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/dosage/dosage/fa/"
@@ -467,7 +467,7 @@ msgstr "خروج"
 msgid "Restore"
 msgstr "بازآوری"
 
-#: src/historyFactory.js:163
+#: src/historyFactory.js:163 src/medDialog.js:371
 msgid "Missed"
 msgstr "از دست رفته"
 
@@ -511,22 +511,12 @@ msgid "New entry"
 msgstr "ورودی جدید"
 
 #: src/medDialog.js:364 src/medDialog.js:376
-#, fuzzy
-#| msgid "Confirmed"
 msgid "Confirmed at"
-msgstr "تأیید شده"
+msgstr "تأیید شده در"
 
 #: src/medDialog.js:368 src/medDialog.js:380
-#, fuzzy
-#| msgid "Skipped"
 msgid "Skipped at"
-msgstr "پریده"
-
-#: src/medDialog.js:371
-#, fuzzy
-#| msgid "Missed"
-msgid "Missed(?) at"
-msgstr "از دست رفته"
+msgstr "پریده در"
 
 #: src/medDialog.js:385
 msgid "Edit entry"
@@ -550,7 +540,7 @@ msgstr "گزینش لااقل یک روز"
 
 #: src/medDialog.js:865
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "نام در حال حاضر در لیست درمان است"
 
 #: src/medDialog.js:879
 msgid "Duplicated time"
@@ -574,7 +564,7 @@ msgstr "تا"
 
 #: src/treatmentsFactory.js:114
 msgid "Ended on"
-msgstr ""
+msgstr "به پایان رسید در"
 
 #: src/treatmentsFactory.js:126 src/utils.js:51
 msgid "Daily"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 20:20-0300\n"
+"POT-Creation-Date: 2024-09-18 08:54-0300\n"
 "PO-Revision-Date: 2024-05-23 09:01+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/"
@@ -465,7 +465,7 @@ msgstr "छोड़ें"
 msgid "Restore"
 msgstr "पुनर्स्थापित करें"
 
-#: src/historyFactory.js:163
+#: src/historyFactory.js:163 src/medDialog.js:371
 msgid "Missed"
 msgstr "छुट्टा हुआ"
 
@@ -520,12 +520,6 @@ msgstr "पुष्टि की गई"
 msgid "Skipped at"
 msgstr "छोड़ा गया"
 
-#: src/medDialog.js:371
-#, fuzzy
-#| msgid "Missed"
-msgid "Missed(?) at"
-msgstr "छुट्टा हुआ"
-
 #: src/medDialog.js:385
 msgid "Edit entry"
 msgstr "प्रविष्टि संपादित करें"
@@ -548,7 +542,7 @@ msgstr "कम से कम एक दिन चुनें"
 
 #: src/medDialog.js:865
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "नाम पहले से ही उपचार सूची में है"
 
 #: src/medDialog.js:879
 msgid "Duplicated time"
@@ -572,7 +566,7 @@ msgstr "तक"
 
 #: src/treatmentsFactory.js:114
 msgid "Ended on"
-msgstr ""
+msgstr "पर समाप्त हुआ"
 
 #: src/treatmentsFactory.js:126 src/utils.js:51
 msgid "Daily"

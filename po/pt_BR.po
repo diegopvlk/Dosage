@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 20:20-0300\n"
+"POT-Creation-Date: 2024-09-18 08:54-0300\n"
 "PO-Revision-Date: 2024-02-02 14:50+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -471,7 +471,7 @@ msgstr "Sair"
 msgid "Restore"
 msgstr "Restaurar"
 
-#: src/historyFactory.js:163
+#: src/historyFactory.js:163 src/medDialog.js:371
 msgid "Missed"
 msgstr "Perdido"
 
@@ -522,10 +522,6 @@ msgstr "Confirmado às"
 #: src/medDialog.js:368 src/medDialog.js:380
 msgid "Skipped at"
 msgstr "Ignorado às"
-
-#: src/medDialog.js:371
-msgid "Missed(?) at"
-msgstr "Perdido(?) às"
 
 #: src/medDialog.js:385
 msgid "Edit entry"

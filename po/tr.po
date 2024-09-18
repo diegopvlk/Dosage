@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 20:20-0300\n"
+"POT-Creation-Date: 2024-09-18 08:54-0300\n"
 "PO-Revision-Date: 2024-03-22 11:45+0000\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
@@ -474,7 +474,7 @@ msgstr "Çık"
 msgid "Restore"
 msgstr "Geri yükle"
 
-#: src/historyFactory.js:163
+#: src/historyFactory.js:163 src/medDialog.js:371
 msgid "Missed"
 msgstr "Unutuldu"
 
@@ -529,12 +529,6 @@ msgstr "Onaylandı"
 msgid "Skipped at"
 msgstr "Atlandı"
 
-#: src/medDialog.js:371
-#, fuzzy
-#| msgid "Missed"
-msgid "Missed(?) at"
-msgstr "Unutuldu"
-
 #: src/medDialog.js:385
 msgid "Edit entry"
 msgstr "Girdiyi Düzenle"
@@ -557,7 +551,7 @@ msgstr "En az bir gün seçin"
 
 #: src/medDialog.js:865
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "İsim zaten tedavi listesinde"
 
 #: src/medDialog.js:879
 msgid "Duplicated time"
@@ -581,7 +575,7 @@ msgstr "Bitiş Tarihi"
 
 #: src/treatmentsFactory.js:114
 msgid "Ended on"
-msgstr ""
+msgstr "Sona erdi"
 
 #: src/treatmentsFactory.js:126 src/utils.js:51
 msgid "Daily"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 20:20-0300\n"
+"POT-Creation-Date: 2024-09-18 08:54-0300\n"
 "PO-Revision-Date: 2024-03-10 23:09+0000\n"
 "Last-Translator: Jake Blues <unclejake2010@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
@@ -320,7 +320,7 @@ msgstr "Пропущено"
 
 #: data/ui/med-dialog.blp:666
 msgid "Confirmed"
-msgstr "Подтверджено"
+msgstr "Подтверждено"
 
 #: data/ui/med-dialog.blp:673
 msgid "Recurring notifications"
@@ -479,7 +479,7 @@ msgstr "Выйти"
 msgid "Restore"
 msgstr "Восстановить"
 
-#: src/historyFactory.js:163
+#: src/historyFactory.js:163 src/medDialog.js:371
 msgid "Missed"
 msgstr "Отсутствует"
 
@@ -528,22 +528,12 @@ msgid "New entry"
 msgstr "Новая запись"
 
 #: src/medDialog.js:364 src/medDialog.js:376
-#, fuzzy
-#| msgid "Confirmed"
 msgid "Confirmed at"
-msgstr "Подтверджено"
+msgstr "Подтверждено в"
 
 #: src/medDialog.js:368 src/medDialog.js:380
-#, fuzzy
-#| msgid "Skipped"
 msgid "Skipped at"
-msgstr "Пропущено"
-
-#: src/medDialog.js:371
-#, fuzzy
-#| msgid "Missed"
-msgid "Missed(?) at"
-msgstr "Отсутствует"
+msgstr "Пропущено в"
 
 #: src/medDialog.js:385
 msgid "Edit entry"
@@ -567,7 +557,7 @@ msgstr "Выберите хотя бы один день"
 
 #: src/medDialog.js:865
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "Имя уже в списке лечения"
 
 #: src/medDialog.js:879
 msgid "Duplicated time"
@@ -591,7 +581,7 @@ msgstr "До"
 
 #: src/treatmentsFactory.js:114
 msgid "Ended on"
-msgstr ""
+msgstr "Закончился на"
 
 #: src/treatmentsFactory.js:126 src/utils.js:51
 msgid "Daily"

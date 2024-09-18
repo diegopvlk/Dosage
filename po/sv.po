@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 20:20-0300\n"
+"POT-Creation-Date: 2024-09-18 08:54-0300\n"
 "PO-Revision-Date: 2024-09-09 16:09+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -472,7 +472,7 @@ msgstr "Avsluta"
 msgid "Restore"
 msgstr "Återställa"
 
-#: src/historyFactory.js:163
+#: src/historyFactory.js:163 src/medDialog.js:371
 msgid "Missed"
 msgstr "Glömd"
 
@@ -522,10 +522,6 @@ msgstr "Bekräftad vid"
 #: src/medDialog.js:368 src/medDialog.js:380
 msgid "Skipped at"
 msgstr "Hoppades över vid"
-
-#: src/medDialog.js:371
-msgid "Missed(?) at"
-msgstr "Glömd(?) vid"
 
 #: src/medDialog.js:385
 msgid "Edit entry"

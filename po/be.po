@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 20:20-0300\n"
+"POT-Creation-Date: 2024-09-18 08:54-0300\n"
 "PO-Revision-Date: 2024-02-02 14:02+0000\n"
 "Last-Translator: Yahor <k1llo2810@protonmail.com>\n"
 "Language-Team: Belarusian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -475,7 +475,7 @@ msgstr "Выйсці"
 msgid "Restore"
 msgstr "Аднавіць"
 
-#: src/historyFactory.js:163
+#: src/historyFactory.js:163 src/medDialog.js:371
 msgid "Missed"
 msgstr "Адсутнічае"
 
@@ -519,22 +519,12 @@ msgid "New entry"
 msgstr "Новы запіс"
 
 #: src/medDialog.js:364 src/medDialog.js:376
-#, fuzzy
-#| msgid "Confirmed"
 msgid "Confirmed at"
-msgstr "Пацверджана"
+msgstr "Пацверджана ў"
 
 #: src/medDialog.js:368 src/medDialog.js:380
-#, fuzzy
-#| msgid "Skipped"
 msgid "Skipped at"
-msgstr "Прапушчана"
-
-#: src/medDialog.js:371
-#, fuzzy
-#| msgid "Missed"
-msgid "Missed(?) at"
-msgstr "Адсутнічае"
+msgstr "Прапушчана ў"
 
 #: src/medDialog.js:385
 msgid "Edit entry"
@@ -558,7 +548,7 @@ msgstr "Выберыце хаця б адзін дзень"
 
 #: src/medDialog.js:865
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "Імя ўжо ў спісе лячэння"
 
 #: src/medDialog.js:879
 msgid "Duplicated time"
@@ -582,7 +572,7 @@ msgstr "Да"
 
 #: src/treatmentsFactory.js:114
 msgid "Ended on"
-msgstr ""
+msgstr "Завяршылася на"
 
 #: src/treatmentsFactory.js:126 src/utils.js:51
 msgid "Daily"
