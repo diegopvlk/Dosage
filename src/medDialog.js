@@ -368,7 +368,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 			takenLabel.label = _('Skipped at');
 		}
 		if (item.taken[1] === -1) {
-			takenLabel.label = _('Missed(?) at');
+			takenLabel.label = _('Missed') + '(?)';
 			saveButton.sensitive = false;
 		}
 
