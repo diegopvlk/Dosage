@@ -1,7 +1,7 @@
 {
   "app-id": "io.github.diegopvlk.Dosage",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "master",
+  "runtime-version": "47",
   "sdk": "org.gnome.Sdk",
   "command": "io.github.diegopvlk.Dosage",
   "finish-args": [
@@ -32,7 +32,7 @@
         {
           "type": "git",
           "url": "https://github.com/flatpak/libportal",
-          "tag": "0.7.1"
+          "tag": "0.8.1"
         }
       ]
     },
@@ -44,7 +44,7 @@
         {
           "type": "git",
           "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-          "tag": "v0.12.0"
+          "tag": "v0.14.0"
         }
       ]
     },
