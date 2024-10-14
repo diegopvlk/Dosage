@@ -58,30 +58,23 @@ export function getSpecificDaysLabel(item) {
 	return newLabel;
 }
 
-const [clockIs12, amPmStr, timeDot] = checkClock();
-export { clockIs12, amPmStr, timeDot };
+const [clockIs12, timeDot] = checkClock();
+export { clockIs12, timeDot };
 
 function checkClock() {
 	let is12 = false;
-	let amPmStr = '';
 	let timeDot = false;
 
 	try {
-		const [, outAmPm] = GLib.spawn_command_line_sync('locale am_pm');
 		const [, outTimeFmt] = GLib.spawn_command_line_sync('locale t_fmt');
-
-		const outputAmPm = decoder.decode(outAmPm).replace('\n', '');
 		const timeFormat = decoder.decode(outTimeFmt).replace('\n', '');
-
-		amPmStr = outputAmPm === ';' ? amPmStr : outputAmPm;
-		amPmStr = amPmStr.split(';');
 		is12 = timeFormat.includes('%r') || timeFormat.includes('%p');
 		timeDot = timeFormat.includes('.');
 	} catch (error) {
 		console.error(error);
 	}
 
-	return [is12, amPmStr, timeDot];
+	return [is12, timeDot];
 }
 
 export const DataDir = Gio.file_new_for_path(GLib.build_filenamev([GLib.get_user_data_dir()]));
@@ -312,7 +305,7 @@ export function doseRow(timeDose) {
 	let period = '';
 
 	if (clockIs12) {
-		period = hours < 12 ? `${amPmStr[0]}` : `${amPmStr[1]}`;
+		period = hours < 12 ? 'AM' : 'PM';
 		if (hours > 12) hours -= 12;
 		if (hours === 0) hours = 12;
 	}
@@ -420,7 +413,7 @@ export function doseRow(timeDose) {
 	});
 
 	amPmButton.connect('clicked', btn => {
-		btn.label = btn.label === `${amPmStr[0]}` ? `${amPmStr[1]}` : `${amPmStr[0]}`;
+		btn.label = btn.label === 'AM' ? 'PM' : 'AM';
 		doseTimeButton.label = `${spinButtonHours.text}:${spinButtonMinutes.text} ${amPmButton.label}`;
 	});
 
@@ -462,8 +455,8 @@ export function getTimeBtnInput(currentDoseRow) {
 
 	// The time is stored in 24h format
 	if (clockIs12) {
-		if (period === `${amPmStr[0]}` && hours === 12) hours = 0;
-		if (period === `${amPmStr[1]}` && hours !== 12) hours += 12;
+		if (period === 'AM' && hours === 12) hours = 0;
+		if (period === 'PM' && hours !== 12) hours += 12;
 	}
 
 	return [hours, minutes, doseTimeButton];
