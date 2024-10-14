@@ -65,7 +65,7 @@
 
 	<releases>
 		<release version="1.7.0" date="2024-09-20">
-			<description translatable="no">
+			<description translate="no">
 				<ul>
 					<li>Redesign for GNOME 47 and accent colors</li>
 					<li>It's now possible to search the history</li>
