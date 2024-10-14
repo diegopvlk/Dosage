@@ -405,16 +405,12 @@ msgstr ""
 "è abilitato"
 
 #: data/ui/preferences.blp:71
-#, fuzzy
-#| msgid "Recurring notifications"
 msgid "Low stock notification"
-msgstr "Notifiche ricorrenti"
+msgstr ""
 
 #: data/ui/preferences.blp:72
-#, fuzzy
-#| msgid "You have treatments low in stock"
 msgid "Send reminders when treatments are low in stock"
-msgstr "Hai trattamenti in esaurimento"
+msgstr ""
 
 #: data/ui/preferences.blp:88
 msgid "Notification sound"

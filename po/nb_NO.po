@@ -408,16 +408,12 @@ msgstr ""
 "aktivert"
 
 #: data/ui/preferences.blp:71
-#, fuzzy
-#| msgid "Recurring notifications"
 msgid "Low stock notification"
-msgstr "Gjentatte varsler"
+msgstr ""
 
 #: data/ui/preferences.blp:72
-#, fuzzy
-#| msgid "You have treatments low in stock"
 msgid "Send reminders when treatments are low in stock"
-msgstr "Du har behandlinger med manko på beholdning"
+msgstr ""
 
 #: data/ui/preferences.blp:88
 msgid "Notification sound"
