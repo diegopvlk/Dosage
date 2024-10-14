@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-18 08:54-0300\n"
+"POT-Creation-Date: 2024-10-14 11:17-0300\n"
 "PO-Revision-Date: 2024-09-12 06:11+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:619
-#: src/main.js:40 src/window.js:701
+#: src/main.js:40 src/window.js:697
 msgid "Dosage"
 msgstr "Dosaggio"
 
@@ -376,27 +376,27 @@ msgstr "Data"
 msgid "Delete"
 msgstr "Cancella"
 
-#: data/ui/preferences.blp:6 data/ui/window.blp:225
+#: data/ui/preferences.blp:7 data/ui/window.blp:225
 msgid "Preferences"
 msgstr "Preferenze"
 
-#: data/ui/preferences.blp:20
+#: data/ui/preferences.blp:21
 msgid "Auto-start at login"
 msgstr "Avvio automatico al login"
 
-#: data/ui/preferences.blp:36
+#: data/ui/preferences.blp:37
 msgid "Auto-clear history"
 msgstr "Cancella automaticamente la cronologia"
 
-#: data/ui/preferences.blp:37
+#: data/ui/preferences.blp:38
 msgid "Keeps a maximum of 30 days"
 msgstr "Mantiene un massimo di 30 giorni"
 
-#: data/ui/preferences.blp:53
+#: data/ui/preferences.blp:54
 msgid "Increase notification priority"
 msgstr "Aumenta la priorità delle notifiche"
 
-#: data/ui/preferences.blp:54
+#: data/ui/preferences.blp:55
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
@@ -404,24 +404,36 @@ msgstr ""
 "Mostra la notifica in modalità a schermo intero o anche se 'Non disturbare' "
 "è abilitato"
 
-#: data/ui/preferences.blp:70
+#: data/ui/preferences.blp:71
+#, fuzzy
+#| msgid "Recurring notifications"
+msgid "Low stock notification"
+msgstr "Notifiche ricorrenti"
+
+#: data/ui/preferences.blp:72
+#, fuzzy
+#| msgid "You have treatments low in stock"
+msgid "Send reminders when treatments are low in stock"
+msgstr "Hai trattamenti in esaurimento"
+
+#: data/ui/preferences.blp:88
 msgid "Notification sound"
 msgstr "Suono di notifica"
 
-#: data/ui/preferences.blp:86
+#: data/ui/preferences.blp:104
 msgid "Notification buttons"
 msgstr "Pulsanti di notifica"
 
-#: data/ui/preferences.blp:87
+#: data/ui/preferences.blp:105
 msgid "Show or hide confirm/skip"
 msgstr "Mostra o nascondi conferma/salta"
 
-#: data/ui/preferences.blp:96 src/medDialog.js:316 src/window.js:562
-#: src/window.js:753
+#: data/ui/preferences.blp:114 src/medDialog.js:316 src/window.js:558
+#: src/window.js:749
 msgid "Confirm"
 msgstr "Conferma"
 
-#: data/ui/preferences.blp:112 data/ui/window.blp:124 src/window.js:563
+#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:559
 msgid "Skip"
 msgstr "Salta"
 
@@ -445,7 +457,7 @@ msgstr "Oggi"
 msgid "Unselect"
 msgstr "Non selezionato"
 
-#: data/ui/window.blp:112 src/window.js:753
+#: data/ui/window.blp:112 src/window.js:749
 msgid "One-time entry"
 msgstr "Unica voce"
 
@@ -588,45 +600,45 @@ msgstr "Fine settimana"
 msgid "Weekdays"
 msgstr "Giorni della settimana"
 
-#: src/utils.js:341
+#: src/utils.js:334
 msgid "Delete dose"
 msgstr "Cancella dose"
 
-#: src/window.js:129 src/window.js:598
+#: src/window.js:131 src/window.js:594
 msgid "Reminder"
 msgstr "Promemoria"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:131
+#: src/window.js:133
 msgid "You have treatments low in stock"
 msgstr "Hai trattamenti in esaurimento"
 
-#: src/window.js:388
+#: src/window.js:384
 msgid "No results found"
 msgstr "Nessun risultato trovato"
 
-#: src/window.js:388 src/window.js:1061
+#: src/window.js:384 src/window.js:1057
 msgid "Empty history"
 msgstr "Cronologia vuota"
 
-#: src/window.js:486
+#: src/window.js:482
 msgid "No treatments added yet"
 msgstr "Nessun trattamento ancora aggiunto"
 
-#: src/window.js:490
+#: src/window.js:486
 msgid "All done for today"
 msgstr "Tutto fatto per oggi"
 
-#: src/window.js:562
+#: src/window.js:558
 msgid "Confirm all"
 msgstr "Conferma tutto"
 
-#: src/window.js:563
+#: src/window.js:559
 msgid "Skip all"
 msgstr "Salta tutto"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:593
+#: src/window.js:589
 #, javascript-format
 msgid "and %d more"
 msgstr "e %d in più"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-18 08:54-0300\n"
+"POT-Creation-Date: 2024-10-14 11:17-0300\n"
 "PO-Revision-Date: 2024-08-03 13:09+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/dosage/dosage/fa/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:619
-#: src/main.js:40 src/window.js:701
+#: src/main.js:40 src/window.js:697
 msgid "Dosage"
 msgstr "چنده ‏گذاری"
 
@@ -372,50 +372,62 @@ msgstr "تاریخ"
 msgid "Delete"
 msgstr "حذف"
 
-#: data/ui/preferences.blp:6 data/ui/window.blp:225
+#: data/ui/preferences.blp:7 data/ui/window.blp:225
 msgid "Preferences"
 msgstr "ترجیحات"
 
-#: data/ui/preferences.blp:20
+#: data/ui/preferences.blp:21
 msgid "Auto-start at login"
 msgstr "آغاز خودکار هنگام ورود"
 
-#: data/ui/preferences.blp:36
+#: data/ui/preferences.blp:37
 msgid "Auto-clear history"
 msgstr "پاک سازی خودکار تاریخچه"
 
-#: data/ui/preferences.blp:37
+#: data/ui/preferences.blp:38
 msgid "Keeps a maximum of 30 days"
 msgstr "نگه داشتن بیشینه ۳۰ روز"
 
-#: data/ui/preferences.blp:53
+#: data/ui/preferences.blp:54
 msgid "Increase notification priority"
 msgstr "افزایش اولویت آگاهی"
 
-#: data/ui/preferences.blp:54
+#: data/ui/preferences.blp:55
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
 msgstr "نمایش آگاهی‌ها در حالت تمام صفحه یا به کار افتاده بودن «مزاحم نشوید»"
 
-#: data/ui/preferences.blp:70
+#: data/ui/preferences.blp:71
+#, fuzzy
+#| msgid "Recurring notifications"
+msgid "Low stock notification"
+msgstr "آگاهی‌های تکرار شونده"
+
+#: data/ui/preferences.blp:72
+#, fuzzy
+#| msgid "You have treatments low in stock"
+msgid "Send reminders when treatments are low in stock"
+msgstr "دارویی ماندهٔ کم دارد"
+
+#: data/ui/preferences.blp:88
 msgid "Notification sound"
 msgstr "صدای آگاهی"
 
-#: data/ui/preferences.blp:86
+#: data/ui/preferences.blp:104
 msgid "Notification buttons"
 msgstr "دکمه‌های آگاهی"
 
-#: data/ui/preferences.blp:87
+#: data/ui/preferences.blp:105
 msgid "Show or hide confirm/skip"
 msgstr "نمایش یا نهفتن تأیید و پرش"
 
-#: data/ui/preferences.blp:96 src/medDialog.js:316 src/window.js:562
-#: src/window.js:753
+#: data/ui/preferences.blp:114 src/medDialog.js:316 src/window.js:558
+#: src/window.js:749
 msgid "Confirm"
 msgstr "تأیید"
 
-#: data/ui/preferences.blp:112 data/ui/window.blp:124 src/window.js:563
+#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:559
 msgid "Skip"
 msgstr "پرش"
 
@@ -439,7 +451,7 @@ msgstr "امروز"
 msgid "Unselect"
 msgstr "ناگزینش"
 
-#: data/ui/window.blp:112 src/window.js:753
+#: data/ui/window.blp:112 src/window.js:749
 msgid "One-time entry"
 msgstr "ورودی یک باره"
 
@@ -582,45 +594,45 @@ msgstr "پایان‌هفته‌ها"
 msgid "Weekdays"
 msgstr "روزهای هفته"
 
-#: src/utils.js:341
+#: src/utils.js:334
 msgid "Delete dose"
 msgstr "حذف چنده"
 
-#: src/window.js:129 src/window.js:598
+#: src/window.js:131 src/window.js:594
 msgid "Reminder"
 msgstr "یادآور"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:131
+#: src/window.js:133
 msgid "You have treatments low in stock"
 msgstr "دارویی ماندهٔ کم دارد"
 
-#: src/window.js:388
+#: src/window.js:384
 msgid "No results found"
 msgstr "هیچ نتیجه‌ای پیدا نشد"
 
-#: src/window.js:388 src/window.js:1061
+#: src/window.js:384 src/window.js:1057
 msgid "Empty history"
 msgstr "تاریخچه خالی"
 
-#: src/window.js:486
+#: src/window.js:482
 msgid "No treatments added yet"
 msgstr "هنوز دارویی اضافه نشده"
 
-#: src/window.js:490
+#: src/window.js:486
 msgid "All done for today"
 msgstr "امروز چیزی نمانده"
 
-#: src/window.js:562
+#: src/window.js:558
 msgid "Confirm all"
 msgstr "تأیید همه"
 
-#: src/window.js:563
+#: src/window.js:559
 msgid "Skip all"
 msgstr "پرش همه"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:593
+#: src/window.js:589
 #, javascript-format
 msgid "and %d more"
 msgstr "و %d بیش‌تر"

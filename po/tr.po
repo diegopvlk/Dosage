@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-18 08:54-0300\n"
+"POT-Creation-Date: 2024-10-14 11:17-0300\n"
 "PO-Revision-Date: 2024-03-22 11:45+0000\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
@@ -24,7 +24,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:619
-#: src/main.js:40 src/window.js:701
+#: src/main.js:40 src/window.js:697
 msgid "Dosage"
 msgstr "Doz"
 
@@ -377,27 +377,27 @@ msgstr "Tarih"
 msgid "Delete"
 msgstr "Sil"
 
-#: data/ui/preferences.blp:6 data/ui/window.blp:225
+#: data/ui/preferences.blp:7 data/ui/window.blp:225
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: data/ui/preferences.blp:20
+#: data/ui/preferences.blp:21
 msgid "Auto-start at login"
 msgstr "Girişte kendiliğinden başlat"
 
-#: data/ui/preferences.blp:36
+#: data/ui/preferences.blp:37
 msgid "Auto-clear history"
 msgstr "Geçmişi kendiliğinden temizle"
 
-#: data/ui/preferences.blp:37
+#: data/ui/preferences.blp:38
 msgid "Keeps a maximum of 30 days"
 msgstr "Azami 30 günü koru"
 
-#: data/ui/preferences.blp:53
+#: data/ui/preferences.blp:54
 msgid "Increase notification priority"
 msgstr "Bildirim önceliğini artır"
 
-#: data/ui/preferences.blp:54
+#: data/ui/preferences.blp:55
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
@@ -405,24 +405,36 @@ msgstr ""
 "Masaüstünde bildirimin tam ekran kipinde ya da 'Rahatsız Etme' kipi etkin "
 "olsa bile gösterilmesini sağlar"
 
-#: data/ui/preferences.blp:70
+#: data/ui/preferences.blp:71
+#, fuzzy
+#| msgid "Recurring notifications"
+msgid "Low stock notification"
+msgstr "Yinelenen bildirimler"
+
+#: data/ui/preferences.blp:72
+#, fuzzy
+#| msgid "You have treatments low in stock"
+msgid "Send reminders when treatments are low in stock"
+msgstr "Stok sayısı azalmış ilaçlarınız var"
+
+#: data/ui/preferences.blp:88
 msgid "Notification sound"
 msgstr "Bildirim sesi"
 
-#: data/ui/preferences.blp:86
+#: data/ui/preferences.blp:104
 msgid "Notification buttons"
 msgstr "Bildirim düğmeleri"
 
-#: data/ui/preferences.blp:87
+#: data/ui/preferences.blp:105
 msgid "Show or hide confirm/skip"
 msgstr "Onayla/atla düğmelerini göster ya da gizle"
 
-#: data/ui/preferences.blp:96 src/medDialog.js:316 src/window.js:562
-#: src/window.js:753
+#: data/ui/preferences.blp:114 src/medDialog.js:316 src/window.js:558
+#: src/window.js:749
 msgid "Confirm"
 msgstr "Onayla"
 
-#: data/ui/preferences.blp:112 data/ui/window.blp:124 src/window.js:563
+#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:559
 msgid "Skip"
 msgstr "Atla"
 
@@ -446,7 +458,7 @@ msgstr "Bugün"
 msgid "Unselect"
 msgstr "Seçimi Kaldır"
 
-#: data/ui/window.blp:112 src/window.js:753
+#: data/ui/window.blp:112 src/window.js:749
 msgid "One-time entry"
 msgstr "Tek Seferlik Girdi"
 
@@ -593,45 +605,45 @@ msgstr "Hafta sonları"
 msgid "Weekdays"
 msgstr "Hafta içi"
 
-#: src/utils.js:341
+#: src/utils.js:334
 msgid "Delete dose"
 msgstr "Dozu sil"
 
-#: src/window.js:129 src/window.js:598
+#: src/window.js:131 src/window.js:594
 msgid "Reminder"
 msgstr "Hatırlatıcı"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:131
+#: src/window.js:133
 msgid "You have treatments low in stock"
 msgstr "Stok sayısı azalmış ilaçlarınız var"
 
-#: src/window.js:388
+#: src/window.js:384
 msgid "No results found"
 msgstr "Sonuç bulunamadı"
 
-#: src/window.js:388 src/window.js:1061
+#: src/window.js:384 src/window.js:1057
 msgid "Empty history"
 msgstr "Geçmiş boş"
 
-#: src/window.js:486
+#: src/window.js:482
 msgid "No treatments added yet"
 msgstr "Henüz ilaç eklenmedi"
 
-#: src/window.js:490
+#: src/window.js:486
 msgid "All done for today"
 msgstr "Bugünlük her şey bitti"
 
-#: src/window.js:562
+#: src/window.js:558
 msgid "Confirm all"
 msgstr "Tümünü Onayla"
 
-#: src/window.js:563
+#: src/window.js:559
 msgid "Skip all"
 msgstr "Tümünü Atla"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:593
+#: src/window.js:589
 #, javascript-format
 msgid "and %d more"
 msgstr "ve %d daha"
