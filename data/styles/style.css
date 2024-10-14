@@ -39,10 +39,15 @@ statuspage .icon {
 statuspage .title {
   margin-bottom: 32px;
 }
-preferencespage scrolledwindow viewport clamp {
+
+#preferences scrolledwindow viewport clamp {
   margin-top: -24px;
   margin-bottom: -4px;
 }
+#preferences label.title {
+  text-transform: capitalize;
+}
+
 dialog.about .boxed-list {
   box-shadow: var(--list-border), var(--list-shadow);
   border-radius: var(--list-border-radius);
