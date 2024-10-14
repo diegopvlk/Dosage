@@ -67,6 +67,23 @@ Adw.Dialog prefsDialog {
           }
 
           Adw.ActionRow {
+            title: _("Low stock notification");
+            subtitle: _("Send reminders when treatments are low in stock");
+            activatable-widget: notifStockSwitch;
+
+            [prefix]
+            Image {
+              icon-name: "dosage-notification-low-stock-symbolic";
+            }
+
+            [suffix]
+            Switch notifStockSwitch {
+              halign: center;
+              valign: center;
+            }
+          }
+
+          Adw.ActionRow {
             title: _("Notification sound");
             activatable-widget: notifSoundSwitch;
 

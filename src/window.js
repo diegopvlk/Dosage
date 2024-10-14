@@ -123,6 +123,8 @@ export const DosageWindow = GObject.registerClass(
 				}
 			}
 
+			if (!settings.get_boolean('low-stock-notif')) return;
+
 			const [notification, app] = this._getNotification();
 
 			if (!this.get_visible() && !notifAction && notify) {
@@ -133,12 +135,6 @@ export const DosageWindow = GObject.registerClass(
 			} else if (!notify) {
 				app.withdraw_notification('low-stock');
 			}
-
-			// reload-ish of treatments list
-			// necessary for updating low stock label
-			this._treatmentsList.model = new Gtk.NoSelection({
-				model: treatmentsLS,
-			});
 		}
 
 		#clockTick() {
@@ -1078,6 +1074,12 @@ export const DosageWindow = GObject.registerClass(
 			} else {
 				this._updateJsonFile('history', historyLS);
 			}
+
+			// reload-ish of treatments list
+			// necessary for updating low stock and cycle date labels
+			this._treatmentsList.model = new Gtk.NoSelection({
+				model: treatmentsLS,
+			});
 		}
 
 		_openMedDialog(list, position, mode) {

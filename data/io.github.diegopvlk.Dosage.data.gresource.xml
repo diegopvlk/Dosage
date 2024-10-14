@@ -47,5 +47,6 @@
     <file alias="dosage-auto-start-symbolic.svg">icons/ui/dosage-auto-start-symbolic.svg</file>
     <file alias="dosage-notification-bell-symbolic.svg">icons/ui/dosage-notification-bell-symbolic.svg</file>
     <file alias="dosage-notification-sound-symbolic.svg">icons/ui/dosage-notification-sound-symbolic.svg</file>
+    <file alias="dosage-notification-low-stock-symbolic.svg">icons/ui/dosage-notification-low-stock-symbolic.svg</file>
   </gresource>
 </gresources>

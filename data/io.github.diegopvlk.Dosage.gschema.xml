@@ -13,6 +13,9 @@
     <key name="priority" type="b">
       <default>false</default>
     </key>
+		<key name="low-stock-notif" type="b">
+      <default>true</default>
+    </key>
     <key name="confirm-button" type="b">
       <default>true</default>
     </key>
