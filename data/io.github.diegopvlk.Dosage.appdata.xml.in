@@ -64,6 +64,13 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.7.1" date="2024-10-21">
+			<description translate="no">
+				<ul>
+					<li>Added a preference to disable low stock notifications</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.7.0" date="2024-09-20">
 			<description translate="no">
 				<ul>
