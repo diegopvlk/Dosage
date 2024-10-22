@@ -34,7 +34,7 @@
 
   --list-border: inset 0 0 0 1px
     rgb(from var(--border-color) r g b / calc(alpha * 0.3));
-  --list-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --list-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
 
 .boxed-list,
@@ -58,12 +58,11 @@ row.expander list.nested {
 }
 
 button.floating {
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.13), 0 1px 2px 1px rgba(0, 0, 0, 0.15);
+  margin: 10px 4px;
 }
 button.floating:hover {
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 2px 1px rgba(0, 0, 0, 0.17);
 }
 button.floating:not(.suggested-action) {
   background-color: rgb(
@@ -73,7 +72,7 @@ button.floating:not(.suggested-action) {
 }
 button.floating:not(.suggested-action):hover {
   background-color: rgb(
-    from color-mix(in srgb, #545454 96%, var(--accent-bg-color)) r g b /
+    from color-mix(in srgb, #515151 96%, var(--accent-bg-color)) r g b /
       calc(alpha * 0.95)
   );
 }
