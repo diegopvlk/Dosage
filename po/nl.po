@@ -406,11 +406,11 @@ msgstr ""
 
 #: data/ui/preferences.blp:71
 msgid "Low stock notification"
-msgstr ""
+msgstr "Laag voorraadmelding"
 
 #: data/ui/preferences.blp:72
 msgid "Send reminders when treatments are low in stock"
-msgstr ""
+msgstr "Stuur herinneringen wanneer behandelingen laag in voorraad zijn"
 
 #: data/ui/preferences.blp:88
 msgid "Notification sound"

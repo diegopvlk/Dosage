@@ -398,11 +398,11 @@ msgstr "अधिसूचना को फ़ुलस्क्रीन मो
 
 #: data/ui/preferences.blp:71
 msgid "Low stock notification"
-msgstr ""
+msgstr "कम स्टॉक सूचना"
 
 #: data/ui/preferences.blp:72
 msgid "Send reminders when treatments are low in stock"
-msgstr ""
+msgstr "जब उपचारों का स्टॉक कम हो, तो याद दिलाने के लिए भेजें"
 
 #: data/ui/preferences.blp:88
 msgid "Notification sound"

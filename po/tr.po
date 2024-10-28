@@ -407,11 +407,11 @@ msgstr ""
 
 #: data/ui/preferences.blp:71
 msgid "Low stock notification"
-msgstr ""
+msgstr "Düşük stok bildirimi"
 
 #: data/ui/preferences.blp:72
 msgid "Send reminders when treatments are low in stock"
-msgstr ""
+msgstr "Tedaviler düşük stokta olduğunda hatırlatmalar gönder"
 
 #: data/ui/preferences.blp:88
 msgid "Notification sound"
