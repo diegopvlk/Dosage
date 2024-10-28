@@ -856,29 +856,6 @@ export const DosageWindow = GObject.registerClass(
 			historyLS.splice(0, 0, itemsToAdd.reverse());
 		}
 
-		_insertItemToHistory(item, taken, missedDate, isNotif) {
-			// taken values: -1 = missed, 0 = skipped, 1 = confirmed
-			historyLS.insert_sorted(
-				new MedicationObject({
-					obj: {
-						name: item.name,
-						unit: item.unit,
-						time: item.time,
-						dose: item.dose,
-						color: item.color,
-						taken: [missedDate || new Date().getTime(), taken],
-					},
-				}),
-				(a, b) => {
-					const dateA = a.obj.taken[0];
-					const dateB = b.obj.taken[0];
-					if (dateA < dateB) return 1;
-					else if (dateA > dateB) return -1;
-					else return 0;
-				},
-			);
-		}
-
 		_editHistoryItem(list, position) {
 			this._openMedDialog(list, position, 'edit-hist');
 		}
