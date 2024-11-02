@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-14 11:17-0300\n"
+"POT-Creation-Date: 2024-11-02 10:56-0300\n"
 "PO-Revision-Date: 2024-05-05 16:40+0200\n"
 "Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
@@ -612,7 +612,7 @@ msgstr "Имате лечения с малко запас"
 msgid "No results found"
 msgstr "Не са намерени резултати"
 
-#: src/window.js:384 src/window.js:1057
+#: src/window.js:384 src/window.js:1034
 msgid "Empty history"
 msgstr "Изчистване на историята"
 

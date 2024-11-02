@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-14 11:17-0300\n"
+"POT-Creation-Date: 2024-11-02 10:56-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -601,7 +601,7 @@ msgstr ""
 msgid "No results found"
 msgstr ""
 
-#: src/window.js:384 src/window.js:1057
+#: src/window.js:384 src/window.js:1034
 msgid "Empty history"
 msgstr ""
 

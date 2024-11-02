@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-14 11:17-0300\n"
+"POT-Creation-Date: 2024-11-02 10:56-0300\n"
 "PO-Revision-Date: 2024-10-14 14:59+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -611,7 +611,7 @@ msgstr "Tem tratamentos com pouco estoque"
 msgid "No results found"
 msgstr "Nenhum resultado encontrado"
 
-#: src/window.js:384 src/window.js:1057
+#: src/window.js:384 src/window.js:1034
 msgid "Empty history"
 msgstr "Histórico vazio"
 

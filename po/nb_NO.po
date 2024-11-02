@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-14 11:17-0300\n"
+"POT-Creation-Date: 2024-11-02 10:56-0300\n"
 "PO-Revision-Date: 2024-10-07 09:15+0000\n"
 "Last-Translator: Sunniva Løvstad <weblate@turtle.garden>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
@@ -618,7 +618,7 @@ msgstr "Du har behandlinger med manko på beholdning"
 msgid "No results found"
 msgstr "Ingen resultater funnet"
 
-#: src/window.js:384 src/window.js:1057
+#: src/window.js:384 src/window.js:1034
 msgid "Empty history"
 msgstr "Tøm historikk"
 

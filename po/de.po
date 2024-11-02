@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-14 11:17-0300\n"
+"POT-Creation-Date: 2024-11-02 10:56-0300\n"
 "PO-Revision-Date: 2024-03-10 23:09+0000\n"
 "Last-Translator: Thomas Maeder <maeder+weblate@glue.ch>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/dosage/dosage/de/"
@@ -410,7 +410,8 @@ msgstr "Benachrichtigung über niedrigen Lagerbestand"
 
 #: data/ui/preferences.blp:72
 msgid "Send reminders when treatments are low in stock"
-msgstr "Erinnerungen senden, wenn Behandlungen einen niedrigen Lagerbestand haben"
+msgstr ""
+"Erinnerungen senden, wenn Behandlungen einen niedrigen Lagerbestand haben"
 
 #: data/ui/preferences.blp:88
 msgid "Notification sound"
@@ -613,7 +614,7 @@ msgstr "Der Vorrate einiger Ihrer Medikamente ist knapp"
 msgid "No results found"
 msgstr "Keine Ergebnisse gefunden"
 
-#: src/window.js:384 src/window.js:1057
+#: src/window.js:384 src/window.js:1034
 msgid "Empty history"
 msgstr "Historie leeren"
 
