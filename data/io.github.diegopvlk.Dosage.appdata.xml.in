@@ -64,6 +64,14 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.7.2" date="2024-11-02">
+			<description translate="no">
+				<ul>
+					<li>Fixed desktop icon not rendering correctly for KDE</li>
+					<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.7.1" date="2024-10-21">
 			<description translate="no">
 				<ul>
