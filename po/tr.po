@@ -614,7 +614,7 @@ msgstr "Stok sayısı azalmış ilaçlarınız var"
 msgid "No results found"
 msgstr "Sonuç bulunamadı"
 
-#: src/window.js:384 src/window.js:1034 src/window.js:1057
+#: src/window.js:384 src/window.js:1034
 msgid "Empty history"
 msgstr "Geçmiş boş"
 
