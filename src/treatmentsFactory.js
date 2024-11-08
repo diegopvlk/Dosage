@@ -128,6 +128,9 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		case 'specific-days':
 			infoLabel.label = getSpecificDaysLabel(item);
 			break;
+		case 'day-of-month':
+			infoLabel.label = _('Day of the month') + `: ${item.monthDay}`;
+			break;
 		case 'cycle':
 			const nextDt = new Date(item.cycleNextDate).setHours(0, 0, 0, 0);
 			const nextDate = formatDate(nextDt, 'weekday');

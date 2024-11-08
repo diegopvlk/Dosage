@@ -249,11 +249,31 @@ export const DosageWindow = GObject.registerClass(
 			try {
 				if (treatmentsLS.get_n_items() === 0) {
 					treatmentsJson.treatments.forEach(med => {
-						treatmentsLS.insert_sorted(new MedicationObject({ obj: med }), (a, b) => {
-							const name1 = a.obj.name;
-							const name2 = b.obj.name;
-							return name1.localeCompare(name2);
-						});
+						treatmentsLS.insert_sorted(
+							new MedicationObject({
+								obj: {
+									name: med.name,
+									unit: med.unit,
+									notes: med.notes,
+									frequency: med.frequency,
+									color: med.color,
+									icon: med.icon,
+									days: med.days,
+									monthDay: med.monthDay,
+									cycle: med.cycle,
+									dosage: med.dosage,
+									recurring: med.recurring,
+									inventory: med.inventory,
+									duration: med.duration,
+									cycleNextDate: med.cycleNextDate,
+								},
+							}),
+							(a, b) => {
+								const name1 = a.obj.name;
+								const name2 = b.obj.name;
+								return name1.localeCompare(name2);
+							},
+						);
 					});
 
 					this._treatmentsList.set_factory(treatmentsFactory);
@@ -437,6 +457,7 @@ export const DosageWindow = GObject.registerClass(
 								color: item.color,
 								icon: item.icon,
 								days: item.days,
+								monthDay: item.monthDay,
 								cycle: item.cycle,
 								recurring: item.recurring,
 								duration: item.duration,
@@ -957,6 +978,11 @@ export const DosageWindow = GObject.registerClass(
 								break;
 							case 'specific-days':
 								if (item.days.includes(nextDate.getDay())) {
+									insert(timeDose, tempItem, nextDate);
+								}
+								break;
+							case 'day-of-month':
+								if (item.monthDay === nextDate.getDate()) {
 									insert(timeDose, tempItem, nextDate);
 								}
 								break;

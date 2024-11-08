@@ -65,6 +65,9 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 	const frequencySpecificDays = builder.get_object('frequencySpecificDays');
 	const specificDaysBox = builder.get_object('specificDaysBox');
 
+	const frequencyDayOfMonth = builder.get_object('frequencyDayOfMonth');
+	const dayOfMonth = builder.get_object('dayOfMonth');
+
 	const frequencyCycle = builder.get_object('frequencyCycle');
 	const cycleActive = builder.get_object('cycleActive');
 	const cycleInactive = builder.get_object('cycleInactive');
@@ -109,7 +112,8 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 	handleCalendarSelect(calendarEnd, calendarEndRow);
 
 	// when opening an existing treatment
-	if (list && position >= 0 && !mode) {
+	const existingTreatment = list && position >= 0 && !mode;
+	if (existingTreatment) {
 		medDialog.title = _('Edit treatment');
 		saveButton.label = _('Save');
 		deleteButton.set_visible(true);
@@ -145,6 +149,14 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		if (item.recurring) {
 			recurringNotif.set_enable_expansion(item.recurring.enabled);
 			recurringInterval.value = item.recurring.interval;
+		}
+
+		if (item.monthDay) {
+			dayOfMonth.value = item.monthDay;
+		}
+
+		if (item.frequency === 'day-of-month') {
+			handleDayOfMonthLabels();
 		}
 
 		if (item.days && item.days.length !== 0) {
@@ -406,7 +418,9 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		recurringNotif.set_visible(false);
 	}
 
-	setFreqMenuVisibility();
+	if (!existingTreatment) setFreqMenuVisibility();
+
+	dayOfMonth.connect('output', handleDayOfMonthLabels);
 
 	cycleActive.connect('output', handleCycle);
 	cycleInactive.connect('output', handleCycle);
@@ -629,6 +643,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 			notes,
 			color,
 			freq,
+			monthDay,
 			icon,
 			recurring,
 			inventory,
@@ -655,6 +670,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		unit = medUnit.text.trim();
 		notes = medNotes.text.trim();
 		days = getSpecificDays();
+		monthDay = dayOfMonth.value;
 		doses = getDoses();
 		recurring = {};
 		recurring.enabled = recurringNotif.get_enable_expansion();
@@ -671,8 +687,9 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 
 		if (frequencyMenu.get_selected() === 0) freq = 'daily';
 		if (frequencyMenu.get_selected() === 1) freq = 'specific-days';
-		if (frequencyMenu.get_selected() === 2) freq = 'cycle';
-		if (frequencyMenu.get_selected() === 3) freq = 'when-needed';
+		if (frequencyMenu.get_selected() === 2) freq = 'day-of-month';
+		if (frequencyMenu.get_selected() === 3) freq = 'cycle';
+		if (frequencyMenu.get_selected() === 4) freq = 'when-needed';
 
 		doses.sort((obj1, obj2) => {
 			const [h1, m1] = obj1.time;
@@ -711,6 +728,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 				color: color,
 				icon: icon,
 				days: days,
+				monthDay: monthDay,
 				cycle: cycle,
 				dosage: doses,
 				recurring: recurring,
@@ -778,6 +796,11 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		}
 	}
 
+	function handleDayOfMonthLabels() {
+		frequencyMenu.title = _('Day of the month');
+		frequencyMenu.subtitle = _('Day') + `: ${dayOfMonth.value}`;
+	}
+
 	function handleCycle() {
 		const sum = cycleActive.value + cycleInactive.value;
 		frequencyMenu.subtitle = cycleActive.value + ' ⊷ ' + cycleInactive.value;
@@ -788,30 +811,30 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 	}
 
 	function setFreqMenuVisibility(item) {
-		const frequencyMenu = builder.get_object('frequencyMenu');
 		const freqRowPrefixes = frequencyMenu.get_first_child().get_first_child();
-		freqRowPrefixes.set_visible(
-			frequencyMenu.get_selected() === 1 || frequencyMenu.get_selected() === 2,
-		);
+		const selected = frequencyMenu.get_selected();
+		freqRowPrefixes.set_visible(selected !== 0 && selected !== 4);
 
-		frequencyMenu.connect('notify::selected-item', () => {
+		frequencyMenu.connect('notify::selected-item', frequencyMenu => {
 			const selected = frequencyMenu.get_selected();
+			freqRowPrefixes.set_visible(selected !== 0 && selected !== 4);
 			frequencySpecificDays.set_visible(selected === 1);
-			freqRowPrefixes.set_visible(selected === 1);
-			frequencyCycle.set_visible(selected === 2);
-			freqRowPrefixes.set_visible(selected === 1 || selected === 2);
+			frequencyDayOfMonth.set_visible(selected === 2);
+			frequencyCycle.set_visible(selected === 3);
 
 			if (selected === 1) {
 				frequencyMenu.title = _('Specific days');
 				setSpecificDaysFreqLabel();
 			} else if (selected === 2) {
+				handleDayOfMonthLabels();
+			} else if (selected === 3) {
 				frequencyMenu.title = _('Cycle');
 				handleCycle();
 			} else {
 				frequencyMenu.title = _('Frequency');
 			}
 
-			if (selected !== 3) {
+			if (selected !== 4) {
 				dosage.set_visible(true);
 				medDuration.set_visible(true);
 				recurringNotif.set_visible(true);
@@ -825,8 +848,9 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		if (item) {
 			if (item.frequency === 'daily') frequencyMenu.set_selected(0);
 			if (item.frequency === 'specific-days') frequencyMenu.set_selected(1);
-			if (item.frequency === 'cycle') frequencyMenu.set_selected(2);
-			if (item.frequency === 'when-needed') frequencyMenu.set_selected(3);
+			if (item.frequency === 'day-of-month') frequencyMenu.set_selected(2);
+			if (item.frequency === 'cycle') frequencyMenu.set_selected(3);
+			if (item.frequency === 'when-needed') frequencyMenu.set_selected(4);
 		}
 	}
 

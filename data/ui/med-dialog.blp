@@ -450,6 +450,7 @@ Adw.Dialog medDialog {
                   strings [
                     _("Every day"),
                     _("Specific days"),
+                    _("Day of the month"),
                     _("Cycle"),
                     _("When necessary"),
                   ]
@@ -541,6 +542,42 @@ Adw.Dialog medDialog {
 
                         valign: center;
                         active: false;
+                      }
+                    }
+                  };
+                }
+
+                [prefix]
+                MenuButton frequencyDayOfMonth {
+                  styles [
+                    'circular'
+                  ]
+
+                  visible: false;
+                  valign: center;
+                  tooltip-text: _("Choose day");
+
+                  Adw.ButtonContent {
+                    icon-name: 'view-more-horizontal-symbolic';
+                  }
+
+                  popover: Popover {
+                    Box {
+                      styles [
+                        'spin-box'
+                      ]
+
+                      Adw.SpinRow dayOfMonth {
+                        activatable: false;
+                        selectable: false;
+                        climb-rate: 0.2;
+
+                        adjustment: Adjustment {
+                          lower: 1;
+                          upper: 28;
+                          step-increment: 1;
+                          value: 1;
+                        };
                       }
                     }
                   };

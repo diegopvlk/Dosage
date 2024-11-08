@@ -109,9 +109,11 @@ export function createTempObj(type, listStore) {
 				typeof item.notes === 'string' &&
 				typeof item.frequency === 'string' &&
 				// frequency cannot be empty
-				(item.frequency !== '' || item.frequency !== 'specific-days') &&
+				item.frequency !== '' &&
 				// if frequency is 'specific-days', 'days' cannot be empty
 				(item.frequency !== 'specific-days' || item.days.length > 0) &&
+				// if frequency is 'day-of-month', 'monthDay' cannot be empty
+				(item.frequency !== 'day-of-month' || typeof item.monthDay === 'number') &&
 				typeof item.color === 'string' &&
 				item.color !== '' && // color cannot be empty
 				typeof item.icon === 'string' &&
@@ -243,6 +245,8 @@ export function isTodayMedDay(med) {
 			return true;
 		case 'specific-days':
 			return item.days.includes(new Date().getDay());
+		case 'day-of-month':
+			return item.monthDay === new Date().getDate();
 		case 'cycle':
 			const [active, inactive, current] = item.cycle;
 			return current <= active;
