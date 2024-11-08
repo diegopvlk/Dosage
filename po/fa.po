@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-02 10:56-0300\n"
+"POT-Creation-Date: 2024-11-08 08:45-0300\n"
 "PO-Revision-Date: 2024-10-20 12:16+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/dosage/dosage/fa/"
@@ -21,8 +21,8 @@ msgstr ""
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
-#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:619
-#: src/main.js:40 src/window.js:697
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:656
+#: src/main.js:40 src/window.js:718
 msgid "Dosage"
 msgstr "چنده ‏گذاری"
 
@@ -119,7 +119,7 @@ msgstr "خروج"
 msgid "New treatment"
 msgstr "داروی جدید"
 
-#: data/ui/med-dialog.blp:19 src/medDialog.js:204
+#: data/ui/med-dialog.blp:19 src/medDialog.js:216
 msgid "Cancel"
 msgstr "لغو"
 
@@ -139,7 +139,7 @@ msgstr "نام"
 msgid "Unit"
 msgstr "واحد"
 
-#: data/ui/med-dialog.blp:67 src/medDialog.js:261
+#: data/ui/med-dialog.blp:67 src/medDialog.js:273
 msgid "Pill(s)"
 msgstr "قرص"
 
@@ -159,7 +159,7 @@ msgstr "از"
 msgid "Color and icon"
 msgstr "رنگ و نقشک"
 
-#: data/ui/med-dialog.blp:91 src/medDialog.js:317
+#: data/ui/med-dialog.blp:91 src/medDialog.js:329
 msgid "Color"
 msgstr "رنگ"
 
@@ -257,7 +257,7 @@ msgstr "قطره"
 msgid "Potion"
 msgstr "شربت"
 
-#: data/ui/med-dialog.blp:446 src/medDialog.js:811
+#: data/ui/med-dialog.blp:446 src/medDialog.js:834
 msgid "Frequency"
 msgstr "بسامد"
 
@@ -265,110 +265,118 @@ msgstr "بسامد"
 msgid "Every day"
 msgstr "هر روز"
 
-#: data/ui/med-dialog.blp:452 src/medDialog.js:805
+#: data/ui/med-dialog.blp:452 src/medDialog.js:826
 msgid "Specific days"
 msgstr "روزهای خاص"
 
-#: data/ui/med-dialog.blp:453 src/medDialog.js:808 src/treatmentsFactory.js:150
+#: data/ui/med-dialog.blp:453 src/medDialog.js:800 src/treatmentsFactory.js:132
+msgid "Day of the month"
+msgstr "روز ماه"
+
+#: data/ui/med-dialog.blp:454 src/medDialog.js:831 src/treatmentsFactory.js:153
 msgid "Cycle"
 msgstr "دوره"
 
-#: data/ui/med-dialog.blp:454 src/treatmentsFactory.js:154
+#: data/ui/med-dialog.blp:455 src/treatmentsFactory.js:157
 msgid "When necessary"
 msgstr "هنگام نیاز"
 
-#: data/ui/med-dialog.blp:466
+#: data/ui/med-dialog.blp:467
 msgid "Choose days"
 msgstr "گزینش روزها"
 
-#: data/ui/med-dialog.blp:557
+#: data/ui/med-dialog.blp:558
+msgid "Choose day"
+msgstr "روز را انتخاب کنید"
+
+#: data/ui/med-dialog.blp:594
 msgid "Change cycle"
 msgstr "تغییر دوره"
 
-#: data/ui/med-dialog.blp:574
+#: data/ui/med-dialog.blp:611
 msgid "Days active"
 msgstr "روزهای فعّال"
 
-#: data/ui/med-dialog.blp:588
+#: data/ui/med-dialog.blp:625
 msgid "Days inactive"
 msgstr "روزهای غیرفعّال"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
-#: data/ui/med-dialog.blp:603
+#: data/ui/med-dialog.blp:640
 msgid "Today is cycle day…"
 msgstr "امروز در دوره است…"
 
-#: data/ui/med-dialog.blp:620
+#: data/ui/med-dialog.blp:657
 msgid "Time and amount"
 msgstr "زمان و مقدار"
 
-#: data/ui/med-dialog.blp:633
+#: data/ui/med-dialog.blp:670
 msgid "Add dose"
 msgstr "افزودن چنده"
 
-#: data/ui/med-dialog.blp:654 src/historyFactory.js:159
+#: data/ui/med-dialog.blp:691 src/historyFactory.js:159
 msgid "Skipped"
 msgstr "پریده"
 
-#: data/ui/med-dialog.blp:666
+#: data/ui/med-dialog.blp:703
 msgid "Confirmed"
 msgstr "تأیید شده"
 
-#: data/ui/med-dialog.blp:673
+#: data/ui/med-dialog.blp:710
 msgid "Recurring notifications"
 msgstr "آگاهی‌های تکرار شونده"
 
-#: data/ui/med-dialog.blp:674
+#: data/ui/med-dialog.blp:711
 msgid "Renotify until it's confirmed or skipped"
 msgstr "آگاهی دوباره تا زمان تأیید یا پرش"
 
-#: data/ui/med-dialog.blp:679
+#: data/ui/med-dialog.blp:716
 msgid "Interval in minutes"
 msgstr "دوره به دقیقه"
 
-#: data/ui/med-dialog.blp:692
+#: data/ui/med-dialog.blp:729
 msgid "Inventory"
 msgstr "موجودی"
 
-#: data/ui/med-dialog.blp:693
+#: data/ui/med-dialog.blp:730
 msgid "Manage your stock"
 msgstr "مدیریت مانده‌تان"
 
-#: data/ui/med-dialog.blp:699
+#: data/ui/med-dialog.blp:736
 msgid "Current"
 msgstr "کنونی"
 
-#: data/ui/med-dialog.blp:712
+#: data/ui/med-dialog.blp:749
 msgid "Remind me at"
 msgstr "یاد آوری در"
 
-#: data/ui/med-dialog.blp:726
+#: data/ui/med-dialog.blp:763
 msgid "Duration"
 msgstr "مدّت"
 
-#: data/ui/med-dialog.blp:727
+#: data/ui/med-dialog.blp:764
 msgid "Set start and end dates"
 msgstr "تنظیم تاریخ‌های آغاز و پایان"
 
 #. TRANSLATORS: label for when duration is enabled
-#: data/ui/med-dialog.blp:737 src/treatmentsFactory.js:112
+#: data/ui/med-dialog.blp:774 src/treatmentsFactory.js:112
 msgid "Starts on"
 msgstr "آغاز در"
 
-#: data/ui/med-dialog.blp:747 data/ui/med-dialog.blp:779
-#: data/ui/med-dialog.blp:813
+#: data/ui/med-dialog.blp:784 data/ui/med-dialog.blp:816
+#: data/ui/med-dialog.blp:850
 msgid "Choose date"
 msgstr "گزینش تاریخ"
 
-#: data/ui/med-dialog.blp:769
+#: data/ui/med-dialog.blp:806
 msgid "Ends on"
 msgstr "پایان در"
 
-#: data/ui/med-dialog.blp:802
+#: data/ui/med-dialog.blp:839
 msgid "Date"
 msgstr "تاریخ"
 
-#: data/ui/med-dialog.blp:835 src/historyFactory.js:148 src/medDialog.js:205
+#: data/ui/med-dialog.blp:872 src/historyFactory.js:148 src/medDialog.js:217
 msgid "Delete"
 msgstr "حذف"
 
@@ -418,12 +426,12 @@ msgstr "دکمه‌های آگاهی"
 msgid "Show or hide confirm/skip"
 msgstr "نمایش یا نهفتن تأیید و پرش"
 
-#: data/ui/preferences.blp:114 src/medDialog.js:316 src/window.js:558
-#: src/window.js:749
+#: data/ui/preferences.blp:114 src/medDialog.js:328 src/window.js:579
+#: src/window.js:770
 msgid "Confirm"
 msgstr "تأیید"
 
-#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:559
+#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:580
 msgid "Skip"
 msgstr "پرش"
 
@@ -447,7 +455,7 @@ msgstr "امروز"
 msgid "Unselect"
 msgstr "ناگزینش"
 
-#: data/ui/window.blp:112 src/window.js:749
+#: data/ui/window.blp:112 src/window.js:770
 msgid "One-time entry"
 msgstr "ورودی یک باره"
 
@@ -475,7 +483,7 @@ msgstr "خروج"
 msgid "Restore"
 msgstr "بازآوری"
 
-#: src/historyFactory.js:163 src/medDialog.js:371
+#: src/historyFactory.js:163 src/medDialog.js:383
 msgid "Missed"
 msgstr "از دست رفته"
 
@@ -493,64 +501,68 @@ msgstr "با سپاس از این پروژه‌ها!"
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "پذیرش برای اجازهٔ اجرا در پس‌زمینه و دریافت آگاهی‌ها"
 
-#: src/medDialog.js:113
+#: src/medDialog.js:117
 msgid "Edit treatment"
 msgstr "ویرایش دارو"
 
-#: src/medDialog.js:114 src/medDialog.js:386
+#: src/medDialog.js:118 src/medDialog.js:398
 msgid "Save"
 msgstr "ذخیره"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medDialog.js:200
+#: src/medDialog.js:212
 msgid "Are you sure?"
 msgstr "مطمئنید؟"
 
-#: src/medDialog.js:201
+#: src/medDialog.js:213
 msgid "will be deleted"
 msgstr "حذف خواهد شد"
 
-#: src/medDialog.js:250
+#: src/medDialog.js:262
 msgid "New"
 msgstr "جدید"
 
-#: src/medDialog.js:315
+#: src/medDialog.js:327
 msgid "New entry"
 msgstr "ورودی جدید"
 
-#: src/medDialog.js:364 src/medDialog.js:376
+#: src/medDialog.js:376 src/medDialog.js:388
 msgid "Confirmed at"
 msgstr "تأیید شده در"
 
-#: src/medDialog.js:368 src/medDialog.js:380
+#: src/medDialog.js:380 src/medDialog.js:392
 msgid "Skipped at"
 msgstr "پریده در"
 
-#: src/medDialog.js:385
+#: src/medDialog.js:397
 msgid "Edit entry"
 msgstr "ویرایش ورودی"
 
-#: src/medDialog.js:773
+#: src/medDialog.js:791
 msgid "Choose"
 msgstr "گزینش"
 
-#: src/medDialog.js:844
+#: src/medDialog.js:801
+msgid "Day"
+msgstr "روز"
+
+#: src/medDialog.js:868
 msgid "Empty name"
 msgstr "نام خالی"
 
-#: src/medDialog.js:848
+#: src/medDialog.js:872
 msgid "Empty unit"
 msgstr "واحد خالی"
 
-#: src/medDialog.js:854
+#: src/medDialog.js:878
 msgid "Choose at least one day"
 msgstr "گزینش لااقل یک روز"
 
-#: src/medDialog.js:865
+#: src/medDialog.js:889
 msgid "Name already on treatment list"
 msgstr "نام در حال حاضر در لیست درمان است"
 
-#: src/medDialog.js:879
+#: src/medDialog.js:903
 msgid "Duplicated time"
 msgstr "تاریخ تکراری"
 
@@ -578,7 +590,7 @@ msgstr "به پایان رسید در"
 msgid "Daily"
 msgstr "روزانه"
 
-#: src/treatmentsFactory.js:138 src/treatmentsFactory.js:141
+#: src/treatmentsFactory.js:141 src/treatmentsFactory.js:144
 msgid "Next dose"
 msgstr "چندهٔ بعدی"
 
@@ -590,11 +602,11 @@ msgstr "پایان‌هفته‌ها"
 msgid "Weekdays"
 msgstr "روزهای هفته"
 
-#: src/utils.js:334
+#: src/utils.js:338
 msgid "Delete dose"
 msgstr "حذف چنده"
 
-#: src/window.js:131 src/window.js:594
+#: src/window.js:131 src/window.js:615
 msgid "Reminder"
 msgstr "یادآور"
 
@@ -603,32 +615,32 @@ msgstr "یادآور"
 msgid "You have treatments low in stock"
 msgstr "دارویی ماندهٔ کم دارد"
 
-#: src/window.js:384
+#: src/window.js:404
 msgid "No results found"
 msgstr "هیچ نتیجه‌ای پیدا نشد"
 
-#: src/window.js:384 src/window.js:1034
+#: src/window.js:404 src/window.js:1060
 msgid "Empty history"
 msgstr "تاریخچه خالی"
 
-#: src/window.js:482
+#: src/window.js:503
 msgid "No treatments added yet"
 msgstr "هنوز دارویی اضافه نشده"
 
-#: src/window.js:486
+#: src/window.js:507
 msgid "All done for today"
 msgstr "امروز چیزی نمانده"
 
-#: src/window.js:558
+#: src/window.js:579
 msgid "Confirm all"
 msgstr "تأیید همه"
 
-#: src/window.js:559
+#: src/window.js:580
 msgid "Skip all"
 msgstr "پرش همه"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:589
+#: src/window.js:610
 #, javascript-format
 msgid "and %d more"
 msgstr "و %d بیش‌تر"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-02 10:56-0300\n"
+"POT-Creation-Date: 2024-11-08 08:45-0300\n"
 "PO-Revision-Date: 2024-08-01 08:09+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
@@ -21,8 +21,8 @@ msgstr ""
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
-#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:619
-#: src/main.js:40 src/window.js:697
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:656
+#: src/main.js:40 src/window.js:718
 msgid "Dosage"
 msgstr "Annostus"
 
@@ -124,7 +124,7 @@ msgstr "Lopeta"
 msgid "New treatment"
 msgstr "Uusi hoito"
 
-#: data/ui/med-dialog.blp:19 src/medDialog.js:204
+#: data/ui/med-dialog.blp:19 src/medDialog.js:216
 msgid "Cancel"
 msgstr "Peru"
 
@@ -144,7 +144,7 @@ msgstr "Nimi"
 msgid "Unit"
 msgstr "Yksikkö"
 
-#: data/ui/med-dialog.blp:67 src/medDialog.js:261
+#: data/ui/med-dialog.blp:67 src/medDialog.js:273
 msgid "Pill(s)"
 msgstr "Pilleri(t)"
 
@@ -164,7 +164,7 @@ msgstr "Muoto"
 msgid "Color and icon"
 msgstr "Väri ja kuvake"
 
-#: data/ui/med-dialog.blp:91 src/medDialog.js:317
+#: data/ui/med-dialog.blp:91 src/medDialog.js:329
 msgid "Color"
 msgstr "Väri"
 
@@ -262,7 +262,7 @@ msgstr "Tippa"
 msgid "Potion"
 msgstr "Lääkeannos"
 
-#: data/ui/med-dialog.blp:446 src/medDialog.js:811
+#: data/ui/med-dialog.blp:446 src/medDialog.js:834
 msgid "Frequency"
 msgstr "Taajuus"
 
@@ -270,110 +270,118 @@ msgstr "Taajuus"
 msgid "Every day"
 msgstr "Päivittäin"
 
-#: data/ui/med-dialog.blp:452 src/medDialog.js:805
+#: data/ui/med-dialog.blp:452 src/medDialog.js:826
 msgid "Specific days"
 msgstr "Valitut päivät"
 
-#: data/ui/med-dialog.blp:453 src/medDialog.js:808 src/treatmentsFactory.js:150
+#: data/ui/med-dialog.blp:453 src/medDialog.js:800 src/treatmentsFactory.js:132
+msgid "Day of the month"
+msgstr "Kuukauden päivä"
+
+#: data/ui/med-dialog.blp:454 src/medDialog.js:831 src/treatmentsFactory.js:153
 msgid "Cycle"
 msgstr "Sykli"
 
-#: data/ui/med-dialog.blp:454 src/treatmentsFactory.js:154
+#: data/ui/med-dialog.blp:455 src/treatmentsFactory.js:157
 msgid "When necessary"
 msgstr "Tarvittaessa"
 
-#: data/ui/med-dialog.blp:466
+#: data/ui/med-dialog.blp:467
 msgid "Choose days"
 msgstr "Valitse päivät"
 
-#: data/ui/med-dialog.blp:557
+#: data/ui/med-dialog.blp:558
+msgid "Choose day"
+msgstr "Valitse päivä"
+
+#: data/ui/med-dialog.blp:594
 msgid "Change cycle"
 msgstr "Vaihda sykli"
 
-#: data/ui/med-dialog.blp:574
+#: data/ui/med-dialog.blp:611
 msgid "Days active"
 msgstr "Aktiiviset päivät"
 
-#: data/ui/med-dialog.blp:588
+#: data/ui/med-dialog.blp:625
 msgid "Days inactive"
 msgstr "Passiiviset päivät"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
-#: data/ui/med-dialog.blp:603
+#: data/ui/med-dialog.blp:640
 msgid "Today is cycle day…"
 msgstr "Tänään syklin päivä…"
 
-#: data/ui/med-dialog.blp:620
+#: data/ui/med-dialog.blp:657
 msgid "Time and amount"
 msgstr "Aika ja määrä"
 
-#: data/ui/med-dialog.blp:633
+#: data/ui/med-dialog.blp:670
 msgid "Add dose"
 msgstr "Lisää annos"
 
-#: data/ui/med-dialog.blp:654 src/historyFactory.js:159
+#: data/ui/med-dialog.blp:691 src/historyFactory.js:159
 msgid "Skipped"
 msgstr "Ohitettu"
 
-#: data/ui/med-dialog.blp:666
+#: data/ui/med-dialog.blp:703
 msgid "Confirmed"
 msgstr "Vahvistettu"
 
-#: data/ui/med-dialog.blp:673
+#: data/ui/med-dialog.blp:710
 msgid "Recurring notifications"
 msgstr "Toistuvat ilmoitukset"
 
-#: data/ui/med-dialog.blp:674
+#: data/ui/med-dialog.blp:711
 msgid "Renotify until it's confirmed or skipped"
 msgstr "Muistuta uudelleen, kunnes on saatu vahvistus tai ohitus"
 
-#: data/ui/med-dialog.blp:679
+#: data/ui/med-dialog.blp:716
 msgid "Interval in minutes"
 msgstr "Väli minuuteissa"
 
-#: data/ui/med-dialog.blp:692
+#: data/ui/med-dialog.blp:729
 msgid "Inventory"
 msgstr "Inventaario"
 
-#: data/ui/med-dialog.blp:693
+#: data/ui/med-dialog.blp:730
 msgid "Manage your stock"
 msgstr "Hallitse varastoa"
 
-#: data/ui/med-dialog.blp:699
+#: data/ui/med-dialog.blp:736
 msgid "Current"
 msgstr "Nykyinen"
 
-#: data/ui/med-dialog.blp:712
+#: data/ui/med-dialog.blp:749
 msgid "Remind me at"
 msgstr "Muistuta kun jäljellä"
 
-#: data/ui/med-dialog.blp:726
+#: data/ui/med-dialog.blp:763
 msgid "Duration"
 msgstr "Kesto"
 
-#: data/ui/med-dialog.blp:727
+#: data/ui/med-dialog.blp:764
 msgid "Set start and end dates"
 msgstr "Aseta alku- ja loppupäivät"
 
 #. TRANSLATORS: label for when duration is enabled
-#: data/ui/med-dialog.blp:737 src/treatmentsFactory.js:112
+#: data/ui/med-dialog.blp:774 src/treatmentsFactory.js:112
 msgid "Starts on"
 msgstr "Alkaa"
 
-#: data/ui/med-dialog.blp:747 data/ui/med-dialog.blp:779
-#: data/ui/med-dialog.blp:813
+#: data/ui/med-dialog.blp:784 data/ui/med-dialog.blp:816
+#: data/ui/med-dialog.blp:850
 msgid "Choose date"
 msgstr "Valitse päivämäärä"
 
-#: data/ui/med-dialog.blp:769
+#: data/ui/med-dialog.blp:806
 msgid "Ends on"
 msgstr "Loppuu"
 
-#: data/ui/med-dialog.blp:802
+#: data/ui/med-dialog.blp:839
 msgid "Date"
 msgstr "Päivä"
 
-#: data/ui/med-dialog.blp:835 src/historyFactory.js:148 src/medDialog.js:205
+#: data/ui/med-dialog.blp:872 src/historyFactory.js:148 src/medDialog.js:217
 msgid "Delete"
 msgstr "Poista"
 
@@ -425,12 +433,12 @@ msgstr "Ilmoituksen painikkeet"
 msgid "Show or hide confirm/skip"
 msgstr "Näytä tai piilota vahvistus- ja ohituspainikkeet"
 
-#: data/ui/preferences.blp:114 src/medDialog.js:316 src/window.js:558
-#: src/window.js:749
+#: data/ui/preferences.blp:114 src/medDialog.js:328 src/window.js:579
+#: src/window.js:770
 msgid "Confirm"
 msgstr "Vahvista"
 
-#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:559
+#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:580
 msgid "Skip"
 msgstr "Ohita"
 
@@ -454,7 +462,7 @@ msgstr "Tänään"
 msgid "Unselect"
 msgstr "Älä valitse"
 
-#: data/ui/window.blp:112 src/window.js:749
+#: data/ui/window.blp:112 src/window.js:770
 msgid "One-time entry"
 msgstr "Kertakirjaus"
 
@@ -482,7 +490,7 @@ msgstr "Lopeta"
 msgid "Restore"
 msgstr "Palauttaa"
 
-#: src/historyFactory.js:163 src/medDialog.js:371
+#: src/historyFactory.js:163 src/medDialog.js:383
 msgid "Missed"
 msgstr "Jäänyt huomiotta"
 
@@ -501,64 +509,68 @@ msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 "Hyväksy, jotta suoritus taustalla ja ilmoitusten vastaanottaminen sallitaan"
 
-#: src/medDialog.js:113
+#: src/medDialog.js:117
 msgid "Edit treatment"
 msgstr "Muokkaa hoitoa"
 
-#: src/medDialog.js:114 src/medDialog.js:386
+#: src/medDialog.js:118 src/medDialog.js:398
 msgid "Save"
 msgstr "Tallenna"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medDialog.js:200
+#: src/medDialog.js:212
 msgid "Are you sure?"
 msgstr "Oletko varma?"
 
-#: src/medDialog.js:201
+#: src/medDialog.js:213
 msgid "will be deleted"
 msgstr "tullaan poistetaan"
 
-#: src/medDialog.js:250
+#: src/medDialog.js:262
 msgid "New"
 msgstr "Uusi"
 
-#: src/medDialog.js:315
+#: src/medDialog.js:327
 msgid "New entry"
 msgstr "Uusi merkintä"
 
-#: src/medDialog.js:364 src/medDialog.js:376
+#: src/medDialog.js:376 src/medDialog.js:388
 msgid "Confirmed at"
 msgstr "Vahvistettu klo"
 
-#: src/medDialog.js:368 src/medDialog.js:380
+#: src/medDialog.js:380 src/medDialog.js:392
 msgid "Skipped at"
 msgstr "Ohitettu klo"
 
-#: src/medDialog.js:385
+#: src/medDialog.js:397
 msgid "Edit entry"
 msgstr "Muokkaa merkintä"
 
-#: src/medDialog.js:773
+#: src/medDialog.js:791
 msgid "Choose"
 msgstr "Valitse"
 
-#: src/medDialog.js:844
+#: src/medDialog.js:801
+msgid "Day"
+msgstr "Päivä"
+
+#: src/medDialog.js:868
 msgid "Empty name"
 msgstr "Tyhjä nimi"
 
-#: src/medDialog.js:848
+#: src/medDialog.js:872
 msgid "Empty unit"
 msgstr "Tyhjä yksikkö"
 
-#: src/medDialog.js:854
+#: src/medDialog.js:878
 msgid "Choose at least one day"
 msgstr "Valitse vähintään yksi päivä"
 
-#: src/medDialog.js:865
+#: src/medDialog.js:889
 msgid "Name already on treatment list"
 msgstr "Nimi jo hoitolistalla"
 
-#: src/medDialog.js:879
+#: src/medDialog.js:903
 msgid "Duplicated time"
 msgstr "Päällekkäinen aika"
 
@@ -586,7 +598,7 @@ msgstr "Päättynyt"
 msgid "Daily"
 msgstr "Päivittäin"
 
-#: src/treatmentsFactory.js:138 src/treatmentsFactory.js:141
+#: src/treatmentsFactory.js:141 src/treatmentsFactory.js:144
 msgid "Next dose"
 msgstr "Seuraava annos"
 
@@ -598,11 +610,11 @@ msgstr "Viikonloppuisin"
 msgid "Weekdays"
 msgstr "Viikonpäivät"
 
-#: src/utils.js:334
+#: src/utils.js:338
 msgid "Delete dose"
 msgstr "Poista annos"
 
-#: src/window.js:131 src/window.js:594
+#: src/window.js:131 src/window.js:615
 msgid "Reminder"
 msgstr "Muistutus"
 
@@ -611,32 +623,32 @@ msgstr "Muistutus"
 msgid "You have treatments low in stock"
 msgstr "Hoitoannokset ovat käymässä vähiin"
 
-#: src/window.js:384
+#: src/window.js:404
 msgid "No results found"
 msgstr "Ei tuloksia löytynyt"
 
-#: src/window.js:384 src/window.js:1034
+#: src/window.js:404 src/window.js:1060
 msgid "Empty history"
 msgstr "Historia on tyhjä"
 
-#: src/window.js:482
+#: src/window.js:503
 msgid "No treatments added yet"
 msgstr "Hoitoja ei ole vielä lisätty"
 
-#: src/window.js:486
+#: src/window.js:507
 msgid "All done for today"
 msgstr "Kaikki kunnossa tämän päivän osalta"
 
-#: src/window.js:558
+#: src/window.js:579
 msgid "Confirm all"
 msgstr "Vahvista kaikki"
 
-#: src/window.js:559
+#: src/window.js:580
 msgid "Skip all"
 msgstr "Ohita kaikki"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:589
+#: src/window.js:610
 #, javascript-format
 msgid "and %d more"
 msgstr "ja vielä %d"
