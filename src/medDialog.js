@@ -23,7 +23,7 @@ import {
 import { MedicationObject } from './medication.js';
 import { historyLS, treatmentsLS, flow } from './window.js';
 
-export default function openMedicationDialog(DosageWindow, list, position, mode) {
+export function openMedicationDialog(DosageWindow, list, position, mode) {
 	const builder = Gtk.Builder.new_from_resource('/io/github/diegopvlk/Dosage/ui/med-dialog.ui');
 
 	const dateOneEntry = builder.get_object('dateOneEntry');
@@ -111,18 +111,22 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 	handleCalendarSelect(calendarStart, calendarStartRow);
 	handleCalendarSelect(calendarEnd, calendarEndRow);
 
-	// when opening an existing treatment
-	const existingTreatment = list && position >= 0 && !mode;
+	// when opening/duplicating an existing treatment
+	const existingTreatment = (list && position >= 0 && !mode) || mode === 'duplicate';
 	if (existingTreatment) {
-		medDialog.title = _('Edit treatment');
-		saveButton.label = _('Save');
-		deleteButton.set_visible(true);
+		if (!mode) {
+			medDialog.title = _('Edit treatment');
+			saveButton.label = _('Save');
+			deleteButton.set_visible(true);
+		}
 
 		const item = list.get_model().get_item(position).obj;
 
 		medName.text = item.name;
 		medUnit.text = item.unit;
 		medNotes.text = item.notes ? item.notes : '';
+
+		if (mode === 'duplicate') medName.text += ` (${_('Copy')})`;
 
 		for (const clr of dosageColorBox) {
 			if (clr.get_name() === item.color) {
@@ -207,36 +211,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		}
 
 		deleteButton.connect('activated', () => {
-			const alertDialog = new Adw.AlertDialog({
-				// TRANSLATORS: Message for confirmation when deleting an item
-				heading: _('Are you sure?'),
-				body: `"${item.name}" ` + _('will be deleted'),
-			});
-
-			alertDialog.add_response('cancel', _('Cancel'));
-			alertDialog.add_response('delete', _('Delete'));
-			alertDialog.set_response_appearance('delete', Adw.ResponseAppearance.DESTRUCTIVE);
-
-			// artificial delay to avoid opening multiple dialogs
-			// when double clicking button
-			if (!flow.delay) {
-				alertDialog.present(medDialog);
-				flow.delay = true;
-				setTimeout(() => {
-					flow.delay = false;
-				}, 500);
-			}
-
-			alertDialog.connect('response', (_self, response) => {
-				if (response === 'delete') {
-					const it = DosageWindow._treatmentsList.model.get_item(position);
-					const deletePos = treatmentsLS.find(it)[1];
-					treatmentsLS.remove(deletePos);
-					DosageWindow._updateEverything('skipHistUp');
-					DosageWindow._scheduleNotifications('deleting');
-					medDialog.force_close();
-				}
-			});
+			confirmDeleteDialog(item, position, DosageWindow, medDialog);
 		});
 	}
 
@@ -465,7 +440,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 	cancelButton.connect('clicked', () => medDialog.force_close());
 
 	saveButton.connect('clicked', () => {
-		const isUpdate = list && position >= 0;
+		const isUpdate = list && position >= 0 && !mode;
 
 		if (!isValidInput(isUpdate)) {
 			return;
@@ -630,7 +605,7 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 
 	let updatedItemPosition = 0;
 	function addOrUpdateTreatment() {
-		const isUpdate = list && position >= 0;
+		const isUpdate = list && position >= 0 && !mode;
 		const today = new GLib.DateTime();
 
 		let days = [];
@@ -915,4 +890,46 @@ export default function openMedicationDialog(DosageWindow, list, position, mode)
 		}
 		return true;
 	}
+}
+
+export function confirmDeleteDialog(item, position, DosageWindow, medDialog) {
+	const alertDialog = new Adw.AlertDialog({
+		// TRANSLATORS: Message for confirmation when deleting an item
+		heading: _('Are you sure?'),
+		body: `"${item.name}" ` + _('will be deleted'),
+	});
+
+	alertDialog.add_response('cancel', _('Cancel'));
+	alertDialog.add_response('delete', _('Delete'));
+	alertDialog.set_response_appearance('delete', Adw.ResponseAppearance.DESTRUCTIVE);
+
+	// artificial delay to avoid opening multiple dialogs
+	// when double clicking button
+	if (!flow.delay) {
+		if (medDialog) {
+			alertDialog.present(medDialog);
+		} else {
+			alertDialog.present(DosageWindow);
+		}
+		flow.delay = true;
+		setTimeout(() => {
+			flow.delay = false;
+		}, 500);
+	}
+
+	alertDialog.connect('response', (_self, response) => {
+		if (response === 'delete') {
+			const it = DosageWindow._treatmentsList.model.get_item(position);
+			const deletePos = treatmentsLS.find(it)[1];
+			treatmentsLS.remove(deletePos);
+			DosageWindow._updateEverything('skipHistUp');
+			DosageWindow._scheduleNotifications('deleting');
+			if (medDialog) medDialog.force_close();
+			DosageWindow._treatmentsList.scroll_to(
+				Math.max(0, position - 1),
+				Gtk.ListScrollFlags.FOCUS,
+				null,
+			);
+		}
+	});
 }

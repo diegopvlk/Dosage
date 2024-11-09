@@ -14,7 +14,7 @@ import { MedicationObject } from './medication.js';
 import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
 import { historyHeaderFactory, historyItemFactory, removedItem } from './historyFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
-import openMedicationDialog from './medDialog.js';
+import { openMedicationDialog } from './medDialog.js';
 import upgradeItems from './upgradeItems.js';
 
 import {

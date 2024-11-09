@@ -5,9 +5,12 @@
 'use strict';
 
 import Gdk from 'gi://Gdk';
+import Gio from 'gi://Gio';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
 import { getSpecificDaysLabel } from './utils.js';
+import { DosageApplication } from './main.js';
+import { confirmDeleteDialog } from './medDialog.js';
 
 export const treatmentsFactory = new Gtk.SignalListItemFactory();
 
@@ -58,18 +61,23 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 		ellipsize: Pango.EllipsizeMode.END,
 	});
 	box.append(inventoryLabel);
-	const editIcon = new Gtk.Image({
-		margin_start: 13,
-		margin_end: 18,
-		icon_name: 'document-edit-symbolic',
+	const optionsButton = new Gtk.MenuButton({
+		tooltip_text: _('Options'),
+		css_classes: ['circular'],
+		valign: Gtk.Align.CENTER,
+		margin_start: 5,
+		margin_end: 13,
+		icon_name: 'view-more-symbolic',
+		menu_model: new Gio.Menu(),
 	});
-	box.append(editIcon);
+	box.append(optionsButton);
 	listItem.set_child(box);
 });
 
 treatmentsFactory.connect('bind', (factory, listItem) => {
 	const item = listItem.get_item().obj;
 	const box = listItem.get_child();
+	const pos = listItem.get_position();
 	const row = box.get_parent();
 	const icon = box.get_first_child();
 	const labelsBox = icon.get_next_sibling();
@@ -77,16 +85,38 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	const infoLabel = nameLabel.get_next_sibling();
 	const durationNextDateLabel = infoLabel.get_next_sibling();
 	const inventoryLabel = box.get_last_child().get_prev_sibling();
+	const optionsMenu = box.get_last_child().get_menu_model();
 	const today = new Date().setHours(0, 0, 0, 0);
 	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
 	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
+
+	const DosageWindow = DosageApplication.get_default().activeWindow;
+	const app = DosageWindow.get_application();
+
+	const duplicateAct = new Gio.SimpleAction({ name: `duplicateMed${pos}` });
+	duplicateAct.connect('activate', () => {
+		const list = DosageWindow._treatmentsList;
+		DosageWindow._openMedDialog(list, pos, 'duplicate');
+	});
+	app.add_action(duplicateAct);
+
+	const deleteAct = new Gio.SimpleAction({ name: `deleteMed${pos}` });
+	deleteAct.connect('activate', () => confirmDeleteDialog(item, pos, DosageWindow));
+	app.add_action(deleteAct);
+
+	const duplicateMed = Gio.MenuItem.new(_('Duplicate'), `app.duplicateMed${pos}`);
+	const deleteMed = Gio.MenuItem.new(_('Delete'), `app.deleteMed${pos}`);
+
+	optionsMenu.remove_all();
+	optionsMenu.append_item(duplicateMed);
+	optionsMenu.append_item(deleteMed);
 
 	// activate item with space bar
 	const keyController = new Gtk.EventControllerKey();
 	keyController.connect('key-pressed', (_, keyval, keycode, state) => {
 		if (keyval === Gdk.KEY_space) {
 			const listView = row.get_parent();
-			listView.emit('activate', listItem.position);
+			listView.emit('activate', pos);
 		}
 	});
 	row.add_controller(keyController);
