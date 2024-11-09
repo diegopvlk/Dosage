@@ -50,8 +50,11 @@ export function getSpecificDaysLabel(item) {
 	} else if (item.days.length === 7) {
 		newLabel = _('Daily');
 	} else {
-		const idx = days.indexOf(firstWeekday);
-		const sortedDays = days.slice(idx).concat(days.slice(0, idx));
+		const sortedDays = [];
+		for (let i = 0; i < 7; i++) {
+			const idx = (firstWeekday + i) % 7;
+			if (days.includes(idx)) sortedDays.push(idx);
+		}
 		newLabel = sortedDays.map(day => getDayLabel(day)).join(', ');
 	}
 
