@@ -64,6 +64,14 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.7.3" date="2024-11-10">
+			<description translate="no">
+				<ul>
+					<li>Added a option to duplicate treatment</li>
+					<li>Added a new frequency mode: Day of the month</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.7.2" date="2024-11-02">
 			<description translate="no">
 				<ul>
