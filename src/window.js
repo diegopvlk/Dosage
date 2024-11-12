@@ -249,6 +249,7 @@ export const DosageWindow = GObject.registerClass(
 			try {
 				if (treatmentsLS.get_n_items() === 0) {
 					treatmentsJson.treatments.forEach(med => {
+						if (!('enabled' in med.inventory)) med.inventory.enabled = false; // #73
 						treatmentsLS.insert_sorted(
 							new MedicationObject({
 								obj: {
