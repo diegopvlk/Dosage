@@ -96,6 +96,7 @@ export const DosageWindow = GObject.registerClass(
 			const treatmentsFile = DataDir.get_child('dosage-treatments.json');
 			const historyFile = DataDir.get_child('dosage-history.json');
 
+			this.errorLoading = false;
 			this._createOrLoadJson('treatments', treatmentsFile);
 			this._createOrLoadJson('history', historyFile);
 			if (this._addMissedItems() | this._clearOldHistoryEntries()) {
@@ -287,6 +288,7 @@ export const DosageWindow = GObject.registerClass(
 				}
 			} catch (err) {
 				console.error('Error loading treatments:', err);
+				this.errorLoading = true;
 			}
 		}
 
@@ -385,6 +387,7 @@ export const DosageWindow = GObject.registerClass(
 				}
 			} catch (err) {
 				console.error('Error loading history:', err);
+				this.errorLoading = true;
 			}
 
 			this._setEmptyHistStatus();
@@ -889,7 +892,7 @@ export const DosageWindow = GObject.registerClass(
 
 			if (type === 'treatments') this.lastUpdate = new Date().toISOString();
 
-			if (!tempObj) return;
+			if (!tempObj || this.errorLoading) return;
 
 			const updateFile = () => {
 				return new Promise((resolve, reject) => {
