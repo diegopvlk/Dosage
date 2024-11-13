@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-09 14:21-0300\n"
+"POT-Creation-Date: 2024-11-13 13:14-0300\n"
 "PO-Revision-Date: 2024-03-16 18:56+0000\n"
 "Last-Translator: Mikachu <micah.sh@proton.me>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/dosage/dosage/nl/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:656
-#: src/main.js:40 src/window.js:718
+#: src/main.js:40 src/window.js:722
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -433,12 +433,12 @@ msgstr "Meldingsknoppen"
 msgid "Show or hide confirm/skip"
 msgstr "Toon of verberg bevestigen/overslaan"
 
-#: data/ui/preferences.blp:114 src/medDialog.js:303 src/window.js:579
-#: src/window.js:770
+#: data/ui/preferences.blp:114 src/medDialog.js:303 src/window.js:583
+#: src/window.js:774
 msgid "Confirm"
 msgstr "Bevestigen"
 
-#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:580
+#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:584
 msgid "Skip"
 msgstr "Overslaan"
 
@@ -462,7 +462,7 @@ msgstr "Vandaag"
 msgid "Unselect"
 msgstr "Niets selecteren"
 
-#: data/ui/window.blp:112 src/window.js:770
+#: data/ui/window.blp:112 src/window.js:774
 msgid "One-time entry"
 msgstr "Eenmalig"
 
@@ -627,41 +627,41 @@ msgstr "Werkdagen"
 msgid "Delete dose"
 msgstr "Dosering verwijderen"
 
-#: src/window.js:131 src/window.js:615
+#: src/window.js:132 src/window.js:619
 msgid "Reminder"
 msgstr "Herinnering"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:133
+#: src/window.js:134
 msgid "You have treatments low in stock"
 msgstr "De voorraad van enkele medicatie is laag"
 
-#: src/window.js:404
+#: src/window.js:408
 msgid "No results found"
 msgstr "Geen resultaten gevonden"
 
-#: src/window.js:404 src/window.js:1060
+#: src/window.js:408 src/window.js:1064
 msgid "Empty history"
 msgstr "Er is geen geschiedenis"
 
-#: src/window.js:503
+#: src/window.js:507
 msgid "No treatments added yet"
 msgstr "U heeft nog niets toegevoegd"
 
-#: src/window.js:507
+#: src/window.js:511
 msgid "All done for today"
 msgstr "U bent klaar voor vandaag"
 
-#: src/window.js:579
+#: src/window.js:583
 msgid "Confirm all"
 msgstr "Alles bevestigen"
 
-#: src/window.js:580
+#: src/window.js:584
 msgid "Skip all"
 msgstr "Alles overslaan"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:610
+#: src/window.js:614
 #, javascript-format
 msgid "and %d more"
 msgstr "en nog %d"

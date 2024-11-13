@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-09 14:21-0300\n"
+"POT-Creation-Date: 2024-11-13 13:14-0300\n"
 "PO-Revision-Date: 2024-02-01 22:04+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:656
-#: src/main.js:40 src/window.js:718
+#: src/main.js:40 src/window.js:722
 msgid "Dosage"
 msgstr "Dávkování"
 
@@ -435,12 +435,12 @@ msgstr "Akce notifikace"
 msgid "Show or hide confirm/skip"
 msgstr "Zobrazit nebo skrýt tlačítka potvrdit/přeskočit"
 
-#: data/ui/preferences.blp:114 src/medDialog.js:303 src/window.js:579
-#: src/window.js:770
+#: data/ui/preferences.blp:114 src/medDialog.js:303 src/window.js:583
+#: src/window.js:774
 msgid "Confirm"
 msgstr "Potvrdit"
 
-#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:580
+#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:584
 msgid "Skip"
 msgstr "Přeskočit"
 
@@ -464,7 +464,7 @@ msgstr "Dnes"
 msgid "Unselect"
 msgstr "Zrušit výběr"
 
-#: data/ui/window.blp:112 src/window.js:770
+#: data/ui/window.blp:112 src/window.js:774
 msgid "One-time entry"
 msgstr "Jednorázový záznam"
 
@@ -628,41 +628,41 @@ msgstr "Všední dny"
 msgid "Delete dose"
 msgstr "Smazat dávku"
 
-#: src/window.js:131 src/window.js:615
+#: src/window.js:132 src/window.js:619
 msgid "Reminder"
 msgstr "Připomínka"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:133
+#: src/window.js:134
 msgid "You have treatments low in stock"
 msgstr "Docházejí vám léky"
 
-#: src/window.js:404
+#: src/window.js:408
 msgid "No results found"
 msgstr "Nebyly nalezeny žádné výsledky"
 
-#: src/window.js:404 src/window.js:1060
+#: src/window.js:408 src/window.js:1064
 msgid "Empty history"
 msgstr "Prázdná historie"
 
-#: src/window.js:503
+#: src/window.js:507
 msgid "No treatments added yet"
 msgstr "Zatím nebyly přidány žádné léčby"
 
-#: src/window.js:507
+#: src/window.js:511
 msgid "All done for today"
 msgstr "Pro dnešek máte hotovo"
 
-#: src/window.js:579
+#: src/window.js:583
 msgid "Confirm all"
 msgstr "Potvrdit všechny"
 
-#: src/window.js:580
+#: src/window.js:584
 msgid "Skip all"
 msgstr "Přeskočit všechny"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:610
+#: src/window.js:614
 #, javascript-format
 msgid "and %d more"
 msgstr "a ještě %d"

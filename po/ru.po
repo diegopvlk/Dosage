@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-09 14:21-0300\n"
+"POT-Creation-Date: 2024-11-13 13:14-0300\n"
 "PO-Revision-Date: 2024-03-10 23:09+0000\n"
 "Last-Translator: Jake Blues <unclejake2010@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
@@ -23,7 +23,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:656
-#: src/main.js:40 src/window.js:718
+#: src/main.js:40 src/window.js:722
 msgid "Dosage"
 msgstr "Дозировка"
 
@@ -439,12 +439,12 @@ msgstr "Кнопки уведомлений"
 msgid "Show or hide confirm/skip"
 msgstr "Показать или скрыть подтвердить/пропустить"
 
-#: data/ui/preferences.blp:114 src/medDialog.js:303 src/window.js:579
-#: src/window.js:770
+#: data/ui/preferences.blp:114 src/medDialog.js:303 src/window.js:583
+#: src/window.js:774
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:580
+#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:584
 msgid "Skip"
 msgstr "Пропустить"
 
@@ -468,7 +468,7 @@ msgstr "Сегодня"
 msgid "Unselect"
 msgstr "Отменить выбор"
 
-#: data/ui/window.blp:112 src/window.js:770
+#: data/ui/window.blp:112 src/window.js:774
 msgid "One-time entry"
 msgstr "Одноразовый прием"
 
@@ -636,41 +636,41 @@ msgstr "Будни"
 msgid "Delete dose"
 msgstr "Удалить дозу"
 
-#: src/window.js:131 src/window.js:615
+#: src/window.js:132 src/window.js:619
 msgid "Reminder"
 msgstr "Напоминание"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:133
+#: src/window.js:134
 msgid "You have treatments low in stock"
 msgstr "У вас осталось мало лекарств в запасе"
 
-#: src/window.js:404
+#: src/window.js:408
 msgid "No results found"
 msgstr "Результатов не найдено"
 
-#: src/window.js:404 src/window.js:1060
+#: src/window.js:408 src/window.js:1064
 msgid "Empty history"
 msgstr "История пуста"
 
-#: src/window.js:503
+#: src/window.js:507
 msgid "No treatments added yet"
 msgstr "Ни одного курса лечения еще не было добавлено"
 
-#: src/window.js:507
+#: src/window.js:511
 msgid "All done for today"
 msgstr "Вы приняли все лекарства на сегодня"
 
-#: src/window.js:579
+#: src/window.js:583
 msgid "Confirm all"
 msgstr "Подтвердить все"
 
-#: src/window.js:580
+#: src/window.js:584
 msgid "Skip all"
 msgstr "Пропустить все"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:610
+#: src/window.js:614
 #, javascript-format
 msgid "and %d more"
 msgstr "и ещё %d"
