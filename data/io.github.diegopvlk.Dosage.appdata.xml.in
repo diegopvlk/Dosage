@@ -64,6 +64,13 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.7.4" date="2024-11-13">
+			<description translate="no">
+				<ul>
+					<li>Fixed a bug that can cause treatments to not save</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.7.3" date="2024-11-10">
 			<description translate="no">
 				<ul>
