@@ -11,16 +11,18 @@ platforms:
 
 parts:
   dosage-tracker:
-    after: [blueprint-compiler]
     plugin: meson
     source: https://github.com/diegopvlk/Dosage.git
-    source-tag: "v1.6.6"
+    source-tag: "v1.7.4"
     build-environment:
       - GI_TYPELIB_PATH: $SNAP/gnome-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/gjs/girepository-1.0:$GI_TYPELIB_PATH
     meson-parameters:
       - --prefix=/snap/dosage-tracker/current/usr
     build-snaps:
       - blueprint-compiler
+    override-pull: |
+      craftctl default
+      sed -i -e 's|@GJS@|/snap/dosage-tracker/current/gnome-platform/usr/bin/gjs|g' src/io.github.diegopvlk.Dosage.in
     organize:
       snap/dosage-tracker/current: .
     parse-info: [usr/share/appdata/io.github.diegopvlk.Dosage.appdata.xml]
