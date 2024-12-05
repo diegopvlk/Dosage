@@ -5,6 +5,7 @@
 'use strict';
 
 import Adw from 'gi://Adw?version=1';
+import Gdk from 'gi://Gdk';
 import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
 
@@ -461,6 +462,18 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 		DosageWindow._scheduleNotifications('saving');
 		medDialog.force_close();
 	});
+
+	const keyController = new Gtk.EventControllerKey();
+	keyController.connect('key-pressed', (_, keyval, keycode, state) => {
+		const shiftPressed = (state & Gdk.ModifierType.SHIFT_MASK) !== 0;
+		const controlPressed = (state & Gdk.ModifierType.CONTROL_MASK) !== 0;
+		const enterPressed = keyval === Gdk.KEY_Return;
+
+		if ((controlPressed || shiftPressed) && enterPressed) {
+			saveButton.activate();
+		}
+	});
+	medDialog.add_controller(keyController);
 
 	function editHistoryItem() {
 		const histBtnSkipped = builder.get_object('histBtnSkipped');
