@@ -52,7 +52,6 @@ todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 todayItemFactory.connect('setup', (factory, listItem) => {
 	const box = new Gtk.Box({
 		css_classes: ['item-box'],
-		height_request: 64,
 	});
 	const icon = new Gtk.Image({
 		margin_start: 17,

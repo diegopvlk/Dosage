@@ -40,7 +40,6 @@ historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 historyItemFactory.connect('setup', (factory, listItem) => {
 	const box = new Gtk.Box({
 		css_classes: ['item-box'],
-		height_request: 64,
 	});
 	const deleteButton = new Gtk.Button({
 		css_classes: ['circular'],

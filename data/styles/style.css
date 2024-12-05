@@ -72,6 +72,8 @@ listview > header label {
   transition: background 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-shadow: var(--list-border), var(--list-shadow);
   border-radius: var(--list-border-radius);
+  min-height: 50px;
+  padding: 6px 0;
 }
 .item-box:hover {
   background-image: image(color-mix(in srgb, currentColor 3%, transparent));
