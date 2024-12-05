@@ -64,6 +64,13 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.7.5" date="2024-12-05">
+			<description translate="no">
+				<ul>
+					<li>Minor improvement to save treatment with ctrl/shift + enter</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.7.4" date="2024-11-13">
 			<description translate="no">
 				<ul>
