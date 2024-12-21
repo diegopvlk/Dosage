@@ -8,24 +8,27 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-05 10:16-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-12-21 10:54+0000\n"
+"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/dosage/dosage/ta/>"
+"\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:656
 #: data/ui/window.blp:6 src/main.js:40 src/window.js:722
 msgid "Dosage"
-msgstr ""
+msgstr "அளவு"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
 msgid "Keep track of your treatments"
-msgstr ""
+msgstr "உங்கள் சிகிச்சைகள் கண்காணிக்கவும்"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid ""
@@ -33,620 +36,630 @@ msgid ""
 "Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
 "Control"
 msgstr ""
+"அளவைக் கொண்டு ட்ராக் சிகிச்சைகளை எளிதில் நிர்வகிக்கவும்: அறிவிப்புகள், வரலாறு, பல அளவுகள்"
+", நெகிழ்வான அதிர்வெண், தனிப்பயனாக்கம், பங்கு கண்காணிப்பு மற்றும் காலக் கட்டுப்பாடு"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
 msgid "Features:"
-msgstr ""
+msgstr "அம்சங்கள்:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:28
 msgid "Notifications — Get reminders at the right time"
-msgstr ""
+msgstr "அறிவிப்புகள் - சரியான நேரத்தில் நினைவூட்டல்களைப் பெறுங்கள்"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
 msgid "History — See which medications you took, skipped or missed"
 msgstr ""
+"வரலாறு - நீங்கள் எந்த மருந்துகளை எடுத்தீர்கள், தவிர்த்துவிட்டீர்கள் அல்லது தவறவிட்டீர்கள் என்று "
+"பாருங்கள்"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid "Dosage management — Multiple doses with different times"
-msgstr ""
+msgstr "அளவு மேலாண்மை - வெவ்வேறு நேரங்களைக் கொண்ட பல அளவுகள்"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
 msgid ""
 "Frequency modes — Every day, specific days, cycle or just when necessary"
 msgstr ""
+"அதிர்வெண் முறைகள் - ஒவ்வொரு நாளும், குறிப்பிட்ட நாட்கள், சுழற்சி அல்லது தேவைப்படும்போது"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:32
 msgid "Color and icon — Give a shape for your treatment"
-msgstr ""
+msgstr "வண்ணம் மற்றும் படவுரு - உங்கள் சிகிச்சைக்கு ஒரு வடிவம் கொடுங்கள்"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
+"சரக்கு கண்காணிப்பு - உங்கள் பங்குகளை கண்காணித்து, அது குறைவாக இருக்கும்போது "
+"நினைவூட்டுங்கள்"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:34
 msgid "Duration — Define the start and end dates"
-msgstr ""
+msgstr "காலம் - தொடக்க மற்றும் இறுதி தேதிகளை வரையறுக்கவும்"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid "Dosage today window in light theme"
-msgstr ""
+msgstr "ஒளி கருப்பொருளில் இன்று சாளரம்"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:50
 msgid "Dosage preferences window in light theme"
-msgstr ""
+msgstr "ஒளி கருப்பொருளில் அளவு விருப்பத்தேர்வுகள் சாளரம்"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:55
 msgid "Dosage edit treatment window in light theme"
-msgstr ""
+msgstr "ஒளி கருப்பொருளில் மருத்தீடு சாளரத்தை திருத்து"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:60
 msgid "Dosage today window in dark theme"
-msgstr ""
+msgstr "இருண்ட கருப்பொருளில் இன்று சாளரம்"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
+"மருந்து; டிராக்கர்; நினைவூட்டல்; இன்று; சிகிச்சைகள்; மாத்திரை; மருந்து; தீர்வு;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "பொது"
 
 #: data/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Preferences"
-msgstr ""
+msgstr "விருப்பத்தேர்வுகள்"
 
 #: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "குறுக்குவழிகளைக் காட்டு"
 
 #: data/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "வெளியேறு"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
-msgstr ""
+msgstr "புதிய மருத்தீடு"
 
 #: data/ui/med-dialog.blp:19 src/medDialog.js:915
 msgid "Cancel"
-msgstr ""
+msgstr "ரத்துசெய்"
 
 #: data/ui/med-dialog.blp:29 data/ui/window.blp:208
 msgid "Add"
-msgstr ""
+msgstr "கூட்டு"
 
 #: data/ui/med-dialog.blp:57
 msgid "From treatment list"
-msgstr ""
+msgstr "மருத்தீடு பட்டியலிலிருந்து"
 
 #: data/ui/med-dialog.blp:62
 msgid "Name"
-msgstr ""
+msgstr "பெயர்"
 
 #: data/ui/med-dialog.blp:66
 msgid "Unit"
-msgstr ""
+msgstr "அலகு"
 
 #: data/ui/med-dialog.blp:67 src/medDialog.js:249
 msgid "Pill(s)"
-msgstr ""
+msgstr "மாத்திரை (கள்)"
 
 #: data/ui/med-dialog.blp:71
 msgid "Notes"
-msgstr ""
+msgstr "குறிப்புகள்"
 
 #: data/ui/med-dialog.blp:72
 msgid "After meal"
-msgstr ""
+msgstr "உணவுக்குப் பிறகு"
 
 #: data/ui/med-dialog.blp:80
 msgid "Form"
-msgstr ""
+msgstr "வடிவம்"
 
 #: data/ui/med-dialog.blp:81
 msgid "Color and icon"
-msgstr ""
+msgstr "நிறம் மற்றும் படவுரு"
 
 #: data/ui/med-dialog.blp:91 src/medDialog.js:305
 msgid "Color"
-msgstr ""
+msgstr "நிறம்"
 
 #. TRANSLATORS: Tooltip for the colors (from Default until Purple)
 #: data/ui/med-dialog.blp:108
 msgid "Default"
-msgstr ""
+msgstr "இயல்புநிலை"
 
 #: data/ui/med-dialog.blp:120
 msgid "Red"
-msgstr ""
+msgstr "சிவப்பு"
 
 #: data/ui/med-dialog.blp:132
 msgid "Orange"
-msgstr ""
+msgstr "ஆரஞ்சு"
 
 #: data/ui/med-dialog.blp:144
 msgid "Yellow"
-msgstr ""
+msgstr "மஞ்சள்"
 
 #: data/ui/med-dialog.blp:156
 msgid "Green"
-msgstr ""
+msgstr "பச்சை"
 
 #: data/ui/med-dialog.blp:168
 msgid "Cyan"
-msgstr ""
+msgstr "சியான்"
 
 #: data/ui/med-dialog.blp:180
 msgid "Blue"
-msgstr ""
+msgstr "நீலம்"
 
 #: data/ui/med-dialog.blp:192
 msgid "Purple"
-msgstr ""
+msgstr "ஊதா"
 
 #: data/ui/med-dialog.blp:206
 msgid "Icon"
-msgstr ""
+msgstr "படவுரு"
 
 #. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
 #: data/ui/med-dialog.blp:225
 msgid "Pill"
-msgstr ""
+msgstr "மாத்திரை"
 
 #: data/ui/med-dialog.blp:241
 msgid "Alternative pill"
-msgstr ""
+msgstr "மாற்று மாத்திரை"
 
 #: data/ui/med-dialog.blp:257
 msgid "Capsule"
-msgstr ""
+msgstr "வில்லை"
 
 #: data/ui/med-dialog.blp:273
 msgid "Round pill"
-msgstr ""
+msgstr "சுற்று மாத்திரை"
 
 #: data/ui/med-dialog.blp:289
 msgid "Alternative round pill"
-msgstr ""
+msgstr "மாற்று சுற்று மாத்திரை"
 
 #: data/ui/med-dialog.blp:305
 msgid "Ampoule"
-msgstr ""
+msgstr "Ampoule"
 
 #: data/ui/med-dialog.blp:321
 msgid "Injection"
-msgstr ""
+msgstr "உட்செலுத்தல்"
 
 #: data/ui/med-dialog.blp:337
 msgid "Square pill"
-msgstr ""
+msgstr "சதுர மாத்திரை"
 
 #: data/ui/med-dialog.blp:353
 msgid "Alternative square pill"
-msgstr ""
+msgstr "மாற்று சதுர மாத்திரை"
 
 #: data/ui/med-dialog.blp:369
 msgid "Triangle pill"
-msgstr ""
+msgstr "முக்கோண மாத்திரை"
 
 #: data/ui/med-dialog.blp:385
 msgid "Alternative triangle pill"
-msgstr ""
+msgstr "மாற்று முக்கோண மாத்திரை"
 
 #: data/ui/med-dialog.blp:401
 msgid "Bottle"
-msgstr ""
+msgstr "பாட்டில்"
 
 #: data/ui/med-dialog.blp:417
 msgid "Drop"
-msgstr ""
+msgstr "துளி"
 
 #: data/ui/med-dialog.blp:433
 msgid "Potion"
-msgstr ""
+msgstr "போசன்"
 
 #: data/ui/med-dialog.blp:446 src/medDialog.js:822
 msgid "Frequency"
-msgstr ""
+msgstr "மீடிறன், மீள்திறன், நிகழ்வெண், நிகழ்வு"
 
 #: data/ui/med-dialog.blp:451
 msgid "Every day"
-msgstr ""
+msgstr "தினமும்"
 
 #: data/ui/med-dialog.blp:452 src/medDialog.js:814
 msgid "Specific days"
-msgstr ""
+msgstr "குறிப்பிட்ட நாட்கள்"
 
 #: data/ui/med-dialog.blp:453 src/medDialog.js:788 src/treatmentsFactory.js:161
 msgid "Day of the month"
-msgstr ""
+msgstr "மாதத்தின் நாள்"
 
 #: data/ui/med-dialog.blp:454 src/medDialog.js:819 src/treatmentsFactory.js:182
 msgid "Cycle"
-msgstr ""
+msgstr "சுழற்சி"
 
 #: data/ui/med-dialog.blp:455 src/treatmentsFactory.js:186
 msgid "When necessary"
-msgstr ""
+msgstr "தேவைப்படும்போது"
 
 #: data/ui/med-dialog.blp:467
 msgid "Choose days"
-msgstr ""
+msgstr "நாட்களைத் தேர்வுசெய்க"
 
 #: data/ui/med-dialog.blp:558
 msgid "Choose day"
-msgstr ""
+msgstr "நாளைத் தேர்வுசெய்க"
 
 #: data/ui/med-dialog.blp:594
 msgid "Change cycle"
-msgstr ""
+msgstr "சுழற்சியை மாற்றவும்"
 
 #: data/ui/med-dialog.blp:611
 msgid "Days active"
-msgstr ""
+msgstr "நாட்கள் செயலில்"
 
 #: data/ui/med-dialog.blp:625
 msgid "Days inactive"
-msgstr ""
+msgstr "நாட்கள் செயலற்றவை"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-dialog.blp:640
 msgid "Today is cycle day…"
-msgstr ""
+msgstr "இன்று சுழற்சி நாள்…"
 
 #: data/ui/med-dialog.blp:657
 msgid "Time and amount"
-msgstr ""
+msgstr "நேரம் மற்றும் தொகை"
 
 #: data/ui/med-dialog.blp:670
 msgid "Add dose"
-msgstr ""
+msgstr "டோச் சேர்க்கவும்"
 
 #: data/ui/med-dialog.blp:691 src/historyFactory.js:158
 msgid "Skipped"
-msgstr ""
+msgstr "தவிர்க்கப்பட்டது"
 
 #: data/ui/med-dialog.blp:703
 msgid "Confirmed"
-msgstr ""
+msgstr "உறுதிப்படுத்தப்பட்டது"
 
 #: data/ui/med-dialog.blp:710
 msgid "Recurring notifications"
-msgstr ""
+msgstr "தொடர்ச்சியான அறிவிப்புகள்"
 
 #: data/ui/med-dialog.blp:711
 msgid "Renotify until it's confirmed or skipped"
-msgstr ""
+msgstr "இது உறுதிப்படுத்தப்படும் அல்லது தவிர்க்கப்படும் வரை மறுபெயரிடுங்கள்"
 
 #: data/ui/med-dialog.blp:716
 msgid "Interval in minutes"
-msgstr ""
+msgstr "நிமிடங்களில் இடைவெளி"
 
 #: data/ui/med-dialog.blp:729
 msgid "Inventory"
-msgstr ""
+msgstr "சரக்கு"
 
 #: data/ui/med-dialog.blp:730
 msgid "Manage your stock"
-msgstr ""
+msgstr "உங்கள் பங்குகளை நிர்வகிக்கவும்"
 
 #: data/ui/med-dialog.blp:736
 msgid "Current"
-msgstr ""
+msgstr "மின்னோட்ட்ம், ஓட்டம்"
 
 #: data/ui/med-dialog.blp:749
 msgid "Remind me at"
-msgstr ""
+msgstr "என்னை நினைவூட்டுங்கள்"
 
 #: data/ui/med-dialog.blp:763
 msgid "Duration"
-msgstr ""
+msgstr "காலம்"
 
 #: data/ui/med-dialog.blp:764
 msgid "Set start and end dates"
-msgstr ""
+msgstr "தொடக்க மற்றும் இறுதி தேதிகளை அமைக்கவும்"
 
 #. TRANSLATORS: label for when duration is enabled
 #: data/ui/med-dialog.blp:774 src/treatmentsFactory.js:141
 msgid "Starts on"
-msgstr ""
+msgstr "தொடங்குகிறது"
 
 #: data/ui/med-dialog.blp:784 data/ui/med-dialog.blp:816
 #: data/ui/med-dialog.blp:850
 msgid "Choose date"
-msgstr ""
+msgstr "தேதியைத் தேர்வுசெய்க"
 
 #: data/ui/med-dialog.blp:806
 msgid "Ends on"
-msgstr ""
+msgstr "முடிவடைகிறது"
 
 #: data/ui/med-dialog.blp:839
 msgid "Date"
-msgstr ""
+msgstr "திகதி"
 
 #: data/ui/med-dialog.blp:872 src/historyFactory.js:147 src/medDialog.js:916
 #: src/treatmentsFactory.js:107
 msgid "Delete"
-msgstr ""
+msgstr "நீக்கு"
 
 #: data/ui/preferences.blp:7 data/ui/window.blp:225
 msgid "Preferences"
-msgstr ""
+msgstr "விருப்பத்தேர்வுகள்"
 
 #: data/ui/preferences.blp:21
 msgid "Auto-start at login"
-msgstr ""
+msgstr "உள்நுழைவில் தானாகத் தொடங்குதல்"
 
 #: data/ui/preferences.blp:37
 msgid "Auto-clear history"
-msgstr ""
+msgstr "தானாக தெளிவான வரலாறு"
 
 #: data/ui/preferences.blp:38
 msgid "Keeps a maximum of 30 days"
-msgstr ""
+msgstr "அதிகபட்சம் 30 நாட்கள் வைத்திருக்கிறது"
 
 #: data/ui/preferences.blp:54
 msgid "Increase notification priority"
-msgstr ""
+msgstr "அறிவிப்பு முன்னுரிமையை அதிகரிக்கவும்"
 
 #: data/ui/preferences.blp:55
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
 msgstr ""
+"முழு அளவிலான பயன்முறையில் அறிவிப்பு காண்பிக்கப்படுகிறது அல்லது 'தொந்தரவு செய்யாதது' "
+"இயக்கப்பட்டிருந்தாலும் கூட"
 
 #: data/ui/preferences.blp:71
 msgid "Low stock notification"
-msgstr ""
+msgstr "குறைந்த பங்கு அறிவிப்பு"
 
 #: data/ui/preferences.blp:72
 msgid "Send reminders when treatments are low in stock"
-msgstr ""
+msgstr "சிகிச்சைகள் குறைவாக இருக்கும்போது நினைவூட்டல்களை அனுப்பவும்"
 
 #: data/ui/preferences.blp:88
 msgid "Notification sound"
-msgstr ""
+msgstr "அறிவிப்பு ஒலி"
 
 #: data/ui/preferences.blp:104
 msgid "Notification buttons"
-msgstr ""
+msgstr "அறிவிப்பு பொத்தான்கள்"
 
 #: data/ui/preferences.blp:105
 msgid "Show or hide confirm/skip"
-msgstr ""
+msgstr "உறுதிப்படுத்த/தவிர்க்கவும்"
 
 #: data/ui/preferences.blp:114 src/medDialog.js:304 src/window.js:583
 #: src/window.js:774
 msgid "Confirm"
-msgstr ""
+msgstr "உறுதிப்படுத்தவும்"
 
 #: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:584
 msgid "Skip"
-msgstr ""
+msgstr "தவிர்"
 
 #: data/ui/window.blp:24
 msgid "Search"
-msgstr ""
+msgstr "தேடல்"
 
 #: data/ui/window.blp:38
 msgid "Main Menu"
-msgstr ""
+msgstr "பட்டியல் விளையாடுங்கள்"
 
 #: data/ui/window.blp:51
 msgid "Search…"
-msgstr ""
+msgstr "தேடுங்கள்…"
 
 #: data/ui/window.blp:61
 msgid "Today"
-msgstr ""
+msgstr "இன்று"
 
 #: data/ui/window.blp:99
 msgid "Unselect"
-msgstr ""
+msgstr "தேர்வு செய்யப்படாதது"
 
 #: data/ui/window.blp:112 src/window.js:774
 msgid "One-time entry"
-msgstr ""
+msgstr "ஒரு முறை நுழைவு"
 
 #: data/ui/window.blp:134
 msgid "History"
-msgstr ""
+msgstr "வரலாறு"
 
 #: data/ui/window.blp:163
 msgid "Treatments"
-msgstr ""
+msgstr "சிகிச்சைகள்"
 
 #: data/ui/window.blp:185
 msgid "Click the button below to add some"
-msgstr ""
+msgstr "சில சேர்க்க கீழே உள்ள பொத்தானைக் சொடுக்கு செய்க"
 
 #: data/ui/window.blp:230
 msgid "About Dosage"
-msgstr ""
+msgstr "அளவு பற்றி"
 
 #: data/ui/window.blp:235
 msgid "Quit"
-msgstr ""
+msgstr "வெளியேறு"
 
 #: src/historyFactory.js:144
 msgid "Restore"
-msgstr ""
+msgstr "மீட்டமை"
 
 #: src/historyFactory.js:162 src/medDialog.js:359
 msgid "Missed"
-msgstr ""
+msgstr "தவறவிட்டது"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
 msgid "translator-credits"
-msgstr ""
+msgstr "மொழிபெயர்ப்பாளர்-வரவு"
 
 #: src/main.js:53
 msgid "Thanks to these projects!"
-msgstr ""
+msgstr "இந்த திட்டங்களுக்கு நன்றி!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:89
 msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
+msgstr "பின்னணியில் இயங்க அனுமதிப்பதை ஏற்றுக்கொண்டு அறிவிப்புகளைப் பெறுங்கள்"
 
 #: src/medDialog.js:119
 msgid "Edit treatment"
-msgstr ""
+msgstr "சிகிச்சையைத் திருத்து"
 
 #: src/medDialog.js:120 src/medDialog.js:374
 msgid "Save"
-msgstr ""
+msgstr "சேமி"
 
 #: src/medDialog.js:130
 msgid "Copy"
-msgstr ""
+msgstr "நகலெடு"
 
 #: src/medDialog.js:238
 msgid "New"
-msgstr ""
+msgstr "புதிய"
 
 #: src/medDialog.js:303
 msgid "New entry"
-msgstr ""
+msgstr "புதிய நுழைவு"
 
 #: src/medDialog.js:352 src/medDialog.js:364
 msgid "Confirmed at"
-msgstr ""
+msgstr "இல் உறுதிப்படுத்தப்பட்டது"
 
 #: src/medDialog.js:356 src/medDialog.js:368
 msgid "Skipped at"
-msgstr ""
+msgstr "தவிர்க்கப்பட்டது"
 
 #: src/medDialog.js:373
 msgid "Edit entry"
-msgstr ""
+msgstr "நுழைவு திருத்து"
 
 #: src/medDialog.js:779
 msgid "Choose"
-msgstr ""
+msgstr "தேர்வு"
 
 #: src/medDialog.js:789
 msgid "Day"
-msgstr ""
+msgstr "நாள்"
 
 #: src/medDialog.js:856
 msgid "Empty name"
-msgstr ""
+msgstr "வெற்று பெயர்"
 
 #: src/medDialog.js:860
 msgid "Empty unit"
-msgstr ""
+msgstr "வெற்று அலகு"
 
 #: src/medDialog.js:866
 msgid "Choose at least one day"
-msgstr ""
+msgstr "குறைந்தது ஒரு நாளையாவது தேர்வு செய்யவும்"
 
 #: src/medDialog.js:877
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "மருத்தீடு பட்டியலில் ஏற்கனவே பெயர்"
 
 #: src/medDialog.js:891
 msgid "Duplicated time"
-msgstr ""
+msgstr "நகல் நேரம்"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
 #: src/medDialog.js:911
 msgid "Are you sure?"
-msgstr ""
+msgstr "நீங்கள் உறுதியாக இருக்கிறீர்களா?"
 
 #: src/medDialog.js:912
 msgid "will be deleted"
-msgstr ""
+msgstr "நீக்கப்படும்"
 
 #: src/todayFactory.js:95
 msgid "Change dose"
-msgstr ""
+msgstr "அளவை மாற்றவும்"
 
 #: src/treatmentsFactory.js:64
 msgid "Options"
-msgstr ""
+msgstr "விருப்பங்கள்"
 
 #: src/treatmentsFactory.js:106
 msgid "Duplicate"
-msgstr ""
+msgstr "நகல்"
 
 #: src/treatmentsFactory.js:131
 msgid "Remaining"
-msgstr ""
+msgstr "மீதமுள்ள"
 
 #: src/treatmentsFactory.js:135
 msgid "Low stock"
-msgstr ""
+msgstr "குறைந்த பங்கு"
 
 #: src/treatmentsFactory.js:142
 msgid "Until"
-msgstr ""
+msgstr "வரை"
 
 #: src/treatmentsFactory.js:143
 msgid "Ended on"
-msgstr ""
+msgstr "முடிந்தது"
 
 #: src/treatmentsFactory.js:155 src/utils.js:51
 msgid "Daily"
-msgstr ""
+msgstr "நாள்தோறும்"
 
 #: src/treatmentsFactory.js:170 src/treatmentsFactory.js:173
 msgid "Next dose"
-msgstr ""
+msgstr "அடுத்த டோச்"
 
 #: src/utils.js:47
 msgid "Weekends"
-msgstr ""
+msgstr "வார இறுதி நாட்கள்"
 
 #: src/utils.js:49
 msgid "Weekdays"
-msgstr ""
+msgstr "வார நாட்கள்"
 
 #: src/utils.js:341
 msgid "Delete dose"
-msgstr ""
+msgstr "அளவை நீக்கு"
 
 #: src/window.js:132 src/window.js:619
 msgid "Reminder"
-msgstr ""
+msgstr "நினைவூட்டல்"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:134
 msgid "You have treatments low in stock"
-msgstr ""
+msgstr "உங்களிடம் சிகிச்சைகள் குறைவாக உள்ளன"
 
 #: src/window.js:408
 msgid "No results found"
-msgstr ""
+msgstr "முடிவுகள் எதுவும் கிடைக்கவில்லை"
 
 #: src/window.js:408 src/window.js:1064
 msgid "Empty history"
-msgstr ""
+msgstr "வெற்று வரலாறு"
 
 #: src/window.js:507
 msgid "No treatments added yet"
-msgstr ""
+msgstr "இன்னும் சிகிச்சைகள் எதுவும் சேர்க்கப்படவில்லை"
 
 #: src/window.js:511
 msgid "All done for today"
-msgstr ""
+msgstr "அனைத்தும் இன்று செய்யப்படுகின்றன"
 
 #: src/window.js:583
 msgid "Confirm all"
-msgstr ""
+msgstr "அனைத்தையும் உறுதிப்படுத்தவும்"
 
 #: src/window.js:584
 msgid "Skip all"
-msgstr ""
+msgstr "அனைத்தையும் தவிர்க்கவும்"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:614
 #, javascript-format
 msgid "and %d more"
-msgstr ""
+msgstr "மேலும் %d மேலும்"
