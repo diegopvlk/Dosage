@@ -3,7 +3,7 @@ using Adw 1;
 
 Adw.Dialog medDialog {
   name: 'medication-dialog';
-  content-width: 434;
+  content-width: 454;
   title: _("New treatment");
 
   Adw.ToastOverlay toastOverlay {
@@ -18,6 +18,7 @@ Adw.Dialog medDialog {
         Button cancelButton {
           label: _("Cancel");
           name: 'cancel';
+          can-shrink: true;
         }
 
         [end]
@@ -28,12 +29,13 @@ Adw.Dialog medDialog {
 
           label: _("Add");
           name: 'save';
+          can-shrink: true;
         }
       }
 
       content: ScrolledWindow {
         Adw.Clamp medDialogClamp {
-          maximum-size: 412;
+          maximum-size: 440;
 
           Box {
             orientation: vertical;
@@ -471,77 +473,83 @@ Adw.Dialog medDialog {
                   }
 
                   popover: Popover {
-                    Box specificDaysBox {
-                      spacing: 4;
+                    name: 'specific-days-popover';
 
-                      ToggleButton {
-                        styles [
-                          'flat',
-                          'specific-day'
-                        ]
+                    ScrolledWindow {
+                      propagate-natural-width: true;
 
-                        valign: center;
-                        active: false;
-                      }
+                      Box specificDaysBox {
+                        spacing: 4;
 
-                      ToggleButton {
-                        styles [
-                          'flat',
-                          'specific-day'
-                        ]
+                        ToggleButton {
+                          styles [
+                            'flat',
+                            'specific-day'
+                          ]
 
-                        valign: center;
-                        active: false;
-                      }
+                          valign: center;
+                          active: false;
+                        }
 
-                      ToggleButton {
-                        styles [
-                          'flat',
-                          'specific-day'
-                        ]
+                        ToggleButton {
+                          styles [
+                            'flat',
+                            'specific-day'
+                          ]
 
-                        valign: center;
-                        active: false;
-                      }
+                          valign: center;
+                          active: false;
+                        }
 
-                      ToggleButton {
-                        styles [
-                          'flat',
-                          'specific-day'
-                        ]
+                        ToggleButton {
+                          styles [
+                            'flat',
+                            'specific-day'
+                          ]
 
-                        valign: center;
-                        active: false;
-                      }
+                          valign: center;
+                          active: false;
+                        }
 
-                      ToggleButton {
-                        styles [
-                          'flat',
-                          'specific-day'
-                        ]
+                        ToggleButton {
+                          styles [
+                            'flat',
+                            'specific-day'
+                          ]
 
-                        valign: center;
-                        active: false;
-                      }
+                          valign: center;
+                          active: false;
+                        }
 
-                      ToggleButton {
-                        styles [
-                          'flat',
-                          'specific-day'
-                        ]
+                        ToggleButton {
+                          styles [
+                            'flat',
+                            'specific-day'
+                          ]
 
-                        valign: center;
-                        active: false;
-                      }
+                          valign: center;
+                          active: false;
+                        }
 
-                      ToggleButton {
-                        styles [
-                          'flat',
-                          'specific-day'
-                        ]
+                        ToggleButton {
+                          styles [
+                            'flat',
+                            'specific-day'
+                          ]
 
-                        valign: center;
-                        active: false;
+                          valign: center;
+                          active: false;
+                        }
+
+                        ToggleButton {
+                          styles [
+                            'flat',
+                            'specific-day'
+                          ]
+
+                          valign: center;
+                          active: false;
+                        }
                       }
                     }
                   };

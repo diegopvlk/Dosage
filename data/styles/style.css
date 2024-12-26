@@ -41,7 +41,7 @@ statuspage .title {
 }
 
 #preferences scrolledwindow viewport clamp {
-  margin-top: -24px;
+  margin-top: -26px;
   margin-bottom: -4px;
 }
 #preferences label.title {
@@ -129,9 +129,11 @@ list.boxed-list-separate
 }
 .dose-time > button:dir(ltr) {
   margin-left: 3px;
+  margin-right: -20px;
 }
 .dose-time > button:dir(rtl) {
   margin-right: 3px;
+  margin-left: -20px;
 }
 #medication-dialog.floating.one-time .dose-time > button {
   margin-top: 3px;
@@ -149,6 +151,9 @@ button.am-pm {
   box-shadow: var(--list-border), var(--list-shadow);
   border-radius: var(--list-border-radius);
   margin: 2px;
+}
+#specific-days-popover contents {
+  padding: 0px 10px;
 }
 button.specific-day {
   min-width: 40px;
@@ -327,6 +332,9 @@ button.secondary.floating {
   padding-left: 10px;
   padding-right: 10px;
 }
+button.floating.secondary image {
+  min-width: 1.2em;
+}
 button.floating {
   box-shadow: 0 0 0 1px rgba(90, 90, 90, 0.1),
     0 1px 2px 1px rgba(90, 90, 90, 0.1);
@@ -356,7 +364,7 @@ button.floating:not(.suggested-action):active {
 }
 #refill-dialog headerbar button,
 #medication-dialog headerbar button {
-  min-width: 50px;
+  min-width: 56px;
 }
 #medication-dialog .linked-circular {
   background: rgb(from currentColor r g b / calc(alpha * 0.1));
@@ -386,6 +394,10 @@ calendar .month,
 calendar .year {
   margin-bottom: 5px;
   margin-top: -1px;
+}
+calendar .month,
+calendar .year {
+  font-weight: bold;
 }
 calendar .day-name {
   opacity: 0.5;

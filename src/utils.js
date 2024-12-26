@@ -9,6 +9,7 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
+import Pango from 'gi://Pango';
 
 const decoder = new TextDecoder('utf-8');
 
@@ -393,6 +394,7 @@ export function doseRow(timeDose) {
 	const leadZeroMinutes = addLeadZero(adjMinutes.value);
 	const doseTimeButton = new Gtk.MenuButton({
 		name: 'doseTimeButton',
+		can_shrink: true,
 		css_classes: ['flat', 'numeric', 'time', 'dose-time'],
 		label: timeDot
 			? `${leadZeroHours}.${leadZeroMinutes} ${amPmButton.label}`
@@ -434,14 +436,13 @@ export function doseRow(timeDose) {
 		halign: Gtk.Align.START,
 		name: 'takenLabel',
 		visible: false,
+		ellipsize: Pango.EllipsizeMode.END,
 	});
 
 	doseBox.append(takenLabel);
 	doseBox.append(removeDoseButton);
 	doseBox.append(doseTimeButton);
 	doseRow.add_prefix(doseBox);
-
-	doseRow.add_css_class('ampm-row');
 
 	removeDoseButton.connect('clicked', () => {
 		removeRow(doseRow);

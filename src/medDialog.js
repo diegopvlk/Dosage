@@ -431,6 +431,12 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 	};
 
 	const medDialogClamp = builder.get_object('medDialogClamp');
+
+	if (mode === 'edit-hist') {
+		medDialog.content_width = 400;
+		medDialogClamp.maximum_size = 380;
+	}
+
 	const [medDialogClampHeight] = medDialogClamp.measure(Gtk.Orientation.VERTICAL, -1);
 	medDialog.content_height = medDialogClampHeight + 48;
 

@@ -3,7 +3,7 @@ using Adw 1;
 
 Adw.Dialog refillDialog {
 	name: 'refill-dialog';
-	content-width: 424;
+	content-width: 420;
 	title: _("Refill");
 
 	Adw.ToolbarView {
@@ -17,6 +17,7 @@ Adw.Dialog refillDialog {
 			Button cancelButton {
 				label: _("Cancel");
 				name: 'cancel';
+				can-shrink: true;
 			}
 
 			[end]
@@ -27,19 +28,20 @@ Adw.Dialog refillDialog {
 
 				label: _("Save");
 				name: 'save';
+				can-shrink: true;
 			}
 		}
 
 		content: ScrolledWindow {
 			Adw.Clamp refillDialogClamp {
-				maximum-size: 400;
+				maximum-size: 402;
 
 				Box {
 					orientation: vertical;
 					margin-start: 10;
 					margin-end: 10;
 					margin-top: 15;
-					margin-bottom: 20;
+					margin-bottom: 16;
 
 					ListBox {
 						styles [
@@ -65,14 +67,11 @@ Adw.Dialog refillDialog {
 						}
 					}
 
-					Box {
-						margin-top: 18;
-						margin-start: 2;
-						margin-end: 2;
-						spacing: 8;
-						halign: fill;
+					FlowBox refillFlowBox {
+						margin-top: 16;
 						orientation: horizontal;
 						homogeneous: true;
+						selection-mode: none;
 
 						Button refill5Button {
 							styles [
