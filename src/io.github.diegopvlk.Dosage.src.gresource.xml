@@ -6,6 +6,7 @@
     <file>window.js</file>
     <file>medDialog.js</file>
     <file>prefsDialog.js</file>
+    <file>refillDialog.js</file>
     <file>medication.js</file>
     <file>todayFactory.js</file>
     <file>historyFactory.js</file>

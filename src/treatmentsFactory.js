@@ -11,6 +11,7 @@ import Pango from 'gi://Pango';
 import { getSpecificDaysLabel } from './utils.js';
 import { DosageApplication } from './main.js';
 import { confirmDeleteDialog } from './medDialog.js';
+import { openRefillDialog } from './refillDialog.js';
 
 export const treatmentsFactory = new Gtk.SignalListItemFactory();
 
@@ -88,9 +89,16 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	const today = new Date().setHours(0, 0, 0, 0);
 	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
 	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
+	const inv = item.inventory;
 
 	const DosageWindow = DosageApplication.get_default().activeWindow;
 	const app = DosageWindow.get_application();
+
+	if (inv.enabled) {
+		const refillAct = new Gio.SimpleAction({ name: `refillMed${pos}` });
+		refillAct.connect('activate', () => openRefillDialog(listItem, pos));
+		app.add_action(refillAct);
+	}
 
 	const duplicateAct = new Gio.SimpleAction({ name: `duplicateMed${pos}` });
 	duplicateAct.connect('activate', () => {
@@ -103,10 +111,11 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	deleteAct.connect('activate', () => confirmDeleteDialog(item, pos, DosageWindow));
 	app.add_action(deleteAct);
 
+	const refillMed = Gio.MenuItem.new(_('Refill'), `app.refillMed${pos}`);
 	const duplicateMed = Gio.MenuItem.new(_('Duplicate'), `app.duplicateMed${pos}`);
 	const deleteMed = Gio.MenuItem.new(_('Delete'), `app.deleteMed${pos}`);
 
-	optionsMenu.remove_all();
+	optionsMenu.append_item(refillMed);
 	optionsMenu.append_item(duplicateMed);
 	optionsMenu.append_item(deleteMed);
 
@@ -121,8 +130,6 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	row.add_controller(keyController);
 
 	nameLabel.label = item.name;
-
-	const inv = item.inventory;
 
 	if (inv.enabled) {
 		let currInv = inv.current < 0 ? 0 : inv.current;
@@ -202,20 +209,34 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	box.add_css_class(item.color);
 
 	icon.icon_name = item.icon;
+});
 
-	function formatDate(date, weekday) {
-		if (weekday) {
-			return new Date(date).toLocaleDateString(undefined, {
-				weekday: 'short',
-				month: 'short',
-				day: 'numeric',
-			});
-		}
+treatmentsFactory.connect('unbind', (factory, listItem) => {
+	const DosageWindow = DosageApplication.get_default().activeWindow;
+	const app = DosageWindow.get_application();
 
+	const box = listItem.get_child();
+	const pos = listItem.get_position();
+	const optionsMenu = box.get_last_child().get_menu_model();
+
+	app.remove_action(`refillMed${pos}`);
+	app.remove_action(`duplicateMed${pos}`);
+	app.remove_action(`deleteMed${pos}`);
+	optionsMenu.remove_all();
+});
+
+function formatDate(date, weekday) {
+	if (weekday) {
 		return new Date(date).toLocaleDateString(undefined, {
+			weekday: 'short',
 			month: 'short',
 			day: 'numeric',
-			year: 'numeric',
 		});
 	}
-});
+
+	return new Date(date).toLocaleDateString(undefined, {
+		month: 'short',
+		day: 'numeric',
+		year: 'numeric',
+	});
+}

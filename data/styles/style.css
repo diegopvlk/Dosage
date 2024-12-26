@@ -48,6 +48,10 @@ statuspage .title {
   text-transform: capitalize;
 }
 
+.refill-amount-btn {
+  padding: 7px 10px;
+}
+
 dialog.about .boxed-list {
   box-shadow: var(--list-border), var(--list-shadow);
   border-radius: var(--list-border-radius);
@@ -350,10 +354,9 @@ button.floating:not(.suggested-action):active {
       calc(alpha * 1)
   );
 }
-
-#medication-dialog
-  button:not(.circular):not(.image-button):not(.arrow-button):not(.toggle):not(.am-pm) {
-  min-width: 60px;
+#refill-dialog headerbar button,
+#medication-dialog headerbar button {
+  min-width: 50px;
 }
 #medication-dialog .linked-circular {
   background: rgb(from currentColor r g b / calc(alpha * 0.1));

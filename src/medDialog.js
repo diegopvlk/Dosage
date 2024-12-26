@@ -551,9 +551,12 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 					i.obj.inventory.current += diff - adjusts;
 				}
 				if (tempInv === i.obj.inventory.current) break;
-				DosageWindow._treatmentsList.model = new Gtk.NoSelection({
-					model: treatmentsLS,
-				});
+
+				// reload-ish of treatments list
+				// necessary for updating low stock and cycle date labels
+				DosageWindow._treatmentsList.visible = false;
+				DosageWindow._treatmentsList.visible = true;
+
 				DosageWindow._updateJsonFile('treatments', treatmentsLS);
 				DosageWindow._checkInventory();
 			}

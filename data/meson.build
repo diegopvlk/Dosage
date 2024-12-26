@@ -7,6 +7,7 @@ blueprints = custom_target(
 		'gtk/help-overlay.blp',
 		'ui/med-dialog.blp',
 		'ui/preferences.blp',
+		'ui/refill-dialog.blp',
 		'ui/window.blp',
 	),
 	output: '.',

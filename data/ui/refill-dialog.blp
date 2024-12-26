@@ -1,0 +1,131 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.Dialog refillDialog {
+	name: 'refill-dialog';
+	content-width: 424;
+	title: _("Refill");
+
+	Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar headerBar {
+			show-start-title-buttons: false;
+			show-end-title-buttons: false;
+			decoration-layout: '';
+
+			[start]
+			Button cancelButton {
+				label: _("Cancel");
+				name: 'cancel';
+			}
+
+			[end]
+			Button saveButton {
+				styles [
+					'suggested-action'
+				]
+
+				label: _("Save");
+				name: 'save';
+			}
+		}
+
+		content: ScrolledWindow {
+			Adw.Clamp refillDialogClamp {
+				maximum-size: 400;
+
+				Box {
+					orientation: vertical;
+					margin-start: 10;
+					margin-end: 10;
+					margin-top: 15;
+					margin-bottom: 20;
+
+					ListBox {
+						styles [
+							"boxed-list-separate"
+						]
+
+						selection-mode: none;
+
+						Adw.SpinRow refillRow {
+							styles [
+								"property"
+							]
+
+							title: _("Inventory");
+							climb-rate: 0.2;
+							digits: 2;
+
+							adjustment: Adjustment refillInventory {
+								lower: 0;
+								upper: 99999;
+								step-increment: 1;
+							};
+						}
+					}
+
+					Box {
+						margin-top: 18;
+						margin-start: 2;
+						margin-end: 2;
+						spacing: 8;
+						halign: fill;
+						orientation: horizontal;
+						homogeneous: true;
+
+						Button refill5Button {
+							styles [
+								"refill-amount-btn",
+								"pill"
+							]
+
+							label: "+5";
+							valign: center;
+						}
+
+						Button refill10Button {
+							styles [
+								"refill-amount-btn",
+								"pill"
+							]
+
+							label: "+10";
+							valign: center;
+						}
+
+						Button refill30Button {
+							styles [
+								"refill-amount-btn",
+								"pill"
+							]
+
+							label: "+30";
+							valign: center;
+						}
+
+						Button refill60Button {
+							styles [
+								"refill-amount-btn",
+								"pill"
+							]
+
+							label: "+60";
+							valign: center;
+						}
+
+						Button refill100Button {
+							styles [
+								"refill-amount-btn",
+								"pill"
+							]
+
+							label: "+100";
+							valign: center;
+						}
+					}
+				}
+			}
+		};
+	}
+}
