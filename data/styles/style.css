@@ -402,15 +402,19 @@ calendar .year {
 calendar .day-name {
   opacity: 0.5;
 }
+calendar .day-number {
+  border-radius: 99px;
+  padding: 8px 0;
+}
 .calendar-error {
   border-radius: 10px;
-  animation: flashCalendar 0.5s ease-in-out;
+  animation: flashCalendar 0.8s;
 }
 @keyframes flashCalendar {
   10% {
-    text-shadow: 0 0 16px
-      rgb(from var(--error-bg-color) r g b / calc(alpha * 0.5));
-    color: var(--error-bg-color);
+    background-color: rgb(
+      from var(--error-bg-color) r g b / calc(alpha * 0.33)
+    );
   }
 }
 .calendar-warning {

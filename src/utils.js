@@ -201,7 +201,14 @@ export function createTempObj(type, listStore) {
 
 export function handleCalendarSelect(calendar, calendarRow, oneTime) {
 	const today = GLib.DateTime.new_now_local().format('%F');
-	calendar.connect('day-selected', cal => {
+
+	calendar.connect('day-selected', cal => handleSelect(cal));
+	calendar.connect('next-month', cal => handleSelect(cal));
+	calendar.connect('next-year', cal => handleSelect(cal));
+	calendar.connect('prev-month', cal => handleSelect(cal));
+	calendar.connect('prev-year', cal => handleSelect(cal));
+
+	function handleSelect(cal) {
 		const selDate = cal.get_date().format('%F');
 
 		if (oneTime && selDate > today) {
@@ -227,7 +234,7 @@ export function handleCalendarSelect(calendar, calendarRow, oneTime) {
 		});
 		calDate = calDate.charAt(0).toUpperCase() + calDate.slice(1);
 		calendarRow.subtitle = calDate;
-	});
+	}
 }
 
 export function isTodayMedDay(med) {
