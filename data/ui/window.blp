@@ -155,6 +155,24 @@ template $DosageWindow: Adw.ApplicationWindow {
             icon-name: 'history-empty-symbolic';
             visible: false;
           }
+
+          [overlay]
+          Box {
+            halign: center;
+            valign: end;
+
+            Button toogleHistAmountBtn {
+              halign: center;
+              valign: end;
+              margin-bottom: 6;
+              clicked => $_toggleHistoryAmount();
+
+              styles [
+                'pill',
+                'floating'
+              ]
+            }
+          }
         };
       }
 

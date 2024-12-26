@@ -101,8 +101,11 @@ listview > header label {
   padding-bottom: 20px;
   background-color: transparent;
 }
-.dosage-list:not(.history) {
+.dosage-list {
   padding-bottom: 75px;
+}
+.list-no-extra-padding-bottom {
+  padding-bottom: 20px;
 }
 list.boxed-list-separate > row.expander row.header {
   border-top-left-radius: var(--list-border-radius);

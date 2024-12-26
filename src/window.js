@@ -38,6 +38,7 @@ export const DosageWindow = GObject.registerClass(
 		Template: 'resource:///io/github/diegopvlk/Dosage/ui/window.ui',
 		InternalChildren: [
 			'todayList',
+			'toogleHistAmountBtn',
 			'historyList',
 			'treatmentsList',
 			'treatmentsPage',
@@ -70,6 +71,7 @@ export const DosageWindow = GObject.registerClass(
 			settings.connect('changed::clear-old-hist', (sett, key) => {
 				if (sett.get_boolean(key) === true) {
 					this._clearOldHistoryEntries();
+					this._setShowHistoryAmount();
 					this._updateJsonFile('history', historyLS);
 				}
 			});
@@ -139,6 +141,7 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		#clockTick() {
+			this.today = new Date();
 			let lastDate = new Date().setHours(0, 0, 0, 0);
 
 			const tick = () => {
@@ -292,6 +295,49 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
+		_setShowHistoryAmount() {
+			if (this.histQuery) return;
+
+			const moreThan30 = historyLS.n_items > 30;
+
+			this._toogleHistAmountBtn.sensitive = moreThan30;
+			this._toogleHistAmountBtn.visible = moreThan30;
+			this._toogleHistAmountBtn.label = _('Show all');
+
+			if (moreThan30) {
+				this._historyList.remove_css_class('list-no-extra-padding-bottom');
+			} else {
+				this._historyList.add_css_class('list-no-extra-padding-bottom');
+			}
+
+			if (!this.showAllHist && moreThan30) {
+				const dates = new Set();
+				let count = 0;
+
+				this.historyFilter.set_filter_func(item => {
+					const itemDate = new Date(item.obj.taken[0]).setHours(0, 0, 0, 0);
+
+					if (!dates.has(itemDate)) {
+						dates.add(itemDate);
+						count++;
+					}
+
+					return count <= 7;
+				});
+			} else if (this.showAllHist) {
+				this._toogleHistAmountBtn.label = _('Show less');
+				this.historyFilter.set_filter_func(null);
+			} else {
+				this._toogleHistAmountBtn.visible = false;
+				this.historyFilter.set_filter_func(null);
+			}
+		}
+
+		_toggleHistoryAmount() {
+			this.showAllHist = !this.showAllHist;
+			this._setShowHistoryAmount();
+		}
+
 		async _loadHistory(historyJson) {
 			try {
 				if (!historyLS.get_item(0)) {
@@ -327,6 +373,7 @@ export const DosageWindow = GObject.registerClass(
 						});
 
 						this._historyList.model = this.noSelectionModel;
+						this._setShowHistoryAmount();
 
 						this._headerBarSpinner.set_visible(false);
 					});
@@ -419,11 +466,17 @@ export const DosageWindow = GObject.registerClass(
 				const query = removeDiacritics(this._searchEntry.text.trim());
 
 				if (!query) {
-					this.historyFilter.set_filter_func(null);
+					this.histQuery = false;
+					this.showAllHist = false;
+					this._setShowHistoryAmount();
 					this._emptyHistory.visible = false;
 					this._historyList.scroll_to(0, null, null);
 					return;
+				} else {
+					this.histQuery = true;
 				}
+
+				this._toogleHistAmountBtn.visible = false;
 
 				this.historyFilter.set_filter_func(item => {
 					const itemName = removeDiacritics(item.obj.name);
@@ -535,6 +588,11 @@ export const DosageWindow = GObject.registerClass(
 			for (const date of dateKeys.slice(0, 30)) {
 				const itemsToAdd = itemsHolder[date];
 				historyLS.splice(0, 0, itemsToAdd);
+				historyLS.sort((a, b) => {
+					const dtA = new Date(a.obj.taken[0]).setHours(0, 0, 0, 0);
+					const dtB = new Date(b.obj.taken[0]).setHours(0, 0, 0, 0);
+					return dtA === dtB ? 0 : dtA < dtB ? 1 : -1;
+				});
 			}
 
 			return true;
@@ -1070,23 +1128,24 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		_updateEverything(skipHistUp, notifAction) {
+			this._setShowHistoryAmount();
 			this._updateCycleAndLastUp();
 			this._updateJsonFile('treatments', treatmentsLS);
 			this._loadToday();
 			this._updateEntryBtn(false);
 			this._checkInventory(notifAction);
-			if (skipHistUp) {
-				const pos = Math.max(0, skipHistUp[1] - 1);
-				this._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
-			} else {
-				this._updateJsonFile('history', historyLS);
-			}
 
 			// reload-ish of treatments list
 			// necessary for updating low stock and cycle date labels
-			this._treatmentsList.model = new Gtk.NoSelection({
-				model: treatmentsLS,
-			});
+			this._treatmentsList.visible = false;
+			this._treatmentsList.visible = true;
+
+			if (!skipHistUp) {
+				this._updateJsonFile('history', historyLS);
+			} else if (skipHistUp[1] >= 0) {
+				const pos = Math.max(0, skipHistUp[1] - 1);
+				this._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
+			}
 		}
 
 		_openMedDialog(list, position, mode) {

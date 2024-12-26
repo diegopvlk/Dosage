@@ -513,15 +513,28 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 		const it = list.get_model().get_item(position);
 		const [, pos] = historyLS.find(it);
 
-		historyLS.remove(pos);
+		const updItem = updatedItem.obj;
 
-		historyLS.insert_sorted(updatedItem, (a, b) => {
-			const dateA = a.obj.taken[0];
-			const dateB = b.obj.taken[0];
-			if (dateA < dateB) return 1;
-			else if (dateA > dateB) return -1;
-			else return 0;
-		});
+		if (
+			updItem.taken[0] !== tempTaken0 ||
+			updItem.taken[1] !== tempTaken1 ||
+			updItem.dose !== item.dose
+		) {
+			historyLS.remove(pos);
+
+			historyLS.insert_sorted(updatedItem, (a, b) => {
+				const dateA = a.obj.taken[0];
+				const dateB = b.obj.taken[0];
+				if (dateA < dateB) return 1;
+				else if (dateA > dateB) return -1;
+				else return 0;
+			});
+
+			DosageWindow._updateJsonFile('history', historyLS);
+			DosageWindow._setShowHistoryAmount();
+		} else {
+			return;
+		}
 
 		list.scroll_to(Math.max(0, position - 1), Gtk.ListScrollFlags.FOCUS, null);
 
@@ -544,16 +557,6 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 				DosageWindow._updateJsonFile('treatments', treatmentsLS);
 				DosageWindow._checkInventory();
 			}
-		}
-
-		const updItem = updatedItem.obj;
-
-		if (
-			updItem.taken[0] !== tempTaken0 ||
-			updItem.taken[1] !== tempTaken1 ||
-			updItem.dose !== item.dose
-		) {
-			DosageWindow._updateJsonFile('history', historyLS);
 		}
 	}
 
