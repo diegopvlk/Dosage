@@ -322,7 +322,7 @@ export function doseRow(timeDose) {
 		digits: 2,
 		adjustment: new Gtk.Adjustment({
 			lower: 0.25,
-			upper: 999,
+			upper: 9999,
 			step_increment: 0.25,
 			value: timeDose.dose,
 		}),
