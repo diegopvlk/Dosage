@@ -2,148 +2,148 @@ using Gtk 4.0;
 using Adw 1;
 
 Adw.Dialog prefsDialog {
-  name: 'preferences';
-  content-width: 454;
-  title: _("Preferences");
+	name: 'preferences';
+	content-width: 454;
+	title: _("Preferences");
 
-  Adw.ToolbarView {
-    [top]
-    Adw.HeaderBar headerBar {}
+	Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar headerBar {}
 
-    content: Adw.Clamp {
-      maximum-size: 464;
+		content: Adw.Clamp {
+			maximum-size: 464;
 
-      Adw.PreferencesPage prefsPage {
-        Adw.PreferencesGroup {
-          separate-rows: true;
+			Adw.PreferencesPage prefsPage {
+				Adw.PreferencesGroup {
+					separate-rows: true;
 
-          Adw.ActionRow {
-            title: _("Auto-start at login");
-            activatable-widget: autostartSwitch;
+					Adw.ActionRow {
+						title: _("Auto-start at login");
+						activatable-widget: autostartSwitch;
 
-            [prefix]
-            Image {
-              icon-name: "dosage-auto-start-symbolic";
-            }
+						[prefix]
+						Image {
+							icon-name: "dosage-auto-start-symbolic";
+						}
 
-            [suffix]
-            Switch autostartSwitch {
-              halign: center;
-              valign: center;
-            }
-          }
+						[suffix]
+						Switch autostartSwitch {
+							halign: center;
+							valign: center;
+						}
+					}
 
-          Adw.ActionRow {
-            title: _("Auto-clear history");
-            subtitle: _("Keeps a maximum of 30 days");
-            activatable-widget: clearHistSwitch;
+					Adw.ActionRow {
+						title: _("Auto-clear history");
+						subtitle: _("Keeps a maximum of 30 days");
+						activatable-widget: clearHistSwitch;
 
-            [prefix]
-            Image {
-              icon-name: "dosage-auto-clear-history-symbolic";
-            }
+						[prefix]
+						Image {
+							icon-name: "dosage-auto-clear-history-symbolic";
+						}
 
-            [suffix]
-            Switch clearHistSwitch {
-              halign: center;
-              valign: center;
-            }
-          }
+						[suffix]
+						Switch clearHistSwitch {
+							halign: center;
+							valign: center;
+						}
+					}
 
-          Adw.ActionRow {
-            title: _("Increase notification priority");
-            subtitle: _("Makes the notification show in fullscreen mode or even if 'Do Not Disturb' is enabled");
-            activatable-widget: prioritySwitch;
+					Adw.ActionRow {
+						title: _("Increase notification priority");
+						subtitle: _("Makes the notification show in fullscreen mode or even if 'Do Not Disturb' is enabled");
+						activatable-widget: prioritySwitch;
 
-            [prefix]
-            Image {
-              icon-name: "dosage-notification-bell-symbolic";
-            }
+						[prefix]
+						Image {
+							icon-name: "dosage-notification-bell-symbolic";
+						}
 
-            [suffix]
-            Switch prioritySwitch {
-              halign: center;
-              valign: center;
-            }
-          }
+						[suffix]
+						Switch prioritySwitch {
+							halign: center;
+							valign: center;
+						}
+					}
 
-          Adw.ActionRow {
-            title: _("Low stock notification");
-            subtitle: _("Send reminders when treatments are low in stock");
-            activatable-widget: notifStockSwitch;
+					Adw.ActionRow {
+						title: _("Low stock notification");
+						subtitle: _("Send reminders when treatments are low in stock");
+						activatable-widget: notifStockSwitch;
 
-            [prefix]
-            Image {
-              icon-name: "dosage-notification-low-stock-symbolic";
-            }
+						[prefix]
+						Image {
+							icon-name: "dosage-notification-low-stock-symbolic";
+						}
 
-            [suffix]
-            Switch notifStockSwitch {
-              halign: center;
-              valign: center;
-            }
-          }
+						[suffix]
+						Switch notifStockSwitch {
+							halign: center;
+							valign: center;
+						}
+					}
 
-          Adw.ActionRow {
-            title: _("Notification sound");
-            activatable-widget: notifSoundSwitch;
+					Adw.ActionRow {
+						title: _("Notification sound");
+						activatable-widget: notifSoundSwitch;
 
-            [prefix]
-            Image {
-              icon-name: "dosage-notification-sound-symbolic";
-            }
+						[prefix]
+						Image {
+							icon-name: "dosage-notification-sound-symbolic";
+						}
 
-            [suffix]
-            Switch notifSoundSwitch {
-              halign: center;
-              valign: center;
-            }
-          }
+						[suffix]
+						Switch notifSoundSwitch {
+							halign: center;
+							valign: center;
+						}
+					}
 
-          Adw.ExpanderRow notifBtns {
-            title: _("Notification buttons");
-            subtitle: _("Show or hide confirm/skip");
-            expanded: true;
+					Adw.ExpanderRow notifBtns {
+						title: _("Notification buttons");
+						subtitle: _("Show or hide confirm/skip");
+						expanded: true;
 
-            [prefix]
-            Image {
-              icon-name: "dosage-notification-bell-symbolic";
-            }
+						[prefix]
+						Image {
+							icon-name: "dosage-notification-bell-symbolic";
+						}
 
-            Adw.ActionRow {
-              title: _("Confirm");
-              activatable-widget: confirmSwitch;
+						Adw.ActionRow {
+							title: _("Confirm");
+							activatable-widget: confirmSwitch;
 
-              [prefix]
-              Image {
-                icon-name: "med-confirmed-symbolic";
-              }
+							[prefix]
+							Image {
+								icon-name: "med-confirmed-symbolic";
+							}
 
-              [suffix]
-              Switch confirmSwitch {
-                halign: center;
-                valign: center;
-              }
-            }
+							[suffix]
+							Switch confirmSwitch {
+								halign: center;
+								valign: center;
+							}
+						}
 
-            Adw.ActionRow {
-              title: _("Skip");
-              activatable-widget: skipSwitch;
+						Adw.ActionRow {
+							title: _("Skip");
+							activatable-widget: skipSwitch;
 
-              [prefix]
-              Image {
-                icon-name: "med-skipped-symbolic";
-              }
+							[prefix]
+							Image {
+								icon-name: "med-skipped-symbolic";
+							}
 
-              [suffix]
-              Switch skipSwitch {
-                halign: center;
-                valign: center;
-              }
-            }
-          }
-        }
-      }
-    };
-  }
+							[suffix]
+							Switch skipSwitch {
+								halign: center;
+								valign: center;
+							}
+						}
+					}
+				}
+			}
+		};
+	}
 }

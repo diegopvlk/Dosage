@@ -2,255 +2,255 @@ using Gtk 4.0;
 using Adw 1;
 
 template $DosageWindow: Adw.ApplicationWindow {
-  name: 'io-github-diegopvlk-Dosage';
-  title: _("Dosage");
+	name: 'io-github-diegopvlk-Dosage';
+	title: _("Dosage");
 
-  Adw.Breakpoint {
-    condition ('max-width: 512sp')
+	Adw.Breakpoint {
+		condition ('max-width: 512sp')
 
-    setters {
-      switcherBar.reveal: true;
-      headerBar.title-widget: null;
-    }
-  }
+		setters {
+			switcherBar.reveal: true;
+			headerBar.title-widget: null;
+		}
+	}
 
-  content: Adw.ToolbarView {
-    [top]
-    Adw.HeaderBar headerBar {
-      [start]
-      ToggleButton buttonSearch {
-        icon-name: "edit-find-symbolic";
-        visible: false;
-        tooltip-text: _("Search");
-      }
+	content: Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar headerBar {
+			[start]
+			ToggleButton buttonSearch {
+				icon-name: "edit-find-symbolic";
+				visible: false;
+				tooltip-text: _("Search");
+			}
 
-      [start]
-      Adw.Spinner headerBarSpinner {
-        margin-start: 9;
-        margin-end: 9;
-      }
+			[start]
+			Adw.Spinner headerBarSpinner {
+				margin-start: 9;
+				margin-end: 9;
+			}
 
-      [end]
-      MenuButton buttonMenu {
-        menu-model: appMenu;
-        icon-name: 'open-menu-symbolic';
-        primary: true;
-        tooltip-text: _("Main Menu");
-      }
+			[end]
+			MenuButton buttonMenu {
+				menu-model: appMenu;
+				icon-name: 'open-menu-symbolic';
+				primary: true;
+				tooltip-text: _("Main Menu");
+			}
 
-      title-widget: Adw.ViewSwitcher {
-        stack: viewStack;
-        policy: wide;
-      };
-    }
+			title-widget: Adw.ViewSwitcher {
+				stack: viewStack;
+				policy: wide;
+			};
+		}
 
-    [top]
-    SearchBar searchBar {
-      SearchEntry searchEntry {
-        search-delay: 100;
-        placeholder-text: _("Search…");
-        width-request: 276;
-      }
-    }
+		[top]
+		SearchBar searchBar {
+			SearchEntry searchEntry {
+				search-delay: 100;
+				placeholder-text: _("Search…");
+				width-request: 276;
+			}
+		}
 
-    content: Adw.ViewStack viewStack {
-      vexpand: true;
+		content: Adw.ViewStack viewStack {
+			vexpand: true;
 
-      Adw.ViewStackPage todayPage {
-        name: 'today-page';
-        title: _("Today");
-        icon-name: 'today-icn-symbolic';
+			Adw.ViewStackPage todayPage {
+				name: 'today-page';
+				title: _("Today");
+				icon-name: 'today-icn-symbolic';
 
-        child: Overlay {
-          ScrolledWindow {
-            Adw.ClampScrollable {
-              ListView todayList {
-                styles [
-                  'dosage-list',
-                  'scroll-to-top-hack',
-                  'today'
-                ]
+				child: Overlay {
+					ScrolledWindow {
+						Adw.ClampScrollable {
+							ListView todayList {
+								styles [
+									'dosage-list',
+									'scroll-to-top-hack',
+									'today'
+								]
 
-                activate => $_selectTodayItems();
-                single-click-activate: true;
-              }
-            }
-          }
+								activate => $_selectTodayItems();
+								single-click-activate: true;
+							}
+						}
+					}
 
-          [overlay]
-          Adw.StatusPage emptyToday {
-            visible: true;
-          }
+					[overlay]
+					Adw.StatusPage emptyToday {
+						visible: true;
+					}
 
-          [overlay]
-          Box {
-            halign: center;
-            valign: end;
-            margin-bottom: 6;
+					[overlay]
+					Box {
+						halign: center;
+						valign: end;
+						margin-bottom: 6;
 
-            Button unselectBtn {
-              styles [
-                'pill',
-                'secondary',
-                'floating'
-              ]
+						Button unselectBtn {
+							styles [
+								'pill',
+								'secondary',
+								'floating'
+							]
 
-              clicked => $_unselectTodayItems();
-              tooltip-text: _("Unselect");
-              visible: false;
-              icon-name: 'unselect-meds-symbolic';
-            }
+							clicked => $_unselectTodayItems();
+							tooltip-text: _("Unselect");
+							visible: false;
+							icon-name: 'unselect-meds-symbolic';
+						}
 
-            Button entryBtn {
-              styles [
-                'pill',
-                'floating'
-              ]
+						Button entryBtn {
+							styles [
+								'pill',
+								'floating'
+							]
 
-              clicked => $_addTodayToHistory();
-              name: '1';
-              label: _("One-time entry");
-            }
+							clicked => $_addTodayToHistory();
+							name: '1';
+							label: _("One-time entry");
+						}
 
-            Button skipBtn {
-              styles [
-                'pill',
-                'secondary',
-                'floating'
-              ]
+						Button skipBtn {
+							styles [
+								'pill',
+								'secondary',
+								'floating'
+							]
 
-              clicked => $_addTodayToHistory();
-              name: '0';
-              tooltip-text: _("Skip");
-              visible: false;
-              icon-name: 'skip-med-symbolic';
-            }
-          }
-        };
-      }
+							clicked => $_addTodayToHistory();
+							name: '0';
+							tooltip-text: _("Skip");
+							visible: false;
+							icon-name: 'skip-med-symbolic';
+						}
+					}
+				};
+			}
 
-      Adw.ViewStackPage historyPage {
-        name: 'history-page';
-        title: _("History");
-        icon-name: 'history-symbolic';
+			Adw.ViewStackPage historyPage {
+				name: 'history-page';
+				title: _("History");
+				icon-name: 'history-symbolic';
 
-        child: Overlay historyOverlay {
-          ScrolledWindow {
-            Adw.ClampScrollable {
-              ListView historyList {
-                styles [
-                  'dosage-list',
-                  'history',
-                  'scroll-to-top-hack'
-                ]
+				child: Overlay historyOverlay {
+					ScrolledWindow {
+						Adw.ClampScrollable {
+							ListView historyList {
+								styles [
+									'dosage-list',
+									'history',
+									'scroll-to-top-hack'
+								]
 
-                activate => $_editHistoryItem();
-                single-click-activate: true;
-              }
-            }
-          }
+								activate => $_editHistoryItem();
+								single-click-activate: true;
+							}
+						}
+					}
 
-          [overlay]
-          Adw.StatusPage emptyHistory {
-            icon-name: 'history-empty-symbolic';
-            visible: false;
-          }
+					[overlay]
+					Adw.StatusPage emptyHistory {
+						icon-name: 'history-empty-symbolic';
+						visible: false;
+					}
 
-          [overlay]
-          Box {
-            halign: center;
-            valign: end;
+					[overlay]
+					Box {
+						halign: center;
+						valign: end;
 
-            Button toogleHistAmountBtn {
-              halign: center;
-              valign: end;
-              margin-bottom: 6;
-              clicked => $_toggleHistoryAmount();
+						Button toogleHistAmountBtn {
+							halign: center;
+							valign: end;
+							margin-bottom: 6;
+							clicked => $_toggleHistoryAmount();
 
-              styles [
-                'pill',
-                'floating'
-              ]
-            }
-          }
-        };
-      }
+							styles [
+								'pill',
+								'floating'
+							]
+						}
+					}
+				};
+			}
 
-      Adw.ViewStackPage treatmentsPage {
-        name: 'treatments-page';
-        title: _("Treatments");
-        icon-name: 'treatments-symbolic';
+			Adw.ViewStackPage treatmentsPage {
+				name: 'treatments-page';
+				title: _("Treatments");
+				icon-name: 'treatments-symbolic';
 
-        child: Overlay {
-          ScrolledWindow {
-            Adw.ClampScrollable {
-              vexpand: true;
+				child: Overlay {
+					ScrolledWindow {
+						Adw.ClampScrollable {
+							vexpand: true;
 
-              ListView treatmentsList {
-                styles [
-                  'dosage-list'
-                ]
+							ListView treatmentsList {
+								styles [
+									'dosage-list'
+								]
 
-                activate => $_openMedDialog();
-                single-click-activate: true;
-              }
-            }
-          }
+								activate => $_openMedDialog();
+								single-click-activate: true;
+							}
+						}
+					}
 
-          [overlay]
-          Adw.StatusPage emptyTreatments {
-            icon-name: 'plus-circle-outline-symbolic';
-            title: _("Click the button below to add some");
-            visible: false;
-          }
+					[overlay]
+					Adw.StatusPage emptyTreatments {
+						icon-name: 'plus-circle-outline-symbolic';
+						title: _("Click the button below to add some");
+						visible: false;
+					}
 
-          [overlay]
-          Box {
-            halign: center;
-            valign: end;
+					[overlay]
+					Box {
+						halign: center;
+						valign: end;
 
-            Button addNewMedication {
-              halign: center;
-              valign: end;
-              margin-bottom: 6;
-              clicked => $_openMedDialog();
+						Button addNewMedication {
+							halign: center;
+							valign: end;
+							margin-bottom: 6;
+							clicked => $_openMedDialog();
 
-              styles [
-                'pill',
-                'suggested-action',
-                'floating'
-              ]
+							styles [
+								'pill',
+								'suggested-action',
+								'floating'
+							]
 
-              child: Adw.ButtonContent {
-                icon-name: 'list-add-symbolic';
-                label: _("Add");
-              };
-            }
-          }
-        };
-      }
-    };
+							child: Adw.ButtonContent {
+								icon-name: 'list-add-symbolic';
+								label: _("Add");
+							};
+						}
+					}
+				};
+			}
+		};
 
-    [bottom]
-    Adw.ViewSwitcherBar switcherBar {
-      stack: viewStack;
-    }
-  };
+		[bottom]
+		Adw.ViewSwitcherBar switcherBar {
+			stack: viewStack;
+		}
+	};
 }
 
 menu appMenu {
-  item {
-    label: _("Preferences");
-    action: 'app.preferences';
-  }
+	item {
+		label: _("Preferences");
+		action: 'app.preferences';
+	}
 
-  item {
-    label: _("About Dosage");
-    action: 'app.about';
-  }
+	item {
+		label: _("About Dosage");
+		action: 'app.about';
+	}
 
-  item {
-    label: _("Quit");
-    action: 'app.quit';
-  }
+	item {
+		label: _("Quit");
+		action: 'app.quit';
+	}
 }
