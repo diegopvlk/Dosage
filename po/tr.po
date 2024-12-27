@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-26 13:54-0300\n"
-"PO-Revision-Date: 2024-03-22 11:45+0000\n"
+"PO-Revision-Date: 2024-12-27 23:00+0000\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
 ">\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Project-Style: gnome\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
@@ -588,7 +588,7 @@ msgstr "Seçenekler"
 
 #: src/treatmentsFactory.js:114
 msgid "Refill"
-msgstr ""
+msgstr "Yeniden doldur"
 
 #: src/treatmentsFactory.js:115
 msgid "Duplicate"
@@ -641,11 +641,11 @@ msgstr "Stok sayısı azalmış ilaçlarınız var"
 
 #: src/window.js:305
 msgid "Show all"
-msgstr ""
+msgstr "Tümünü göster"
 
 #: src/window.js:328
 msgid "Show less"
-msgstr ""
+msgstr "Daha azını göster"
 
 #: src/window.js:455
 msgid "No results found"
