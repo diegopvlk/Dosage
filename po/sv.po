@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-26 13:54-0300\n"
-"PO-Revision-Date: 2024-10-24 09:15+0000\n"
+"PO-Revision-Date: 2024-12-27 23:00+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.2-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
@@ -586,7 +586,7 @@ msgstr "Alternativ"
 
 #: src/treatmentsFactory.js:114
 msgid "Refill"
-msgstr ""
+msgstr "Fyll på"
 
 #: src/treatmentsFactory.js:115
 msgid "Duplicate"
@@ -639,11 +639,11 @@ msgstr "Du har behandlingar som har lågt lager"
 
 #: src/window.js:305
 msgid "Show all"
-msgstr ""
+msgstr "Visa alla"
 
 #: src/window.js:328
 msgid "Show less"
-msgstr ""
+msgstr "Visa mindre"
 
 #: src/window.js:455
 msgid "No results found"
