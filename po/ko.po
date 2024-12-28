@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-26 13:54-0300\n"
+"POT-Creation-Date: 2024-12-28 12:12-0300\n"
 "PO-Revision-Date: 2024-07-02 22:09+0000\n"
-"Last-Translator: DohGun Lee <payonsystem@gmail.com>\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/dosage/dosage/ko/"
 ">\n"
 "Language: ko\n"
@@ -32,636 +32,639 @@ msgstr "치료 과정을 추적하세요"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid ""
-"Easily manage track treatments with Dosage: Notifications, History, Multiple "
-"Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
-"Control"
-msgstr ""
+"Easily manage and track treatments with Dosage: notifications, history, "
+"multiple doses, flexible frequency, customization, stock monitoring, and "
+"duration control\""
+msgstr "복용량으로 치료를 쉽게 관리하고 추적하세요: 알림, 기록, 여러 복용량, 유연한 빈도, "
+"사용자 정의, 재고 모니터링 및 기간 제어"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:26
 msgid "Features:"
-msgstr ""
+msgstr "특징:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:28
 msgid "Notifications — Get reminders at the right time"
-msgstr ""
+msgstr "알림 — 적절한 시간에 알림 받기"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
 msgid "History — See which medications you took, skipped or missed"
-msgstr ""
+msgstr "기록 — 어떤 약을 복용했는지, 건너뛰었는지, 놓쳤는지 보기"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid "Dosage management — Multiple doses with different times"
-msgstr ""
+msgstr "복용량 관리 — 서로 다른 시간에 여러 복용량"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
 msgid ""
 "Frequency modes — Every day, specific days, cycle or just when necessary"
-msgstr ""
+msgstr "빈도 모드 — 매일, 특정 요일, 주기 또는 필요할 때만"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:32
 msgid "Color and icon — Give a shape for your treatment"
-msgstr ""
+msgstr "색상 및 아이콘 — 치료에 형태 부여하기"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
-msgstr ""
+msgstr "재고 추적 — 재고를 모니터링하고 부족할 때 알림 받기"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:34
 msgid "Duration — Define the start and end dates"
-msgstr ""
+msgstr "기간 — 시작 및 종료 날짜 정의하기"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid "Dosage today window in light theme"
-msgstr ""
+msgstr "오늘의 복용량 창 (라이트 테마)"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:50
 msgid "Dosage preferences window in light theme"
-msgstr ""
+msgstr "복용량 설정 창 (라이트 테마)"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:55
 msgid "Dosage edit treatment window in light theme"
-msgstr ""
+msgstr "복용량 치료 편집 창 (라이트 테마)"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:60
 msgid "Dosage today window in dark theme"
-msgstr ""
+msgstr "오늘의 복용량 창 (다크 테마)"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
-msgstr ""
+msgstr "약물;추적기;알림;오늘;치료;알약;약;치료제;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "일반"
 
 #: data/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Preferences"
-msgstr ""
+msgstr "선호사항"
 
 #: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "바로가기 표시"
 
 #: data/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "종료"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
-msgstr ""
+msgstr "새 치료"
 
 #: data/ui/med-dialog.blp:19 src/medDialog.js:927
 msgid "Cancel"
-msgstr ""
+msgstr "취소"
 
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:226
 msgid "Add"
-msgstr ""
+msgstr "추가"
 
 #: data/ui/med-dialog.blp:59
 msgid "From treatment list"
-msgstr ""
+msgstr "치료 목록에서"
 
 #: data/ui/med-dialog.blp:64
 msgid "Name"
-msgstr ""
+msgstr "이름"
 
 #: data/ui/med-dialog.blp:68
 msgid "Unit"
-msgstr ""
+msgstr "단위"
 
 #: data/ui/med-dialog.blp:69 src/medDialog.js:249
 msgid "Pill(s)"
-msgstr ""
+msgstr "알약"
 
 #: data/ui/med-dialog.blp:73
 msgid "Notes"
-msgstr ""
+msgstr "메모"
 
 #: data/ui/med-dialog.blp:74
 msgid "After meal"
-msgstr ""
+msgstr "식사 후"
 
 #: data/ui/med-dialog.blp:82
 msgid "Form"
-msgstr ""
+msgstr "형태"
 
 #: data/ui/med-dialog.blp:83
 msgid "Color and icon"
-msgstr ""
+msgstr "색상 및 아이콘"
 
 #: data/ui/med-dialog.blp:93 src/medDialog.js:305
 msgid "Color"
-msgstr ""
+msgstr "색상"
 
 #. TRANSLATORS: Tooltip for the colors (from Default until Purple)
 #: data/ui/med-dialog.blp:110
 msgid "Default"
-msgstr ""
+msgstr "기본"
 
 #: data/ui/med-dialog.blp:122
 msgid "Red"
-msgstr ""
+msgstr "빨간색"
 
 #: data/ui/med-dialog.blp:134
 msgid "Orange"
-msgstr ""
+msgstr "주황색"
 
 #: data/ui/med-dialog.blp:146
 msgid "Yellow"
-msgstr ""
+msgstr "노란색"
 
 #: data/ui/med-dialog.blp:158
 msgid "Green"
-msgstr ""
+msgstr "녹색"
 
 #: data/ui/med-dialog.blp:170
 msgid "Cyan"
-msgstr ""
+msgstr "시안색"
 
 #: data/ui/med-dialog.blp:182
 msgid "Blue"
-msgstr ""
+msgstr "파란색"
 
 #: data/ui/med-dialog.blp:194
 msgid "Purple"
-msgstr ""
+msgstr "보라색"
 
 #: data/ui/med-dialog.blp:208
 msgid "Icon"
-msgstr ""
+msgstr "아이콘"
 
 #. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
 #: data/ui/med-dialog.blp:227
 msgid "Pill"
-msgstr ""
+msgstr "알약"
 
 #: data/ui/med-dialog.blp:243
 msgid "Alternative pill"
-msgstr ""
+msgstr "대체 알약"
 
 #: data/ui/med-dialog.blp:259
 msgid "Capsule"
-msgstr ""
+msgstr "캡슐"
 
 #: data/ui/med-dialog.blp:275
 msgid "Round pill"
-msgstr ""
+msgstr "둥근 알약"
 
 #: data/ui/med-dialog.blp:291
 msgid "Alternative round pill"
-msgstr ""
+msgstr "대체 둥근 알약"
 
 #: data/ui/med-dialog.blp:307
 msgid "Ampoule"
-msgstr ""
+msgstr "앰플"
 
 #: data/ui/med-dialog.blp:323
 msgid "Injection"
-msgstr ""
+msgstr "주사"
 
 #: data/ui/med-dialog.blp:339
 msgid "Square pill"
-msgstr ""
+msgstr "네모난 알약"
 
 #: data/ui/med-dialog.blp:355
 msgid "Alternative square pill"
-msgstr ""
+msgstr "대체 사각형 알약"
 
 #: data/ui/med-dialog.blp:371
 msgid "Triangle pill"
-msgstr ""
+msgstr "삼각형 알약"
 
 #: data/ui/med-dialog.blp:387
 msgid "Alternative triangle pill"
-msgstr ""
+msgstr "대체 삼각형 알약"
 
 #: data/ui/med-dialog.blp:403
 msgid "Bottle"
-msgstr ""
+msgstr "병"
 
 #: data/ui/med-dialog.blp:419
-msgid "Drop"
+msgid "Drops"
 msgstr ""
 
 #: data/ui/med-dialog.blp:435
 msgid "Potion"
-msgstr ""
+msgstr "약물"
 
 #: data/ui/med-dialog.blp:448 src/medDialog.js:834
 msgid "Frequency"
-msgstr ""
+msgstr "빈도"
 
 #: data/ui/med-dialog.blp:453
 msgid "Every day"
-msgstr ""
+msgstr "매일"
 
 #: data/ui/med-dialog.blp:454 src/medDialog.js:826
 msgid "Specific days"
-msgstr ""
+msgstr "특정 요일"
 
 #: data/ui/med-dialog.blp:455 src/medDialog.js:800 src/treatmentsFactory.js:168
 msgid "Day of the month"
-msgstr ""
+msgstr "월의 날짜"
 
 #: data/ui/med-dialog.blp:456 src/medDialog.js:831 src/treatmentsFactory.js:189
 msgid "Cycle"
-msgstr ""
+msgstr "주기"
 
 #: data/ui/med-dialog.blp:457 src/treatmentsFactory.js:193
 msgid "When necessary"
-msgstr ""
+msgstr "필요할 때"
 
 #: data/ui/med-dialog.blp:469
 msgid "Choose days"
-msgstr ""
+msgstr "요일 선택"
 
 #: data/ui/med-dialog.blp:566
 msgid "Choose day"
-msgstr ""
+msgstr "요일 선택"
 
 #: data/ui/med-dialog.blp:602
 msgid "Change cycle"
-msgstr ""
+msgstr "주기 변경"
 
 #: data/ui/med-dialog.blp:619
 msgid "Days active"
-msgstr ""
+msgstr "활성화된 날"
 
 #: data/ui/med-dialog.blp:633
 msgid "Days inactive"
-msgstr ""
+msgstr "비활성화된 날"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-dialog.blp:648
 msgid "Today is cycle day…"
-msgstr ""
+msgstr "오늘은 주기 날입니다…"
 
 #: data/ui/med-dialog.blp:665
 msgid "Time and amount"
-msgstr ""
+msgstr "시간 및 양"
 
 #: data/ui/med-dialog.blp:678
 msgid "Add dose"
-msgstr ""
+msgstr "복용량 추가"
 
 #: data/ui/med-dialog.blp:699 src/historyFactory.js:158
 msgid "Skipped"
-msgstr ""
+msgstr "건너뜀"
 
 #: data/ui/med-dialog.blp:711
 msgid "Confirmed"
-msgstr ""
+msgstr "확인됨"
 
 #: data/ui/med-dialog.blp:718
 msgid "Recurring notifications"
-msgstr ""
+msgstr "반복 알림"
 
 #: data/ui/med-dialog.blp:719
 msgid "Renotify until it's confirmed or skipped"
-msgstr ""
+msgstr "확인되거나 건너뛰어질 때까지 재알림"
 
 #: data/ui/med-dialog.blp:724
 msgid "Interval in minutes"
-msgstr ""
+msgstr "간격 (분)"
 
 #: data/ui/med-dialog.blp:737
 msgid "Inventory"
-msgstr ""
+msgstr "재고"
 
 #: data/ui/med-dialog.blp:738
 msgid "Manage your stock"
-msgstr ""
+msgstr "재고 관리"
 
 #: data/ui/med-dialog.blp:744
 msgid "Current"
-msgstr ""
+msgstr "현재"
 
 #: data/ui/med-dialog.blp:757
 msgid "Remind me at"
-msgstr ""
+msgstr "나에게 알림"
 
 #: data/ui/med-dialog.blp:771
 msgid "Duration"
-msgstr ""
+msgstr "기간"
 
 #: data/ui/med-dialog.blp:772
 msgid "Set start and end dates"
-msgstr ""
+msgstr "시작 및 종료 날짜 설정"
 
 #. TRANSLATORS: label for when duration is enabled
 #: data/ui/med-dialog.blp:782 src/treatmentsFactory.js:148
 msgid "Starts on"
-msgstr ""
+msgstr "시작일"
 
 #: data/ui/med-dialog.blp:792 data/ui/med-dialog.blp:824
 #: data/ui/med-dialog.blp:858
 msgid "Choose date"
-msgstr ""
+msgstr "날짜 선택"
 
 #: data/ui/med-dialog.blp:814
 msgid "Ends on"
-msgstr ""
+msgstr "종료일"
 
 #: data/ui/med-dialog.blp:847
 msgid "Date"
-msgstr ""
+msgstr "날짜"
 
 #: data/ui/med-dialog.blp:880 src/historyFactory.js:147 src/medDialog.js:928
 #: src/treatmentsFactory.js:116
 msgid "Delete"
-msgstr ""
+msgstr "삭제"
 
 #: data/ui/preferences.blp:7 data/ui/window.blp:243
 msgid "Preferences"
-msgstr ""
+msgstr "설정"
 
 #: data/ui/preferences.blp:21
 msgid "Auto-start at login"
-msgstr ""
+msgstr "로그인 시 자동 시작"
 
 #: data/ui/preferences.blp:37
 msgid "Auto-clear history"
-msgstr ""
+msgstr "자동 기록 삭제"
 
 #: data/ui/preferences.blp:38
 msgid "Keeps a maximum of 30 days"
-msgstr ""
+msgstr "최대 30일 유지"
 
 #: data/ui/preferences.blp:54
 msgid "Increase notification priority"
-msgstr ""
+msgstr "알림 우선순위 증가"
 
 #: data/ui/preferences.blp:55
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
 msgstr ""
+"알림이 전체 화면 모드로 표시되거나 '방해 금지'가 활성화되어 있어도 표시되도"
+"록 합니다"
 
 #: data/ui/preferences.blp:71
 msgid "Low stock notification"
-msgstr ""
+msgstr "재고 부족 알림"
 
 #: data/ui/preferences.blp:72
 msgid "Send reminders when treatments are low in stock"
-msgstr ""
+msgstr "치료 재고가 부족할 때 알림 전송"
 
 #: data/ui/preferences.blp:88
 msgid "Notification sound"
-msgstr ""
+msgstr "알림 소리"
 
 #: data/ui/preferences.blp:104
 msgid "Notification buttons"
-msgstr ""
+msgstr "알림 버튼"
 
 #: data/ui/preferences.blp:105
 msgid "Show or hide confirm/skip"
-msgstr ""
+msgstr "확인/건너뛰기 표시 또는 숨기기"
 
 #: data/ui/preferences.blp:114 src/medDialog.js:304 src/window.js:641
 #: src/window.js:832
 msgid "Confirm"
-msgstr ""
+msgstr "확인"
 
 #: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:642
 msgid "Skip"
-msgstr ""
+msgstr "건너뛰기"
 
 #: data/ui/window.blp:24
 msgid "Search"
-msgstr ""
+msgstr "검색"
 
 #: data/ui/window.blp:38
 msgid "Main Menu"
-msgstr ""
+msgstr "메인 메뉴"
 
 #: data/ui/window.blp:51
 msgid "Search…"
-msgstr ""
+msgstr "검색…"
 
 #: data/ui/window.blp:61
 msgid "Today"
-msgstr ""
+msgstr "오늘"
 
 #: data/ui/window.blp:99
 msgid "Unselect"
-msgstr ""
+msgstr "선택 해제"
 
 #: data/ui/window.blp:112 src/window.js:832
 msgid "One-time entry"
-msgstr ""
+msgstr "일회성 입력"
 
 #: data/ui/window.blp:134
 msgid "History"
-msgstr ""
+msgstr "기록"
 
 #: data/ui/window.blp:181
 msgid "Treatments"
-msgstr ""
+msgstr "치료"
 
 #: data/ui/window.blp:203
 msgid "Click the button below to add some"
-msgstr ""
+msgstr "아래 버튼을 클릭하여 추가하세요"
 
 #: data/ui/window.blp:248
 msgid "About Dosage"
-msgstr ""
+msgstr "복용량 정보"
 
 #: data/ui/window.blp:253
 msgid "Quit"
-msgstr ""
+msgstr "종료"
 
 #: src/historyFactory.js:144
 msgid "Restore"
-msgstr ""
+msgstr "복원"
 
 #: src/historyFactory.js:162 src/medDialog.js:359
 msgid "Missed"
-msgstr ""
+msgstr "놓친"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
 msgid "translator-credits"
-msgstr ""
+msgstr "Diego Povliuk <diego.pvlk@gmail.com>"
 
 #: src/main.js:53
 msgid "Thanks to these projects!"
-msgstr ""
+msgstr "이 프로젝트들에 감사드립니다!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:89
 msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
+msgstr "백그라운드에서 실행하고 알림을 받으려면 수락하세요"
 
 #: src/medDialog.js:119
 msgid "Edit treatment"
-msgstr ""
+msgstr "치료 편집"
 
 #: src/medDialog.js:120 src/medDialog.js:374
 msgid "Save"
-msgstr ""
+msgstr "저장"
 
 #: src/medDialog.js:130
 msgid "Copy"
-msgstr ""
+msgstr "복사"
 
 #: src/medDialog.js:238
 msgid "New"
-msgstr ""
+msgstr "새로운"
 
 #: src/medDialog.js:303
 msgid "New entry"
-msgstr ""
+msgstr "새 항목"
 
 #: src/medDialog.js:352 src/medDialog.js:364
 msgid "Confirmed at"
-msgstr ""
+msgstr "확인된 시간"
 
 #: src/medDialog.js:356 src/medDialog.js:368
 msgid "Skipped at"
-msgstr ""
+msgstr "건너뛴 시간"
 
 #: src/medDialog.js:373
 msgid "Edit entry"
-msgstr ""
+msgstr "항목 편집"
 
 #: src/medDialog.js:791
 msgid "Choose"
-msgstr ""
+msgstr "선택"
 
 #: src/medDialog.js:801
 msgid "Day"
-msgstr ""
+msgstr "날"
 
 #: src/medDialog.js:868
 msgid "Empty name"
-msgstr ""
+msgstr "이름이 비어 있습니다"
 
 #: src/medDialog.js:872
 msgid "Empty unit"
-msgstr ""
+msgstr "단위가 비어 있습니다"
 
 #: src/medDialog.js:878
 msgid "Choose at least one day"
-msgstr ""
+msgstr "최소한 하루를 선택하세요"
 
 #: src/medDialog.js:889
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "이름이 치료 목록에 이미 있습니다"
 
 #: src/medDialog.js:903
 msgid "Duplicated time"
-msgstr ""
+msgstr "중복된 시간"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
 #: src/medDialog.js:923
 msgid "Are you sure?"
-msgstr ""
+msgstr "확실합니까?"
 
 #: src/medDialog.js:924
 msgid "will be deleted"
-msgstr ""
+msgstr "삭제됩니다"
 
 #: src/todayFactory.js:95
 msgid "Change dose"
-msgstr ""
+msgstr "복용량 변경"
 
 #: src/treatmentsFactory.js:65
 msgid "Options"
-msgstr ""
+msgstr "옵션"
 
 #: src/treatmentsFactory.js:114
 msgid "Refill"
-msgstr ""
+msgstr "재충전"
 
 #: src/treatmentsFactory.js:115
 msgid "Duplicate"
-msgstr ""
+msgstr "복제"
 
 #: src/treatmentsFactory.js:138
 msgid "Remaining"
-msgstr ""
+msgstr "남은"
 
 #: src/treatmentsFactory.js:142
 msgid "Low stock"
-msgstr ""
+msgstr "재고 부족"
 
 #: src/treatmentsFactory.js:149
 msgid "Until"
-msgstr ""
+msgstr "까지"
 
 #: src/treatmentsFactory.js:150
 msgid "Ended on"
-msgstr ""
+msgstr "종료일"
 
 #: src/treatmentsFactory.js:162 src/utils.js:52
 msgid "Daily"
-msgstr ""
+msgstr "매일"
 
 #: src/treatmentsFactory.js:177 src/treatmentsFactory.js:180
 msgid "Next dose"
-msgstr ""
+msgstr "다음 복용량"
 
 #: src/utils.js:48
 msgid "Weekends"
-msgstr ""
+msgstr "주말"
 
 #: src/utils.js:50
 msgid "Weekdays"
-msgstr ""
+msgstr "평일"
 
 #: src/utils.js:349
 msgid "Delete dose"
-msgstr ""
+msgstr "복용량 삭제"
 
 #: src/window.js:134 src/window.js:677
 msgid "Reminder"
-msgstr ""
+msgstr "알림"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:136
 msgid "You have treatments low in stock"
-msgstr ""
+msgstr "재고가 부족한 치료가 있습니다"
 
 #: src/window.js:305
 msgid "Show all"
-msgstr ""
+msgstr "모두 보기"
 
 #: src/window.js:328
 msgid "Show less"
-msgstr ""
+msgstr "덜 보기"
 
 #: src/window.js:455
 msgid "No results found"
-msgstr ""
+msgstr "결과가 없습니다"
 
 #: src/window.js:455 src/window.js:1122
 msgid "Empty history"
-msgstr ""
+msgstr "기록이 비어 있습니다"
 
 #: src/window.js:560
 msgid "No treatments added yet"
-msgstr ""
+msgstr "아직 추가된 치료가 없습니다"
 
 #: src/window.js:564
 msgid "All done for today"
-msgstr ""
+msgstr "오늘은 모두 완료되었습니다"
 
 #: src/window.js:641
 msgid "Confirm all"
-msgstr ""
+msgstr "모두 확인"
 
 #: src/window.js:642
 msgid "Skip all"
-msgstr ""
+msgstr "모두 건너뛰기"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:672
 #, javascript-format
 msgid "and %d more"
-msgstr ""
+msgstr "그리고 %d개 더"
