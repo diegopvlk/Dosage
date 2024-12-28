@@ -100,7 +100,12 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 		margin_end: 10,
 		visible: false,
 		popover: new Gtk.Popover({
-			child: amountBox,
+			css_classes: ['menu', 'popover-scrolled'],
+			child: new Gtk.ScrolledWindow({
+				propagate_natural_height: true,
+				propagate_natural_width: true,
+				child: amountBox,
+			}),
 		}),
 	});
 	box.append(amountBtn);
@@ -124,7 +129,11 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	const labelsBox = icon.get_next_sibling();
 	const amtBtn = labelsBox.get_next_sibling();
 	const amtBtnPopover = amtBtn.get_popover();
-	const amtSpinRow = amtBtnPopover.get_child().get_first_child();
+	const amtSpinRow = amtBtnPopover
+		.get_child()
+		.get_first_child()
+		.get_first_child()
+		.get_first_child();
 	const name = labelsBox.get_first_child();
 	const doseAndNotes = name.get_next_sibling();
 	const checkButton = box.get_last_child();

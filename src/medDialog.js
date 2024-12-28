@@ -52,13 +52,13 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 			removeCssColors(dosageColorButton);
 			dosageColorButton.add_css_class(clr.get_name() + '-clr');
 			dosageColorButton.name = clr.get_name();
-			dosageColorBox.get_parent().get_parent().popdown();
+			dosageColorBox.get_parent().get_parent().get_parent().get_parent().popdown();
 		});
 	}
 	for (const icn of dosageIconBox) {
 		icn.connect('clicked', () => {
 			dosageIconButton.set_icon_name(icn.get_icon_name());
-			dosageIconBox.get_parent().get_parent().popdown();
+			dosageIconBox.get_parent().get_parent().get_parent().get_parent().popdown();
 		});
 	}
 

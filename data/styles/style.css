@@ -121,6 +121,9 @@ list.boxed-list-separate
   border-bottom-left-radius: var(--list-border-radius);
   border-bottom-right-radius: var(--list-border-radius);
 }
+.dose-time popover contents {
+  min-width: 0;
+}
 .dose-time > button {
   padding: 4px 6px;
 }
@@ -149,18 +152,20 @@ button.am-pm {
   border-radius: var(--list-border-radius);
   margin: 2px;
 }
-#specific-days-popover contents {
-  padding: 0px 10px;
-}
 button.specific-day {
   min-width: 40px;
   padding-left: 0;
   padding-right: 0;
 }
+.popover-scrolled > contents {
+  padding: 5px 10px;
+}
 .one-time-menu popover contents:dir(ltr) {
+  padding: 6px;
   padding-right: 0;
 }
 .one-time-menu popover contents:dir(rtl) {
+  padding: 6px;
   padding-left: 0;
 }
 button.arrow-button,
@@ -382,6 +387,14 @@ button.floating:not(.suggested-action):active {
   background: var(--window-bg-color);
   box-shadow: 0 1px 2px 1px rgb(from black r g b / calc(alpha * 0.1));
 }
+.popover-calendar contents {
+  padding: 1px;
+}
+calendar {
+  padding: 5px 4px;
+  border-color: transparent;
+  background-color: transparent;
+}
 calendar button,
 calendar .day-number {
   border-radius: 99px;
@@ -392,16 +405,20 @@ calendar .year {
   margin-bottom: 5px;
   margin-top: -1px;
 }
-calendar .month,
-calendar .year {
+calendar .month label,
+calendar .year,
+calendar .day-name {
   font-weight: bold;
+  text-transform: capitalize;
 }
 calendar .day-name {
   opacity: 0.5;
 }
 calendar .day-number {
   border-radius: 99px;
-  padding: 8px 0;
+  padding: 2px 0;
+  min-width: 28px;
+  min-height: 28px;
 }
 .calendar-error {
   border-radius: 10px;

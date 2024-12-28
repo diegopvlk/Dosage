@@ -409,7 +409,11 @@ export function doseRow(timeDose) {
 		valign: Gtk.Align.CENTER,
 		halign: Gtk.Align.START,
 		popover: new Gtk.Popover({
-			child: doseTimeBox,
+			child: new Gtk.ScrolledWindow({
+				propagate_natural_height: true,
+				propagate_natural_width: true,
+				child: doseTimeBox,
+			}),
 		}),
 	});
 

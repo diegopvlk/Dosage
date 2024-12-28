@@ -95,104 +95,114 @@ Adw.Dialog medDialog {
 									icon-name: 'color-filled-symbolic';
 
 									popover: Popover {
-										Box dosageColorBox {
-											spacing: 4;
+										styles [
+											"menu",
+											"popover-scrolled"
+										]
 
-											Button {
-												styles [
-													'circular',
-													'default-clr'
-												]
+										ScrolledWindow {
+											propagate-natural-height: true;
+											propagate-natural-width: true;
 
-												valign: center;
-												name: 'default';
-												// TRANSLATORS: Tooltip for the colors (from Default until Purple)
-												tooltip-text: _("Default");
-												icon-name: 'color-filled-symbolic';
-											}
+											Box dosageColorBox {
+												spacing: 4;
 
-											Button {
-												styles [
-													'circular',
-													'red-clr'
-												]
+												Button {
+													styles [
+														'circular',
+														'default-clr'
+													]
 
-												valign: center;
-												name: 'red';
-												tooltip-text: _("Red");
-												icon-name: 'color-filled-symbolic';
-											}
+													valign: center;
+													name: 'default';
+													// TRANSLATORS: Tooltip for the colors (from Default until Purple)
+													tooltip-text: _("Default");
+													icon-name: 'color-filled-symbolic';
+												}
 
-											Button {
-												styles [
-													'circular',
-													'orange-clr'
-												]
+												Button {
+													styles [
+														'circular',
+														'red-clr'
+													]
 
-												valign: center;
-												name: 'orange';
-												tooltip-text: _("Orange");
-												icon-name: 'color-filled-symbolic';
-											}
+													valign: center;
+													name: 'red';
+													tooltip-text: _("Red");
+													icon-name: 'color-filled-symbolic';
+												}
 
-											Button {
-												styles [
-													'circular',
-													'yellow-clr'
-												]
+												Button {
+													styles [
+														'circular',
+														'orange-clr'
+													]
 
-												valign: center;
-												name: 'yellow';
-												tooltip-text: _("Yellow");
-												icon-name: 'color-filled-symbolic';
-											}
+													valign: center;
+													name: 'orange';
+													tooltip-text: _("Orange");
+													icon-name: 'color-filled-symbolic';
+												}
 
-											Button {
-												styles [
-													'circular',
-													'green-clr'
-												]
+												Button {
+													styles [
+														'circular',
+														'yellow-clr'
+													]
 
-												valign: center;
-												name: 'green';
-												tooltip-text: _("Green");
-												icon-name: 'color-filled-symbolic';
-											}
+													valign: center;
+													name: 'yellow';
+													tooltip-text: _("Yellow");
+													icon-name: 'color-filled-symbolic';
+												}
 
-											Button {
-												styles [
-													'circular',
-													'cyan-clr'
-												]
+												Button {
+													styles [
+														'circular',
+														'green-clr'
+													]
 
-												valign: center;
-												name: 'cyan';
-												tooltip-text: _("Cyan");
-												icon-name: 'color-filled-symbolic';
-											}
+													valign: center;
+													name: 'green';
+													tooltip-text: _("Green");
+													icon-name: 'color-filled-symbolic';
+												}
 
-											Button {
-												styles [
-													'circular',
-													'blue-clr'
-												]
+												Button {
+													styles [
+														'circular',
+														'cyan-clr'
+													]
 
-												valign: center;
-												name: 'blue';
-												tooltip-text: _("Blue");
-												icon-name: 'color-filled-symbolic';
-											}
+													valign: center;
+													name: 'cyan';
+													tooltip-text: _("Cyan");
+													icon-name: 'color-filled-symbolic';
+												}
 
-											Button {
-												styles [
-													'circular',
-													'purple-clr'
-												]
+												Button {
+													styles [
+														'circular',
+														'blue-clr'
+													]
 
-												valign: center;
-												name: 'purple';
-												tooltip-text: _("Purple");
-												icon-name: 'color-filled-symbolic';
+													valign: center;
+													name: 'blue';
+													tooltip-text: _("Blue");
+													icon-name: 'color-filled-symbolic';
+												}
+
+												Button {
+													styles [
+														'circular',
+														'purple-clr'
+													]
+
+													valign: center;
+													name: 'purple';
+													tooltip-text: _("Purple");
+													icon-name: 'color-filled-symbolic';
+												}
 											}
 										}
 									};
@@ -209,230 +219,244 @@ Adw.Dialog medDialog {
 									icon-name: 'pill-symbolic';
 
 									popover: Popover {
-										Grid dosageIconBox {
-											Button {
-												layout {
-													row: "0";
-													column: "0";
+										styles [
+											"menu",
+											"popover-scrolled"
+										]
+
+										ScrolledWindow {
+											propagate-natural-height: true;
+											propagate-natural-width: true;
+
+											Grid dosageIconBox {
+												margin-top: 3;
+												margin-bottom: 3;
+												row-spacing: 3;
+
+												Button {
+													layout {
+														row: "0";
+														column: "0";
+													}
+
+													styles [
+														'flat',
+														'circular'
+													]
+
+													valign: center;
+													icon-name: 'pill-symbolic';
+													// TRANSLATORS: Tooltip for the icons (from Pill until Potion)
+													tooltip-text: _("Pill");
 												}
 
-												styles [
-													'flat',
-													'circular'
-												]
+												Button {
+													layout {
+														row: "0";
+														column: "1";
+													}
 
-												valign: center;
-												icon-name: 'pill-symbolic';
-												// TRANSLATORS: Tooltip for the icons (from Pill until Potion)
-												tooltip-text: _("Pill");
-											}
+													styles [
+														'flat',
+														'circular'
+													]
 
-											Button {
-												layout {
-													row: "0";
-													column: "1";
+													valign: center;
+													icon-name: 'pill-alt-symbolic';
+													tooltip-text: _("Alternative pill");
 												}
 
-												styles [
-													'flat',
-													'circular'
-												]
+												Button {
+													layout {
+														row: "0";
+														column: "2";
+													}
 
-												valign: center;
-												icon-name: 'pill-alt-symbolic';
-												tooltip-text: _("Alternative pill");
-											}
+													styles [
+														'flat',
+														'circular'
+													]
 
-											Button {
-												layout {
-													row: "0";
-													column: "2";
+													valign: center;
+													icon-name: 'pill-capsule-symbolic';
+													tooltip-text: _("Capsule");
 												}
 
-												styles [
-													'flat',
-													'circular'
-												]
+												Button {
+													layout {
+														row: "0";
+														column: "3";
+													}
 
-												valign: center;
-												icon-name: 'pill-capsule-symbolic';
-												tooltip-text: _("Capsule");
-											}
+													styles [
+														'flat',
+														'circular'
+													]
 
-											Button {
-												layout {
-													row: "0";
-													column: "3";
+													valign: center;
+													icon-name: 'pill-round-symbolic';
+													tooltip-text: _("Round pill");
 												}
 
-												styles [
-													'flat',
-													'circular'
-												]
+												Button {
+													layout {
+														row: "0";
+														column: "4";
+													}
 
-												valign: center;
-												icon-name: 'pill-round-symbolic';
-												tooltip-text: _("Round pill");
-											}
+													styles [
+														'flat',
+														'circular'
+													]
 
-											Button {
-												layout {
-													row: "0";
-													column: "4";
+													valign: center;
+													icon-name: 'pill-round-alt-symbolic';
+													tooltip-text: _("Alternative round pill");
 												}
 
-												styles [
-													'flat',
-													'circular'
-												]
+												Button {
+													layout {
+														row: "0";
+														column: "5";
+													}
 
-												valign: center;
-												icon-name: 'pill-round-alt-symbolic';
-												tooltip-text: _("Alternative round pill");
-											}
+													styles [
+														'flat',
+														'circular'
+													]
 
-											Button {
-												layout {
-													row: "0";
-													column: "5";
+													valign: center;
+													icon-name: 'ampoule-symbolic';
+													tooltip-text: _("Ampoule");
 												}
 
-												styles [
-													'flat',
-													'circular'
-												]
+												Button {
+													layout {
+														row: "0";
+														column: "6";
+													}
 
-												valign: center;
-												icon-name: 'ampoule-symbolic';
-												tooltip-text: _("Ampoule");
-											}
+													styles [
+														'flat',
+														'circular'
+													]
 
-											Button {
-												layout {
-													row: "0";
-													column: "6";
+													valign: center;
+													icon-name: 'injection-symbolic';
+													tooltip-text: _("Injection");
 												}
 
-												styles [
-													'flat',
-													'circular'
-												]
+												Button {
+													layout {
+														row: "1";
+														column: "0";
+													}
 
-												valign: center;
-												icon-name: 'injection-symbolic';
-												tooltip-text: _("Injection");
-											}
+													styles [
+														'flat',
+														'circular'
+													]
 
-											Button {
-												layout {
-													row: "1";
-													column: "0";
+													valign: center;
+													icon-name: 'pill-square-symbolic';
+													tooltip-text: _("Square pill");
 												}
 
-												styles [
-													'flat',
-													'circular'
-												]
+												Button {
+													layout {
+														row: "1";
+														column: "1";
+													}
 
-												valign: center;
-												icon-name: 'pill-square-symbolic';
-												tooltip-text: _("Square pill");
-											}
+													styles [
+														'flat',
+														'circular'
+													]
 
-											Button {
-												layout {
-													row: "1";
-													column: "1";
+													valign: center;
+													icon-name: 'pill-square-alt-symbolic';
+													tooltip-text: _("Alternative square pill");
 												}
 
-												styles [
-													'flat',
-													'circular'
-												]
+												Button {
+													layout {
+														row: "1";
+														column: "2";
+													}
 
-												valign: center;
-												icon-name: 'pill-square-alt-symbolic';
-												tooltip-text: _("Alternative square pill");
-											}
+													styles [
+														'flat',
+														'circular'
+													]
 
-											Button {
-												layout {
-													row: "1";
-													column: "2";
+													valign: center;
+													icon-name: 'pill-triangle-symbolic';
+													tooltip-text: _("Triangle pill");
 												}
 
-												styles [
-													'flat',
-													'circular'
-												]
+												Button {
+													layout {
+														row: "1";
+														column: "3";
+													}
 
-												valign: center;
-												icon-name: 'pill-triangle-symbolic';
-												tooltip-text: _("Triangle pill");
-											}
+													styles [
+														'flat',
+														'circular'
+													]
 
-											Button {
-												layout {
-													row: "1";
-													column: "3";
+													valign: center;
+													icon-name: 'pill-triangle-alt-symbolic';
+													tooltip-text: _("Alternative triangle pill");
 												}
 
-												styles [
-													'flat',
-													'circular'
-												]
+												Button {
+													layout {
+														row: "1";
+														column: "4";
+													}
 
-												valign: center;
-												icon-name: 'pill-triangle-alt-symbolic';
-												tooltip-text: _("Alternative triangle pill");
-											}
+													styles [
+														'flat',
+														'circular'
+													]
 
-											Button {
-												layout {
-													row: "1";
-													column: "4";
+													valign: center;
+													icon-name: 'med-bottle-symbolic';
+													tooltip-text: _("Bottle");
 												}
 
-												styles [
-													'flat',
-													'circular'
-												]
+												Button {
+													layout {
+														row: "1";
+														column: "5";
+													}
 
-												valign: center;
-												icon-name: 'med-bottle-symbolic';
-												tooltip-text: _("Bottle");
-											}
+													styles [
+														'flat',
+														'circular'
+													]
 
-											Button {
-												layout {
-													row: "1";
-													column: "5";
+													valign: center;
+													icon-name: 'med-drop-symbolic';
+													tooltip-text: _("Drops");
 												}
 
-												styles [
-													'flat',
-													'circular'
-												]
+												Button {
+													layout {
+														row: "1";
+														column: "6";
+													}
 
-												valign: center;
-												icon-name: 'med-drop-symbolic';
-												tooltip-text: _("Drop");
-											}
+													styles [
+														'flat',
+														'circular'
+													]
 
-											Button {
-												layout {
-													row: "1";
-													column: "6";
+													valign: center;
+													icon-name: 'magic-potion-symbolic';
+													tooltip-text: _("Potion");
 												}
-
-												styles [
-													'flat',
-													'circular'
-												]
-
-												valign: center;
-												icon-name: 'magic-potion-symbolic';
-												tooltip-text: _("Potion");
 											}
 										}
 									};
@@ -473,7 +497,10 @@ Adw.Dialog medDialog {
 									}
 
 									popover: Popover {
-										name: 'specific-days-popover';
+										styles [
+											"menu",
+											"popover-scrolled"
+										]
 
 										ScrolledWindow {
 											propagate-natural-width: true;
@@ -570,22 +597,32 @@ Adw.Dialog medDialog {
 									}
 
 									popover: Popover {
-										Box {
-											styles [
-												'spin-box'
-											]
+										styles [
+											"menu",
+											"popover-scrolled"
+										]
 
-											Adw.SpinRow dayOfMonth {
-												activatable: false;
-												selectable: false;
-												climb-rate: 0.2;
+										ScrolledWindow {
+											propagate-natural-height: true;
+											propagate-natural-width: true;
 
-												adjustment: Adjustment {
-													lower: 1;
-													upper: 28;
-													step-increment: 1;
-													value: 1;
-												};
+											Box {
+												styles [
+													'spin-box'
+												]
+
+												Adw.SpinRow dayOfMonth {
+													activatable: false;
+													selectable: false;
+													climb-rate: 0.2;
+
+													adjustment: Adjustment {
+														lower: 1;
+														upper: 28;
+														step-increment: 1;
+														value: 1;
+													};
+												}
 											}
 										}
 									};
@@ -606,54 +643,64 @@ Adw.Dialog medDialog {
 									}
 
 									popover: Popover {
-										Box {
-											styles [
-												'spin-box'
-											]
+										styles [
+											"menu",
+											"popover-scrolled"
+										]
 
-											orientation: vertical;
+										ScrolledWindow {
+											propagate-natural-height: true;
+											propagate-natural-width: true;
 
-											Adw.SpinRow cycleActive {
-												activatable: false;
-												selectable: false;
-												title: _("Days active");
-												climb-rate: 0.2;
+											Box {
+												styles [
+													'spin-box'
+												]
 
-												adjustment: Adjustment {
-													lower: 1;
-													upper: 365;
-													step-increment: 1;
-													value: 21;
-												};
-											}
+												orientation: vertical;
 
-											Adw.SpinRow cycleInactive {
-												activatable: false;
-												selectable: false;
-												title: _("Days inactive");
-												climb-rate: 0.2;
+												Adw.SpinRow cycleActive {
+													activatable: false;
+													selectable: false;
+													title: _("Days active");
+													climb-rate: 0.2;
 
-												adjustment: Adjustment {
-													lower: 1;
-													upper: 365;
-													step-increment: 1;
-													value: 7;
-												};
-											}
+													adjustment: Adjustment {
+														lower: 1;
+														upper: 365;
+														step-increment: 1;
+														value: 21;
+													};
+												}
 
-											Adw.SpinRow cycleCurrent {
-												activatable: false;
-												selectable: false;
-												// TRANSLATORS: Day in cycle, try to keep it short
-												title: _("Today is cycle day…");
-												climb-rate: 0.2;
+												Adw.SpinRow cycleInactive {
+													activatable: false;
+													selectable: false;
+													title: _("Days inactive");
+													climb-rate: 0.2;
 
-												adjustment: Adjustment {
-													lower: 1;
-													upper: 365;
-													step-increment: 1;
-													value: 1;
-												};
+													adjustment: Adjustment {
+														lower: 1;
+														upper: 365;
+														step-increment: 1;
+														value: 7;
+													};
+												}
+
+												Adw.SpinRow cycleCurrent {
+													activatable: false;
+													selectable: false;
+													// TRANSLATORS: Day in cycle, try to keep it short
+													title: _("Today is cycle day…");
+													climb-rate: 0.2;
+
+													adjustment: Adjustment {
+														lower: 1;
+														upper: 365;
+														step-increment: 1;
+														value: 1;
+													};
+												}
 											}
 										}
 									};
@@ -796,10 +843,21 @@ Adw.Dialog medDialog {
 										]
 
 										popover: Popover {
-											Calendar calendarStart {
-												show-day-names: true;
-												show-week-numbers: false;
-												show-heading: true;
+											styles [
+												"menu",
+												"popover-scrolled",
+												"popover-calendar"
+											]
+
+											ScrolledWindow {
+												propagate-natural-height: true;
+												propagate-natural-width: true;
+
+												Calendar calendarStart {
+													show-day-names: true;
+													show-week-numbers: false;
+													show-heading: true;
+												}
 											}
 										};
 									}
@@ -828,10 +886,21 @@ Adw.Dialog medDialog {
 										]
 
 										popover: Popover {
-											Calendar calendarEnd {
-												show-day-names: true;
-												show-week-numbers: false;
-												show-heading: true;
+											styles [
+												"menu",
+												"popover-scrolled",
+												"popover-calendar"
+											]
+
+											ScrolledWindow {
+												propagate-natural-height: true;
+												propagate-natural-width: true;
+
+												Calendar calendarEnd {
+													show-day-names: true;
+													show-week-numbers: false;
+													show-heading: true;
+												}
 											}
 										};
 									}
@@ -862,10 +931,21 @@ Adw.Dialog medDialog {
 									]
 
 									popover: Popover {
-										Calendar calOneEntry {
-											show-day-names: true;
-											show-week-numbers: false;
-											show-heading: true;
+										styles [
+											"menu",
+											"popover-scrolled",
+											"popover-calendar"
+										]
+
+										ScrolledWindow {
+											propagate-natural-height: true;
+											propagate-natural-width: true;
+
+											Calendar calOneEntry {
+												show-day-names: true;
+												show-week-numbers: false;
+												show-heading: true;
+											}
 										}
 									};
 								}
@@ -890,6 +970,10 @@ Adw.Dialog medDialog {
 }
 
 Popover oneTimePopover {
+	styles [
+		"menu"
+	]
+
 	visible: false;
 
 	ScrolledWindow {
