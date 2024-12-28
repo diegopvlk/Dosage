@@ -44,9 +44,6 @@ statuspage .title {
   margin-top: -26px;
   margin-bottom: -4px;
 }
-#preferences label.title {
-  text-transform: capitalize;
-}
 
 .refill-amount-btn {
   padding: 7px 10px;
