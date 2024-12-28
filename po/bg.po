@@ -586,7 +586,7 @@ msgstr "Опции"
 
 #: src/treatmentsFactory.js:114
 msgid "Refill"
-msgstr ""
+msgstr "Презареди"
 
 #: src/treatmentsFactory.js:115
 msgid "Duplicate"
@@ -639,11 +639,11 @@ msgstr "Имате лечения с малко запас"
 
 #: src/window.js:305
 msgid "Show all"
-msgstr ""
+msgstr "Покажи всичко"
 
 #: src/window.js:328
 msgid "Show less"
-msgstr ""
+msgstr "Покажи по-малко"
 
 #: src/window.js:455
 msgid "No results found"

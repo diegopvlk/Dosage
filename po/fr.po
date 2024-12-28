@@ -585,7 +585,7 @@ msgstr "Options"
 
 #: src/treatmentsFactory.js:114
 msgid "Refill"
-msgstr ""
+msgstr "Recharger"
 
 #: src/treatmentsFactory.js:115
 msgid "Duplicate"
@@ -638,11 +638,11 @@ msgstr "Certains de vos médicaments sont presque épuisés"
 
 #: src/window.js:305
 msgid "Show all"
-msgstr ""
+msgstr "Montrer tout"
 
 #: src/window.js:328
 msgid "Show less"
-msgstr ""
+msgstr "Montrer moins"
 
 #: src/window.js:455
 msgid "No results found"

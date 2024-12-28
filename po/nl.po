@@ -589,7 +589,7 @@ msgstr "Opties"
 
 #: src/treatmentsFactory.js:114
 msgid "Refill"
-msgstr ""
+msgstr "Bijvullen"
 
 #: src/treatmentsFactory.js:115
 msgid "Duplicate"
@@ -642,11 +642,11 @@ msgstr "De voorraad van enkele medicatie is laag"
 
 #: src/window.js:305
 msgid "Show all"
-msgstr ""
+msgstr "Toon alles"
 
 #: src/window.js:328
 msgid "Show less"
-msgstr ""
+msgstr "Toon minder"
 
 #: src/window.js:455
 msgid "No results found"

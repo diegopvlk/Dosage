@@ -591,7 +591,7 @@ msgstr "Alternativer"
 
 #: src/treatmentsFactory.js:114
 msgid "Refill"
-msgstr ""
+msgstr "Fyll på"
 
 #: src/treatmentsFactory.js:115
 msgid "Duplicate"
@@ -644,11 +644,11 @@ msgstr "Du har behandlinger med manko på beholdning"
 
 #: src/window.js:305
 msgid "Show all"
-msgstr ""
+msgstr "Vis alt"
 
 #: src/window.js:328
 msgid "Show less"
-msgstr ""
+msgstr "Vis mindre"
 
 #: src/window.js:455
 msgid "No results found"

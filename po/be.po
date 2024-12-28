@@ -589,7 +589,7 @@ msgstr "Параметры"
 
 #: src/treatmentsFactory.js:114
 msgid "Refill"
-msgstr ""
+msgstr "Папоўніць"
 
 #: src/treatmentsFactory.js:115
 msgid "Duplicate"
@@ -642,11 +642,11 @@ msgstr "У вас засталося мала лекаў у запасе"
 
 #: src/window.js:305
 msgid "Show all"
-msgstr ""
+msgstr "Паказаць усё"
 
 #: src/window.js:328
 msgid "Show less"
-msgstr ""
+msgstr "Паказаць менш"
 
 #: src/window.js:455
 msgid "No results found"

@@ -583,7 +583,7 @@ msgstr "विकल्प"
 
 #: src/treatmentsFactory.js:114
 msgid "Refill"
-msgstr ""
+msgstr "फिर से भरें"
 
 #: src/treatmentsFactory.js:115
 msgid "Duplicate"
@@ -636,11 +636,11 @@ msgstr "आपके पास उपचारों का स्टॉक क�
 
 #: src/window.js:305
 msgid "Show all"
-msgstr ""
+msgstr "सब दिखाएँ"
 
 #: src/window.js:328
 msgid "Show less"
-msgstr ""
+msgstr "कम दिखाएँ"
 
 #: src/window.js:455
 msgid "No results found"

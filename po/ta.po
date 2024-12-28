@@ -495,9 +495,8 @@ msgstr "தவறவிட்டது"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
-#, fuzzy
 msgid "translator-credits"
-msgstr "மொழிபெயர்ப்பாளர்-வரவு"
+msgstr "TamilNeram <anishprabu.t@gmail.com>"
 
 #: src/main.js:53
 msgid "Thanks to these projects!"
@@ -587,7 +586,7 @@ msgstr "விருப்பங்கள்"
 
 #: src/treatmentsFactory.js:114
 msgid "Refill"
-msgstr ""
+msgstr "மீண்டும் நிரப்பவும்"
 
 #: src/treatmentsFactory.js:115
 msgid "Duplicate"
@@ -640,11 +639,11 @@ msgstr "உங்களிடம் சிகிச்சைகள் குற�
 
 #: src/window.js:305
 msgid "Show all"
-msgstr ""
+msgstr "அனைத்தையும் காட்டு"
 
 #: src/window.js:328
 msgid "Show less"
-msgstr ""
+msgstr "குறைவாக காட்டு"
 
 #: src/window.js:455
 msgid "No results found"

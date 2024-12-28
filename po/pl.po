@@ -24,9 +24,8 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:664
 #: data/ui/window.blp:6 src/main.js:40 src/window.js:780
-#, fuzzy
 msgid "Dosage"
-msgstr "Dosage"
+msgstr "Dawkowanie"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:22
 msgid "Keep track of your treatments"
@@ -73,33 +72,33 @@ msgstr "Kolor i ikona — Daj kształt swojemu leczeniu"
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
-"Śledzenie zapasu - Monitoruj swój zapas i dostań przypomnienie gdy masz już "
+"Śledzenie zapasu — Monitoruj swój zapas i dostań przypomnienie gdy masz już "
 "mało"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:34
 msgid "Duration — Define the start and end dates"
-msgstr ""
+msgstr "Czas trwania — Zdefiniuj daty rozpoczęcia i zakończenia"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:45
 msgid "Dosage today window in light theme"
-msgstr ""
+msgstr "Dawkowanie okno dzisiaj w jasnym motywie"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:50
 msgid "Dosage preferences window in light theme"
-msgstr ""
+msgstr "Dawkowanie okno preferencji w jasnym motywie"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:55
 msgid "Dosage edit treatment window in light theme"
-msgstr ""
+msgstr "Dawkowanie okno edycji leczenia w jasnym motywie"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:60
 msgid "Dosage today window in dark theme"
-msgstr ""
+msgstr "Dawkowanie okno dzisiaj w ciemnym motywie"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
-msgstr ""
+msgstr "Leki;Śledzik;Przypomnienie;Dziś;Leczenia;Tabletka;Lek;Środek zaradczy;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -277,7 +276,7 @@ msgstr "Specyficzne dni"
 
 #: data/ui/med-dialog.blp:455 src/medDialog.js:800 src/treatmentsFactory.js:168
 msgid "Day of the month"
-msgstr ""
+msgstr "Dzień miesiąca"
 
 #: data/ui/med-dialog.blp:456 src/medDialog.js:831 src/treatmentsFactory.js:189
 msgid "Cycle"
@@ -293,7 +292,7 @@ msgstr "Wybierz dni"
 
 #: data/ui/med-dialog.blp:566
 msgid "Choose day"
-msgstr ""
+msgstr "Wybierz dzień"
 
 #: data/ui/med-dialog.blp:602
 msgid "Change cycle"
@@ -349,9 +348,8 @@ msgid "Manage your stock"
 msgstr "Zarządzaj swoim zapasem"
 
 #: data/ui/med-dialog.blp:744
-#, fuzzy
 msgid "Current"
-msgstr "Teraźniejsze"
+msgstr "Bieżący"
 
 #: data/ui/med-dialog.blp:757
 msgid "Remind me at"
@@ -363,155 +361,157 @@ msgstr "Czas trwania"
 
 #: data/ui/med-dialog.blp:772
 msgid "Set start and end dates"
-msgstr ""
+msgstr "Ustaw daty rozpoczęcia i zakończenia"
 
 #. TRANSLATORS: label for when duration is enabled
 #: data/ui/med-dialog.blp:782 src/treatmentsFactory.js:148
 msgid "Starts on"
-msgstr ""
+msgstr "Zaczyna się"
 
 #: data/ui/med-dialog.blp:792 data/ui/med-dialog.blp:824
 #: data/ui/med-dialog.blp:858
 msgid "Choose date"
-msgstr ""
+msgstr "Wybierz datę"
 
 #: data/ui/med-dialog.blp:814
 msgid "Ends on"
-msgstr ""
+msgstr "Kończy się"
 
 #: data/ui/med-dialog.blp:847
 msgid "Date"
-msgstr ""
+msgstr "Data"
 
 #: data/ui/med-dialog.blp:880 src/historyFactory.js:147 src/medDialog.js:928
 #: src/treatmentsFactory.js:116
 msgid "Delete"
-msgstr ""
+msgstr "Usuń"
 
 #: data/ui/preferences.blp:7 data/ui/window.blp:243
 msgid "Preferences"
-msgstr ""
+msgstr "Preferencje"
 
 #: data/ui/preferences.blp:21
 msgid "Auto-start at login"
-msgstr ""
+msgstr "Automatyczne uruchamianie przy logowaniu"
 
 #: data/ui/preferences.blp:37
 msgid "Auto-clear history"
-msgstr ""
+msgstr "Automatyczne czyszczenie historii"
 
 #: data/ui/preferences.blp:38
 msgid "Keeps a maximum of 30 days"
-msgstr ""
+msgstr "Przechowuje maksymalnie 30 dni"
 
 #: data/ui/preferences.blp:54
 msgid "Increase notification priority"
-msgstr ""
+msgstr "Zwiększ priorytet powiadomień"
 
 #: data/ui/preferences.blp:55
 msgid ""
 "Makes the notification show in fullscreen mode or even if 'Do Not Disturb' "
 "is enabled"
-msgstr ""
+msgstr "Sprawia, że powiadomienie wyświetla się w trybie pełnoekranowym lub nawet jeśli włączony jest tryb 'Nie przeszkadzać'"
 
 #: data/ui/preferences.blp:71
 msgid "Low stock notification"
-msgstr ""
+msgstr "Powiadomienie o niskim stanie magazynowym"
 
 #: data/ui/preferences.blp:72
 msgid "Send reminders when treatments are low in stock"
-msgstr ""
+msgstr "Wyślij przypomnienia, gdy leczenie jest w niskim stanie magazynowym"
 
 #: data/ui/preferences.blp:88
 msgid "Notification sound"
-msgstr ""
+msgstr "Dźwięk powiadomienia"
 
 #: data/ui/preferences.blp:104
 msgid "Notification buttons"
-msgstr ""
+msgstr "Przyciski powiadomień"
 
 #: data/ui/preferences.blp:105
 msgid "Show or hide confirm/skip"
-msgstr ""
+msgstr "Pokaż lub ukryj potwierdź/pomiń"
 
 #: data/ui/preferences.blp:114 src/medDialog.js:304 src/window.js:641
 #: src/window.js:832
 msgid "Confirm"
-msgstr ""
+msgstr "Potwierdź"
 
 #: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:642
 msgid "Skip"
-msgstr ""
+msgstr "Pomiń"
 
 #: data/ui/window.blp:24
 msgid "Search"
-msgstr ""
+msgstr "Szukaj"
 
 #: data/ui/window.blp:38
 msgid "Main Menu"
-msgstr ""
+msgstr "Menu główne"
 
 #: data/ui/window.blp:51
 msgid "Search…"
-msgstr ""
+msgstr "Szukaj…"
 
 #: data/ui/window.blp:61
 msgid "Today"
-msgstr ""
+msgstr "Dziś"
 
 #: data/ui/window.blp:99
 msgid "Unselect"
-msgstr ""
+msgstr "Odznacz"
 
 #: data/ui/window.blp:112 src/window.js:832
 msgid "One-time entry"
-msgstr ""
+msgstr "Jednorazowy wpis"
 
 #: data/ui/window.blp:134
 msgid "History"
-msgstr ""
+msgstr "Historia"
 
 #: data/ui/window.blp:181
 msgid "Treatments"
-msgstr ""
+msgstr "Leczenia"
 
 #: data/ui/window.blp:203
 msgid "Click the button below to add some"
-msgstr ""
+msgstr "Kliknij przycisk poniżej, aby dodać"
 
 #: data/ui/window.blp:248
 msgid "About Dosage"
-msgstr ""
+msgstr "O Dawkowanie"
 
 #: data/ui/window.blp:253
 msgid "Quit"
-msgstr ""
+msgstr "Zakończ"
 
 #: src/historyFactory.js:144
 msgid "Restore"
-msgstr ""
+msgstr "Przywróć"
 
 #: src/historyFactory.js:162 src/medDialog.js:359
 msgid "Missed"
-msgstr ""
+msgstr "Przegapione"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
 msgid "translator-credits"
 msgstr ""
+"Michael Ł <micheal.labus@gmail.com>\n"
+"Diego Povliuk <diego.pvlk@gmail.com>"
 
 #: src/main.js:53
 msgid "Thanks to these projects!"
-msgstr ""
+msgstr "Dzięki tym projektom!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:89
 msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
+msgstr "Zaakceptuj, aby umożliwić działanie w tle i otrzymywanie powiadomień"
 
 #: src/medDialog.js:119
 msgid "Edit treatment"
-msgstr ""
+msgstr "Edytuj leczenie"
 
 #: src/medDialog.js:120 src/medDialog.js:374
 msgid "Save"
@@ -523,23 +523,23 @@ msgstr "Kopie"
 
 #: src/medDialog.js:238
 msgid "New"
-msgstr ""
+msgstr "Nowy"
 
 #: src/medDialog.js:303
 msgid "New entry"
-msgstr ""
+msgstr "Nowy wpis"
 
 #: src/medDialog.js:352 src/medDialog.js:364
 msgid "Confirmed at"
-msgstr ""
+msgstr "Potwierdzone o"
 
 #: src/medDialog.js:356 src/medDialog.js:368
 msgid "Skipped at"
-msgstr ""
+msgstr "Pominięte o"
 
 #: src/medDialog.js:373
 msgid "Edit entry"
-msgstr ""
+msgstr "Edytuj wpis"
 
 #: src/medDialog.js:791
 msgid "Choose"
@@ -547,7 +547,7 @@ msgstr "Wybierz"
 
 #: src/medDialog.js:801
 msgid "Day"
-msgstr ""
+msgstr "Dzień"
 
 #: src/medDialog.js:868
 msgid "Empty name"
@@ -563,11 +563,11 @@ msgstr "Wybierz przynajmniej jeden dzień"
 
 #: src/medDialog.js:889
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "Nazwa już na liście leczenia"
 
 #: src/medDialog.js:903
 msgid "Duplicated time"
-msgstr ""
+msgstr "Zduplikowany czas"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
 #: src/medDialog.js:923
@@ -576,39 +576,39 @@ msgstr "Na pewno?"
 
 #: src/medDialog.js:924
 msgid "will be deleted"
-msgstr ""
+msgstr "zostanie usunięte"
 
 #: src/todayFactory.js:95
 msgid "Change dose"
-msgstr ""
+msgstr "Zmień dawkę"
 
 #: src/treatmentsFactory.js:65
 msgid "Options"
-msgstr ""
+msgstr "Opcje"
 
 #: src/treatmentsFactory.js:114
 msgid "Refill"
-msgstr ""
+msgstr "Uzupełnij"
 
 #: src/treatmentsFactory.js:115
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplikat"
 
 #: src/treatmentsFactory.js:138
 msgid "Remaining"
-msgstr ""
+msgstr "Pozostałe"
 
 #: src/treatmentsFactory.js:142
 msgid "Low stock"
-msgstr ""
+msgstr "Niski zapas"
 
 #: src/treatmentsFactory.js:149
 msgid "Until"
-msgstr ""
+msgstr "Do"
 
 #: src/treatmentsFactory.js:150
 msgid "Ended on"
-msgstr ""
+msgstr "Zakończono w"
 
 #: src/treatmentsFactory.js:162 src/utils.js:52
 msgid "Daily"
@@ -616,63 +616,63 @@ msgstr "Codziennie"
 
 #: src/treatmentsFactory.js:177 src/treatmentsFactory.js:180
 msgid "Next dose"
-msgstr ""
+msgstr "Następna dawka"
 
 #: src/utils.js:48
 msgid "Weekends"
-msgstr ""
+msgstr "Weekendy"
 
 #: src/utils.js:50
 msgid "Weekdays"
-msgstr ""
+msgstr "Dni powszednie"
 
 #: src/utils.js:349
 msgid "Delete dose"
-msgstr ""
+msgstr "Usuń dawkę"
 
 #: src/window.js:134 src/window.js:677
 msgid "Reminder"
-msgstr ""
+msgstr "Przypomnienie"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:136
 msgid "You have treatments low in stock"
-msgstr ""
+msgstr "Masz leczenia w niskim stanie magazynowym"
 
 #: src/window.js:305
 msgid "Show all"
-msgstr ""
+msgstr "Pokaż wszystko"
 
 #: src/window.js:328
 msgid "Show less"
-msgstr ""
+msgstr "Pokaż mniej"
 
 #: src/window.js:455
 msgid "No results found"
-msgstr ""
+msgstr "Nie znaleziono wyników"
 
 #: src/window.js:455 src/window.js:1122
 msgid "Empty history"
-msgstr ""
+msgstr "Pusta historia"
 
 #: src/window.js:560
 msgid "No treatments added yet"
-msgstr ""
+msgstr "Nie dodano jeszcze żadnych leczeń"
 
 #: src/window.js:564
 msgid "All done for today"
-msgstr ""
+msgstr "Wszystko zrobione na dzisiaj"
 
 #: src/window.js:641
 msgid "Confirm all"
-msgstr ""
+msgstr "Potwierdź wszystko"
 
 #: src/window.js:642
 msgid "Skip all"
-msgstr ""
+msgstr "Pomiń wszystko"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:672
 #, javascript-format
 msgid "and %d more"
-msgstr ""
+msgstr "i %d więcej"

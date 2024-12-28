@@ -84,7 +84,7 @@ msgstr "Dávkování, okno \"Dnes\" ve světlém režimu"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:50
 msgid "Dosage preferences window in light theme"
-msgstr ""
+msgstr "Dávkování, okno \"Nastavení\" ve světlém režimu"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:55
 msgid "Dosage edit treatment window in light theme"
@@ -590,7 +590,7 @@ msgstr "Možnosti"
 
 #: src/treatmentsFactory.js:114
 msgid "Refill"
-msgstr ""
+msgstr "Doplnit"
 
 #: src/treatmentsFactory.js:115
 msgid "Duplicate"
@@ -643,11 +643,11 @@ msgstr "Docházejí vám léky"
 
 #: src/window.js:305
 msgid "Show all"
-msgstr ""
+msgstr "Zobrazit vše"
 
 #: src/window.js:328
 msgid "Show less"
-msgstr ""
+msgstr "Zobrazit méně"
 
 #: src/window.js:455
 msgid "No results found"
