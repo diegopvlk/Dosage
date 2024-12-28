@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-26 13:54-0300\n"
-"PO-Revision-Date: 2024-02-01 22:04+0000\n"
+"PO-Revision-Date: 2024-12-28 14:26+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/"
-">\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/>"
+"\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
@@ -359,8 +359,6 @@ msgid "Duration"
 msgstr "Průběh"
 
 #: data/ui/med-dialog.blp:772
-#, fuzzy
-#| msgid "Set a start and end date"
 msgid "Set start and end dates"
 msgstr "Nastavte počáteční a koncové datum"
 
