@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-26 13:54-0300\n"
+"POT-Creation-Date: 2024-12-28 18:21-0300\n"
 "PO-Revision-Date: 2024-07-12 14:09+0000\n"
 "Last-Translator: madcomputing <madionne1889.c@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/dosage/dosage/fr/"
@@ -21,7 +21,7 @@ msgstr ""
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
-#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:664
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:711
 #: data/ui/window.blp:6 src/main.js:40 src/window.js:780
 msgid "Dosage"
 msgstr "Dosage"
@@ -32,9 +32,9 @@ msgstr "Suivre vos traitements"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid ""
-"Easily manage track treatments with Dosage: Notifications, History, Multiple "
-"Doses, Flexible Frequency, Customization, Stock Monitoring, and Duration "
-"Control"
+"Easily manage and track treatments with Dosage: notifications, history, "
+"multiple doses, flexible frequency, customization, stock monitoring, and "
+"duration control\""
 msgstr ""
 "Gérez facilement le suivi de vos traitements médicamenteux avec Dosage : "
 "notifications, historique, doses multiples, fréquences flexibles, "
@@ -164,219 +164,219 @@ msgid "Color"
 msgstr "Couleur"
 
 #. TRANSLATORS: Tooltip for the colors (from Default until Purple)
-#: data/ui/med-dialog.blp:110
+#: data/ui/med-dialog.blp:119
 msgid "Default"
 msgstr "Par défaut"
 
-#: data/ui/med-dialog.blp:122
+#: data/ui/med-dialog.blp:131
 msgid "Red"
 msgstr "Rouge"
 
-#: data/ui/med-dialog.blp:134
+#: data/ui/med-dialog.blp:143
 msgid "Orange"
 msgstr "Orange"
 
-#: data/ui/med-dialog.blp:146
+#: data/ui/med-dialog.blp:155
 msgid "Yellow"
 msgstr "Jaune"
 
-#: data/ui/med-dialog.blp:158
+#: data/ui/med-dialog.blp:167
 msgid "Green"
 msgstr "Vert"
 
-#: data/ui/med-dialog.blp:170
+#: data/ui/med-dialog.blp:179
 msgid "Cyan"
 msgstr "Cyan"
 
-#: data/ui/med-dialog.blp:182
+#: data/ui/med-dialog.blp:191
 msgid "Blue"
 msgstr "Bleu"
 
-#: data/ui/med-dialog.blp:194
+#: data/ui/med-dialog.blp:203
 msgid "Purple"
 msgstr "Violet"
 
-#: data/ui/med-dialog.blp:208
+#: data/ui/med-dialog.blp:218
 msgid "Icon"
 msgstr "Icône"
 
 #. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
-#: data/ui/med-dialog.blp:227
+#: data/ui/med-dialog.blp:250
 msgid "Pill"
 msgstr "Comprimé"
 
-#: data/ui/med-dialog.blp:243
+#: data/ui/med-dialog.blp:266
 msgid "Alternative pill"
 msgstr "Comprimé alternatif"
 
-#: data/ui/med-dialog.blp:259
+#: data/ui/med-dialog.blp:282
 msgid "Capsule"
 msgstr "Gélule"
 
-#: data/ui/med-dialog.blp:275
+#: data/ui/med-dialog.blp:298
 msgid "Round pill"
 msgstr "Comprimé rond"
 
-#: data/ui/med-dialog.blp:291
+#: data/ui/med-dialog.blp:314
 msgid "Alternative round pill"
 msgstr "Comprimé rond alternatif"
 
-#: data/ui/med-dialog.blp:307
+#: data/ui/med-dialog.blp:330
 msgid "Ampoule"
 msgstr "Ampoule"
 
-#: data/ui/med-dialog.blp:323
+#: data/ui/med-dialog.blp:346
 msgid "Injection"
 msgstr "Injection"
 
-#: data/ui/med-dialog.blp:339
+#: data/ui/med-dialog.blp:362
 msgid "Square pill"
 msgstr "Comprimé carré"
 
-#: data/ui/med-dialog.blp:355
+#: data/ui/med-dialog.blp:378
 msgid "Alternative square pill"
 msgstr "Comprimé carré alternatif"
 
-#: data/ui/med-dialog.blp:371
+#: data/ui/med-dialog.blp:394
 msgid "Triangle pill"
 msgstr "Comprimé triangulaire"
 
-#: data/ui/med-dialog.blp:387
+#: data/ui/med-dialog.blp:410
 msgid "Alternative triangle pill"
 msgstr "Comprimé triangulaire alternatif"
 
-#: data/ui/med-dialog.blp:403
+#: data/ui/med-dialog.blp:426
 msgid "Bottle"
 msgstr "Bouteille"
 
-#: data/ui/med-dialog.blp:419
-msgid "Drop"
-msgstr "Goutte"
+#: data/ui/med-dialog.blp:442
+msgid "Drops"
+msgstr "Gouttes"
 
-#: data/ui/med-dialog.blp:435
+#: data/ui/med-dialog.blp:458
 msgid "Potion"
 msgstr "Potion"
 
-#: data/ui/med-dialog.blp:448 src/medDialog.js:834
+#: data/ui/med-dialog.blp:472 src/medDialog.js:834
 msgid "Frequency"
 msgstr "Fréquence"
 
-#: data/ui/med-dialog.blp:453
+#: data/ui/med-dialog.blp:477
 msgid "Every day"
 msgstr "Tous les jours"
 
-#: data/ui/med-dialog.blp:454 src/medDialog.js:826
+#: data/ui/med-dialog.blp:478 src/medDialog.js:826
 msgid "Specific days"
 msgstr "Certains jours"
 
-#: data/ui/med-dialog.blp:455 src/medDialog.js:800 src/treatmentsFactory.js:168
+#: data/ui/med-dialog.blp:479 src/medDialog.js:800 src/treatmentsFactory.js:168
 msgid "Day of the month"
 msgstr "Jour du mois"
 
-#: data/ui/med-dialog.blp:456 src/medDialog.js:831 src/treatmentsFactory.js:189
+#: data/ui/med-dialog.blp:480 src/medDialog.js:831 src/treatmentsFactory.js:189
 msgid "Cycle"
 msgstr "Cycle"
 
-#: data/ui/med-dialog.blp:457 src/treatmentsFactory.js:193
+#: data/ui/med-dialog.blp:481 src/treatmentsFactory.js:193
 msgid "When necessary"
 msgstr "Au besoin"
 
-#: data/ui/med-dialog.blp:469
+#: data/ui/med-dialog.blp:493
 msgid "Choose days"
 msgstr "Choisir les jours"
 
-#: data/ui/med-dialog.blp:566
+#: data/ui/med-dialog.blp:593
 msgid "Choose day"
 msgstr "Choisissez le jour"
 
-#: data/ui/med-dialog.blp:602
+#: data/ui/med-dialog.blp:639
 msgid "Change cycle"
 msgstr "Changer le cycle"
 
-#: data/ui/med-dialog.blp:619
+#: data/ui/med-dialog.blp:665
 msgid "Days active"
 msgstr "Jours d’activité"
 
-#: data/ui/med-dialog.blp:633
+#: data/ui/med-dialog.blp:679
 msgid "Days inactive"
 msgstr "Jours d’inactivité"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
-#: data/ui/med-dialog.blp:648
+#: data/ui/med-dialog.blp:694
 msgid "Today is cycle day…"
 msgstr "Aujourd’hui jour du cycle…"
 
-#: data/ui/med-dialog.blp:665
+#: data/ui/med-dialog.blp:712
 msgid "Time and amount"
 msgstr "Temps et quantité"
 
-#: data/ui/med-dialog.blp:678
+#: data/ui/med-dialog.blp:725
 msgid "Add dose"
 msgstr "Ajouter une dose"
 
-#: data/ui/med-dialog.blp:699 src/historyFactory.js:158
+#: data/ui/med-dialog.blp:746 src/historyFactory.js:158
 msgid "Skipped"
 msgstr "Sauté"
 
-#: data/ui/med-dialog.blp:711
+#: data/ui/med-dialog.blp:758
 msgid "Confirmed"
 msgstr "Confirmé"
 
-#: data/ui/med-dialog.blp:718
+#: data/ui/med-dialog.blp:765
 msgid "Recurring notifications"
 msgstr "Notifications récurrentes"
 
-#: data/ui/med-dialog.blp:719
+#: data/ui/med-dialog.blp:766
 msgid "Renotify until it's confirmed or skipped"
 msgstr "Notifier à nouveau jusqu’à confirmation ou saut"
 
-#: data/ui/med-dialog.blp:724
+#: data/ui/med-dialog.blp:771
 msgid "Interval in minutes"
 msgstr "Intervalle en minutes"
 
-#: data/ui/med-dialog.blp:737
+#: data/ui/med-dialog.blp:784
 msgid "Inventory"
 msgstr "Inventaire"
 
-#: data/ui/med-dialog.blp:738
+#: data/ui/med-dialog.blp:785
 msgid "Manage your stock"
 msgstr "Gérer vos stocks"
 
-#: data/ui/med-dialog.blp:744
+#: data/ui/med-dialog.blp:791
 msgid "Current"
 msgstr "Actuel"
 
-#: data/ui/med-dialog.blp:757
+#: data/ui/med-dialog.blp:804
 msgid "Remind me at"
 msgstr "Me le rappeler à"
 
-#: data/ui/med-dialog.blp:771
+#: data/ui/med-dialog.blp:818
 msgid "Duration"
 msgstr "Durée"
 
-#: data/ui/med-dialog.blp:772
+#: data/ui/med-dialog.blp:819
 msgid "Set start and end dates"
 msgstr "Définir les dates de début et de fin"
 
 #. TRANSLATORS: label for when duration is enabled
-#: data/ui/med-dialog.blp:782 src/treatmentsFactory.js:148
+#: data/ui/med-dialog.blp:829 src/treatmentsFactory.js:148
 msgid "Starts on"
 msgstr "Débute le"
 
-#: data/ui/med-dialog.blp:792 data/ui/med-dialog.blp:824
-#: data/ui/med-dialog.blp:858
+#: data/ui/med-dialog.blp:839 data/ui/med-dialog.blp:882
+#: data/ui/med-dialog.blp:927
 msgid "Choose date"
 msgstr "Choisir une date"
 
-#: data/ui/med-dialog.blp:814
+#: data/ui/med-dialog.blp:872
 msgid "Ends on"
 msgstr "S’achève le"
 
-#: data/ui/med-dialog.blp:847
+#: data/ui/med-dialog.blp:916
 msgid "Date"
 msgstr "Date"
 
-#: data/ui/med-dialog.blp:880 src/historyFactory.js:147 src/medDialog.js:928
+#: data/ui/med-dialog.blp:960 src/historyFactory.js:147 src/medDialog.js:928
 #: src/treatmentsFactory.js:116
 msgid "Delete"
 msgstr "Supprimer"
