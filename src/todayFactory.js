@@ -16,20 +16,23 @@ export const todayHeaderFactory = new Gtk.SignalListItemFactory();
 export const todayItemFactory = new Gtk.SignalListItemFactory();
 
 todayHeaderFactory.connect('setup', (factory, listHeaderItem) => {
-	const box = new Gtk.Box({
+	listHeaderItem.box = new Gtk.Box({
 		hexpand: true,
 	});
-	const selectTimeGroupBtn = new Gtk.Button({
+
+	listHeaderItem.selectTimeGroupBtn = new Gtk.Button({
 		css_classes: ['time-group-selection', 'flat'],
 		valign: Gtk.Align.START,
 	});
-	box.append(selectTimeGroupBtn);
-	listHeaderItem.set_child(box);
+
+	listHeaderItem.box.append(listHeaderItem.selectTimeGroupBtn);
+	listHeaderItem.set_child(listHeaderItem.box);
 });
 
 todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const item = listHeaderItem.get_item().obj;
-	const selectTimeGroupBtn = listHeaderItem.get_child().get_first_child();
+	const selectTimeGroupBtn = listHeaderItem.selectTimeGroupBtn;
+
 	const itemTime = new Date();
 	itemTime.setHours(item.time[0], item.time[1]);
 	const formatOpt = { hour: 'numeric', minute: 'numeric', hour12: clockIs12 };
@@ -50,39 +53,47 @@ todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 });
 
 todayItemFactory.connect('setup', (factory, listItem) => {
-	const box = new Gtk.Box({
-		css_classes: ['item-box'],
-	});
-	const icon = new Gtk.Image({
+	listItem.box = new Gtk.Box();
+
+	listItem.icon = new Gtk.Image({
 		margin_start: 17,
 		margin_end: 4,
 		icon_name: 'pill-symbolic',
 	});
-	box.append(icon);
-	const labelsBox = new Gtk.Box({
+
+	listItem.box.append(listItem.icon);
+
+	listItem.labelsBox = new Gtk.Box({
 		valign: Gtk.Align.CENTER,
 		hexpand: true,
 		orientation: Gtk.Orientation.VERTICAL,
 		margin_start: 9,
 		margin_end: 12,
 	});
-	box.append(labelsBox);
-	const name = new Gtk.Label({
+
+	listItem.box.append(listItem.labelsBox);
+
+	listItem.nameLabel = new Gtk.Label({
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 		margin_bottom: 1,
 	});
-	labelsBox.append(name);
-	const doseAndNotes = new Gtk.Label({
+
+	listItem.labelsBox.append(listItem.nameLabel);
+
+	listItem.doseAndNotes = new Gtk.Label({
 		css_classes: ['subtitle'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
-	labelsBox.append(doseAndNotes);
-	const amountBox = new Gtk.Box({
+
+	listItem.labelsBox.append(listItem.doseAndNotes);
+
+	listItem.amountBox = new Gtk.Box({
 		css_classes: ['spin-box', 'spin-today-amount'],
 	});
-	const amountRow = new Adw.SpinRow({
+
+	listItem.amtSpinRow = new Adw.SpinRow({
 		digits: 2,
 		adjustment: new Gtk.Adjustment({
 			lower: 0.25,
@@ -90,8 +101,10 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 			step_increment: 0.25,
 		}),
 	});
-	amountBox.append(amountRow);
-	const amountBtn = new Gtk.MenuButton({
+
+	listItem.amountBox.append(listItem.amtSpinRow);
+
+	listItem.amountBtn = new Gtk.MenuButton({
 		tooltip_text: _('Change dose'),
 		css_classes: ['circular', 'today-amount'],
 		icon_name: 'view-more-horizontal-symbolic',
@@ -104,12 +117,14 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 			child: new Gtk.ScrolledWindow({
 				propagate_natural_height: true,
 				propagate_natural_width: true,
-				child: amountBox,
+				child: listItem.amountBox,
 			}),
 		}),
 	});
-	box.append(amountBtn);
-	const checkButton = new Gtk.CheckButton({
+
+	listItem.box.append(listItem.amountBtn);
+
+	listItem.checkButton = new Gtk.CheckButton({
 		css_classes: ['selection-mode'],
 		valign: Gtk.Align.CENTER,
 		halign: Gtk.Align.CENTER,
@@ -117,29 +132,24 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 		can_focus: false,
 		can_target: false,
 	});
-	box.append(checkButton);
-	listItem.set_child(box);
+
+	listItem.box.append(listItem.checkButton);
+	listItem.set_child(listItem.box);
 });
 
 todayItemFactory.connect('bind', (factory, listItem) => {
 	const item = listItem.get_item().obj;
-	const box = listItem.get_child();
+	const box = listItem.box;
 	const row = box.get_parent();
-	const icon = box.get_first_child();
-	const labelsBox = icon.get_next_sibling();
-	const amtBtn = labelsBox.get_next_sibling();
-	const amtBtnPopover = amtBtn.get_popover();
-	const amtSpinRow = amtBtnPopover
-		.get_child()
-		.get_first_child()
-		.get_first_child()
-		.get_first_child();
-	const name = labelsBox.get_first_child();
-	const doseAndNotes = name.get_next_sibling();
-	const checkButton = box.get_last_child();
+	const icon = listItem.icon;
+	const amountBtn = listItem.amountBtn;
+	const amtSpinRow = listItem.amtSpinRow;
+	const name = listItem.nameLabel;
+	const doseAndNotes = listItem.doseAndNotes;
+	const checkButton = listItem.checkButton;
 
 	item.doseAndNotes = doseAndNotes;
-	item.amtBtn = amtBtn;
+	item.amountBtn = amountBtn;
 	item.amtSpinRow = amtSpinRow;
 	item.checkButton = checkButton;
 
@@ -153,12 +163,6 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	});
 	row.add_controller(keyController);
 
-	['default', 'red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'].forEach(c =>
-		box.remove_css_class(c),
-	);
-
-	box.add_css_class(item.color);
-
 	name.label = item.name;
 	doseAndNotes.label = `${item.dose} ${item.unit}`;
 
@@ -167,4 +171,5 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	}
 
 	icon.icon_name = item.icon;
+	box.set_css_classes(['item-box', item.color]);
 });

@@ -16,83 +16,96 @@ import { openRefillDialog } from './refillDialog.js';
 export const treatmentsFactory = new Gtk.SignalListItemFactory();
 
 treatmentsFactory.connect('setup', (factory, listItem) => {
-	const box = new Gtk.Box({
-		css_classes: ['item-box'],
-	});
-	const icon = new Gtk.Image({
+	listItem.box = new Gtk.Box();
+
+	listItem.icon = new Gtk.Image({
 		margin_start: 16,
 		margin_end: 6,
 		icon_name: 'pill-symbolic',
 	});
-	box.append(icon);
-	const labelsBox = new Gtk.Box({
+
+	listItem.box.append(listItem.icon);
+
+	listItem.labelsBox = new Gtk.Box({
 		valign: Gtk.Align.CENTER,
 		hexpand: true,
 		orientation: Gtk.Orientation.VERTICAL,
 		margin_start: 8,
 		margin_end: 11,
 	});
-	box.append(labelsBox);
-	const name = new Gtk.Label({
+
+	listItem.box.append(listItem.labelsBox);
+
+	listItem.nameLabel = new Gtk.Label({
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 		margin_bottom: 1,
 	});
-	labelsBox.append(name);
-	const info = new Gtk.Label({
+
+	listItem.labelsBox.append(listItem.nameLabel);
+
+	listItem.infoLabel = new Gtk.Label({
 		css_classes: ['subtitle'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
-	labelsBox.append(info);
-	const durationNextDateLabel = new Gtk.Label({
+
+	listItem.labelsBox.append(listItem.infoLabel);
+
+	listItem.durationNextDateLabel = new Gtk.Label({
 		css_classes: ['subtitle'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 		visible: false,
 		margin_top: 1,
 	});
-	labelsBox.append(durationNextDateLabel);
-	const inventoryLabel = new Gtk.Label({
+
+	listItem.labelsBox.append(listItem.durationNextDateLabel);
+
+	listItem.inventoryLabel = new Gtk.Label({
 		css_classes: ['badge-box', 'badge-content'],
 		valign: Gtk.Align.CENTER,
 		margin_end: 5,
 		visible: false,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
-	box.append(inventoryLabel);
-	const optionsButton = new Gtk.MenuButton({
+
+	listItem.box.append(listItem.inventoryLabel);
+
+	listItem.optionsMenu = new Gio.Menu();
+
+	listItem.optionsButton = new Gtk.MenuButton({
 		tooltip_text: _('Options'),
 		css_classes: ['circular'],
 		valign: Gtk.Align.CENTER,
 		margin_start: 5,
 		margin_end: 13,
 		icon_name: 'view-more-symbolic',
-		menu_model: new Gio.Menu(),
+		menu_model: listItem.optionsMenu,
 	});
-	box.append(optionsButton);
-	listItem.set_child(box);
+
+	listItem.box.append(listItem.optionsButton);
+	listItem.set_child(listItem.box);
 });
 
 treatmentsFactory.connect('bind', (factory, listItem) => {
+	const DosageWindow = DosageApplication.get_default().activeWindow;
+	const app = DosageWindow.get_application();
+
 	const item = listItem.get_item().obj;
-	const box = listItem.get_child();
+	const box = listItem.box;
 	const pos = listItem.get_position();
 	const row = box.get_parent();
-	const icon = box.get_first_child();
-	const labelsBox = icon.get_next_sibling();
-	const nameLabel = labelsBox.get_first_child();
-	const infoLabel = nameLabel.get_next_sibling();
-	const durationNextDateLabel = infoLabel.get_next_sibling();
-	const inventoryLabel = box.get_last_child().get_prev_sibling();
-	const optionsMenu = box.get_last_child().get_menu_model();
+	const icon = listItem.icon;
+	const nameLabel = listItem.nameLabel;
+	const infoLabel = listItem.infoLabel;
+	const durationNextDateLabel = listItem.durationNextDateLabel;
+	const inventoryLabel = listItem.inventoryLabel;
+	const optionsMenu = listItem.optionsMenu;
 	const today = new Date().setHours(0, 0, 0, 0);
 	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
 	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
 	const inv = item.inventory;
-
-	const DosageWindow = DosageApplication.get_default().activeWindow;
-	const app = DosageWindow.get_application();
 
 	if (inv.enabled) {
 		const refillAct = new Gio.SimpleAction({ name: `refillMed${pos}` });
@@ -202,22 +215,16 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		infoLabel.label += ` • ${item.notes}`;
 	}
 
-	['default', 'red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'].forEach(c =>
-		box.remove_css_class(c),
-	);
-
-	box.add_css_class(item.color);
-
 	icon.icon_name = item.icon;
+	box.set_css_classes(['item-box', item.color]);
 });
 
 treatmentsFactory.connect('unbind', (factory, listItem) => {
 	const DosageWindow = DosageApplication.get_default().activeWindow;
 	const app = DosageWindow.get_application();
 
-	const box = listItem.get_child();
 	const pos = listItem.get_position();
-	const optionsMenu = box.get_last_child().get_menu_model();
+	const optionsMenu = listItem.optionsMenu;
 
 	app.remove_action(`refillMed${pos}`);
 	app.remove_action(`duplicateMed${pos}`);

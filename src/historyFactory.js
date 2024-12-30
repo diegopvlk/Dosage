@@ -9,6 +9,7 @@ import Gdk from 'gi://Gdk';
 import Pango from 'gi://Pango';
 
 import { clockIs12 } from './utils.js';
+import { historyLS } from './window.js';
 
 export const historyHeaderFactory = new Gtk.SignalListItemFactory();
 export const historyItemFactory = new Gtk.SignalListItemFactory();
@@ -16,17 +17,19 @@ export const historyItemFactory = new Gtk.SignalListItemFactory();
 export let removedItem;
 
 historyHeaderFactory.connect('setup', (factory, listHeaderItem) => {
-	const dateLabel = new Gtk.Label({
+	listHeaderItem.dateLabel = new Gtk.Label({
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 		margin_bottom: 1,
 	});
-	listHeaderItem.set_child(dateLabel);
+
+	listHeaderItem.set_child(listHeaderItem.dateLabel);
 });
 
 historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const item = listHeaderItem.get_item().obj;
-	const dateLabel = listHeaderItem.get_child();
+	const dateLabel = listHeaderItem.dateLabel;
+
 	const date = new Date(item.taken[0]);
 	const formattedDt = date.toLocaleDateString(undefined, {
 		weekday: 'long',
@@ -34,68 +37,78 @@ historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 		day: 'numeric',
 		year: 'numeric',
 	});
+
 	dateLabel.label = formattedDt.charAt(0).toUpperCase() + formattedDt.slice(1);
 });
 
 historyItemFactory.connect('setup', (factory, listItem) => {
-	const box = new Gtk.Box({
-		css_classes: ['item-box'],
-	});
-	const deleteButton = new Gtk.Button({
+	listItem.box = new Gtk.Box();
+
+	listItem.deleteButton = new Gtk.Button({
 		css_classes: ['circular'],
 		valign: Gtk.Align.CENTER,
 		halign: Gtk.Align.CENTER,
 		margin_start: 11,
 	});
-	box.append(deleteButton);
-	const labelsBox = new Gtk.Box({
+
+	listItem.box.append(listItem.deleteButton);
+
+	listItem.labelsBox = new Gtk.Box({
 		valign: Gtk.Align.CENTER,
 		hexpand: true,
 		orientation: Gtk.Orientation.VERTICAL,
 		margin_start: 10,
 		margin_end: 10,
 	});
-	box.append(labelsBox);
-	const name = new Gtk.Label({
+
+	listItem.box.append(listItem.labelsBox);
+
+	listItem.nameLabel = new Gtk.Label({
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 		margin_bottom: 1,
 	});
-	labelsBox.append(name);
-	const dose = new Gtk.Label({
+
+	listItem.labelsBox.append(listItem.nameLabel);
+
+	listItem.doseLabel = new Gtk.Label({
 		css_classes: ['subtitle'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
-	labelsBox.append(dose);
-	const takenBox = new Gtk.Box({
+
+	listItem.labelsBox.append(listItem.doseLabel);
+
+	listItem.takenBox = new Gtk.Box({
 		css_classes: ['badge-box'],
 		valign: Gtk.Align.CENTER,
 		margin_end: 14,
 	});
-	const takenLabel = new Gtk.Label({
+
+	listItem.takenLabel = new Gtk.Label({
 		css_classes: ['badge-content'],
 		valign: Gtk.Align.CENTER,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
-	const takenIcon = new Gtk.Image({
+
+	listItem.takenIcon = new Gtk.Image({
 		css_classes: ['badge-content', 'badge-icon'],
 		icon_name: 'check-confirmed',
 	});
-	takenBox.append(takenLabel);
-	takenBox.append(takenIcon);
-	box.append(takenBox);
-	listItem.set_child(box);
 
-	deleteButton.connect('clicked', () => {
+	listItem.takenBox.append(listItem.takenLabel);
+	listItem.takenBox.append(listItem.takenIcon);
+	listItem.box.append(listItem.takenBox);
+	listItem.set_child(listItem.box);
+
+	listItem.deleteButton.connect('clicked', () => {
 		const item = listItem.get_item();
-		const listView = box.get_parent().get_parent();
-		const listStore = listView.get_model().get_model().get_model().get_model();
+		const listView = listItem.box.get_parent().get_parent();
 		let position = listItem.get_position();
 
 		removedItem = item;
-		let [, pos] = listStore.find(item);
-		listStore.remove(pos);
+		let [, pos] = historyLS.find(item);
+		historyLS.remove(pos);
 
 		if (listView.get_model().get_n_items() === position) {
 			// if it's the last position, position - 1
@@ -112,15 +125,13 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 
 historyItemFactory.connect('bind', (factory, listItem) => {
 	const item = listItem.get_item().obj;
-	const box = listItem.get_child();
+	const box = listItem.box;
 	const row = box.get_parent();
-	const deleteButton = box.get_first_child();
-	const labelsBox = box.get_first_child().get_next_sibling();
-	const nameLabel = labelsBox.get_first_child();
-	const doseLabel = nameLabel.get_next_sibling();
-	const takenBox = box.get_last_child();
-	const takenLabel = takenBox.get_first_child();
-	const takenIcon = takenLabel.get_next_sibling();
+	const deleteButton = listItem.deleteButton;
+	const nameLabel = listItem.nameLabel;
+	const doseLabel = listItem.doseLabel;
+	const takenLabel = listItem.takenLabel;
+	const takenIcon = listItem.takenIcon;
 	const today = new Date();
 	const itemDate = new Date(item.taken[0]);
 	const itemTime = new Date();
@@ -164,9 +175,5 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 		takenLabel.remove_css_class('badge-end-border');
 	}
 
-	['default', 'red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'].forEach(c =>
-		box.remove_css_class(c),
-	);
-
-	box.add_css_class(item.color);
+	box.set_css_classes(['item-box', item.color]);
 });

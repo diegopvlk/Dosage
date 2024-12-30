@@ -786,7 +786,7 @@ export const DosageWindow = GObject.registerClass(
 			const model = list.get_model();
 			const item = model.get_item(position).obj;
 			const doseAndNotes = item.doseAndNotes;
-			const amtBtn = item.amtBtn;
+			const amountBtn = item.amountBtn;
 			const amtSpinRow = item.amtSpinRow;
 			const checkButton = item.checkButton;
 
@@ -817,7 +817,7 @@ export const DosageWindow = GObject.registerClass(
 			});
 
 			checkButton.set_active(!isActive);
-			amtBtn.set_visible(!isActive);
+			amountBtn.set_visible(!isActive);
 
 			const hasTodayItems = this.todayItems.length > 0;
 			this._updateEntryBtn(hasTodayItems);
