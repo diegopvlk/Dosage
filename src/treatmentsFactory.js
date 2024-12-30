@@ -18,6 +18,10 @@ export const treatmentsFactory = new Gtk.SignalListItemFactory();
 treatmentsFactory.connect('setup', (factory, listItem) => {
 	listItem.box = new Gtk.Box();
 
+	listItem.altClick = new Gtk.GestureClick({ button: 3 });
+
+	listItem.box.add_controller(listItem.altClick);
+
 	listItem.icon = new Gtk.Image({
 		margin_start: 16,
 		margin_end: 6,
@@ -74,6 +78,14 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 
 	listItem.optionsMenu = new Gio.Menu();
 
+	listItem.popoverMenu = new Gtk.PopoverMenu({
+		halign: Gtk.Align.START,
+		has_arrow: false,
+		menu_model: listItem.optionsMenu,
+	});
+
+	listItem.box.append(listItem.popoverMenu);
+
 	listItem.optionsButton = new Gtk.MenuButton({
 		tooltip_text: _('Options'),
 		css_classes: ['circular'],
@@ -102,10 +114,28 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	const durationNextDateLabel = listItem.durationNextDateLabel;
 	const inventoryLabel = listItem.inventoryLabel;
 	const optionsMenu = listItem.optionsMenu;
+	const popoverMenu = listItem.popoverMenu;
 	const today = new Date().setHours(0, 0, 0, 0);
 	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
 	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
 	const inv = item.inventory;
+
+	// right click menu
+	const clickPress = listItem.altClick;
+	clickPress.connect('pressed', (_gestureClick, _nPress, x, y) => {
+		const position = new Gdk.Rectangle({ x: x, y: y });
+		popoverMenu.pointing_to = position;
+		popoverMenu.popup();
+	});
+
+	const activateItem = () => {
+		const listView = row.get_parent();
+		listView.emit('activate', pos);
+	};
+
+	const editAct = new Gio.SimpleAction({ name: `editMed${pos}` });
+	editAct.connect('activate', () => activateItem());
+	app.add_action(editAct);
 
 	if (inv.enabled) {
 		const refillAct = new Gio.SimpleAction({ name: `refillMed${pos}` });
@@ -124,21 +154,15 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	deleteAct.connect('activate', () => confirmDeleteDialog(item, pos, DosageWindow));
 	app.add_action(deleteAct);
 
-	const refillMed = Gio.MenuItem.new(_('Refill'), `app.refillMed${pos}`);
-	const duplicateMed = Gio.MenuItem.new(_('Duplicate'), `app.duplicateMed${pos}`);
-	const deleteMed = Gio.MenuItem.new(_('Delete'), `app.deleteMed${pos}`);
-
-	optionsMenu.append_item(refillMed);
-	optionsMenu.append_item(duplicateMed);
-	optionsMenu.append_item(deleteMed);
+	optionsMenu.append(_('Edit'), `app.editMed${pos}`);
+	optionsMenu.append(_('Refill'), `app.refillMed${pos}`);
+	optionsMenu.append(_('Duplicate'), `app.duplicateMed${pos}`);
+	optionsMenu.append(_('Delete'), `app.deleteMed${pos}`);
 
 	// activate item with space bar
 	const keyController = new Gtk.EventControllerKey();
 	keyController.connect('key-pressed', (_, keyval, keycode, state) => {
-		if (keyval === Gdk.KEY_space) {
-			const listView = row.get_parent();
-			listView.emit('activate', pos);
-		}
+		if (keyval === Gdk.KEY_space) activateItem();
 	});
 	row.add_controller(keyController);
 
@@ -226,6 +250,7 @@ treatmentsFactory.connect('unbind', (factory, listItem) => {
 	const pos = listItem.get_position();
 	const optionsMenu = listItem.optionsMenu;
 
+	app.remove_action(`editMed${pos}`);
 	app.remove_action(`refillMed${pos}`);
 	app.remove_action(`duplicateMed${pos}`);
 	app.remove_action(`deleteMed${pos}`);
