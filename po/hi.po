@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-28 18:21-0300\n"
+"POT-Creation-Date: 2024-12-30 09:53-0300\n"
 "PO-Revision-Date: 2024-05-23 09:01+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:711
-#: data/ui/window.blp:6 src/main.js:40 src/window.js:780
+#: data/ui/window.blp:6 src/main.js:40 src/window.js:779
 msgid "Dosage"
 msgstr "डोसिज"
 
@@ -267,15 +267,15 @@ msgstr "हर दिन"
 msgid "Specific days"
 msgstr "विशिष्ट दिन"
 
-#: data/ui/med-dialog.blp:479 src/medDialog.js:800 src/treatmentsFactory.js:168
+#: data/ui/med-dialog.blp:479 src/medDialog.js:800 src/treatmentsFactory.js:205
 msgid "Day of the month"
 msgstr "महीने का दिन"
 
-#: data/ui/med-dialog.blp:480 src/medDialog.js:831 src/treatmentsFactory.js:189
+#: data/ui/med-dialog.blp:480 src/medDialog.js:831 src/treatmentsFactory.js:226
 msgid "Cycle"
 msgstr "चक्र"
 
-#: data/ui/med-dialog.blp:481 src/treatmentsFactory.js:193
+#: data/ui/med-dialog.blp:481 src/treatmentsFactory.js:230
 msgid "When necessary"
 msgstr "जब आवश्यक हो"
 
@@ -312,7 +312,7 @@ msgstr "समय एवं राशि"
 msgid "Add dose"
 msgstr "खुराक जोड़ें"
 
-#: data/ui/med-dialog.blp:746 src/historyFactory.js:158
+#: data/ui/med-dialog.blp:746 src/historyFactory.js:169
 msgid "Skipped"
 msgstr "छोड़ा गया"
 
@@ -357,7 +357,7 @@ msgid "Set start and end dates"
 msgstr "शुरू और अंत तिथियां निर्धारित करें"
 
 #. TRANSLATORS: label for when duration is enabled
-#: data/ui/med-dialog.blp:829 src/treatmentsFactory.js:148
+#: data/ui/med-dialog.blp:829 src/treatmentsFactory.js:185
 msgid "Starts on"
 msgstr "शुरू होता है"
 
@@ -374,8 +374,8 @@ msgstr "समाप्त होता है"
 msgid "Date"
 msgstr "तारीख"
 
-#: data/ui/med-dialog.blp:960 src/historyFactory.js:147 src/medDialog.js:928
-#: src/treatmentsFactory.js:116
+#: data/ui/med-dialog.blp:960 src/historyFactory.js:158 src/medDialog.js:928
+#: src/treatmentsFactory.js:160
 msgid "Delete"
 msgstr "मिटाएं"
 
@@ -425,12 +425,12 @@ msgstr "अधिसूचना बटन"
 msgid "Show or hide confirm/skip"
 msgstr "दिखाएं या छिपाएं पुष्टि करें/छोड़ें"
 
-#: data/ui/preferences.blp:114 src/medDialog.js:304 src/window.js:641
-#: src/window.js:832
+#: data/ui/preferences.blp:114 src/medDialog.js:304 src/window.js:640
+#: src/window.js:813
 msgid "Confirm"
 msgstr "पुष्टि करें"
 
-#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:642
+#: data/ui/preferences.blp:130 data/ui/window.blp:124 src/window.js:641
 msgid "Skip"
 msgstr "छोड़ें"
 
@@ -454,7 +454,7 @@ msgstr "आज"
 msgid "Unselect"
 msgstr "अचयनित करें"
 
-#: data/ui/window.blp:112 src/window.js:832
+#: data/ui/window.blp:112 src/window.js:813
 msgid "One-time entry"
 msgstr "एक-बार की प्रविष्टि"
 
@@ -478,11 +478,11 @@ msgstr "डोसिज के बारे में"
 msgid "Quit"
 msgstr "छोड़ें"
 
-#: src/historyFactory.js:144
+#: src/historyFactory.js:155
 msgid "Restore"
 msgstr "पुनर्स्थापित करें"
 
-#: src/historyFactory.js:162 src/medDialog.js:359
+#: src/historyFactory.js:173 src/medDialog.js:359
 msgid "Missed"
 msgstr "छुट्टा हुआ"
 
@@ -573,43 +573,47 @@ msgstr "क्या आप निश्चित हैं?"
 msgid "will be deleted"
 msgstr "हटा दिया जाएगा"
 
-#: src/todayFactory.js:95
+#: src/todayFactory.js:108
 msgid "Change dose"
 msgstr "खुराक बदलें"
 
-#: src/treatmentsFactory.js:65
+#: src/treatmentsFactory.js:90
 msgid "Options"
 msgstr "विकल्प"
 
-#: src/treatmentsFactory.js:114
+#: src/treatmentsFactory.js:157
+msgid "Edit"
+msgstr "संपादित करें"
+
+#: src/treatmentsFactory.js:158
 msgid "Refill"
 msgstr "फिर से भरें"
 
-#: src/treatmentsFactory.js:115
+#: src/treatmentsFactory.js:159
 msgid "Duplicate"
 msgstr "दोहराना"
 
-#: src/treatmentsFactory.js:138
+#: src/treatmentsFactory.js:175
 msgid "Remaining"
 msgstr "शेष"
 
-#: src/treatmentsFactory.js:142
+#: src/treatmentsFactory.js:179
 msgid "Low stock"
 msgstr "कम स्टॉक"
 
-#: src/treatmentsFactory.js:149
+#: src/treatmentsFactory.js:186
 msgid "Until"
 msgstr "तक"
 
-#: src/treatmentsFactory.js:150
+#: src/treatmentsFactory.js:187
 msgid "Ended on"
 msgstr "पर समाप्त हुआ"
 
-#: src/treatmentsFactory.js:162 src/utils.js:52
+#: src/treatmentsFactory.js:199 src/utils.js:52
 msgid "Daily"
 msgstr "रोज"
 
-#: src/treatmentsFactory.js:177 src/treatmentsFactory.js:180
+#: src/treatmentsFactory.js:214 src/treatmentsFactory.js:217
 msgid "Next dose"
 msgstr "अगली खुराक"
 
@@ -625,7 +629,7 @@ msgstr "कार्यदिवस"
 msgid "Delete dose"
 msgstr "खुराक मिटाएं"
 
-#: src/window.js:134 src/window.js:677
+#: src/window.js:134 src/window.js:676
 msgid "Reminder"
 msgstr "रिमाइंडर"
 
@@ -646,28 +650,28 @@ msgstr "कम दिखाएँ"
 msgid "No results found"
 msgstr "कोई परिणाम नहीं मिला"
 
-#: src/window.js:455 src/window.js:1122
+#: src/window.js:455 src/window.js:1102
 msgid "Empty history"
 msgstr "इतिहास मिटायें"
 
-#: src/window.js:560
+#: src/window.js:559
 msgid "No treatments added yet"
 msgstr "अभी तक कोई उपचार नहीं जोड़ा गया"
 
-#: src/window.js:564
+#: src/window.js:563
 msgid "All done for today"
 msgstr "आज के लिए सब कुछ हो गया"
 
-#: src/window.js:641
+#: src/window.js:640
 msgid "Confirm all"
 msgstr "सभी पुष्टि करें"
 
-#: src/window.js:642
+#: src/window.js:641
 msgid "Skip all"
 msgstr "सभी को छोड़ें"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:672
+#: src/window.js:671
 #, javascript-format
 msgid "and %d more"
 msgstr "और %d अधिक"
