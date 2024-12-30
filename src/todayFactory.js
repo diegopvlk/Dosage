@@ -147,11 +147,33 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	const name = listItem.nameLabel;
 	const doseAndNotes = listItem.doseAndNotes;
 	const checkButton = listItem.checkButton;
+	listItem.originalDose = item.dose;
 
-	item.doseAndNotes = doseAndNotes;
-	item.amountBtn = amountBtn;
-	item.amtSpinRow = amtSpinRow;
 	item.checkButton = checkButton;
+
+	name.label = item.name;
+
+	const setDoseAndNotes = () => {
+		doseAndNotes.label = `${item.dose} ${item.unit}`;
+		if (item.notes !== '') {
+			doseAndNotes.label += ` • ${item.notes}`;
+		}
+	};
+	setDoseAndNotes();
+
+	amtSpinRow.set_value(item.dose);
+	amtSpinRow.connect('output', row => {
+		item.dose = row.get_value();
+		setDoseAndNotes();
+	});
+
+	checkButton.connect('toggled', btn => {
+		if (!btn.active) {
+			item.dose = listItem.originalDose;
+			setDoseAndNotes();
+		}
+		amountBtn.set_visible(btn.active);
+	});
 
 	// activate item with space bar
 	const keyController = new Gtk.EventControllerKey();
@@ -162,13 +184,6 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 		}
 	});
 	row.add_controller(keyController);
-
-	name.label = item.name;
-	doseAndNotes.label = `${item.dose} ${item.unit}`;
-
-	if (item.notes !== '') {
-		doseAndNotes.label += ` • ${item.notes}`;
-	}
 
 	icon.icon_name = item.icon;
 	box.set_css_classes(['item-box', item.color]);
