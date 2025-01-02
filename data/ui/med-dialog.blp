@@ -52,6 +52,8 @@ Adw.Dialog medDialog {
 							selection-mode: none;
 
 							Adw.ButtonRow oneTimeMenu {
+								visible: false;
+
 								styles [
 									'one-time-menu'
 								]
@@ -94,7 +96,7 @@ Adw.Dialog medDialog {
 									name: 'default';
 									icon-name: 'color-filled-symbolic';
 
-									popover: Popover {
+									popover: Popover dosageColorPopover {
 										styles [
 											"menu",
 											"popover-scrolled"
@@ -218,7 +220,7 @@ Adw.Dialog medDialog {
 									tooltip-text: _("Icon");
 									icon-name: 'pill-symbolic';
 
-									popover: Popover {
+									popover: Popover dosageIconPopover {
 										styles [
 											"menu",
 											"popover-scrolled"
@@ -437,10 +439,10 @@ Adw.Dialog medDialog {
 														'circular'
 													]
 
-												valign: center;
-												icon-name: 'med-drop-symbolic';
-												tooltip-text: _("Drops");
-											}
+													valign: center;
+													icon-name: 'med-drop-symbolic';
+													tooltip-text: _("Drops");
+												}
 
 												Button {
 													layout {

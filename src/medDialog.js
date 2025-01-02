@@ -29,10 +29,9 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 
 	const dateOneEntry = builder.get_object('dateOneEntry');
 	const calOneEntry = builder.get_object('calOneEntry');
-	const oneTimeMenuRow = builder.get_object('oneTimeMenu');
-	oneTimeMenuRow.set_visible(false);
 
 	const medDialog = builder.get_object('medDialog');
+	medDialog.set_presentation_mode(2);
 
 	const cancelButton = builder.get_object('cancelButton');
 	const saveButton = builder.get_object('saveButton');
@@ -42,6 +41,8 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 	const medUnit = builder.get_object('unit');
 	const medNotes = builder.get_object('notes');
 
+	const dosageColorPopover = builder.get_object('dosageColorPopover');
+	const dosageIconPopover = builder.get_object('dosageIconPopover');
 	const dosageColorButton = builder.get_object('dosageColorButton');
 	const dosageIconButton = builder.get_object('dosageIconButton');
 	const dosageColorBox = builder.get_object('dosageColorBox');
@@ -52,13 +53,13 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 			removeCssColors(dosageColorButton);
 			dosageColorButton.add_css_class(clr.get_name() + '-clr');
 			dosageColorButton.name = clr.get_name();
-			dosageColorBox.get_parent().get_parent().get_parent().get_parent().popdown();
+			dosageColorPopover.popdown();
 		});
 	}
 	for (const icn of dosageIconBox) {
 		icn.connect('clicked', () => {
 			dosageIconButton.set_icon_name(icn.get_icon_name());
-			dosageIconBox.get_parent().get_parent().get_parent().get_parent().popdown();
+			dosageIconPopover.popdown();
 		});
 	}
 
@@ -121,13 +122,18 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 			deleteButton.set_visible(true);
 		}
 
+		medDialog.set_presentation_mode(0);
+
 		const item = list.get_model().get_item(position).obj;
 
 		medName.text = item.name;
 		medUnit.text = item.unit;
 		medNotes.text = item.notes ? item.notes : '';
 
-		if (mode === 'duplicate') medName.text += ` (${_('Copy')})`;
+		if (mode === 'duplicate') {
+			medDialog.set_presentation_mode(2);
+			medName.text += ` (${_('Copy')})`;
+		}
 
 		for (const clr of dosageColorBox) {
 			if (clr.get_name() === item.color) {
@@ -219,6 +225,8 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 	// when activating one-time entry button
 	let existingEntry = false;
 	if (mode === 'one-time') {
+		const oneTimeMenuRow = builder.get_object('oneTimeMenu');
+		oneTimeMenuRow.set_visible(true);
 		const frequencyMenu = builder.get_object('frequencyMenu');
 		const colorIcon = builder.get_object('colorIcon');
 		const oneTimeEntries = builder.get_object('oneTimeEntries');
@@ -305,7 +313,6 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 		colorIcon.subtitle = _('Color');
 		colorIcon.title = '';
 		medDialog.add_css_class('one-time');
-		medDialog.set_presentation_mode(2);
 
 		dateOneEntry.set_visible(true);
 		medNotes.set_visible(false);
@@ -319,6 +326,7 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 
 	// when editing history entry
 	if (mode === 'edit-hist') {
+		medDialog.set_presentation_mode(0);
 		const item = list.get_model().get_item(position).obj;
 		const frequencyMenu = builder.get_object('frequencyMenu');
 		const colorIcon = builder.get_object('colorIcon');
@@ -326,6 +334,7 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 		const takenButtons = builder.get_object('takenButtons');
 		const histBtnSkipped = builder.get_object('histBtnSkipped');
 		const histBtnConfirmed = builder.get_object('histBtnConfirmed');
+
 		existingEntry = true;
 
 		const date = new Date(item.taken[0]);
@@ -338,7 +347,6 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 		}
 
 		const doseRowOne = doseRow({ time: [h, m], dose: item.dose });
-
 		const doseBox = getWidgetByName(doseRowOne, 'doseBox');
 		doseBox.set_orientation(Gtk.Orientation.VERTICAL);
 
@@ -347,27 +355,34 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 		removeDoseButton.set_visible(false);
 		takenLabel.set_visible(true);
 
-		if (item.taken[1] === 1) {
-			histBtnConfirmed.set_active(true);
-			takenLabel.label = _('Confirmed at');
-		}
-		if (item.taken[1] === 0) {
-			histBtnSkipped.set_active(histBtnConfirmed);
-			takenLabel.label = _('Skipped at');
-		}
-		if (item.taken[1] === -1) {
-			takenLabel.label = _('Missed') + '(?)';
-			saveButton.sensitive = false;
+		switch (item.taken[1]) {
+			case 1:
+				histBtnConfirmed.set_active(true);
+				takenLabel.label = _('Confirmed at');
+				break;
+			case 0:
+				histBtnSkipped.set_active(true);
+				takenLabel.label = _('Skipped at');
+				break;
+			case -1:
+				takenLabel.label = _('Missed') + '(?)';
+				saveButton.sensitive = false;
+				break;
 		}
 
 		histBtnConfirmed.connect('clicked', () => {
 			takenLabel.label = _('Confirmed at');
+			histBtnSkipped.set_active(false);
+			histBtnConfirmed.set_active(true);
 			saveButton.sensitive = true;
 		});
 		histBtnSkipped.connect('clicked', () => {
 			takenLabel.label = _('Skipped at');
+			histBtnSkipped.set_active(true);
+			histBtnConfirmed.set_active(false);
 			saveButton.sensitive = true;
 		});
+
 		dosage.add_row(doseRowOne);
 
 		medDialog.title = _('Edit entry');
@@ -385,7 +400,6 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 		medUnit.set_visible(false);
 		medNotes.set_visible(false);
 		colorIcon.set_visible(false);
-		medNotes.set_visible(false);
 		dosageIconButton.set_visible(false);
 		frequencyMenu.set_visible(false);
 		medDuration.set_visible(false);
@@ -449,24 +463,24 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 	saveButton.connect('clicked', () => {
 		const isUpdate = list && position >= 0 && !mode;
 
-		if (!isValidInput(isUpdate)) {
-			return;
-		}
+		if (!isValidInput(isUpdate)) return;
 
 		if (mode === 'one-time') {
 			addSingleItemToHistory();
-			DosageWindow._updateJsonFile('history', historyLS);
+			DosageWindow._updateEverything(null, null, 'skipCycleUp');
 		} else if (mode === 'edit-hist') {
 			editHistoryItem();
 			medDialog.force_close();
 			return;
 		} else {
 			addOrUpdateTreatment();
+			DosageWindow._updateEverything('skipHistUp');
+			const pos = Math.max(0, updatedItemPosition - 1);
+			DosageWindow._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
 		}
 
-		DosageWindow._updateEverything(['skipHistUp', updatedItemPosition]);
-		DosageWindow._scheduleNotifications('saving');
 		medDialog.force_close();
+		DosageWindow._scheduleNotifications('saving');
 	});
 
 	const keyController = new Gtk.EventControllerKey();
@@ -558,10 +572,8 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 				}
 				if (tempInv === i.obj.inventory.current) break;
 
-				// reload-ish of treatments list
-				// necessary for updating low stock and cycle date labels
-				DosageWindow._treatmentsList.visible = false;
-				DosageWindow._treatmentsList.visible = true;
+				// trigger signal to update labels
+				i.notify('obj');
 
 				DosageWindow._updateJsonFile('treatments', treatmentsLS);
 				DosageWindow._checkInventory();
@@ -623,6 +635,8 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 
 			if (updateInv) {
 				i.inventory.current -= newIt.dose;
+				// trigger signal to update labels
+				it.notify('obj');
 				break;
 			}
 		}
@@ -947,9 +961,9 @@ export function confirmDeleteDialog(item, position, DosageWindow, medDialog) {
 			const it = DosageWindow._treatmentsList.model.get_item(position);
 			const deletePos = treatmentsLS.find(it)[1];
 			treatmentsLS.remove(deletePos);
-			DosageWindow._updateEverything('skipHistUp');
-			DosageWindow._scheduleNotifications('deleting');
 			if (medDialog) medDialog.force_close();
+			DosageWindow._updateEverything('skipHistUp', null, 'skipCycleUp');
+			DosageWindow._scheduleNotifications('deleting');
 			DosageWindow._treatmentsList.scroll_to(
 				Math.max(0, position - 1),
 				Gtk.ListScrollFlags.FOCUS,

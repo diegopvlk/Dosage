@@ -424,10 +424,13 @@ export const DosageWindow = GObject.registerClass(
 										if (item.inventory.enabled && removedIt.taken[1] === 1) {
 											item.inventory.current += removedIt.dose;
 										}
+
+										// trigger signal to update labels
+										it.notify('obj');
 									}
 								}
 							}
-							this._updateEverything();
+							this._updateEverything(null, null, 'skipCycleUp');
 							this._scheduleNotifications('removing');
 						}
 					});
@@ -686,7 +689,7 @@ export const DosageWindow = GObject.registerClass(
 					}
 
 					const schedule = () => {
-						this._updateEverything(null, 'notifAction');
+						this._updateEverything(null, 'notifAction', 'skipCycleUp');
 						this._scheduleNotifications();
 						this._historyList.scroll_to(0, null, null);
 					};
@@ -854,7 +857,7 @@ export const DosageWindow = GObject.registerClass(
 
 				historyLS.splice(0, 0, itemsToAdd.reverse());
 
-				this._updateEverything();
+				this._updateEverything(null, null, 'skipCycleUp');
 				this._scheduleNotifications('adding');
 				this._historyList.scroll_to(0, null, null);
 			} else {
@@ -881,6 +884,9 @@ export const DosageWindow = GObject.registerClass(
 							timeDose.lastTaken = new Date().toISOString();
 						}
 					});
+
+					// trigger signal to update labels
+					it.notify('obj');
 
 					return;
 				}
@@ -1051,10 +1057,14 @@ export const DosageWindow = GObject.registerClass(
 			return itemsAdded;
 		}
 
-		_updateCycleAndLastUp() {
+		_updateCycleAndLastUp(skipCycleUp) {
 			const lastUpdate = new Date(this.lastUpdate);
 			const lastUp = lastUpdate.setHours(0, 0, 0, 0);
 			const today = new Date().setHours(0, 0, 0, 0);
+
+			if (lastUp < today) this.lastUpdate = new Date().toISOString();
+
+			if (skipCycleUp) return;
 
 			for (const it of treatmentsLS) {
 				const item = it.obj;
@@ -1093,10 +1103,11 @@ export const DosageWindow = GObject.registerClass(
 					} else {
 						item.cycleNextDate = findDate(item.duration.start);
 					}
+
+					// trigger signal to update labels
+					it.notify('obj');
 				}
 			}
-
-			if (lastUp < today) this.lastUpdate = new Date().toISOString();
 		}
 
 		_setEmptyHistStatus() {
@@ -1109,24 +1120,16 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		_updateEverything(skipHistUp, notifAction) {
+		_updateEverything(skipHistUp, notifAction, skipCycleUp) {
 			this._setShowHistoryAmount();
-			this._updateCycleAndLastUp();
+			this._updateCycleAndLastUp(skipCycleUp);
 			this._updateJsonFile('treatments', treatmentsLS);
 			this._loadToday();
 			this._updateEntryBtn(false);
 			this._checkInventory(notifAction);
 
-			// reload-ish of treatments list
-			// necessary for updating low stock and cycle date labels
-			this._treatmentsList.visible = false;
-			this._treatmentsList.visible = true;
-
 			if (!skipHistUp) {
 				this._updateJsonFile('history', historyLS);
-			} else if (skipHistUp[1] >= 0) {
-				const pos = Math.max(0, skipHistUp[1] - 1);
-				this._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
 			}
 		}
 

@@ -104,25 +104,14 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	const DosageWindow = DosageApplication.get_default().activeWindow;
 	const app = DosageWindow.get_application();
 
+	const { box, nameLabel, optionsMenu, popoverMenu, icon, altClick } = listItem;
 	const item = listItem.get_item().obj;
-	const box = listItem.box;
 	const pos = listItem.get_position();
 	const row = box.get_parent();
-	const icon = listItem.icon;
-	const nameLabel = listItem.nameLabel;
-	const infoLabel = listItem.infoLabel;
-	const durationNextDateLabel = listItem.durationNextDateLabel;
-	const inventoryLabel = listItem.inventoryLabel;
-	const optionsMenu = listItem.optionsMenu;
-	const popoverMenu = listItem.popoverMenu;
-	const today = new Date().setHours(0, 0, 0, 0);
-	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
-	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
 	const inv = item.inventory;
 
 	// right click menu
-	const clickPress = listItem.altClick;
-	clickPress.connect('pressed', (_gestureClick, _nPress, x, y) => {
+	altClick.connect('pressed', (_gestureClick, _nPress, x, y) => {
 		const position = new Gdk.Rectangle({ x: x, y: y });
 		popoverMenu.pointing_to = position;
 		popoverMenu.popup();
@@ -133,32 +122,6 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 		listView.emit('activate', pos);
 	};
 
-	const editAct = new Gio.SimpleAction({ name: `editMed${pos}` });
-	editAct.connect('activate', () => activateItem());
-	app.add_action(editAct);
-
-	if (inv.enabled) {
-		const refillAct = new Gio.SimpleAction({ name: `refillMed${pos}` });
-		refillAct.connect('activate', () => openRefillDialog(listItem, pos));
-		app.add_action(refillAct);
-	}
-
-	const duplicateAct = new Gio.SimpleAction({ name: `duplicateMed${pos}` });
-	duplicateAct.connect('activate', () => {
-		const list = DosageWindow._treatmentsList;
-		DosageWindow._openMedDialog(list, pos, 'duplicate');
-	});
-	app.add_action(duplicateAct);
-
-	const deleteAct = new Gio.SimpleAction({ name: `deleteMed${pos}` });
-	deleteAct.connect('activate', () => confirmDeleteDialog(item, pos, DosageWindow));
-	app.add_action(deleteAct);
-
-	optionsMenu.append(_('Edit'), `app.editMed${pos}`);
-	optionsMenu.append(_('Refill'), `app.refillMed${pos}`);
-	optionsMenu.append(_('Duplicate'), `app.duplicateMed${pos}`);
-	optionsMenu.append(_('Delete'), `app.deleteMed${pos}`);
-
 	// activate item with space bar
 	const keyController = new Gtk.EventControllerKey();
 	keyController.connect('key-pressed', (_, keyval, keycode, state) => {
@@ -166,7 +129,57 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	});
 	row.add_controller(keyController);
 
+	app.remove_action(`edit${pos}`);
+	app.remove_action(`refill${pos}`);
+	app.remove_action(`duplicate${pos}`);
+	app.remove_action(`delete${pos}`);
+	optionsMenu.remove_all();
+
+	const editAct = new Gio.SimpleAction({ name: `edit${pos}` });
+	editAct.connect('activate', () => activateItem());
+	app.add_action(editAct);
+
+	if (inv.enabled) {
+		const refillAct = new Gio.SimpleAction({ name: `refill${pos}` });
+		refillAct.connect('activate', () => openRefillDialog(listItem, pos));
+		app.add_action(refillAct);
+	}
+
+	const duplicateAct = new Gio.SimpleAction({ name: `duplicate${pos}` });
+	duplicateAct.connect('activate', () => {
+		const list = DosageWindow._treatmentsList;
+		DosageWindow._openMedDialog(list, pos, 'duplicate');
+	});
+	app.add_action(duplicateAct);
+
+	const deleteAct = new Gio.SimpleAction({ name: `delete${pos}` });
+	deleteAct.connect('activate', () => confirmDeleteDialog(item, pos, DosageWindow));
+	app.add_action(deleteAct);
+
+	optionsMenu.append(_('Edit'), `app.edit${pos}`);
+	optionsMenu.append(_('Refill'), `app.refill${pos}`);
+	optionsMenu.append(_('Duplicate'), `app.duplicate${pos}`);
+	optionsMenu.append(_('Delete'), `app.delete${pos}`);
+
 	nameLabel.label = item.name;
+	icon.icon_name = item.icon;
+
+	setInventoryAndDateLabels(listItem);
+
+	listItem.get_item().connect('notify::obj', () => {
+		setInventoryAndDateLabels(listItem);
+	});
+
+	box.set_css_classes(['item-box', item.color]);
+});
+
+function setInventoryAndDateLabels(listItem) {
+	const item = listItem.get_item().obj;
+	const { infoLabel, durationNextDateLabel, inventoryLabel } = listItem;
+	const today = new Date().setHours(0, 0, 0, 0);
+	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
+	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
+	const inv = item.inventory;
 
 	if (inv.enabled) {
 		let currInv = inv.current < 0 ? 0 : inv.current;
@@ -223,39 +236,19 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 				durationNextDateLabel.set_visible(true);
 			}
 
-			infoLabel.label = _('Cycle') + ' • ';
-			infoLabel.label += `${item.cycle[0]}` + ' ⊷ ' + `${item.cycle[1]}`;
+			infoLabel.label = `${_('Cycle')} • ${item.cycle[0]} ⊷ ${item.cycle[1]}`;
 			break;
 		case 'when-needed':
 			infoLabel.label = _('When necessary');
 			break;
 	}
 
+	if (item.notes !== '') infoLabel.label += ` • ${item.notes}`;
+
 	if (item.duration.enabled && (end < today || end < start)) {
 		durationNextDateLabel.label = endedLabel;
 	}
-
-	if (item.notes !== '') {
-		infoLabel.label += ` • ${item.notes}`;
-	}
-
-	icon.icon_name = item.icon;
-	box.set_css_classes(['item-box', item.color]);
-});
-
-treatmentsFactory.connect('unbind', (factory, listItem) => {
-	const DosageWindow = DosageApplication.get_default().activeWindow;
-	const app = DosageWindow.get_application();
-
-	const pos = listItem.get_position();
-	const optionsMenu = listItem.optionsMenu;
-
-	app.remove_action(`editMed${pos}`);
-	app.remove_action(`refillMed${pos}`);
-	app.remove_action(`duplicateMed${pos}`);
-	app.remove_action(`deleteMed${pos}`);
-	optionsMenu.remove_all();
-});
+}
 
 function formatDate(date, weekday) {
 	if (weekday) {
