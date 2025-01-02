@@ -499,7 +499,32 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		_loadToday() {
-			this.todayLS = Gio.ListStore.new(MedicationObject);
+			if (!this.todayLS) {
+				this.todayLS = Gio.ListStore.new(MedicationObject);
+
+				const filterTodayModel = new Gtk.FilterListModel({
+					model: this.todayLS,
+					filter: Gtk.CustomFilter.new(item => {
+						return isTodayMedDay(item);
+					}),
+				});
+
+				this.sortedTodayModel = new Gtk.SortListModel({
+					model: filterTodayModel,
+					section_sorter: new TodaySectionSorter(),
+				});
+
+				this.todayModel = new Gtk.NoSelection({
+					model: this.sortedTodayModel,
+				});
+
+				this._todayList.remove_css_class('view');
+				this._todayList.add_css_class('background');
+				this._todayList.set_header_factory(todayHeaderFactory);
+				this._todayList.set_factory(todayItemFactory);
+			} else {
+				this.todayLS.remove_all();
+			}
 
 			for (const it of treatmentsLS) {
 				const item = it.obj;
@@ -527,43 +552,18 @@ export const DosageWindow = GObject.registerClass(
 				});
 			}
 
-			const filterTodayModel = new Gtk.FilterListModel({
-				model: this.todayLS,
-				filter: Gtk.CustomFilter.new(item => {
-					return isTodayMedDay(item);
-				}),
-			});
-
-			const sortedTodayModel = new Gtk.SortListModel({
-				model: filterTodayModel,
-				section_sorter: new TodaySectionSorter(),
-			});
-
 			this.todayItems = [];
-			this.todayModel = new Gtk.NoSelection({ model: sortedTodayModel });
-
 			this._todayList.model = this.todayModel;
-			this._todayList.remove_css_class('view');
-			this._todayList.add_css_class('background');
-			this._todayList.set_header_factory(todayHeaderFactory);
-			this._todayList.set_factory(todayItemFactory);
 
-			const noItems = sortedTodayModel.get_n_items() === 0;
+			const noItems = this.sortedTodayModel.get_n_items() === 0;
 			const noTreatments = this._treatmentsList.model.get_n_items() === 0;
 
 			this._emptyTreatments.set_visible(noTreatments);
-
-			if (noItems && noTreatments) {
-				this._emptyToday.set_visible(true);
-				this._emptyToday.set_icon_name('pill-symbolic');
-				this._emptyToday.title = _('No treatments added yet');
-			} else if (noItems) {
-				this._emptyToday.set_visible(true);
-				this._emptyToday.set_icon_name('all-done-symbolic');
-				this._emptyToday.title = _('All done for today');
-			} else {
-				this._emptyToday.set_visible(false);
-			}
+			this._emptyToday.set_visible(noItems);
+			this._emptyToday.icon_name = noTreatments ? 'pill-symbolic' : 'all-done-symbolic';
+			this._emptyToday.title = noTreatments
+				? _('No treatments added yet')
+				: _('All done for today');
 		}
 
 		_clearOldHistoryEntries() {
