@@ -386,7 +386,7 @@ export function doseRow(timeDose) {
 
 	const amPmButton = new Gtk.Button({
 		name: 'amPmButton',
-		css_classes: ['am-pm', 'flat'],
+		css_classes: ['am-pm', 'flat', 'circular'],
 		valign: Gtk.Align.CENTER,
 		label: period,
 		visible: clockIs12,

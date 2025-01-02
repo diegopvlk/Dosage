@@ -144,8 +144,6 @@ list.boxed-list-separate
 }
 button.am-pm {
   font-weight: 400;
-  padding-left: 6px;
-  padding-right: 6px;
 }
 .boxed-list-separate > row {
   box-shadow: var(--list-border), var(--list-shadow);
