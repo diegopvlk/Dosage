@@ -64,6 +64,17 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.8.0" date="2025-01-02">
+			<description translate="no">
+				<ul>
+					<li>Added a button to show all/less history</li>
+					<li>Added a refill item to right click/treatment menu</li>
+					<li>Increased dose and inventory upper limit</li>
+					<li>Improvements and fixes</li>
+					<li>Added Korean translation</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.7.5" date="2024-12-05">
 			<description translate="no">
 				<ul>
