@@ -11,8 +11,6 @@ Adw.Dialog prefsDialog {
 		Adw.HeaderBar headerBar {}
 
 		content: Adw.Clamp {
-			maximum-size: 464;
-
 			Adw.PreferencesPage prefsPage {
 				Adw.PreferencesGroup {
 					separate-rows: true;
@@ -52,7 +50,7 @@ Adw.Dialog prefsDialog {
 
 					Adw.ActionRow {
 						title: _("Increase notification priority");
-						subtitle: _("Makes the notification show in fullscreen mode or even if 'Do Not Disturb' is enabled");
+						subtitle: _("Show notifications in fullscreen mode or with 'Do Not Disturb' enabled");
 						activatable-widget: prioritySwitch;
 
 						[prefix]

@@ -23,6 +23,15 @@
   --list-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.055);
 }
 
+.scrollbar-visible > scrollbar.vertical:dir(ltr),
+preferencespage scrolledwindow > scrollbar.vertical:dir(ltr) {
+  margin-left: -8px;
+}
+.scrollbar-visible > scrollbar.vertical:dir(rtl),
+preferencespage scrolledwindow > scrollbar.vertical:dir(rtl) {
+  margin-right: -8px;
+}
+
 .boxed-list,
 .boxed-list-separate {
   --card-bg-color: rgb(from var(--window-fg-color) r g b / calc(alpha * 0.08));
@@ -42,7 +51,7 @@ statuspage .title {
 
 #preferences scrolledwindow viewport clamp {
   margin-top: -26px;
-  margin-bottom: -4px;
+  margin-bottom: -6px;
 }
 
 .refill-amount-btn {

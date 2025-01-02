@@ -63,6 +63,10 @@ template $DosageWindow: Adw.ApplicationWindow {
 
 				child: Overlay {
 					ScrolledWindow {
+						styles [
+							'scrollbar-visible'
+						]
+
 						Adw.ClampScrollable {
 							ListView todayList {
 								styles [
@@ -136,6 +140,10 @@ template $DosageWindow: Adw.ApplicationWindow {
 
 				child: Overlay historyOverlay {
 					ScrolledWindow {
+						styles [
+							'scrollbar-visible'
+						]
+
 						Adw.ClampScrollable {
 							ListView historyList {
 								styles [
@@ -183,6 +191,10 @@ template $DosageWindow: Adw.ApplicationWindow {
 
 				child: Overlay {
 					ScrolledWindow {
+						styles [
+							'scrollbar-visible'
+						]
+
 						Adw.ClampScrollable {
 							vexpand: true;
 
