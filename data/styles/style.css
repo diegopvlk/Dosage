@@ -300,21 +300,13 @@ button.time-group-selection:hover {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding-left: 4px;
+  margin-left: -4px;
 }
 .badge-icon:dir(rtl) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   padding-right: 4px;
-}
-.badge-end-border:dir(ltr) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  padding-right: 4px;
-}
-.badge-end-border:dir(rtl) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding-left: 4px;
+  margin-right: -4px;
 }
 
 .empty-history,

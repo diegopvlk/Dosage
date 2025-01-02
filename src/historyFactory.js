@@ -161,19 +161,11 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	nameLabel.label = item.name;
 	doseLabel.label = `${item.dose} ${item.unit} • ${time}`;
 
-	if (item.taken[1] === 1) {
-		takenLabel.label = `${timeTaken}`;
-		takenIcon.set_visible(true);
-		takenLabel.add_css_class('badge-end-border');
-	} else if (item.taken[1] === 0) {
-		takenLabel.label = _('Skipped');
-		takenIcon.set_visible(false);
-		takenLabel.remove_css_class('badge-end-border');
-	} else if (item.taken[1] === -1) {
-		takenLabel.label = _('Missed');
-		takenIcon.set_visible(false);
-		takenLabel.remove_css_class('badge-end-border');
-	}
+	takenIcon.set_visible(item.taken[1] === 1);
+
+	if (item.taken[1] === 1) takenLabel.label = `${timeTaken}`;
+	else if (item.taken[1] === 0) takenLabel.label = _('Skipped');
+	else if (item.taken[1] === -1) takenLabel.label = _('Missed');
 
 	box.set_css_classes(['item-box', item.color]);
 });
