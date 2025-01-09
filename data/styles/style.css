@@ -101,7 +101,10 @@ listview > header label {
   box-shadow: var(--list-border), var(--list-shadow),
     inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.25));
 }
-
+row:only-child button.remove-row {
+  background-color: rgb(from currentColor r g b / calc(alpha * 0.15));
+  opacity: 0.5;
+}
 .dosage-list > row {
   border-radius: calc(var(--list-border-radius) + 2px);
   background: none;

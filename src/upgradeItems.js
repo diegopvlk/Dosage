@@ -10,7 +10,10 @@ export default function upgradeItems(json, type) {
 			const info = item.info || item._info;
 			const dur = info.duration;
 			const icon = info.icon.replace('-symbolic', '');
-			info.dosage.forEach(d => delete d.updated);
+			info.dosage.forEach(d => {
+				d.lastTaken = null;
+				delete d.updated;
+			});
 
 			// change to int and to parse in ms instead of seconds
 			if (typeof dur.start === 'string') {

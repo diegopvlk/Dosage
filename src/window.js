@@ -1053,7 +1053,7 @@ export const DosageWindow = GObject.registerClass(
 			}
 
 			itemsToAdd.sort((a, b) => b.obj.taken[0] - a.obj.taken[0]);
-			historyLS.splice(0, 0, itemsToAdd.reverse());
+			historyLS.splice(0, 0, itemsToAdd);
 			return itemsAdded;
 		}
 
