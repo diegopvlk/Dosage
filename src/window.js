@@ -549,6 +549,7 @@ export const DosageWindow = GObject.registerClass(
 								time: [timeDose.time[0], timeDose.time[1]],
 								dose: timeDose.dose,
 								lastTaken: timeDose.lastTaken,
+								dateTodayLS: new Date(),
 							},
 						}),
 					);
@@ -893,35 +894,46 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
+		_updateTreatInventory(item, taken) {
+			for (const it of treatmentsLS) {
+				const treatItem = it.obj;
+				const sameName = item.name === treatItem.name;
+				const updateInv = sameName && treatItem.inventory.enabled && taken === 1;
+
+				if (updateInv) treatItem.inventory.current -= item.dose;
+
+				// trigger signal to update labels
+				it.notify('obj');
+
+				return;
+			}
+		}
+
 		_addNotifItemsToHistory(groupedArr, taken) {
 			const itemsToAdd = [];
-			const todayLength = this.todayModel.get_n_items();
+			const now = new Date();
+			const today = new Date().setHours(0, 0, 0, 0);
 
 			groupedArr.forEach(item => {
-				// only insert to history if item is not in today list
-				for (let i = 0; i < todayLength; i++) {
-					const it = this.todayModel.get_item(i)?.obj;
-					const sameName = item.name === it?.name;
-					const itemTime = String(item.time);
-					const sameTime = itemTime === String(it?.time);
+				const dateLS = item.dateTodayLS.setHours(0, 0, 0, 0);
+				const time = dateLS === today ? item.time : [now.getHours(), now.getMinutes()];
 
-					if (sameName && sameTime) {
-						itemsToAdd.push(
-							new MedicationObject({
-								obj: {
-									name: item.name,
-									unit: item.unit,
-									time: item.time,
-									dose: item.dose,
-									color: item.color,
-									taken: [new Date().getTime(), taken],
-								},
-							}),
-						);
+				itemsToAdd.push(
+					new MedicationObject({
+						obj: {
+							name: item.name,
+							unit: item.unit,
+							time: time,
+							dose: item.dose,
+							color: item.color,
+							taken: [now.getTime(), taken],
+						},
+					}),
+				);
 
-						this._updateTreatInvAndLastTk(item, taken);
-					}
-				}
+				dateLS === today
+					? this._updateTreatInvAndLastTk(item, taken)
+					: this._updateTreatInventory(item, taken);
 			});
 
 			historyLS.splice(0, 0, itemsToAdd.reverse());
