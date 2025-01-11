@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-02 19:06-0300\n"
+"POT-Creation-Date: 2025-01-11 08:07-0300\n"
 "PO-Revision-Date: 2024-12-27 23:00+0000\n"
 "Last-Translator: Максим Горпиніч <mgorpinic2005@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -23,7 +23,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:717
-#: data/ui/window.blp:6 src/main.js:40 src/window.js:784
+#: data/ui/window.blp:6 src/main.js:40 src/window.js:785
 msgid "Dosage"
 msgstr "Дозування"
 
@@ -437,12 +437,12 @@ msgstr "Кнопки сповіщень"
 msgid "Show or hide confirm/skip"
 msgstr "Показати чи приховати підтвердити/пропустити"
 
-#: data/ui/preferences.blp:112 src/medDialog.js:312 src/window.js:643
-#: src/window.js:818
+#: data/ui/preferences.blp:112 src/medDialog.js:312 src/window.js:644
+#: src/window.js:819
 msgid "Confirm"
 msgstr "Підтвердити"
 
-#: data/ui/preferences.blp:128 data/ui/window.blp:128 src/window.js:644
+#: data/ui/preferences.blp:128 data/ui/window.blp:128 src/window.js:645
 msgid "Skip"
 msgstr "Пропустити"
 
@@ -466,7 +466,7 @@ msgstr "Сьогодні"
 msgid "Unselect"
 msgstr "Скасувати вибір"
 
-#: data/ui/window.blp:116 src/window.js:818
+#: data/ui/window.blp:116 src/window.js:819
 msgid "One-time entry"
 msgstr "Одноразовий прийом"
 
@@ -635,11 +635,11 @@ msgstr "Вихідні"
 msgid "Weekdays"
 msgstr "Будні"
 
-#: src/utils.js:349
+#: src/utils.js:343
 msgid "Delete dose"
 msgstr "Видалити дозу"
 
-#: src/window.js:136 src/window.js:679
+#: src/window.js:136 src/window.js:680
 msgid "Reminder"
 msgstr "Нагадування"
 
@@ -660,28 +660,28 @@ msgstr "Показувати менше"
 msgid "No results found"
 msgstr "Не знайдено жодних результатів"
 
-#: src/window.js:458 src/window.js:1115
+#: src/window.js:458 src/window.js:1127
 msgid "Empty history"
 msgstr "Історія порожня"
 
-#: src/window.js:568
+#: src/window.js:569
 msgid "No treatments added yet"
 msgstr "Ще не було додано жодного курсу лікування"
 
-#: src/window.js:569
+#: src/window.js:570
 msgid "All done for today"
 msgstr "Ви прийняли усі ліки на сьогодні"
 
-#: src/window.js:643
+#: src/window.js:644
 msgid "Confirm all"
 msgstr "Підтвердити все"
 
-#: src/window.js:644
+#: src/window.js:645
 msgid "Skip all"
 msgstr "Пропустити все"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:674
+#: src/window.js:675
 #, javascript-format
 msgid "and %d more"
 msgstr "і ще %d"

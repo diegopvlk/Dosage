@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-02 19:06-0300\n"
+"POT-Creation-Date: 2025-01-11 08:07-0300\n"
 "PO-Revision-Date: 2024-10-07 09:15+0000\n"
 "Last-Translator: Sunniva Løvstad <weblate@turtle.garden>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:717
-#: data/ui/window.blp:6 src/main.js:40 src/window.js:784
+#: data/ui/window.blp:6 src/main.js:40 src/window.js:785
 msgid "Dosage"
 msgstr "Dosage"
 
@@ -434,12 +434,12 @@ msgstr "Varselknapper"
 msgid "Show or hide confirm/skip"
 msgstr "Vis eller skjul bekreft/hopp over"
 
-#: data/ui/preferences.blp:112 src/medDialog.js:312 src/window.js:643
-#: src/window.js:818
+#: data/ui/preferences.blp:112 src/medDialog.js:312 src/window.js:644
+#: src/window.js:819
 msgid "Confirm"
 msgstr "Bekreft"
 
-#: data/ui/preferences.blp:128 data/ui/window.blp:128 src/window.js:644
+#: data/ui/preferences.blp:128 data/ui/window.blp:128 src/window.js:645
 msgid "Skip"
 msgstr "Hopp over"
 
@@ -463,7 +463,7 @@ msgstr "I dag"
 msgid "Unselect"
 msgstr "Fravelg"
 
-#: data/ui/window.blp:116 src/window.js:818
+#: data/ui/window.blp:116 src/window.js:819
 msgid "One-time entry"
 msgstr "Engangsoppføring"
 
@@ -631,11 +631,11 @@ msgstr "Helger"
 msgid "Weekdays"
 msgstr "Ukedager"
 
-#: src/utils.js:349
+#: src/utils.js:343
 msgid "Delete dose"
 msgstr "Slett dose"
 
-#: src/window.js:136 src/window.js:679
+#: src/window.js:136 src/window.js:680
 msgid "Reminder"
 msgstr "Påminnelse"
 
@@ -656,28 +656,28 @@ msgstr "Vis mindre"
 msgid "No results found"
 msgstr "Ingen resultater funnet"
 
-#: src/window.js:458 src/window.js:1115
+#: src/window.js:458 src/window.js:1127
 msgid "Empty history"
 msgstr "Tøm historikk"
 
-#: src/window.js:568
+#: src/window.js:569
 msgid "No treatments added yet"
 msgstr "Ingen behandlinger lagt til enda"
 
-#: src/window.js:569
+#: src/window.js:570
 msgid "All done for today"
 msgstr "Ferdig for i dag"
 
-#: src/window.js:643
+#: src/window.js:644
 msgid "Confirm all"
 msgstr "Bekreft alle"
 
-#: src/window.js:644
+#: src/window.js:645
 msgid "Skip all"
 msgstr "Hopp over alle"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:674
+#: src/window.js:675
 #, javascript-format
 msgid "and %d more"
 msgstr "og %d til"
