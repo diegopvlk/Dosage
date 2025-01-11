@@ -64,6 +64,13 @@
 	</screenshots>
 
 	<releases>
+		<release version="1.8.1" date="2025-01-11">
+			<description translate="no">
+				<ul>
+					<li>Fixed confirming/skipping from yesterday notification removing treatment of today page</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.8.0" date="2025-01-02">
 			<description translate="no">
 				<ul>
