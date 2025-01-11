@@ -220,12 +220,6 @@ export function handleCalendarSelect(calendar, calendarRow, oneTime) {
 			cal.select_day(GLib.DateTime.new_now_local());
 		}
 
-		if (!oneTime && selDate < today) {
-			cal.add_css_class('calendar-warning');
-		} else {
-			cal.remove_css_class('calendar-warning');
-		}
-
 		const calendarDate = new Date(+cal.get_date().format('%s') * 1000);
 		let calDate = calendarDate.toLocaleDateString(undefined, {
 			month: 'short',

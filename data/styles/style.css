@@ -433,6 +433,3 @@ calendar .day-number {
     );
   }
 }
-.calendar-warning {
-  color: color-mix(in srgb, var(--window-fg-color) 30%, var(--orange-4));
-}
