@@ -63,6 +63,16 @@
 		</screenshot>
 	</screenshots>
 
+	<requires>
+		<display_length compare="ge">360</display_length>
+	</requires>
+
+	<recommends>
+		<control>pointing</control>
+		<control>keyboard</control>
+		<control>touch</control>
+	</recommends>
+
 	<releases>
 		<release version="1.8.1" date="2025-01-11">
 			<description translate="no">
