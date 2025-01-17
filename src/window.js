@@ -503,31 +503,29 @@ export const DosageWindow = GObject.registerClass(
 
 		_loadToday() {
 			if (!this.todayLS) {
-				this.todayLS = Gio.ListStore.new(MedicationObject);
-
-				const filterTodayModel = new Gtk.FilterListModel({
-					model: this.todayLS,
-					filter: Gtk.CustomFilter.new(item => {
-						return isTodayMedDay(item);
-					}),
-				});
-
-				this.sortedTodayModel = new Gtk.SortListModel({
-					model: filterTodayModel,
-					section_sorter: new TodaySectionSorter(),
-				});
-
-				this.todayModel = new Gtk.NoSelection({
-					model: this.sortedTodayModel,
-				});
-
 				this._todayList.remove_css_class('view');
 				this._todayList.add_css_class('background');
 				this._todayList.set_header_factory(todayHeaderFactory);
 				this._todayList.set_factory(todayItemFactory);
-			} else {
-				this.todayLS.remove_all();
 			}
+
+			this.todayLS = Gio.ListStore.new(MedicationObject);
+
+			const filterTodayModel = new Gtk.FilterListModel({
+				model: this.todayLS,
+				filter: Gtk.CustomFilter.new(item => {
+					return isTodayMedDay(item);
+				}),
+			});
+
+			this.sortedTodayModel = new Gtk.SortListModel({
+				model: filterTodayModel,
+				section_sorter: new TodaySectionSorter(),
+			});
+
+			this.todayModel = new Gtk.NoSelection({
+				model: this.sortedTodayModel,
+			});
 
 			for (const it of treatmentsLS) {
 				const item = it.obj;
