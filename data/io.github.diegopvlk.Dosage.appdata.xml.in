@@ -74,6 +74,13 @@
 	</recommends>
 
 	<releases>
+		<release version="1.8.2" date="2025-01-17">
+			<description translate="no">
+				<ul>
+					<li>Fixed last treatment of today page not being select correctly when using time button</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.8.1" date="2025-01-11">
 			<description translate="no">
 				<ul>
