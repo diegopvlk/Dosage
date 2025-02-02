@@ -41,6 +41,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 	listItem.box.append(listItem.labelsBox);
 
 	listItem.nameLabel = new Gtk.Label({
+		css_classes: ['title'],
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 		margin_bottom: 1,
@@ -91,7 +92,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 		css_classes: ['circular'],
 		valign: Gtk.Align.CENTER,
 		margin_start: 5,
-		margin_end: 13,
+		margin_end: 12,
 		icon_name: 'view-more-symbolic',
 		menu_model: listItem.optionsMenu,
 	});

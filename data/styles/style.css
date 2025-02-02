@@ -1,8 +1,8 @@
 @import "./card-colors.css";
 
 :root {
-  --window-bg-color: color-mix(in srgb, #fafafa 99%, var(--accent-color));
-  --window-fg-color: color-mix(in srgb, #323232 85%, var(--accent-color));
+  --window-bg-color: #fafafb;
+  --window-fg-color: #323238;
 
   --popover-bg-color: color-mix(
     in srgb,
@@ -14,8 +14,7 @@
   --dialog-bg-color: var(--popover-bg-color);
   --dialog-fg-color: var(--popover-fg-color);
 
-  --card-bg-color: rgb(from var(--window-fg-color) r g b / calc(alpha * 0.09));
-  --card-fg-color: var(--window-fg-color);
+  --card-bg-color: color-mix(in srgb, #ebebed 99%, var(--accent-color));
 
   --list-border-radius: 8px;
   --list-border: inset 0 0 0 1px
@@ -30,11 +29,6 @@ preferencespage scrolledwindow > scrollbar.vertical:dir(ltr) {
 .scrollbar-visible > scrollbar.vertical:dir(rtl),
 preferencespage scrolledwindow > scrollbar.vertical:dir(rtl) {
   margin-right: -8px;
-}
-
-.boxed-list,
-.boxed-list-separate {
-  --card-bg-color: rgb(from var(--window-fg-color) r g b / calc(alpha * 0.08));
 }
 
 #medication-dialog row#delete {
@@ -70,19 +64,19 @@ dialog.about sheet scrolledwindow clamp {
 }
 listview > header {
   padding: 2px;
-  padding-top: 11px;
-  padding-bottom: 1px;
+  padding-top: 10px;
+  padding-bottom: 0px;
   min-height: 21px;
 }
 listview > header label {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .item-box {
   transition: background 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-shadow: var(--list-border), var(--list-shadow);
   border-radius: var(--list-border-radius);
-  min-height: 50px;
+  min-height: 46px;
   padding: 6px 0;
 }
 .item-box:hover {
@@ -90,6 +84,12 @@ listview > header label {
 }
 .item-box:active {
   background-image: image(color-mix(in srgb, currentColor 8%, transparent));
+}
+.item-box > box > label.title:first-child {
+  margin-top: -4px;
+}
+.item-box > box > label.subtitle:last-child {
+  margin-bottom: -4px;
 }
 
 /* today list card stripe */
@@ -115,7 +115,7 @@ row:only-child button.remove-row {
   background-color: transparent;
 }
 .dosage-list {
-  padding-bottom: 75px;
+  padding-bottom: 69px;
 }
 .list-no-extra-padding-bottom {
   padding-bottom: 20px;
@@ -216,10 +216,10 @@ The same thing happens in today list when confirming
 so use this little hack to scroll to header instead
 */
 listview.scroll-to-top-hack > :nth-child(1) {
-  margin-bottom: -33px;
+  margin-bottom: -31px;
 }
 listview.scroll-to-top-hack > :nth-child(2) {
-  margin-top: 33px;
+  margin-top: 31px;
 }
 
 .hist-entry-taken-label {
@@ -248,7 +248,7 @@ button.time-group-selection:hover:dir(rtl) {
   padding-left: 18px;
 }
 button.time-group-selection:hover {
-  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='16px' viewBox='0 0 16 16' width='16px'%3E%3Cfilter id='a' height='100%25' width='100%25' x='0%25' y='0%25'%3E%3CfeColorMatrix color-interpolation-filters='sRGB' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Cmask id='b'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='.5'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='c'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='d'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='.7'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='e'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='f'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='.35'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='g'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cpath d='m 15 3.484375 l -1 -1 l -7.46875 7.515625 l -3.414062 -3.476562 l -2 2 l 5.414062 5.476562 l 9.46875 -9.515625 z m 0 0' fill='%23404040'/%3E%3Cg mask='url(%23b)'%3E%3Cg clip-path='url(%23c)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 550 182 c -.351562 .003906 -.695312 .101562 -1 .28125 v 3.4375 c .304688 .179688 .648438 .277344 1 .28125 c 1.105469 0 2 -.894531 2 -2 s -.894531 -2 -2 -2 z m 0 5 c -.339844 0 -.679688 .058594 -1 .175781 v 6.824219 h 4 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23d)'%3E%3Cg clip-path='url(%23e)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 569 182 v 4 c 1.105469 0 2 -.894531 2 -2 s -.894531 -2 -2 -2 z m 0 5 v 7 h 3 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23f)'%3E%3Cg clip-path='url(%23g)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 573 182.269531 v 3.449219 c .613281 -.355469 .996094 -1.007812 1 -1.71875 c 0 -.714844 -.382812 -1.375 -1 -1.730469 z m 0 4.90625 v 6.824219 h 2 v -4 c 0 -1.269531 -.800781 -2.402344 -2 -2.824219 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='16px' viewBox='0 0 16 16' width='16px'%3E%3Cfilter id='a' height='100%25' width='100%25' x='0%25' y='0%25'%3E%3CfeColorMatrix color-interpolation-filters='sRGB' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Cmask id='b'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='.5'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='c'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='d'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='.7'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='e'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='f'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='.35'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='g'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cpath d='m 15 3.484375 l -1 -1 l -7.46875 7.515625 l -3.414062 -3.476562 l -2 2 l 5.414062 5.476562 l 9.46875 -9.515625 z m 0 0' fill='%23323238'/%3E%3Cg mask='url(%23b)'%3E%3Cg clip-path='url(%23c)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 550 182 c -.351562 .003906 -.695312 .101562 -1 .28125 v 3.4375 c .304688 .179688 .648438 .277344 1 .28125 c 1.105469 0 2 -.894531 2 -2 s -.894531 -2 -2 -2 z m 0 5 c -.339844 0 -.679688 .058594 -1 .175781 v 6.824219 h 4 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23d)'%3E%3Cg clip-path='url(%23e)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 569 182 v 4 c 1.105469 0 2 -.894531 2 -2 s -.894531 -2 -2 -2 z m 0 5 v 7 h 3 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23f)'%3E%3Cg clip-path='url(%23g)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 573 182.269531 v 3.449219 c .613281 -.355469 .996094 -1.007812 1 -1.71875 c 0 -.714844 -.382812 -1.375 -1 -1.730469 z m 0 4.90625 v 6.824219 h 2 v -4 c 0 -1.269531 -.800781 -2.402344 -2 -2.824219 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
 }
 
 .time-box spinbutton button {
@@ -349,22 +349,13 @@ button.floating:hover {
     0 1px 2px 1px rgba(90, 90, 90, 0.15);
 }
 button.floating:not(.suggested-action) {
-  background-color: rgb(
-    from color-mix(in srgb, #ececec 97%, var(--accent-bg-color)) r g b /
-      calc(alpha * 0.93)
-  );
+  background-color: color-mix(in srgb, #ebebed 99%, var(--accent-color));
 }
 button.floating:not(.suggested-action):hover {
-  background-color: rgb(
-    from color-mix(in srgb, #e1e1e1 97%, var(--accent-bg-color)) r g b /
-      calc(alpha * 0.96)
-  );
+  background-color: color-mix(in srgb, #e3e3e5 99%, var(--accent-color));
 }
 button.floating:not(.suggested-action):active {
-  background-color: rgb(
-    from color-mix(in srgb, #d6d6d6 97%, var(--accent-bg-color)) r g b /
-      calc(alpha * 1)
-  );
+  background-color: color-mix(in srgb, #dadadc 99%, var(--accent-color));
 }
 #refill-dialog headerbar button,
 #medication-dialog headerbar button {
