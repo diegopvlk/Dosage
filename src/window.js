@@ -24,7 +24,7 @@ import {
 	createTempObj,
 	isTodayMedDay,
 	datesPassedDiff,
-	clockIs12,
+	timeFormat,
 } from './utils.js';
 
 export const historyLS = Gio.ListStore.new(MedicationObject);
@@ -637,17 +637,16 @@ export const DosageWindow = GObject.registerClass(
 				const hours = now.getHours();
 				const minutes = now.getMinutes();
 				const seconds = now.getSeconds();
-				const date = new Date(+dateKey);
+				const dateTime = GLib.DateTime.new_from_unix_local(+dateKey / 1000);
 				const isSingleItem = groupedObj[dateKey].length === 1;
 				const confirmStr = isSingleItem ? _('Confirm') : _('Confirm all');
 				const skipStr = isSingleItem ? _('Skip') : _('Skip all');
 
-				const itemHour = date.getHours();
-				const itemMin = date.getMinutes();
+				const itemHour = dateTime.get_hour();
+				const itemMin = dateTime.get_minute();
 				let timeDiff = (itemHour - hours) * 3600000 + (itemMin - minutes) * 60000 - seconds * 1000;
 
-				const formatOpt = { hour: 'numeric', minute: 'numeric', hour12: clockIs12 };
-				const time = date.toLocaleTimeString(undefined, formatOpt);
+				const time = dateTime.format(timeFormat);
 
 				const notify = () => {
 					// notifications from the past will be sent again instantly (setTimeout is < 0)

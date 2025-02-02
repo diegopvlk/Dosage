@@ -4,6 +4,7 @@
  */
 'use strict';
 
+import GLib from 'gi://GLib';
 import Gdk from 'gi://Gdk';
 import Gio from 'gi://Gio';
 import Gtk from 'gi://Gtk';
@@ -216,11 +217,11 @@ function setInventoryAndDateLabels(listItem) {
 			infoLabel.label = getSpecificDaysLabel(item);
 			break;
 		case 'day-of-month':
-			infoLabel.label = _('Day of the month') + `: ${item.monthDay}`;
+			infoLabel.label = _('Day') + `: ${item.monthDay}`;
 			break;
 		case 'cycle':
 			const nextDt = new Date(item.cycleNextDate).setHours(0, 0, 0, 0);
-			const nextDate = formatDate(nextDt, 'weekday');
+			const nextDate = formatDate(nextDt);
 
 			if (item.duration.enabled) {
 				durationNextDateLabel.label = untilLabel;
@@ -251,18 +252,7 @@ function setInventoryAndDateLabels(listItem) {
 	}
 }
 
-function formatDate(date, weekday) {
-	if (weekday) {
-		return new Date(date).toLocaleDateString(undefined, {
-			weekday: 'short',
-			month: 'short',
-			day: 'numeric',
-		});
-	}
-
-	return new Date(date).toLocaleDateString(undefined, {
-		month: 'short',
-		day: 'numeric',
-		year: 'numeric',
-	});
+function formatDate(dt) {
+	const date = GLib.DateTime.new_from_unix_local(dt / 1000);
+	return date.format('%x');
 }

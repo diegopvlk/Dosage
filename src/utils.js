@@ -10,8 +10,9 @@ import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
+import { dateFormats } from './dateFormats.js';
 
-const decoder = new TextDecoder('utf-8');
+const decoder = new TextDecoder();
 
 const [firstWeekday, firstWorkDay] = getWeekdays();
 export { firstWeekday, firstWorkDay };
@@ -62,23 +63,36 @@ export function getSpecificDaysLabel(item) {
 	return newLabel;
 }
 
-const [clockIs12, timeDot] = checkClock();
-export { clockIs12, timeDot };
+export const [clockIs12, timeDot, timeFormat, dateFormat] = checkLocale();
 
-function checkClock() {
+function checkLocale() {
+	const systemOpts = new Intl.DateTimeFormat().resolvedOptions();
+	const locale = systemOpts.locale;
+	const generalLocale = locale.split('-')[0];
 	let is12 = false;
 	let timeDot = false;
+	let timeFormat = '%H:%M';
+	let dateFormat = dateFormats[locale] ?? dateFormats[generalLocale] ?? '%x';
 
 	try {
-		const [, outTimeFmt] = GLib.spawn_command_line_sync('locale t_fmt');
-		const timeFormat = decoder.decode(outTimeFmt).replace('\n', '');
-		is12 = timeFormat.includes('%r') || timeFormat.includes('%p');
-		timeDot = timeFormat.includes('.');
+		const [, outputTimeFmt] = GLib.spawn_command_line_sync('locale t_fmt');
+		const outTimeFormat = decoder.decode(outputTimeFmt).replace('\n', '');
+
+		is12 =
+			outTimeFormat.includes('%r') || outTimeFormat.includes('%p') || outTimeFormat.includes('%P');
+
+		timeFormat = is12 ? '%-I:%M %p' : '%H:%M';
+
+		timeDot = outTimeFormat.includes('.');
+
+		if (timeDot) {
+			timeFormat = timeFormat.replace(':', '.');
+		}
 	} catch (error) {
 		console.error(error);
 	}
 
-	return [is12, timeDot];
+	return [is12, timeDot, timeFormat, dateFormat];
 }
 
 export const DataDir = Gio.file_new_for_path(GLib.build_filenamev([GLib.get_user_data_dir()]));
@@ -220,14 +234,7 @@ export function handleCalendarSelect(calendar, calendarRow, oneTime) {
 			cal.select_day(GLib.DateTime.new_now_local());
 		}
 
-		const calendarDate = new Date(+cal.get_date().format('%s') * 1000);
-		let calDate = calendarDate.toLocaleDateString(undefined, {
-			month: 'short',
-			day: 'numeric',
-			year: 'numeric',
-		});
-		calDate = calDate.charAt(0).toUpperCase() + calDate.slice(1);
-		calendarRow.subtitle = calDate;
+		calendarRow.subtitle = cal.get_date().format('%x');
 	}
 }
 

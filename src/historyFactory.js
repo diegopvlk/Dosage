@@ -4,11 +4,12 @@
  */
 'use strict';
 
+import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
 import Gdk from 'gi://Gdk';
 import Pango from 'gi://Pango';
 
-import { clockIs12 } from './utils.js';
+import { dateFormat, timeFormat } from './utils.js';
 import { historyLS } from './window.js';
 
 export const historyHeaderFactory = new Gtk.SignalListItemFactory();
@@ -30,13 +31,8 @@ historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const item = listHeaderItem.get_item().obj;
 	const dateLabel = listHeaderItem.dateLabel;
 
-	const date = new Date(item.taken[0]);
-	const formattedDt = date.toLocaleDateString(undefined, {
-		weekday: 'long',
-		month: 'short',
-		day: 'numeric',
-		year: 'numeric',
-	});
+	const dateTime = GLib.DateTime.new_from_unix_local(item.taken[0] / 1000);
+	const formattedDt = dateTime.format(dateFormat);
 
 	dateLabel.label = formattedDt.charAt(0).toUpperCase() + formattedDt.slice(1);
 });
@@ -133,13 +129,13 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const doseLabel = listItem.doseLabel;
 	const takenLabel = listItem.takenLabel;
 	const takenIcon = listItem.takenIcon;
-	const today = new Date();
-	const itemDate = new Date(item.taken[0]);
-	const itemTime = new Date();
-	itemTime.setHours(item.time[0], item.time[1]);
-	const formatOpt = { hour: 'numeric', minute: 'numeric', hour12: clockIs12 };
-	const time = itemTime.toLocaleTimeString(undefined, formatOpt);
-	const timeTaken = itemDate.toLocaleTimeString(undefined, formatOpt);
+	const today = new Date().setHours(0, 0, 0, 0);
+	const itemDate = new Date(item.taken[0]).setHours(0, 0, 0, 0);
+
+	const itemTakenDate = GLib.DateTime.new_from_unix_local(item.taken[0] / 1000);
+	const itemTime = GLib.DateTime.new_local(1, 1, 1, item.time[0], item.time[1], 1);
+	const time = itemTime.format(timeFormat);
+	const timeTaken = itemTakenDate.format(timeFormat);
 
 	// activate item with space bar
 	const keyController = new Gtk.EventControllerKey();
@@ -151,7 +147,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	});
 	row.add_controller(keyController);
 
-	if (today.setHours(0, 0, 0, 0) === itemDate.setHours(0, 0, 0, 0)) {
+	if (today === itemDate) {
 		deleteButton.icon_name = 'edit-undo-symbolic';
 		deleteButton.tooltip_text = _('Restore');
 	} else {
@@ -164,7 +160,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 
 	takenIcon.set_visible(item.taken[1] === 1);
 
-	if (item.taken[1] === 1) takenLabel.label = `${timeTaken}`;
+	if (item.taken[1] === 1) takenLabel.label = timeTaken;
 	else if (item.taken[1] === 0) takenLabel.label = _('Skipped');
 	else if (item.taken[1] === -1) takenLabel.label = _('Missed');
 

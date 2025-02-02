@@ -13,5 +13,6 @@
     <file>treatmentsFactory.js</file>
     <file>releaseNotes.js</file>
     <file>upgradeItems.js</file>
+    <file>dateFormats.js</file>
   </gresource>
 </gresources>

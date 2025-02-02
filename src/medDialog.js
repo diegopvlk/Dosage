@@ -101,11 +101,8 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 	const calendarEnd = builder.get_object('calendarEnd');
 	const calendarEndRow = builder.get_object('calendarEndRow');
 
-	const calDateOpt = { month: 'short', day: 'numeric', year: 'numeric' };
-
-	const calendarDate = new Date();
-	let calDate = calendarDate.toLocaleDateString(undefined, calDateOpt);
-	calDate = calDate.charAt(0).toUpperCase() + calDate.slice(1);
+	const calendarDate = GLib.DateTime.new_now_local();
+	const calDate = calendarDate.format('%x');
 
 	calendarStartRow.subtitle = calDate;
 	calendarEndRow.subtitle = calDate;
@@ -263,10 +260,6 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 			colorIcon.sensitive = true;
 			existingEntry = false;
 		});
-
-		const calendarDate = new Date();
-		let calDate = calendarDate.toLocaleDateString(undefined, calDateOpt);
-		calDate = calDate.charAt(0).toUpperCase() + calDate.slice(1);
 
 		dateOneEntry.subtitle = calDate;
 		handleCalendarSelect(calOneEntry, dateOneEntry, true);
