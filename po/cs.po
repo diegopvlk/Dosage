@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-11 08:07-0300\n"
+"POT-Creation-Date: 2025-02-01 21:44-0300\n"
 "PO-Revision-Date: 2024-12-28 14:26+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/med-dialog.blp:717
-#: data/ui/window.blp:6 src/main.js:40 src/window.js:785
+#: data/ui/window.blp:6 src/main.js:40 src/window.js:782
 msgid "Dosage"
 msgstr "Dávkování"
 
@@ -123,7 +123,7 @@ msgstr "Konec"
 msgid "New treatment"
 msgstr "Nová léčba"
 
-#: data/ui/med-dialog.blp:19 src/medDialog.js:941
+#: data/ui/med-dialog.blp:19 src/medDialog.js:934
 msgid "Cancel"
 msgstr "Zrušit"
 
@@ -143,7 +143,7 @@ msgstr "Jméno"
 msgid "Unit"
 msgstr "Jednotka"
 
-#: data/ui/med-dialog.blp:75 src/medDialog.js:257
+#: data/ui/med-dialog.blp:75 src/medDialog.js:254
 msgid "Pill(s)"
 msgstr "Pilulka(y)"
 
@@ -163,7 +163,7 @@ msgstr "Forma"
 msgid "Color and icon"
 msgstr "Barva a ikona"
 
-#: data/ui/med-dialog.blp:99 src/medDialog.js:313
+#: data/ui/med-dialog.blp:99 src/medDialog.js:306
 msgid "Color"
 msgstr "Barva"
 
@@ -261,7 +261,7 @@ msgstr "Kapky"
 msgid "Potion"
 msgstr "Nápoj"
 
-#: data/ui/med-dialog.blp:478 src/medDialog.js:848
+#: data/ui/med-dialog.blp:478 src/medDialog.js:841
 msgid "Frequency"
 msgstr "Frekvence"
 
@@ -269,19 +269,19 @@ msgstr "Frekvence"
 msgid "Every day"
 msgstr "Každý den"
 
-#: data/ui/med-dialog.blp:484 src/medDialog.js:840
+#: data/ui/med-dialog.blp:484 src/medDialog.js:833
 msgid "Specific days"
 msgstr "Vybrané dny"
 
-#: data/ui/med-dialog.blp:485 src/medDialog.js:814 src/treatmentsFactory.js:218
+#: data/ui/med-dialog.blp:485 src/medDialog.js:807
 msgid "Day of the month"
 msgstr "Den v měsíci"
 
-#: data/ui/med-dialog.blp:486 src/medDialog.js:845 src/treatmentsFactory.js:239
+#: data/ui/med-dialog.blp:486 src/medDialog.js:838 src/treatmentsFactory.js:241
 msgid "Cycle"
 msgstr "Cyklus"
 
-#: data/ui/med-dialog.blp:487 src/treatmentsFactory.js:242
+#: data/ui/med-dialog.blp:487 src/treatmentsFactory.js:244
 msgid "When necessary"
 msgstr "Když je potřeba"
 
@@ -318,7 +318,7 @@ msgstr "Čas a množství"
 msgid "Add dose"
 msgstr "Přidat dávku"
 
-#: data/ui/med-dialog.blp:752 src/historyFactory.js:167
+#: data/ui/med-dialog.blp:752 src/historyFactory.js:164
 msgid "Skipped"
 msgstr "Přeskočený"
 
@@ -363,7 +363,7 @@ msgid "Set start and end dates"
 msgstr "Nastavte počáteční a koncové datum"
 
 #. TRANSLATORS: label for when duration is enabled
-#: data/ui/med-dialog.blp:835 src/treatmentsFactory.js:198
+#: data/ui/med-dialog.blp:835 src/treatmentsFactory.js:200
 msgid "Starts on"
 msgstr "Počáteční datum"
 
@@ -380,8 +380,8 @@ msgstr "Koncové datum"
 msgid "Date"
 msgstr "Datum"
 
-#: data/ui/med-dialog.blp:966 src/historyFactory.js:158 src/medDialog.js:942
-#: src/treatmentsFactory.js:162
+#: data/ui/med-dialog.blp:966 src/historyFactory.js:155 src/medDialog.js:935
+#: src/treatmentsFactory.js:164
 msgid "Delete"
 msgstr "Smazat"
 
@@ -431,12 +431,12 @@ msgstr "Akce notifikace"
 msgid "Show or hide confirm/skip"
 msgstr "Zobrazit nebo skrýt tlačítka potvrdit/přeskočit"
 
-#: data/ui/preferences.blp:112 src/medDialog.js:312 src/window.js:644
-#: src/window.js:819
+#: data/ui/preferences.blp:112 src/medDialog.js:305 src/window.js:642
+#: src/window.js:816
 msgid "Confirm"
 msgstr "Potvrdit"
 
-#: data/ui/preferences.blp:128 data/ui/window.blp:128 src/window.js:645
+#: data/ui/preferences.blp:128 data/ui/window.blp:128 src/window.js:643
 msgid "Skip"
 msgstr "Přeskočit"
 
@@ -460,7 +460,7 @@ msgstr "Dnes"
 msgid "Unselect"
 msgstr "Zrušit výběr"
 
-#: data/ui/window.blp:116 src/window.js:819
+#: data/ui/window.blp:116 src/window.js:816
 msgid "One-time entry"
 msgstr "Jednorázový záznam"
 
@@ -484,11 +484,11 @@ msgstr "O Dávkování"
 msgid "Quit"
 msgstr "Konec"
 
-#: src/historyFactory.js:155
+#: src/historyFactory.js:152
 msgid "Restore"
 msgstr "Obnovit"
 
-#: src/historyFactory.js:168 src/medDialog.js:368
+#: src/historyFactory.js:165 src/medDialog.js:361
 msgid "Missed"
 msgstr "Zapomenutý"
 
@@ -507,132 +507,132 @@ msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 "Potvrďte abyste umožnili aplikaci běžet na pozadí a zobrazovat notifikace"
 
-#: src/medDialog.js:120
+#: src/medDialog.js:117
 msgid "Edit treatment"
 msgstr "Upravit léčbu"
 
-#: src/medDialog.js:121 src/medDialog.js:389
+#: src/medDialog.js:118 src/medDialog.js:382
 msgid "Save"
 msgstr "Uložit"
 
-#: src/medDialog.js:135
+#: src/medDialog.js:132
 msgid "Copy"
 msgstr "Kopírovat"
 
-#: src/medDialog.js:246
+#: src/medDialog.js:243
 msgid "New"
 msgstr "Nový"
 
-#: src/medDialog.js:311
+#: src/medDialog.js:304
 msgid "New entry"
 msgstr "Nový záznam"
 
-#: src/medDialog.js:361 src/medDialog.js:374
+#: src/medDialog.js:354 src/medDialog.js:367
 msgid "Confirmed at"
 msgstr "Potvrzený v"
 
-#: src/medDialog.js:365 src/medDialog.js:380
+#: src/medDialog.js:358 src/medDialog.js:373
 msgid "Skipped at"
 msgstr "Přeskočený v"
 
-#: src/medDialog.js:388
+#: src/medDialog.js:381
 msgid "Edit entry"
 msgstr "Upravit záznam"
 
-#: src/medDialog.js:805
+#: src/medDialog.js:798
 msgid "Choose"
 msgstr "Vybrat"
 
-#: src/medDialog.js:815
+#: src/medDialog.js:808 src/treatmentsFactory.js:220
 msgid "Day"
 msgstr "Den"
 
-#: src/medDialog.js:882
+#: src/medDialog.js:875
 msgid "Empty name"
 msgstr "Prázné jméno"
 
-#: src/medDialog.js:886
+#: src/medDialog.js:879
 msgid "Empty unit"
 msgstr "Prázdná jednotka"
 
-#: src/medDialog.js:892
+#: src/medDialog.js:885
 msgid "Choose at least one day"
 msgstr "Vyberte alespoň jeden den"
 
-#: src/medDialog.js:903
+#: src/medDialog.js:896
 msgid "Name already on treatment list"
 msgstr "Jméno již na seznamu ošetření"
 
-#: src/medDialog.js:917
+#: src/medDialog.js:910
 msgid "Duplicated time"
 msgstr "Duplikovaný čas"
 
 #. TRANSLATORS: Message for confirmation when deleting an item
-#: src/medDialog.js:937
+#: src/medDialog.js:930
 msgid "Are you sure?"
 msgstr "Jste si jistí?"
 
-#: src/medDialog.js:938
+#: src/medDialog.js:931
 msgid "will be deleted"
 msgstr "bude smazán"
 
-#: src/todayFactory.js:108
+#: src/todayFactory.js:107
 msgid "Change dose"
 msgstr "Změnit dávku"
 
-#: src/treatmentsFactory.js:90
+#: src/treatmentsFactory.js:92
 msgid "Options"
 msgstr "Možnosti"
 
-#: src/treatmentsFactory.js:159
+#: src/treatmentsFactory.js:161
 msgid "Edit"
 msgstr "Upravit"
 
-#: src/treatmentsFactory.js:160
+#: src/treatmentsFactory.js:162
 msgid "Refill"
 msgstr "Doplnit"
 
-#: src/treatmentsFactory.js:161
+#: src/treatmentsFactory.js:163
 msgid "Duplicate"
 msgstr "Duplikovat"
 
-#: src/treatmentsFactory.js:188
+#: src/treatmentsFactory.js:190
 msgid "Remaining"
 msgstr "Zbývá"
 
-#: src/treatmentsFactory.js:192
+#: src/treatmentsFactory.js:194
 msgid "Low stock"
 msgstr "Malá zásoba"
 
-#: src/treatmentsFactory.js:199
+#: src/treatmentsFactory.js:201
 msgid "Until"
 msgstr "Dokud"
 
-#: src/treatmentsFactory.js:200
+#: src/treatmentsFactory.js:202
 msgid "Ended on"
 msgstr "Ukončeno dne"
 
-#: src/treatmentsFactory.js:212 src/utils.js:52
+#: src/treatmentsFactory.js:214 src/utils.js:53
 msgid "Daily"
 msgstr "Denně"
 
-#: src/treatmentsFactory.js:227 src/treatmentsFactory.js:230
+#: src/treatmentsFactory.js:229 src/treatmentsFactory.js:232
 msgid "Next dose"
 msgstr "Další dávka"
 
-#: src/utils.js:48
+#: src/utils.js:49
 msgid "Weekends"
 msgstr "O výkendech"
 
-#: src/utils.js:50
+#: src/utils.js:51
 msgid "Weekdays"
 msgstr "Všední dny"
 
-#: src/utils.js:343
+#: src/utils.js:350
 msgid "Delete dose"
 msgstr "Smazat dávku"
 
-#: src/window.js:136 src/window.js:680
+#: src/window.js:136 src/window.js:677
 msgid "Reminder"
 msgstr "Připomínka"
 
@@ -653,28 +653,28 @@ msgstr "Zobrazit méně"
 msgid "No results found"
 msgstr "Nebyly nalezeny žádné výsledky"
 
-#: src/window.js:458 src/window.js:1127
+#: src/window.js:458 src/window.js:1124
 msgid "Empty history"
 msgstr "Prázdná historie"
 
-#: src/window.js:569
+#: src/window.js:567
 msgid "No treatments added yet"
 msgstr "Zatím nebyly přidány žádné léčby"
 
-#: src/window.js:570
+#: src/window.js:568
 msgid "All done for today"
 msgstr "Pro dnešek máte hotovo"
 
-#: src/window.js:644
+#: src/window.js:642
 msgid "Confirm all"
 msgstr "Potvrdit všechny"
 
-#: src/window.js:645
+#: src/window.js:643
 msgid "Skip all"
 msgstr "Přeskočit všechny"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:675
+#: src/window.js:672
 #, javascript-format
 msgid "and %d more"
 msgstr "a ještě %d"
