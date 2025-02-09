@@ -65,7 +65,8 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		#loadSettings() {
-			const appId = this.get_application().get_application_id();
+			this.app = this.get_application();
+			const appId = this.app.get_application_id();
 			globalThis.settings = new Gio.Settings({ schemaId: appId });
 			settings.bind('window-width', this, 'default-width', Gio.SettingsBindFlags.DEFAULT);
 			settings.bind('window-height', this, 'default-height', Gio.SettingsBindFlags.DEFAULT);
@@ -384,7 +385,7 @@ export const DosageWindow = GObject.registerClass(
 					this._historyList.set_header_factory(historyHeaderFactory);
 					this._historyList.set_factory(historyItemFactory);
 
-					const app = this.get_application();
+					const app = this.app;
 					this.showSearchAction = new Gio.SimpleAction({ name: 'showSearch' });
 					app.set_accels_for_action('app.showSearch', ['<primary>f']);
 					app.add_action(this.showSearchAction);
@@ -787,7 +788,7 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		_getNotification() {
-			const app = this.get_application();
+			const app = this.app;
 			const notification = new Gio.Notification();
 			const openAction = new Gio.SimpleAction({ name: 'open' });
 
@@ -873,7 +874,7 @@ export const DosageWindow = GObject.registerClass(
 
 		_addTodayToHistory(btn) {
 			const taken = +btn.get_name(); // 1 or 0
-			const app = this.get_application();
+			const app = this.app;
 			const itemsToAdd = [];
 			const date = new Date();
 			const hours = date.getHours();
@@ -1005,9 +1006,11 @@ export const DosageWindow = GObject.registerClass(
 
 			if (!tempObj || this.errorLoading) return;
 
+			const jsonStr = JSON.stringify(tempObj);
+
 			const updateFile = () => {
 				return new Promise((resolve, reject) => {
-					const byteArray = new TextEncoder().encode(JSON.stringify(tempObj));
+					const byteArray = new TextEncoder().encode(jsonStr);
 					file.replace_contents_async(
 						GLib.Bytes.new(byteArray),
 						null,
@@ -1181,7 +1184,7 @@ export const DosageWindow = GObject.registerClass(
 				this._emptyHistory.visible = true;
 				this._buttonSearch.sensitive = false;
 				this._searchBar.search_mode_enabled = false;
-				this.get_application().remove_action('showSearch');
+				this.app.remove_action('showSearch');
 			}
 		}
 

@@ -447,45 +447,37 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 
 		frequencyMenu.connect('notify::selected-item', frequencyMenu => {
 			const selected = frequencyMenu.get_selected();
+
 			freqRowPrefix.visible = selected !== 0 && selected !== 4;
 			frequencySpecificDays.visible = selected === 1;
 			frequencyDayOfMonth.visible = selected === 2;
 			frequencyCycle.visible = selected === 3;
 
-			if (selected === 1) {
-				frequencyMenu.title = _('Specific days');
-				setSpecificDaysFreqLabel();
-			} else if (selected === 2) {
-				handleDayOfMonthLabels();
-			} else if (selected === 3) {
-				frequencyMenu.title = _('Cycle');
-				handleCycle();
-			} else {
-				frequencyMenu.title = _('Frequency');
-			}
-
-			if (selected !== 4) {
-				let currRow = dosageList.get_first_child();
-				currRow.prefix.sensitive = true;
-				while (currRow) {
-					currRow.visible = true;
-					currRow = currRow.get_next_sibling();
-				}
-				medDuration.visible = true;
-				recurringNotif.visible = true;
-				return;
+			switch (selected) {
+				case 1:
+					frequencyMenu.title = _('Specific days');
+					setSpecificDaysFreqLabel();
+					break;
+				case 2:
+					handleDayOfMonthLabels();
+					break;
+				case 3:
+					frequencyMenu.title = _('Cycle');
+					break;
+				default:
+					frequencyMenu.title = _('Frequency');
 			}
 
 			// if when-needed is selected, hide the duration and recurring rows
-			medDuration.visible = false;
-			recurringNotif.visible = false;
+			medDuration.visible = selected !== 4;
+			recurringNotif.visible = selected !== 4;
 
-			// and only show first dose
 			let currRow = dosageList.get_first_child();
-			currRow.prefix.sensitive = false;
+
 			while (currRow) {
+				currRow.prefix.sensitive = selected !== 4;
+				currRow.visible = selected !== 4 || currRow === dosageList.get_first_child();
 				currRow = currRow.get_next_sibling();
-				if (currRow) currRow.visible = false;
 			}
 		});
 
