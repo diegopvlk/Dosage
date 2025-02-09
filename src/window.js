@@ -27,6 +27,8 @@ import {
 	isTodayMedDay,
 	datesPassedDiff,
 	timeFormat,
+	isValidTreatmentItem,
+	isValidHistoryItem,
 } from './utils.js';
 
 export const historyLS = Gio.ListStore.new(MedicationObject);
@@ -100,7 +102,6 @@ export const DosageWindow = GObject.registerClass(
 			const treatmentsFile = DataDir.get_child('dosage-treatments.json');
 			const historyFile = DataDir.get_child('dosage-history.json');
 
-			this.errorLoading = false;
 			this._createOrLoadJson('treatments', treatmentsFile);
 			this._createOrLoadJson('history', historyFile);
 			if (this._addMissedItems() | this._clearOldHistoryEntries()) {
@@ -219,36 +220,80 @@ export const DosageWindow = GObject.registerClass(
 			const file = Gio.File.new_for_path(filePath);
 			const decoder = new TextDecoder('utf8');
 
+			this.errDialog = new Adw.AlertDialog({
+				heading: _('An issue has occurred'),
+			});
+
 			try {
 				const [success, contents] = file.load_contents(null);
 				if (!success) {
-					log('Failed to read file contents.');
+					const errStr = 'Failed to read file contents.';
+					this.errDialog.body = errStr;
+					this.errDialog.add_response('close', _('Close'));
+					this.errDialog.present(this);
+					console.error(errStr);
 					return;
 				}
 
+				let allValid = false;
 				const contentString = decoder.decode(contents);
 				const json = JSON.parse(contentString);
 
 				switch (fileType) {
 					case 'treatments':
 						const upgradedTreatments = upgradeItems(json, fileType);
-						const tData = upgradedTreatments || json;
-						this._loadTreatments(tData);
-						this.lastUpdate = tData.lastUpdate;
-						this.treatmentsVersion = tData.version;
+						const treatData = upgradedTreatments || json;
+
+						try {
+							for (const it of treatData.treatments) {
+								allValid = isValidTreatmentItem(it);
+								if (!allValid) break;
+							}
+						} catch (err) {
+							this.errDialog.body = err;
+							this.errDialog.add_response('close', _('Close'));
+							this.errDialog.present(this);
+							console.error(err);
+							return;
+						}
+
+						this._loadTreatments(treatData);
+						this.lastUpdate = treatData.lastUpdate;
+						this.treatmentsVersion = treatData.version;
+
 						return;
 					case 'history':
 						const upgradedHistory = upgradeItems(json, fileType);
-						const hData = upgradedHistory || json;
-						this.historyVersion = hData.version;
-						this._loadHistory(upgradedHistory || hData);
+						const histData = upgradedHistory || json;
+
+						try {
+							for (const it of histData.history) {
+								allValid = isValidHistoryItem(it);
+								if (!allValid) break;
+							}
+						} catch (err) {
+							this.errDialog.body = err;
+							this.errDialog.add_response('close', _('Close'));
+							this.errDialog.present(this);
+							console.error(err);
+							return;
+						}
+
+						this.historyVersion = histData.version;
+						this._loadHistory(upgradedHistory || histData);
+
 						if (upgradedHistory) {
 							this._updateJsonFile('history', historyLS);
 						}
+
 						return;
 				}
 			} catch (err) {
-				console.error(`Error reading the file ${fileType}:`, err);
+				const errStr = `Error reading ${fileType} file.`;
+				this.errDialog.body = errStr;
+				this.errDialog.add_response('close', _('Close'));
+				this.errDialog.present(this);
+				console.error(errStr, err);
 			}
 		}
 
@@ -293,7 +338,6 @@ export const DosageWindow = GObject.registerClass(
 				}
 			} catch (err) {
 				console.error('Error loading treatments:', err);
-				this.errorLoading = true;
 			}
 		}
 
@@ -439,7 +483,6 @@ export const DosageWindow = GObject.registerClass(
 				}
 			} catch (err) {
 				console.error('Error loading history:', err);
-				this.errorLoading = true;
 			}
 
 			this._setEmptyHistStatus();
@@ -1000,18 +1043,28 @@ export const DosageWindow = GObject.registerClass(
 		_updateJsonFile(type, listStore) {
 			const fileName = `dosage-${type}.json`;
 			const file = DataDir.get_child(fileName);
-			const tempObj = createTempObj(type, listStore);
+			let tempObj;
 
-			if (!tempObj || this.errorLoading) return;
+			try {
+				tempObj = createTempObj(type, listStore);
+			} catch (err) {
+				this.errDialog.add_response('quit', _('Quit'));
+				this.errDialog.connect('response', (_self, response) => {
+					if (response === 'quit') this.app.quit();
+				});
+				this.errDialog.body = err;
+				this.errDialog.present(this);
+				this.errDialog.set_can_close(false);
+				console.error(err);
+				return;
+			}
 
-			switch (type) {
-				case 'treatments':
-					tempObj.version = this.treatmentsVersion;
-					this.lastUpdate = new Date().toISOString();
-					break;
-				case 'history':
-					tempObj.version = this.historyVersion;
-					break;
+			if (type === 'treatments') {
+				tempObj.version = this.treatmentsVersion;
+				tempObj.lastUpdate = new Date().toISOString();
+				this.lastUpdate = tempObj.lastUpdate;
+			} else {
+				tempObj.version = this.historyVersion;
 			}
 
 			const jsonStr = JSON.stringify(tempObj);
