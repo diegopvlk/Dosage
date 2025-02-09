@@ -479,6 +479,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 					break;
 				case 3:
 					frequencyMenu.title = _('Cycle');
+					handleCycle();
 					break;
 				default:
 					frequencyMenu.title = _('Frequency');
