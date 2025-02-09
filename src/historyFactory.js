@@ -10,12 +10,30 @@ import Gdk from 'gi://Gdk';
 import Pango from 'gi://Pango';
 
 import { dateFormat, timeFormat } from './utils.js';
-import { historyLS } from './window.js';
+import { DosageApplication } from './main.js';
 
 export const historyHeaderFactory = new Gtk.SignalListItemFactory();
 export const historyItemFactory = new Gtk.SignalListItemFactory();
 
-export let removedItem;
+const histItemHandler = {
+	set(target, property, value) {
+		if (property === 'length') {
+			target[property] = value;
+		}
+
+		const DosageWindow = DosageApplication.get_default().activeWindow;
+		const noItems = histItemsToRm.length === 0 || histItemsToRm[0] == undefined;
+
+		DosageWindow._removeHistItemsBtn.visible = !noItems;
+		DosageWindow._unselectHistItemsBtn.visible = !noItems;
+		DosageWindow._toggleHistAmountBtn.visible = noItems;
+
+		target[property] = value;
+		return true;
+	},
+};
+
+export const histItemsToRm = new Proxy([], histItemHandler);
 
 historyHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 	listHeaderItem.dateLabel = new Gtk.Label({
@@ -31,29 +49,55 @@ historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const item = listHeaderItem.get_item().obj;
 	const dateLabel = listHeaderItem.dateLabel;
 
+	const today = GLib.DateTime.new_now_local();
 	const dateTime = GLib.DateTime.new_from_unix_local(item.taken[0] / 1000);
 	const formattedDt = dateTime.format(dateFormat);
+	const notToday = today.format('%F') !== dateTime.format('%F');
 
-	dateLabel.label = formattedDt.charAt(0).toUpperCase() + formattedDt.slice(1);
+	if (notToday) {
+		dateLabel.label = formattedDt.charAt(0).toUpperCase() + formattedDt.slice(1);
+	} else {
+		dateLabel.label = _('Today');
+	}
 });
 
 historyItemFactory.connect('setup', (factory, listItem) => {
 	listItem.box = new Gtk.Box();
 
-	listItem.deleteButton = new Gtk.Button({
-		css_classes: ['circular'],
+	listItem.checkButton = new Gtk.CheckButton({
+		css_classes: ['selection-mode'],
 		valign: Gtk.Align.CENTER,
 		halign: Gtk.Align.CENTER,
 		margin_start: 11,
+		tooltip_text: _('Select to be removed'),
 	});
 
-	listItem.box.append(listItem.deleteButton);
+	listItem.checkButton.connect('toggled', btn => {
+		const item = listItem.get_item();
+		const indexToRemove = histItemsToRm.indexOf(item);
+		item.checkButton = listItem.checkButton;
+
+		if (item.skipList) {
+			item.skipList = !item.skipList;
+			return;
+		}
+
+		if (btn.active) {
+			if (!histItemsToRm.includes(item)) {
+				histItemsToRm.push(item);
+			}
+		} else {
+			histItemsToRm.splice(indexToRemove, 1);
+		}
+	});
+
+	listItem.box.append(listItem.checkButton);
 
 	listItem.labelsBox = new Gtk.Box({
 		valign: Gtk.Align.CENTER,
 		hexpand: true,
 		orientation: Gtk.Orientation.VERTICAL,
-		margin_start: 10,
+		margin_start: 9,
 		margin_end: 10,
 	});
 
@@ -98,27 +142,6 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	listItem.box.append(listItem.takenBox);
 	listItem.set_child(listItem.box);
 
-	listItem.deleteButton.connect('clicked', () => {
-		const item = listItem.get_item();
-		const listView = listItem.box.get_parent().get_parent();
-		let position = listItem.get_position();
-
-		removedItem = item;
-		let [, pos] = historyLS.find(item);
-		historyLS.remove(pos);
-
-		if (listView.get_model().get_n_items() === position) {
-			// if it's the last position, position - 1
-			// otherwise it causes a crash
-			position--;
-		}
-
-		if (position >= 0) {
-			listView.scroll_to(position, Gtk.ListScrollFlags.FOCUS, null);
-		}
-		removedItem = undefined;
-	});
-
 	listItem.keyController = new Gtk.EventControllerKey();
 
 	// activate item with space bar
@@ -137,13 +160,11 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const item = listItem.get_item().obj;
 	const box = listItem.box;
 	const row = box.get_parent();
-	const deleteButton = listItem.deleteButton;
 	const nameLabel = listItem.nameLabel;
 	const doseLabel = listItem.doseLabel;
 	const takenLabel = listItem.takenLabel;
 	const takenIcon = listItem.takenIcon;
-	const today = new Date().setHours(0, 0, 0, 0);
-	const itemDate = new Date(item.taken[0]).setHours(0, 0, 0, 0);
+	listItem.get_item().checkButton = listItem.checkButton;
 
 	if (!listItem.controllerAdded) {
 		row.add_controller(listItem.keyController);
@@ -154,14 +175,6 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const itemTime = GLib.DateTime.new_local(1, 1, 1, item.time[0], item.time[1], 1);
 	const time = itemTime.format(timeFormat);
 	const timeTaken = itemTakenDate.format(timeFormat);
-
-	if (today === itemDate) {
-		deleteButton.icon_name = 'edit-undo-symbolic';
-		deleteButton.tooltip_text = _('Restore');
-	} else {
-		deleteButton.icon_name = 'user-trash-symbolic';
-		deleteButton.tooltip_text = _('Delete');
-	}
 
 	nameLabel.label = item.name;
 	doseLabel.label = `${item.dose} ${item.unit} • ${time}`;

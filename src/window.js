@@ -13,7 +13,7 @@ import Gtk from 'gi://Gtk';
 
 import { MedicationObject } from './medication.js';
 import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
-import { historyHeaderFactory, historyItemFactory, removedItem } from './historyFactory.js';
+import { histItemsToRm, historyHeaderFactory, historyItemFactory } from './historyFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
 import { openEditHistDialog } from './editHistDialog.js';
 import { openMedicationDialog } from './medDialog.js';
@@ -42,6 +42,8 @@ export const DosageWindow = GObject.registerClass(
 		InternalChildren: [
 			'todayList',
 			'toggleHistAmountBtn',
+			'removeHistItemsBtn',
+			'unselectHistItemsBtn',
 			'historyList',
 			'treatmentsList',
 			'treatmentsPage',
@@ -377,6 +379,60 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
+		removeHistItems() {
+			const today = new Date().setHours(0, 0, 0, 0);
+			let pos = 0;
+
+			histItemsToRm.forEach(itRm => {
+				const itemRm = itRm.obj;
+				const removedDt = new Date(itemRm.taken[0]);
+				const date = removedDt.setHours(0, 0, 0, 0);
+
+				if (date === today) {
+					for (const it of treatmentsLS) {
+						const item = it.obj;
+						const sameItem = item.name === itemRm.name;
+						if (sameItem) {
+							item.dosage.forEach(timeDose => {
+								for (const _i of this.todayLS) {
+									const sameName = item.name === itemRm.name;
+									const sameTime = String(timeDose.time) === String(itemRm.time);
+									// update lastTaken when removing an item
+									// with the same name, time and date of today item
+									if (sameName && sameTime) {
+										timeDose.lastTaken = null;
+									}
+								}
+							});
+							if (item.inventory.enabled && itemRm.taken[1] === 1) {
+								item.inventory.current += itemRm.dose;
+							}
+
+							// trigger signal to update labels
+							it.notify('obj');
+							break;
+						}
+					}
+				}
+
+				pos = historyLS.find(itRm)[1];
+				historyLS.remove(pos);
+			});
+
+			histItemsToRm.length = 0;
+			this.updateEverything({ skipCycleUp: true });
+			this.scheduleNotifications('removing');
+		}
+
+		unselectHistItems() {
+			histItemsToRm.forEach(itRm => {
+				itRm.skipList = true;
+				itRm.checkButton.active = false;
+			});
+
+			histItemsToRm.length = 0;
+		}
+
 		setShowHistoryAmount() {
 			if (this.histQuery) return;
 
@@ -479,41 +535,23 @@ export const DosageWindow = GObject.registerClass(
 							this._buttonSearch.visible = histVisible;
 							app.add_action(this.showSearchAction);
 						}
+					});
 
-						if (removed && removedItem) {
-							const removedIt = removedItem.obj;
-							const removedDt = new Date(removedIt.taken[0]);
-							const date = removedDt.setHours(0, 0, 0, 0);
-							const today = new Date().setHours(0, 0, 0, 0);
-							if (date === today) {
-								for (const it of treatmentsLS) {
-									const item = it.obj;
-									const sameItem = item.name === removedIt.name;
-									if (sameItem) {
-										item.dosage.forEach(timeDose => {
-											for (const _i of this.todayLS) {
-												const sameName = item.name === removedIt.name;
-												const sameTime = String(timeDose.time) === String(removedIt.time);
-												// update lastTaken when removing an item
-												// with the same name, time and date of today item
-												if (sameName && sameTime) {
-													timeDose.lastTaken = null;
-												}
-											}
-										});
-										if (item.inventory.enabled && removedIt.taken[1] === 1) {
-											item.inventory.current += removedIt.dose;
-										}
+					const keyController = new Gtk.EventControllerKey();
 
-										// trigger signal to update labels
-										it.notify('obj');
-									}
-								}
-							}
-							this.updateEverything({ skipCycleUp: true });
-							this.scheduleNotifications('removing');
+					// to select item to be removed with ctrl pressed
+					keyController.connect('key-pressed', (_, keyval, keycode, state) => {
+						if (keyval === Gdk.KEY_Control_L || keyval === Gdk.KEY_Control_R) {
+							this.ctrlPressed = true;
 						}
 					});
+					keyController.connect('key-released', (_self, keyval, _keycode, _state) => {
+						if (keyval === Gdk.KEY_Control_L || keyval === Gdk.KEY_Control_R) {
+							this.ctrlPressed = false;
+						}
+					});
+
+					this._historyList.add_controller(keyController);
 				}
 			} catch (err) {
 				console.error('Error loading history:', err);
@@ -1103,6 +1141,11 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		editHistoryItem(list, position) {
+			if (this.ctrlPressed) {
+				const item = list.get_model().get_item(position);
+				item.checkButton.active = !item.checkButton.active;
+				return;
+			}
 			openEditHistDialog(this, list, position);
 		}
 
@@ -1324,6 +1367,7 @@ export const DosageWindow = GObject.registerClass(
 			this.loadToday();
 			this.updateEntryBtn(false);
 			this.checkInventory(isNotifAction);
+			this.unselectHistItems();
 			if (!skipHistUp) this.updateJsonFile('history', historyLS);
 		}
 

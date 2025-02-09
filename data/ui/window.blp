@@ -173,16 +173,43 @@ template $DosageWindow: Adw.ApplicationWindow {
 					Box {
 						halign: center;
 						valign: end;
+						margin-bottom: 3;
 
 						Button toggleHistAmountBtn {
 							halign: center;
 							valign: end;
-							margin-bottom: 3;
 							clicked => $toggleHistoryAmount();
 
 							styles [
 								'pill',
 								'floating'
+							]
+						}
+
+						Button unselectHistItemsBtn {
+							styles [
+								'pill',
+								'secondary',
+								'floating'
+							]
+
+							clicked => $unselectHistItems();
+							tooltip-text: _("Unselect");
+							visible: false;
+							icon-name: 'unselect-meds-symbolic';
+						}
+
+						Button removeHistItemsBtn {
+							halign: center;
+							valign: end;
+							clicked => $removeHistItems();
+							visible: false;
+							label: _("Remove entries");
+
+							styles [
+								'pill',
+								'floating',
+								'destructive-action'
 							]
 						}
 					}

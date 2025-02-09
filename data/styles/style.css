@@ -365,6 +365,15 @@ button.floating:not(.suggested-action):hover {
 button.floating:not(.suggested-action):active {
   background-color: color-mix(in srgb, #dadadc 99%, var(--accent-color));
 }
+button.floating.destructive-action {
+  background-color: color-mix(in srgb, #f7dddd 99%, var(--accent-color));
+}
+button.floating.destructive-action:hover {
+  background-color: color-mix(in srgb, #edd3d3 99%, var(--accent-color));
+}
+button.floating.destructive-action:active {
+  background-color: color-mix(in srgb, #e3c9c9 99%, var(--accent-color));
+}
 #refill-dialog headerbar button,
 #medication-dialog headerbar button,
 #edit-hist-dialog headerbar button {
