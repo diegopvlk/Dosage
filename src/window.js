@@ -442,7 +442,6 @@ export const DosageWindow = GObject.registerClass(
 
 			const moreThan30 = historyLS.n_items > 30;
 
-			this._toggleHistAmountBtn.sensitive = moreThan30;
 			this._toggleHistAmountBtn.visible = moreThan30;
 			this._toggleHistAmountBtn.label = _('Show all');
 

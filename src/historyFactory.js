@@ -11,6 +11,7 @@ import Pango from 'gi://Pango';
 
 import { dateFormat, timeFormat } from './utils.js';
 import { DosageApplication } from './main.js';
+import { historyLS } from './window.js';
 
 export const historyHeaderFactory = new Gtk.SignalListItemFactory();
 export const historyItemFactory = new Gtk.SignalListItemFactory();
@@ -26,7 +27,7 @@ const histItemHandler = {
 
 		DosageWindow._removeHistItemsBtn.visible = !noItems;
 		DosageWindow._unselectHistItemsBtn.visible = !noItems;
-		DosageWindow._toggleHistAmountBtn.visible = noItems;
+		DosageWindow._toggleHistAmountBtn.visible = noItems && historyLS.n_items > 30;
 
 		target[property] = value;
 		return true;
