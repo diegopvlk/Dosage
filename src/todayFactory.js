@@ -33,17 +33,26 @@ todayHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 		label: _('When necessary'),
 	});
 
+	listHeaderItem.pinIcon = new Gtk.Image({
+		icon_name: 'pin-symbolic',
+		opacity: 0.75,
+		margin_start: 4,
+	});
+
 	listHeaderItem.box.append(listHeaderItem.selectTimeGroupBtn);
 	listHeaderItem.box.append(listHeaderItem.whenNeededLabel);
+	listHeaderItem.box.append(listHeaderItem.pinIcon);
 	listHeaderItem.set_child(listHeaderItem.box);
 });
 
 todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const item = listHeaderItem.get_item().obj;
 	const selectTimeGroupBtn = listHeaderItem.selectTimeGroupBtn;
+	const isWhenNd = item.frequency === 'when-needed';
 
-	listHeaderItem.whenNeededLabel.visible = item.frequency === 'when-needed';
-	listHeaderItem.selectTimeGroupBtn.visible = !(item.frequency === 'when-needed');
+	listHeaderItem.whenNeededLabel.visible = isWhenNd;
+	listHeaderItem.pinIcon.visible = isWhenNd;
+	listHeaderItem.selectTimeGroupBtn.visible = !isWhenNd;
 
 	const itemTime = GLib.DateTime.new_local(1, 1, 1, item.time[0], item.time[1], 1);
 	const time = itemTime.format(timeFormat);
