@@ -32,8 +32,6 @@ import {
 export const historyLS = Gio.ListStore.new(MedicationObject);
 export const treatmentsLS = Gio.ListStore.new(MedicationObject);
 
-export const flow = { delay: false };
-
 export const DosageWindow = GObject.registerClass(
 	{
 		GTypeName: 'DosageWindow',
@@ -862,11 +860,11 @@ export const DosageWindow = GObject.registerClass(
 				this._historyList.scroll_to(0, null, null);
 			} else {
 				// one-time entry
-				if (!flow.delay) {
+				if (!this.delayDialog) {
 					openOneTimeDialog(this);
-					flow.delay = true;
+					this.delayDialog = true;
 					setTimeout(() => {
-						flow.delay = false;
+						this.delayDialog = false;
 					}, 500);
 				}
 			}
@@ -1150,14 +1148,13 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		_openMedDialog(list, position, mode) {
-			// artificial delay to avoid opening multiple sheets
-			// when double clicking button
-			if (!flow.delay) {
-				openMedicationDialog(this, list, position, mode);
-				flow.delay = true;
+		_openMedDialog(list, position, duplicate) {
+			// artificial delay to avoid opening multiple dialogs when double clicking button
+			if (!this.delayDialog) {
+				openMedicationDialog(this, list, position, duplicate);
+				this.delayDialog = true;
 				setTimeout(() => {
-					flow.delay = false;
+					this.delayDialog = false;
 				}, 500);
 			}
 		}

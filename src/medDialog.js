@@ -10,10 +10,7 @@ import Gtk from 'gi://Gtk';
 
 import {
 	addLeadZero,
-	doseRow,
-	getTimeBtnInput,
 	handleCalendarSelect,
-	removeCssColors,
 	getDayLabel,
 	firstWeekday,
 	getSpecificDaysLabel,
@@ -21,11 +18,19 @@ import {
 } from './utils.js';
 
 import { MedicationObject } from './medication.js';
-import { treatmentsLS, flow } from './window.js';
+import { treatmentsLS } from './window.js';
 
-export function openMedicationDialog(DosageWindow, list, position, mode) {
+import { TimeDoseRow } from './timeDoseRow.js';
+
+const frequencies = ['daily', 'specific-days', 'day-of-month', 'cycle', 'when-needed'];
+
+export let dosageList;
+
+export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 	const builder = Gtk.Builder.new_from_resource('/io/github/diegopvlk/Dosage/ui/med-dialog.ui');
 
+	const toastOverlay = builder.get_object('toastOverlay');
+	const toast = new Adw.Toast();
 	const medDialog = builder.get_object('medDialog');
 	medDialog.set_presentation_mode(2);
 
@@ -46,12 +51,13 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 
 	for (const clr of dosageColorBox) {
 		clr.connect('clicked', () => {
-			removeCssColors(dosageColorButton);
-			dosageColorButton.add_css_class(clr.get_name() + '-clr');
+			const cssClasses = [clr.get_name() + '-clr', 'circular'];
+			dosageColorButton.set_css_classes(cssClasses);
 			dosageColorButton.name = clr.get_name();
 			dosageColorPopover.popdown();
 		});
 	}
+
 	for (const icn of dosageIconBox) {
 		icn.connect('clicked', () => {
 			dosageIconButton.set_icon_name(icn.get_icon_name());
@@ -71,18 +77,7 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 	const cycleInactive = builder.get_object('cycleInactive');
 	const cycleCurrent = builder.get_object('cycleCurrent');
 
-	const dosage = builder.get_object('dosage');
-	dosage.set_expanded(true);
-	const dosageAddButton = builder.get_object('dosageAddButton');
-	const dosageHeader = dosage.get_first_child().get_first_child().get_first_child();
-	const dosageExpanderBtn = dosageHeader
-		.get_first_child()
-		.get_last_child()
-		.get_first_child()
-		.get_next_sibling()
-		.get_next_sibling();
-	dosageHeader.set_activatable(false);
-	dosageExpanderBtn.set_visible(false);
+	dosageList = builder.get_object('dosageList');
 
 	const recurringNotif = builder.get_object('recurringNotif');
 	const recurringInterval = builder.get_object('recurringInterval');
@@ -107,9 +102,9 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 	handleCalendarSelect(calendarEnd, calendarEndRow);
 
 	// when opening/duplicating an existing treatment
-	const existingTreatment = (list && position >= 0 && !mode) || mode === 'duplicate';
+	const existingTreatment = (list && position >= 0) || duplicate;
 	if (existingTreatment) {
-		if (!mode) {
+		if (!duplicate) {
 			medDialog.title = _('Edit treatment');
 			saveButton.label = _('Save');
 			deleteButton.set_visible(true);
@@ -123,7 +118,7 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 		medUnit.text = item.unit;
 		medNotes.text = item.notes ? item.notes : '';
 
-		if (mode === 'duplicate') {
+		if (duplicate) {
 			medDialog.set_presentation_mode(2);
 			medName.text += ` (${_('Copy')})`;
 		}
@@ -141,14 +136,15 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 			}
 		}
 
+		item.dosage.forEach(timeDose => {
+			const timeDoseRow = new TimeDoseRow(timeDose);
+			dosageList.append(timeDoseRow.spinRow);
+		});
+
 		setFreqMenuVisibility(item);
 		if (item.frequency === 'specific-days') {
 			frequencyMenu.subtitle = getSpecificDaysLabel(item);
 		}
-
-		item.dosage.forEach(timeDose => {
-			dosage.add_row(doseRow(timeDose));
-		});
 
 		if (item.recurring) {
 			recurringNotif.set_enable_expansion(item.recurring.enabled);
@@ -200,22 +196,39 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 			medDuration.set_enable_expansion(true);
 
 			// this parsing is in seconds
-			const localTZ = GLib.TimeZone.new_local();
-			const start = GLib.DateTime.new_from_unix_utc(item.duration.start / 1000);
-			const end = GLib.DateTime.new_from_unix_utc(item.duration.end / 1000);
-			const startTZ = start.to_timezone(localTZ);
-			const endTZ = end.to_timezone(localTZ);
-
-			calendarStart.select_day(startTZ);
-			calendarEnd.select_day(endTZ);
+			const start = GLib.DateTime.new_from_unix_local(item.duration.start / 1000);
+			const end = GLib.DateTime.new_from_unix_local(item.duration.end / 1000);
+			calendarStart.select_day(start);
+			calendarEnd.select_day(end);
 		}
 
 		deleteButton.connect('activated', () => {
 			confirmDeleteDialog(item, position, DosageWindow, medDialog);
 		});
+	} else {
+		const timeDoseRow = new TimeDoseRow({ time: [12, 30], dose: 1 });
+		dosageList.append(timeDoseRow.spinRow);
+		setFreqMenuVisibility();
 	}
 
-	if (!existingTreatment) setFreqMenuVisibility();
+	const addDoseBtn = new Gtk.Button({
+		css_classes: ['circular', 'suggested-action'],
+		valign: Gtk.Align.CENTER,
+		margin_end: 3,
+		icon_name: 'list-add-symbolic',
+		tooltip_text: _('Add dose'),
+	});
+
+	addDoseBtn.connect('clicked', () => {
+		const lastRow = dosageList.get_last_child();
+		let h = lastRow.hours;
+		const m = lastRow.minutes;
+		const d = lastRow.value;
+		const timeDoseRow = new TimeDoseRow({ time: [++h, m], dose: d });
+		dosageList.append(timeDoseRow.spinRow);
+	});
+
+	dosageList.get_first_child().prefix.prepend(addDoseBtn);
 
 	dayOfMonth.connect('output', handleDayOfMonthLabels);
 
@@ -226,44 +239,19 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 		button.connect('toggled', setSpecificDaysFreqLabel);
 	}
 
-	let h = 13;
-	dosageAddButton.connect('clicked', () => {
-		if (h == 24) h = 0;
-		dosage.add_row(doseRow({ time: [h++, 30], dose: 1 }));
-	});
-
-	const dosageBox = dosage.get_first_child();
-	const listBox = dosageBox.get_first_child();
-	const revealer = listBox.get_next_sibling();
-	const listRows = revealer.get_first_child();
-	const firstDoseRow = listRows.get_first_child();
-
-	if (!firstDoseRow) {
-		dosage.add_row(doseRow({ time: [12, 30], dose: 1 }));
-	}
-
-	globalThis.removeRow = doseRow => {
-		const firstDoseRow = listRows.get_first_child();
-		const lastDoseRow = listRows.get_last_child();
-
-		if (firstDoseRow != lastDoseRow) {
-			dosage.remove(doseRow);
-		}
-	};
-
-	const medDialogClamp = builder.get_object('medDialogClamp');
-
-	const [medDialogClampHeight] = medDialogClamp.measure(Gtk.Orientation.VERTICAL, -1);
-	medDialog.content_height = medDialogClampHeight + 48;
-
 	setSpecificDaysButtonOrder();
 
+	addSaveKeyControllerToDialog(medDialog, saveButton);
+
+	const medDialogClamp = builder.get_object('medDialogClamp');
+	const [medDialogClampHeight] = medDialogClamp.measure(Gtk.Orientation.VERTICAL, -1);
+	medDialog.content_height = medDialogClampHeight + 48;
 	medDialog.present(DosageWindow);
 
 	cancelButton.connect('clicked', () => medDialog.force_close());
 
 	saveButton.connect('clicked', () => {
-		const isUpdate = list && position >= 0 && !mode;
+		const isUpdate = list && position >= 0 && !duplicate;
 
 		if (!isValidInput(isUpdate)) return;
 
@@ -275,11 +263,9 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 		DosageWindow._scheduleNotifications('saving');
 	});
 
-	addSaveKeyControllerToDialog(medDialog, saveButton);
-
 	let updatedItemPosition = 0;
 	function addOrUpdateTreatment() {
-		const isUpdate = list && position >= 0 && !mode;
+		const isUpdate = list && position >= 0 && !duplicate;
 		const today = new GLib.DateTime();
 
 		let days = [];
@@ -291,7 +277,7 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 			unit,
 			notes,
 			color,
-			freq,
+			frequency,
 			monthDay,
 			icon,
 			recurring,
@@ -334,11 +320,7 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 		inventory = { enabled: invEnabled, current: current, reminder: reminder };
 		duration = { enabled: durEnabled, start: start, end: end };
 
-		if (frequencyMenu.get_selected() === 0) freq = 'daily';
-		if (frequencyMenu.get_selected() === 1) freq = 'specific-days';
-		if (frequencyMenu.get_selected() === 2) freq = 'day-of-month';
-		if (frequencyMenu.get_selected() === 3) freq = 'cycle';
-		if (frequencyMenu.get_selected() === 4) freq = 'when-needed';
+		frequency = frequencies[frequencyMenu.get_selected()];
 
 		doses.sort((obj1, obj2) => {
 			const [h1, m1] = obj1.time;
@@ -373,7 +355,7 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 				name: name,
 				unit: unit,
 				notes: notes,
-				frequency: freq,
+				frequency: frequency,
 				color: color,
 				icon: icon,
 				days: days,
@@ -397,16 +379,15 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 
 	function getDoses() {
 		const doses = [];
-		let currentDoseRow = listRows.get_first_child();
+		let currRow = dosageList.get_first_child();
 
-		while (currentDoseRow) {
-			const [hours, minutes] = getTimeBtnInput(currentDoseRow);
+		while (currRow) {
 			const ds = {
-				time: [hours, minutes],
-				dose: currentDoseRow.get_value(),
+				time: [currRow.hours, currRow.minutes],
+				dose: currRow.value,
 			};
 			doses.push(ds);
-			currentDoseRow = currentDoseRow.get_next_sibling();
+			currRow = currRow.get_next_sibling();
 		}
 		return doses;
 	}
@@ -460,16 +441,16 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 	}
 
 	function setFreqMenuVisibility(item) {
-		const freqRowPrefixes = frequencyMenu.get_first_child().get_first_child();
+		const freqRowPrefix = frequencyMenu.get_first_child().get_first_child();
 		const selected = frequencyMenu.get_selected();
-		freqRowPrefixes.set_visible(selected !== 0 && selected !== 4);
+		freqRowPrefix.visible = selected !== 0 && selected !== 4;
 
 		frequencyMenu.connect('notify::selected-item', frequencyMenu => {
 			const selected = frequencyMenu.get_selected();
-			freqRowPrefixes.set_visible(selected !== 0 && selected !== 4);
-			frequencySpecificDays.set_visible(selected === 1);
-			frequencyDayOfMonth.set_visible(selected === 2);
-			frequencyCycle.set_visible(selected === 3);
+			freqRowPrefix.visible = selected !== 0 && selected !== 4;
+			frequencySpecificDays.visible = selected === 1;
+			frequencyDayOfMonth.visible = selected === 2;
+			frequencyCycle.visible = selected === 3;
 
 			if (selected === 1) {
 				frequencyMenu.title = _('Specific days');
@@ -484,27 +465,37 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 			}
 
 			if (selected !== 4) {
-				dosage.set_visible(true);
-				medDuration.set_visible(true);
-				recurringNotif.set_visible(true);
+				let currRow = dosageList.get_first_child();
+				currRow.prefix.sensitive = true;
+				while (currRow) {
+					currRow.visible = true;
+					currRow = currRow.get_next_sibling();
+				}
+				medDuration.visible = true;
+				recurringNotif.visible = true;
 				return;
 			}
-			// if when-needed is selected, hide the dosage, duration and recurring rows
-			dosage.set_visible(false);
-			medDuration.set_visible(false);
-			recurringNotif.set_visible(false);
+
+			// if when-needed is selected, hide the duration and recurring rows
+			medDuration.visible = false;
+			recurringNotif.visible = false;
+
+			// and only show first dose
+			let currRow = dosageList.get_first_child();
+			currRow.prefix.sensitive = false;
+			while (currRow) {
+				currRow = currRow.get_next_sibling();
+				if (currRow) currRow.visible = false;
+			}
 		});
+
 		if (item) {
-			if (item.frequency === 'daily') frequencyMenu.set_selected(0);
-			if (item.frequency === 'specific-days') frequencyMenu.set_selected(1);
-			if (item.frequency === 'day-of-month') frequencyMenu.set_selected(2);
-			if (item.frequency === 'cycle') frequencyMenu.set_selected(3);
-			if (item.frequency === 'when-needed') frequencyMenu.set_selected(4);
+			const selectedIndex = frequencies.indexOf(item.frequency);
+			frequencyMenu.set_selected(selectedIndex);
 		}
 	}
 
 	function isValidInput(isUpdate) {
-		const toastOverlay = builder.get_object('toastOverlay');
 		medName.connect('changed', name => name.remove_css_class('error'));
 		medUnit.connect('changed', unit => unit.remove_css_class('error'));
 
@@ -512,17 +503,23 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 		const emptyUnit = medUnit.text.trim() == '';
 
 		if (emptyName) {
-			toastOverlay.add_toast(new Adw.Toast({ title: _('Empty name') }));
+			toast.dismiss();
+			toast.title = _('Empty name');
+			toastOverlay.add_toast(toast);
 			medName.add_css_class('error');
 			return;
 		} else if (emptyUnit) {
-			toastOverlay.add_toast(new Adw.Toast({ title: _('Empty unit') }));
+			toast.dismiss();
+			toast.title = _('Empty unit');
+			toastOverlay.add_toast(toast);
 			medUnit.add_css_class('error');
 			return;
 		}
 
 		if (frequencySpecificDays.get_visible() && getSpecificDays().length == 0) {
-			toastOverlay.add_toast(new Adw.Toast({ title: _('Choose at least one day') }));
+			toast.title = _('Choose at least one day');
+			toast.dismiss();
+			toastOverlay.add_toast(toast);
 			return;
 		}
 
@@ -533,32 +530,30 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 				if (i === item) continue;
 			}
 			if (i.name.toLowerCase() === medName.text.trim().toLowerCase()) {
-				toastOverlay.add_toast(new Adw.Toast({ title: _('Name already on treatment list') }));
+				toast.dismiss();
+				toast.title = _('Name already on treatment list');
+				toastOverlay.add_toast(toast);
 				medName.add_css_class('error');
 				return;
 			}
 		}
 
-		let currentDoseRow = listRows.get_first_child();
+		let currRow = dosageList.get_first_child();
 		const rows = [];
 
-		while (currentDoseRow) {
-			const [hours, minutes, timeBtn] = getTimeBtnInput(currentDoseRow);
-			const time = String([hours, minutes]);
+		while (currRow) {
+			const time = String([currRow.hours, currRow.minutes]);
 
 			if (rows.includes(time)) {
-				toastOverlay.add_toast(new Adw.Toast({ title: _('Duplicated time') }));
-				(async function () {
-					timeBtn.add_css_class('time-error');
-					await new Promise(res => setTimeout(res, 1400));
-					timeBtn.remove_css_class('time-error');
-				})();
+				toast.dismiss();
+				toast.title = _('Duplicated time');
+				toastOverlay.add_toast(toast);
 				return;
 			} else {
 				rows.push(time);
 			}
 
-			currentDoseRow = currentDoseRow.get_next_sibling();
+			currRow = currRow.get_next_sibling();
 		}
 		return true;
 	}
@@ -566,27 +561,19 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 
 export function confirmDeleteDialog(item, position, DosageWindow, medDialog) {
 	const alertDialog = new Adw.AlertDialog({
-		// TRANSLATORS: Message for confirmation when deleting an item
+		body_use_markup: true,
 		heading: _('Are you sure?'),
-		body: `"${item.name}" ` + _('will be deleted'),
+		body: `<b>${item.name}</b> ` + _('will be deleted'),
 	});
 
 	alertDialog.add_response('cancel', _('Cancel'));
 	alertDialog.add_response('delete', _('Delete'));
 	alertDialog.set_response_appearance('delete', Adw.ResponseAppearance.DESTRUCTIVE);
 
-	// artificial delay to avoid opening multiple dialogs
-	// when double clicking button
-	if (!flow.delay) {
-		if (medDialog) {
-			alertDialog.present(medDialog);
-		} else {
-			alertDialog.present(DosageWindow);
-		}
-		flow.delay = true;
-		setTimeout(() => {
-			flow.delay = false;
-		}, 500);
+	if (medDialog) {
+		alertDialog.present(medDialog);
+	} else {
+		alertDialog.present(DosageWindow);
 	}
 
 	alertDialog.connect('response', (_self, response) => {

@@ -64,7 +64,7 @@ const TimePicker = GObject.registerClass(
 				lower: 0,
 				upper: 59,
 				value: this.minutes,
-				step_increment: 1,
+				step_increment: 5,
 			});
 
 			const spinBtnMinutes = new Gtk.SpinButton({

@@ -102,10 +102,6 @@ listview > header label {
   box-shadow: var(--list-border), var(--list-shadow),
     inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.25));
 }
-row:only-child button.remove-row {
-  background-color: rgb(from currentColor r g b / calc(alpha * 0.15));
-  opacity: 0.5;
-}
 .dosage-list > row {
   border-radius: calc(var(--list-border-radius) + 2px);
   background: none;
@@ -121,9 +117,18 @@ row:only-child button.remove-row {
 .list-no-extra-padding-bottom {
   padding-bottom: 20px;
 }
+row.expander row.spin:focus-within {
+  outline: 2px solid rgb(from var(--accent-color) r g b / calc(alpha * 0.5));
+  outline-offset: -2px;
+}
+list.boxed-list > row:first-child,
 list.boxed-list-separate > row.expander row.header {
   border-top-left-radius: var(--list-border-radius);
   border-top-right-radius: var(--list-border-radius);
+}
+list.boxed-list > row:last-child {
+  border-bottom-left-radius: var(--list-border-radius);
+  border-bottom-right-radius: var(--list-border-radius);
 }
 list.boxed-list-separate > row.expander:not(:checked) row.header,
 list.boxed-list-separate > row.expander.expander:checked list.nested,
@@ -134,27 +139,15 @@ list.boxed-list-separate
   border-bottom-left-radius: var(--list-border-radius);
   border-bottom-right-radius: var(--list-border-radius);
 }
-.dose-time popover contents {
-  min-width: 0;
-}
-.dose-time > button {
-  padding: 4px 6px;
-}
-.dose-time > button:dir(ltr) {
-  margin-left: 3px;
-  margin-right: -20px;
-}
-.dose-time > button:dir(rtl) {
-  margin-right: 3px;
-  margin-left: -20px;
-}
-button.am-pm {
-  font-weight: 400;
-}
 .boxed-list-separate > row {
   box-shadow: var(--list-border), var(--list-shadow);
   border-radius: var(--list-border-radius);
-  margin: 2px;
+  margin: 2px 0;
+}
+.boxed-list {
+  box-shadow: var(--list-border), var(--list-shadow);
+  border-radius: var(--list-border-radius);
+  margin: 2px 0;
 }
 button.specific-day {
   min-width: 40px;
@@ -179,15 +172,6 @@ button.one-time-name {
 row.combo popover > contents listview row {
   padding-top: 8px;
   padding-bottom: 8px;
-}
-.time-error {
-  animation: flashTime 0.7s ease-in-out 2;
-}
-@keyframes flashTime {
-  10% {
-    text-shadow: 0 0 16px var(--error-bg-color);
-    color: var(--error-bg-color);
-  }
 }
 #medication-dialog.one-time .time > .arrow-button {
   margin-left: -6px;
@@ -247,8 +231,14 @@ button.time-group-selection:hover {
   outline: none;
 }
 .time-picker-box spinbutton text {
-  margin: 2px 0;
+  margin: 4px 0;
   transition: all 150ms;
+}
+row.spin .time-picker-box spinbutton {
+  margin: 0;
+}
+row.spin .time-picker-box spinbutton text {
+  margin: -2px 0;
 }
 .time-picker-box spinbutton button {
   padding: 0;

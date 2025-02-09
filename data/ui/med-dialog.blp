@@ -47,7 +47,7 @@ Adw.Dialog medDialog {
 						margin-end: 8;
 						margin-top: 12;
 						margin-bottom: 17;
-
+						// spacing: 12;
 						ListBox {
 							styles [
 								'boxed-list-separate'
@@ -61,7 +61,6 @@ Adw.Dialog medDialog {
 								MenuButton dosageColorButton {
 									styles [
 										'circular',
-										'dosage-icon'
 									]
 
 									valign: center;
@@ -191,7 +190,6 @@ Adw.Dialog medDialog {
 								MenuButton dosageIconButton {
 									styles [
 										'circular',
-										'dosage-icon'
 									]
 
 									valign: center;
@@ -691,25 +689,37 @@ Adw.Dialog medDialog {
 									};
 								}
 							}
+						}
 
-							Adw.ExpanderRow dosage {
-								title: _("Dosage");
-								subtitle: _("Time and amount");
-								expanded: true;
-								visible: true;
+						ListBox dosageList {
+							styles [
+								"boxed-list"
+							]
 
-								[prefix]
-								Button dosageAddButton {
-									styles [
-										'circular',
-										'suggested-action'
-									]
+							selection-mode: none;
+							// Adw.SpinRow {
+							// 	title: _("Dosage");
+							// 	subtitle: _("Time and amount");
+							// 	activatable: false;
+							// 	[prefix]
+							// 	Button dosageAddButton {
+							// 		styles [
+							// 			'circular',
+							// 			'suggested-action'
+							// 		]
+							// 		valign: center;
+							// 		icon-name: 'list-add-symbolic';
+							// 		tooltip-text: _("Add dose");
+							// 	}
+							// }
+						}
 
-									valign: center;
-									icon-name: 'list-add-symbolic';
-									tooltip-text: _("Add dose");
-								}
-							}
+						ListBox {
+							styles [
+								"boxed-list-separate"
+							]
+
+							selection-mode: none;
 
 							Adw.ExpanderRow recurringNotif {
 								title: _("Recurring notifications");

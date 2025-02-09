@@ -4,7 +4,6 @@
  */
 'use strict';
 
-import Adw from 'gi://Adw?version=1';
 import Gdk from 'gi://Gdk';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
@@ -105,15 +104,6 @@ export const DataDir = Gio.file_new_for_path(GLib.build_filenamev([GLib.get_user
 
 export function addLeadZero(input) {
 	return String(input).padStart(2, 0);
-}
-
-export function removeCssColors(colorBtn) {
-	const colors = colorBtn.get_css_classes();
-	for (const c of colors) {
-		if (c.includes('-clr')) {
-			colorBtn.remove_css_class(c);
-		}
-	}
 }
 
 export function createTempObj(type, listStore) {
@@ -334,163 +324,6 @@ export function getWidgetByName(parent, name, visited = new Set()) {
 			if (result) return result;
 		}
 	} catch (e) {}
-}
-
-export function doseRow(timeDose) {
-	let [hours, minutes] = timeDose.time;
-	let period = '';
-
-	if (clockIs12) {
-		period = hours < 12 ? 'AM' : 'PM';
-		if (hours > 12) hours -= 12;
-		if (hours === 0) hours = 12;
-	}
-
-	const doseRow = new Adw.SpinRow({
-		climb_rate: 0.2,
-		digits: 2,
-		adjustment: new Gtk.Adjustment({
-			lower: 0.25,
-			upper: 9999,
-			step_increment: 0.25,
-			value: timeDose.dose,
-		}),
-	});
-	const doseBox = new Gtk.Box({
-		name: 'doseBox',
-		css_classes: ['dose-box-time'],
-	});
-	const removeDoseButton = new Gtk.Button({
-		name: 'removeDoseButton',
-		css_classes: ['circular', 'destructive-action', 'remove-row'],
-		opacity: 0.85,
-		valign: Gtk.Align.CENTER,
-		margin_end: 4,
-		icon_name: 'user-trash-symbolic',
-		tooltip_text: _('Delete dose'),
-	});
-	const doseTimeBox = new Gtk.Box({
-		css_classes: ['time-picker-box'],
-	});
-	doseTimeBox.set_direction(Gtk.TextDirection.LTR);
-	const adjHours = new Gtk.Adjustment({
-		lower: 0,
-		upper: 23,
-		step_increment: 1,
-		value: hours,
-	});
-	const spinButtonHours = new Gtk.SpinButton({
-		name: 'spinButtonHours',
-		orientation: Gtk.Orientation.VERTICAL,
-		valign: Gtk.Align.CENTER,
-		numeric: true,
-		wrap: true,
-		adjustment: adjHours,
-	});
-	const adjMinutes = new Gtk.Adjustment({
-		lower: 0,
-		upper: 59,
-		step_increment: 5,
-		value: minutes,
-	});
-	const spinButtonMinutes = new Gtk.SpinButton({
-		name: 'spinButtonMinutes',
-		orientation: Gtk.Orientation.VERTICAL,
-		valign: Gtk.Align.CENTER,
-		numeric: true,
-		wrap: true,
-		adjustment: adjMinutes,
-	});
-	const spinButtonSeparator = new Gtk.Label({
-		label: timeDot ? ' . ' : ' : ',
-	});
-
-	const amPmButton = new Gtk.Button({
-		name: 'amPmButton',
-		css_classes: ['am-pm', 'flat', 'circular'],
-		valign: Gtk.Align.CENTER,
-		label: period,
-		visible: clockIs12,
-	});
-
-	doseTimeBox.append(spinButtonHours);
-	doseTimeBox.append(spinButtonSeparator);
-	doseTimeBox.append(spinButtonMinutes);
-	doseTimeBox.append(amPmButton);
-
-	const leadZeroHours = clockIs12 ? String(adjHours.value) : addLeadZero(adjHours.value);
-	const leadZeroMinutes = addLeadZero(adjMinutes.value);
-	const doseTimeButton = new Gtk.MenuButton({
-		name: 'doseTimeButton',
-		can_shrink: true,
-		css_classes: ['flat', 'numeric', 'time', 'dose-time'],
-		label: timeDot
-			? `${leadZeroHours}.${leadZeroMinutes} ${amPmButton.label}`
-			: `${leadZeroHours}:${leadZeroMinutes} ${amPmButton.label}`,
-		valign: Gtk.Align.CENTER,
-		halign: Gtk.Align.START,
-		popover: new Gtk.Popover({
-			child: new Gtk.ScrolledWindow({
-				propagate_natural_height: true,
-				propagate_natural_width: true,
-				child: doseTimeBox,
-			}),
-		}),
-	});
-
-	spinButtonHours.connect('output', h => {
-		spinButtonHours.text = clockIs12 ? String(h.adjustment.value) : addLeadZero(h.adjustment.value);
-		doseTimeButton.label = `${spinButtonHours.text}:${spinButtonMinutes.text}`;
-		if (timeDot) doseTimeButton.label = doseTimeButton.label.replace(':', '.');
-		doseTimeButton.label = doseTimeButton.label + ` ${amPmButton.label}`;
-		return true;
-	});
-	spinButtonMinutes.connect('output', m => {
-		spinButtonMinutes.text = addLeadZero(m.adjustment.value);
-		doseTimeButton.label = `${spinButtonHours.text}:${spinButtonMinutes.text}`;
-		if (timeDot) doseTimeButton.label = doseTimeButton.label.replace(':', '.');
-		doseTimeButton.label = doseTimeButton.label + ` ${amPmButton.label}`;
-		return true;
-	});
-
-	amPmButton.connect('clicked', btn => {
-		btn.label = btn.label === 'AM' ? 'PM' : 'AM';
-		doseTimeButton.label = `${spinButtonHours.text}:${spinButtonMinutes.text} ${amPmButton.label}`;
-	});
-
-	if (clockIs12) {
-		adjHours.lower = 1;
-		adjHours.upper = 12;
-	}
-
-	doseBox.append(removeDoseButton);
-	doseBox.append(doseTimeButton);
-	doseRow.add_prefix(doseBox);
-
-	removeDoseButton.connect('clicked', () => {
-		removeRow(doseRow);
-	});
-
-	return doseRow;
-}
-
-export function getTimeBtnInput(currentDoseRow) {
-	const doseTimeButton = getWidgetByName(currentDoseRow, 'doseTimeButton');
-	const spinButtonHours = getWidgetByName(currentDoseRow, 'spinButtonHours');
-	const spinButtonMinutes = getWidgetByName(currentDoseRow, 'spinButtonMinutes');
-	const amPmButton = getWidgetByName(currentDoseRow, 'amPmButton');
-	const period = amPmButton.label;
-
-	let hours = spinButtonHours.get_value();
-	let minutes = spinButtonMinutes.get_value();
-
-	// The time is stored in 24h format
-	if (clockIs12) {
-		if (period === 'AM' && hours === 12) hours = 0;
-		if (period === 'PM' && hours !== 12) hours += 12;
-	}
-
-	return [hours, minutes, doseTimeButton];
 }
 
 export function getDayLabel(day, long) {
