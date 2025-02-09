@@ -19,6 +19,7 @@ export class TimeDoseRow {
 				value: timeDose.dose,
 			}),
 		});
+		this.spinRow.add_css_class('t-d-row');
 
 		this.date = new Date();
 		this.date.setHours(hours);

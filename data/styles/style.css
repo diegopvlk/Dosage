@@ -103,11 +103,11 @@ listview > header label {
 }
 .card-stripe-w-n:dir(ltr) {
   box-shadow: var(--list-border), var(--list-shadow),
-    inset 23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.12));
+    inset 23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.13));
 }
 .card-stripe-w-n:dir(rtl) {
   box-shadow: var(--list-border), var(--list-shadow),
-    inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.12));
+    inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.13));
 }
 
 .dosage-list > row {
@@ -232,6 +232,12 @@ button.time-group-selection:hover {
   background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='16px' viewBox='0 0 16 16' width='16px'%3E%3Cfilter id='a' height='100%25' width='100%25' x='0%25' y='0%25'%3E%3CfeColorMatrix color-interpolation-filters='sRGB' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Cmask id='b'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='.5'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='c'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='d'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='.7'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='e'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cmask id='f'%3E%3Cg filter='url(%23a)'%3E%3Cpath d='m -1.6 -1.6 h 19.2 v 19.2 h -19.2 z' fill-opacity='.35'/%3E%3C/g%3E%3C/mask%3E%3CclipPath id='g'%3E%3Cpath d='m 0 0 h 1600 v 1200 h -1600 z'/%3E%3C/clipPath%3E%3Cpath d='m 15 3.484375 l -1 -1 l -7.46875 7.515625 l -3.414062 -3.476562 l -2 2 l 5.414062 5.476562 l 9.46875 -9.515625 z m 0 0' fill='%23323238'/%3E%3Cg mask='url(%23b)'%3E%3Cg clip-path='url(%23c)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 550 182 c -.351562 .003906 -.695312 .101562 -1 .28125 v 3.4375 c .304688 .179688 .648438 .277344 1 .28125 c 1.105469 0 2 -.894531 2 -2 s -.894531 -2 -2 -2 z m 0 5 c -.339844 0 -.679688 .058594 -1 .175781 v 6.824219 h 4 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23d)'%3E%3Cg clip-path='url(%23e)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 569 182 v 4 c 1.105469 0 2 -.894531 2 -2 s -.894531 -2 -2 -2 z m 0 5 v 7 h 3 v -4 c 0 -1.65625 -1.34375 -3 -3 -3 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3Cg mask='url(%23f)'%3E%3Cg clip-path='url(%23g)' transform='matrix(1 0 0 1 -560 -520)'%3E%3Cpath d='m 573 182.269531 v 3.449219 c .613281 -.355469 .996094 -1.007812 1 -1.71875 c 0 -.714844 -.382812 -1.375 -1 -1.730469 z m 0 4.90625 v 6.824219 h 2 v -4 c 0 -1.269531 -.800781 -2.402344 -2 -2.824219 z m 0 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
 }
 
+.t-d-row box.suffixes > spinbutton > text:dir(ltr) {
+  margin-left: -18px;
+}
+.t-d-row box.suffixes > spinbutton > text:dir(rtl) {
+  margin-right: -18px;
+}
 .time-picker-box spinbutton {
   border-radius: 99px;
   margin: 4px 0;
@@ -279,7 +285,8 @@ row.spin .time-picker-box spinbutton text {
 }
 
 .badge-box.low-stock {
-  box-shadow: inset 0 0 0 1px rgb(from currentColor r g b / calc(alpha * 0.13));
+  box-shadow: inset 0 0 0 1px rgb(from currentColor r g b / calc(alpha * 0.2));
+  color: currentColor;
 }
 .badge-box {
   color: rgb(from currentColor r g b / calc(alpha * 0.85));

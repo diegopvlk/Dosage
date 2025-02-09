@@ -2,10 +2,10 @@
   --red-bg: color-mix(in srgb, #f4d9d8 97%, var(--accent-color));
   --red-fg: #680014;
 
-  --orange-bg: color-mix(in srgb, #f7dfbb 97%, var(--accent-color));
+  --orange-bg: color-mix(in srgb, #fae0bd 97%, var(--accent-color));
   --orange-fg: #4d2700;
 
-  --yellow-bg: color-mix(in srgb, #f4ecc6 97%, var(--accent-color));
+  --yellow-bg: color-mix(in srgb, #f4efc5 97%, var(--accent-color));
   --yellow-fg: #3a3000;
 
   --green-bg: color-mix(in srgb, #dcefdd 97%, var(--accent-color));
