@@ -158,7 +158,7 @@ export const DosageWindow = GObject.registerClass(
 					this.clearOldHistoryEntries();
 					this.addMissedItems();
 					this.updateEverything();
-					this._historyList.scroll_to(0, null, null);
+					this.scrollHistToTop();
 					this.scheduleNotifications();
 					lastDate = now;
 				}
@@ -591,7 +591,7 @@ export const DosageWindow = GObject.registerClass(
 					this.showAllHist = false;
 					this.setShowHistoryAmount();
 					this._emptyHistory.visible = false;
-					this._historyList.scroll_to(0, null, null);
+					this.scrollHistToTop();
 					return;
 				} else {
 					this.histQuery = true;
@@ -726,6 +726,12 @@ export const DosageWindow = GObject.registerClass(
 			if (!noItems) this._todayList.scroll_to(0, null, null);
 		}
 
+		scrollHistToTop() {
+			setTimeout(() => {
+				this._historyList.scroll_to(0, null, null);
+			}, 100);
+		}
+
 		clearOldHistoryEntries() {
 			if (!settings.get_boolean('clear-old-hist')) return;
 
@@ -858,7 +864,7 @@ export const DosageWindow = GObject.registerClass(
 					const schedule = () => {
 						this.updateEverything({ isNotifAction: true, skipCycleUp: true });
 						this.scheduleNotifications();
-						this._historyList.scroll_to(0, null, null);
+						this.scrollHistToTop();
 					};
 
 					const confirmAction = new Gio.SimpleAction({
@@ -1053,7 +1059,7 @@ export const DosageWindow = GObject.registerClass(
 
 				this.updateEverything({ skipCycleUp: true });
 				this.scheduleNotifications('adding');
-				this._historyList.scroll_to(0, null, null);
+				this.scrollHistToTop();
 			} else {
 				// one-time entry
 				if (!this.delayDialog) {
