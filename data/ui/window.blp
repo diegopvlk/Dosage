@@ -18,10 +18,18 @@ template $DosageWindow: Adw.ApplicationWindow {
 		[top]
 		Adw.HeaderBar headerBar {
 			[start]
+			ToggleButton buttonWhenNeeded {
+				icon-name: "show-when-needed-symbolic";
+				tooltip-text: "Show/Hide 'When necessary'";
+				toggled => $_setShowWhenNeeded();
+				visible: false;
+			}
+
+			[start]
 			ToggleButton buttonSearch {
 				icon-name: "edit-find-symbolic";
-				visible: false;
 				tooltip-text: _("Search");
+				visible: false;
 			}
 
 			[start]

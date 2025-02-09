@@ -93,15 +93,23 @@ listview > header label {
   margin-bottom: -4px;
 }
 
-/* today list card stripe */
-.dosage-list.today .item-box:dir(ltr) {
+.card-stripe:dir(ltr) {
   box-shadow: var(--list-border), var(--list-shadow),
-    inset 23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.25));
+    inset 23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.3));
 }
-.dosage-list.today .item-box:dir(rtl) {
+.card-stripe:dir(rtl) {
   box-shadow: var(--list-border), var(--list-shadow),
-    inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.25));
+    inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.3));
 }
+.card-stripe-w-n:dir(ltr) {
+  box-shadow: var(--list-border), var(--list-shadow),
+    inset 23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.12));
+}
+.card-stripe-w-n:dir(rtl) {
+  box-shadow: var(--list-border), var(--list-shadow),
+    inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.12));
+}
+
 .dosage-list > row {
   border-radius: calc(var(--list-border-radius) + 2px);
   background: none;

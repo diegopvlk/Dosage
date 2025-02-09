@@ -28,5 +28,8 @@
     <key name="clear-old-hist" type="b">
       <default>false</default>
     </key>
+		<key name="show-when-needed" type="b">
+      <default>false</default>
+    </key>
   </schema>
 </schemalist>

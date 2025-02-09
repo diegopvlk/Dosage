@@ -50,6 +50,7 @@ export const DosageWindow = GObject.registerClass(
 			'entryBtn',
 			'unselectBtn',
 			'viewStack',
+			'buttonWhenNeeded',
 			'buttonSearch',
 			'searchBar',
 			'searchEntry',
@@ -488,6 +489,9 @@ export const DosageWindow = GObject.registerClass(
 			});
 
 			this._viewStack.connect('notify::visible-child', viewStack => {
+				const todayVisible = viewStack.get_visible_child_name() === 'today-page';
+				this._buttonWhenNeeded.visible = todayVisible && this.hasWhenNeeded;
+
 				const histVisible = viewStack.get_visible_child_name() === 'history-page';
 				this._buttonSearch.visible = histVisible;
 				this._searchBar.visible = histVisible;
@@ -507,29 +511,37 @@ export const DosageWindow = GObject.registerClass(
 				this._todayList.add_css_class('background');
 				this._todayList.set_header_factory(todayHeaderFactory);
 				this._todayList.set_factory(todayItemFactory);
+
+				this.todayFilter = Gtk.CustomFilter.new(item => {
+					return isTodayMedDay(item);
+				});
+
+				this.todayLS = Gio.ListStore.new(MedicationObject);
+
+				this.filterTodayModel = new Gtk.FilterListModel({
+					model: this.todayLS,
+					filter: this.todayFilter,
+				});
+
+				this.sortedTodayModel = new Gtk.SortListModel({
+					model: this.filterTodayModel,
+					section_sorter: new TodaySectionSorter(),
+				});
+
+				this.todayModel = new Gtk.NoSelection({
+					model: this.sortedTodayModel,
+				});
+
+				this._todayList.model = this.todayModel;
 			}
 
-			this.todayLS = Gio.ListStore.new(MedicationObject);
+			this.todayLS.remove_all();
 
-			const filterTodayModel = new Gtk.FilterListModel({
-				model: this.todayLS,
-				filter: Gtk.CustomFilter.new(item => {
-					return isTodayMedDay(item);
-				}),
-			});
-
-			this.sortedTodayModel = new Gtk.SortListModel({
-				model: filterTodayModel,
-				section_sorter: new TodaySectionSorter(),
-			});
-
-			this.todayModel = new Gtk.NoSelection({
-				model: this.sortedTodayModel,
-			});
-
+			this.hasWhenNeeded = false;
 			for (const it of treatmentsLS) {
 				const item = it.obj;
-				item.dosage.forEach(timeDose => {
+
+				for (const timeDose of item.dosage) {
 					this.todayLS.append(
 						new MedicationObject({
 							obj: {
@@ -551,11 +563,15 @@ export const DosageWindow = GObject.registerClass(
 							},
 						}),
 					);
-				});
+
+					if (item.frequency === 'when-needed') {
+						this.hasWhenNeeded = true;
+						break;
+					}
+				}
 			}
 
 			this.todayItems = [];
-			this._todayList.model = this.todayModel;
 
 			const noItems = this.sortedTodayModel.get_n_items() === 0;
 			const noTreatments = this._treatmentsList.model.get_n_items() === 0;
@@ -566,6 +582,11 @@ export const DosageWindow = GObject.registerClass(
 			this._emptyToday.title = noTreatments
 				? _('No treatments added yet')
 				: _('All done for today');
+
+			const todayVisible = this._viewStack.get_visible_child_name() === 'today-page';
+			this._buttonWhenNeeded.visible = todayVisible && this.hasWhenNeeded;
+			this._buttonWhenNeeded.active = settings.get_boolean('show-when-needed');
+			if (!noItems) this._todayList.scroll_to(0, null, null);
 		}
 
 		_clearOldHistoryEntries() {
@@ -610,7 +631,10 @@ export const DosageWindow = GObject.registerClass(
 			const todayLength = this.todayModel.get_n_items();
 
 			for (let i = 0; i < todayLength; i++) {
-				this._groupTodayList(this.todayModel.get_item(i));
+				const item = this.todayModel.get_item(i).obj;
+				if (item.frequency !== 'when-needed') {
+					this._groupTodayList(this.todayModel.get_item(i));
+				}
 			}
 
 			this._addToBeNotified(action);
@@ -784,6 +808,26 @@ export const DosageWindow = GObject.registerClass(
 			return [notification, app];
 		}
 
+		_setShowWhenNeeded() {
+			const btn = this._buttonWhenNeeded;
+			const showWhenNeeded = btn.active;
+
+			settings.set_boolean('show-when-needed', showWhenNeeded);
+
+			this.todayFilter.set_filter_func(item => {
+				return isTodayMedDay(item, showWhenNeeded);
+			});
+
+			const noItems = this.sortedTodayModel.get_n_items() === 0;
+			this._emptyToday.set_visible(noItems);
+
+			this._unselectTodayItems();
+
+			if (showWhenNeeded) {
+				this._todayList.scroll_to(0, null, null);
+			}
+		}
+
 		_selectTodayItems(list, position, groupCheck) {
 			const model = list.get_model();
 			const item = model.get_item(position).obj;
@@ -808,7 +852,10 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		_unselectTodayItems() {
-			this._loadToday();
+			this.todayItems.forEach(item => {
+				item.checkButton.set_active(false);
+			});
+			this.todayItems = [];
 			this._updateEntryBtn(false);
 		}
 
@@ -821,7 +868,6 @@ export const DosageWindow = GObject.registerClass(
 				this._entryBtn.add_css_class('suggested-action');
 			} else {
 				this._entryBtn.remove_css_class('suggested-action');
-				this.todayItems = [];
 			}
 		}
 
@@ -829,6 +875,10 @@ export const DosageWindow = GObject.registerClass(
 			const taken = +btn.get_name(); // 1 or 0
 			const app = this.get_application();
 			const itemsToAdd = [];
+			const date = new Date();
+			const hours = date.getHours();
+			const minutes = date.getMinutes();
+			const time = [hours, minutes];
 
 			if (this.todayItems.length > 0) {
 				this.todayItems.forEach(item => {
@@ -837,7 +887,7 @@ export const DosageWindow = GObject.registerClass(
 							obj: {
 								name: item.name,
 								unit: item.unit,
-								time: item.time,
+								time: item.frequency === 'when-needed' ? time : item.time,
 								dose: item.dose,
 								color: item.color,
 								taken: [new Date().getTime(), taken],

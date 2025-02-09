@@ -24,6 +24,7 @@
     <file alias="skip-med-symbolic.svg">icons/ui/skip-med-symbolic.svg</file>
 		<file alias="skip-med-symbolic-rtl.svg">icons/ui/skip-med-symbolic-rtl.svg</file>
 		<file alias="clock-symbolic.svg">icons/ui/clock-symbolic.svg</file>
+		<file alias="show-when-needed-symbolic.svg">icons/ui/show-when-needed-symbolic.svg</file>
 
     <file alias="cross-large-symbolic.svg">icons/ui/cross-large-symbolic.svg</file>
     <file alias="color-filled-symbolic.svg">icons/ui/color-filled-symbolic.svg</file>

@@ -234,11 +234,15 @@ export function handleCalendarSelect(calendar, calendarRow, oneTime) {
 	}
 }
 
-export function isTodayMedDay(med) {
+export function isTodayMedDay(med, showWhenNeeded) {
 	const item = med.obj;
 	const today = new Date().setHours(0, 0, 0, 0);
 	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
 	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
+
+	if (item.frequency === 'when-needed') {
+		return showWhenNeeded;
+	}
 
 	if (item.lastTaken != null) {
 		return new Date(item.lastTaken) < today;
@@ -258,7 +262,7 @@ export function isTodayMedDay(med) {
 		case 'cycle':
 			const [active, inactive, current] = item.cycle;
 			return current <= active;
-		case 'when-needed':
+		default:
 			return false;
 	}
 }
@@ -349,8 +353,14 @@ export const TodaySectionSorter = GObject.registerClass(
 	{},
 	class TodaySectionSorter extends Gtk.Sorter {
 		vfunc_compare(a, b) {
-			const [h1, m1] = a.obj.time;
-			const [h2, m2] = b.obj.time;
+			let [h1, m1] = a.obj.time;
+			let [h2, m2] = b.obj.time;
+
+			const wnA = a.obj.frequency === 'when-needed';
+			const wnB = b.obj.frequency === 'when-needed';
+
+			if (wnA) [h1, m1] = [-1, -1];
+			if (wnB) [h2, m2] = [-1, -1];
 
 			const hm1 = `${addLeadZero(h1)}${addLeadZero(m1)}`;
 			const hm2 = `${addLeadZero(h2)}${addLeadZero(m2)}`;

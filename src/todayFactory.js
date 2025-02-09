@@ -25,13 +25,24 @@ todayHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 		valign: Gtk.Align.START,
 	});
 
+	listHeaderItem.whenNeededLabel = new Gtk.Label({
+		halign: Gtk.Align.START,
+		ellipsize: Pango.EllipsizeMode.END,
+		margin_bottom: 1,
+		label: _('When necessary'),
+	});
+
 	listHeaderItem.box.append(listHeaderItem.selectTimeGroupBtn);
+	listHeaderItem.box.append(listHeaderItem.whenNeededLabel);
 	listHeaderItem.set_child(listHeaderItem.box);
 });
 
 todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const item = listHeaderItem.get_item().obj;
 	const selectTimeGroupBtn = listHeaderItem.selectTimeGroupBtn;
+
+	listHeaderItem.whenNeededLabel.visible = item.frequency === 'when-needed';
+	listHeaderItem.selectTimeGroupBtn.visible = !(item.frequency === 'when-needed');
 
 	const itemTime = GLib.DateTime.new_local(1, 1, 1, item.time[0], item.time[1], 1);
 	const time = itemTime.format(timeFormat);
@@ -185,5 +196,11 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	row.add_controller(keyController);
 
 	icon.icon_name = item.icon;
-	box.set_css_classes(['item-box', item.color]);
+	box.set_css_classes(['item-box', 'card-stripe', item.color]);
+
+	if (item.frequency === 'when-needed') {
+		box.set_css_classes(['item-box', 'card-stripe-w-n', item.color]);
+	} else {
+		box.set_css_classes(['item-box', 'card-stripe', item.color]);
+	}
 });
