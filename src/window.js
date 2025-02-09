@@ -41,7 +41,7 @@ export const DosageWindow = GObject.registerClass(
 		Template: 'resource:///io/github/diegopvlk/Dosage/ui/window.ui',
 		InternalChildren: [
 			'todayList',
-			'toogleHistAmountBtn',
+			'toggleHistAmountBtn',
 			'historyList',
 			'treatmentsList',
 			'treatmentsPage',
@@ -382,9 +382,9 @@ export const DosageWindow = GObject.registerClass(
 
 			const moreThan30 = historyLS.n_items > 30;
 
-			this._toogleHistAmountBtn.sensitive = moreThan30;
-			this._toogleHistAmountBtn.visible = moreThan30;
-			this._toogleHistAmountBtn.label = _('Show all');
+			this._toggleHistAmountBtn.sensitive = moreThan30;
+			this._toggleHistAmountBtn.visible = moreThan30;
+			this._toggleHistAmountBtn.label = _('Show all');
 
 			if (moreThan30) {
 				this._historyList.remove_css_class('list-no-extra-padding-bottom');
@@ -407,10 +407,10 @@ export const DosageWindow = GObject.registerClass(
 					return count <= 7;
 				});
 			} else if (this.showAllHist) {
-				this._toogleHistAmountBtn.label = _('Show less');
+				this._toggleHistAmountBtn.label = _('Show less');
 				this.historyFilter.set_filter_func(null);
 			} else {
-				this._toogleHistAmountBtn.visible = false;
+				this._toggleHistAmountBtn.visible = false;
 				this.historyFilter.set_filter_func(null);
 			}
 		}
@@ -559,7 +559,7 @@ export const DosageWindow = GObject.registerClass(
 					this.histQuery = true;
 				}
 
-				this._toogleHistAmountBtn.visible = false;
+				this._toggleHistAmountBtn.visible = false;
 
 				this.historyFilter.set_filter_func(item => {
 					const itemName = removeDiacritics(item.obj.name);
