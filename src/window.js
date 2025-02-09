@@ -74,22 +74,22 @@ export const DosageWindow = GObject.registerClass(
 			settings.bind('window-height', this, 'default-height', Gio.SettingsBindFlags.DEFAULT);
 			settings.connect('changed::clear-old-hist', (sett, key) => {
 				if (sett.get_boolean(key) === true) {
-					this._clearOldHistoryEntries();
-					this._setShowHistoryAmount();
-					this._updateJsonFile('history', historyLS);
+					this.clearOldHistoryEntries();
+					this.setShowHistoryAmount();
+					this.updateJsonFile('history', historyLS);
 				}
 			});
 		}
 
 		#start() {
 			const load = () => {
-				this._loadData();
-				this._updateCycleAndLastUp();
-				this._updateJsonFile('treatments', treatmentsLS);
-				this._loadToday();
-				this._handleSuspension();
-				this._scheduleNotifications();
-				this._checkInventory();
+				this.loadData();
+				this.updateCycleAndLastUp();
+				this.updateJsonFile('treatments', treatmentsLS);
+				this.loadToday();
+				this.handleSuspension();
+				this.scheduleNotifications();
+				this.checkInventory();
 			};
 
 			const loadPromise = new Promise((resolve, reject) => resolve());
@@ -98,18 +98,18 @@ export const DosageWindow = GObject.registerClass(
 			});
 		}
 
-		_loadData() {
+		loadData() {
 			const treatmentsFile = DataDir.get_child('dosage-treatments.json');
 			const historyFile = DataDir.get_child('dosage-history.json');
 
-			this._createOrLoadJson('treatments', treatmentsFile);
-			this._createOrLoadJson('history', historyFile);
-			if (this._addMissedItems() | this._clearOldHistoryEntries()) {
-				this._updateJsonFile('history', historyLS);
+			this.createOrLoadJson('treatments', treatmentsFile);
+			this.createOrLoadJson('history', historyFile);
+			if (this.addMissedItems() | this.clearOldHistoryEntries()) {
+				this.updateJsonFile('history', historyLS);
 			}
 		}
 
-		_checkInventory(notifAction) {
+		checkInventory(notifAction) {
 			this._treatmentsPage.set_needs_attention(false);
 			this._treatmentsPage.badge_number = 0;
 			let notify = false;
@@ -131,7 +131,7 @@ export const DosageWindow = GObject.registerClass(
 
 			if (!settings.get_boolean('low-stock-notif')) return;
 
-			const [notification, app] = this._getNotification();
+			const [notification, app] = this.getNotification();
 
 			app.withdraw_notification('low-stock');
 
@@ -151,11 +151,11 @@ export const DosageWindow = GObject.registerClass(
 				const now = new Date().setHours(0, 0, 0, 0);
 				// update everything at next midnight
 				if (now > lastDate) {
-					this._clearOldHistoryEntries();
-					this._addMissedItems();
-					this._updateEverything();
+					this.clearOldHistoryEntries();
+					this.addMissedItems();
+					this.updateEverything();
 					this._historyList.scroll_to(0, null, null);
-					this._scheduleNotifications();
+					this.scheduleNotifications();
 					lastDate = now;
 				}
 			};
@@ -163,8 +163,8 @@ export const DosageWindow = GObject.registerClass(
 			setInterval(tick, 2500);
 		}
 
-		_handleSuspension() {
-			const onWakingUp = () => this._scheduleNotifications('sleep');
+		handleSuspension() {
+			const onWakingUp = () => this.scheduleNotifications('sleep');
 			this._connection = Gio.bus_get_sync(Gio.BusType.SYSTEM, null);
 			this._connection.signal_subscribe(
 				'org.freedesktop.login1',
@@ -177,22 +177,22 @@ export const DosageWindow = GObject.registerClass(
 			);
 		}
 
-		_createOrLoadJson(fileType, file) {
+		createOrLoadJson(fileType, file) {
 			const filePath = file.get_path();
 
 			if (!file.query_exists(null)) {
 				try {
-					this._createNewFile(filePath, fileType);
+					this.createNewFile(filePath, fileType);
 					log(`New ${fileType} file created at: ${filePath}`);
 				} catch (err) {
 					console.error(`Failed to create new ${fileType} file: ${err}`);
 				}
 			}
 
-			this._loadJsonContents(fileType, filePath);
+			this.loadJsonContents(fileType, filePath);
 		}
 
-		_createNewFile(filePath, fileType) {
+		createNewFile(filePath, fileType) {
 			const file = Gio.File.new_for_path(filePath);
 			const flags = Gio.FileCreateFlags.NONE;
 			const fileStream = file.create(flags, null);
@@ -216,7 +216,7 @@ export const DosageWindow = GObject.registerClass(
 			fileStream.close(null);
 		}
 
-		_loadJsonContents(fileType, filePath) {
+		loadJsonContents(fileType, filePath) {
 			const file = Gio.File.new_for_path(filePath);
 			const decoder = new TextDecoder('utf8');
 
@@ -257,7 +257,7 @@ export const DosageWindow = GObject.registerClass(
 							return;
 						}
 
-						this._loadTreatments(treatData);
+						this.loadTreatments(treatData);
 						this.lastUpdate = treatData.lastUpdate;
 						this.treatmentsVersion = treatData.version;
 
@@ -280,10 +280,10 @@ export const DosageWindow = GObject.registerClass(
 						}
 
 						this.historyVersion = histData.version;
-						this._loadHistory(upgradedHistory || histData);
+						this.loadHistory(upgradedHistory || histData);
 
 						if (upgradedHistory) {
-							this._updateJsonFile('history', historyLS);
+							this.updateJsonFile('history', historyLS);
 						}
 
 						return;
@@ -297,7 +297,7 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		_loadTreatments(treatmentsJson) {
+		loadTreatments(treatmentsJson) {
 			try {
 				if (treatmentsLS.get_n_items() === 0) {
 					treatmentsJson.treatments.forEach(med => {
@@ -342,7 +342,7 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		_setShowHistoryAmount() {
+		setShowHistoryAmount() {
 			if (this.histQuery) return;
 
 			const moreThan30 = historyLS.n_items > 30;
@@ -380,12 +380,12 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		_toggleHistoryAmount() {
+		toggleHistoryAmount() {
 			this.showAllHist = !this.showAllHist;
-			this._setShowHistoryAmount();
+			this.setShowHistoryAmount();
 		}
 
-		async _loadHistory(historyJson) {
+		async loadHistory(historyJson) {
 			try {
 				if (!historyLS.get_item(0)) {
 					historyJson.history.sort((a, b) => b.taken[0] - a.taken[0]);
@@ -401,7 +401,7 @@ export const DosageWindow = GObject.registerClass(
 						filter: this.historyFilter,
 					});
 
-					this._setHistorySearch();
+					this.setHistorySearch();
 
 					const sortedHistModelPromise = new Promise(resolve => {
 						setTimeout(() => {
@@ -420,7 +420,7 @@ export const DosageWindow = GObject.registerClass(
 						});
 
 						this._historyList.model = this.noSelectionModel;
-						this._setShowHistoryAmount();
+						this.setShowHistoryAmount();
 
 						this._headerBarSpinner.set_visible(false);
 					});
@@ -438,7 +438,7 @@ export const DosageWindow = GObject.registerClass(
 					historyLS.connect('items-changed', (model, pos, removed, added) => {
 						if (!historyLS.get_item(0)) {
 							this._searchBar.search_mode_enabled = false;
-							this._setEmptyHistStatus();
+							this.setEmptyHistStatus();
 							app.remove_action('showSearch');
 						} else {
 							const histVisible = this._viewStack.get_visible_child_name() === 'history-page';
@@ -477,8 +477,8 @@ export const DosageWindow = GObject.registerClass(
 									}
 								}
 							}
-							this._updateEverything(null, null, 'skipCycleUp');
-							this._scheduleNotifications('removing');
+							this.updateEverything(null, null, 'skipCycleUp');
+							this.scheduleNotifications('removing');
 						}
 					});
 				}
@@ -487,10 +487,10 @@ export const DosageWindow = GObject.registerClass(
 				this.errorLoading = true;
 			}
 
-			this._setEmptyHistStatus();
+			this.setEmptyHistStatus();
 		}
 
-		_setHistorySearch() {
+		setHistorySearch() {
 			this._buttonSearch.connect('clicked', () => {
 				this._searchBar.search_mode_enabled = !this._searchBar.search_mode_enabled;
 			});
@@ -518,7 +518,7 @@ export const DosageWindow = GObject.registerClass(
 				if (!query) {
 					this.histQuery = false;
 					this.showAllHist = false;
-					this._setShowHistoryAmount();
+					this.setShowHistoryAmount();
 					this._emptyHistory.visible = false;
 					this._historyList.scroll_to(0, null, null);
 					return;
@@ -551,7 +551,7 @@ export const DosageWindow = GObject.registerClass(
 			});
 		}
 
-		_loadToday() {
+		loadToday() {
 			if (!this.todayLS) {
 				this._todayList.remove_css_class('view');
 				this._todayList.add_css_class('background');
@@ -635,7 +635,7 @@ export const DosageWindow = GObject.registerClass(
 			if (!noItems) this._todayList.scroll_to(0, null, null);
 		}
 
-		_clearOldHistoryEntries() {
+		clearOldHistoryEntries() {
 			if (!settings.get_boolean('clear-old-hist')) return;
 
 			const itemsHolder = {};
@@ -666,7 +666,7 @@ export const DosageWindow = GObject.registerClass(
 			return true;
 		}
 
-		_scheduleNotifications(action) {
+		scheduleNotifications(action) {
 			for (const id in this.scheduledItems) {
 				clearTimeout(this.scheduledItems[id]);
 			}
@@ -679,14 +679,14 @@ export const DosageWindow = GObject.registerClass(
 			for (let i = 0; i < todayLength; i++) {
 				const item = this.todayModel.get_item(i).obj;
 				if (item.frequency !== 'when-needed') {
-					this._groupTodayList(this.todayModel.get_item(i));
+					this.groupTodayList(this.todayModel.get_item(i));
 				}
 			}
 
-			this._addToBeNotified(action);
+			this.addToBeNotified(action);
 		}
 
-		_groupTodayList(med) {
+		groupTodayList(med) {
 			const item = med.obj;
 			const itemHour = item.time[0];
 			const itemMin = item.time[1];
@@ -700,7 +700,7 @@ export const DosageWindow = GObject.registerClass(
 			this.todayGroupedObj[dateKey].push(item);
 		}
 
-		_addToBeNotified(action) {
+		addToBeNotified(action) {
 			for (let dateKey in this.todayGroupedObj) {
 				const groupedObj = this.todayGroupedObj;
 				const now = new Date();
@@ -727,7 +727,7 @@ export const DosageWindow = GObject.registerClass(
 						timeDiff = 0;
 						return;
 					}
-					const [notification, app] = this._getNotification();
+					const [notification, app] = this.getNotification();
 
 					let body = '';
 					const maxLength = 3;
@@ -765,8 +765,8 @@ export const DosageWindow = GObject.registerClass(
 					}
 
 					const schedule = () => {
-						this._updateEverything(null, 'notifAction', 'skipCycleUp');
-						this._scheduleNotifications();
+						this.updateEverything(null, 'notifAction', 'skipCycleUp');
+						this.scheduleNotifications();
 						this._historyList.scroll_to(0, null, null);
 					};
 
@@ -775,7 +775,7 @@ export const DosageWindow = GObject.registerClass(
 					});
 					confirmAction.connect('activate', () => {
 						const confirmPromise = new Promise((resolve, reject) => {
-							resolve(this._addNotifItemsToHistory(groupedObj[dateKey], 1));
+							resolve(this.addNotifItemsToHistory(groupedObj[dateKey], 1));
 						});
 						confirmPromise.then(_ => schedule());
 					});
@@ -783,7 +783,7 @@ export const DosageWindow = GObject.registerClass(
 					const skipAction = new Gio.SimpleAction({ name: `skip${dateKey}` });
 					skipAction.connect('activate', () => {
 						const skipPromise = new Promise((resolve, reject) => {
-							resolve(this._addNotifItemsToHistory(groupedObj[dateKey], 0));
+							resolve(this.addNotifItemsToHistory(groupedObj[dateKey], 0));
 						});
 						skipPromise.then(_ => schedule());
 					});
@@ -841,7 +841,7 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		_getNotification() {
+		getNotification() {
 			const app = this.app;
 			const notification = new Gio.Notification();
 			const openAction = new Gio.SimpleAction({ name: 'open' });
@@ -858,7 +858,7 @@ export const DosageWindow = GObject.registerClass(
 			return [notification, app];
 		}
 
-		_setShowWhenNeeded() {
+		setShowWhenNeeded() {
 			const btn = this._buttonWhenNeeded;
 			const showWhenNeeded = btn.active;
 
@@ -871,14 +871,14 @@ export const DosageWindow = GObject.registerClass(
 			const noItems = this.sortedTodayModel.get_n_items() === 0;
 			this._emptyToday.set_visible(noItems);
 
-			this._unselectTodayItems();
+			this.unselectTodayItems();
 
 			if (showWhenNeeded) {
 				this._todayList.scroll_to(0, null, null);
 			}
 		}
 
-		_selectTodayItems(list, position, groupCheck) {
+		selectTodayItems(list, position, groupCheck) {
 			const model = list.get_model();
 			const item = model.get_item(position).obj;
 			const checkButton = item.checkButton;
@@ -898,18 +898,18 @@ export const DosageWindow = GObject.registerClass(
 			checkButton.set_active(!isActive);
 
 			const hasTodayItems = this.todayItems.length > 0;
-			this._updateEntryBtn(hasTodayItems);
+			this.updateEntryBtn(hasTodayItems);
 		}
 
-		_unselectTodayItems() {
+		unselectTodayItems() {
 			this.todayItems.forEach(item => {
 				item.checkButton.set_active(false);
 			});
 			this.todayItems = [];
-			this._updateEntryBtn(false);
+			this.updateEntryBtn(false);
 		}
 
-		_updateEntryBtn(hasTodayItems) {
+		updateEntryBtn(hasTodayItems) {
 			this._entryBtn.label = hasTodayItems ? _('Confirm') : _('One-time entry');
 			this._skipBtn.set_visible(hasTodayItems);
 			this._unselectBtn.set_visible(hasTodayItems);
@@ -921,7 +921,7 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		_addTodayToHistory(btn) {
+		addTodayToHistory(btn) {
 			const taken = +btn.get_name(); // 1 or 0
 			const app = this.app;
 			const itemsToAdd = [];
@@ -945,7 +945,7 @@ export const DosageWindow = GObject.registerClass(
 						}),
 					);
 
-					this._updateTreatInvAndLastTk(item, taken);
+					this.updateTreatInvAndLastTk(item, taken);
 
 					const itemHour = item.time[0];
 					const itemMin = item.time[1];
@@ -955,8 +955,8 @@ export const DosageWindow = GObject.registerClass(
 
 				historyLS.splice(0, 0, itemsToAdd.reverse());
 
-				this._updateEverything(null, null, 'skipCycleUp');
-				this._scheduleNotifications('adding');
+				this.updateEverything(null, null, 'skipCycleUp');
+				this.scheduleNotifications('adding');
 				this._historyList.scroll_to(0, null, null);
 			} else {
 				// one-time entry
@@ -969,10 +969,10 @@ export const DosageWindow = GObject.registerClass(
 				}
 			}
 
-			this._updateEntryBtn(false);
+			this.updateEntryBtn(false);
 		}
 
-		_updateTreatInvAndLastTk(item, taken) {
+		updateTreatInvAndLastTk(item, taken) {
 			for (const it of treatmentsLS) {
 				const treatItem = it.obj;
 				const sameName = item.name === treatItem.name;
@@ -997,7 +997,7 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		_updateTreatInventory(item, taken) {
+		updateTreatInventory(item, taken) {
 			for (const it of treatmentsLS) {
 				const treatItem = it.obj;
 				const sameName = item.name === treatItem.name;
@@ -1012,7 +1012,7 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		_addNotifItemsToHistory(groupedArr, taken) {
+		addNotifItemsToHistory(groupedArr, taken) {
 			const itemsToAdd = [];
 			const now = new Date();
 			const today = new Date().setHours(0, 0, 0, 0);
@@ -1035,18 +1035,18 @@ export const DosageWindow = GObject.registerClass(
 				);
 
 				dateLS === today
-					? this._updateTreatInvAndLastTk(item, taken)
-					: this._updateTreatInventory(item, taken);
+					? this.updateTreatInvAndLastTk(item, taken)
+					: this.updateTreatInventory(item, taken);
 			});
 
 			historyLS.splice(0, 0, itemsToAdd.reverse());
 		}
 
-		_editHistoryItem(list, position) {
+		editHistoryItem(list, position) {
 			openEditHistDialog(this, list, position);
 		}
 
-		_updateJsonFile(type, listStore) {
+		updateJsonFile(type, listStore) {
 			const fileName = `dosage-${type}.json`;
 			const file = DataDir.get_child(fileName);
 			let tempObj;
@@ -1104,7 +1104,7 @@ export const DosageWindow = GObject.registerClass(
 				.catch(err => console.error('Update failed:', err));
 		}
 
-		_addMissedItems() {
+		addMissedItems() {
 			let itemsAdded = false;
 			const itemsToAdd = [];
 
@@ -1194,7 +1194,7 @@ export const DosageWindow = GObject.registerClass(
 			return itemsAdded;
 		}
 
-		_updateCycleAndLastUp(skipCycleUp) {
+		updateCycleAndLastUp(skipCycleUp) {
 			const lastUpdate = new Date(this.lastUpdate);
 			const lastUp = lastUpdate.setHours(0, 0, 0, 0);
 			const today = new Date().setHours(0, 0, 0, 0);
@@ -1247,7 +1247,7 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		_setEmptyHistStatus() {
+		setEmptyHistStatus() {
 			if (!historyLS.get_item(0)) {
 				this._emptyHistory.title = _('Empty history');
 				this._emptyHistory.visible = true;
@@ -1257,20 +1257,20 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		_updateEverything(skipHistUp, notifAction, skipCycleUp) {
-			this._setShowHistoryAmount();
-			this._updateCycleAndLastUp(skipCycleUp);
-			this._updateJsonFile('treatments', treatmentsLS);
-			this._loadToday();
-			this._updateEntryBtn(false);
-			this._checkInventory(notifAction);
+		updateEverything(skipHistUp, notifAction, skipCycleUp) {
+			this.setShowHistoryAmount();
+			this.updateCycleAndLastUp(skipCycleUp);
+			this.updateJsonFile('treatments', treatmentsLS);
+			this.loadToday();
+			this.updateEntryBtn(false);
+			this.checkInventory(notifAction);
 
 			if (!skipHistUp) {
-				this._updateJsonFile('history', historyLS);
+				this.updateJsonFile('history', historyLS);
 			}
 		}
 
-		_openMedDialog(list, position, duplicate) {
+		openMedDialog(list, position, duplicate) {
 			// artificial delay to avoid opening multiple dialogs when double clicking button
 			if (!this.delayDialog) {
 				openMedicationDialog(this, list, position, duplicate);

@@ -21,7 +21,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 			ToggleButton buttonWhenNeeded {
 				icon-name: "show-when-needed-symbolic";
 				tooltip-text: "Show/Hide 'When necessary'";
-				toggled => $_setShowWhenNeeded();
+				toggled => $setShowWhenNeeded();
 				visible: false;
 			}
 
@@ -83,7 +83,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 									'today'
 								]
 
-								activate => $_selectTodayItems();
+								activate => $selectTodayItems();
 								single-click-activate: true;
 							}
 						}
@@ -107,7 +107,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 								'floating'
 							]
 
-							clicked => $_unselectTodayItems();
+							clicked => $unselectTodayItems();
 							tooltip-text: _("Unselect");
 							visible: false;
 							icon-name: 'unselect-meds-symbolic';
@@ -119,7 +119,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 								'floating'
 							]
 
-							clicked => $_addTodayToHistory();
+							clicked => $addTodayToHistory();
 							name: '1';
 							label: _("One-time entry");
 						}
@@ -131,7 +131,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 								'floating'
 							]
 
-							clicked => $_addTodayToHistory();
+							clicked => $addTodayToHistory();
 							name: '0';
 							tooltip-text: _("Skip");
 							visible: false;
@@ -160,7 +160,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 									'scroll-to-top-hack'
 								]
 
-								activate => $_editHistoryItem();
+								activate => $editHistoryItem();
 								single-click-activate: true;
 							}
 						}
@@ -181,7 +181,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 							halign: center;
 							valign: end;
 							margin-bottom: 3;
-							clicked => $_toggleHistoryAmount();
+							clicked => $toggleHistoryAmount();
 
 							styles [
 								'pill',
@@ -211,7 +211,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 									'dosage-list'
 								]
 
-								activate => $_openMedDialog();
+								activate => $openMedDialog();
 								single-click-activate: true;
 							}
 						}
@@ -233,7 +233,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 							halign: center;
 							valign: end;
 							margin-bottom: 3;
-							clicked => $_openMedDialog();
+							clicked => $openMedDialog();
 
 							styles [
 								'pill',

@@ -55,7 +55,7 @@ todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 		const end = listHeaderItem.get_end();
 
 		for (let pos = start; pos < end; pos++) {
-			DosageWindow._selectTodayItems(DosageWindow._todayList, pos, true);
+			DosageWindow.selectTodayItems(DosageWindow._todayList, pos, true);
 		}
 	});
 

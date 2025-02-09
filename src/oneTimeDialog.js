@@ -126,9 +126,9 @@ export function openOneTimeDialog(DosageWindow) {
 	confirmBtn.connect('clicked', () => {
 		if (!isValidInput()) return;
 		addSingleItemToHistory();
-		DosageWindow._updateEverything(null, null, 'skipCycleUp');
+		DosageWindow.updateEverything(null, null, 'skipCycleUp');
 		oneTimeDialog.force_close();
-		DosageWindow._scheduleNotifications('saving');
+		DosageWindow.scheduleNotifications('saving');
 	});
 
 	const [oneTimeDialogClampHeight] = oneTimeDialogClamp.measure(Gtk.Orientation.VERTICAL, -1);

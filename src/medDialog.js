@@ -262,11 +262,11 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 		if (!isValidInput(isUpdate)) return;
 
 		addOrUpdateTreatment();
-		DosageWindow._updateEverything('skipHistUp');
+		DosageWindow.updateEverything('skipHistUp');
 		const pos = Math.max(0, updatedItemPosition - 1);
 		DosageWindow._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
 		medDialog.force_close();
-		DosageWindow._scheduleNotifications('saving');
+		DosageWindow.scheduleNotifications('saving');
 	});
 
 	let updatedItemPosition = 0;
@@ -582,8 +582,8 @@ export function confirmDeleteDialog(item, position, DosageWindow, medDialog) {
 			const deletePos = treatmentsLS.find(it)[1];
 			treatmentsLS.remove(deletePos);
 			if (medDialog) medDialog.force_close();
-			DosageWindow._updateEverything('skipHistUp', null, 'skipCycleUp');
-			DosageWindow._scheduleNotifications('deleting');
+			DosageWindow.updateEverything('skipHistUp', null, 'skipCycleUp');
+			DosageWindow.scheduleNotifications('deleting');
 			DosageWindow._treatmentsList.scroll_to(
 				Math.max(0, position - 1),
 				Gtk.ListScrollFlags.FOCUS,

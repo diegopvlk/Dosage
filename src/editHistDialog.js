@@ -134,8 +134,8 @@ export function openEditHistDialog(DosageWindow, list, position) {
 				else return 0;
 			});
 
-			DosageWindow._updateJsonFile('history', historyLS);
-			DosageWindow._setShowHistoryAmount();
+			DosageWindow.updateJsonFile('history', historyLS);
+			DosageWindow.setShowHistoryAmount();
 		} else {
 			return;
 		}
@@ -161,8 +161,8 @@ export function openEditHistDialog(DosageWindow, list, position) {
 				// trigger signal to update labels
 				i.notify('obj');
 
-				DosageWindow._updateJsonFile('treatments', treatmentsLS);
-				DosageWindow._checkInventory();
+				DosageWindow.updateJsonFile('treatments', treatmentsLS);
+				DosageWindow.checkInventory();
 			}
 		}
 	}

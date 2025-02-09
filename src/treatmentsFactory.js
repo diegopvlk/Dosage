@@ -173,7 +173,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	const duplicateAct = new Gio.SimpleAction({ name: `duplicate${pos}` });
 	duplicateAct.connect('activate', () => {
 		const list = DosageWindow._treatmentsList;
-		DosageWindow._openMedDialog(list, pos, 'duplicate');
+		DosageWindow.openMedDialog(list, pos, 'duplicate');
 	});
 	app.add_action(duplicateAct);
 
