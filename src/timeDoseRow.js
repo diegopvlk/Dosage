@@ -31,7 +31,7 @@ export class TimeDoseRow {
 			valign: Gtk.Align.CENTER,
 			margin_end: 3,
 			icon_name: 'user-trash-symbolic',
-			tooltip_text: _('Delete dose'),
+			tooltip_text: _('Remove dose'),
 		});
 
 		this.timeBtn = new Gtk.MenuButton({

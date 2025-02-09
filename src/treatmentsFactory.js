@@ -82,7 +82,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 		valign: Gtk.Align.CENTER,
 		margin_end: 5,
 		visible: false,
-		tooltip_text: _('Refill inventory'),
+		tooltip_text: _('Refill stock'),
 	});
 
 	listItem.invLabelBtn.connect('clicked', btn => {
