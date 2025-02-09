@@ -110,7 +110,7 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		checkInventory(notifAction) {
+		checkInventory(isNotifAction) {
 			this._treatmentsPage.set_needs_attention(false);
 			this._treatmentsPage.badge_number = 0;
 			let notify = false;
@@ -136,7 +136,7 @@ export const DosageWindow = GObject.registerClass(
 
 			app.withdraw_notification('low-stock');
 
-			if (!this.get_visible() && !notifAction && notify) {
+			if (!this.get_visible() && !isNotifAction && notify) {
 				notification.set_title(_('Reminder'));
 				// TRANSLATORS: Notification text for when the inventory is low
 				notification.set_body(_('You have treatments low in stock'));
@@ -476,7 +476,7 @@ export const DosageWindow = GObject.registerClass(
 									}
 								}
 							}
-							this.updateEverything(null, null, 'skipCycleUp');
+							this.updateEverything({ skipCycleUp: true });
 							this.scheduleNotifications('removing');
 						}
 					});
@@ -764,7 +764,7 @@ export const DosageWindow = GObject.registerClass(
 					}
 
 					const schedule = () => {
-						this.updateEverything(null, 'notifAction', 'skipCycleUp');
+						this.updateEverything({ isNotifAction: true, skipCycleUp: true });
 						this.scheduleNotifications();
 						this._historyList.scroll_to(0, null, null);
 					};
@@ -954,7 +954,7 @@ export const DosageWindow = GObject.registerClass(
 
 				historyLS.splice(0, 0, itemsToAdd.reverse());
 
-				this.updateEverything(null, null, 'skipCycleUp');
+				this.updateEverything({ skipCycleUp: true });
 				this.scheduleNotifications('adding');
 				this._historyList.scroll_to(0, null, null);
 			} else {
@@ -1256,17 +1256,14 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		updateEverything(skipHistUp, notifAction, skipCycleUp) {
+		updateEverything({ skipHistUp = false, isNotifAction = false, skipCycleUp = false } = {}) {
 			this.setShowHistoryAmount();
 			this.updateCycleAndLastUp(skipCycleUp);
 			this.updateJsonFile('treatments', treatmentsLS);
 			this.loadToday();
 			this.updateEntryBtn(false);
-			this.checkInventory(notifAction);
-
-			if (!skipHistUp) {
-				this.updateJsonFile('history', historyLS);
-			}
+			this.checkInventory(isNotifAction);
+			if (!skipHistUp) this.updateJsonFile('history', historyLS);
 		}
 
 		openMedDialog(list, position, duplicate) {

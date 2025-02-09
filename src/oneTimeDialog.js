@@ -126,7 +126,7 @@ export function openOneTimeDialog(DosageWindow) {
 	confirmBtn.connect('clicked', () => {
 		if (!isValidInput()) return;
 		addSingleItemToHistory();
-		DosageWindow.updateEverything(null, null, 'skipCycleUp');
+		DosageWindow.updateEverything({ skipCycleUp: true });
 		oneTimeDialog.force_close();
 		DosageWindow.scheduleNotifications('saving');
 	});

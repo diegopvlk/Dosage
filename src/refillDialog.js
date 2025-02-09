@@ -65,7 +65,7 @@ export function openRefillDialog(listItem, position) {
 		// trigger signal to update labels
 		listItem.get_item().notify('obj');
 
-		DosageWindow.updateEverything('skipHistUp', null, 'skipCycleUp');
+		DosageWindow.updateEverything({ skipHistUp: true, skipCycleUp: true });
 		const pos = Math.max(0, position - 1);
 		DosageWindow._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
 		DosageWindow.scheduleNotifications('saving');
