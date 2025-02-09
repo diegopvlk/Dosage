@@ -22,7 +22,14 @@ export function openEditHistDialog(DosageWindow, list, position) {
 	const histBtnSkipped = builder.get_object('histBtnSkipped');
 	const histBtnConfirmed = builder.get_object('histBtnConfirmed');
 	const popoverScrollTime = builder.get_object('popoverScrollTime');
-	const timePicker = new TimePicker(item.taken[0]);
+	const date = new Date(item.taken[0]);
+
+	if (item.taken[1] === -1) {
+		date.setHours(item.time[0]);
+		date.setMinutes(item.time[1]);
+	}
+
+	const timePicker = new TimePicker(date);
 	popoverScrollTime.set_child(timePicker);
 
 	nameDoseSpinRow.title = item.name;
