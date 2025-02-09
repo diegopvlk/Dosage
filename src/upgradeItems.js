@@ -1,5 +1,54 @@
+// change old versions for compatibility
+
 export default function upgradeItems(json, type) {
-	// change old versions for compatibility
+	if (type === 'treatments') {
+		return updateContents(json.version, treatmentsUpdates, json);
+	} else {
+		return updateContents(json.version, historyUpdates, json);
+	}
+}
+
+function updateContents(currVersion, fileUpdates, json) {
+	const currIndex = fileUpdates.findIndex(update => update.version === currVersion);
+
+	// if !version, start from the beginning
+	if (currIndex === -1) {
+		for (const update of fileUpdates) {
+			json = update.updateFunc(json);
+		}
+	} else {
+		// start from the next version update
+		for (let i = currIndex + 1; i < fileUpdates.length; i++) {
+			json = fileUpdates[i].updateFunc(json);
+		}
+	}
+
+	json.version = fileUpdates[fileUpdates.length - 1].version;
+
+	// return json if it updates
+	if (json.version !== currVersion) {
+		return json;
+	} else {
+		return null;
+	}
+}
+
+const treatmentsUpdates = [
+	{
+		version: 0,
+		updateFunc: json => oldUpgrade(json, 'treatments'),
+	},
+];
+
+const historyUpdates = [
+	{ version: 0, updateFunc: json => oldUpgrade(json, 'history') },
+	{
+		version: 1,
+		updateFunc: json => json,
+	},
+];
+
+function oldUpgrade(json, type) {
 	if (type === 'treatments' && json.meds) {
 		const newTreatments = {
 			treatments: [],
@@ -53,6 +102,13 @@ export default function upgradeItems(json, type) {
 		});
 
 		return newTreatments;
+	} else if (type === 'treatments') {
+		json.treatments.forEach(item => {
+			if (!('enabled' in item.inventory)) {
+				item.inventory.enabled = false; // #73
+			}
+		});
+		return json;
 	}
 
 	if (type === 'history' && json.meds) {
@@ -92,5 +148,7 @@ export default function upgradeItems(json, type) {
 		});
 
 		return newHistory;
+	} else if (type === 'history') {
+		return json;
 	}
 }

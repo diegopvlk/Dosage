@@ -220,31 +220,32 @@ export const DosageWindow = GObject.registerClass(
 			const decoder = new TextDecoder('utf8');
 
 			try {
-				let [success, contents, length] = file.load_contents(null);
+				const [success, contents] = file.load_contents(null);
+				if (!success) {
+					log('Failed to read file contents.');
+					return;
+				}
 
-				if (success) {
-					const contentString = decoder.decode(contents);
-					if (fileType === 'treatments') {
-						let treatments = JSON.parse(contentString);
-						const upgradedTreatments = upgradeItems(treatments, fileType);
-						if (upgradedTreatments) {
-							treatments = upgradedTreatments;
-						}
-						this._loadTreatments(treatments);
-						this.lastUpdate = treatments.lastUpdate;
-					} else if (fileType === 'history') {
-						let history = JSON.parse(contentString);
-						const upgradedHistory = upgradeItems(history, fileType);
-						if (upgradedHistory) {
-							history = upgradedHistory;
-						}
-						this._loadHistory(history);
+				const contentString = decoder.decode(contents);
+				const json = JSON.parse(contentString);
+
+				switch (fileType) {
+					case 'treatments':
+						const upgradedTreatments = upgradeItems(json, fileType);
+						const tData = upgradedTreatments || json;
+						this._loadTreatments(tData);
+						this.lastUpdate = tData.lastUpdate;
+						this.treatmentsVersion = tData.version;
+						return;
+					case 'history':
+						const upgradedHistory = upgradeItems(json, fileType);
+						const hData = upgradedHistory || json;
+						this.historyVersion = hData.version;
+						this._loadHistory(upgradedHistory || hData);
 						if (upgradedHistory) {
 							this._updateJsonFile('history', historyLS);
 						}
-					}
-				} else {
-					log('Failed to read file contents.');
+						return;
 				}
 			} catch (err) {
 				console.error(`Error reading the file ${fileType}:`, err);
@@ -255,7 +256,6 @@ export const DosageWindow = GObject.registerClass(
 			try {
 				if (treatmentsLS.get_n_items() === 0) {
 					treatmentsJson.treatments.forEach(med => {
-						if (!('enabled' in med.inventory)) med.inventory.enabled = false; // #73
 						treatmentsLS.insert_sorted(
 							new MedicationObject({
 								obj: {
@@ -1002,9 +1002,17 @@ export const DosageWindow = GObject.registerClass(
 			const file = DataDir.get_child(fileName);
 			const tempObj = createTempObj(type, listStore);
 
-			if (type === 'treatments') this.lastUpdate = new Date().toISOString();
-
 			if (!tempObj || this.errorLoading) return;
+
+			switch (type) {
+				case 'treatments':
+					tempObj.version = this.treatmentsVersion;
+					this.lastUpdate = new Date().toISOString();
+					break;
+				case 'history':
+					tempObj.version = this.historyVersion;
+					break;
+			}
 
 			const jsonStr = JSON.stringify(tempObj);
 
