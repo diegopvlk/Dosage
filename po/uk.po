@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-09 10:24-0300\n"
-"PO-Revision-Date: 2024-12-27 23:00+0000\n"
-"Last-Translator: Максим Горпиніч <mgorpinic2005@gmail.com>\n"
+"PO-Revision-Date: 2025-02-09 15:37+0000\n"
+"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
 "uk/>\n"
 "Language: uk\n"
@@ -308,13 +308,15 @@ msgstr "Сьогодні день циклу…"
 
 #: data/ui/med-dialog.blp:710
 msgid "Mark as confirmed"
-msgstr ""
+msgstr "Позначити як підтверджене"
 
 #: data/ui/med-dialog.blp:711
 msgid ""
 "If not confirmed, it will go to history as confirmed rather than missed, "
 "reducing the stock if enabled"
 msgstr ""
+"Якщо не підтверджено, він перейде в історію як підтверджений, а не "
+"пропущений, зменшуючи запас, якщо ввімкнено"
 
 #: data/ui/med-dialog.blp:715
 msgid "Increase notification priority"
@@ -390,19 +392,19 @@ msgstr "Із списку курсів лікування"
 
 #: data/ui/one-time-dialog.blp:182
 msgid "Amount"
-msgstr ""
+msgstr "Сума"
 
 #: data/ui/one-time-dialog.blp:183
 msgid "Dose"
-msgstr ""
+msgstr "Доза"
 
 #: data/ui/one-time-dialog.blp:199
 msgid "Time"
-msgstr ""
+msgstr "Час"
 
 #: data/ui/one-time-dialog.blp:210
 msgid "Change time"
-msgstr ""
+msgstr "Змінити час"
 
 #: data/ui/one-time-dialog.blp:232
 msgid "Date"
@@ -487,7 +489,7 @@ msgstr "Історія"
 
 #: data/ui/window.blp:207
 msgid "Remove entries"
-msgstr ""
+msgstr "Видалити записи"
 
 #: data/ui/window.blp:221
 msgid "Treatments"
@@ -507,7 +509,7 @@ msgstr "Вийти"
 
 #: src/editHistDialog.js:51
 msgid "Auto-confirmed"
-msgstr ""
+msgstr "Автоматично підтверджено"
 
 #: src/editHistDialog.js:55 src/editHistDialog.js:71
 msgid "Confirmed at"
@@ -523,7 +525,7 @@ msgstr "Пропущено"
 
 #: src/historyFactory.js:67
 msgid "Select to be removed"
-msgstr ""
+msgstr "Виберіть для видалення"
 
 #: src/historyFactory.js:189
 msgid "Skipped"
@@ -603,11 +605,11 @@ msgstr "Змінити дозу"
 
 #: src/timeDoseRow.js:34
 msgid "Remove dose"
-msgstr ""
+msgstr "Зняти дозу"
 
 #: src/treatmentsFactory.js:85
 msgid "Refill stock"
-msgstr ""
+msgstr "Поповнити запас"
 
 #: src/treatmentsFactory.js:111
 msgid "Options"
@@ -664,11 +666,11 @@ msgstr "У вас залишилося мало ліків у запасі"
 
 #: src/window.js:228
 msgid "An issue has occurred"
-msgstr ""
+msgstr "Виникла проблема"
 
 #: src/window.js:236 src/window.js:258 src/window.js:280 src/window.js:298
 msgid "Close"
-msgstr ""
+msgstr "Закрити"
 
 #: src/window.js:446
 msgid "Show all"
