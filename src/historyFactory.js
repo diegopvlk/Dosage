@@ -50,16 +50,10 @@ historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const item = listHeaderItem.get_item().obj;
 	const dateLabel = listHeaderItem.dateLabel;
 
-	const today = GLib.DateTime.new_now_local();
 	const dateTime = GLib.DateTime.new_from_unix_local(item.taken[0] / 1000);
 	const formattedDt = dateTime.format(dateFormat);
-	const notToday = today.format('%F') !== dateTime.format('%F');
 
-	if (notToday) {
-		dateLabel.label = formattedDt.charAt(0).toUpperCase() + formattedDt.slice(1);
-	} else {
-		dateLabel.label = _('Today');
-	}
+	dateLabel.label = formattedDt.charAt(0).toUpperCase() + formattedDt.slice(1);
 });
 
 historyItemFactory.connect('setup', (factory, listItem) => {
