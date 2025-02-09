@@ -49,23 +49,6 @@ Adw.Dialog prefsDialog {
 					}
 
 					Adw.ActionRow {
-						title: _("Increase notification priority");
-						subtitle: _("Show notifications in fullscreen mode or with 'Do Not Disturb' enabled");
-						activatable-widget: prioritySwitch;
-
-						[prefix]
-						Image {
-							icon-name: "dosage-notification-bell-symbolic";
-						}
-
-						[suffix]
-						Switch prioritySwitch {
-							halign: center;
-							valign: center;
-						}
-					}
-
-					Adw.ActionRow {
 						title: _("Low stock notification");
 						subtitle: _("Send reminders when treatments are low in stock");
 						activatable-widget: notifStockSwitch;

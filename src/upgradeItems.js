@@ -34,9 +34,21 @@ function updateContents(currVersion, fileUpdates, json) {
 }
 
 const treatmentsUpdates = [
+	{ version: 0, updateFunc: json => oldUpgrade(json, 'treatments') },
 	{
-		version: 0,
-		updateFunc: json => oldUpgrade(json, 'treatments'),
+		version: 1,
+		updateFunc: json => {
+			const settPriority = settings.get_boolean('priority');
+
+			json.treatments.forEach(item => {
+				item.notification = {};
+				item.notification.increasePriority = settPriority ? true : false;
+				item.notification.recurring = { ...item.recurring };
+				delete item.recurring;
+			});
+
+			return json;
+		},
 	},
 ];
 

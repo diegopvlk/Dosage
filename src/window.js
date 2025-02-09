@@ -314,7 +314,7 @@ export const DosageWindow = GObject.registerClass(
 									monthDay: med.monthDay,
 									cycle: med.cycle,
 									dosage: med.dosage,
-									recurring: med.recurring,
+									notification: med.notification,
 									inventory: med.inventory,
 									duration: med.duration,
 									cycleNextDate: med.cycleNextDate,
@@ -598,7 +598,7 @@ export const DosageWindow = GObject.registerClass(
 								days: item.days,
 								monthDay: item.monthDay,
 								cycle: item.cycle,
-								recurring: item.recurring,
+								notification: item.notification,
 								duration: item.duration,
 								time: [timeDose.time[0], timeDose.time[1]],
 								dose: timeDose.dose,
@@ -754,6 +754,14 @@ export const DosageWindow = GObject.registerClass(
 						notification.add_button(skipStr, `app.skip${dateKey}`);
 					}
 
+					const increasePriority = itemsToDisplay.some(
+						obj => obj.notification.increasePriority === true,
+					);
+
+					if (increasePriority) {
+						notification.set_priority(Gio.NotificationPriority.URGENT);
+					}
+
 					const schedule = () => {
 						this._updateEverything(null, 'notifAction', 'skipCycleUp');
 						this._scheduleNotifications();
@@ -806,9 +814,10 @@ export const DosageWindow = GObject.registerClass(
 				let recurringEnabled = false;
 
 				groupedObj[dateKey].map(item => {
-					if (item.recurring.enabled) recurringEnabled = true;
-					if (item.recurring.enabled && item.recurring.interval < recurringInterval) {
-						recurringInterval = item.recurring.interval;
+					const recurr = item.notification.recurring;
+					if (recurr.enabled) recurringEnabled = true;
+					if (recurr.enabled && recurr.interval < recurringInterval) {
+						recurringInterval = recurr.interval;
 					}
 				});
 
@@ -842,11 +851,6 @@ export const DosageWindow = GObject.registerClass(
 			});
 			app.add_action(openAction);
 
-			const priorityState = settings.get_boolean('priority');
-			const priority = priorityState
-				? Gio.NotificationPriority.URGENT
-				: Gio.NotificationPriority.NORMAL;
-			notification.set_priority(priority);
 			notification.set_title(_('Dosage'));
 
 			return [notification, app];

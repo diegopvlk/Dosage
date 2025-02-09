@@ -10,6 +10,7 @@
     <key name="autostart" type="b">
       <default>false</default>
     </key>
+    <!-- priority only used to upgrade items -->
     <key name="priority" type="b">
       <default>false</default>
     </key>

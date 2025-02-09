@@ -144,9 +144,11 @@ export function isValidTreatmentItem(it) {
 				typeof d.dose === 'number' &&
 				(d.lastTaken === null || typeof d.lastTaken === 'string'),
 		) &&
-		typeof item.recurring === 'object' &&
-		typeof item.recurring.enabled === 'boolean' &&
-		typeof item.recurring.interval === 'number' &&
+		typeof item.notification === 'object' &&
+		typeof item.notification.increasePriority === 'boolean' &&
+		typeof item.notification.recurring === 'object' &&
+		typeof item.notification.recurring.enabled === 'boolean' &&
+		typeof item.notification.recurring.interval === 'number' &&
 		typeof item.inventory === 'object' &&
 		typeof item.inventory.enabled === 'boolean' &&
 		typeof item.inventory.current === 'number' &&

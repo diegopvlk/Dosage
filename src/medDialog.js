@@ -79,6 +79,8 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 
 	dosageList = builder.get_object('dosageList');
 
+	const increasePriority = builder.get_object('increasePriority');
+
 	const recurringNotif = builder.get_object('recurringNotif');
 	const recurringInterval = builder.get_object('recurringInterval');
 
@@ -146,9 +148,13 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 			frequencyMenu.subtitle = getSpecificDaysLabel(item);
 		}
 
-		if (item.recurring) {
-			recurringNotif.set_enable_expansion(item.recurring.enabled);
-			recurringInterval.value = item.recurring.interval;
+		if (item.notification.increasePriority) {
+			increasePriority.active = true;
+		}
+
+		if (item.notification.recurring) {
+			recurringNotif.set_enable_expansion(item.notification.recurring.enabled);
+			recurringInterval.value = item.notification.recurring.interval;
 		}
 
 		if (item.monthDay) {
@@ -280,7 +286,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 			frequency,
 			monthDay,
 			icon,
-			recurring,
+			notification,
 			inventory,
 			current,
 			reminder,
@@ -307,9 +313,10 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 		days = getSpecificDays();
 		monthDay = dayOfMonth.value;
 		doses = getDoses();
-		recurring = {};
-		recurring.enabled = recurringNotif.get_enable_expansion();
-		recurring.interval = recurringInterval.get_value();
+		notification = { recurring: {} };
+		notification.increasePriority = increasePriority.get_active();
+		notification.recurring.enabled = recurringNotif.get_enable_expansion();
+		notification.recurring.interval = recurringInterval.get_value();
 		cycle[0] = cycleActive.adjustment.value;
 		cycle[1] = cycleInactive.adjustment.value;
 		cycle[2] = cycleCurrent.adjustment.value;
@@ -362,7 +369,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 				monthDay: monthDay,
 				cycle: cycle,
 				dosage: doses,
-				recurring: recurring,
+				notification: notification,
 				inventory: inventory,
 				duration: duration,
 			},
@@ -468,7 +475,8 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 					frequencyMenu.title = _('Frequency');
 			}
 
-			// if when-needed is selected, hide the duration and recurring rows
+			// if when-needed is selected, hide the priority, duration and recurring rows
+			increasePriority.visible = selected !== 4;
 			medDuration.visible = selected !== 4;
 			recurringNotif.visible = selected !== 4;
 

@@ -16,7 +16,6 @@ export default function openPrefsDialog(DosageApplication) {
 	const prefsDialog = builder.get_object('prefsDialog');
 	const autostartSwitch = builder.get_object('autostartSwitch');
 	const clearHistSwitch = builder.get_object('clearHistSwitch');
-	const prioritySwitch = builder.get_object('prioritySwitch');
 	const notifStockSwitch = builder.get_object('notifStockSwitch');
 	const notifSoundSwitch = builder.get_object('notifSoundSwitch');
 	const confirmSwitch = builder.get_object('confirmSwitch');
@@ -65,13 +64,6 @@ export default function openPrefsDialog(DosageApplication) {
 	clearHistSwitch.connect('state-set', () => {
 		const state = clearHistSwitch.get_active();
 		settings.set_boolean('clear-old-hist', state);
-	});
-
-	prioritySwitch.set_active(settings.get_boolean('priority'));
-
-	prioritySwitch.connect('state-set', () => {
-		const state = prioritySwitch.get_active();
-		settings.set_boolean('priority', state);
 	});
 
 	notifStockSwitch.set_active(settings.get_boolean('low-stock-notif'));
