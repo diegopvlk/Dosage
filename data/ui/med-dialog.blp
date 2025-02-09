@@ -55,40 +55,9 @@ Adw.Dialog medDialog {
 
 							selection-mode: none;
 
-							Adw.ButtonRow oneTimeMenu {
-								visible: false;
-
-								styles [
-									'one-time-menu'
-								]
-
-								title: _("From treatment list");
-								end-icon-name: "pan-down-symbolic";
-							}
-
 							Adw.EntryRow name {
 								title: _("Name");
-							}
 
-							Adw.EntryRow unit {
-								title: _("Unit");
-								text: _("Pill(s)");
-							}
-
-							Adw.EntryRow notes {
-								title: _("Notes");
-								text: _("After meal");
-							}
-
-							Adw.ActionRow colorIcon {
-								styles [
-									'property'
-								]
-
-								title: _("Form");
-								subtitle: _("Color and icon");
-
-								[suffix]
 								MenuButton dosageColorButton {
 									styles [
 										'circular',
@@ -213,6 +182,11 @@ Adw.Dialog medDialog {
 										}
 									};
 								}
+							}
+
+							Adw.EntryRow unit {
+								title: _("Unit");
+								text: _("Pill(s)");
 
 								MenuButton dosageIconButton {
 									styles [
@@ -467,6 +441,11 @@ Adw.Dialog medDialog {
 										}
 									};
 								}
+							}
+
+							Adw.EntryRow notes {
+								title: _("Notes");
+								text: _("After meal");
 							}
 
 							Adw.ComboRow frequencyMenu {
@@ -878,50 +857,6 @@ Adw.Dialog medDialog {
 								}
 							}
 
-							Adw.ActionRow dateOneEntry {
-								styles [
-									'property',
-									'numeric'
-								]
-
-								title: _("Date");
-								visible: false;
-								activatable-widget: calOneEntryBtn;
-
-								[suffix]
-								MenuButton calOneEntryBtn {
-									Adw.ButtonContent {
-										icon-name: 'month-symbolic';
-									}
-
-									valign: center;
-									tooltip-text: _("Choose date");
-
-									styles [
-										'circular'
-									]
-
-									popover: Popover {
-										styles [
-											"menu",
-											"popover-scrolled",
-											"popover-calendar"
-										]
-
-										ScrolledWindow {
-											propagate-natural-height: true;
-											propagate-natural-width: true;
-
-											Calendar calOneEntry {
-												show-day-names: true;
-												show-week-numbers: false;
-												show-heading: true;
-											}
-										}
-									};
-								}
-							}
-
 							Adw.ButtonRow deleteMedication {
 								styles [
 									'destructive-action'
@@ -936,27 +871,6 @@ Adw.Dialog medDialog {
 					}
 				}
 			};
-		}
-	}
-}
-
-Popover oneTimePopover {
-	styles [
-		"menu"
-	]
-
-	visible: false;
-
-	ScrolledWindow {
-		propagate-natural-height: true;
-		propagate-natural-width: true;
-		max-content-height: 336;
-		max-content-width: 340;
-
-		Box oneTimeEntries {
-			orientation: vertical;
-			halign: start;
-			margin-end: 10;
 		}
 	}
 }

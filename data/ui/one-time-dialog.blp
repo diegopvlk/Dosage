@@ -1,0 +1,315 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.Dialog oneTimeDialog {
+	name: "one-time-dialog";
+	content-width: 440;
+	title: _("One-time entry");
+
+	Adw.ToastOverlay toastOverlay {
+		Adw.ToolbarView {
+			[top]
+			Adw.HeaderBar headerBar {}
+
+			content: Overlay {
+				ScrolledWindow {
+					styles [
+						"scrollbar-visible"
+					]
+
+					Adw.Clamp oneTimeDialogClamp {
+						maximum-size: 410;
+
+						Box {
+							orientation: vertical;
+							margin-start: 8;
+							margin-end: 8;
+							margin-bottom: 68;
+
+							ListBox {
+								styles [
+									"boxed-list-separate",
+								]
+
+								selection-mode: none;
+
+								Adw.ButtonRow oneTimeBtnRow {
+									sensitive: false;
+
+									styles [
+										"one-time-menu"
+									]
+
+									title: _("From treatment list");
+									end-icon-name: "pan-down-symbolic";
+								}
+
+								Adw.EntryRow medName {
+									title: _("Name");
+
+									[suffix]
+									MenuButton colorButton {
+										styles [
+											"circular"
+										]
+
+										valign: center;
+										tooltip-text: _("Color");
+										name: "default";
+										icon-name: "color-filled-symbolic";
+
+										popover: Popover colorPopover {
+											styles [
+												"menu",
+												"popover-scrolled"
+											]
+
+											ScrolledWindow {
+												propagate-natural-height: true;
+												propagate-natural-width: true;
+
+												Box colorBox {
+													spacing: 4;
+
+													Button {
+														styles [
+															"circular",
+															"default-clr"
+														]
+
+														valign: center;
+														name: "default";
+														// TRANSLATORS: Tooltip for the colors (from Default until Purple)
+														tooltip-text: _("Default");
+														icon-name: "color-filled-symbolic";
+													}
+
+													Button {
+														styles [
+															"circular",
+															"red-clr"
+														]
+
+														valign: center;
+														name: "red";
+														tooltip-text: _("Red");
+														icon-name: "color-filled-symbolic";
+													}
+
+													Button {
+														styles [
+															"circular",
+															"orange-clr"
+														]
+
+														valign: center;
+														name: "orange";
+														tooltip-text: _("Orange");
+														icon-name: "color-filled-symbolic";
+													}
+
+													Button {
+														styles [
+															"circular",
+															"yellow-clr"
+														]
+
+														valign: center;
+														name: "yellow";
+														tooltip-text: _("Yellow");
+														icon-name: "color-filled-symbolic";
+													}
+
+													Button {
+														styles [
+															"circular",
+															"green-clr"
+														]
+
+														valign: center;
+														name: "green";
+														tooltip-text: _("Green");
+														icon-name: "color-filled-symbolic";
+													}
+
+													Button {
+														styles [
+															"circular",
+															"cyan-clr"
+														]
+
+														valign: center;
+														name: "cyan";
+														tooltip-text: _("Cyan");
+														icon-name: "color-filled-symbolic";
+													}
+
+													Button {
+														styles [
+															"circular",
+															"blue-clr"
+														]
+
+														valign: center;
+														name: "blue";
+														tooltip-text: _("Blue");
+														icon-name: "color-filled-symbolic";
+													}
+
+													Button {
+														styles [
+															"circular",
+															"purple-clr"
+														]
+
+														valign: center;
+														name: "purple";
+														tooltip-text: _("Purple");
+														icon-name: "color-filled-symbolic";
+													}
+												}
+											}
+										};
+									}
+								}
+
+								Adw.EntryRow medUnit {
+									title: _("Unit");
+									text: _("Pill(s)");
+								}
+
+								Adw.SpinRow medAmount {
+									title: _("Amount");
+									subtitle: _("Dose");
+									digits: 2;
+
+									adjustment: Adjustment adjAmount {
+										lower: 0;
+										upper: 99999;
+										step-increment: 0.25;
+										value: 1;
+									};
+								}
+
+								Adw.ActionRow medTime {
+									styles [
+										"property"
+									]
+
+									title: _("Time");
+									subtitle: "time";
+									activatable-widget: timeBtn;
+
+									[suffix]
+									MenuButton timeBtn {
+										styles [
+											"circular",
+										]
+
+										valign: center;
+										tooltip-text: _("Change time");
+										icon-name: "clock-symbolic";
+
+										popover: Popover {
+											styles [
+												"popover-scrolled",
+											]
+
+											ScrolledWindow popoverScrollTime {
+												propagate-natural-height: true;
+												propagate-natural-width: true;
+											}
+										};
+									}
+								}
+
+								Adw.ActionRow dateOneEntry {
+									styles [
+										"property",
+										"numeric"
+									]
+
+									title: _("Date");
+									subtitle: "date";
+									activatable-widget: calOneEntryBtn;
+
+									[suffix]
+									MenuButton calOneEntryBtn {
+										Adw.ButtonContent {
+											icon-name: "month-symbolic";
+										}
+
+										valign: center;
+										tooltip-text: _("Choose date");
+
+										styles [
+											"circular"
+										]
+
+										popover: Popover {
+											styles [
+												"menu",
+												"popover-scrolled",
+												"popover-calendar"
+											]
+
+											ScrolledWindow {
+												propagate-natural-height: true;
+												propagate-natural-width: true;
+
+												Calendar calOneEntry {
+													show-day-names: true;
+													show-week-numbers: false;
+													show-heading: true;
+												}
+											}
+										};
+									}
+								}
+							}
+						}
+					}
+				}
+
+				[overlay]
+				Box {
+					halign: center;
+					valign: end;
+					margin-bottom: 3;
+
+					Button confirmBtn {
+						styles [
+							"suggested-action",
+							"floating",
+							"pill"
+						]
+
+						label: _("Confirm");
+						sensitive: false;
+					}
+				}
+			};
+		}
+	}
+}
+
+Popover oneTimePopover {
+	styles [
+		"menu"
+	]
+
+	visible: false;
+
+	ScrolledWindow {
+		propagate-natural-height: true;
+		propagate-natural-width: true;
+		max-content-height: 310;
+		max-content-width: 340;
+
+		Box oneTimeEntries {
+			orientation: vertical;
+			halign: start;
+			margin-end: 10;
+		}
+	}
+}

@@ -17,18 +17,14 @@ import {
 	getDayLabel,
 	firstWeekday,
 	getSpecificDaysLabel,
-	getWidgetByName,
 	addSaveKeyControllerToDialog,
 } from './utils.js';
 
 import { MedicationObject } from './medication.js';
-import { historyLS, treatmentsLS, flow } from './window.js';
+import { treatmentsLS, flow } from './window.js';
 
 export function openMedicationDialog(DosageWindow, list, position, mode) {
 	const builder = Gtk.Builder.new_from_resource('/io/github/diegopvlk/Dosage/ui/med-dialog.ui');
-
-	const dateOneEntry = builder.get_object('dateOneEntry');
-	const calOneEntry = builder.get_object('calOneEntry');
 
 	const medDialog = builder.get_object('medDialog');
 	medDialog.set_presentation_mode(2);
@@ -219,104 +215,6 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 		});
 	}
 
-	// when activating one-time entry button
-	let existingEntry = false;
-	if (mode === 'one-time') {
-		const oneTimeMenuRow = builder.get_object('oneTimeMenu');
-		oneTimeMenuRow.set_visible(true);
-		const frequencyMenu = builder.get_object('frequencyMenu');
-		const colorIcon = builder.get_object('colorIcon');
-		const oneTimeEntries = builder.get_object('oneTimeEntries');
-		const oneTimePopover = builder.get_object('oneTimePopover');
-		const h = new Date().getHours();
-		const m = new Date().getMinutes();
-		const doseRowOne = doseRow({ time: [h, m], dose: 1 });
-
-		const removeDoseButton = getWidgetByName(doseRowOne, 'removeDoseButton');
-		removeDoseButton.set_visible(false);
-
-		dosage.add_row(doseRowOne);
-
-		const btnNew = new Gtk.Button({
-			css_classes: ['flat'],
-			can_shrink: true,
-			label: _('New'),
-		});
-
-		btnNew.remove_css_class('text-button');
-		btnNew.get_first_child().set_halign(Gtk.Align.START);
-		btnNew.get_first_child().set_max_width_chars(50);
-		oneTimeEntries.append(btnNew);
-
-		btnNew.connect('clicked', () => {
-			oneTimePopover.popdown();
-			medName.text = '';
-			medUnit.text = _('Pill(s)');
-			removeCssColors(dosageColorButton);
-			dosageColorButton.name = 'default';
-			doseRowOne.set_value(1);
-			medName.sensitive = true;
-			medUnit.sensitive = true;
-			colorIcon.sensitive = true;
-			existingEntry = false;
-		});
-
-		dateOneEntry.subtitle = calDate;
-		handleCalendarSelect(calOneEntry, dateOneEntry, true);
-
-		oneTimeMenuRow.get_child().append(oneTimePopover);
-
-		oneTimeMenuRow.connect('activated', _ => oneTimePopover.popup());
-
-		if (DosageWindow._treatmentsList.model.get_n_items() > 0) {
-			oneTimeMenuRow.set_visible(true);
-			for (const it of treatmentsLS) {
-				const item = it.obj;
-				const btn = new Gtk.Button({
-					css_classes: ['flat', 'one-time-name'],
-					can_shrink: true,
-					label: item.name,
-					width_request: 120,
-				});
-				btn.get_first_child().set_max_width_chars(50);
-				btn.remove_css_class('text-button');
-				btn.get_first_child().set_halign(Gtk.Align.START);
-
-				btn.connect('clicked', () => {
-					removeCssColors(dosageColorButton);
-					dosageColorButton.add_css_class(item.color + '-clr');
-					oneTimePopover.popdown();
-
-					medName.text = item.name;
-					medUnit.text = item.unit;
-					dosageColorButton.name = item.color;
-					doseRowOne.set_value(item.dosage[0].dose);
-
-					medName.sensitive = false;
-					medUnit.sensitive = false;
-					colorIcon.sensitive = false;
-					existingEntry = true;
-				});
-				oneTimeEntries.append(btn);
-			}
-		}
-
-		medDialog.title = _('New entry');
-		saveButton.label = _('Confirm');
-		colorIcon.subtitle = _('Color');
-		colorIcon.title = '';
-		medDialog.add_css_class('one-time');
-
-		dateOneEntry.set_visible(true);
-		medNotes.set_visible(false);
-		dosageIconButton.set_visible(false);
-		frequencyMenu.set_visible(false);
-		medDuration.set_visible(false);
-		dosageAddButton.get_parent().get_parent().set_visible(false);
-		medInventory.set_visible(false);
-		recurringNotif.set_visible(false);
-	}
-
 	if (!existingTreatment) setFreqMenuVisibility();
 
 	dayOfMonth.connect('output', handleDayOfMonthLabels);
@@ -369,82 +267,15 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 
 		if (!isValidInput(isUpdate)) return;
 
-		if (mode === 'one-time') {
-			addSingleItemToHistory();
-			DosageWindow._updateEverything(null, null, 'skipCycleUp');
-		} else {
-			addOrUpdateTreatment();
-			DosageWindow._updateEverything('skipHistUp');
-			const pos = Math.max(0, updatedItemPosition - 1);
-			DosageWindow._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
-		}
-
+		addOrUpdateTreatment();
+		DosageWindow._updateEverything('skipHistUp');
+		const pos = Math.max(0, updatedItemPosition - 1);
+		DosageWindow._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
 		medDialog.force_close();
 		DosageWindow._scheduleNotifications('saving');
 	});
 
 	addSaveKeyControllerToDialog(medDialog, saveButton);
-
-	function addSingleItemToHistory() {
-		const calOneEntry = builder.get_object('calOneEntry');
-		const dt = +calOneEntry.get_date().format('%s') * 1000;
-		const entryDate = new Date(dt);
-		const dosage = getDoses()[0];
-
-		entryDate.setHours(dosage.time[0]);
-		entryDate.setMinutes(dosage.time[1]);
-		entryDate.setSeconds(new Date().getSeconds());
-		entryDate.setMilliseconds(new Date().getMilliseconds());
-
-		const item = new MedicationObject({
-			obj: {
-				name: medName.text.trim(),
-				unit: medUnit.text.trim(),
-				time: [dosage.time[0], dosage.time[1]],
-				dose: dosage.dose,
-				color: dosageColorButton.get_name(),
-				taken: [entryDate.getTime(), 1],
-			},
-		});
-
-		historyLS.insert_sorted(item, (a, b) => {
-			const dateA = a.obj.taken[0];
-			const dateB = b.obj.taken[0];
-			if (dateA < dateB) return 1;
-			else if (dateA > dateB) return -1;
-			else return 0;
-		});
-
-		DosageWindow._historyList.scroll_to(0, null, null);
-
-		const todayDt = new Date().setHours(0, 0, 0, 0);
-		const entryDt = entryDate.setHours(0, 0, 0, 0);
-
-		for (const it of treatmentsLS) {
-			const i = it.obj;
-			const newIt = item.obj;
-			const sameName = i.name === newIt.name;
-			const updateInv = sameName && i.inventory.enabled;
-
-			// if it's the time as of an existing item
-			// update lastTaken if entryDate is today
-			if (todayDt === entryDt) {
-				i.dosage.forEach(timeDose => {
-					const sameTime = String(timeDose.time) === String(newIt.time);
-					if (sameName && sameTime) {
-						timeDose.lastTaken = new Date().toISOString();
-					}
-				});
-			}
-
-			if (updateInv) {
-				i.inventory.current -= newIt.dose;
-				// trigger signal to update labels
-				it.notify('obj');
-				break;
-			}
-		}
-	}
 
 	let updatedItemPosition = 0;
 	function addOrUpdateTreatment() {
@@ -673,8 +504,6 @@ export function openMedicationDialog(DosageWindow, list, position, mode) {
 	}
 
 	function isValidInput(isUpdate) {
-		if (existingEntry) return true;
-
 		const toastOverlay = builder.get_object('toastOverlay');
 		medName.connect('changed', name => name.remove_css_class('error'));
 		medUnit.connect('changed', unit => unit.remove_css_class('error'));

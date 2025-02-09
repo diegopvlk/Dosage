@@ -9,6 +9,7 @@
     <file>sounds/ding.ogg</file>
     <file>ui/edit-hist-dialog.ui</file>
     <file>ui/med-dialog.ui</file>
+    <file>ui/one-time-dialog.ui</file>
     <file>ui/preferences.ui</file>
     <file>ui/refill-dialog.ui</file>
     <file>ui/window.ui</file>

@@ -16,6 +16,7 @@ import { historyHeaderFactory, historyItemFactory, removedItem } from './history
 import { treatmentsFactory } from './treatmentsFactory.js';
 import { openEditHistDialog } from './editHistDialog.js';
 import { openMedicationDialog } from './medDialog.js';
+import { openOneTimeDialog } from './oneTimeDialog.js';
 import upgradeItems from './upgradeItems.js';
 
 import {
@@ -861,7 +862,13 @@ export const DosageWindow = GObject.registerClass(
 				this._historyList.scroll_to(0, null, null);
 			} else {
 				// one-time entry
-				this._openMedDialog(null, null, 'one-time');
+				if (!flow.delay) {
+					openOneTimeDialog(this);
+					flow.delay = true;
+					setTimeout(() => {
+						flow.delay = false;
+					}, 500);
+				}
 			}
 
 			this._updateEntryBtn(false);
