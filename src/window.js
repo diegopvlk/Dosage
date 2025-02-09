@@ -322,6 +322,7 @@ export const DosageWindow = GObject.registerClass(
 									inventory: med.inventory,
 									duration: med.duration,
 									cycleNextDate: med.cycleNextDate,
+									markConfirmed: med.markConfirmed,
 								},
 							}),
 							(a, b) => {
@@ -404,7 +405,10 @@ export const DosageWindow = GObject.registerClass(
 									}
 								}
 							});
-							if (item.inventory.enabled && itemRm.taken[1] === 1) {
+							const updateInv =
+								item.inventory.enabled && (itemRm.taken[1] === 1 || itemRm.taken[1] === 2);
+
+							if (updateInv) {
 								item.inventory.current += itemRm.dose;
 							}
 
@@ -1219,7 +1223,16 @@ export const DosageWindow = GObject.registerClass(
 
 			const insert = (timeDose, tempItem, nextDate) => {
 				if (!timeDose.lastTaken) {
-					const nextDt = new Date(nextDate).setHours(23, 59, 59, 999);
+					const nextDt = new Date(nextDate);
+					let taken = -1;
+
+					if (tempItem.markConfirmed) {
+						nextDt.setHours(timeDose.time[0]);
+						nextDt.setMinutes(timeDose.time[1]);
+						taken = 2;
+					} else {
+						nextDt.setHours(23, 59, 59, 999);
+					}
 
 					itemsToAdd.push(
 						new MedicationObject({
@@ -1229,7 +1242,7 @@ export const DosageWindow = GObject.registerClass(
 								time: tempItem.time,
 								dose: tempItem.dose,
 								color: tempItem.color,
-								taken: [nextDt, -1],
+								taken: [nextDt.getTime(), taken],
 							},
 						}),
 					);

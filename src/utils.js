@@ -144,6 +144,7 @@ export function isValidTreatmentItem(it) {
 				typeof d.dose === 'number' &&
 				(d.lastTaken === null || typeof d.lastTaken === 'string'),
 		) &&
+		typeof item.markConfirmed === 'boolean' &&
 		typeof item.notification === 'object' &&
 		typeof item.notification.increasePriority === 'boolean' &&
 		typeof item.notification.recurring === 'object' &&

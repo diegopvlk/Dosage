@@ -79,6 +79,8 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 
 	dosageList = builder.get_object('dosageList');
 
+	const markAsConfirmed = builder.get_object('markAsConfirmed');
+
 	const increasePriority = builder.get_object('increasePriority');
 
 	const recurringNotif = builder.get_object('recurringNotif');
@@ -146,6 +148,10 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 		setFreqMenuVisibility(item);
 		if (item.frequency === 'specific-days') {
 			frequencyMenu.subtitle = getSpecificDaysLabel(item);
+		}
+
+		if (item.markConfirmed) {
+			markAsConfirmed.active = true;
 		}
 
 		if (item.notification.increasePriority) {
@@ -286,6 +292,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 			frequency,
 			monthDay,
 			icon,
+			markConfirmed,
 			notification,
 			inventory,
 			current,
@@ -313,6 +320,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 		days = getSpecificDays();
 		monthDay = dayOfMonth.value;
 		doses = getDoses();
+		markConfirmed = markAsConfirmed.get_active();
 		notification = { recurring: {} };
 		notification.increasePriority = increasePriority.get_active();
 		notification.recurring.enabled = recurringNotif.get_enable_expansion();
@@ -372,6 +380,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 				notification: notification,
 				inventory: inventory,
 				duration: duration,
+				markConfirmed: markConfirmed,
 			},
 		});
 
@@ -475,7 +484,8 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 					frequencyMenu.title = _('Frequency');
 			}
 
-			// if when-needed is selected, hide the priority, duration and recurring rows
+			// if when-needed is selected, hide mark confirmed, priority, duration and recurring
+			markAsConfirmed.visible = selected !== 4;
 			increasePriority.visible = selected !== 4;
 			medDuration.visible = selected !== 4;
 			recurringNotif.visible = selected !== 4;

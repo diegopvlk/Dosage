@@ -46,6 +46,10 @@ export function openEditHistDialog(DosageWindow, list, position) {
 	});
 
 	switch (item.taken[1]) {
+		case 2:
+			histBtnConfirmed.set_active(true);
+			takenRow.title = _('Auto-confirmed');
+			break;
 		case 1:
 			histBtnConfirmed.set_active(true);
 			takenRow.title = _('Confirmed at');
@@ -61,11 +65,14 @@ export function openEditHistDialog(DosageWindow, list, position) {
 			break;
 	}
 
+	let confirmClicked = false;
+
 	histBtnConfirmed.connect('clicked', () => {
 		takenRow.title = _('Confirmed at');
 		histBtnSkipped.set_active(false);
 		histBtnConfirmed.set_active(true);
 		saveButton.sensitive = true;
+		confirmClicked = true;
 	});
 	histBtnSkipped.connect('clicked', () => {
 		takenRow.title = _('Skipped at');
@@ -93,14 +100,27 @@ export function openEditHistDialog(DosageWindow, list, position) {
 		const tempTaken1 = item.taken[1];
 
 		let missedDose = 0;
-		if (item.taken[1] === -1) missedDose = +item.dose;
 		let skippedDose = 0;
-		if (item.taken[1] === 0) skippedDose = +item.dose;
 		let confirmedDose = 0;
-		if (item.taken[1] === 1) confirmedDose = +item.dose;
 
-		if (histBtnSkipped.get_active()) item.taken[1] = 0;
-		else if (histBtnConfirmed.get_active()) item.taken[1] = 1;
+		switch (item.taken[1]) {
+			case -1:
+				missedDose = +item.dose;
+				break;
+			case 0:
+				skippedDose = +item.dose;
+				break;
+			default:
+				confirmedDose = +item.dose;
+		}
+
+		const skipActive = histBtnSkipped.active;
+		const confirmActive = histBtnConfirmed.active;
+
+		if (skipActive) item.taken[1] = 0;
+		else if (confirmClicked && confirmActive) item.taken[1] = 1;
+		else if (tempTaken1 === 2 && confirmActive) item.taken[1] = 2;
+		else item.taken[1] = 1;
 
 		if (item.taken[1] === -1) return;
 

@@ -45,6 +45,7 @@ const treatmentsUpdates = [
 				item.notification.increasePriority = settPriority ? true : false;
 				item.notification.recurring = { ...item.recurring };
 				delete item.recurring;
+				item.markConfirmed = false;
 			});
 
 			return json;

@@ -706,6 +706,11 @@ Adw.Dialog medDialog {
 
 							selection-mode: none;
 
+							Adw.SwitchRow markAsConfirmed {
+								title: _("Mark as confirmed");
+								subtitle: _("If not confirmed, it will go to history as confirmed rather than missed, reducing the stock if enabled");
+							}
+
 							Adw.SwitchRow increasePriority {
 								title: _("Increase notification priority");
 								subtitle: _("Show in fullscreen mode or with 'Do Not Disturb' enabled");

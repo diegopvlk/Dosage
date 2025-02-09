@@ -134,7 +134,6 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 
 	listItem.takenIcon = new Gtk.Image({
 		css_classes: ['badge-content', 'badge-icon'],
-		icon_name: 'check-confirmed',
 	});
 
 	listItem.takenBox.append(listItem.takenLabel);
@@ -179,11 +178,17 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	nameLabel.label = item.name;
 	doseLabel.label = `${item.dose} ${item.unit} • ${time}`;
 
-	takenIcon.set_visible(item.taken[1] === 1);
+	const isConfirmed = item.taken[1] === 1 || item.taken[1] === 2;
+	takenIcon.set_visible(isConfirmed);
 
 	switch (item.taken[1]) {
 		case 1:
 			takenLabel.label = timeTaken;
+			takenIcon.icon_name = 'check-confirmed-symbolic';
+			break;
+		case 2:
+			takenLabel.label = timeTaken;
+			takenIcon.icon_name = 'check-auto-confirmed-symbolic';
 			break;
 		case 0:
 			takenLabel.label = _('Skipped');
@@ -191,6 +196,8 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 		case -1:
 			takenLabel.label = _('Missed');
 			break;
+		default:
+			takenLabel.label = timeTaken;
 	}
 
 	box.set_css_classes(['item-box', item.color]);
