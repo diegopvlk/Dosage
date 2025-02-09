@@ -118,6 +118,19 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 		}
 		removedItem = undefined;
 	});
+
+	listItem.keyController = new Gtk.EventControllerKey();
+
+	// activate item with space bar
+	listItem.keyController.connect('key-pressed', (_, keyval, keycode, state) => {
+		if (keyval === Gdk.KEY_space) {
+			const row = listItem.box.get_parent();
+			const listView = row.get_parent();
+			listView.emit('activate', listItem.position);
+		}
+	});
+
+	listItem.controllerAdded = false;
 });
 
 historyItemFactory.connect('bind', (factory, listItem) => {
@@ -132,20 +145,15 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const today = new Date().setHours(0, 0, 0, 0);
 	const itemDate = new Date(item.taken[0]).setHours(0, 0, 0, 0);
 
+	if (!listItem.controllerAdded) {
+		row.add_controller(listItem.keyController);
+		listItem.controllerAdded = true;
+	}
+
 	const itemTakenDate = GLib.DateTime.new_from_unix_local(item.taken[0] / 1000);
 	const itemTime = GLib.DateTime.new_local(1, 1, 1, item.time[0], item.time[1], 1);
 	const time = itemTime.format(timeFormat);
 	const timeTaken = itemTakenDate.format(timeFormat);
-
-	// activate item with space bar
-	const keyController = new Gtk.EventControllerKey();
-	keyController.connect('key-pressed', (_, keyval, keycode, state) => {
-		if (keyval === Gdk.KEY_space) {
-			let listView = row.get_parent();
-			listView.emit('activate', listItem.position);
-		}
-	});
-	row.add_controller(keyController);
 
 	if (today === itemDate) {
 		deleteButton.icon_name = 'edit-undo-symbolic';
@@ -160,9 +168,17 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 
 	takenIcon.set_visible(item.taken[1] === 1);
 
-	if (item.taken[1] === 1) takenLabel.label = timeTaken;
-	else if (item.taken[1] === 0) takenLabel.label = _('Skipped');
-	else if (item.taken[1] === -1) takenLabel.label = _('Missed');
+	switch (item.taken[1]) {
+		case 1:
+			takenLabel.label = timeTaken;
+			break;
+		case 0:
+			takenLabel.label = _('Skipped');
+			break;
+		case -1:
+			takenLabel.label = _('Missed');
+			break;
+	}
 
 	box.set_css_classes(['item-box', item.color]);
 });

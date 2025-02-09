@@ -146,6 +146,19 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 
 	listItem.box.append(listItem.checkButton);
 	listItem.set_child(listItem.box);
+
+	listItem.keyController = new Gtk.EventControllerKey();
+
+	// activate item with space bar
+	listItem.keyController.connect('key-pressed', (_, keyval, keycode, state) => {
+		if (keyval === Gdk.KEY_space) {
+			const row = listItem.box.get_parent();
+			const listView = row.get_parent();
+			listView.emit('activate', listItem.position);
+		}
+	});
+
+	listItem.controllerAdded = false;
 });
 
 todayItemFactory.connect('bind', (factory, listItem) => {
@@ -159,6 +172,11 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	const doseAndNotes = listItem.doseAndNotes;
 	const checkButton = listItem.checkButton;
 	listItem.originalDose = item.dose;
+
+	if (!listItem.controllerAdded) {
+		row.add_controller(listItem.keyController);
+		listItem.controllerAdded = true;
+	}
 
 	item.checkButton = checkButton;
 
@@ -185,16 +203,6 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 		}
 		amountBtn.set_visible(btn.active);
 	});
-
-	// activate item with space bar
-	const keyController = new Gtk.EventControllerKey();
-	keyController.connect('key-pressed', (_, keyval, keycode, state) => {
-		if (keyval === Gdk.KEY_space) {
-			let listView = row.get_parent();
-			listView.emit('activate', listItem.position);
-		}
-	});
-	row.add_controller(keyController);
 
 	icon.icon_name = item.icon;
 	box.set_css_classes(['item-box', 'card-stripe', item.color]);

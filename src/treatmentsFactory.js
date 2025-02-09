@@ -23,6 +23,13 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 
 	listItem.altClick = new Gtk.GestureClick({ button: 3 });
 
+	// right click menu
+	listItem.altClick.connect('pressed', (_gestureClick, _nPress, x, y) => {
+		const position = new Gdk.Rectangle({ x: x, y: y });
+		listItem.popoverMenu.pointing_to = position;
+		listItem.popoverMenu.popup();
+	});
+
 	listItem.box.add_controller(listItem.altClick);
 
 	listItem.icon = new Gtk.Image({
@@ -112,36 +119,40 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 
 	listItem.box.append(listItem.optionsButton);
 	listItem.set_child(listItem.box);
+
+	listItem.keyController = new Gtk.EventControllerKey();
+
+	// activate item with space bar
+	listItem.keyController.connect('key-pressed', (_, keyval, keycode, state) => {
+		if (keyval === Gdk.KEY_space) {
+			const row = listItem.box.get_parent();
+			const listView = row.get_parent();
+			listView.emit('activate', listItem.position);
+		}
+	});
+
+	listItem.controllerAdded = false;
 });
 
 treatmentsFactory.connect('bind', (factory, listItem) => {
 	const DosageWindow = DosageApplication.get_default().activeWindow;
 	const app = DosageWindow.get_application();
 
-	const { box, nameLabel, optionsMenu, popoverMenu, icon, altClick } = listItem;
+	const { box, nameLabel, optionsMenu, icon } = listItem;
 	const item = listItem.get_item().obj;
 	const pos = listItem.get_position();
 	const row = box.get_parent();
 	const inv = item.inventory;
 
-	// right click menu
-	altClick.connect('pressed', (_gestureClick, _nPress, x, y) => {
-		const position = new Gdk.Rectangle({ x: x, y: y });
-		popoverMenu.pointing_to = position;
-		popoverMenu.popup();
-	});
+	if (!listItem.controllerAdded) {
+		row.add_controller(listItem.keyController);
+		listItem.controllerAdded = true;
+	}
 
 	const activateItem = () => {
 		const listView = row.get_parent();
 		listView.emit('activate', pos);
 	};
-
-	// activate item with space bar
-	const keyController = new Gtk.EventControllerKey();
-	keyController.connect('key-pressed', (_, keyval, keycode, state) => {
-		if (keyval === Gdk.KEY_space) activateItem();
-	});
-	row.add_controller(keyController);
 
 	app.remove_action(`edit${pos}`);
 	app.remove_action(`refill${pos}`);
