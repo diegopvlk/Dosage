@@ -5,11 +5,11 @@
 'use strict';
 
 import Adw from 'gi://Adw?version=1';
+import Gdk from 'gi://Gdk';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
-import Pango from 'gi://Pango';
 import { dateFormats } from './dateFormats.js';
 
 const decoder = new TextDecoder();
@@ -63,20 +63,26 @@ export function getSpecificDaysLabel(item) {
 	return newLabel;
 }
 
-export const [clockIs12, timeDot, timeFormat, dateFormat] = checkLocale();
+export const [clockIs12, amPmStr, timeDot, timeFormat, dateFormat] = checkLocale();
 
 function checkLocale() {
 	const systemOpts = new Intl.DateTimeFormat().resolvedOptions();
 	const locale = systemOpts.locale;
 	const generalLocale = locale.split('-')[0];
 	let is12 = false;
+	let amPmStr = 'AM;PM';
 	let timeDot = false;
 	let timeFormat = '%H:%M';
 	let dateFormat = dateFormats[locale] ?? dateFormats[generalLocale] ?? '%x';
 
 	try {
+		const [, outputAmPm] = GLib.spawn_command_line_sync('locale am_pm');
 		const [, outputTimeFmt] = GLib.spawn_command_line_sync('locale t_fmt');
 		const outTimeFormat = decoder.decode(outputTimeFmt).replace('\n', '');
+		const outAmPm = decoder.decode(outputAmPm).replace('\n', '');
+
+		amPmStr = outAmPm === ';' ? amPmStr : outAmPm;
+		amPmStr = amPmStr.split(';');
 
 		is12 =
 			outTimeFormat.includes('%r') || outTimeFormat.includes('%p') || outTimeFormat.includes('%P');
@@ -92,7 +98,7 @@ function checkLocale() {
 		console.error(error);
 	}
 
-	return [is12, timeDot, timeFormat, dateFormat];
+	return [is12, amPmStr, timeDot, timeFormat, dateFormat];
 }
 
 export const DataDir = Gio.file_new_for_path(GLib.build_filenamev([GLib.get_user_data_dir()]));
@@ -283,6 +289,20 @@ export function datesPassedDiff(startDate, endDate) {
 	return datesPassed;
 }
 
+export function addSaveKeyControllerToDialog(dialog, saveBtn) {
+	const keyController = new Gtk.EventControllerKey();
+	keyController.connect('key-pressed', (_, keyval, keycode, state) => {
+		const shiftPressed = (state & Gdk.ModifierType.SHIFT_MASK) !== 0;
+		const controlPressed = (state & Gdk.ModifierType.CONTROL_MASK) !== 0;
+		const enterPressed = keyval === Gdk.KEY_Return;
+
+		if ((controlPressed || shiftPressed) && enterPressed && saveBtn.sensitive) {
+			saveBtn.activate();
+		}
+	});
+	dialog.add_controller(keyController);
+}
+
 /**
  * Find a widget by it's name.
  * @param {widget} parent - The parent widget to search.
@@ -350,7 +370,7 @@ export function doseRow(timeDose) {
 		tooltip_text: _('Delete dose'),
 	});
 	const doseTimeBox = new Gtk.Box({
-		css_classes: ['time-box'],
+		css_classes: ['time-picker-box'],
 	});
 	doseTimeBox.set_direction(Gtk.TextDirection.LTR);
 	const adjHours = new Gtk.Adjustment({
@@ -443,15 +463,6 @@ export function doseRow(timeDose) {
 		adjHours.upper = 12;
 	}
 
-	const takenLabel = new Gtk.Label({
-		css_classes: ['subtitle', 'hist-entry-taken-label'],
-		halign: Gtk.Align.START,
-		name: 'takenLabel',
-		visible: false,
-		ellipsize: Pango.EllipsizeMode.END,
-	});
-
-	doseBox.append(takenLabel);
 	doseBox.append(removeDoseButton);
 	doseBox.append(doseTimeButton);
 	doseRow.add_prefix(doseBox);

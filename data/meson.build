@@ -5,6 +5,7 @@ blueprints = custom_target(
 	'blueprints',
 	input: files(
 		'gtk/help-overlay.blp',
+		'ui/edit-hist-dialog.blp',
 		'ui/med-dialog.blp',
 		'ui/preferences.blp',
 		'ui/refill-dialog.blp',

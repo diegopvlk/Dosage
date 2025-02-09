@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/github/diegopvlk/Dosage/js">
+    <file>dateFormats.js</file>
+    <file>editHistDialog.js</file>
+    <file>historyFactory.js</file>
     <file>main.js</file>
-    <file>utils.js</file>
-    <file>window.js</file>
     <file>medDialog.js</file>
+    <file>medication.js</file>
     <file>prefsDialog.js</file>
     <file>refillDialog.js</file>
-    <file>medication.js</file>
-    <file>todayFactory.js</file>
-    <file>historyFactory.js</file>
-    <file>treatmentsFactory.js</file>
     <file>releaseNotes.js</file>
+    <file>timePicker.js</file>
+    <file>todayFactory.js</file>
+    <file>treatmentsFactory.js</file>
     <file>upgradeItems.js</file>
-    <file>dateFormats.js</file>
+    <file>utils.js</file>
+    <file>window.js</file>
   </gresource>
 </gresources>

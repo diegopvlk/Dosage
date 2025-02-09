@@ -1,0 +1,141 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.Dialog editHistDialog {
+	name: "edit-hist-dialog";
+	content-width: 400;
+	title: _("Edit entry");
+
+	Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar headerBar {
+			show-start-title-buttons: false;
+			show-end-title-buttons: false;
+			decoration-layout: "";
+
+			[start]
+			Button cancelButton {
+				label: _("Cancel");
+				name: "cancel";
+				can-shrink: true;
+			}
+
+			[end]
+			Button saveButton {
+				styles [
+					"suggested-action"
+				]
+
+				label: _("Save");
+				name: "save";
+				can-shrink: true;
+			}
+		}
+
+		content: ScrolledWindow {
+			styles [
+				"scrollbar-visible"
+			]
+
+			Adw.Clamp editHistDialogClamp {
+				maximum-size: 380;
+
+				Box {
+					orientation: vertical;
+					margin-start: 8;
+					margin-end: 8;
+					margin-top: 12;
+					margin-bottom: 17;
+
+					ListBox {
+						styles [
+							"boxed-list",
+						]
+
+						selection-mode: none;
+
+						Adw.SpinRow nameDoseSpinRow {
+							title: "name";
+							subtitle: "dose unit";
+							digits: 2;
+
+							adjustment: Adjustment {
+								lower: 0.25;
+								upper: 9999;
+								step-increment: 0.25;
+								value: 1;
+							};
+						}
+
+						Adw.ActionRow takenRow {
+							styles [
+								"property"
+							]
+
+							title: "confirmed/skipped at";
+							subtitle: "time";
+
+							[suffix]
+							Box {
+								spacing: 10;
+
+								MenuButton {
+									styles [
+										"circular",
+									]
+
+									valign: center;
+									tooltip-text: _("Change time");
+									icon-name: "clock-symbolic";
+
+									popover: Popover {
+										styles [
+											"popover-scrolled",
+										]
+
+										ScrolledWindow popoverScrollTime {
+											propagate-natural-height: true;
+											propagate-natural-width: true;
+										}
+									};
+								}
+
+								Box takenButtons {
+									valign: center;
+									spacing: 2;
+
+									styles [
+										"linked-custom"
+									]
+
+									ToggleButton histBtnSkipped {
+										active: false;
+
+										styles [
+											"flat"
+										]
+
+										icon-name: "med-skipped-symbolic";
+										tooltip-text: _("Skipped");
+										group: histBtnConfirmed;
+									}
+
+									ToggleButton histBtnConfirmed {
+										active: false;
+
+										styles [
+											"flat"
+										]
+
+										tooltip-text: _("Confirmed");
+										icon-name: "med-confirmed-symbolic";
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		};
+	}
+}

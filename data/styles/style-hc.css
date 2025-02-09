@@ -5,7 +5,7 @@
   --list-border: inset 0 0 0 1px var(--border-color);
 }
 
-.time-box spinbutton button {
+.time-picker-box spinbutton button {
   box-shadow: inset 0 0 0 1px
     rgb(from var(--border-color) r g b / calc(alpha * 0.8));
 }
@@ -30,9 +30,13 @@ button.floating:not(.suggested-action) {
   box-shadow: inset 0 0 0 1px rgb(from currentColor r g b / calc(alpha * 0.85));
 }
 
-#medication-dialog .linked-circular button:checked {
+.linked-custom button:checked {
   box-shadow: 0 1px 2px 1px rgb(from black r g b / calc(alpha * 0.1)),
     inset 0 0 0 1px rgb(from currentColor r g b / calc(alpha * 0.6));
+}
+
+.time-picker-box spinbutton:focus-within text {
+  outline: 2px solid var(--accent-color);
 }
 
 row.combo .dropdown-arrow {

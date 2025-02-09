@@ -7,6 +7,7 @@
     <file alias="style-dark.css">styles/style-dark.css</file>
     <file alias="card-colors.css">styles/card-colors.css</file>
     <file>sounds/ding.ogg</file>
+    <file>ui/edit-hist-dialog.ui</file>
     <file>ui/med-dialog.ui</file>
     <file>ui/preferences.ui</file>
     <file>ui/refill-dialog.ui</file>
@@ -21,6 +22,7 @@
     <file alias="unselect-meds-symbolic.svg">icons/ui/unselect-meds-symbolic.svg</file>
     <file alias="skip-med-symbolic.svg">icons/ui/skip-med-symbolic.svg</file>
 		<file alias="skip-med-symbolic-rtl.svg">icons/ui/skip-med-symbolic-rtl.svg</file>
+		<file alias="clock-symbolic.svg">icons/ui/clock-symbolic.svg</file>
 
     <file alias="cross-large-symbolic.svg">icons/ui/cross-large-symbolic.svg</file>
     <file alias="color-filled-symbolic.svg">icons/ui/color-filled-symbolic.svg</file>

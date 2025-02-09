@@ -14,6 +14,7 @@ import { MedicationObject } from './medication.js';
 import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
 import { historyHeaderFactory, historyItemFactory, removedItem } from './historyFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
+import { openEditHistDialog } from './editHistDialog.js';
 import { openMedicationDialog } from './medDialog.js';
 import upgradeItems from './upgradeItems.js';
 
@@ -937,7 +938,7 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		_editHistoryItem(list, position) {
-			this._openMedDialog(list, position, 'edit-hist');
+			openEditHistDialog(this, list, position);
 		}
 
 		_updateJsonFile(type, listStore) {
