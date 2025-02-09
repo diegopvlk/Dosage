@@ -16,6 +16,8 @@ import { openRefillDialog } from './refillDialog.js';
 
 export const treatmentsFactory = new Gtk.SignalListItemFactory();
 
+let delayDialog = false;
+
 treatmentsFactory.connect('setup', (factory, listItem) => {
 	listItem.box = new Gtk.Box();
 
@@ -68,15 +70,25 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 
 	listItem.labelsBox.append(listItem.durationNextDateLabel);
 
-	listItem.inventoryLabel = new Gtk.Label({
+	listItem.invLabelBtn = new Gtk.Button({
 		css_classes: ['badge-box', 'badge-content'],
 		valign: Gtk.Align.CENTER,
 		margin_end: 5,
 		visible: false,
-		ellipsize: Pango.EllipsizeMode.END,
+		tooltip_text: _('Refill inventory'),
 	});
 
-	listItem.box.append(listItem.inventoryLabel);
+	listItem.invLabelBtn.connect('clicked', btn => {
+		if (!delayDialog) {
+			openRefillDialog(listItem, listItem.get_position());
+			delayDialog = true;
+			setTimeout(() => {
+				delayDialog = false;
+			}, 500);
+		}
+	});
+
+	listItem.box.append(listItem.invLabelBtn);
 
 	listItem.optionsMenu = new Gio.Menu();
 
@@ -177,7 +189,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 
 function setInventoryAndDateLabels(listItem) {
 	const item = listItem.get_item().obj;
-	const { infoLabel, durationNextDateLabel, inventoryLabel } = listItem;
+	const { infoLabel, durationNextDateLabel, invLabelBtn } = listItem;
 	const today = new Date().setHours(0, 0, 0, 0);
 	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
 	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
@@ -186,13 +198,13 @@ function setInventoryAndDateLabels(listItem) {
 	if (inv.enabled) {
 		let currInv = inv.current < 0 ? 0 : inv.current;
 
-		inventoryLabel.set_visible(true);
-		inventoryLabel.label = `${currInv} ` + _('Remaining');
-		inventoryLabel.remove_css_class('low-stock');
+		invLabelBtn.set_visible(true);
+		invLabelBtn.label = `${currInv} ` + _('Remaining');
+		invLabelBtn.remove_css_class('low-stock');
 
 		if (inv.current <= inv.reminder) {
-			inventoryLabel.label = `${currInv} ↓ ` + _('Low stock');
-			inventoryLabel.add_css_class('low-stock');
+			invLabelBtn.label = `${currInv} ↓ ` + _('Low stock');
+			invLabelBtn.add_css_class('low-stock');
 		}
 	}
 
