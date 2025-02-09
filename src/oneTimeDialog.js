@@ -201,8 +201,6 @@ export function openOneTimeDialog(DosageWindow) {
 			else return 0;
 		});
 
-		DosageWindow._historyList.scroll_to(0, null, null);
-
 		const todayDt = new Date().setHours(0, 0, 0, 0);
 		const entryDt = entryDate.setHours(0, 0, 0, 0);
 
