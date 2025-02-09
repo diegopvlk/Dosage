@@ -338,6 +338,7 @@ export const DosageWindow = GObject.registerClass(
 				}
 			} catch (err) {
 				console.error('Error loading treatments:', err);
+				this.errorLoading = true;
 			}
 		}
 
@@ -483,6 +484,7 @@ export const DosageWindow = GObject.registerClass(
 				}
 			} catch (err) {
 				console.error('Error loading history:', err);
+				this.errorLoading = true;
 			}
 
 			this._setEmptyHistStatus();
@@ -1062,6 +1064,8 @@ export const DosageWindow = GObject.registerClass(
 				console.error(err);
 				return;
 			}
+
+			if (!tempObj || this.errorLoading) return;
 
 			if (type === 'treatments') {
 				tempObj.version = this.treatmentsVersion;
