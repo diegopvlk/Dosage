@@ -3,14 +3,21 @@ data/io.github.diegopvlk.Dosage.desktop.in
 
 data/gtk/help-overlay.blp
 data/ui/med-dialog.blp
+data/ui/one-time-dialog.blp
 data/ui/preferences.blp
+data/ui/refill-dialog.blp
 data/ui/window.blp
 
+src/editHistDialog.js
 src/historyFactory.js
 src/main.js
 src/medication.js
+src/oneTimeDialog.js
 src/medDialog.js
 src/prefsDialog.js
+src/todayFactory.js
+src/timeDoseRow.js
+src/timePicker.js
 src/todayFactory.js
 src/treatmentsFactory.js
 src/utils.js
