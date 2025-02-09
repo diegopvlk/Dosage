@@ -5,6 +5,7 @@
 'use strict';
 
 import Adw from 'gi://Adw?version=1';
+import Gdk from 'gi://Gdk';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
@@ -335,6 +336,39 @@ export const DosageWindow = GObject.registerClass(
 
 					this._treatmentsList.model = new Gtk.NoSelection({
 						model: treatmentsLS,
+					});
+
+					const keyController = new Gtk.EventControllerKey();
+					const entry = new Gtk.Entry();
+					this.add_controller(keyController);
+					let timeOut;
+
+					keyController.connect('key-pressed', (_, keyval, keycode, state) => {
+						if (this._viewStack.get_visible_child_name() !== 'treatments-page') return;
+
+						this._treatmentsList.grab_focus();
+
+						const unicodeChar = Gdk.keyval_to_unicode(keyval);
+						const keyName = String.fromCharCode(unicodeChar);
+
+						if (unicodeChar && keyName) {
+							entry.text += keyName;
+
+							for (const it of treatmentsLS) {
+								const name = it.obj.name;
+								const entryTxt = entry.text.toLowerCase();
+								const nameMatch = name.toLowerCase().startsWith(entryTxt);
+								if (nameMatch) {
+									const pos = treatmentsLS.find(it)[1];
+									this._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
+								}
+							}
+
+							if (timeOut) clearTimeout(timeOut);
+							timeOut = setTimeout(() => {
+								entry.set_text('');
+							}, 750);
+						}
 					});
 				}
 			} catch (err) {
