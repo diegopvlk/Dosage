@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-09 12:34-0300\n"
-"PO-Revision-Date: 2025-02-09 15:37+0000\n"
+"PO-Revision-Date: 2025-02-10 16:02+0000\n"
 "Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
 "uk/>\n"
@@ -148,10 +148,8 @@ msgid "Skipped"
 msgstr "Пропущено"
 
 #: data/ui/edit-hist-dialog.blp:130
-#, fuzzy
-#| msgid "Confirm"
 msgid "Confirmed"
-msgstr "Підтвердити"
+msgstr "Підтверджено"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
