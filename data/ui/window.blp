@@ -32,12 +32,6 @@ template $DosageWindow: Adw.ApplicationWindow {
 				visible: false;
 			}
 
-			[start]
-			Adw.Spinner headerBarSpinner {
-				margin-start: 9;
-				margin-end: 9;
-			}
-
 			[end]
 			MenuButton buttonMenu {
 				menu-model: appMenu;
@@ -93,6 +87,9 @@ template $DosageWindow: Adw.ApplicationWindow {
 					Adw.StatusPage emptyToday {
 						visible: true;
 					}
+
+					[overlay]
+					Adw.Spinner spinnerToday {}
 
 					[overlay]
 					Box {

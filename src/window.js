@@ -47,7 +47,7 @@ export const DosageWindow = GObject.registerClass(
 			'emptyToday',
 			'emptyHistory',
 			'emptyTreatments',
-			'headerBarSpinner',
+			'spinnerToday',
 			'skipBtn',
 			'entryBtn',
 			'unselectBtn',
@@ -87,6 +87,7 @@ export const DosageWindow = GObject.registerClass(
 				this.updateCycleAndLastUp();
 				this.updateJsonFile('treatments', treatmentsLS);
 				this.loadToday();
+				this._spinnerToday.set_visible(false);
 				this.handleSuspension();
 				this.scheduleNotifications();
 				this.checkInventory();
@@ -421,8 +422,6 @@ export const DosageWindow = GObject.registerClass(
 
 						this._historyList.model = this.noSelectionModel;
 						this.setShowHistoryAmount();
-
-						this._headerBarSpinner.set_visible(false);
 					});
 
 					this._historyList.remove_css_class('view');
