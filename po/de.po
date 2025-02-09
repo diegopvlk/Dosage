@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-09 10:24-0300\n"
+"POT-Creation-Date: 2025-02-09 12:34-0300\n"
 "PO-Revision-Date: 2024-03-10 23:09+0000\n"
 "Last-Translator: Thomas Maeder <maeder+weblate@glue.ch>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/dosage/dosage/de/"
@@ -119,13 +119,37 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Beenden"
 
+#: data/ui/edit-hist-dialog.blp:7
+msgid "Edit entry"
+msgstr "Eintrag bearbeiten"
+
+#: data/ui/edit-hist-dialog.blp:18 data/ui/med-dialog.blp:19
+#: data/ui/refill-dialog.blp:18 src/medDialog.js:580
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: data/ui/edit-hist-dialog.blp:29 data/ui/refill-dialog.blp:29
+#: src/medDialog.js:113
+msgid "Save"
+msgstr "Speichern"
+
+#: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:210
+msgid "Change time"
+msgstr ""
+
+#: data/ui/edit-hist-dialog.blp:119 src/historyFactory.js:189
+msgid "Skipped"
+msgstr "Übersprungen"
+
+#: data/ui/edit-hist-dialog.blp:130
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirmed"
+msgstr "Bestätigen"
+
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
 msgstr "Neue Behandlung"
-
-#: data/ui/med-dialog.blp:19 data/ui/refill-dialog.blp:18 src/medDialog.js:579
-msgid "Cancel"
-msgstr "Abbrechen"
 
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:270
 msgid "Add"
@@ -250,7 +274,7 @@ msgstr "Notizen"
 msgid "After meal"
 msgstr "Nach Mahlzeit"
 
-#: data/ui/med-dialog.blp:455 src/medDialog.js:484
+#: data/ui/med-dialog.blp:455 src/medDialog.js:485
 msgid "Frequency"
 msgstr "Frequenz"
 
@@ -370,7 +394,7 @@ msgstr "Datum auswählen"
 msgid "Ends on"
 msgstr "Endet am"
 
-#: data/ui/med-dialog.blp:871 src/medDialog.js:580 src/treatmentsFactory.js:187
+#: data/ui/med-dialog.blp:871 src/medDialog.js:581 src/treatmentsFactory.js:187
 msgid "Delete"
 msgstr "Löschen"
 
@@ -392,10 +416,6 @@ msgstr ""
 
 #: data/ui/one-time-dialog.blp:199
 msgid "Time"
-msgstr ""
-
-#: data/ui/one-time-dialog.blp:210
-msgid "Change time"
 msgstr ""
 
 #: data/ui/one-time-dialog.blp:232
@@ -451,10 +471,6 @@ msgstr "Überspringen"
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:185
 msgid "Refill"
 msgstr "Nachfüllen"
-
-#: data/ui/refill-dialog.blp:29 src/medDialog.js:113
-msgid "Save"
-msgstr "Speichern"
 
 #: data/ui/window.blp:31
 msgid "Search"
@@ -520,10 +536,6 @@ msgstr "Verpasst"
 msgid "Select to be removed"
 msgstr ""
 
-#: src/historyFactory.js:189
-msgid "Skipped"
-msgstr "Übersprungen"
-
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
 msgid "translator-credits"
@@ -542,7 +554,7 @@ msgstr "Ausführung im Hintergrund samt Benachrichtigungen erlauben"
 msgid "New"
 msgstr "Neu"
 
-#: src/oneTimeDialog.js:163 src/medDialog.js:544
+#: src/oneTimeDialog.js:163 src/medDialog.js:545
 msgid "Name already on treatment list"
 msgstr "Name steht bereits auf der Behandlungsliste"
 
@@ -566,27 +578,27 @@ msgstr "Auswählen"
 msgid "Day"
 msgstr "Tag"
 
-#: src/medDialog.js:517
+#: src/medDialog.js:518
 msgid "Empty name"
 msgstr "Leerer Name"
 
-#: src/medDialog.js:523
+#: src/medDialog.js:524
 msgid "Empty unit"
 msgstr "Leere Einheit"
 
-#: src/medDialog.js:530
+#: src/medDialog.js:531
 msgid "Choose at least one day"
 msgstr "Wählen Sie mindestens einen Tag"
 
-#: src/medDialog.js:559
+#: src/medDialog.js:560
 msgid "Duplicated time"
 msgstr "Duplizierte Zeit"
 
-#: src/medDialog.js:575
+#: src/medDialog.js:576
 msgid "Are you sure?"
 msgstr "Sind Sie sicher?"
 
-#: src/medDialog.js:576
+#: src/medDialog.js:577
 msgid "will be deleted"
 msgstr "wird gelöscht"
 
@@ -715,9 +727,6 @@ msgstr "und noch %d"
 
 #~ msgid "New entry"
 #~ msgstr "Neuer Eintrag"
-
-#~ msgid "Edit entry"
-#~ msgstr "Eintrag bearbeiten"
 
 #~ msgid "Name already exists"
 #~ msgstr "Name existiert bereits"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-09 10:24-0300\n"
+"POT-Creation-Date: 2025-02-09 12:34-0300\n"
 "PO-Revision-Date: 2024-12-09 22:26+0000\n"
 "Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
@@ -120,13 +120,37 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Lopeta"
 
+#: data/ui/edit-hist-dialog.blp:7
+msgid "Edit entry"
+msgstr "Muokkaa merkintä"
+
+#: data/ui/edit-hist-dialog.blp:18 data/ui/med-dialog.blp:19
+#: data/ui/refill-dialog.blp:18 src/medDialog.js:580
+msgid "Cancel"
+msgstr "Peru"
+
+#: data/ui/edit-hist-dialog.blp:29 data/ui/refill-dialog.blp:29
+#: src/medDialog.js:113
+msgid "Save"
+msgstr "Tallenna"
+
+#: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:210
+msgid "Change time"
+msgstr ""
+
+#: data/ui/edit-hist-dialog.blp:119 src/historyFactory.js:189
+msgid "Skipped"
+msgstr "Ohitettu"
+
+#: data/ui/edit-hist-dialog.blp:130
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirmed"
+msgstr "Vahvista"
+
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
 msgstr "Uusi hoito"
-
-#: data/ui/med-dialog.blp:19 data/ui/refill-dialog.blp:18 src/medDialog.js:579
-msgid "Cancel"
-msgstr "Peru"
 
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:270
 msgid "Add"
@@ -251,7 +275,7 @@ msgstr "Muistiinpanot"
 msgid "After meal"
 msgstr "Aterian jälkeen"
 
-#: data/ui/med-dialog.blp:455 src/medDialog.js:484
+#: data/ui/med-dialog.blp:455 src/medDialog.js:485
 msgid "Frequency"
 msgstr "Taajuus"
 
@@ -371,7 +395,7 @@ msgstr "Valitse päivämäärä"
 msgid "Ends on"
 msgstr "Loppuu"
 
-#: data/ui/med-dialog.blp:871 src/medDialog.js:580 src/treatmentsFactory.js:187
+#: data/ui/med-dialog.blp:871 src/medDialog.js:581 src/treatmentsFactory.js:187
 msgid "Delete"
 msgstr "Poista"
 
@@ -393,10 +417,6 @@ msgstr ""
 
 #: data/ui/one-time-dialog.blp:199
 msgid "Time"
-msgstr ""
-
-#: data/ui/one-time-dialog.blp:210
-msgid "Change time"
 msgstr ""
 
 #: data/ui/one-time-dialog.blp:232
@@ -451,10 +471,6 @@ msgstr "Ohita"
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:185
 msgid "Refill"
 msgstr "Täytä uudelleen"
-
-#: data/ui/refill-dialog.blp:29 src/medDialog.js:113
-msgid "Save"
-msgstr "Tallenna"
 
 #: data/ui/window.blp:31
 msgid "Search"
@@ -520,10 +536,6 @@ msgstr "Jäänyt huomiotta"
 msgid "Select to be removed"
 msgstr ""
 
-#: src/historyFactory.js:189
-msgid "Skipped"
-msgstr "Ohitettu"
-
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
 msgid "translator-credits"
@@ -543,7 +555,7 @@ msgstr ""
 msgid "New"
 msgstr "Uusi"
 
-#: src/oneTimeDialog.js:163 src/medDialog.js:544
+#: src/oneTimeDialog.js:163 src/medDialog.js:545
 msgid "Name already on treatment list"
 msgstr "Nimi jo hoitolistalla"
 
@@ -567,27 +579,27 @@ msgstr "Valitse"
 msgid "Day"
 msgstr "Päivä"
 
-#: src/medDialog.js:517
+#: src/medDialog.js:518
 msgid "Empty name"
 msgstr "Tyhjä nimi"
 
-#: src/medDialog.js:523
+#: src/medDialog.js:524
 msgid "Empty unit"
 msgstr "Tyhjä yksikkö"
 
-#: src/medDialog.js:530
+#: src/medDialog.js:531
 msgid "Choose at least one day"
 msgstr "Valitse vähintään yksi päivä"
 
-#: src/medDialog.js:559
+#: src/medDialog.js:560
 msgid "Duplicated time"
 msgstr "Päällekkäinen aika"
 
-#: src/medDialog.js:575
+#: src/medDialog.js:576
 msgid "Are you sure?"
 msgstr "Oletko varma?"
 
-#: src/medDialog.js:576
+#: src/medDialog.js:577
 msgid "will be deleted"
 msgstr "tullaan poistetaan"
 
@@ -716,9 +728,6 @@ msgstr "ja vielä %d"
 
 #~ msgid "New entry"
 #~ msgstr "Uusi merkintä"
-
-#~ msgid "Edit entry"
-#~ msgstr "Muokkaa merkintä"
 
 #~ msgid "Name already exists"
 #~ msgstr "Nimi on jo olemassa"

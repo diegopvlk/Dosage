@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-09 10:24-0300\n"
+"POT-Creation-Date: 2025-02-09 12:34-0300\n"
 "PO-Revision-Date: 2024-12-27 23:00+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -118,13 +118,37 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Avsluta"
 
+#: data/ui/edit-hist-dialog.blp:7
+msgid "Edit entry"
+msgstr "Redigera post"
+
+#: data/ui/edit-hist-dialog.blp:18 data/ui/med-dialog.blp:19
+#: data/ui/refill-dialog.blp:18 src/medDialog.js:580
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: data/ui/edit-hist-dialog.blp:29 data/ui/refill-dialog.blp:29
+#: src/medDialog.js:113
+msgid "Save"
+msgstr "Spara"
+
+#: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:210
+msgid "Change time"
+msgstr ""
+
+#: data/ui/edit-hist-dialog.blp:119 src/historyFactory.js:189
+msgid "Skipped"
+msgstr "Hoppade över"
+
+#: data/ui/edit-hist-dialog.blp:130
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirmed"
+msgstr "Bekräfta"
+
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
 msgstr "Ny behandling"
-
-#: data/ui/med-dialog.blp:19 data/ui/refill-dialog.blp:18 src/medDialog.js:579
-msgid "Cancel"
-msgstr "Avbryt"
 
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:270
 msgid "Add"
@@ -249,7 +273,7 @@ msgstr "Anteckningar"
 msgid "After meal"
 msgstr "Efter måltid"
 
-#: data/ui/med-dialog.blp:455 src/medDialog.js:484
+#: data/ui/med-dialog.blp:455 src/medDialog.js:485
 msgid "Frequency"
 msgstr "Frekvens"
 
@@ -369,7 +393,7 @@ msgstr "Välj datum"
 msgid "Ends on"
 msgstr "Slutar"
 
-#: data/ui/med-dialog.blp:871 src/medDialog.js:580 src/treatmentsFactory.js:187
+#: data/ui/med-dialog.blp:871 src/medDialog.js:581 src/treatmentsFactory.js:187
 msgid "Delete"
 msgstr "Radera"
 
@@ -391,10 +415,6 @@ msgstr ""
 
 #: data/ui/one-time-dialog.blp:199
 msgid "Time"
-msgstr ""
-
-#: data/ui/one-time-dialog.blp:210
-msgid "Change time"
 msgstr ""
 
 #: data/ui/one-time-dialog.blp:232
@@ -449,10 +469,6 @@ msgstr "Hoppa över"
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:185
 msgid "Refill"
 msgstr "Fyll på"
-
-#: data/ui/refill-dialog.blp:29 src/medDialog.js:113
-msgid "Save"
-msgstr "Spara"
 
 #: data/ui/window.blp:31
 msgid "Search"
@@ -518,10 +534,6 @@ msgstr "Glömd"
 msgid "Select to be removed"
 msgstr ""
 
-#: src/historyFactory.js:189
-msgid "Skipped"
-msgstr "Hoppade över"
-
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
 msgid "translator-credits"
@@ -540,7 +552,7 @@ msgstr "Acceptera för att tillåta körning i bakgrunden och ta emot aviseringa
 msgid "New"
 msgstr "Ny"
 
-#: src/oneTimeDialog.js:163 src/medDialog.js:544
+#: src/oneTimeDialog.js:163 src/medDialog.js:545
 msgid "Name already on treatment list"
 msgstr "Namn finns redan på behandlingslistan"
 
@@ -564,27 +576,27 @@ msgstr "Välj"
 msgid "Day"
 msgstr "Dag"
 
-#: src/medDialog.js:517
+#: src/medDialog.js:518
 msgid "Empty name"
 msgstr "Tömt namn"
 
-#: src/medDialog.js:523
+#: src/medDialog.js:524
 msgid "Empty unit"
 msgstr "Töm enhet"
 
-#: src/medDialog.js:530
+#: src/medDialog.js:531
 msgid "Choose at least one day"
 msgstr "Välj åtminstone en dag"
 
-#: src/medDialog.js:559
+#: src/medDialog.js:560
 msgid "Duplicated time"
 msgstr "Duplicerad tid"
 
-#: src/medDialog.js:575
+#: src/medDialog.js:576
 msgid "Are you sure?"
 msgstr "Är du säker?"
 
-#: src/medDialog.js:576
+#: src/medDialog.js:577
 msgid "will be deleted"
 msgstr "kommer att raderas"
 
@@ -713,9 +725,6 @@ msgstr "och %d till"
 
 #~ msgid "New entry"
 #~ msgstr "Ny notering"
-
-#~ msgid "Edit entry"
-#~ msgstr "Redigera post"
 
 #~ msgid "Name already exists"
 #~ msgstr "Namnet finns redan"

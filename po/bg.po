@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-09 10:24-0300\n"
+"POT-Creation-Date: 2025-02-09 12:34-0300\n"
 "PO-Revision-Date: 2024-05-05 16:40+0200\n"
 "Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
@@ -117,13 +117,37 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Спиране на програмата"
 
+#: data/ui/edit-hist-dialog.blp:7
+msgid "Edit entry"
+msgstr "Редактиране на запис"
+
+#: data/ui/edit-hist-dialog.blp:18 data/ui/med-dialog.blp:19
+#: data/ui/refill-dialog.blp:18 src/medDialog.js:580
+msgid "Cancel"
+msgstr "Отказване"
+
+#: data/ui/edit-hist-dialog.blp:29 data/ui/refill-dialog.blp:29
+#: src/medDialog.js:113
+msgid "Save"
+msgstr "Запазване"
+
+#: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:210
+msgid "Change time"
+msgstr ""
+
+#: data/ui/edit-hist-dialog.blp:119 src/historyFactory.js:189
+msgid "Skipped"
+msgstr "Пропуснати"
+
+#: data/ui/edit-hist-dialog.blp:130
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirmed"
+msgstr "Потвърждаване"
+
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
 msgstr "Ново лечение"
-
-#: data/ui/med-dialog.blp:19 data/ui/refill-dialog.blp:18 src/medDialog.js:579
-msgid "Cancel"
-msgstr "Отказване"
 
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:270
 msgid "Add"
@@ -248,7 +272,7 @@ msgstr "Бележки, записки"
 msgid "After meal"
 msgstr "След хранене"
 
-#: data/ui/med-dialog.blp:455 src/medDialog.js:484
+#: data/ui/med-dialog.blp:455 src/medDialog.js:485
 msgid "Frequency"
 msgstr "Период"
 
@@ -368,7 +392,7 @@ msgstr "Избиране на дата"
 msgid "Ends on"
 msgstr "Прикличва на"
 
-#: data/ui/med-dialog.blp:871 src/medDialog.js:580 src/treatmentsFactory.js:187
+#: data/ui/med-dialog.blp:871 src/medDialog.js:581 src/treatmentsFactory.js:187
 msgid "Delete"
 msgstr "Изтриване"
 
@@ -390,10 +414,6 @@ msgstr ""
 
 #: data/ui/one-time-dialog.blp:199
 msgid "Time"
-msgstr ""
-
-#: data/ui/one-time-dialog.blp:210
-msgid "Change time"
 msgstr ""
 
 #: data/ui/one-time-dialog.blp:232
@@ -448,10 +468,6 @@ msgstr "Пропускане"
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:185
 msgid "Refill"
 msgstr "Презареди"
-
-#: data/ui/refill-dialog.blp:29 src/medDialog.js:113
-msgid "Save"
-msgstr "Запазване"
 
 #: data/ui/window.blp:31
 msgid "Search"
@@ -517,10 +533,6 @@ msgstr "Изпуснати"
 msgid "Select to be removed"
 msgstr ""
 
-#: src/historyFactory.js:189
-msgid "Skipped"
-msgstr "Пропуснати"
-
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
 msgid "translator-credits"
@@ -540,7 +552,7 @@ msgstr ""
 msgid "New"
 msgstr "Ново"
 
-#: src/oneTimeDialog.js:163 src/medDialog.js:544
+#: src/oneTimeDialog.js:163 src/medDialog.js:545
 msgid "Name already on treatment list"
 msgstr "Името вече е в списъка за лечение"
 
@@ -564,27 +576,27 @@ msgstr "Избиране"
 msgid "Day"
 msgstr "Ден"
 
-#: src/medDialog.js:517
+#: src/medDialog.js:518
 msgid "Empty name"
 msgstr "Празно име"
 
-#: src/medDialog.js:523
+#: src/medDialog.js:524
 msgid "Empty unit"
 msgstr "Празна единица"
 
-#: src/medDialog.js:530
+#: src/medDialog.js:531
 msgid "Choose at least one day"
 msgstr "Изберете поне един ден"
 
-#: src/medDialog.js:559
+#: src/medDialog.js:560
 msgid "Duplicated time"
 msgstr "Дублирано време"
 
-#: src/medDialog.js:575
+#: src/medDialog.js:576
 msgid "Are you sure?"
 msgstr "Сигурни ли сте?"
 
-#: src/medDialog.js:576
+#: src/medDialog.js:577
 msgid "will be deleted"
 msgstr "ще бъде изтрит"
 
@@ -713,9 +725,6 @@ msgstr "и още %d"
 
 #~ msgid "New entry"
 #~ msgstr "Нов запис"
-
-#~ msgid "Edit entry"
-#~ msgstr "Редактиране на запис"
 
 #~ msgid "Name already exists"
 #~ msgstr "Името вече съществува"

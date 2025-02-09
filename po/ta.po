@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-09 10:24-0300\n"
+"POT-Creation-Date: 2025-02-09 12:34-0300\n"
 "PO-Revision-Date: 2024-12-27 23:00+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/dosage/dosage/ta/"
@@ -118,13 +118,37 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "வெளியேறு"
 
+#: data/ui/edit-hist-dialog.blp:7
+msgid "Edit entry"
+msgstr "நுழைவு திருத்து"
+
+#: data/ui/edit-hist-dialog.blp:18 data/ui/med-dialog.blp:19
+#: data/ui/refill-dialog.blp:18 src/medDialog.js:580
+msgid "Cancel"
+msgstr "ரத்துசெய்"
+
+#: data/ui/edit-hist-dialog.blp:29 data/ui/refill-dialog.blp:29
+#: src/medDialog.js:113
+msgid "Save"
+msgstr "சேமி"
+
+#: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:210
+msgid "Change time"
+msgstr ""
+
+#: data/ui/edit-hist-dialog.blp:119 src/historyFactory.js:189
+msgid "Skipped"
+msgstr "தவிர்க்கப்பட்டது"
+
+#: data/ui/edit-hist-dialog.blp:130
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirmed"
+msgstr "உறுதிப்படுத்தவும்"
+
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
 msgstr "புதிய மருத்தீடு"
-
-#: data/ui/med-dialog.blp:19 data/ui/refill-dialog.blp:18 src/medDialog.js:579
-msgid "Cancel"
-msgstr "ரத்துசெய்"
 
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:270
 msgid "Add"
@@ -249,7 +273,7 @@ msgstr "குறிப்புகள்"
 msgid "After meal"
 msgstr "உணவுக்குப் பிறகு"
 
-#: data/ui/med-dialog.blp:455 src/medDialog.js:484
+#: data/ui/med-dialog.blp:455 src/medDialog.js:485
 msgid "Frequency"
 msgstr "மீடிறன், மீள்திறன், நிகழ்வெண், நிகழ்வு"
 
@@ -369,7 +393,7 @@ msgstr "தேதியைத் தேர்வுசெய்க"
 msgid "Ends on"
 msgstr "முடிவடைகிறது"
 
-#: data/ui/med-dialog.blp:871 src/medDialog.js:580 src/treatmentsFactory.js:187
+#: data/ui/med-dialog.blp:871 src/medDialog.js:581 src/treatmentsFactory.js:187
 msgid "Delete"
 msgstr "நீக்கு"
 
@@ -391,10 +415,6 @@ msgstr ""
 
 #: data/ui/one-time-dialog.blp:199
 msgid "Time"
-msgstr ""
-
-#: data/ui/one-time-dialog.blp:210
-msgid "Change time"
 msgstr ""
 
 #: data/ui/one-time-dialog.blp:232
@@ -449,10 +469,6 @@ msgstr "தவிர்"
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:185
 msgid "Refill"
 msgstr "மீண்டும் நிரப்பவும்"
-
-#: data/ui/refill-dialog.blp:29 src/medDialog.js:113
-msgid "Save"
-msgstr "சேமி"
 
 #: data/ui/window.blp:31
 msgid "Search"
@@ -518,10 +534,6 @@ msgstr "தவறவிட்டது"
 msgid "Select to be removed"
 msgstr ""
 
-#: src/historyFactory.js:189
-msgid "Skipped"
-msgstr "தவிர்க்கப்பட்டது"
-
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
 msgid "translator-credits"
@@ -540,7 +552,7 @@ msgstr "பின்னணியில் இயங்க அனுமதிப�
 msgid "New"
 msgstr "புதிய"
 
-#: src/oneTimeDialog.js:163 src/medDialog.js:544
+#: src/oneTimeDialog.js:163 src/medDialog.js:545
 msgid "Name already on treatment list"
 msgstr "மருத்தீடு பட்டியலில் ஏற்கனவே பெயர்"
 
@@ -564,27 +576,27 @@ msgstr "தேர்வு"
 msgid "Day"
 msgstr "நாள்"
 
-#: src/medDialog.js:517
+#: src/medDialog.js:518
 msgid "Empty name"
 msgstr "வெற்று பெயர்"
 
-#: src/medDialog.js:523
+#: src/medDialog.js:524
 msgid "Empty unit"
 msgstr "வெற்று அலகு"
 
-#: src/medDialog.js:530
+#: src/medDialog.js:531
 msgid "Choose at least one day"
 msgstr "குறைந்தது ஒரு நாளையாவது தேர்வு செய்யவும்"
 
-#: src/medDialog.js:559
+#: src/medDialog.js:560
 msgid "Duplicated time"
 msgstr "நகல் நேரம்"
 
-#: src/medDialog.js:575
+#: src/medDialog.js:576
 msgid "Are you sure?"
 msgstr "நீங்கள் உறுதியாக இருக்கிறீர்களா?"
 
-#: src/medDialog.js:576
+#: src/medDialog.js:577
 msgid "will be deleted"
 msgstr "நீக்கப்படும்"
 
@@ -713,6 +725,3 @@ msgstr "மேலும் %d மேலும்"
 
 #~ msgid "New entry"
 #~ msgstr "புதிய நுழைவு"
-
-#~ msgid "Edit entry"
-#~ msgstr "நுழைவு திருத்து"
