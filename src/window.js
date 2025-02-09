@@ -52,7 +52,7 @@ export const DosageWindow = GObject.registerClass(
 			'entryBtn',
 			'unselectBtn',
 			'viewStack',
-			'buttonWhenNeeded',
+			'btnWhenNeeded',
 			'buttonSearch',
 			'searchBar',
 			'searchEntry',
@@ -535,7 +535,7 @@ export const DosageWindow = GObject.registerClass(
 
 			this._viewStack.connect('notify::visible-child', viewStack => {
 				const todayVisible = viewStack.get_visible_child_name() === 'today-page';
-				this._buttonWhenNeeded.visible = todayVisible && this.hasWhenNeeded;
+				this._btnWhenNeeded.visible = todayVisible && this.hasWhenNeeded;
 
 				const histVisible = viewStack.get_visible_child_name() === 'history-page';
 				this._buttonSearch.visible = histVisible;
@@ -557,8 +557,8 @@ export const DosageWindow = GObject.registerClass(
 				this._todayList.set_header_factory(todayHeaderFactory);
 				this._todayList.set_factory(todayItemFactory);
 
-				this.todayFilter = Gtk.CustomFilter.new(item => {
-					return isTodayMedDay(item);
+				this.todayFilter = Gtk.CustomFilter.new(it => {
+					return this._btnWhenNeeded.active || it.obj.frequency !== 'when-needed';
 				});
 
 				this.todayLS = Gio.ListStore.new(MedicationObject);
@@ -583,38 +583,58 @@ export const DosageWindow = GObject.registerClass(
 			this.todayLS.remove_all();
 
 			this.hasWhenNeeded = false;
+
+			const tempList = [];
+			const today = new Date();
+			today.setHours(0, 0, 0, 0);
+
 			for (const it of treatmentsLS) {
 				const item = it.obj;
+				const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
+				const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
+				const isWhenNd = item.frequency === 'when-needed';
 
 				for (const timeDose of item.dosage) {
-					this.todayLS.append(
-						new MedicationObject({
-							obj: {
-								name: item.name,
-								unit: item.unit,
-								notes: item.notes,
-								frequency: item.frequency,
-								color: item.color,
-								icon: item.icon,
-								days: item.days,
-								monthDay: item.monthDay,
-								cycle: item.cycle,
-								notification: item.notification,
-								duration: item.duration,
-								time: [timeDose.time[0], timeDose.time[1]],
-								dose: timeDose.dose,
-								lastTaken: timeDose.lastTaken,
-								dateTodayLS: new Date(),
-							},
-						}),
+					const noLastTk = timeDose.lastTaken === null;
+					const isMedDay = isTodayMedDay(
+						today,
+						item.frequency,
+						item.duration.enabled,
+						start,
+						end,
+						item.cycle,
+						item.days,
+						item.monthDay,
 					);
 
-					if (item.frequency === 'when-needed') {
+					if ((isMedDay && noLastTk) || isWhenNd) {
+						tempList.push(
+							new MedicationObject({
+								obj: {
+									name: item.name,
+									unit: item.unit,
+									notes: item.notes,
+									color: item.color,
+									icon: item.icon,
+									notification: item.notification,
+									time: [timeDose.time[0], timeDose.time[1]],
+									dose: timeDose.dose,
+									frequency: isWhenNd ? 'when-needed' : undefined,
+									dateTodayLS: new Date(),
+								},
+							}),
+						);
+					}
+
+					// only one dose
+					if (isWhenNd) {
 						this.hasWhenNeeded = true;
 						break;
 					}
 				}
 			}
+
+			this.todayLS.splice(0, 0, tempList);
 
 			this.todayItems = [];
 
@@ -629,8 +649,8 @@ export const DosageWindow = GObject.registerClass(
 				: _('All done for today');
 
 			const todayVisible = this._viewStack.get_visible_child_name() === 'today-page';
-			this._buttonWhenNeeded.visible = todayVisible && this.hasWhenNeeded;
-			this._buttonWhenNeeded.active = settings.get_boolean('show-when-needed');
+			this._btnWhenNeeded.visible = todayVisible && this.hasWhenNeeded;
+			this._btnWhenNeeded.active = settings.get_boolean('show-when-needed');
 			if (!noItems) this._todayList.scroll_to(0, null, null);
 		}
 
@@ -858,13 +878,13 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		setShowWhenNeeded() {
-			const btn = this._buttonWhenNeeded;
+			const btn = this._btnWhenNeeded;
 			const showWhenNeeded = btn.active;
 
 			settings.set_boolean('show-when-needed', showWhenNeeded);
 
-			this.todayFilter.set_filter_func(item => {
-				return isTodayMedDay(item, showWhenNeeded);
+			this.todayFilter.set_filter_func(it => {
+				return showWhenNeeded || it.obj.frequency !== 'when-needed';
 			});
 
 			const noItems = this.sortedTodayModel.get_n_items() === 0;
@@ -931,12 +951,13 @@ export const DosageWindow = GObject.registerClass(
 
 			if (this.todayItems.length > 0) {
 				this.todayItems.forEach(item => {
+					const isWhenNd = item.frequency === 'when-needed';
 					itemsToAdd.push(
 						new MedicationObject({
 							obj: {
 								name: item.name,
 								unit: item.unit,
-								time: item.frequency === 'when-needed' ? time : item.time,
+								time: isWhenNd ? time : item.time,
 								dose: item.dose,
 								color: item.color,
 								taken: [new Date().getTime(), taken],
@@ -944,7 +965,11 @@ export const DosageWindow = GObject.registerClass(
 						}),
 					);
 
-					this.updateTreatInvAndLastTk(item, taken);
+					if (isWhenNd) {
+						this.updateTreatInventory(item, taken);
+					} else {
+						this.updateTreatInvAndLastTk(item, taken);
+					}
 
 					const itemHour = item.time[0];
 					const itemMin = item.time[1];
@@ -997,6 +1022,8 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		updateTreatInventory(item, taken) {
+			if (taken !== 1) return;
+
 			for (const it of treatmentsLS) {
 				const treatItem = it.obj;
 				const sameName = item.name === treatItem.name;

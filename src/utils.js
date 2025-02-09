@@ -240,33 +240,29 @@ export function handleCalendarSelect(calendar, calendarRow, oneTime) {
 	}
 }
 
-export function isTodayMedDay(med, showWhenNeeded) {
-	const item = med.obj;
-	const today = new Date().setHours(0, 0, 0, 0);
-	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
-	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
-
-	if (item.frequency === 'when-needed') {
-		return showWhenNeeded;
-	}
-
-	if (item.lastTaken != null) {
-		return new Date(item.lastTaken) < today;
-	}
-
-	if (item.duration.enabled && (start > today || end < today)) {
+export function isTodayMedDay(
+	today,
+	frequency,
+	durationEnabled,
+	start,
+	end,
+	cycle,
+	days,
+	monthDay,
+) {
+	if (durationEnabled && (start > today || end < today)) {
 		return false;
 	}
 
-	switch (item.frequency) {
+	switch (frequency) {
 		case 'daily':
 			return true;
 		case 'specific-days':
-			return item.days.includes(new Date().getDay());
+			return days.includes(today.getDay());
 		case 'day-of-month':
-			return item.monthDay === new Date().getDate();
+			return monthDay === today.getDate();
 		case 'cycle':
-			const [active, inactive, current] = item.cycle;
+			const [active, _inactive, current] = cycle;
 			return current <= active;
 		default:
 			return false;
