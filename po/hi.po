@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-10 16:50-0300\n"
-"PO-Revision-Date: 2024-05-23 09:01+0000\n"
-"Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
-"Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/"
-">\n"
+"PO-Revision-Date: 2025-02-10 23:31+0000\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"Language-Team: Hindi <https://hosted.weblate.org/projects/dosage/dosage/hi/>"
+"\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -31,18 +31,13 @@ msgid "Keep track of your treatments"
 msgstr "अपने उपचारों पर नज़र रखें"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:24
-#, fuzzy
-#| msgid ""
-#| "Easily manage and track treatments with Dosage: notifications, history, "
-#| "multiple doses, flexible frequency, customization, stock monitoring, and "
-#| "duration control\""
 msgid ""
 "Easily manage and track treatments with Dosage: notifications, history, "
 "multiple doses, flexible frequency, customization, stock monitoring, and "
 "duration control"
 msgstr ""
-"डोसिज के साथ आसानी से उपचार प्रबंधित करें: सूचनाएं, इतिहास, एकाधिक खुराक, लचीली "
-"आवृत्ति, अनुकूलन, स्टॉक निगरानी और अवधि नियंत्रण"
+"डोसिज के साथ आसानी से उपचार प्रबंधित करें: सूचनाएं, इतिहास, एकाधिक खुराक, लचीली आवृत्ति"
+", अनुकूलन, स्टॉक निगरानी और अवधि नियंत्रण"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid "Features:"
