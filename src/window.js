@@ -386,38 +386,38 @@ export const DosageWindow = GObject.registerClass(
 				const removedDt = new Date(itemRm.taken[0]);
 				const date = removedDt.setHours(0, 0, 0, 0);
 
-				if (date === today) {
-					for (const it of treatmentsLS) {
-						const item = it.obj;
-						const sameItem = item.name === itemRm.name;
-						if (sameItem) {
-							item.dosage.forEach(timeDose => {
-								for (const _i of this.todayLS) {
-									const sameName = item.name === itemRm.name;
-									const sameTime = String(timeDose.time) === String(itemRm.time);
-									// update lastTaken when removing an item
-									// with the same name, time and date of today item
-									if (sameName && sameTime) {
-										timeDose.lastTaken = null;
-									}
-								}
-							});
-							const updateInv =
-								item.inventory.enabled && (itemRm.taken[1] === 1 || itemRm.taken[1] === 2);
-
-							if (updateInv) {
-								item.inventory.current += itemRm.dose;
-							}
-
-							// trigger signal to update labels
-							it.notify('obj');
-							break;
-						}
-					}
-				}
-
 				pos = historyLS.find(itRm)[1];
 				historyLS.remove(pos);
+
+				if (date !== today) return;
+
+				for (const it of treatmentsLS) {
+					const item = it.obj;
+					const sameItem = item.name === itemRm.name;
+					if (sameItem) {
+						item.dosage.forEach(timeDose => {
+							for (const _i of this.todayLS) {
+								const sameName = item.name === itemRm.name;
+								const sameTime = String(timeDose.time) === String(itemRm.time);
+								// update lastTaken when removing an item
+								// with the same name, time and date of today item
+								if (sameName && sameTime) {
+									timeDose.lastTaken = null;
+								}
+							}
+						});
+						const updateInv =
+							item.inventory.enabled && (itemRm.taken[1] === 1 || itemRm.taken[1] === 2);
+
+						if (updateInv) {
+							item.inventory.current += itemRm.dose;
+						}
+
+						// trigger signal to update labels
+						it.notify('obj');
+						break;
+					}
+				}
 			});
 
 			this.histItemsToRm.length = 0;
@@ -430,7 +430,7 @@ export const DosageWindow = GObject.registerClass(
 			this.histItemsToRm.length = 0;
 			this._removeHistItemsBtn.visible = false;
 			this._unselectHistItemsBtn.visible = false;
-			this._toggleHistAmountBtn.visible = historyLS.n_items > 30;
+			this._toggleHistAmountBtn.visible = historyLS.n_items > 30 && !this.histQuery;
 		}
 
 		setShowHistoryAmount() {
@@ -517,17 +517,7 @@ export const DosageWindow = GObject.registerClass(
 						this.setShowHistoryAmount();
 
 						this.histMultiSelect.connect('selection-changed', (selModel, position, nItems) => {
-							const item = selModel.get_item(position);
-							const idxToRm = this.histItemsToRm.indexOf(item);
-
-							if (!this.histItemsToRm.includes(item)) {
-								this.histItemsToRm.push(item);
-							} else {
-								this.histItemsToRm.splice(idxToRm, 1);
-							}
-
 							const noItems = this.histItemsToRm.length === 0;
-
 							this._removeHistItemsBtn.visible = !noItems;
 							this._unselectHistItemsBtn.visible = !noItems;
 							this._toggleHistAmountBtn.visible =

@@ -107,6 +107,10 @@ listview > header {
     inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.13));
 }
 
+/* rubberband multi selection */
+row:active:not(:hover) check:not(:checked) {
+  background-color: rgb(from currentColor r g b / calc(alpha * 0.2));
+}
 .dosage-list > row {
   border-radius: calc(var(--list-border-radius) + 2px);
   background: none;

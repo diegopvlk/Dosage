@@ -11,7 +11,6 @@ import Pango from 'gi://Pango';
 
 import { dateFormat, timeFormat } from './utils.js';
 import { DosageApplication } from './main.js';
-import { historyLS } from './window.js';
 
 export const historyHeaderFactory = new Gtk.SignalListItemFactory();
 export const historyItemFactory = new Gtk.SignalListItemFactory();
@@ -48,13 +47,23 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	});
 
 	listItem.checkButton.connect('toggled', btn => {
-		const DosageWindow = DosageApplication.get_default().activeWindow;
-		const pos = historyLS.find(listItem.get_item())[1];
+		const DW = DosageApplication.get_default().activeWindow;
+		const pos = listItem.position;
+		let item;
+
+		if (DW.histQuery) {
+			item = DW.filterHistoryModel.get_item(pos);
+		} else {
+			item = DW.histMultiSelect.get_item(pos);
+		}
 
 		if (btn.active) {
-			DosageWindow.histMultiSelect.select_item(pos, false);
+			DW.histItemsToRm.push(item);
+			DW.histMultiSelect.select_item(pos, false);
 		} else {
-			DosageWindow.histMultiSelect.unselect_item(pos);
+			const idxToRm = DW.histItemsToRm.indexOf(item);
+			DW.histItemsToRm.splice(idxToRm, 1);
+			DW.histMultiSelect.unselect_item(pos);
 		}
 	});
 
