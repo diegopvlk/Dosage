@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-10 16:40-0300\n"
-"PO-Revision-Date: 2025-02-10 16:02+0000\n"
+"PO-Revision-Date: 2025-02-10 20:32+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "dosage/dosage/en_GB/>\n"
@@ -31,11 +31,6 @@ msgid "Keep track of your treatments"
 msgstr "Keep track of your treatments"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:24
-#, fuzzy
-#| msgid ""
-#| "Easily manage and track treatments with Dosage: notifications, history, "
-#| "multiple doses, flexible frequency, customization, stock monitoring, and "
-#| "duration control\""
 msgid ""
 "Easily manage and track treatments with Dosage: notifications, history, "
 "multiple doses, flexible frequency, customization, stock monitoring, and "
@@ -669,10 +664,8 @@ msgid "Show or hide confirm/skip"
 msgstr "Show or hide confirm/skip"
 
 #: data/ui/window.blp:23
-#, fuzzy
-#| msgid "When necessary"
 msgid "Show/Hide 'When necessary'"
-msgstr "When necessary"
+msgstr "Show/Hide 'When necessary'"
 
 #: data/ui/window.blp:31
 msgid "Search"
