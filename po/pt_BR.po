@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-10 16:50-0300\n"
-"PO-Revision-Date: 2025-02-10 20:32+0000\n"
+"PO-Revision-Date: 2025-02-10 23:31+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "dosage/dosage/pt_BR/>\n"
@@ -548,16 +548,12 @@ msgid "Mark as confirmed"
 msgstr "Marcar como confirmado"
 
 #: data/ui/med-dialog.blp:711
-#, fuzzy
-#| msgid ""
-#| "If not confirmed, it will go to history as confirmed rather than missed, "
-#| "reducing the stock if enabled"
 msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
 msgstr ""
-"Se não for confirmado, irá para o histórico como confirmado em vez de "
-"perdido, reduzindo o estoque se ativado"
+"Se não confirmado ou ignorado manualmente, será registrado como confirmado "
+"no histórico, reduzindo o estoque se habilitado"
 
 #: data/ui/med-dialog.blp:715
 msgid "Increase notification priority"
