@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-10 16:40-0300\n"
+"POT-Creation-Date: 2025-02-10 16:50-0300\n"
 "PO-Revision-Date: 2024-05-05 16:40+0200\n"
 "Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
@@ -556,8 +556,8 @@ msgstr ""
 
 #: data/ui/med-dialog.blp:711
 msgid ""
-"If not confirmed, it will go to history as confirmed rather than missed, "
-"reducing the stock if enabled"
+"If not manually confirmed or skipped, it will be recorded as confirmed in "
+"history, reducing stock if enabled"
 msgstr ""
 
 #: data/ui/med-dialog.blp:715

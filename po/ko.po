@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-10 16:40-0300\n"
+"POT-Creation-Date: 2025-02-10 16:50-0300\n"
 "PO-Revision-Date: 2024-12-28 21:43+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/dosage/dosage/ko/"
@@ -551,8 +551,8 @@ msgstr ""
 
 #: data/ui/med-dialog.blp:711
 msgid ""
-"If not confirmed, it will go to history as confirmed rather than missed, "
-"reducing the stock if enabled"
+"If not manually confirmed or skipped, it will be recorded as confirmed in "
+"history, reducing stock if enabled"
 msgstr ""
 
 #: data/ui/med-dialog.blp:715
