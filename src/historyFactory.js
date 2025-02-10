@@ -16,26 +16,6 @@ import { historyLS } from './window.js';
 export const historyHeaderFactory = new Gtk.SignalListItemFactory();
 export const historyItemFactory = new Gtk.SignalListItemFactory();
 
-const histItemHandler = {
-	set(target, property, value) {
-		if (property === 'length') {
-			target[property] = value;
-		}
-
-		const DosageWindow = DosageApplication.get_default().activeWindow;
-		const noItems = histItemsToRm.length === 0 || histItemsToRm[0] == undefined;
-
-		DosageWindow._removeHistItemsBtn.visible = !noItems;
-		DosageWindow._unselectHistItemsBtn.visible = !noItems;
-		DosageWindow._toggleHistAmountBtn.visible = noItems && historyLS.n_items > 30;
-
-		target[property] = value;
-		return true;
-	},
-};
-
-export const histItemsToRm = new Proxy([], histItemHandler);
-
 historyHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 	listHeaderItem.dateLabel = new Gtk.Label({
 		halign: Gtk.Align.START,
@@ -68,21 +48,13 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	});
 
 	listItem.checkButton.connect('toggled', btn => {
-		const item = listItem.get_item();
-		const indexToRemove = histItemsToRm.indexOf(item);
-		item.checkButton = listItem.checkButton;
-
-		if (item.skipList) {
-			item.skipList = !item.skipList;
-			return;
-		}
+		const DosageWindow = DosageApplication.get_default().activeWindow;
+		const pos = historyLS.find(listItem.get_item())[1];
 
 		if (btn.active) {
-			if (!histItemsToRm.includes(item)) {
-				histItemsToRm.push(item);
-			}
+			DosageWindow.histMultiSelect.select_item(pos, false);
 		} else {
-			histItemsToRm.splice(indexToRemove, 1);
+			DosageWindow.histMultiSelect.unselect_item(pos);
 		}
 	});
 
@@ -158,7 +130,10 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const doseLabel = listItem.doseLabel;
 	const takenLabel = listItem.takenLabel;
 	const takenIcon = listItem.takenIcon;
-	listItem.get_item().checkButton = listItem.checkButton;
+
+	listItem.item.checkButton = listItem.checkButton;
+	listItem.selectable = false;
+	listItem.checkButton.active = listItem.selected;
 
 	if (!listItem.controllerAdded) {
 		row.add_controller(listItem.keyController);

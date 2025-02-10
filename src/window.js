@@ -13,7 +13,7 @@ import Gtk from 'gi://Gtk';
 
 import { MedicationObject } from './medication.js';
 import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
-import { histItemsToRm, historyHeaderFactory, historyItemFactory } from './historyFactory.js';
+import { historyHeaderFactory, historyItemFactory } from './historyFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
 import { openEditHistDialog } from './editHistDialog.js';
 import { openMedicationDialog } from './medDialog.js';
@@ -384,7 +384,7 @@ export const DosageWindow = GObject.registerClass(
 			const today = new Date().setHours(0, 0, 0, 0);
 			let pos = 0;
 
-			histItemsToRm.forEach(itRm => {
+			this.histItemsToRm.forEach(itRm => {
 				const itemRm = itRm.obj;
 				const removedDt = new Date(itemRm.taken[0]);
 				const date = removedDt.setHours(0, 0, 0, 0);
@@ -423,22 +423,23 @@ export const DosageWindow = GObject.registerClass(
 				historyLS.remove(pos);
 			});
 
-			histItemsToRm.length = 0;
+			this.histItemsToRm.length = 0;
 			this.updateEverything({ skipCycleUp: true });
 			this.scheduleNotifications('removing');
 		}
 
 		unselectHistItems() {
-			histItemsToRm.forEach(itRm => {
-				itRm.skipList = true;
-				itRm.checkButton.active = false;
-			});
-
-			histItemsToRm.length = 0;
+			this.histMultiSelect.unselect_all();
+			this.histItemsToRm.length = 0;
+			this._removeHistItemsBtn.visible = false;
+			this._unselectHistItemsBtn.visible = false;
+			this._toggleHistAmountBtn.visible = historyLS.n_items > 30;
 		}
 
 		setShowHistoryAmount() {
 			if (this.histQuery) return;
+
+			this.unselectHistItems();
 
 			const moreThan30 = historyLS.n_items > 30;
 
@@ -509,12 +510,32 @@ export const DosageWindow = GObject.registerClass(
 					});
 
 					sortedHistModelPromise.then(_ => {
-						this.noSelectionModel = new Gtk.NoSelection({
+						this.histMultiSelect = new Gtk.MultiSelection({
 							model: this.sortedHistoryModel,
 						});
 
-						this._historyList.model = this.noSelectionModel;
+						this.histItemsToRm = [];
+
+						this._historyList.model = this.histMultiSelect;
 						this.setShowHistoryAmount();
+
+						this.histMultiSelect.connect('selection-changed', (selModel, position, nItems) => {
+							const item = selModel.get_item(position);
+							const idxToRm = this.histItemsToRm.indexOf(item);
+
+							if (!this.histItemsToRm.includes(item)) {
+								this.histItemsToRm.push(item);
+							} else {
+								this.histItemsToRm.splice(idxToRm, 1);
+							}
+
+							const noItems = this.histItemsToRm.length === 0;
+
+							this._removeHistItemsBtn.visible = !noItems;
+							this._unselectHistItemsBtn.visible = !noItems;
+							this._toggleHistAmountBtn.visible =
+								noItems && historyLS.n_items > 30 && !this.histQuery;
+						});
 					});
 
 					this._historyList.remove_css_class('view');
