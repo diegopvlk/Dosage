@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-10 16:40-0300\n"
-"PO-Revision-Date: 2025-02-10 16:02+0000\n"
+"PO-Revision-Date: 2025-02-10 20:32+0000\n"
 "Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
 "uk/>\n"
@@ -32,19 +32,14 @@ msgid "Keep track of your treatments"
 msgstr "Слідкуйте за вашими курсами лікування"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:24
-#, fuzzy
-#| msgid ""
-#| "Easily manage and track treatments with Dosage: notifications, history, "
-#| "multiple doses, flexible frequency, customization, stock monitoring, and "
-#| "duration control\""
 msgid ""
 "Easily manage and track treatments with Dosage: notifications, history, "
 "multiple doses, flexible frequency, customization, stock monitoring, and "
 "duration control"
 msgstr ""
-"З легкістю керуйте курсами лікування з Дозування: сповіщення, історія, "
-"кількодозні прийоми, налаштування частоти прийомів, кастомізація, моніторинг "
-"запасу і контроль тривалості курсів"
+"Легко керуйте та відстежуйте лікування за допомогою дозування: сповіщення, "
+"історія, багаторазові дози, гнучка частота, налаштування, моніторинг запасів "
+"і контроль тривалості"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid "Features:"
@@ -681,10 +676,8 @@ msgid "Show or hide confirm/skip"
 msgstr "Показати чи приховати підтвердити/пропустити"
 
 #: data/ui/window.blp:23
-#, fuzzy
-#| msgid "When necessary"
 msgid "Show/Hide 'When necessary'"
-msgstr "Коли треба"
+msgstr "Показати/сховати \"За необхідності\""
 
 #: data/ui/window.blp:31
 msgid "Search"
