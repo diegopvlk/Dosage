@@ -154,6 +154,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	});
 
 	listItem.box.append(listItem.checkButton);
+
 	listItem.set_child(listItem.box);
 
 	listItem.keyController = new Gtk.EventControllerKey();
@@ -181,6 +182,8 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	const doseAndNotes = listItem.doseAndNotes;
 	const checkButton = listItem.checkButton;
 	listItem.originalDose = item.dose;
+	listItem.set_selectable(false);
+	listItem.checkButton.active = listItem.selected;
 
 	if (!listItem.controllerAdded) {
 		row.add_controller(listItem.keyController);

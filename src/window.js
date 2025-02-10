@@ -669,11 +669,11 @@ export const DosageWindow = GObject.registerClass(
 					section_sorter: new TodaySectionSorter(),
 				});
 
-				this.todayModel = new Gtk.NoSelection({
+				this.todayMultiSelect = new Gtk.MultiSelection({
 					model: this.sortedTodayModel,
 				});
 
-				this._todayList.model = this.todayModel;
+				this._todayList.model = this.todayMultiSelect;
 			}
 
 			this.todayLS.remove_all();
@@ -795,12 +795,12 @@ export const DosageWindow = GObject.registerClass(
 			this.scheduledItems = {};
 			this.todayGroupedObj = {};
 
-			const todayLength = this.todayModel.get_n_items();
+			const todayLength = this.todayMultiSelect.n_items;
 
 			for (let i = 0; i < todayLength; i++) {
-				const item = this.todayModel.get_item(i).obj;
+				const item = this.todayMultiSelect.get_item(i).obj;
 				if (item.frequency !== 'when-needed') {
-					this.groupTodayList(this.todayModel.get_item(i));
+					this.groupTodayList(this.todayMultiSelect.get_item(i));
 				}
 			}
 
@@ -1000,23 +1000,21 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		selectTodayItems(list, position, groupCheck) {
-			const model = list.get_model();
-			const item = model.get_item(position).obj;
-			const checkButton = item.checkButton;
-			const indexToRemove = this.todayItems.indexOf(item);
-			let isActive = checkButton.get_active();
+			const item = list.get_model().get_item(position).obj;
+
+			const idxToRm = this.todayItems.indexOf(item);
+
+			let isActive = item.checkButton.active;
 
 			if (groupCheck) isActive = false;
 
 			if (!isActive) {
-				if (!this.todayItems.includes(item)) {
-					this.todayItems.push(item);
-				}
+				this.todayItems.push(item);
+				this.todayMultiSelect.select_item(position, false);
 			} else {
-				this.todayItems.splice(indexToRemove, 1);
+				this.todayItems.splice(idxToRm, 1);
+				this.todayMultiSelect.unselect_item(position);
 			}
-
-			checkButton.set_active(!isActive);
 
 			const hasTodayItems = this.todayItems.length > 0;
 			this.updateEntryBtn(hasTodayItems);
@@ -1027,6 +1025,7 @@ export const DosageWindow = GObject.registerClass(
 				item.checkButton.set_active(false);
 			});
 			this.todayItems = [];
+			this.todayMultiSelect.unselect_all();
 			this.updateEntryBtn(false);
 		}
 
