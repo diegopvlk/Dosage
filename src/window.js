@@ -634,6 +634,8 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		loadToday() {
+			this.todayItems = [];
+
 			if (!this.todayLS) {
 				this._todayList.remove_css_class('view');
 				this._todayList.add_css_class('background');
@@ -661,6 +663,11 @@ export const DosageWindow = GObject.registerClass(
 				});
 
 				this._todayList.model = this.todayMultiSelect;
+
+				this.todayMultiSelect.connect('selection-changed', () => {
+					const hasTodayItems = this.todayItems.length > 0;
+					this.updateEntryBtn(hasTodayItems);
+				});
 			}
 
 			this.todayLS.remove_all();
@@ -718,8 +725,6 @@ export const DosageWindow = GObject.registerClass(
 			}
 
 			this.todayLS.splice(0, 0, tempList);
-
-			this.todayItems = [];
 
 			const noItems = this.sortedTodayModel.get_n_items() === 0;
 			const noTreatments = this._treatmentsList.model.get_n_items() === 0;
@@ -988,23 +993,7 @@ export const DosageWindow = GObject.registerClass(
 
 		selectTodayItems(list, position, groupCheck) {
 			const item = list.get_model().get_item(position).obj;
-
-			const idxToRm = this.todayItems.indexOf(item);
-
-			let isActive = item.checkButton.active;
-
-			if (groupCheck) isActive = false;
-
-			if (!isActive) {
-				this.todayItems.push(item);
-				this.todayMultiSelect.select_item(position, false);
-			} else {
-				this.todayItems.splice(idxToRm, 1);
-				this.todayMultiSelect.unselect_item(position);
-			}
-
-			const hasTodayItems = this.todayItems.length > 0;
-			this.updateEntryBtn(hasTodayItems);
+			item.checkButton.active = groupCheck || !item.checkButton.active;
 		}
 
 		unselectTodayItems() {
@@ -1020,6 +1009,9 @@ export const DosageWindow = GObject.registerClass(
 			this._entryBtn.label = hasTodayItems ? _('Confirm') : _('One-time entry');
 			this._skipBtn.set_visible(hasTodayItems);
 			this._unselectBtn.set_visible(hasTodayItems);
+
+			const hasWN = this.todayItems.some(i => i.frequency === 'when-needed');
+			this._skipBtn.sensitive = !hasWN;
 
 			if (hasTodayItems) {
 				this._entryBtn.add_css_class('suggested-action');

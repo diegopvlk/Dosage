@@ -58,13 +58,13 @@ todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	const time = itemTime.format(timeFormat);
 
 	selectTimeGroupBtn.connect('clicked', _btn => {
-		const DosageWindow = DosageApplication.get_default().activeWindow;
+		const DW = DosageApplication.get_default().activeWindow;
 
 		const start = listHeaderItem.get_start();
 		const end = listHeaderItem.get_end();
 
 		for (let pos = start; pos < end; pos++) {
-			DosageWindow.selectTodayItems(DosageWindow._todayList, pos, true);
+			DW.selectTodayItems(DW._todayList, pos, true);
 		}
 	});
 
@@ -151,6 +151,22 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 		margin_end: 11,
 		can_focus: false,
 		can_target: false,
+	});
+
+	listItem.checkButton.connect('toggled', btn => {
+		const DW = DosageApplication.get_default().activeWindow;
+		const pos = listItem.position;
+		const item = DW.sortedTodayModel.get_item(pos);
+
+		if (btn.active) {
+			DW.todayItems.push(item.obj);
+			DW.todayMultiSelect.select_item(pos, false);
+		} else {
+			if (!item) return;
+			const idxToRm = DW.todayItems.indexOf(item.obj);
+			DW.todayItems.splice(idxToRm, 1);
+			DW.todayMultiSelect.unselect_item(pos);
+		}
 	});
 
 	listItem.box.append(listItem.checkButton);
