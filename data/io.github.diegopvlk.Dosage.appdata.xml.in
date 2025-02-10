@@ -5,7 +5,6 @@
 	<content_rating type="oars-1.1" />
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-only</project_license>
-	<developer_name translate="no">Diego Povliuk</developer_name>
 	<developer id="io.github.diegopvlk">
 		<name translate="no">Diego Povliuk</name>
 	</developer>
@@ -22,7 +21,7 @@
 	<summary>Keep track of your treatments</summary>
 
 	<description>
-		<p>Easily manage and track treatments with Dosage: notifications, history, multiple doses, flexible frequency, customization, stock monitoring, and duration control"</p>
+		<p>Easily manage and track treatments with Dosage: notifications, history, multiple doses, flexible frequency, customization, stock monitoring, and duration control</p>
 		<p>Features:</p>
 		<ul>
 			<li>Notifications — Get reminders at the right time</li>
