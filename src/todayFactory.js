@@ -181,7 +181,7 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	const name = listItem.nameLabel;
 	const doseAndNotes = listItem.doseAndNotes;
 	const checkButton = listItem.checkButton;
-	listItem.originalDose = item.dose;
+	const originalDose = item.dose;
 	listItem.set_selectable(false);
 	listItem.checkButton.active = listItem.selected;
 
@@ -210,7 +210,7 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 
 	checkButton.connect('toggled', btn => {
 		if (!btn.active) {
-			item.dose = listItem.originalDose;
+			item.dose = originalDose;
 			setDoseAndNotes();
 		}
 		amountBtn.set_visible(btn.active);

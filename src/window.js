@@ -344,12 +344,10 @@ export const DosageWindow = GObject.registerClass(
 					const keyController = new Gtk.EventControllerKey();
 					const entry = new Gtk.Entry();
 					this.add_controller(keyController);
-					let timeOut;
 
+					// press letter to jump to first item with the same letter
 					keyController.connect('key-pressed', (_, keyval, keycode, state) => {
-						if (this._viewStack.get_visible_child_name() !== 'treatments-page') return;
-
-						this._treatmentsList.grab_focus();
+						if (this._viewStack.visible_child_name !== 'treatments-page') return;
 
 						const unicodeChar = Gdk.keyval_to_unicode(keyval);
 						const keyName = String.fromCharCode(unicodeChar);
@@ -364,13 +362,12 @@ export const DosageWindow = GObject.registerClass(
 								if (nameMatch) {
 									const pos = treatmentsLS.find(it)[1];
 									this._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
+									entry.set_text('');
+									return;
 								}
 							}
 
-							if (timeOut) clearTimeout(timeOut);
-							timeOut = setTimeout(() => {
-								entry.set_text('');
-							}, 750);
+							entry.set_text('');
 						}
 					});
 				}
@@ -554,7 +551,7 @@ export const DosageWindow = GObject.registerClass(
 							this.setEmptyHistStatus();
 							app.remove_action('showSearch');
 						} else {
-							const histVisible = this._viewStack.get_visible_child_name() === 'history-page';
+							const histVisible = this._viewStack.visible_child_name === 'history-page';
 							this._buttonSearch.sensitive = true;
 							this._buttonSearch.visible = histVisible;
 							app.add_action(this.showSearchAction);
@@ -630,10 +627,10 @@ export const DosageWindow = GObject.registerClass(
 			});
 
 			this._viewStack.connect('notify::visible-child', viewStack => {
-				const todayVisible = viewStack.get_visible_child_name() === 'today-page';
+				const todayVisible = viewStack.visible_child_name === 'today-page';
 				this._btnWhenNeeded.visible = todayVisible && this.hasWhenNeeded;
 
-				const histVisible = viewStack.get_visible_child_name() === 'history-page';
+				const histVisible = viewStack.visible_child_name === 'history-page';
 				this._buttonSearch.visible = histVisible;
 				this._searchBar.visible = histVisible;
 
@@ -744,7 +741,7 @@ export const DosageWindow = GObject.registerClass(
 				? _('No treatments added yet')
 				: _('All done for today');
 
-			const todayVisible = this._viewStack.get_visible_child_name() === 'today-page';
+			const todayVisible = this._viewStack.visible_child_name === 'today-page';
 			this._btnWhenNeeded.visible = todayVisible && this.hasWhenNeeded;
 			this._btnWhenNeeded.active = settings.get_boolean('show-when-needed');
 			if (!noItems) this._todayList.scroll_to(0, null, null);
