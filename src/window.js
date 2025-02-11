@@ -1275,10 +1275,18 @@ export const DosageWindow = GObject.registerClass(
 				while (nextDate < today) {
 					if (item.duration.enabled && (start > nextDate || end < nextDate)) break;
 					const [active, inactive] = item.cycle;
+
+					const updateInv = item.inventory.enabled && item.markConfirmed;
+
 					item.dosage.forEach(timeDose => {
+						if (updateInv && !timeDose.lastTaken) {
+							item.inventory.current -= timeDose.dose;
+						}
+
 						const tempItem = { ...item };
 						tempItem.time = [timeDose.time[0], timeDose.time[1]];
 						tempItem.dose = timeDose.dose;
+
 						switch (item.frequency) {
 							case 'daily':
 								insert(timeDose, tempItem, nextDate);
@@ -1303,9 +1311,13 @@ export const DosageWindow = GObject.registerClass(
 						// so set lastTaken to null after the first loop
 						timeDose.lastTaken = null;
 					});
+
 					current += 1;
 					if (current > active + inactive) current = 1;
 					nextDate.setDate(nextDate.getDate() + 1);
+
+					// trigger signal to update labels
+					it.notify('obj');
 				}
 			}
 
