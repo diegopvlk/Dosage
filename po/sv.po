@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-10 16:50-0300\n"
-"PO-Revision-Date: 2025-02-10 23:31+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"PO-Revision-Date: 2025-02-11 21:43+0000\n"
+"Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
 ">\n"
 "Language: sv\n"
@@ -100,7 +100,7 @@ msgstr ""
 
 #: src/editHistDialog.js:51
 msgid "Auto-confirmed"
-msgstr ""
+msgstr "Automatiskt bekräftad"
 
 #: src/editHistDialog.js:55 src/editHistDialog.js:71
 msgid "Confirmed at"
@@ -116,7 +116,7 @@ msgstr "Glömd"
 
 #: src/historyFactory.js:46
 msgid "Select to be removed"
-msgstr ""
+msgstr "Välj att ta bort"
 
 #: src/historyFactory.js:173
 msgid "Skipped"
@@ -230,7 +230,7 @@ msgstr "Ändra dos"
 
 #: src/timeDoseRow.js:34
 msgid "Remove dose"
-msgstr ""
+msgstr "Ta bort dos"
 
 #: src/treatmentsFactory.js:85
 msgid "Refill stock"
@@ -300,11 +300,11 @@ msgstr "Du har behandlingar som har lågt lager"
 
 #: src/window.js:228
 msgid "An issue has occurred"
-msgstr ""
+msgstr "Ett problem har uppstått"
 
 #: src/window.js:236 src/window.js:258 src/window.js:280 src/window.js:298
 msgid "Close"
-msgstr ""
+msgstr "Stäng"
 
 #: src/window.js:444
 msgid "Show all"
@@ -386,13 +386,11 @@ msgstr "Redigera post"
 
 #: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:210
 msgid "Change time"
-msgstr ""
+msgstr "Ändra tid"
 
 #: data/ui/edit-hist-dialog.blp:130
-#, fuzzy
-#| msgid "Confirm"
 msgid "Confirmed"
-msgstr "Bekräfta"
+msgstr "Bekräftad"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
@@ -547,13 +545,15 @@ msgstr "I dag är cykeldag…"
 
 #: data/ui/med-dialog.blp:710
 msgid "Mark as confirmed"
-msgstr ""
+msgstr "Markera som bekräftad"
 
 #: data/ui/med-dialog.blp:711
 msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
 msgstr ""
+"Om det inte bekräftas manuellt eller hoppas över, kommer det att registreras "
+"som bekräftat i historiken, vilket minskar lager om aktiverat"
 
 #: data/ui/med-dialog.blp:715
 msgid "Increase notification priority"
@@ -616,15 +616,15 @@ msgstr "Från behandlingslistan"
 
 #: data/ui/one-time-dialog.blp:182
 msgid "Amount"
-msgstr ""
+msgstr "Mängd"
 
 #: data/ui/one-time-dialog.blp:183
 msgid "Dose"
-msgstr ""
+msgstr "Dos"
 
 #: data/ui/one-time-dialog.blp:199
 msgid "Time"
-msgstr ""
+msgstr "Tid"
 
 #: data/ui/one-time-dialog.blp:232
 msgid "Date"
@@ -667,10 +667,8 @@ msgid "Show or hide confirm/skip"
 msgstr "Visa eller dölj bekräfta/hoppa över"
 
 #: data/ui/window.blp:23
-#, fuzzy
-#| msgid "When necessary"
 msgid "Show/Hide 'When necessary'"
-msgstr "Vid behov"
+msgstr "Visa/dölj 'Vid behov'"
 
 #: data/ui/window.blp:31
 msgid "Search"
@@ -698,7 +696,7 @@ msgstr "Historik"
 
 #: data/ui/window.blp:209
 msgid "Remove entries"
-msgstr ""
+msgstr "Ta bort poster"
 
 #: data/ui/window.blp:223
 msgid "Treatments"
