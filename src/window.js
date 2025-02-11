@@ -1276,12 +1276,14 @@ export const DosageWindow = GObject.registerClass(
 					if (item.duration.enabled && (start > nextDate || end < nextDate)) break;
 					const [active, inactive] = item.cycle;
 
-					const updateInv = item.inventory.enabled && item.markConfirmed;
+					const invEnabled = item.inventory.enabled && item.markConfirmed;
 
 					item.dosage.forEach(timeDose => {
-						if (updateInv && !timeDose.lastTaken) {
-							item.inventory.current -= timeDose.dose;
-						}
+						const udpdateInv = () => {
+							if (invEnabled && !timeDose.lastTaken) {
+								item.inventory.current -= timeDose.dose;
+							}
+						};
 
 						const tempItem = { ...item };
 						tempItem.time = [timeDose.time[0], timeDose.time[1]];
@@ -1290,20 +1292,24 @@ export const DosageWindow = GObject.registerClass(
 						switch (item.frequency) {
 							case 'daily':
 								insert(timeDose, tempItem, nextDate);
+								udpdateInv();
 								break;
 							case 'specific-days':
 								if (item.days.includes(nextDate.getDay())) {
 									insert(timeDose, tempItem, nextDate);
+									udpdateInv();
 								}
 								break;
 							case 'day-of-month':
 								if (item.monthDay === nextDate.getDate()) {
 									insert(timeDose, tempItem, nextDate);
+									udpdateInv();
 								}
 								break;
 							case 'cycle':
 								if (current <= active) {
 									insert(timeDose, tempItem, nextDate);
+									udpdateInv();
 								}
 								break;
 						}
