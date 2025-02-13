@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-13 16:08-0300\n"
-"PO-Revision-Date: 2025-02-10 23:31+0000\n"
+"PO-Revision-Date: 2025-02-14 09:07+0000\n"
 "Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
 "uk/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10-rc\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -127,7 +127,7 @@ msgstr "Підтверджено"
 
 #: src/editHistDialog.js:78
 msgid "Time unknown"
-msgstr ""
+msgstr "Час невідомий"
 
 #: src/historyFactory.js:46
 msgid "Select to be removed"
@@ -263,7 +263,7 @@ msgstr "Доза"
 
 #: src/prefsDialog.js:137
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 #: src/todayFactory.js:33 src/treatmentsFactory.js:268
 msgid "When necessary"
@@ -692,10 +692,8 @@ msgid "Show or hide confirm/skip"
 msgstr "Показати чи приховати підтвердити/пропустити"
 
 #: data/ui/preferences.blp:128
-#, fuzzy
-#| msgid "Empty history"
 msgid "Export history as CSV"
-msgstr "Історія порожня"
+msgstr "Експорт історії як CSV"
 
 #: data/ui/window.blp:23
 msgid "Show/Hide 'When necessary'"
