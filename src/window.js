@@ -762,6 +762,7 @@ export const DosageWindow = GObject.registerClass(
 									notification: item.notification,
 									time: [timeDose.time[0], timeDose.time[1]],
 									dose: timeDose.dose,
+									originalDose: timeDose.dose,
 									frequency: isWhenNd ? 'when-needed' : undefined,
 									dateTodayLS: new Date(),
 									originalDose: timeDose.dose,

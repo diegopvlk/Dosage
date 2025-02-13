@@ -29,7 +29,7 @@ todayHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 		margin_bottom: 1,
-		opacity: 0.8,
+		opacity: 0.75,
 		label: _('When necessary'),
 	});
 
@@ -233,9 +233,9 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 
 	if (item.frequency === 'when-needed') {
 		box.css_classes = ['item-box', 'card-stripe-w-n', item.color];
-		box.opacity = 0.8;
+		box.opacity = 0.75;
 	} else {
-		box.opacity = 1;
 		box.css_classes = ['item-box', 'card-stripe', item.color];
+		box.opacity = 1;
 	}
 });

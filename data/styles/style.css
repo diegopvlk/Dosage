@@ -65,29 +65,36 @@ dialog.about sheet scrolledwindow clamp {
 }
 listview > header {
   padding: 2px;
-  padding-top: 10px;
-  padding-bottom: 0px;
-  min-height: 9px;
+  padding-top: 12px;
+  padding-bottom: 1px;
+  min-height: 21px;
 }
 
 .item-box {
-  transition: background 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-shadow: var(--list-border), var(--list-shadow);
   border-radius: var(--list-border-radius);
   min-height: 46px;
   padding: 5px 0;
-}
-.item-box:hover {
-  background-image: image(color-mix(in srgb, currentColor 3%, transparent));
-}
-.item-box:active {
-  background-image: image(color-mix(in srgb, currentColor 8%, transparent));
 }
 .item-box > box > label.title:first-child {
   margin-top: -4px;
 }
 .item-box > box > label.subtitle:last-child {
   margin-bottom: -4px;
+}
+
+.item-box check {
+	transition: all 150ms ease-in;
+}
+
+.dosage-list > row .item-box {
+  transition: background 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.dosage-list > row:hover .item-box {
+  background-image: image(color-mix(in srgb, currentColor 3%, transparent));
+}
+.dosage-list > row:active .item-box {
+  background-image: image(color-mix(in srgb, currentColor 8%, transparent));
 }
 
 .card-stripe:dir(ltr) {
@@ -107,10 +114,6 @@ listview > header {
     inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.13));
 }
 
-/* rubberband multi selection */
-row:active:not(:hover) check:not(:checked) {
-  background-color: rgb(from currentColor r g b / calc(alpha * 0.2));
-}
 .dosage-list > row {
   border-radius: calc(var(--list-border-radius) + 2px);
   background: none;
@@ -203,10 +206,10 @@ The same thing happens in today list when confirming
 so use this little hack to scroll to header instead
 */
 listview.scroll-to-top-hack > :nth-child(1) {
-  margin-bottom: -29px;
+  margin-bottom: -34px;
 }
 listview.scroll-to-top-hack > :nth-child(2) {
-  margin-top: 29px;
+  margin-top: 34px;
 }
 
 button.time-group-selection {
