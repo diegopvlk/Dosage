@@ -7,6 +7,8 @@
 import Gtk from 'gi://Gtk';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
+import { historyLS, treatmentsLS } from './window.js';
+import { createTempObj } from './utils.js';
 
 export default function openPrefsDialog(DosageApplication) {
 	const container = GLib.getenv('container');
@@ -21,6 +23,7 @@ export default function openPrefsDialog(DosageApplication) {
 	const confirmSwitch = builder.get_object('confirmSwitch');
 	const skipSwitch = builder.get_object('skipSwitch');
 	const notifBtns = builder.get_object('notifBtns');
+	const exportHistory = builder.get_object('exportHistory');
 
 	const notifBtnsHeader = notifBtns.get_first_child().get_first_child().get_first_child();
 	const notifBtnsExpanderBtn = notifBtnsHeader
@@ -92,5 +95,85 @@ export default function openPrefsDialog(DosageApplication) {
 		settings.set_boolean('skip-button', state);
 	});
 
-	prefsDialog.present(DosageApplication.activeWindow);
+	Gio._promisify(Gtk.FileDialog.prototype, 'save', 'save_finish');
+	Gio._promisify(Gio.File.prototype, 'replace_contents_async', 'replace_contents_finish');
+
+	const DosageWindow = DosageApplication.activeWindow;
+
+	exportHistory.sensitive = historyLS.n_items > 0;
+
+	exportHistory.connect('activated', () => {
+		saveFile('history', DosageWindow).catch(console.error);
+	});
+
+	prefsDialog.present(DosageWindow);
+}
+
+async function saveFile(type, DosageWindow) {
+	let name = _('Dosage') + '_';
+	name += type === 'history' ? _('History') : _('Treatments');
+
+	const fileDialog = new Gtk.FileDialog({
+		initial_name: name + '.csv',
+	});
+
+	const file = await fileDialog.save(DosageWindow, null);
+
+	let tempObj, csv;
+
+	if (type === 'history') {
+		tempObj = createTempObj('history', historyLS);
+		csv = getHistoryCSV(tempObj.history);
+	} else {
+		tempObj = createTempObj('treatments', treatmentsLS);
+		csv = getTreatmentsCSV(tempObj.treatments);
+	}
+
+	const contents = new TextEncoder().encode(csv);
+	await file.replace_contents_async(contents, null, false, Gio.FileCreateFlags.NONE, null);
+}
+
+function getHistoryCSV(data) {
+	const header = [_('Date'), _('Time'), _('Name'), _('Dose'), _('Status')];
+
+	const rows = data.map(obj => {
+		const time = new Date();
+		time.setHours(obj.time[0]);
+		time.setMinutes(obj.time[1]);
+
+		const timeString = time.toLocaleTimeString(undefined, {
+			hour: 'numeric',
+			minute: 'numeric',
+		});
+
+		const dateString = new Date(obj.taken[0]).toLocaleDateString(undefined, {
+			year: 'numeric',
+			month: '2-digit',
+			day: '2-digit',
+		});
+
+		let status;
+		switch (obj.taken[1]) {
+			case 0:
+				status = _('Skipped');
+				break;
+			case -1:
+				status = _('Missed');
+				break;
+			default:
+				status = _('Confirmed');
+		}
+
+		const doseUnit = `${obj.dose} ${obj.unit}`;
+
+		return [
+			`"${dateString}"`,
+			`"${timeString}"`,
+			`"${String(obj.name).replace(/"/g, '""')}"`,
+			`"${doseUnit}"`,
+			`"${status}"`,
+		].join(',');
+	});
+
+	return [header.join(','), ...rows].join('\n');
 }
