@@ -37,12 +37,21 @@ export function openEditHistDialog(DosageWindow, list, position) {
 	nameDoseSpinRow.value = item.dose;
 	takenRow.subtitle = timePicker.entry.text;
 
+	let confirmActivated = false;
+
 	nameDoseSpinRow.connect('output', row => {
 		nameDoseSpinRow.subtitle = `${row.get_value()} ${item.unit}`;
 	});
 
 	timePicker.entry.connect('changed', e => {
-		takenRow.subtitle = e.text;
+		if (takenRow.subtitle != e.text) {
+			takenRow.subtitle = e.text;
+
+			if (histBtnConfirmed.active) {
+				takenRow.title = _('Confirmed at');
+				confirmActivated = true;
+			}
+		}
 	});
 
 	switch (item.taken[1]) {
@@ -63,22 +72,27 @@ export function openEditHistDialog(DosageWindow, list, position) {
 			histBtnSkipped.set_active(true);
 			saveButton.sensitive = false;
 			break;
+		case 3:
+			histBtnConfirmed.set_active(true);
+			takenRow.title = _('Confirmed');
+			takenRow.subtitle = _('Time unknown');
+			break;
 	}
-
-	let confirmClicked = false;
 
 	histBtnConfirmed.connect('clicked', () => {
 		takenRow.title = _('Confirmed at');
 		histBtnSkipped.set_active(false);
 		histBtnConfirmed.set_active(true);
 		saveButton.sensitive = true;
-		confirmClicked = true;
+		confirmActivated = true;
+		takenRow.subtitle = timePicker.entry.text;
 	});
 	histBtnSkipped.connect('clicked', () => {
 		takenRow.title = _('Skipped at');
 		histBtnSkipped.set_active(true);
 		histBtnConfirmed.set_active(false);
 		saveButton.sensitive = true;
+		takenRow.subtitle = timePicker.entry.text;
 	});
 
 	cancelButton.connect('clicked', () => editHistDialog.force_close());
@@ -118,8 +132,9 @@ export function openEditHistDialog(DosageWindow, list, position) {
 		const confirmActive = histBtnConfirmed.active;
 
 		if (skipActive) item.taken[1] = 0;
-		else if (confirmClicked && confirmActive) item.taken[1] = 1;
+		else if (confirmActivated && confirmActive) item.taken[1] = 1;
 		else if (tempTaken1 === 2 && confirmActive) item.taken[1] = 2;
+		else if (tempTaken1 === 3 && confirmActive) item.taken[1] = 3;
 		else item.taken[1] = 1;
 
 		if (item.taken[1] === -1) return;

@@ -943,7 +943,7 @@ export const DosageWindow = GObject.registerClass(
 					confirmAction.connect('activate', () => {
 						const confirmPromise = new Promise((resolve, reject) => {
 							resolve(this.addNotifItemsToHistory(groupedObj[dateKey], 1));
-						});
+						}).catch(console.error);
 						confirmPromise.then(_ => schedule());
 					});
 
@@ -951,7 +951,7 @@ export const DosageWindow = GObject.registerClass(
 					skipAction.connect('activate', () => {
 						const skipPromise = new Promise((resolve, reject) => {
 							resolve(this.addNotifItemsToHistory(groupedObj[dateKey], 0));
-						});
+						}).catch(console.error);
 						skipPromise.then(_ => schedule());
 					});
 
@@ -1159,20 +1159,22 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		updateTreatInventory(item, taken) {
-			if (taken !== 1) return;
-
+		updateTreatInventory(item, { increase = false } = {}) {
 			for (const it of treatmentsLS) {
 				const treatItem = it.obj;
 				const sameName = item.name === treatItem.name;
-				const updateInv = sameName && treatItem.inventory.enabled && taken === 1;
+				const updateInv = sameName && treatItem.inventory.enabled;
 
-				if (updateInv) treatItem.inventory.current -= item.dose;
-
-				// trigger signal to update labels
-				it.notify('obj');
-
-				return;
+				if (updateInv) {
+					if (increase) {
+						treatItem.inventory.current += item.dose;
+					} else {
+						treatItem.inventory.current -= item.dose;
+					}
+					// trigger signal to update labels
+					it.notify('obj');
+					return;
+				}
 			}
 		}
 
@@ -1183,24 +1185,57 @@ export const DosageWindow = GObject.registerClass(
 
 			groupedArr.forEach(item => {
 				const dateLS = item.dateTodayLS.setHours(0, 0, 0, 0);
-				const time = dateLS === today ? item.time : [now.getHours(), now.getMinutes()];
 
-				itemsToAdd.push(
-					new MedicationObject({
-						obj: {
-							name: item.name,
-							unit: item.unit,
-							time: time,
-							dose: item.dose,
-							color: item.color,
-							taken: [now.getTime(), taken],
-						},
-					}),
-				);
+				if (dateLS !== today) {
+					const dateLSItem = new Date(item.dateTodayLS);
+					dateLSItem.setHours(23, 59, 59, 999);
 
-				dateLS === today
-					? this.updateTreatInvAndLastTk(item, taken)
-					: this.updateTreatInventory(item, taken);
+					for (const it of historyLS) {
+						const sameName = it.obj.name === item.name;
+						const sameTime = String(it.obj.time) === String(item.time);
+						const sameUnit = it.obj.unit === item.unit;
+						const sameDose = it.obj.dose === item.dose;
+						const sameDate = new Date(it.obj.taken[0]).setHours(0, 0, 0, 0) === dateLS;
+						const isMissed = it.obj.taken[1] === -1;
+						const isMarkedConfirmed = it.obj.taken[1] === 2;
+
+						if (
+							sameName &&
+							sameTime &&
+							sameUnit &&
+							sameDose &&
+							sameDate &&
+							(isMissed || isMarkedConfirmed)
+						) {
+							it.obj.taken[0] = dateLSItem.getTime();
+							// 3 for items not confirmed today
+							it.obj.taken[1] = taken === 1 ? 3 : 0;
+
+							if (taken === 0 && isMarkedConfirmed) {
+								this.updateTreatInventory(item, { increase: true });
+							} else if (taken === 1 && isMissed) {
+								this.updateTreatInventory(item);
+							}
+
+							it.notify('obj');
+							break;
+						}
+					}
+				} else {
+					itemsToAdd.push(
+						new MedicationObject({
+							obj: {
+								name: item.name,
+								unit: item.unit,
+								time: item.time,
+								dose: item.dose,
+								color: item.color,
+								taken: [now.getTime(), taken],
+							},
+						}),
+					);
+					this.updateTreatInvAndLastTk(item, taken);
+				}
 			});
 
 			historyLS.splice(0, 0, itemsToAdd.reverse());

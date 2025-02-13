@@ -145,38 +145,47 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 			listItem.disconnect(listItem.signal);
 		});
 
+		listItem.item.connect('notify::obj', () => {
+			setLabels();
+		});
+
 		listItem.controllerAndSignal = true;
 	}
 
-	const itemTakenDate = GLib.DateTime.new_from_unix_local(item.taken[0] / 1000);
-	const itemTime = GLib.DateTime.new_local(1, 1, 1, item.time[0], item.time[1], 1);
-	const time = itemTime.format(timeFormat);
-	const timeTaken = itemTakenDate.format(timeFormat);
+	function setLabels() {
+		const itemTakenDate = GLib.DateTime.new_from_unix_local(item.taken[0] / 1000);
+		const itemTime = GLib.DateTime.new_local(1, 1, 1, item.time[0], item.time[1], 1);
+		const time = itemTime.format(timeFormat);
+		const timeTaken = itemTakenDate.format(timeFormat);
 
-	nameLabel.label = item.name;
-	doseLabel.label = `${item.dose} ${item.unit} • ${time}`;
+		nameLabel.label = item.name;
+		doseLabel.label = `${item.dose} ${item.unit} • ${time}`;
 
-	const isConfirmed = item.taken[1] === 1 || item.taken[1] === 2;
-	takenIcon.visible = isConfirmed;
+		const isConfirmed = item.taken[1] === 1 || item.taken[1] === 2 || item.taken[1] === 3;
+		takenIcon.visible = isConfirmed;
 
-	switch (item.taken[1]) {
-		case 1:
-			takenLabel.label = timeTaken;
-			takenIcon.icon_name = 'check-confirmed-symbolic';
-			break;
-		case 2:
-			takenLabel.label = timeTaken;
-			takenIcon.icon_name = 'check-auto-confirmed-symbolic';
-			break;
-		case 0:
-			takenLabel.label = _('Skipped');
-			break;
-		case -1:
-			takenLabel.label = _('Missed');
-			break;
-		default:
-			takenLabel.label = timeTaken;
+		switch (item.taken[1]) {
+			case 1:
+				takenLabel.label = timeTaken;
+				takenIcon.icon_name = 'check-confirmed-symbolic';
+				break;
+			case 2:
+				takenLabel.label = timeTaken;
+				takenIcon.icon_name = 'check-auto-confirmed-symbolic';
+				break;
+			case 0:
+				takenLabel.label = _('Skipped');
+				break;
+			case -1:
+				takenLabel.label = _('Missed');
+				break;
+			case 3:
+				takenLabel.label = _('Confirmed');
+				takenIcon.icon_name = 'check-confirmed-symbolic';
+		}
 	}
+
+	setLabels();
 
 	box.css_classes = ['item-box', item.color];
 });
