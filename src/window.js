@@ -87,6 +87,7 @@ export const DosageWindow = GObject.registerClass(
 		#start() {
 			const load = () => {
 				this.loadData();
+				this.withdrawPastNotifications();
 				this.updateCycleAndLastUp();
 				this.updateJsonFile('treatments', treatmentsLS);
 				this.loadToday();
@@ -100,6 +101,27 @@ export const DosageWindow = GObject.registerClass(
 			loadPromise.then(_ => {
 				setTimeout(() => load(), 100);
 			});
+		}
+
+		withdrawPastNotifications() {
+			// these are from the closed app
+			// meaning the actions doesn't work, so remove then
+
+			const prevDate = new Date(this.lastUpdate);
+			prevDate.setDate(prevDate.getDate() - 1);
+
+			for (const it of treatmentsLS) {
+				const item = it.obj;
+				for (const timeDose of item.dosage) {
+					const currentDate = new Date();
+
+					while (currentDate > prevDate) {
+						currentDate.setDate(currentDate.getDate() - 1);
+						const dateKey = currentDate.setHours(timeDose.time[0], timeDose.time[1], 0, 0);
+						this.app.withdraw_notification(String(dateKey));
+					}
+				}
+			}
 		}
 
 		loadData() {
