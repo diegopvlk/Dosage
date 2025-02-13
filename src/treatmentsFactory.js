@@ -87,7 +87,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 
 	listItem.invLabelBtn.connect('clicked', btn => {
 		if (!delayDialog) {
-			openRefillDialog(listItem, listItem.get_position());
+			openRefillDialog(listItem, listItem.item);
 			delayDialog = true;
 			setTimeout(() => {
 				delayDialog = false;
@@ -125,8 +125,8 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 	// activate item with space bar
 	listItem.keyController.connect('key-pressed', (_, keyval, keycode, state) => {
 		if (keyval === Gdk.KEY_space) {
-			const row = listItem.box.get_parent();
-			const listView = row.get_parent();
+			const row = listItem.box.parent;
+			const listView = row.parent;
 			listView.emit('activate', listItem.position);
 		}
 	});
@@ -136,23 +136,24 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 
 treatmentsFactory.connect('bind', (factory, listItem) => {
 	const DosageWindow = DosageApplication.get_default().activeWindow;
-	const app = DosageWindow.get_application();
+	const app = DosageWindow.application;
 
 	const { box, nameLabel, optionsMenu, icon } = listItem;
-	const item = listItem.get_item().obj;
-	const pos = listItem.get_position();
-	const row = box.get_parent();
+	const item = listItem.item.obj;
+	const pos = listItem.position;
+	const row = box.parent;
 	const inv = item.inventory;
 
 	if (!listItem.controllerAdded) {
 		row.add_controller(listItem.keyController);
+
+		listItem.activateItem = () => {
+			const listView = row.parent;
+			listView.emit('activate', pos);
+		};
+
 		listItem.controllerAdded = true;
 	}
-
-	const activateItem = () => {
-		const listView = row.get_parent();
-		listView.emit('activate', pos);
-	};
 
 	app.remove_action(`edit${pos}`);
 	app.remove_action(`refill${pos}`);
@@ -161,7 +162,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	optionsMenu.remove_all();
 
 	const editAct = new Gio.SimpleAction({ name: `edit${pos}` });
-	editAct.connect('activate', () => activateItem());
+	editAct.connect('activate', () => listItem.activateItem());
 	app.add_action(editAct);
 
 	if (inv.enabled) {
@@ -191,15 +192,15 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 
 	setInventoryAndDateLabels(listItem);
 
-	listItem.get_item().connect('notify::obj', () => {
+	listItem.item.connect('notify::obj', () => {
 		setInventoryAndDateLabels(listItem);
 	});
 
-	box.set_css_classes(['item-box', item.color]);
+	box.css_classes = ['item-box', item.color];
 });
 
 function setInventoryAndDateLabels(listItem) {
-	const item = listItem.get_item().obj;
+	const item = listItem.item.obj;
 	const { infoLabel, durationNextDateLabel, invLabelBtn } = listItem;
 	const today = new Date().setHours(0, 0, 0, 0);
 	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
@@ -209,7 +210,7 @@ function setInventoryAndDateLabels(listItem) {
 	if (inv.enabled) {
 		let currInv = inv.current < 0 ? 0 : inv.current;
 
-		invLabelBtn.set_visible(true);
+		invLabelBtn.visible = true;
 		invLabelBtn.label = `${currInv} ` + _('Remaining');
 		invLabelBtn.remove_css_class('low-stock');
 
@@ -225,7 +226,7 @@ function setInventoryAndDateLabels(listItem) {
 	const endedLabel = _('Ended on') + ` ${formatDate(item.duration.end)}`;
 
 	if (item.duration.enabled && item.frequency !== 'when-needed') {
-		durationNextDateLabel.set_visible(true);
+		durationNextDateLabel.visible = true;
 		durationNextDateLabel.label = untilLabel;
 		if (start > today) {
 			durationNextDateLabel.label = startLabel;
@@ -256,9 +257,9 @@ function setInventoryAndDateLabels(listItem) {
 			}
 
 			if (nextDt <= today && !item.duration.enabled) {
-				durationNextDateLabel.set_visible(false);
+				durationNextDateLabel.visible = false;
 			} else {
-				durationNextDateLabel.set_visible(true);
+				durationNextDateLabel.visible = true;
 			}
 
 			infoLabel.label = `${_('Cycle')} • ${item.cycle[0]} ⊷ ${item.cycle[1]}`;

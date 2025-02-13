@@ -379,33 +379,33 @@ export const DosageWindow = GObject.registerClass(
 
 		removeHistItems() {
 			const today = new Date().setHours(0, 0, 0, 0);
-			let pos = 0;
 
-			this.histItemsToRm.forEach(itRm => {
-				const itemRm = itRm.obj;
+			const positionsToRm = [];
+
+			for (const item of this.histItemsToRm) {
+				const position = historyLS.find(item)[1];
+				positionsToRm.push(position);
+
+				const itemRm = item.obj;
 				const removedDt = new Date(itemRm.taken[0]);
 				const date = removedDt.setHours(0, 0, 0, 0);
 
-				pos = historyLS.find(itRm)[1];
-				historyLS.remove(pos);
-
-				if (date !== today) return;
+				if (date !== today) continue;
 
 				for (const it of treatmentsLS) {
 					const item = it.obj;
 					const sameItem = item.name === itemRm.name;
 					if (sameItem) {
 						item.dosage.forEach(timeDose => {
-							for (const _i of this.todayLS) {
-								const sameName = item.name === itemRm.name;
-								const sameTime = String(timeDose.time) === String(itemRm.time);
-								// update lastTaken when removing an item
-								// with the same name, time and date of today item
-								if (sameName && sameTime) {
-									timeDose.lastTaken = null;
-								}
+							const sameName = item.name === itemRm.name;
+							const sameTime = String(timeDose.time) === String(itemRm.time);
+							// update lastTaken when removing an item
+							// with the same name, time and date of today item
+							if (sameName && sameTime) {
+								timeDose.lastTaken = null;
 							}
 						});
+
 						const updateInv =
 							item.inventory.enabled && (itemRm.taken[1] === 1 || itemRm.taken[1] === 2);
 
@@ -418,9 +418,16 @@ export const DosageWindow = GObject.registerClass(
 						break;
 					}
 				}
-			});
+			}
 
-			this.histItemsToRm.length = 0;
+			// important for performance and removing in the right order (descending)
+			positionsToRm.sort((a, b) => b - a);
+
+			for (const position of positionsToRm) {
+				historyLS.splice(position, 1, []);
+			}
+
+			this.unselectHistItems();
 			this.updateEverything({ skipCycleUp: true });
 			this.scheduleNotifications('removing');
 		}
@@ -511,12 +518,24 @@ export const DosageWindow = GObject.registerClass(
 							model: this.sortedHistoryModel,
 						});
 
-						this.histItemsToRm = [];
-
 						this._historyList.model = this.histMultiSelect;
+
+						this.histItemsToRm = [];
 						this.setShowHistoryAmount();
 
 						this.histMultiSelect.connect('selection-changed', (selModel, position, nItems) => {
+							this.histItemsToRm.length = 0;
+
+							const selectionBitset = selModel.get_selection();
+							const maxSize = selectionBitset.get_maximum();
+
+							for (let i = 0; i <= maxSize; i++) {
+								if (selectionBitset.contains(i)) {
+									const itRm = selModel.get_item(i);
+									this.histItemsToRm.push(itRm);
+								}
+							}
+
 							const noItems = this.histItemsToRm.length === 0;
 							this._removeHistItemsBtn.visible = !noItems;
 							this._unselectHistItemsBtn.visible = !noItems;
@@ -664,7 +683,19 @@ export const DosageWindow = GObject.registerClass(
 
 				this._todayList.model = this.todayMultiSelect;
 
-				this.todayMultiSelect.connect('selection-changed', () => {
+				this.todayMultiSelect.connect('selection-changed', (selModel, position, nItems) => {
+					this.todayItems.length = 0;
+
+					const selectionBitset = selModel.get_selection();
+					const maxSize = selectionBitset.get_maximum();
+
+					for (let i = 0; i <= maxSize; i++) {
+						if (selectionBitset.contains(i)) {
+							const item = selModel.get_item(i);
+							this.todayItems.push(item);
+						}
+					}
+
 					const hasTodayItems = this.todayItems.length > 0;
 					this.updateEntryBtn(hasTodayItems);
 				});
@@ -711,6 +742,7 @@ export const DosageWindow = GObject.registerClass(
 									dose: timeDose.dose,
 									frequency: isWhenNd ? 'when-needed' : undefined,
 									dateTodayLS: new Date(),
+									originalDose: timeDose.dose,
 								},
 							}),
 						);
@@ -972,6 +1004,8 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		setShowWhenNeeded() {
+			this.unselectTodayItems();
+
 			const btn = this._btnWhenNeeded;
 			const showWhenNeeded = btn.active;
 
@@ -984,23 +1018,23 @@ export const DosageWindow = GObject.registerClass(
 			const noItems = this.sortedTodayModel.get_n_items() === 0;
 			this._emptyToday.set_visible(noItems);
 
-			this.unselectTodayItems();
-
 			if (showWhenNeeded) {
 				this._todayList.scroll_to(0, null, null);
 			}
 		}
 
 		selectTodayItems(list, position, groupCheck) {
-			const item = list.get_model().get_item(position).obj;
-			item.checkButton.active = groupCheck || !item.checkButton.active;
+			const isSelected = this.todayMultiSelect.is_selected(position);
+
+			if (groupCheck || !isSelected) {
+				this.todayMultiSelect.select_item(position, false);
+			} else {
+				this.todayMultiSelect.unselect_item(position);
+			}
 		}
 
 		unselectTodayItems() {
-			this.todayItems.forEach(item => {
-				item.checkButton.set_active(false);
-			});
-			this.todayItems = [];
+			this.todayItems.length = 0;
 			this.todayMultiSelect.unselect_all();
 			this.updateEntryBtn(false);
 		}
@@ -1010,7 +1044,7 @@ export const DosageWindow = GObject.registerClass(
 			this._skipBtn.set_visible(hasTodayItems);
 			this._unselectBtn.set_visible(hasTodayItems);
 
-			const hasWN = this.todayItems.some(i => i.frequency === 'when-needed');
+			const hasWN = this.todayItems.some(i => i.obj.frequency === 'when-needed');
 			this._skipBtn.sensitive = !hasWN;
 
 			if (hasTodayItems) {
@@ -1030,7 +1064,9 @@ export const DosageWindow = GObject.registerClass(
 			const time = [hours, minutes];
 
 			if (this.todayItems.length > 0) {
-				this.todayItems.forEach(item => {
+				this.todayItems.forEach(it => {
+					const item = it.obj;
+
 					const isWhenNd = item.frequency === 'when-needed';
 					itemsToAdd.push(
 						new MedicationObject({
@@ -1150,8 +1186,13 @@ export const DosageWindow = GObject.registerClass(
 
 		editHistoryItem(list, position) {
 			if (this.ctrlPressed) {
-				const item = list.get_model().get_item(position);
-				item.checkButton.active = !item.checkButton.active;
+				const isSelected = this.histMultiSelect.is_selected(position);
+
+				if (!isSelected) {
+					this.histMultiSelect.select_item(position, false);
+				} else {
+					this.histMultiSelect.unselect_item(position);
+				}
 				return;
 			}
 			openEditHistDialog(this, list, position);

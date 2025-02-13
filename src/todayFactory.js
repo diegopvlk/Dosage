@@ -46,7 +46,7 @@ todayHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 });
 
 todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
-	const item = listHeaderItem.get_item().obj;
+	const item = listHeaderItem.item.obj;
 	const selectTimeGroupBtn = listHeaderItem.selectTimeGroupBtn;
 	const isWhenNd = item.frequency === 'when-needed';
 
@@ -60,8 +60,8 @@ todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	selectTimeGroupBtn.connect('clicked', _btn => {
 		const DW = DosageApplication.get_default().activeWindow;
 
-		const start = listHeaderItem.get_start();
-		const end = listHeaderItem.get_end();
+		const start = listHeaderItem.start;
+		const end = listHeaderItem.end;
 
 		for (let pos = start; pos < end; pos++) {
 			DW.selectTodayItems(DW._todayList, pos, true);
@@ -153,23 +153,13 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 		can_target: false,
 	});
 
-	listItem.checkButton.connect('toggled', btn => {
-		const DW = DosageApplication.get_default().activeWindow;
-		const pos = listItem.position;
-		const item = DW.sortedTodayModel.get_item(pos);
-
-		if (btn.active) {
-			DW.todayItems.push(item.obj);
-			DW.todayMultiSelect.select_item(pos, false);
-		} else {
-			if (!item) return;
-			const idxToRm = DW.todayItems.indexOf(item.obj);
-			DW.todayItems.splice(idxToRm, 1);
-			DW.todayMultiSelect.unselect_item(pos);
-		}
+	listItem.signal = listItem.connect('notify::selected', () => {
+		listItem.checkButton.active = listItem.selected;
 	});
 
 	listItem.box.append(listItem.checkButton);
+
+	listItem.selectable = false;
 
 	listItem.set_child(listItem.box);
 
@@ -178,68 +168,74 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	// activate item with space bar
 	listItem.keyController.connect('key-pressed', (_, keyval, keycode, state) => {
 		if (keyval === Gdk.KEY_space) {
-			const row = listItem.box.get_parent();
-			const listView = row.get_parent();
+			const row = listItem.box.parent;
+			const listView = row.parent;
 			listView.emit('activate', listItem.position);
 		}
 	});
 
-	listItem.controllerAdded = false;
+	listItem.controllerAndSignals = false;
 });
 
 todayItemFactory.connect('bind', (factory, listItem) => {
-	const item = listItem.get_item().obj;
+	const item = listItem.item.obj;
 	const box = listItem.box;
-	const row = box.get_parent();
+	const row = box.parent;
 	const icon = listItem.icon;
 	const amountBtn = listItem.amountBtn;
 	const amtSpinRow = listItem.amtSpinRow;
 	const name = listItem.nameLabel;
 	const doseAndNotes = listItem.doseAndNotes;
-	const checkButton = listItem.checkButton;
-	const originalDose = item.dose;
-	listItem.set_selectable(false);
-	listItem.checkButton.active = listItem.selected;
 
-	if (!listItem.controllerAdded) {
+	if (!listItem.controllerAndSignals) {
 		row.add_controller(listItem.keyController);
-		listItem.controllerAdded = true;
-	}
 
-	item.checkButton = checkButton;
+		listItem.checkButton.connect('toggled', btn => {
+			amountBtn.visible = btn.active;
+			btn.active = listItem.selected;
+			listItem.checkButton.active = listItem.selected;
+		});
+
+		amtSpinRow.connect('output', row => {
+			item.dose = row.value;
+			listItem.setDoseAndNotes();
+		});
+
+		amountBtn.connect('notify::visible', btn => {
+			if (!btn.visible) {
+				item.dose = item.originalDose;
+				listItem.setDoseAndNotes();
+			}
+		});
+
+		row.connect('unrealize', () => {
+			listItem.disconnect(listItem.signal);
+		});
+
+		listItem.setDoseAndNotes = () => {
+			doseAndNotes.label = `${item.dose} ${item.unit}`;
+			if (item.notes !== '') {
+				doseAndNotes.label += ` • ${item.notes}`;
+			}
+		};
+
+		listItem.controllerAndSignals = true;
+	}
 
 	name.label = item.name;
 
-	const setDoseAndNotes = () => {
-		doseAndNotes.label = `${item.dose} ${item.unit}`;
-		if (item.notes !== '') {
-			doseAndNotes.label += ` • ${item.notes}`;
-		}
-	};
-	setDoseAndNotes();
+	listItem.setDoseAndNotes();
 
 	amtSpinRow.set_value(item.dose);
-	amtSpinRow.connect('output', row => {
-		item.dose = row.get_value();
-		setDoseAndNotes();
-	});
-
-	checkButton.connect('toggled', btn => {
-		if (!btn.active) {
-			item.dose = originalDose;
-			setDoseAndNotes();
-		}
-		amountBtn.set_visible(btn.active);
-	});
 
 	icon.icon_name = item.icon;
-	box.set_css_classes(['item-box', 'card-stripe', item.color]);
+	box.css_classes = ['item-box', 'card-stripe', item.color];
 
 	if (item.frequency === 'when-needed') {
-		box.set_css_classes(['item-box', 'card-stripe-w-n', item.color]);
+		box.css_classes = ['item-box', 'card-stripe-w-n', item.color];
 		box.opacity = 0.8;
 	} else {
 		box.opacity = 1;
-		box.set_css_classes(['item-box', 'card-stripe', item.color]);
+		box.css_classes = ['item-box', 'card-stripe', item.color];
 	}
 });

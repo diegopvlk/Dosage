@@ -49,25 +49,23 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	listItem.checkButton.connect('toggled', btn => {
 		const DW = DosageApplication.get_default().activeWindow;
 		const pos = listItem.position;
-		let item;
-
-		if (DW.histQuery) {
-			item = DW.filterHistoryModel.get_item(pos);
-		} else {
-			item = DW.histMultiSelect.get_item(pos);
-		}
 
 		if (btn.active) {
-			DW.histItemsToRm.push(item);
 			DW.histMultiSelect.select_item(pos, false);
 		} else {
-			const idxToRm = DW.histItemsToRm.indexOf(item);
-			DW.histItemsToRm.splice(idxToRm, 1);
 			DW.histMultiSelect.unselect_item(pos);
 		}
+
+		btn.active = listItem.selected;
+	});
+
+	listItem.signal = listItem.connect('notify::selected', () => {
+		listItem.checkButton.active = listItem.selected;
 	});
 
 	listItem.box.append(listItem.checkButton);
+
+	listItem.selectable = false;
 
 	listItem.labelsBox = new Gtk.Box({
 		valign: Gtk.Align.CENTER,
@@ -122,31 +120,32 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	// activate item with space bar
 	listItem.keyController.connect('key-pressed', (_, keyval, keycode, state) => {
 		if (keyval === Gdk.KEY_space) {
-			const row = listItem.box.get_parent();
-			const listView = row.get_parent();
+			const row = listItem.box.parent;
+			const listView = row.parent;
 			listView.emit('activate', listItem.position);
 		}
 	});
 
-	listItem.controllerAdded = false;
+	listItem.controllerAndSignal = false;
 });
 
 historyItemFactory.connect('bind', (factory, listItem) => {
 	const item = listItem.get_item().obj;
 	const box = listItem.box;
-	const row = box.get_parent();
+	const row = box.parent;
 	const nameLabel = listItem.nameLabel;
 	const doseLabel = listItem.doseLabel;
 	const takenLabel = listItem.takenLabel;
 	const takenIcon = listItem.takenIcon;
 
-	listItem.item.checkButton = listItem.checkButton;
-	listItem.selectable = false;
-	listItem.checkButton.active = listItem.selected;
-
-	if (!listItem.controllerAdded) {
+	if (!listItem.controllerAndSignal) {
 		row.add_controller(listItem.keyController);
-		listItem.controllerAdded = true;
+
+		row.connect('unrealize', () => {
+			listItem.disconnect(listItem.signal);
+		});
+
+		listItem.controllerAndSignal = true;
 	}
 
 	const itemTakenDate = GLib.DateTime.new_from_unix_local(item.taken[0] / 1000);
@@ -158,7 +157,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	doseLabel.label = `${item.dose} ${item.unit} • ${time}`;
 
 	const isConfirmed = item.taken[1] === 1 || item.taken[1] === 2;
-	takenIcon.set_visible(isConfirmed);
+	takenIcon.visible = isConfirmed;
 
 	switch (item.taken[1]) {
 		case 1:
@@ -179,5 +178,5 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 			takenLabel.label = timeTaken;
 	}
 
-	box.set_css_classes(['item-box', item.color]);
+	box.css_classes = ['item-box', item.color];
 });
