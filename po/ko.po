@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-10 16:50-0300\n"
+"POT-Creation-Date: 2025-02-13 13:44-0300\n"
 "PO-Revision-Date: 2025-02-10 23:31+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
-"Language-Team: Korean <https://hosted.weblate.org/projects/dosage/dosage/ko/>"
-"\n"
+"Language-Team: Korean <https://hosted.weblate.org/projects/dosage/dosage/ko/"
+">\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:40
-#: src/window.js:969
+#: src/window.js:1024
 msgid "Dosage"
 msgstr "복용량"
 
@@ -93,27 +93,37 @@ msgstr "오늘의 복용량 창 (다크 테마)"
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr "약물;추적기;알림;오늘;치료;알약;약;치료제;"
 
-#: src/editHistDialog.js:51
-msgid "Auto-confirmed"
-msgstr ""
-
-#: src/editHistDialog.js:55 src/editHistDialog.js:71
+#: src/editHistDialog.js:51 src/editHistDialog.js:64 src/editHistDialog.js:83
 msgid "Confirmed at"
 msgstr "확인된 시간"
 
-#: src/editHistDialog.js:59 src/editHistDialog.js:78
+#: src/editHistDialog.js:60
+msgid "Auto-confirmed"
+msgstr ""
+
+#: src/editHistDialog.js:68 src/editHistDialog.js:91
 msgid "Skipped at"
 msgstr "건너뛴 시간"
 
-#: src/editHistDialog.js:62 src/historyFactory.js:176
+#: src/editHistDialog.js:71 src/historyFactory.js:180
 msgid "Missed"
 msgstr "놓친"
+
+#: src/editHistDialog.js:77 src/historyFactory.js:183
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirmed"
+msgstr "확인"
+
+#: src/editHistDialog.js:78
+msgid "Time unknown"
+msgstr ""
 
 #: src/historyFactory.js:46
 msgid "Select to be removed"
 msgstr ""
 
-#: src/historyFactory.js:173
+#: src/historyFactory.js:177
 msgid "Skipped"
 msgstr "건너뜀"
 
@@ -167,7 +177,7 @@ msgstr "선택"
 msgid "Day of the month"
 msgstr "월의 날짜"
 
-#: src/medDialog.js:447 src/treatmentsFactory.js:243
+#: src/medDialog.js:447 src/treatmentsFactory.js:244
 msgid "Day"
 msgstr "날"
 
@@ -175,7 +185,7 @@ msgstr "날"
 msgid "Specific days"
 msgstr "특정 요일"
 
-#: src/medDialog.js:481 src/treatmentsFactory.js:264
+#: src/medDialog.js:481 src/treatmentsFactory.js:265
 msgid "Cycle"
 msgstr "주기"
 
@@ -211,11 +221,11 @@ msgstr "삭제됩니다"
 msgid "Cancel"
 msgstr "취소"
 
-#: src/medDialog.js:581 src/treatmentsFactory.js:187
+#: src/medDialog.js:581 src/treatmentsFactory.js:188
 msgid "Delete"
 msgstr "삭제"
 
-#: src/todayFactory.js:33 src/treatmentsFactory.js:267
+#: src/todayFactory.js:33 src/treatmentsFactory.js:268
 msgid "When necessary"
 msgstr "필요할 때"
 
@@ -235,44 +245,44 @@ msgstr ""
 msgid "Options"
 msgstr "옵션"
 
-#: src/treatmentsFactory.js:184
+#: src/treatmentsFactory.js:185
 msgid "Edit"
 msgstr "편집"
 
-#: src/treatmentsFactory.js:185
+#: src/treatmentsFactory.js:186
 msgid "Refill"
 msgstr "재충전"
 
-#: src/treatmentsFactory.js:186
+#: src/treatmentsFactory.js:187
 msgid "Duplicate"
 msgstr "복제"
 
-#: src/treatmentsFactory.js:213
+#: src/treatmentsFactory.js:214
 msgid "Remaining"
 msgstr "남은"
 
-#: src/treatmentsFactory.js:217
+#: src/treatmentsFactory.js:218
 msgid "Low stock"
 msgstr "재고 부족"
 
 #. TRANSLATORS: label for when duration is enabled
-#: src/treatmentsFactory.js:223
+#: src/treatmentsFactory.js:224
 msgid "Starts on"
 msgstr "시작일"
 
-#: src/treatmentsFactory.js:224
+#: src/treatmentsFactory.js:225
 msgid "Until"
 msgstr "까지"
 
-#: src/treatmentsFactory.js:225
+#: src/treatmentsFactory.js:226
 msgid "Ended on"
 msgstr "종료일"
 
-#: src/treatmentsFactory.js:237 src/utils.js:52
+#: src/treatmentsFactory.js:238 src/utils.js:52
 msgid "Daily"
 msgstr "매일"
 
-#: src/treatmentsFactory.js:252 src/treatmentsFactory.js:255
+#: src/treatmentsFactory.js:253 src/treatmentsFactory.js:256
 msgid "Next dose"
 msgstr "다음 복용량"
 
@@ -284,74 +294,74 @@ msgstr "주말"
 msgid "Weekdays"
 msgstr "평일"
 
-#: src/window.js:143 src/window.js:860
+#: src/window.js:165 src/window.js:915
 msgid "Reminder"
 msgstr "알림"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:145
+#: src/window.js:167
 msgid "You have treatments low in stock"
 msgstr "재고가 부족한 치료가 있습니다"
 
-#: src/window.js:228
+#: src/window.js:250
 msgid "An issue has occurred"
 msgstr ""
 
-#: src/window.js:236 src/window.js:258 src/window.js:280 src/window.js:298
+#: src/window.js:258 src/window.js:280 src/window.js:302 src/window.js:320
 msgid "Close"
 msgstr ""
 
-#: src/window.js:444
+#: src/window.js:473
 msgid "Show all"
 msgstr "모두 보기"
 
-#: src/window.js:467
+#: src/window.js:496
 msgid "Show less"
 msgstr "덜 보기"
 
-#: src/window.js:587
+#: src/window.js:628
 msgid "No results found"
 msgstr "결과가 없습니다"
 
-#: src/window.js:587 src/window.js:1372
+#: src/window.js:628 src/window.js:1489
 msgid "Empty history"
 msgstr "기록이 비어 있습니다"
 
-#: src/window.js:736
+#: src/window.js:791
 msgid "No treatments added yet"
 msgstr "아직 추가된 치료가 없습니다"
 
-#: src/window.js:737
+#: src/window.js:792
 msgid "All done for today"
 msgstr "오늘은 모두 완료되었습니다"
 
-#: src/window.js:825 src/window.js:1009
+#: src/window.js:880 src/window.js:1066
 msgid "Confirm"
 msgstr "확인"
 
-#: src/window.js:825
+#: src/window.js:880
 msgid "Confirm all"
 msgstr "모두 확인"
 
-#: src/window.js:826
+#: src/window.js:881
 msgid "Skip"
 msgstr "건너뛰기"
 
-#: src/window.js:826
+#: src/window.js:881
 msgid "Skip all"
 msgstr "모두 건너뛰기"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:855
+#: src/window.js:910
 #, javascript-format
 msgid "and %d more"
 msgstr "그리고 %d개 더"
 
-#: src/window.js:1009
+#: src/window.js:1066
 msgid "One-time entry"
 msgstr "일회성 입력"
 
-#: src/window.js:1168
+#: src/window.js:1267
 msgid "Quit"
 msgstr "종료"
 
@@ -382,12 +392,6 @@ msgstr "항목 편집"
 #: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:210
 msgid "Change time"
 msgstr ""
-
-#: data/ui/edit-hist-dialog.blp:130
-#, fuzzy
-#| msgid "Confirm"
-msgid "Confirmed"
-msgstr "확인"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
@@ -541,69 +545,69 @@ msgid "Today is cycle day…"
 msgstr "오늘은 주기 날입니다…"
 
 #: data/ui/med-dialog.blp:710
-msgid "Mark as confirmed"
-msgstr ""
-
-#: data/ui/med-dialog.blp:711
-msgid ""
-"If not manually confirmed or skipped, it will be recorded as confirmed in "
-"history, reducing stock if enabled"
-msgstr ""
-
-#: data/ui/med-dialog.blp:715
 msgid "Increase notification priority"
 msgstr "알림 우선순위 증가"
 
-#: data/ui/med-dialog.blp:716
+#: data/ui/med-dialog.blp:711
 msgid "Show in fullscreen mode or with 'Do Not Disturb' enabled"
 msgstr ""
 "알림이 전체 화면 모드로 표시되거나 '방해 금지'가 활성화되어 있어도 표시되도"
 "록 합니다"
 
-#: data/ui/med-dialog.blp:720
+#: data/ui/med-dialog.blp:715
 msgid "Recurring notifications"
 msgstr "반복 알림"
 
-#: data/ui/med-dialog.blp:721
+#: data/ui/med-dialog.blp:716
 msgid "Renotify until it's confirmed or skipped"
 msgstr "확인되거나 건너뛰어질 때까지 재알림"
 
-#: data/ui/med-dialog.blp:726
+#: data/ui/med-dialog.blp:721
 msgid "Interval in minutes"
 msgstr "간격 (분)"
 
-#: data/ui/med-dialog.blp:739 data/ui/refill-dialog.blp:58
+#: data/ui/med-dialog.blp:734 data/ui/refill-dialog.blp:58
 msgid "Inventory"
 msgstr "재고"
 
-#: data/ui/med-dialog.blp:740
+#: data/ui/med-dialog.blp:735
 msgid "Manage your stock"
 msgstr "재고 관리"
 
-#: data/ui/med-dialog.blp:746
+#: data/ui/med-dialog.blp:741
 msgid "Current"
 msgstr "현재"
 
-#: data/ui/med-dialog.blp:759
+#: data/ui/med-dialog.blp:754
 msgid "Remind me at"
 msgstr "나에게 알림"
 
-#: data/ui/med-dialog.blp:773
+#: data/ui/med-dialog.blp:768
 msgid "Duration"
 msgstr "기간"
 
-#: data/ui/med-dialog.blp:774
+#: data/ui/med-dialog.blp:769
 msgid "Set start and end dates"
 msgstr "시작 및 종료 날짜 설정"
 
-#: data/ui/med-dialog.blp:794 data/ui/med-dialog.blp:837
+#: data/ui/med-dialog.blp:789 data/ui/med-dialog.blp:832
 #: data/ui/one-time-dialog.blp:243
 msgid "Choose date"
 msgstr "날짜 선택"
 
-#: data/ui/med-dialog.blp:827
+#: data/ui/med-dialog.blp:822
 msgid "Ends on"
 msgstr "종료일"
+
+#: data/ui/med-dialog.blp:861
+msgid "Mark as confirmed"
+msgstr ""
+
+#: data/ui/med-dialog.blp:862
+msgid ""
+"If not manually confirmed or skipped, it will be recorded as confirmed in "
+"history, reducing stock if enabled"
+msgstr ""
 
 #: data/ui/one-time-dialog.blp:43
 msgid "From treatment list"
