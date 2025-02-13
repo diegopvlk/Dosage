@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-13 16:08-0300\n"
-"PO-Revision-Date: 2025-02-13 19:14+0000\n"
+"PO-Revision-Date: 2025-02-14 09:07+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "dosage/dosage/en_GB/>\n"
@@ -253,7 +253,7 @@ msgstr "Dose"
 
 #: src/prefsDialog.js:137
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: src/todayFactory.js:33 src/treatmentsFactory.js:268
 msgid "When necessary"
@@ -680,10 +680,8 @@ msgid "Show or hide confirm/skip"
 msgstr "Show or hide confirm/skip"
 
 #: data/ui/preferences.blp:128
-#, fuzzy
-#| msgid "Empty history"
 msgid "Export history as CSV"
-msgstr "Empty history"
+msgstr "Export history as CSV"
 
 #: data/ui/window.blp:23
 msgid "Show/Hide 'When necessary'"
