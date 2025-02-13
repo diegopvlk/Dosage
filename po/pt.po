@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-13 13:44-0300\n"
+"POT-Creation-Date: 2025-02-13 16:08-0300\n"
 "PO-Revision-Date: 2025-02-13 19:14+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:40
-#: src/window.js:1024
+#: src/prefsDialog.js:113 src/window.js:1024
 msgid "Dosage"
 msgstr "Dosagem"
 
@@ -108,11 +108,11 @@ msgstr "Auto-confirmado"
 msgid "Skipped at"
 msgstr "Ignorado às"
 
-#: src/editHistDialog.js:71 src/historyFactory.js:180
+#: src/editHistDialog.js:71 src/historyFactory.js:180 src/prefsDialog.js:161
 msgid "Missed"
 msgstr "Perdido"
 
-#: src/editHistDialog.js:77 src/historyFactory.js:183
+#: src/editHistDialog.js:77 src/historyFactory.js:183 src/prefsDialog.js:164
 msgid "Confirmed"
 msgstr "Confirmado"
 
@@ -124,7 +124,7 @@ msgstr "Hora desconhecida"
 msgid "Select to be removed"
 msgstr "Selecionar para remover"
 
-#: src/historyFactory.js:177
+#: src/historyFactory.js:177 src/prefsDialog.js:158
 msgid "Skipped"
 msgstr "Ignorado"
 
@@ -228,6 +228,34 @@ msgstr "Cancelar"
 #: src/medDialog.js:581 src/treatmentsFactory.js:188
 msgid "Delete"
 msgstr "Apagar"
+
+#: src/prefsDialog.js:114
+msgid "History"
+msgstr "Histórico"
+
+#: src/prefsDialog.js:114
+msgid "Treatments"
+msgstr "Tratamentos"
+
+#: src/prefsDialog.js:137
+msgid "Date"
+msgstr "Data"
+
+#: src/prefsDialog.js:137
+msgid "Time"
+msgstr "Hora"
+
+#: src/prefsDialog.js:137
+msgid "Name"
+msgstr "Nome"
+
+#: src/prefsDialog.js:137
+msgid "Dose"
+msgstr "Dose"
+
+#: src/prefsDialog.js:137
+msgid "Status"
+msgstr ""
 
 #: src/todayFactory.js:33 src/treatmentsFactory.js:268
 msgid "When necessary"
@@ -404,10 +432,6 @@ msgstr "Novo tratamento"
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:272
 msgid "Add"
 msgstr "Adicionar"
-
-#: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
-msgid "Name"
-msgstr "Nome"
 
 #: data/ui/med-dialog.blp:67 data/ui/one-time-dialog.blp:57
 msgid "Color"
@@ -622,18 +646,6 @@ msgstr "Da lista de tratamentos"
 msgid "Amount"
 msgstr "Quantidade"
 
-#: data/ui/one-time-dialog.blp:183
-msgid "Dose"
-msgstr "Dose"
-
-#: data/ui/one-time-dialog.blp:199
-msgid "Time"
-msgstr "Hora"
-
-#: data/ui/one-time-dialog.blp:232
-msgid "Date"
-msgstr "Data"
-
 #: data/ui/preferences.blp:7 data/ui/window.blp:289
 msgid "Preferences"
 msgstr "Preferências"
@@ -670,6 +682,12 @@ msgstr "Botões da notificação"
 msgid "Show or hide confirm/skip"
 msgstr "Mostrar ou ocultar confirmar/ignorar"
 
+#: data/ui/preferences.blp:128
+#, fuzzy
+#| msgid "Empty history"
+msgid "Export history as CSV"
+msgstr "Histórico vazio"
+
 #: data/ui/window.blp:23
 msgid "Show/Hide 'When necessary'"
 msgstr "Mostrar/Esconder 'Quando necessário'"
@@ -694,17 +712,9 @@ msgstr "Hoje"
 msgid "Unselect"
 msgstr "Desmarcar"
 
-#: data/ui/window.blp:144
-msgid "History"
-msgstr "Histórico"
-
 #: data/ui/window.blp:209
 msgid "Remove entries"
 msgstr "Remover entradas"
-
-#: data/ui/window.blp:223
-msgid "Treatments"
-msgstr "Tratamentos"
 
 #: data/ui/window.blp:249
 msgid "Click the button below to add some"

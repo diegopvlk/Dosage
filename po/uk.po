@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-13 13:44-0300\n"
+"POT-Creation-Date: 2025-02-13 16:08-0300\n"
 "PO-Revision-Date: 2025-02-10 23:31+0000\n"
 "Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -23,7 +23,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:40
-#: src/window.js:1024
+#: src/prefsDialog.js:113 src/window.js:1024
 msgid "Dosage"
 msgstr "Дозування"
 
@@ -117,11 +117,11 @@ msgstr "Автоматично підтверджено"
 msgid "Skipped at"
 msgstr "Пропущено в"
 
-#: src/editHistDialog.js:71 src/historyFactory.js:180
+#: src/editHistDialog.js:71 src/historyFactory.js:180 src/prefsDialog.js:161
 msgid "Missed"
 msgstr "Пропущено"
 
-#: src/editHistDialog.js:77 src/historyFactory.js:183
+#: src/editHistDialog.js:77 src/historyFactory.js:183 src/prefsDialog.js:164
 msgid "Confirmed"
 msgstr "Підтверджено"
 
@@ -133,7 +133,7 @@ msgstr ""
 msgid "Select to be removed"
 msgstr "Виберіть для видалення"
 
-#: src/historyFactory.js:177
+#: src/historyFactory.js:177 src/prefsDialog.js:158
 msgid "Skipped"
 msgstr "Пропущено"
 
@@ -236,6 +236,34 @@ msgstr "Скасувати"
 #: src/medDialog.js:581 src/treatmentsFactory.js:188
 msgid "Delete"
 msgstr "Видалити"
+
+#: src/prefsDialog.js:114
+msgid "History"
+msgstr "Історія"
+
+#: src/prefsDialog.js:114
+msgid "Treatments"
+msgstr "Курси лікування"
+
+#: src/prefsDialog.js:137
+msgid "Date"
+msgstr "Дата прийому"
+
+#: src/prefsDialog.js:137
+msgid "Time"
+msgstr "Час"
+
+#: src/prefsDialog.js:137
+msgid "Name"
+msgstr "Назва запису"
+
+#: src/prefsDialog.js:137
+msgid "Dose"
+msgstr "Доза"
+
+#: src/prefsDialog.js:137
+msgid "Status"
+msgstr ""
 
 #: src/todayFactory.js:33 src/treatmentsFactory.js:268
 msgid "When necessary"
@@ -412,10 +440,6 @@ msgstr "Новий курс лікування"
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:272
 msgid "Add"
 msgstr "Додати"
-
-#: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
-msgid "Name"
-msgstr "Назва запису"
 
 #: data/ui/med-dialog.blp:67 data/ui/one-time-dialog.blp:57
 msgid "Color"
@@ -631,18 +655,6 @@ msgstr "Із списку курсів лікування"
 msgid "Amount"
 msgstr "Сума"
 
-#: data/ui/one-time-dialog.blp:183
-msgid "Dose"
-msgstr "Доза"
-
-#: data/ui/one-time-dialog.blp:199
-msgid "Time"
-msgstr "Час"
-
-#: data/ui/one-time-dialog.blp:232
-msgid "Date"
-msgstr "Дата прийому"
-
 #: data/ui/preferences.blp:7 data/ui/window.blp:289
 msgid "Preferences"
 msgstr "Налаштування"
@@ -679,6 +691,12 @@ msgstr "Кнопки сповіщень"
 msgid "Show or hide confirm/skip"
 msgstr "Показати чи приховати підтвердити/пропустити"
 
+#: data/ui/preferences.blp:128
+#, fuzzy
+#| msgid "Empty history"
+msgid "Export history as CSV"
+msgstr "Історія порожня"
+
 #: data/ui/window.blp:23
 msgid "Show/Hide 'When necessary'"
 msgstr "Показати/сховати \"За необхідності\""
@@ -703,17 +721,9 @@ msgstr "Сьогодні"
 msgid "Unselect"
 msgstr "Скасувати вибір"
 
-#: data/ui/window.blp:144
-msgid "History"
-msgstr "Історія"
-
 #: data/ui/window.blp:209
 msgid "Remove entries"
 msgstr "Видалити записи"
-
-#: data/ui/window.blp:223
-msgid "Treatments"
-msgstr "Курси лікування"
 
 #: data/ui/window.blp:249
 msgid "Click the button below to add some"

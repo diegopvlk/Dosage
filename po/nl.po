@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-13 13:44-0300\n"
+"POT-Creation-Date: 2025-02-13 16:08-0300\n"
 "PO-Revision-Date: 2025-02-10 23:31+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/dosage/dosage/nl/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:40
-#: src/window.js:1024
+#: src/prefsDialog.js:113 src/window.js:1024
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -111,11 +111,11 @@ msgstr ""
 msgid "Skipped at"
 msgstr "Overgeslagen om"
 
-#: src/editHistDialog.js:71 src/historyFactory.js:180
+#: src/editHistDialog.js:71 src/historyFactory.js:180 src/prefsDialog.js:161
 msgid "Missed"
 msgstr "Vergeten"
 
-#: src/editHistDialog.js:77 src/historyFactory.js:183
+#: src/editHistDialog.js:77 src/historyFactory.js:183 src/prefsDialog.js:164
 #, fuzzy
 #| msgid "Confirm"
 msgid "Confirmed"
@@ -129,7 +129,7 @@ msgstr ""
 msgid "Select to be removed"
 msgstr ""
 
-#: src/historyFactory.js:177
+#: src/historyFactory.js:177 src/prefsDialog.js:158
 msgid "Skipped"
 msgstr "Overgeslagen"
 
@@ -232,6 +232,34 @@ msgstr "Annuleren"
 #: src/medDialog.js:581 src/treatmentsFactory.js:188
 msgid "Delete"
 msgstr "Verwijderen"
+
+#: src/prefsDialog.js:114
+msgid "History"
+msgstr "Geschiedenis"
+
+#: src/prefsDialog.js:114
+msgid "Treatments"
+msgstr "Medicatie"
+
+#: src/prefsDialog.js:137
+msgid "Date"
+msgstr "Datum"
+
+#: src/prefsDialog.js:137
+msgid "Time"
+msgstr ""
+
+#: src/prefsDialog.js:137
+msgid "Name"
+msgstr "Naam"
+
+#: src/prefsDialog.js:137
+msgid "Dose"
+msgstr ""
+
+#: src/prefsDialog.js:137
+msgid "Status"
+msgstr ""
 
 #: src/todayFactory.js:33 src/treatmentsFactory.js:268
 msgid "When necessary"
@@ -408,10 +436,6 @@ msgstr "Medicatie toevoegen"
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:272
 msgid "Add"
 msgstr "Toevoegen"
-
-#: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
-msgid "Name"
-msgstr "Naam"
 
 #: data/ui/med-dialog.blp:67 data/ui/one-time-dialog.blp:57
 msgid "Color"
@@ -625,18 +649,6 @@ msgstr "Van medicatielijst"
 msgid "Amount"
 msgstr ""
 
-#: data/ui/one-time-dialog.blp:183
-msgid "Dose"
-msgstr ""
-
-#: data/ui/one-time-dialog.blp:199
-msgid "Time"
-msgstr ""
-
-#: data/ui/one-time-dialog.blp:232
-msgid "Date"
-msgstr "Datum"
-
 #: data/ui/preferences.blp:7 data/ui/window.blp:289
 msgid "Preferences"
 msgstr "Voorkeuren"
@@ -673,6 +685,12 @@ msgstr "Meldingsknoppen"
 msgid "Show or hide confirm/skip"
 msgstr "Toon of verberg bevestigen/overslaan"
 
+#: data/ui/preferences.blp:128
+#, fuzzy
+#| msgid "Empty history"
+msgid "Export history as CSV"
+msgstr "Er is geen geschiedenis"
+
 #: data/ui/window.blp:23
 #, fuzzy
 #| msgid "When necessary"
@@ -699,17 +717,9 @@ msgstr "Vandaag"
 msgid "Unselect"
 msgstr "Niets selecteren"
 
-#: data/ui/window.blp:144
-msgid "History"
-msgstr "Geschiedenis"
-
 #: data/ui/window.blp:209
 msgid "Remove entries"
 msgstr ""
-
-#: data/ui/window.blp:223
-msgid "Treatments"
-msgstr "Medicatie"
 
 #: data/ui/window.blp:249
 msgid "Click the button below to add some"
