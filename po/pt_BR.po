@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-14 10:15-0300\n"
-"PO-Revision-Date: 2025-02-14 09:07+0000\n"
+"PO-Revision-Date: 2025-02-14 15:51+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "dosage/dosage/pt_BR/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.10-rc\n"
+"X-Generator: Weblate 5.10\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -258,10 +258,8 @@ msgid "Status"
 msgstr "Status"
 
 #: src/prefsDialog.js:137
-#, fuzzy
-#| msgid "Confirmed"
 msgid "Time Confirmed"
-msgstr "Confirmado"
+msgstr "Hora confirmada"
 
 #: src/todayFactory.js:33 src/treatmentsFactory.js:268
 msgid "When necessary"
@@ -616,10 +614,8 @@ msgid "Remind me at"
 msgstr "Lembrar na quantidade"
 
 #: data/ui/med-dialog.blp:767
-#, fuzzy
-#| msgid "Refill stock"
 msgid "Refill amount"
-msgstr "Reabastecer estoque"
+msgstr "Quantidade ao reabastecer"
 
 #: data/ui/med-dialog.blp:780
 msgid "Duration"
