@@ -170,7 +170,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 				takenIcon.icon_name = 'check-confirmed-symbolic';
 				break;
 			case 2:
-				takenLabel.label = timeTaken;
+				takenLabel.label = _('Auto-confirmed');
 				takenIcon.icon_name = 'check-auto-confirmed-symbolic';
 				break;
 			case 0:
