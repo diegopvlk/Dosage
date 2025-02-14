@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-13 16:08-0300\n"
+"POT-Creation-Date: 2025-02-14 10:15-0300\n"
 "PO-Revision-Date: 2025-02-10 23:31+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -102,7 +102,7 @@ msgstr "Лекарства;Следене;Напомняне:Днес;Лечен
 msgid "Confirmed at"
 msgstr "Потвърдено в"
 
-#: src/editHistDialog.js:60
+#: src/editHistDialog.js:60 src/historyFactory.js:173 src/prefsDialog.js:173
 msgid "Auto-confirmed"
 msgstr ""
 
@@ -110,17 +110,18 @@ msgstr ""
 msgid "Skipped at"
 msgstr "Пропуснати в"
 
-#: src/editHistDialog.js:71 src/historyFactory.js:180 src/prefsDialog.js:161
+#: src/editHistDialog.js:71 src/historyFactory.js:180 src/prefsDialog.js:163
 msgid "Missed"
 msgstr "Изпуснати"
 
-#: src/editHistDialog.js:77 src/historyFactory.js:183 src/prefsDialog.js:164
+#: src/editHistDialog.js:77 src/historyFactory.js:183 src/prefsDialog.js:166
+#: src/prefsDialog.js:176
 #, fuzzy
 #| msgid "Confirm"
 msgid "Confirmed"
 msgstr "Потвърждаване"
 
-#: src/editHistDialog.js:78
+#: src/editHistDialog.js:78 src/prefsDialog.js:176
 msgid "Time unknown"
 msgstr ""
 
@@ -128,7 +129,7 @@ msgstr ""
 msgid "Select to be removed"
 msgstr ""
 
-#: src/historyFactory.js:177 src/prefsDialog.js:158
+#: src/historyFactory.js:177 src/prefsDialog.js:160
 msgid "Skipped"
 msgstr "Пропуснати"
 
@@ -155,79 +156,79 @@ msgstr "Ново"
 msgid "Pill(s)"
 msgstr "Хапче(та)"
 
-#: src/oneTimeDialog.js:163 src/medDialog.js:545
+#: src/oneTimeDialog.js:163 src/medDialog.js:549
 msgid "Name already on treatment list"
 msgstr "Името вече е в списъка за лечение"
 
-#: src/medDialog.js:112
+#: src/medDialog.js:113
 msgid "Edit treatment"
 msgstr "Редактиране на лечението"
 
-#: src/medDialog.js:113
+#: src/medDialog.js:114
 msgid "Save"
 msgstr "Запазване"
 
-#: src/medDialog.js:127
+#: src/medDialog.js:128
 msgid "Copy"
 msgstr "Копиране"
 
-#: src/medDialog.js:231
+#: src/medDialog.js:233
 msgid "Add dose"
 msgstr "Добавяне на доза"
 
-#: src/medDialog.js:437
+#: src/medDialog.js:441
 msgid "Choose"
 msgstr "Избиране"
 
-#: src/medDialog.js:446
+#: src/medDialog.js:450
 msgid "Day of the month"
 msgstr "Ден от месеца"
 
-#: src/medDialog.js:447 src/treatmentsFactory.js:244
+#: src/medDialog.js:451 src/treatmentsFactory.js:244
 msgid "Day"
 msgstr "Ден"
 
-#: src/medDialog.js:474
+#: src/medDialog.js:478
 msgid "Specific days"
 msgstr "Конкретни дни"
 
-#: src/medDialog.js:481 src/treatmentsFactory.js:265
+#: src/medDialog.js:485 src/treatmentsFactory.js:265
 msgid "Cycle"
 msgstr "Цикъл"
 
-#: src/medDialog.js:485
+#: src/medDialog.js:489
 msgid "Frequency"
 msgstr "Период"
 
-#: src/medDialog.js:518
+#: src/medDialog.js:522
 msgid "Empty name"
 msgstr "Празно име"
 
-#: src/medDialog.js:524
+#: src/medDialog.js:528
 msgid "Empty unit"
 msgstr "Празна единица"
 
-#: src/medDialog.js:531
+#: src/medDialog.js:535
 msgid "Choose at least one day"
 msgstr "Изберете поне един ден"
 
-#: src/medDialog.js:560
+#: src/medDialog.js:564
 msgid "Duplicated time"
 msgstr "Дублирано време"
 
-#: src/medDialog.js:576
+#: src/medDialog.js:580
 msgid "Are you sure?"
 msgstr "Сигурни ли сте?"
 
-#: src/medDialog.js:577
+#: src/medDialog.js:581
 msgid "will be deleted"
 msgstr "ще бъде изтрит"
 
-#: src/medDialog.js:580
+#: src/medDialog.js:584
 msgid "Cancel"
 msgstr "Отказване"
 
-#: src/medDialog.js:581 src/treatmentsFactory.js:188
+#: src/medDialog.js:585 src/treatmentsFactory.js:188
 msgid "Delete"
 msgstr "Изтриване"
 
@@ -258,6 +259,12 @@ msgstr ""
 #: src/prefsDialog.js:137
 msgid "Status"
 msgstr ""
+
+#: src/prefsDialog.js:137
+#, fuzzy
+#| msgid "Confirm"
+msgid "Time Confirmed"
+msgstr "Потвърждаване"
 
 #: src/todayFactory.js:33 src/treatmentsFactory.js:268
 msgid "When necessary"
@@ -596,7 +603,7 @@ msgstr "Повторно известяване, докато не бъде по
 msgid "Interval in minutes"
 msgstr "Интервал в минути"
 
-#: data/ui/med-dialog.blp:734 data/ui/refill-dialog.blp:58
+#: data/ui/med-dialog.blp:734 data/ui/refill-dialog.blp:36
 msgid "Inventory"
 msgstr "Запас"
 
@@ -612,28 +619,34 @@ msgstr "Текущ"
 msgid "Remind me at"
 msgstr "Напомнете ме в"
 
-#: data/ui/med-dialog.blp:768
+#: data/ui/med-dialog.blp:767
+#, fuzzy
+#| msgid "Refill"
+msgid "Refill amount"
+msgstr "Презареди"
+
+#: data/ui/med-dialog.blp:780
 msgid "Duration"
 msgstr "Продължителност"
 
-#: data/ui/med-dialog.blp:769
+#: data/ui/med-dialog.blp:781
 msgid "Set start and end dates"
 msgstr "Задаване на начална и крайна дата"
 
-#: data/ui/med-dialog.blp:789 data/ui/med-dialog.blp:832
+#: data/ui/med-dialog.blp:801 data/ui/med-dialog.blp:844
 #: data/ui/one-time-dialog.blp:243
 msgid "Choose date"
 msgstr "Избиране на дата"
 
-#: data/ui/med-dialog.blp:822
+#: data/ui/med-dialog.blp:834
 msgid "Ends on"
 msgstr "Прикличва на"
 
-#: data/ui/med-dialog.blp:861
+#: data/ui/med-dialog.blp:873
 msgid "Mark as confirmed"
 msgstr ""
 
-#: data/ui/med-dialog.blp:862
+#: data/ui/med-dialog.blp:874
 msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"

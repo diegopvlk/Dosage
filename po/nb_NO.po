@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-13 16:08-0300\n"
+"POT-Creation-Date: 2025-02-14 10:15-0300\n"
 "PO-Revision-Date: 2025-02-10 23:31+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/dosage/"
@@ -101,7 +101,7 @@ msgstr ""
 msgid "Confirmed at"
 msgstr "Bekreftet kl"
 
-#: src/editHistDialog.js:60
+#: src/editHistDialog.js:60 src/historyFactory.js:173 src/prefsDialog.js:173
 msgid "Auto-confirmed"
 msgstr ""
 
@@ -109,17 +109,18 @@ msgstr ""
 msgid "Skipped at"
 msgstr "Hoppet over kl"
 
-#: src/editHistDialog.js:71 src/historyFactory.js:180 src/prefsDialog.js:161
+#: src/editHistDialog.js:71 src/historyFactory.js:180 src/prefsDialog.js:163
 msgid "Missed"
 msgstr "Glemt"
 
-#: src/editHistDialog.js:77 src/historyFactory.js:183 src/prefsDialog.js:164
+#: src/editHistDialog.js:77 src/historyFactory.js:183 src/prefsDialog.js:166
+#: src/prefsDialog.js:176
 #, fuzzy
 #| msgid "Confirm"
 msgid "Confirmed"
 msgstr "Bekreft"
 
-#: src/editHistDialog.js:78
+#: src/editHistDialog.js:78 src/prefsDialog.js:176
 msgid "Time unknown"
 msgstr ""
 
@@ -127,7 +128,7 @@ msgstr ""
 msgid "Select to be removed"
 msgstr ""
 
-#: src/historyFactory.js:177 src/prefsDialog.js:158
+#: src/historyFactory.js:177 src/prefsDialog.js:160
 msgid "Skipped"
 msgstr "Hoppet over"
 
@@ -153,79 +154,79 @@ msgstr "Ny"
 msgid "Pill(s)"
 msgstr "Pille(r)"
 
-#: src/oneTimeDialog.js:163 src/medDialog.js:545
+#: src/oneTimeDialog.js:163 src/medDialog.js:549
 msgid "Name already on treatment list"
 msgstr "Navn er allerede på behandlingslisten"
 
-#: src/medDialog.js:112
+#: src/medDialog.js:113
 msgid "Edit treatment"
 msgstr "Rediger behandling"
 
-#: src/medDialog.js:113
+#: src/medDialog.js:114
 msgid "Save"
 msgstr "Lagre"
 
-#: src/medDialog.js:127
+#: src/medDialog.js:128
 msgid "Copy"
 msgstr "Kopiere"
 
-#: src/medDialog.js:231
+#: src/medDialog.js:233
 msgid "Add dose"
 msgstr "Legg til dose"
 
-#: src/medDialog.js:437
+#: src/medDialog.js:441
 msgid "Choose"
 msgstr "Velg"
 
-#: src/medDialog.js:446
+#: src/medDialog.js:450
 msgid "Day of the month"
 msgstr "Dag i måneden"
 
-#: src/medDialog.js:447 src/treatmentsFactory.js:244
+#: src/medDialog.js:451 src/treatmentsFactory.js:244
 msgid "Day"
 msgstr "Dag"
 
-#: src/medDialog.js:474
+#: src/medDialog.js:478
 msgid "Specific days"
 msgstr "Spesifikke dager"
 
-#: src/medDialog.js:481 src/treatmentsFactory.js:265
+#: src/medDialog.js:485 src/treatmentsFactory.js:265
 msgid "Cycle"
 msgstr "Syklus"
 
-#: src/medDialog.js:485
+#: src/medDialog.js:489
 msgid "Frequency"
 msgstr "Frekvens"
 
-#: src/medDialog.js:518
+#: src/medDialog.js:522
 msgid "Empty name"
 msgstr "Tomt navn"
 
-#: src/medDialog.js:524
+#: src/medDialog.js:528
 msgid "Empty unit"
 msgstr "Tom enhet"
 
-#: src/medDialog.js:531
+#: src/medDialog.js:535
 msgid "Choose at least one day"
 msgstr "Velg minst én dag"
 
-#: src/medDialog.js:560
+#: src/medDialog.js:564
 msgid "Duplicated time"
 msgstr "Duplisert tid"
 
-#: src/medDialog.js:576
+#: src/medDialog.js:580
 msgid "Are you sure?"
 msgstr "Er du sikker?"
 
-#: src/medDialog.js:577
+#: src/medDialog.js:581
 msgid "will be deleted"
 msgstr "vil bli slettet"
 
-#: src/medDialog.js:580
+#: src/medDialog.js:584
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: src/medDialog.js:581 src/treatmentsFactory.js:188
+#: src/medDialog.js:585 src/treatmentsFactory.js:188
 msgid "Delete"
 msgstr "Slett"
 
@@ -256,6 +257,12 @@ msgstr ""
 #: src/prefsDialog.js:137
 msgid "Status"
 msgstr ""
+
+#: src/prefsDialog.js:137
+#, fuzzy
+#| msgid "Confirm"
+msgid "Time Confirmed"
+msgstr "Bekreft"
 
 #: src/todayFactory.js:33 src/treatmentsFactory.js:268
 msgid "When necessary"
@@ -594,7 +601,7 @@ msgstr "Gi beskjed på nytt til det er bekreftet eller hoppet over"
 msgid "Interval in minutes"
 msgstr "Intervall i minutter"
 
-#: data/ui/med-dialog.blp:734 data/ui/refill-dialog.blp:58
+#: data/ui/med-dialog.blp:734 data/ui/refill-dialog.blp:36
 msgid "Inventory"
 msgstr "Inventar"
 
@@ -610,28 +617,34 @@ msgstr "Nåværende"
 msgid "Remind me at"
 msgstr "Minn meg på dette"
 
-#: data/ui/med-dialog.blp:768
+#: data/ui/med-dialog.blp:767
+#, fuzzy
+#| msgid "Refill stock"
+msgid "Refill amount"
+msgstr "Fyll på"
+
+#: data/ui/med-dialog.blp:780
 msgid "Duration"
 msgstr "Varighet"
 
-#: data/ui/med-dialog.blp:769
+#: data/ui/med-dialog.blp:781
 msgid "Set start and end dates"
 msgstr "Angi start- og sluttdato"
 
-#: data/ui/med-dialog.blp:789 data/ui/med-dialog.blp:832
+#: data/ui/med-dialog.blp:801 data/ui/med-dialog.blp:844
 #: data/ui/one-time-dialog.blp:243
 msgid "Choose date"
 msgstr "Velg dato"
 
-#: data/ui/med-dialog.blp:822
+#: data/ui/med-dialog.blp:834
 msgid "Ends on"
 msgstr "Slutter"
 
-#: data/ui/med-dialog.blp:861
+#: data/ui/med-dialog.blp:873
 msgid "Mark as confirmed"
 msgstr ""
 
-#: data/ui/med-dialog.blp:862
+#: data/ui/med-dialog.blp:874
 msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
