@@ -8,29 +8,7 @@ Adw.Dialog refillDialog {
 
 	Adw.ToolbarView {
 		[top]
-		Adw.HeaderBar headerBar {
-			show-start-title-buttons: false;
-			show-end-title-buttons: false;
-			decoration-layout: '';
-
-			[start]
-			Button cancelButton {
-				label: _("Cancel");
-				name: 'cancel';
-				can-shrink: true;
-			}
-
-			[end]
-			Button saveButton {
-				styles [
-					'suggested-action'
-				]
-
-				label: _("Save");
-				name: 'save';
-				can-shrink: true;
-			}
-		}
+		Adw.HeaderBar headerBar {}
 
 		content: ScrolledWindow {
 			Adw.Clamp refillDialogClamp {
@@ -40,8 +18,8 @@ Adw.Dialog refillDialog {
 					orientation: vertical;
 					margin-start: 10;
 					margin-end: 10;
-					margin-top: 15;
 					margin-bottom: 16;
+					spacing: 16;
 
 					ListBox {
 						styles [
@@ -67,66 +45,26 @@ Adw.Dialog refillDialog {
 						}
 					}
 
-					FlowBox refillFlowBox {
-						margin-top: 16;
-						orientation: horizontal;
-						homogeneous: true;
-						selection-mode: none;
-						max-children-per-line: 5;
+					Box {
+						halign: center;
+						spacing: 16;
 
-						Button refill5Button {
+						Button refillButton {
 							styles [
 								"numeric",
-								"refill-amount-btn",
 								"pill"
 							]
-
-							label: "+5";
-							valign: center;
 						}
 
-						Button refill10Button {
+						Button saveButton {
 							styles [
-								"numeric",
-								"refill-amount-btn",
+								"suggested-action",
 								"pill"
 							]
 
-							label: "+10";
-							valign: center;
-						}
-
-						Button refill30Button {
-							styles [
-								"numeric",
-								"refill-amount-btn",
-								"pill"
-							]
-
-							label: "+30";
-							valign: center;
-						}
-
-						Button refill60Button {
-							styles [
-								"numeric",
-								"refill-amount-btn",
-								"pill"
-							]
-
-							label: "+60";
-							valign: center;
-						}
-
-						Button refill100Button {
-							styles [
-								"numeric",
-								"refill-amount-btn",
-								"pill"
-							]
-
-							label: "+100";
-							valign: center;
+							label: _("Save");
+							name: "save";
+							can-shrink: true;
 						}
 					}
 				}

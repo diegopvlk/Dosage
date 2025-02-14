@@ -48,10 +48,6 @@ statuspage .title {
   margin-bottom: -6px;
 }
 
-.refill-amount-btn {
-  padding: 7px 10px;
-}
-
 dialog.about .boxed-list,
 #edit-hist-dialog .boxed-list {
   box-shadow: var(--list-border), var(--list-shadow);
@@ -378,7 +374,7 @@ button.floating.destructive-action:hover {
 button.floating.destructive-action:active {
   background-color: color-mix(in srgb, #e3c9c9 99%, var(--accent-color));
 }
-#refill-dialog headerbar button,
+
 #medication-dialog headerbar button,
 #edit-hist-dialog headerbar button {
   min-width: 56px;

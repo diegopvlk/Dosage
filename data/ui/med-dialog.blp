@@ -762,6 +762,18 @@ Adw.Dialog medDialog {
 										value: 7;
 									};
 								}
+
+								Adw.SpinRow {
+									title: _("Refill amount");
+									climb-rate: 0.2;
+
+									adjustment: Adjustment refillAmount {
+										lower: 0;
+										upper: 99999;
+										step-increment: 1;
+										value: 30;
+									};
+								}
 							}
 
 							Adw.ExpanderRow duration {

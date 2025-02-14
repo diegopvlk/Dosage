@@ -89,6 +89,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 	const medInventory = builder.get_object('inventory');
 	const medCurrrentInv = builder.get_object('currentInventory');
 	const medReminderInv = builder.get_object('reminderInventory');
+	const refillAmount = builder.get_object('refillAmount');
 
 	const medDuration = builder.get_object('duration');
 	const calendarStart = builder.get_object('calendarStart');
@@ -203,6 +204,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 		}
 		medCurrrentInv.value = item.inventory.current;
 		medReminderInv.value = item.inventory.reminder;
+		refillAmount.value = item.inventory.refill;
 
 		if (item.duration.enabled) {
 			medDuration.set_enable_expansion(true);
@@ -297,6 +299,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 			inventory,
 			current,
 			reminder,
+			refill,
 			duration,
 			start,
 			end;
@@ -332,7 +335,8 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 		icon = dosageIconButton.get_icon_name().replace('-symbolic', '');
 		current = medCurrrentInv.value;
 		reminder = medReminderInv.value;
-		inventory = { enabled: invEnabled, current: current, reminder: reminder };
+		refill = refillAmount.value;
+		inventory = { enabled: invEnabled, current: current, reminder: reminder, refill: refill };
 		duration = { enabled: durEnabled, start: start, end: end };
 
 		frequency = frequencies[frequencyMenu.get_selected()];

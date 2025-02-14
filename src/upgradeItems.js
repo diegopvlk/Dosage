@@ -44,6 +44,7 @@ const treatmentsUpdates = [
 				item.notification = {};
 				item.notification.increasePriority = settPriority ? true : false;
 				item.notification.recurring = { ...item.recurring };
+				item.inventory.refill = 30;
 				delete item.recurring;
 				item.markConfirmed = false;
 			});

@@ -4,11 +4,10 @@
  */
 'use strict';
 
-import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 
 import { DosageApplication } from './main.js';
-import { getWidgetByName } from './utils.js';
+import { addSaveKeyControllerToDialog } from './utils.js';
 
 export function openRefillDialog(listItem, position) {
 	const item = listItem.get_item().obj;
@@ -18,46 +17,19 @@ export function openRefillDialog(listItem, position) {
 	const refillDialog = builder.get_object('refillDialog');
 	const refillRow = builder.get_object('refillRow');
 	const refillInv = builder.get_object('refillInventory');
-	const refillFlowBox = builder.get_object('refillFlowBox');
-	const refill5Btn = builder.get_object('refill5Button');
-	const refill10Btn = builder.get_object('refill10Button');
-	const refill30Btn = builder.get_object('refill30Button');
-	const refill60Btn = builder.get_object('refill60Button');
-	const refill100Btn = builder.get_object('refill100Button');
-	const cancelButton = builder.get_object('cancelButton');
 	const saveButton = builder.get_object('saveButton');
+	const refillButton = builder.get_object('refillButton');
 
-	const keyController = new Gtk.EventControllerKey();
-	keyController.connect('key-pressed', (_, keyval, keycode, state) => {
-		const shiftPressed = (state & Gdk.ModifierType.SHIFT_MASK) !== 0;
-		const controlPressed = (state & Gdk.ModifierType.CONTROL_MASK) !== 0;
-		const enterPressed = keyval === Gdk.KEY_Return;
-
-		if ((controlPressed || shiftPressed) && enterPressed) {
-			saveButton.activate();
-		}
-	});
-	refillDialog.add_controller(keyController);
+	addSaveKeyControllerToDialog(refillDialog, saveButton);
 
 	refillRow.subtitle = item.name;
 
 	refillInv.value = item.inventory.current;
+	refillButton.label = '+' + item.inventory.refill;
 
-	refill5Btn.connect('clicked', () => (refillInv.value += 5));
-	refill10Btn.connect('clicked', () => (refillInv.value += 10));
-	refill30Btn.connect('clicked', () => (refillInv.value += 30));
-	refill60Btn.connect('clicked', () => (refillInv.value += 60));
-	refill100Btn.connect('clicked', () => (refillInv.value += 100));
-
-	try {
-		let gtkFlowBoxChild = getWidgetByName(refillFlowBox, 'GtkFlowBoxChild');
-		while (gtkFlowBoxChild.get_name() === 'GtkFlowBoxChild') {
-			gtkFlowBoxChild.set_focusable(false);
-			gtkFlowBoxChild = gtkFlowBoxChild.get_next_sibling();
-		}
-	} catch (e) {}
-
-	cancelButton.connect('clicked', () => refillDialog.force_close());
+	refillButton.connect('clicked', () => {
+		refillInv.value += item.inventory.refill;
+	});
 
 	saveButton.connect('clicked', () => {
 		item.inventory.current = refillInv.value;

@@ -154,6 +154,7 @@ export function isValidTreatmentItem(it) {
 		typeof item.inventory.enabled === 'boolean' &&
 		typeof item.inventory.current === 'number' &&
 		typeof item.inventory.reminder === 'number' &&
+		typeof item.inventory.refill === 'number' &&
 		typeof item.duration === 'object' &&
 		typeof item.duration.enabled === 'boolean' &&
 		typeof item.duration.start === 'number' &&
@@ -298,39 +299,6 @@ export function addSaveKeyControllerToDialog(dialog, saveBtn) {
 		}
 	});
 	dialog.add_controller(keyController);
-}
-
-/**
- * Find a widget by it's name.
- * @param {widget} parent - The parent widget to search.
- * @param {string} name - The name to be found.
- * @returns {widget} The widget found.
- */
-export function getWidgetByName(parent, name, visited = new Set()) {
-	if (!parent || visited.has(parent)) return undefined;
-
-	visited.add(parent);
-
-	if (parent.get_name() === name) return parent;
-
-	let result = getWidgetByName(parent.get_first_child(), name, visited);
-	if (result) return result;
-
-	let sibling = parent.get_next_sibling();
-	while (sibling) {
-		result = getWidgetByName(sibling, name, visited);
-		if (result) return result;
-
-		sibling = sibling.get_next_sibling();
-	}
-
-	try {
-		let popover = parent.get_popover();
-		if (popover) {
-			result = getWidgetByName(popover, name, visited);
-			if (result) return result;
-		}
-	} catch (e) {}
 }
 
 export function getDayLabel(day, long) {
