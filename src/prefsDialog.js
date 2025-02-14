@@ -134,7 +134,7 @@ async function saveFile(type, DosageWindow) {
 }
 
 function getHistoryCSV(data) {
-	const header = [_('Date'), _('Time'), _('Name'), _('Dose'), _('Status')];
+	const header = [_('Date'), _('Time'), _('Name'), _('Dose'), _('Status'), _('Time Confirmed')];
 
 	const rows = data.map(obj => {
 		const time = new Date();
@@ -152,6 +152,8 @@ function getHistoryCSV(data) {
 			day: '2-digit',
 		});
 
+		let timeConfirmedStr = '';
+
 		let status;
 		switch (obj.taken[1]) {
 			case 0:
@@ -160,8 +162,19 @@ function getHistoryCSV(data) {
 			case -1:
 				status = _('Missed');
 				break;
-			default:
+			case 1:
 				status = _('Confirmed');
+				timeConfirmedStr = new Date(obj.taken[0]).toLocaleTimeString(undefined, {
+					hour: 'numeric',
+					minute: 'numeric',
+				});
+				break;
+			case 2:
+				status = _('Auto-confirmed');
+				break;
+			case 3:
+				status = _('Confirmed') + ` (${_('Time unknown')})`;
+				break;
 		}
 
 		const doseUnit = `${obj.dose} ${obj.unit}`;
@@ -170,8 +183,9 @@ function getHistoryCSV(data) {
 			`"${dateString}"`,
 			`"${timeString}"`,
 			`"${String(obj.name).replace(/"/g, '""')}"`,
-			`"${doseUnit}"`,
+			`"${doseUnit.replace(/"/g, '""')}"`,
 			`"${status}"`,
+			`"${timeConfirmedStr}"`,
 		].join(',');
 	});
 
