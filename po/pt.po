@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-14 10:15-0300\n"
+"POT-Creation-Date: 2025-02-15 14:19-0300\n"
 "PO-Revision-Date: 2025-02-14 15:51+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:40
-#: src/prefsDialog.js:113 src/window.js:1024
+#: src/prefsDialog.js:113 src/window.js:1032
 msgid "Dosage"
 msgstr "Dosagem"
 
@@ -100,7 +100,7 @@ msgstr "Medicação;Rastreador;Lembrete;Hoje;Tratamentos;Pílula;Droga;Remédio;
 msgid "Confirmed at"
 msgstr "Confirmado às"
 
-#: src/editHistDialog.js:60 src/historyFactory.js:173 src/prefsDialog.js:173
+#: src/editHistDialog.js:60 src/historyFactory.js:172 src/prefsDialog.js:173
 msgid "Auto-confirmed"
 msgstr "Auto-confirmado"
 
@@ -108,11 +108,11 @@ msgstr "Auto-confirmado"
 msgid "Skipped at"
 msgstr "Ignorado às"
 
-#: src/editHistDialog.js:71 src/historyFactory.js:180 src/prefsDialog.js:163
+#: src/editHistDialog.js:71 src/historyFactory.js:179 src/prefsDialog.js:163
 msgid "Missed"
 msgstr "Perdido"
 
-#: src/editHistDialog.js:77 src/historyFactory.js:183 src/prefsDialog.js:166
+#: src/editHistDialog.js:77 src/historyFactory.js:182 src/prefsDialog.js:166
 #: src/prefsDialog.js:176
 msgid "Confirmed"
 msgstr "Confirmado"
@@ -121,11 +121,11 @@ msgstr "Confirmado"
 msgid "Time unknown"
 msgstr "Hora desconhecida"
 
-#: src/historyFactory.js:46
+#: src/historyFactory.js:45
 msgid "Select to be removed"
 msgstr "Selecionar para remover"
 
-#: src/historyFactory.js:177 src/prefsDialog.js:160
+#: src/historyFactory.js:176 src/prefsDialog.js:160
 msgid "Skipped"
 msgstr "Ignorado"
 
@@ -262,11 +262,11 @@ msgstr "Status"
 msgid "Time Confirmed"
 msgstr "Hora Confirmada"
 
-#: src/todayFactory.js:33 src/treatmentsFactory.js:268
+#: src/todayFactory.js:32 src/treatmentsFactory.js:268
 msgid "When necessary"
 msgstr "Quando necessário"
 
-#: src/todayFactory.js:128
+#: src/todayFactory.js:127
 msgid "Change dose"
 msgstr "Alterar dose"
 
@@ -331,74 +331,74 @@ msgstr "Finais de semana"
 msgid "Weekdays"
 msgstr "Dias da semana"
 
-#: src/window.js:165 src/window.js:915
+#: src/window.js:172 src/window.js:924
 msgid "Reminder"
 msgstr "Lembrete"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:167
+#: src/window.js:174
 msgid "You have treatments low in stock"
 msgstr "Tem tratamentos com pouco estoque"
 
-#: src/window.js:250
+#: src/window.js:257
 msgid "An issue has occurred"
 msgstr "Ocorreu um erro"
 
-#: src/window.js:258 src/window.js:280 src/window.js:302 src/window.js:320
+#: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
 msgid "Close"
 msgstr "Fechar"
 
-#: src/window.js:473
+#: src/window.js:480
 msgid "Show all"
 msgstr "Mostrar todos"
 
-#: src/window.js:496
+#: src/window.js:503
 msgid "Show less"
 msgstr "Mostrar menos"
 
-#: src/window.js:628
+#: src/window.js:635
 msgid "No results found"
 msgstr "Nenhum resultado encontrado"
 
-#: src/window.js:628 src/window.js:1489
+#: src/window.js:635 src/window.js:1497
 msgid "Empty history"
 msgstr "Histórico vazio"
 
-#: src/window.js:791
+#: src/window.js:798
 msgid "No treatments added yet"
 msgstr "Nenhum tratamento adicionado ainda"
 
-#: src/window.js:792
+#: src/window.js:799
 msgid "All done for today"
 msgstr "Tudo feito por hoje"
 
-#: src/window.js:880 src/window.js:1066
+#: src/window.js:887 src/window.js:1074
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: src/window.js:880
+#: src/window.js:887
 msgid "Confirm all"
 msgstr "Confirmar todos"
 
-#: src/window.js:881
+#: src/window.js:888
 msgid "Skip"
 msgstr "Ignorar"
 
-#: src/window.js:881
+#: src/window.js:888
 msgid "Skip all"
 msgstr "Ignorar todos"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:910
+#: src/window.js:919
 #, javascript-format
 msgid "and %d more"
 msgstr "e mais %d"
 
-#: src/window.js:1066
+#: src/window.js:1074
 msgid "One-time entry"
 msgstr "Registo único"
 
-#: src/window.js:1267
+#: src/window.js:1275
 msgid "Quit"
 msgstr "Sair"
 
