@@ -159,6 +159,13 @@ export const DosageWindow = GObject.registerClass(
 
 			const [notification, app] = this.getNotification();
 
+			const icon = Gio.ThemedIcon.new_from_names([
+				'emblem-important-symbolic',
+				'dialog-information-symbolic',
+			]);
+
+			notification.set_icon(icon);
+
 			app.withdraw_notification('low-stock');
 
 			if (!this.get_visible() && !isNotifAction && notify) {
@@ -901,7 +908,9 @@ export const DosageWindow = GObject.registerClass(
 					const maxLength = 3;
 					const itemsToDisplay = groupedObj[dateKey].slice(0, maxLength);
 
-					body = itemsToDisplay.map(item => `${item.name} ⸱ ${item.dose} ${item.unit}`).join('\r');
+					body = itemsToDisplay
+						.map(item => `${item.name} ⸱ ${item.dose} ${item.unit}`)
+						.join('\n\r');
 
 					if (groupedObj[dateKey].length > maxLength) {
 						const moreItemsCount = groupedObj[dateKey].length - maxLength;
@@ -1013,6 +1022,14 @@ export const DosageWindow = GObject.registerClass(
 			const app = this.app;
 			const notification = new Gio.Notification();
 			const openAction = new Gio.SimpleAction({ name: 'open' });
+
+			const icon = Gio.ThemedIcon.new_from_names([
+				'preferences-system-time-symbolic',
+				'alarm-symbolic',
+				'appointment-soon-symbolic',
+			]);
+
+			notification.set_icon(icon);
 
 			notification.set_default_action('app.open');
 			openAction.connect('activate', () => {
