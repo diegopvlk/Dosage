@@ -28,7 +28,6 @@ todayHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 	listHeaderItem.whenNeededLabel = new Gtk.Label({
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
-		margin_bottom: 1,
 		opacity: 0.75,
 		label: _('When necessary'),
 	});

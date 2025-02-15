@@ -19,7 +19,6 @@ historyHeaderFactory.connect('setup', (factory, listHeaderItem) => {
 	listHeaderItem.dateLabel = new Gtk.Label({
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
-		margin_bottom: 1,
 	});
 
 	listHeaderItem.set_child(listHeaderItem.dateLabel);

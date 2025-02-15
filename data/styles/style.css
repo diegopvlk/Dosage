@@ -61,8 +61,8 @@ dialog.about sheet scrolledwindow clamp {
 }
 listview > header {
   padding: 2px;
-  padding-top: 12px;
-  padding-bottom: 1px;
+  padding-top: 14px;
+  padding-bottom: 0px;
   min-height: 21px;
 }
 
@@ -202,17 +202,17 @@ The same thing happens in today list when confirming
 so use this little hack to scroll to header instead
 */
 listview.scroll-to-top-hack > :nth-child(1) {
-  margin-bottom: -34px;
+  margin-bottom: -35px;
 }
 listview.scroll-to-top-hack > :nth-child(2) {
-  margin-top: 34px;
+  margin-top: 35px;
 }
 
 button.time-group-selection {
   transition: all 150ms;
-  min-height: 18px;
-  padding: 2px;
-  margin: 0 -2px -1px;
+  min-height: 21px;
+  padding: 0 2px;
+  margin: 0 -2px 0px;
   background-size: 10px;
   background-repeat: no-repeat;
 }
