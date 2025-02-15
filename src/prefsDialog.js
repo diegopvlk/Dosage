@@ -125,28 +125,28 @@ async function saveFile(type, DosageWindow) {
 		tempObj = createTempObj('history', historyLS);
 		csv = getHistoryCSV(tempObj.history);
 	} else {
-		tempObj = createTempObj('treatments', treatmentsLS);
-		csv = getTreatmentsCSV(tempObj.treatments);
+		// tempObj = createTempObj('treatments', treatmentsLS);
+		// csv = getTreatmentsCSV(tempObj.treatments);
 	}
 
 	const contents = new TextEncoder().encode(csv);
 	await file.replace_contents_async(contents, null, false, Gio.FileCreateFlags.NONE, null);
 }
 
-function getHistoryCSV(data) {
+function getHistoryCSV(history) {
 	const header = [_('Date'), _('Time'), _('Name'), _('Dose'), _('Status'), _('Time Confirmed')];
 
-	const rows = data.map(obj => {
+	const rows = history.map(med => {
 		const time = new Date();
-		time.setHours(obj.time[0]);
-		time.setMinutes(obj.time[1]);
+		time.setHours(med.time[0]);
+		time.setMinutes(med.time[1]);
 
 		const timeString = time.toLocaleTimeString(undefined, {
 			hour: 'numeric',
 			minute: 'numeric',
 		});
 
-		const dateString = new Date(obj.taken[0]).toLocaleDateString(undefined, {
+		const dateString = new Date(med.taken[0]).toLocaleDateString(undefined, {
 			year: 'numeric',
 			month: '2-digit',
 			day: '2-digit',
@@ -155,7 +155,7 @@ function getHistoryCSV(data) {
 		let timeConfirmedStr = '';
 
 		let status;
-		switch (obj.taken[1]) {
+		switch (med.taken[1]) {
 			case 0:
 				status = _('Skipped');
 				break;
@@ -164,7 +164,7 @@ function getHistoryCSV(data) {
 				break;
 			case 1:
 				status = _('Confirmed');
-				timeConfirmedStr = new Date(obj.taken[0]).toLocaleTimeString(undefined, {
+				timeConfirmedStr = new Date(med.taken[0]).toLocaleTimeString(undefined, {
 					hour: 'numeric',
 					minute: 'numeric',
 				});
@@ -177,12 +177,12 @@ function getHistoryCSV(data) {
 				break;
 		}
 
-		const doseUnit = `${obj.dose} ${obj.unit}`;
+		const doseUnit = `${med.dose} ${med.unit}`;
 
 		return [
 			`"${dateString}"`,
 			`"${timeString}"`,
-			`"${String(obj.name).replace(/"/g, '""')}"`,
+			`"${med.name.replace(/"/g, '""')}"`,
 			`"${doseUnit.replace(/"/g, '""')}"`,
 			`"${status}"`,
 			`"${timeConfirmedStr}"`,
