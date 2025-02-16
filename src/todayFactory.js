@@ -25,6 +25,19 @@ todayHeaderFactory.connect('setup', (factory, listHeader) => {
 		valign: Gtk.Align.START,
 	});
 
+	listHeader.selectTimeGroupBtn.connect('clicked', _btn => {
+		const DW = DosageApplication.get_default().activeWindow;
+		const item = listHeader.item.obj;
+		const position = item.position;
+
+		// listHeader .start and .end gives wrong positions at the start
+		const [start, end] = DW.todayMultiSelect.get_section(position);
+
+		for (let pos = start; pos < end; pos++) {
+			DW.selectTodayItems(null, pos, true);
+		}
+	});
+
 	listHeader.whenNeededLabel = new Gtk.Label({
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
@@ -46,28 +59,18 @@ todayHeaderFactory.connect('setup', (factory, listHeader) => {
 
 todayHeaderFactory.connect('bind', (factory, listHeader) => {
 	const item = listHeader.item.obj;
-	const selectTimeGroupBtn = listHeader.selectTimeGroupBtn;
 	const isWhenNd = item.frequency === 'when-needed';
 
 	listHeader.whenNeededLabel.visible = isWhenNd;
 	listHeader.pinIcon.visible = isWhenNd;
 	listHeader.selectTimeGroupBtn.visible = !isWhenNd;
 
-	const itemTime = GLib.DateTime.new_local(1, 1, 1, item.time[0], item.time[1], 1);
-	const time = itemTime.format(timeFormat);
+	if (!isWhenNd) {
+		const itemTime = GLib.DateTime.new_local(1, 1, 1, item.time[0], item.time[1], 1);
+		const time = itemTime.format(timeFormat);
 
-	selectTimeGroupBtn.connect('clicked', _btn => {
-		const DW = DosageApplication.get_default().activeWindow;
-
-		const start = listHeader.start;
-		const end = listHeader.end;
-
-		for (let pos = start; pos < end; pos++) {
-			DW.selectTodayItems(DW._todayList, pos, true);
-		}
-	});
-
-	selectTimeGroupBtn.label = time;
+		listHeader.selectTimeGroupBtn.label = time;
+	}
 });
 
 todayItemFactory.connect('setup', (factory, listItem) => {
@@ -185,6 +188,7 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	const amtSpinRow = listItem.amtSpinRow;
 	const name = listItem.nameLabel;
 	const doseAndNotes = listItem.doseAndNotes;
+	item.position = listItem.position;
 
 	if (!listItem.controllerAndSignals) {
 		row.add_controller(listItem.keyController);
