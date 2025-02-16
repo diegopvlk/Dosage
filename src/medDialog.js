@@ -597,7 +597,11 @@ export function confirmDeleteDialog(item, position, DosageWindow, medDialog) {
 			const deletePos = treatmentsLS.find(it)[1];
 			treatmentsLS.remove(deletePos);
 			if (medDialog) medDialog.force_close();
-			DosageWindow.updateEverything({ skipHistUp: true, skipCycleUp: true });
+			DosageWindow.updateEverything({
+				skipHistUp: true,
+				skipCycleUp: true,
+				treatIsEmpty: treatmentsLS.n_items === 0,
+			});
 			DosageWindow.scheduleNotifications('deleting');
 			DosageWindow._treatmentsList.scroll_to(
 				Math.max(0, position - 1),

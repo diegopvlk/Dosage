@@ -196,10 +196,12 @@ export function isValidHistoryItem(it) {
 	return true;
 }
 
-export function createTempObj(type, listStore) {
+export function createTempObj(type, listStore, lsIsEmpty) {
 	const tempObj = {};
 	tempObj[type] = [];
 	let isValid = false;
+
+	if (lsIsEmpty) return tempObj;
 
 	for (const it of listStore) {
 		const item = it.obj;

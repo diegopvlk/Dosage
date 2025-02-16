@@ -457,7 +457,7 @@ export const DosageWindow = GObject.registerClass(
 			}
 
 			this.unselectHistItems();
-			this.updateEverything({ skipCycleUp: true });
+			this.updateEverything({ skipCycleUp: true, histIsEmpty: historyLS.n_items === 0 });
 			this.scheduleNotifications('removing');
 		}
 
@@ -1264,13 +1264,13 @@ export const DosageWindow = GObject.registerClass(
 			openEditHistDialog(this, list, position);
 		}
 
-		updateJsonFile(type, listStore) {
+		updateJsonFile(type, listStore, lsIsEmpty) {
 			const fileName = `dosage-${type}.json`;
 			const file = DataDir.get_child(fileName);
 			let tempObj;
 
 			try {
-				tempObj = createTempObj(type, listStore);
+				tempObj = createTempObj(type, listStore, lsIsEmpty);
 			} catch (err) {
 				this.errDialog.add_response('quit', _('Quit'));
 				this.errDialog.connect('response', (_self, response) => {
@@ -1502,15 +1502,21 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		updateEverything({ skipHistUp = false, isNotifAction = false, skipCycleUp = false } = {}) {
+		updateEverything({
+			skipHistUp = false,
+			isNotifAction = false,
+			skipCycleUp = false,
+			histIsEmpty = false,
+			treatIsEmpty = false,
+		} = {}) {
 			this.setShowHistoryAmount();
 			this.updateCycleAndLastUp(skipCycleUp);
-			this.updateJsonFile('treatments', treatmentsLS);
+			this.updateJsonFile('treatments', treatmentsLS, treatIsEmpty);
 			this.loadToday();
 			this.updateEntryBtn(false);
 			this.checkInventory(isNotifAction);
 			this.unselectHistItems();
-			if (!skipHistUp) this.updateJsonFile('history', historyLS);
+			if (!skipHistUp) this.updateJsonFile('history', historyLS, histIsEmpty);
 		}
 
 		openMedDialog(list, position, duplicate) {
