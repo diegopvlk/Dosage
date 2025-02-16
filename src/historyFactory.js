@@ -15,18 +15,18 @@ import { DosageApplication } from './main.js';
 export const historyHeaderFactory = new Gtk.SignalListItemFactory();
 export const historyItemFactory = new Gtk.SignalListItemFactory();
 
-historyHeaderFactory.connect('setup', (factory, listHeaderItem) => {
-	listHeaderItem.dateLabel = new Gtk.Label({
+historyHeaderFactory.connect('setup', (factory, listHeader) => {
+	listHeader.dateLabel = new Gtk.Label({
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
 
-	listHeaderItem.set_child(listHeaderItem.dateLabel);
+	listHeader.set_child(listHeader.dateLabel);
 });
 
-historyHeaderFactory.connect('bind', (factory, listHeaderItem) => {
-	const item = listHeaderItem.get_item().obj;
-	const dateLabel = listHeaderItem.dateLabel;
+historyHeaderFactory.connect('bind', (factory, listHeader) => {
+	const item = listHeader.get_item().obj;
+	const dateLabel = listHeader.dateLabel;
 
 	const dateTime = GLib.DateTime.new_from_unix_local(item.taken[0] / 1000);
 	const formattedDt = dateTime.format(dateFormat);

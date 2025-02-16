@@ -15,43 +15,43 @@ import { timeFormat } from './utils.js';
 export const todayHeaderFactory = new Gtk.SignalListItemFactory();
 export const todayItemFactory = new Gtk.SignalListItemFactory();
 
-todayHeaderFactory.connect('setup', (factory, listHeaderItem) => {
-	listHeaderItem.box = new Gtk.Box({
+todayHeaderFactory.connect('setup', (factory, listHeader) => {
+	listHeader.box = new Gtk.Box({
 		hexpand: true,
 	});
 
-	listHeaderItem.selectTimeGroupBtn = new Gtk.Button({
+	listHeader.selectTimeGroupBtn = new Gtk.Button({
 		css_classes: ['time-group-selection', 'flat'],
 		valign: Gtk.Align.START,
 	});
 
-	listHeaderItem.whenNeededLabel = new Gtk.Label({
+	listHeader.whenNeededLabel = new Gtk.Label({
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 		opacity: 0.75,
 		label: _('When necessary'),
 	});
 
-	listHeaderItem.pinIcon = new Gtk.Image({
+	listHeader.pinIcon = new Gtk.Image({
 		icon_name: 'pin-symbolic',
 		opacity: 0.75,
 		margin_start: 4,
 	});
 
-	listHeaderItem.box.append(listHeaderItem.selectTimeGroupBtn);
-	listHeaderItem.box.append(listHeaderItem.whenNeededLabel);
-	listHeaderItem.box.append(listHeaderItem.pinIcon);
-	listHeaderItem.set_child(listHeaderItem.box);
+	listHeader.box.append(listHeader.selectTimeGroupBtn);
+	listHeader.box.append(listHeader.whenNeededLabel);
+	listHeader.box.append(listHeader.pinIcon);
+	listHeader.set_child(listHeader.box);
 });
 
-todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
-	const item = listHeaderItem.item.obj;
-	const selectTimeGroupBtn = listHeaderItem.selectTimeGroupBtn;
+todayHeaderFactory.connect('bind', (factory, listHeader) => {
+	const item = listHeader.item.obj;
+	const selectTimeGroupBtn = listHeader.selectTimeGroupBtn;
 	const isWhenNd = item.frequency === 'when-needed';
 
-	listHeaderItem.whenNeededLabel.visible = isWhenNd;
-	listHeaderItem.pinIcon.visible = isWhenNd;
-	listHeaderItem.selectTimeGroupBtn.visible = !isWhenNd;
+	listHeader.whenNeededLabel.visible = isWhenNd;
+	listHeader.pinIcon.visible = isWhenNd;
+	listHeader.selectTimeGroupBtn.visible = !isWhenNd;
 
 	const itemTime = GLib.DateTime.new_local(1, 1, 1, item.time[0], item.time[1], 1);
 	const time = itemTime.format(timeFormat);
@@ -59,8 +59,8 @@ todayHeaderFactory.connect('bind', (factory, listHeaderItem) => {
 	selectTimeGroupBtn.connect('clicked', _btn => {
 		const DW = DosageApplication.get_default().activeWindow;
 
-		const start = listHeaderItem.start;
-		const end = listHeaderItem.end;
+		const start = listHeader.start;
+		const end = listHeader.end;
 
 		for (let pos = start; pos < end; pos++) {
 			DW.selectTodayItems(DW._todayList, pos, true);
