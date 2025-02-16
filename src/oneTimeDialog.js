@@ -213,12 +213,15 @@ export function openOneTimeDialog(DosageWindow) {
 			// if it's the time as of an existing item
 			// update lastTaken if entryDate is today
 			if (todayDt === entryDt) {
-				i.dosage.forEach(timeDose => {
+				for (const timeDose of i.dosage) {
 					const sameTime = String(timeDose.time) === String(newIt.time);
 					if (sameName && sameTime) {
 						timeDose.lastTaken = new Date().toISOString();
+						const dateKey = new Date().setHours(h, m, 0, 0);
+						DosageWindow.app.withdraw_notification(String(dateKey));
+						break;
 					}
-				});
+				}
 			}
 
 			if (updateInv) {

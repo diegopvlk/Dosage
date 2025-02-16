@@ -116,9 +116,9 @@ export const DosageWindow = GObject.registerClass(
 					const currentDate = new Date();
 
 					while (currentDate > prevDate) {
-						currentDate.setDate(currentDate.getDate() - 1);
 						const dateKey = currentDate.setHours(timeDose.time[0], timeDose.time[1], 0, 0);
 						this.app.withdraw_notification(String(dateKey));
+						currentDate.setDate(currentDate.getDate() - 1);
 					}
 				}
 			}
