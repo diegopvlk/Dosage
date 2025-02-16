@@ -13,7 +13,7 @@ parts:
   dosage-tracker:
     plugin: meson
     source: https://github.com/diegopvlk/Dosage.git
-    source-tag: "v1.8.3"
+    source-tag: "v1.9.0"
     build-environment:
       - GI_TYPELIB_PATH: $SNAP/gnome-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/gjs/girepository-1.0:$GI_TYPELIB_PATH
     meson-parameters:

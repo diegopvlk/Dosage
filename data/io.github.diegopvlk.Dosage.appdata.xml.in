@@ -43,22 +43,22 @@
 		<screenshot type="default">
 			<caption>Dosage today window in light theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/4e3220452bef6c12ed4c24b60c377c6d55c4c373/screenshots/today-light.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/c83a4585c1df60aa3fa199c2d5df60c033bfe797/screenshots/today-light.png</image>
 		</screenshot>
 		<screenshot>
 			<caption>Dosage preferences window in light theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/4e3220452bef6c12ed4c24b60c377c6d55c4c373/screenshots/preferences.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/c83a4585c1df60aa3fa199c2d5df60c033bfe797/screenshots/preferences.png</image>
 		</screenshot>
 		<screenshot>
 			<caption>Dosage edit treatment window in light theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/4e3220452bef6c12ed4c24b60c377c6d55c4c373/screenshots/med-dialog.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/c83a4585c1df60aa3fa199c2d5df60c033bfe797/screenshots/med-dialog.png</image>
 		</screenshot>
 		<screenshot>
 			<caption>Dosage today window in dark theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/4e3220452bef6c12ed4c24b60c377c6d55c4c373/screenshots/today-dark.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/c83a4585c1df60aa3fa199c2d5df60c033bfe797/screenshots/today-dark.png</image>
 		</screenshot>
 	</screenshots>
 
@@ -73,6 +73,21 @@
 	</recommends>
 
 	<releases>
+		<release version="1.9.0" date="2025-02-15">
+			<description translate="no">
+				<ul>
+					<li>New: Mark as confirmed (edit treatment to learn more)</li>
+					<li>Added a button to show 'When necessary' treatments on today page</li>
+					<li>The inventory badge now opens the refill dialog</li>
+					<li>You can now customize the refill amount</li>
+					<li>Notification priority is now set individually for each treatment</li>
+					<li>It's now possible to remove multiple history entries at once</li>
+					<li>Enable rubberband selection for Today and History lists</li>
+					<li>Fix: items confirmed/skipped from yesterday notifications will now update missed items from yesterday</li>
+					<li>Performance and UI/UX improvements</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.8.3" date="2025-02-01">
 			<description translate="no">
 				<ul>
