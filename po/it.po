@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-15 14:19-0300\n"
-"PO-Revision-Date: 2025-02-10 23:31+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"PO-Revision-Date: 2025-02-16 11:43+0000\n"
+"Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
 ">\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -105,7 +105,7 @@ msgstr "Confermato a"
 
 #: src/editHistDialog.js:60 src/historyFactory.js:172 src/prefsDialog.js:173
 msgid "Auto-confirmed"
-msgstr ""
+msgstr "Confermato automaticamente"
 
 #: src/editHistDialog.js:68 src/editHistDialog.js:91
 msgid "Skipped at"
@@ -117,18 +117,16 @@ msgstr "Perso"
 
 #: src/editHistDialog.js:77 src/historyFactory.js:182 src/prefsDialog.js:166
 #: src/prefsDialog.js:176
-#, fuzzy
-#| msgid "Confirm"
 msgid "Confirmed"
-msgstr "Conferma"
+msgstr "Confermato"
 
 #: src/editHistDialog.js:78 src/prefsDialog.js:176
 msgid "Time unknown"
-msgstr ""
+msgstr "Orario sconosciuto"
 
 #: src/historyFactory.js:45
 msgid "Select to be removed"
-msgstr ""
+msgstr "Seleziona per essere rimosso"
 
 #: src/historyFactory.js:176 src/prefsDialog.js:160
 msgid "Skipped"
@@ -246,7 +244,7 @@ msgstr "Data"
 
 #: src/prefsDialog.js:137
 msgid "Time"
-msgstr ""
+msgstr "Ora"
 
 #: src/prefsDialog.js:137
 msgid "Name"
@@ -254,17 +252,15 @@ msgstr "Nome"
 
 #: src/prefsDialog.js:137
 msgid "Dose"
-msgstr ""
+msgstr "Dose"
 
 #: src/prefsDialog.js:137
 msgid "Status"
-msgstr ""
+msgstr "Stato"
 
 #: src/prefsDialog.js:137
-#, fuzzy
-#| msgid "Confirm"
 msgid "Time Confirmed"
-msgstr "Conferma"
+msgstr "Orario confermato"
 
 #: src/todayFactory.js:32 src/treatmentsFactory.js:268
 msgid "When necessary"
@@ -276,11 +272,11 @@ msgstr "Cambia la dose"
 
 #: src/timeDoseRow.js:34
 msgid "Remove dose"
-msgstr ""
+msgstr "Rimuovi dose"
 
 #: src/treatmentsFactory.js:85
 msgid "Refill stock"
-msgstr ""
+msgstr "Ricaricare la scorta"
 
 #: src/treatmentsFactory.js:111
 msgid "Options"
@@ -346,11 +342,11 @@ msgstr "Hai trattamenti in esaurimento"
 
 #: src/window.js:257
 msgid "An issue has occurred"
-msgstr ""
+msgstr "Si è verificato un problema"
 
 #: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
 msgid "Close"
-msgstr ""
+msgstr "Chiudi"
 
 #: src/window.js:480
 msgid "Show all"
@@ -432,7 +428,7 @@ msgstr "Modifica voce"
 
 #: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:210
 msgid "Change time"
-msgstr ""
+msgstr "Cambia orario"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
@@ -620,10 +616,8 @@ msgid "Remind me at"
 msgstr "Ricordamelo a"
 
 #: data/ui/med-dialog.blp:767
-#, fuzzy
-#| msgid "Refill"
 msgid "Refill amount"
-msgstr "Ricarica"
+msgstr "Quantità di rifornimento"
 
 #: data/ui/med-dialog.blp:780
 msgid "Duration"
@@ -644,13 +638,15 @@ msgstr "Finisce il"
 
 #: data/ui/med-dialog.blp:873
 msgid "Mark as confirmed"
-msgstr ""
+msgstr "Contrassegna come confermato"
 
 #: data/ui/med-dialog.blp:874
 msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
 msgstr ""
+"Se non confermato manualmente o saltato, verrà registrato come confermato "
+"nella cronologia, riducendo lo stock se abilitato"
 
 #: data/ui/one-time-dialog.blp:43
 msgid "From treatment list"
@@ -658,7 +654,7 @@ msgstr "Dall'elenco dei trattamenti"
 
 #: data/ui/one-time-dialog.blp:182
 msgid "Amount"
-msgstr ""
+msgstr "Quantità"
 
 #: data/ui/preferences.blp:7 data/ui/window.blp:289
 msgid "Preferences"
@@ -697,16 +693,12 @@ msgid "Show or hide confirm/skip"
 msgstr "Mostra o nascondi conferma/salta"
 
 #: data/ui/preferences.blp:128
-#, fuzzy
-#| msgid "Empty history"
 msgid "Export history as CSV"
-msgstr "Cronologia vuota"
+msgstr "Esporta cronologia come CSV"
 
 #: data/ui/window.blp:23
-#, fuzzy
-#| msgid "When necessary"
 msgid "Show/Hide 'When necessary'"
-msgstr "Quando necessario"
+msgstr "Mostra/Nascondi 'Quando necessario'"
 
 #: data/ui/window.blp:31
 msgid "Search"
@@ -730,7 +722,7 @@ msgstr "Non selezionato"
 
 #: data/ui/window.blp:209
 msgid "Remove entries"
-msgstr ""
+msgstr "Rimuovi voci"
 
 #: data/ui/window.blp:249
 msgid "Click the button below to add some"
