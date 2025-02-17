@@ -73,7 +73,7 @@
 	</recommends>
 
 	<releases>
-		<release version="1.9.0" date="2025-02-15">
+		<release version="1.9.1" date="2025-02-16">
 			<description translate="no">
 				<ul>
 					<li>New: Mark as confirmed (edit treatment to learn more)</li>
