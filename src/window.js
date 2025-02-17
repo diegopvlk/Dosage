@@ -1021,6 +1021,7 @@ export const DosageWindow = GObject.registerClass(
 		getNotification() {
 			const app = this.app;
 			const notification = new Gio.Notification();
+			const openAction = new Gio.SimpleAction({ name: 'open' });
 
 			const icon = Gio.ThemedIcon.new_from_names([
 				'preferences-system-time-symbolic',
@@ -1029,6 +1030,14 @@ export const DosageWindow = GObject.registerClass(
 			]);
 
 			notification.set_icon(icon);
+
+			notification.set_default_action('app.open');
+			openAction.connect('activate', () => {
+				app.activate();
+				this.present();
+			});
+			app.add_action(openAction);
+
 			notification.set_title(_('Dosage'));
 
 			return [notification, app];
