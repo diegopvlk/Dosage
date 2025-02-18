@@ -46,6 +46,10 @@ You can help translate using [Weblate](https://hosted.weblate.org/projects/dosag
   <img src="https://hosted.weblate.org/widget/dosage/dosage/multi-auto.svg" alt="Translation status" />
 </a>
 
+### Code of Conduct
+
+This project follows the [GNOME Code of Conduct](https://conduct.gnome.org)
+
 ### Build from source
 
 Clone the repo in GNOME Builder and press run
