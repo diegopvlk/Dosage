@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Project xmlns="http://usefulinc.com/ns/doap#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/terms/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+	<name>Dosage</name>
+	<shortdesc xml:lang="en">Keep track of your treatments</shortdesc>
+
+	<description xml:lang="en">
+		Dosage helps you remember to take your medications at the right time.
+		Options for different frequencies, dose amounts, tracking stock, defining duration and
+		checking your medication history.
+	</description>
+
+	<homepage rdf:resource="https://github.com/diegopvlk/Dosage" />
+
+	<license rdf:resource="https://spdx.org/licenses/GPL-3.0-only.html" />
+
+	<programming-language>JavaScript</programming-language>
+	<platform>GTK 4</platform>
+	<platform>Libadwaita</platform>
+
+	<maintainer>
+		<foaf:Person>
+			<foaf:name>Diego Povliuk</foaf:name>
+			<foaf:mbox rdf:resource="mailto:diego.pvlk@gmail.com" />
+			<foaf:account>
+				<foaf:OnlineAccount>
+					<foaf:accountServiceHomepage rdf:resource="https://github.com" />
+					<foaf:accountName>diegopvlk</foaf:accountName>
+				</foaf:OnlineAccount>
+			</foaf:account>
+		</foaf:Person>
+	</maintainer>
+
+</Project>
+
+
