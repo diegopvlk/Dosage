@@ -1,0 +1,28 @@
+name: Build Flatpak Bundle
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+concurrency:
+  group: release-${{ github.sha }}
+
+jobs:
+  flatpak:
+    name: Flatpak
+    runs-on: ubuntu-latest
+    container:
+      image: bilelmoussaoui/flatpak-github-actions:gnome-47
+      options: --privileged
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Flatpak Builder
+        uses: flatpak/flatpak-github-actions/flatpak-builder@v6.4
+        with:
+          bundle: io.github.diegopvlk.Dosage.flatpak
+          manifest-path: build-aux/io.github.diegopvlk.Dosage.json
