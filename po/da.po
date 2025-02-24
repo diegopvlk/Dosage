@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-15 14:19-0300\n"
-"PO-Revision-Date: 2025-02-24 18:00+0000\n"
-"Last-Translator: MiniClemme <mcle@dtu.dk>\n"
+"PO-Revision-Date: 2025-02-24 18:10+0000\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/dosage/dosage/da/>"
 "\n"
 "Language: da\n"
@@ -77,19 +77,19 @@ msgstr "Varighed — Sæt start- og slutdato"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage today window in light theme"
-msgstr "Dosage idag vindue i lyst tema"
+msgstr "Dosering idag vindue i lyst tema"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage preferences window in light theme"
-msgstr "Dosage præference vindue i lyst tema"
+msgstr "Dosering præference vindue i lyst tema"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:54
 msgid "Dosage edit treatment window in light theme"
-msgstr "Dosage rediger behandling vindue i lyst tema"
+msgstr "Dosering rediger behandling vindue i lyst tema"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:59
 msgid "Dosage today window in dark theme"
-msgstr "Dosage idag vindue i mørk tema"
+msgstr "Dosering idag vindue i mørk tema"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
@@ -143,7 +143,7 @@ msgstr "Tak til følgende projekter!"
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:89
 msgid "Accept to allow running in the background and receive notifications"
-msgstr "Tillad Dosage at køre i baggrunden og at modtage notifikationer"
+msgstr "Tillad Dosering at køre i baggrunden og at modtage notifikationer"
 
 #: src/oneTimeDialog.js:54
 msgid "New"
@@ -728,4 +728,4 @@ msgstr "Klik på knappen herunder for at tilføje"
 
 #: data/ui/window.blp:294
 msgid "About Dosage"
-msgstr "Om Dosage"
+msgstr "Om Dosering"
