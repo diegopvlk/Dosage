@@ -158,7 +158,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 		const timeTaken = itemTakenDate.format(timeFormat);
 
 		nameLabel.label = item.name;
-		doseLabel.label = `${item.dose} ${item.unit} • ${time}`;
+		doseLabel.label = `${item.dose} ${item.unit} · ${time}`;
 
 		const isConfirmed = item.taken[1] === 1 || item.taken[1] === 2 || item.taken[1] === 3;
 		takenIcon.visible = isConfirmed;

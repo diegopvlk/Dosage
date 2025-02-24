@@ -218,7 +218,7 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 		listItem.setDoseAndNotes = () => {
 			doseAndNotes.label = `${item.dose} ${item.unit}`;
 			if (item.notes !== '') {
-				doseAndNotes.label += ` • ${item.notes}`;
+				doseAndNotes.label += ` · ${item.notes}`;
 			}
 		};
 

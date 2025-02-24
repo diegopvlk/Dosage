@@ -250,7 +250,7 @@ function setInventoryAndDateLabels(listItem) {
 			if (item.duration.enabled) {
 				durationNextDateLabel.label = untilLabel;
 				if (nextDt > today && nextDt <= end) {
-					durationNextDateLabel.label += ' • ' + _('Next dose') + `: ${nextDate}`;
+					durationNextDateLabel.label += ' · ' + _('Next dose') + `: ${nextDate}`;
 				}
 			} else if (nextDt > today) {
 				durationNextDateLabel.label = _('Next dose') + `: ${nextDate}`;
@@ -262,14 +262,14 @@ function setInventoryAndDateLabels(listItem) {
 				durationNextDateLabel.visible = true;
 			}
 
-			infoLabel.label = `${_('Cycle')} • ${item.cycle[0]} ⊷ ${item.cycle[1]}`;
+			infoLabel.label = `${_('Cycle')} · ${item.cycle[0]} ⊷ ${item.cycle[1]}`;
 			break;
 		case 'when-needed':
 			infoLabel.label = _('When necessary');
 			break;
 	}
 
-	if (item.notes !== '') infoLabel.label += ` • ${item.notes}`;
+	if (item.notes !== '') infoLabel.label += ` · ${item.notes}`;
 
 	if (item.duration.enabled && (end < today || end < start)) {
 		durationNextDateLabel.label = endedLabel;

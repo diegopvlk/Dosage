@@ -921,7 +921,7 @@ export const DosageWindow = GObject.registerClass(
 						body = text;
 					}
 
-					let title = _('Reminder') + ` • ` + time;
+					let title = _('Reminder') + ` · ` + time;
 					notification.set_title(title);
 					notification.set_body(body);
 
