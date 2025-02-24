@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-15 14:19-0300\n"
 "PO-Revision-Date: 2025-02-24 18:00+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"Last-Translator: MiniClemme <mcle@dtu.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/dosage/dosage/da/>"
 "\n"
 "Language: da\n"
@@ -23,9 +23,8 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:40
 #: src/prefsDialog.js:113 src/window.js:1032
-#, fuzzy
 msgid "Dosage"
-msgstr "Dosis"
+msgstr "Dosering"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 msgid "Keep track of your treatments"
@@ -55,7 +54,7 @@ msgstr "Historik — Se hvilken medicin du har taget, sprunget over eller misset
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
 msgid "Dosage management — Multiple doses with different times"
-msgstr "Dosis håndtering — Flere dosis med forskellige tidspunkter"
+msgstr "Dosering håndtering — Flere dosis med forskellige tidspunkter"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid ""
@@ -95,7 +94,9 @@ msgstr "Dosage idag vindue i mørk tema"
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
-msgstr "Medicin;Tracker;Påmindelse;Idag;Behandlinger;Pille;Lægemiddel;Middel;"
+msgstr ""
+"Medicin;Tracker;Påmindelse;Idag;Behandlinger;Pille;Lægemiddel;Middel;Dosering;"
+""
 
 #: src/editHistDialog.js:51 src/editHistDialog.js:64 src/editHistDialog.js:83
 msgid "Confirmed at"
