@@ -90,8 +90,11 @@ function getDateFormat(locale) {
 		}
 	});
 
+	const dateTime = GLib.DateTime.new_now_local();
+	const monthDT = dateTime.format('%b');
+
 	const monthPart = formattedDateParts.find(part => part.type === 'month');
-	if (monthPart && monthPart.value.endsWith('.')) {
+	if (monthPart && monthPart.value.endsWith('.') && !monthDT.endsWith('.')) {
 		dateFormat = dateFormat.replace('%b', '%b.');
 	}
 
