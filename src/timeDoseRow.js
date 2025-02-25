@@ -37,6 +37,7 @@ export class TimeDoseRow {
 		this.timeBtn = new Gtk.MenuButton({
 			can_shrink: true,
 			css_classes: ['flat', 'numeric'],
+			tooltip_text: _('Change time'),
 			label: this.timePicker.entry.text,
 			valign: Gtk.Align.CENTER,
 			halign: Gtk.Align.START,
