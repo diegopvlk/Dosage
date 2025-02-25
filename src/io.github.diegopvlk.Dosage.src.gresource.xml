@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/github/diegopvlk/Dosage/js">
-    <file>dateFormats.js</file>
     <file>editHistDialog.js</file>
     <file>historyFactory.js</file>
     <file>main.js</file>

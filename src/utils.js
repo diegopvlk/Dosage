@@ -9,7 +9,6 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
-import { dateFormats } from './dateFormats.js';
 
 const decoder = new TextDecoder();
 
@@ -62,17 +61,53 @@ export function getSpecificDaysLabel(item) {
 	return newLabel;
 }
 
+// can't use Intl.DateTimeFormat, toLocaleDateString or toLocaleTimeString
+// in historyFactory, it crashes the snap (old gjs version?)
+// plus GLib.DateTime is a bit faster
+function getDateFormat(locale) {
+	const formattedDateParts = new Intl.DateTimeFormat(locale, {
+		weekday: 'long',
+		month: 'short',
+		day: 'numeric',
+		year: 'numeric',
+	}).formatToParts(new Date());
+
+	const formatMapping = {
+		weekday: '%A',
+		month: '%b',
+		day: '%-e',
+		year: '%Y',
+		literal: '',
+	};
+
+	let dateFormat = '';
+
+	formattedDateParts.forEach(part => {
+		if (formatMapping[part.type]) {
+			dateFormat += formatMapping[part.type];
+		} else if (part.type === 'literal') {
+			dateFormat += part.value; // literals (commas, "o'clock", "de", etc)
+		}
+	});
+
+	const monthPart = formattedDateParts.find(part => part.type === 'month');
+	if (monthPart && monthPart.value.endsWith('.')) {
+		dateFormat = dateFormat.replace('%b', '%b.');
+	}
+
+	return dateFormat;
+}
+
 export const [clockIs12, amPmStr, timeDot, timeFormat, dateFormat] = checkLocale();
 
 function checkLocale() {
 	const systemOpts = new Intl.DateTimeFormat().resolvedOptions();
 	const locale = systemOpts.locale;
-	const generalLocale = locale.split('-')[0];
 	let is12 = false;
 	let amPmStr = 'AM;PM';
 	let timeDot = false;
 	let timeFormat = '%H:%M';
-	let dateFormat = dateFormats[locale] ?? dateFormats[generalLocale] ?? '%x';
+	let dateFormat = getDateFormat(locale);
 
 	try {
 		const [, outputAmPm] = GLib.spawn_command_line_sync('locale am_pm');
