@@ -136,7 +136,9 @@ msgstr "Ohitettu"
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
 msgid "translator-credits"
-msgstr "Jiri Grönroos <jiri.gronroos+l10n@iki.fi>"
+msgstr ""
+"Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
+"Ricky Tigg <ricky.tigg@gmail.com>"
 
 #: src/main.js:53
 msgid "Thanks to these projects!"
