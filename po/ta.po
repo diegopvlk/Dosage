@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-15 14:19-0300\n"
+"POT-Creation-Date: 2025-02-25 15:34-0300\n"
 "PO-Revision-Date: 2025-02-10 23:31+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/dosage/dosage/ta/"
@@ -21,8 +21,8 @@ msgstr ""
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
-#: data/io.github.diegopvlk.Dosage.desktop.in:4 src/main.js:40
-#: src/prefsDialog.js:113 src/window.js:1032
+#: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/window.blp:6
+#: src/main.js:40 src/prefsDialog.js:113 src/window.js:1041
 msgid "Dosage"
 msgstr "அளவு"
 
@@ -98,313 +98,6 @@ msgstr "இருண்ட கருப்பொருளில் இன்ற�
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr "மருந்து; டிராக்கர்; நினைவூட்டல்; இன்று; சிகிச்சைகள்; மாத்திரை; மருந்து; தீர்வு;"
 
-#: src/editHistDialog.js:51 src/editHistDialog.js:64 src/editHistDialog.js:83
-msgid "Confirmed at"
-msgstr "இல் உறுதிப்படுத்தப்பட்டது"
-
-#: src/editHistDialog.js:60 src/historyFactory.js:172 src/prefsDialog.js:173
-msgid "Auto-confirmed"
-msgstr ""
-
-#: src/editHistDialog.js:68 src/editHistDialog.js:91
-msgid "Skipped at"
-msgstr "தவிர்க்கப்பட்டது"
-
-#: src/editHistDialog.js:71 src/historyFactory.js:179 src/prefsDialog.js:163
-msgid "Missed"
-msgstr "தவறவிட்டது"
-
-#: src/editHistDialog.js:77 src/historyFactory.js:182 src/prefsDialog.js:166
-#: src/prefsDialog.js:176
-#, fuzzy
-#| msgid "Confirm"
-msgid "Confirmed"
-msgstr "உறுதிப்படுத்தவும்"
-
-#: src/editHistDialog.js:78 src/prefsDialog.js:176
-msgid "Time unknown"
-msgstr ""
-
-#: src/historyFactory.js:45
-msgid "Select to be removed"
-msgstr ""
-
-#: src/historyFactory.js:176 src/prefsDialog.js:160
-msgid "Skipped"
-msgstr "தவிர்க்கப்பட்டது"
-
-#. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:49
-msgid "translator-credits"
-msgstr "TamilNeram <anishprabu.t@gmail.com>"
-
-#: src/main.js:53
-msgid "Thanks to these projects!"
-msgstr "இந்த திட்டங்களுக்கு நன்றி!"
-
-#. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:89
-msgid "Accept to allow running in the background and receive notifications"
-msgstr "பின்னணியில் இயங்க அனுமதிப்பதை ஏற்றுக்கொண்டு அறிவிப்புகளைப் பெறுங்கள்"
-
-#: src/oneTimeDialog.js:54
-msgid "New"
-msgstr "புதிய"
-
-#: src/oneTimeDialog.js:65
-msgid "Pill(s)"
-msgstr "மாத்திரை (கள்)"
-
-#: src/oneTimeDialog.js:163 src/medDialog.js:549
-msgid "Name already on treatment list"
-msgstr "மருத்தீடு பட்டியலில் ஏற்கனவே பெயர்"
-
-#: src/medDialog.js:113
-msgid "Edit treatment"
-msgstr "சிகிச்சையைத் திருத்து"
-
-#: src/medDialog.js:114
-msgid "Save"
-msgstr "சேமி"
-
-#: src/medDialog.js:128
-msgid "Copy"
-msgstr "நகலெடு"
-
-#: src/medDialog.js:233
-msgid "Add dose"
-msgstr "டோச் சேர்க்கவும்"
-
-#: src/medDialog.js:441
-msgid "Choose"
-msgstr "தேர்வு"
-
-#: src/medDialog.js:450
-msgid "Day of the month"
-msgstr "மாதத்தின் நாள்"
-
-#: src/medDialog.js:451 src/treatmentsFactory.js:244
-msgid "Day"
-msgstr "நாள்"
-
-#: src/medDialog.js:478
-msgid "Specific days"
-msgstr "குறிப்பிட்ட நாட்கள்"
-
-#: src/medDialog.js:485 src/treatmentsFactory.js:265
-msgid "Cycle"
-msgstr "சுழற்சி"
-
-#: src/medDialog.js:489
-msgid "Frequency"
-msgstr "மீடிறன், மீள்திறன், நிகழ்வெண், நிகழ்வு"
-
-#: src/medDialog.js:522
-msgid "Empty name"
-msgstr "வெற்று பெயர்"
-
-#: src/medDialog.js:528
-msgid "Empty unit"
-msgstr "வெற்று அலகு"
-
-#: src/medDialog.js:535
-msgid "Choose at least one day"
-msgstr "குறைந்தது ஒரு நாளையாவது தேர்வு செய்யவும்"
-
-#: src/medDialog.js:564
-msgid "Duplicated time"
-msgstr "நகல் நேரம்"
-
-#: src/medDialog.js:580
-msgid "Are you sure?"
-msgstr "நீங்கள் உறுதியாக இருக்கிறீர்களா?"
-
-#: src/medDialog.js:581
-msgid "will be deleted"
-msgstr "நீக்கப்படும்"
-
-#: src/medDialog.js:584
-msgid "Cancel"
-msgstr "ரத்துசெய்"
-
-#: src/medDialog.js:585 src/treatmentsFactory.js:188
-msgid "Delete"
-msgstr "நீக்கு"
-
-#: src/prefsDialog.js:114
-msgid "History"
-msgstr "வரலாறு"
-
-#: src/prefsDialog.js:114
-msgid "Treatments"
-msgstr "சிகிச்சைகள்"
-
-#: src/prefsDialog.js:137
-msgid "Date"
-msgstr "திகதி"
-
-#: src/prefsDialog.js:137
-msgid "Time"
-msgstr ""
-
-#: src/prefsDialog.js:137
-msgid "Name"
-msgstr "பெயர்"
-
-#: src/prefsDialog.js:137
-msgid "Dose"
-msgstr ""
-
-#: src/prefsDialog.js:137
-msgid "Status"
-msgstr ""
-
-#: src/prefsDialog.js:137
-#, fuzzy
-#| msgid "Confirm"
-msgid "Time Confirmed"
-msgstr "உறுதிப்படுத்தவும்"
-
-#: src/todayFactory.js:32 src/treatmentsFactory.js:268
-msgid "When necessary"
-msgstr "தேவைப்படும்போது"
-
-#: src/todayFactory.js:127
-msgid "Change dose"
-msgstr "அளவை மாற்றவும்"
-
-#: src/timeDoseRow.js:34
-msgid "Remove dose"
-msgstr ""
-
-#: src/treatmentsFactory.js:85
-msgid "Refill stock"
-msgstr ""
-
-#: src/treatmentsFactory.js:111
-msgid "Options"
-msgstr "விருப்பங்கள்"
-
-#: src/treatmentsFactory.js:185
-msgid "Edit"
-msgstr "திருத்து"
-
-#: src/treatmentsFactory.js:186
-msgid "Refill"
-msgstr "மீண்டும் நிரப்பவும்"
-
-#: src/treatmentsFactory.js:187
-msgid "Duplicate"
-msgstr "நகல்"
-
-#: src/treatmentsFactory.js:214
-msgid "Remaining"
-msgstr "மீதமுள்ள"
-
-#: src/treatmentsFactory.js:218
-msgid "Low stock"
-msgstr "குறைந்த பங்கு"
-
-#. TRANSLATORS: label for when duration is enabled
-#: src/treatmentsFactory.js:224
-msgid "Starts on"
-msgstr "தொடங்குகிறது"
-
-#: src/treatmentsFactory.js:225
-msgid "Until"
-msgstr "வரை"
-
-#: src/treatmentsFactory.js:226
-msgid "Ended on"
-msgstr "முடிந்தது"
-
-#: src/treatmentsFactory.js:238 src/utils.js:52
-msgid "Daily"
-msgstr "நாள்தோறும்"
-
-#: src/treatmentsFactory.js:253 src/treatmentsFactory.js:256
-msgid "Next dose"
-msgstr "அடுத்த டோச்"
-
-#: src/utils.js:48
-msgid "Weekends"
-msgstr "வார இறுதி நாட்கள்"
-
-#: src/utils.js:50
-msgid "Weekdays"
-msgstr "வார நாட்கள்"
-
-#: src/window.js:172 src/window.js:924
-msgid "Reminder"
-msgstr "நினைவூட்டல்"
-
-#. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:174
-msgid "You have treatments low in stock"
-msgstr "உங்களிடம் சிகிச்சைகள் குறைவாக உள்ளன"
-
-#: src/window.js:257
-msgid "An issue has occurred"
-msgstr ""
-
-#: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
-msgid "Close"
-msgstr ""
-
-#: src/window.js:480
-msgid "Show all"
-msgstr "அனைத்தையும் காட்டு"
-
-#: src/window.js:503
-msgid "Show less"
-msgstr "குறைவாக காட்டு"
-
-#: src/window.js:635
-msgid "No results found"
-msgstr "முடிவுகள் எதுவும் கிடைக்கவில்லை"
-
-#: src/window.js:635 src/window.js:1497
-msgid "Empty history"
-msgstr "வெற்று வரலாறு"
-
-#: src/window.js:798
-msgid "No treatments added yet"
-msgstr "இன்னும் சிகிச்சைகள் எதுவும் சேர்க்கப்படவில்லை"
-
-#: src/window.js:799
-msgid "All done for today"
-msgstr "அனைத்தும் இன்று செய்யப்படுகின்றன"
-
-#: src/window.js:887 src/window.js:1074
-msgid "Confirm"
-msgstr "உறுதிப்படுத்தவும்"
-
-#: src/window.js:887
-msgid "Confirm all"
-msgstr "அனைத்தையும் உறுதிப்படுத்தவும்"
-
-#: src/window.js:888
-msgid "Skip"
-msgstr "தவிர்"
-
-#: src/window.js:888
-msgid "Skip all"
-msgstr "அனைத்தையும் தவிர்க்கவும்"
-
-#. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:919
-#, javascript-format
-msgid "and %d more"
-msgstr "மேலும் %d மேலும்"
-
-#: src/window.js:1074
-msgid "One-time entry"
-msgstr "ஒரு முறை நுழைவு"
-
-#: src/window.js:1275
-msgid "Quit"
-msgstr "வெளியேறு"
-
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
@@ -429,9 +122,32 @@ msgstr "வெளியேறு"
 msgid "Edit entry"
 msgstr "நுழைவு திருத்து"
 
+#: data/ui/edit-hist-dialog.blp:18 data/ui/med-dialog.blp:19
+#: src/medDialog.js:584
+msgid "Cancel"
+msgstr "ரத்துசெய்"
+
+#: data/ui/edit-hist-dialog.blp:29 data/ui/refill-dialog.blp:65
+#: src/medDialog.js:114
+msgid "Save"
+msgstr "சேமி"
+
 #: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:210
+#: src/timeDoseRow.js:40
 msgid "Change time"
 msgstr ""
+
+#: data/ui/edit-hist-dialog.blp:119 src/historyFactory.js:176
+#: src/prefsDialog.js:160
+msgid "Skipped"
+msgstr "தவிர்க்கப்பட்டது"
+
+#: data/ui/edit-hist-dialog.blp:130 src/editHistDialog.js:77
+#: src/historyFactory.js:182 src/prefsDialog.js:166 src/prefsDialog.js:176
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirmed"
+msgstr "உறுதிப்படுத்தவும்"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
@@ -440,6 +156,11 @@ msgstr "புதிய மருத்தீடு"
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:272
 msgid "Add"
 msgstr "கூட்டு"
+
+#: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
+#: src/prefsDialog.js:137
+msgid "Name"
+msgstr "பெயர்"
 
 #: data/ui/med-dialog.blp:67 data/ui/one-time-dialog.blp:57
 msgid "Color"
@@ -481,6 +202,11 @@ msgstr "ஊதா"
 #: data/ui/med-dialog.blp:187 data/ui/one-time-dialog.blp:177
 msgid "Unit"
 msgstr "அலகு"
+
+#: data/ui/med-dialog.blp:188 data/ui/one-time-dialog.blp:178
+#: src/oneTimeDialog.js:65
+msgid "Pill(s)"
+msgstr "மாத்திரை (கள்)"
 
 #: data/ui/med-dialog.blp:196
 msgid "Icon"
@@ -551,9 +277,30 @@ msgstr "குறிப்புகள்"
 msgid "After meal"
 msgstr "உணவுக்குப் பிறகு"
 
+#: data/ui/med-dialog.blp:455 src/medDialog.js:489
+msgid "Frequency"
+msgstr "மீடிறன், மீள்திறன், நிகழ்வெண், நிகழ்வு"
+
 #: data/ui/med-dialog.blp:460
 msgid "Every day"
 msgstr "தினமும்"
+
+#: data/ui/med-dialog.blp:461 src/medDialog.js:478
+msgid "Specific days"
+msgstr "குறிப்பிட்ட நாட்கள்"
+
+#: data/ui/med-dialog.blp:462 src/medDialog.js:450
+msgid "Day of the month"
+msgstr "மாதத்தின் நாள்"
+
+#: data/ui/med-dialog.blp:463 src/medDialog.js:485 src/treatmentsFactory.js:265
+msgid "Cycle"
+msgstr "சுழற்சி"
+
+#: data/ui/med-dialog.blp:464 src/todayFactory.js:45
+#: src/treatmentsFactory.js:268
+msgid "When necessary"
+msgstr "தேவைப்படும்போது"
 
 #: data/ui/med-dialog.blp:476
 msgid "Choose days"
@@ -632,6 +379,11 @@ msgstr "காலம்"
 msgid "Set start and end dates"
 msgstr "தொடக்க மற்றும் இறுதி தேதிகளை அமைக்கவும்"
 
+#. TRANSLATORS: label for when duration is enabled
+#: data/ui/med-dialog.blp:791 src/treatmentsFactory.js:224
+msgid "Starts on"
+msgstr "தொடங்குகிறது"
+
 #: data/ui/med-dialog.blp:801 data/ui/med-dialog.blp:844
 #: data/ui/one-time-dialog.blp:243
 msgid "Choose date"
@@ -651,6 +403,14 @@ msgid ""
 "history, reducing stock if enabled"
 msgstr ""
 
+#: data/ui/med-dialog.blp:883 src/medDialog.js:585 src/treatmentsFactory.js:188
+msgid "Delete"
+msgstr "நீக்கு"
+
+#: data/ui/one-time-dialog.blp:7 data/ui/window.blp:122 src/window.js:1083
+msgid "One-time entry"
+msgstr "ஒரு முறை நுழைவு"
+
 #: data/ui/one-time-dialog.blp:43
 msgid "From treatment list"
 msgstr "மருத்தீடு பட்டியலிலிருந்து"
@@ -658,6 +418,23 @@ msgstr "மருத்தீடு பட்டியலிலிருந்�
 #: data/ui/one-time-dialog.blp:182
 msgid "Amount"
 msgstr ""
+
+#: data/ui/one-time-dialog.blp:183 src/prefsDialog.js:137
+msgid "Dose"
+msgstr ""
+
+#: data/ui/one-time-dialog.blp:199 src/prefsDialog.js:137
+msgid "Time"
+msgstr ""
+
+#: data/ui/one-time-dialog.blp:232 src/prefsDialog.js:137
+msgid "Date"
+msgstr "திகதி"
+
+#: data/ui/one-time-dialog.blp:287 data/ui/preferences.blp:95 src/window.js:887
+#: src/window.js:1083
+msgid "Confirm"
+msgstr "உறுதிப்படுத்தவும்"
 
 #: data/ui/preferences.blp:7 data/ui/window.blp:289
 msgid "Preferences"
@@ -695,11 +472,19 @@ msgstr "அறிவிப்பு பொத்தான்கள்"
 msgid "Show or hide confirm/skip"
 msgstr "உறுதிப்படுத்த/தவிர்க்கவும்"
 
+#: data/ui/preferences.blp:111 data/ui/window.blp:134 src/window.js:888
+msgid "Skip"
+msgstr "தவிர்"
+
 #: data/ui/preferences.blp:128
 #, fuzzy
 #| msgid "Empty history"
 msgid "Export history as CSV"
 msgstr "வெற்று வரலாறு"
+
+#: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:186
+msgid "Refill"
+msgstr "மீண்டும் நிரப்பவும்"
 
 #: data/ui/window.blp:23
 #, fuzzy
@@ -727,9 +512,17 @@ msgstr "இன்று"
 msgid "Unselect"
 msgstr "தேர்வு செய்யப்படாதது"
 
+#: data/ui/window.blp:144 src/prefsDialog.js:114
+msgid "History"
+msgstr "வரலாறு"
+
 #: data/ui/window.blp:209
 msgid "Remove entries"
 msgstr ""
+
+#: data/ui/window.blp:223 src/prefsDialog.js:114
+msgid "Treatments"
+msgstr "சிகிச்சைகள்"
 
 #: data/ui/window.blp:249
 msgid "Click the button below to add some"
@@ -738,6 +531,221 @@ msgstr "சில சேர்க்க கீழே உள்ள பொத்�
 #: data/ui/window.blp:294
 msgid "About Dosage"
 msgstr "அளவு பற்றி"
+
+#: data/ui/window.blp:299 src/window.js:1284
+msgid "Quit"
+msgstr "வெளியேறு"
+
+#: src/editHistDialog.js:51 src/editHistDialog.js:64 src/editHistDialog.js:83
+msgid "Confirmed at"
+msgstr "இல் உறுதிப்படுத்தப்பட்டது"
+
+#: src/editHistDialog.js:60 src/historyFactory.js:172 src/prefsDialog.js:173
+msgid "Auto-confirmed"
+msgstr ""
+
+#: src/editHistDialog.js:68 src/editHistDialog.js:91
+msgid "Skipped at"
+msgstr "தவிர்க்கப்பட்டது"
+
+#: src/editHistDialog.js:71 src/historyFactory.js:179 src/prefsDialog.js:163
+msgid "Missed"
+msgstr "தவறவிட்டது"
+
+#: src/editHistDialog.js:78 src/prefsDialog.js:176
+msgid "Time unknown"
+msgstr ""
+
+#: src/historyFactory.js:45
+msgid "Select to be removed"
+msgstr ""
+
+#. TRANSLATORS: 'Your Name <your@email.com>'
+#: src/main.js:49
+msgid "translator-credits"
+msgstr "TamilNeram <anishprabu.t@gmail.com>"
+
+#: src/main.js:53
+msgid "Thanks to these projects!"
+msgstr "இந்த திட்டங்களுக்கு நன்றி!"
+
+#. TRANSLATORS: Confirmation message to allow background permission
+#: src/main.js:89
+msgid "Accept to allow running in the background and receive notifications"
+msgstr "பின்னணியில் இயங்க அனுமதிப்பதை ஏற்றுக்கொண்டு அறிவிப்புகளைப் பெறுங்கள்"
+
+#: src/oneTimeDialog.js:54
+msgid "New"
+msgstr "புதிய"
+
+#: src/oneTimeDialog.js:163 src/medDialog.js:549
+msgid "Name already on treatment list"
+msgstr "மருத்தீடு பட்டியலில் ஏற்கனவே பெயர்"
+
+#: src/medDialog.js:113
+msgid "Edit treatment"
+msgstr "சிகிச்சையைத் திருத்து"
+
+#: src/medDialog.js:128
+msgid "Copy"
+msgstr "நகலெடு"
+
+#: src/medDialog.js:233
+msgid "Add dose"
+msgstr "டோச் சேர்க்கவும்"
+
+#: src/medDialog.js:441
+msgid "Choose"
+msgstr "தேர்வு"
+
+#: src/medDialog.js:451 src/treatmentsFactory.js:244
+msgid "Day"
+msgstr "நாள்"
+
+#: src/medDialog.js:522
+msgid "Empty name"
+msgstr "வெற்று பெயர்"
+
+#: src/medDialog.js:528
+msgid "Empty unit"
+msgstr "வெற்று அலகு"
+
+#: src/medDialog.js:535
+msgid "Choose at least one day"
+msgstr "குறைந்தது ஒரு நாளையாவது தேர்வு செய்யவும்"
+
+#: src/medDialog.js:564
+msgid "Duplicated time"
+msgstr "நகல் நேரம்"
+
+#: src/medDialog.js:580
+msgid "Are you sure?"
+msgstr "நீங்கள் உறுதியாக இருக்கிறீர்களா?"
+
+#: src/medDialog.js:581
+msgid "will be deleted"
+msgstr "நீக்கப்படும்"
+
+#: src/prefsDialog.js:137
+msgid "Status"
+msgstr ""
+
+#: src/prefsDialog.js:137
+#, fuzzy
+#| msgid "Confirm"
+msgid "Time Confirmed"
+msgstr "உறுதிப்படுத்தவும்"
+
+#: src/todayFactory.js:130
+msgid "Change dose"
+msgstr "அளவை மாற்றவும்"
+
+#: src/timeDoseRow.js:34
+msgid "Remove dose"
+msgstr ""
+
+#: src/treatmentsFactory.js:85
+msgid "Refill stock"
+msgstr ""
+
+#: src/treatmentsFactory.js:111
+msgid "Options"
+msgstr "விருப்பங்கள்"
+
+#: src/treatmentsFactory.js:185
+msgid "Edit"
+msgstr "திருத்து"
+
+#: src/treatmentsFactory.js:187
+msgid "Duplicate"
+msgstr "நகல்"
+
+#: src/treatmentsFactory.js:214
+msgid "Remaining"
+msgstr "மீதமுள்ள"
+
+#: src/treatmentsFactory.js:218
+msgid "Low stock"
+msgstr "குறைந்த பங்கு"
+
+#: src/treatmentsFactory.js:225
+msgid "Until"
+msgstr "வரை"
+
+#: src/treatmentsFactory.js:226
+msgid "Ended on"
+msgstr "முடிந்தது"
+
+#: src/treatmentsFactory.js:238 src/utils.js:51
+msgid "Daily"
+msgstr "நாள்தோறும்"
+
+#: src/treatmentsFactory.js:253 src/treatmentsFactory.js:256
+msgid "Next dose"
+msgstr "அடுத்த டோச்"
+
+#: src/utils.js:47
+msgid "Weekends"
+msgstr "வார இறுதி நாட்கள்"
+
+#: src/utils.js:49
+msgid "Weekdays"
+msgstr "வார நாட்கள்"
+
+#: src/window.js:172 src/window.js:924
+msgid "Reminder"
+msgstr "நினைவூட்டல்"
+
+#. TRANSLATORS: Notification text for when the inventory is low
+#: src/window.js:174
+msgid "You have treatments low in stock"
+msgstr "உங்களிடம் சிகிச்சைகள் குறைவாக உள்ளன"
+
+#: src/window.js:257
+msgid "An issue has occurred"
+msgstr ""
+
+#: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
+msgid "Close"
+msgstr ""
+
+#: src/window.js:480
+msgid "Show all"
+msgstr "அனைத்தையும் காட்டு"
+
+#: src/window.js:503
+msgid "Show less"
+msgstr "குறைவாக காட்டு"
+
+#: src/window.js:635
+msgid "No results found"
+msgstr "முடிவுகள் எதுவும் கிடைக்கவில்லை"
+
+#: src/window.js:635 src/window.js:1506
+msgid "Empty history"
+msgstr "வெற்று வரலாறு"
+
+#: src/window.js:798
+msgid "No treatments added yet"
+msgstr "இன்னும் சிகிச்சைகள் எதுவும் சேர்க்கப்படவில்லை"
+
+#: src/window.js:799
+msgid "All done for today"
+msgstr "அனைத்தும் இன்று செய்யப்படுகின்றன"
+
+#: src/window.js:887
+msgid "Confirm all"
+msgstr "அனைத்தையும் உறுதிப்படுத்தவும்"
+
+#: src/window.js:888
+msgid "Skip all"
+msgstr "அனைத்தையும் தவிர்க்கவும்"
+
+#. TRANSLATORS: keep the %d it's where the number goes
+#: src/window.js:919
+#, javascript-format
+msgid "and %d more"
+msgstr "மேலும் %d மேலும்"
 
 #~ msgid "Form"
 #~ msgstr "வடிவம்"
