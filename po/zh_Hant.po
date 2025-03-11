@@ -8,719 +8,724 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-25 15:34-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-03-12 07:02+0000\n"
+"Last-Translator: Chung-Wei Chung <webb790709@proton.me>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/dosage/dosage/zh_Hant/>\n"
 "Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/window.blp:6
 #: src/main.js:40 src/prefsDialog.js:113 src/window.js:1041
 msgid "Dosage"
-msgstr ""
+msgstr "Dosage"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 msgid "Keep track of your treatments"
-msgstr ""
+msgstr "持續追蹤您的處方箋"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:24
 msgid ""
 "Easily manage and track treatments with Dosage: notifications, history, "
 "multiple doses, flexible frequency, customization, stock monitoring, and "
 "duration control"
-msgstr ""
+msgstr "使用 Dosage "
+"來輕鬆的管理和追蹤處方箋：主動通知、歷史記錄、多種劑量、頻率彈性、自定性高、"
+"庫存監控和控管療程"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid "Features:"
-msgstr ""
+msgstr "功能如下："
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:27
 msgid "Notifications — Get reminders at the right time"
-msgstr ""
+msgstr "主動通知 — 在對的時間點接收通知"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:28
 msgid "History — See which medications you took, skipped or missed"
-msgstr ""
+msgstr "歷史記錄 — 查看您吃過、跳過或錯過了什麼藥"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
 msgid "Dosage management — Multiple doses with different times"
-msgstr ""
+msgstr "劑量管理 — 多種劑量與多種時間點"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid ""
 "Frequency modes — Every day, specific days, cycle or just when necessary"
-msgstr ""
+msgstr "頻率模式 — 每天、特定幾天、一個週期或按需服用"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
 msgid "Color and icon — Give a shape for your treatment"
-msgstr ""
+msgstr "顏色和圖標 — 自訂您的處方箋"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:32
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
-msgstr ""
+msgstr "庫存監測 — 追蹤藥品庫存，低於安全存量時提醒補充"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
 msgid "Duration — Define the start and end dates"
-msgstr ""
+msgstr "療程時長 — 設定開始與結束日期"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage today window in light theme"
-msgstr ""
+msgstr "Dosage 在亮色模式下的今日頁面"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage preferences window in light theme"
-msgstr ""
+msgstr "Dosage 在亮色模式下的偏好設定"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:54
 msgid "Dosage edit treatment window in light theme"
-msgstr ""
+msgstr "Dosage 在亮色模式下的編輯處方箋視窗"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:59
 msgid "Dosage today window in dark theme"
-msgstr ""
+msgstr "Dosage 在暗色模式下的今日視窗"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
-msgstr ""
+msgstr "藥劑;追蹤器;提醒;每日;處方箋;藥丸;藥品;療法;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "一般"
 
 #: data/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Preferences"
-msgstr ""
+msgstr "偏好設定"
 
 #: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "顯示捷徑"
 
 #: data/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "離開"
 
 #: data/ui/edit-hist-dialog.blp:7
 msgid "Edit entry"
-msgstr ""
+msgstr "編輯項目"
 
 #: data/ui/edit-hist-dialog.blp:18 data/ui/med-dialog.blp:19
 #: src/medDialog.js:584
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: data/ui/edit-hist-dialog.blp:29 data/ui/refill-dialog.blp:65
 #: src/medDialog.js:114
 msgid "Save"
-msgstr ""
+msgstr "儲存"
 
 #: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:210
 #: src/timeDoseRow.js:40
 msgid "Change time"
-msgstr ""
+msgstr "更改時間"
 
 #: data/ui/edit-hist-dialog.blp:119 src/historyFactory.js:176
 #: src/prefsDialog.js:160
 msgid "Skipped"
-msgstr ""
+msgstr "跳過"
 
 #: data/ui/edit-hist-dialog.blp:130 src/editHistDialog.js:77
 #: src/historyFactory.js:182 src/prefsDialog.js:166 src/prefsDialog.js:176
 msgid "Confirmed"
-msgstr ""
+msgstr "已服用"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
-msgstr ""
+msgstr "新處方箋"
 
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:272
 msgid "Add"
-msgstr ""
+msgstr "新增"
 
 #: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
 #: src/prefsDialog.js:137
 msgid "Name"
-msgstr ""
+msgstr "名稱"
 
 #: data/ui/med-dialog.blp:67 data/ui/one-time-dialog.blp:57
 msgid "Color"
-msgstr ""
+msgstr "顏色"
 
 #. TRANSLATORS: Tooltip for the colors (from Default until Purple)
 #: data/ui/med-dialog.blp:93 data/ui/one-time-dialog.blp:83
 msgid "Default"
-msgstr ""
+msgstr "預設"
 
 #: data/ui/med-dialog.blp:105 data/ui/one-time-dialog.blp:95
 msgid "Red"
-msgstr ""
+msgstr "紅色"
 
 #: data/ui/med-dialog.blp:117 data/ui/one-time-dialog.blp:107
 msgid "Orange"
-msgstr ""
+msgstr "橘色"
 
 #: data/ui/med-dialog.blp:129 data/ui/one-time-dialog.blp:119
 msgid "Yellow"
-msgstr ""
+msgstr "黃色"
 
 #: data/ui/med-dialog.blp:141 data/ui/one-time-dialog.blp:131
 msgid "Green"
-msgstr ""
+msgstr "綠色"
 
 #: data/ui/med-dialog.blp:153 data/ui/one-time-dialog.blp:143
 msgid "Cyan"
-msgstr ""
+msgstr "青色"
 
 #: data/ui/med-dialog.blp:165 data/ui/one-time-dialog.blp:155
 msgid "Blue"
-msgstr ""
+msgstr "藍色"
 
 #: data/ui/med-dialog.blp:177 data/ui/one-time-dialog.blp:167
 msgid "Purple"
-msgstr ""
+msgstr "紫色"
 
 #: data/ui/med-dialog.blp:187 data/ui/one-time-dialog.blp:177
 msgid "Unit"
-msgstr ""
+msgstr "單位"
 
 #: data/ui/med-dialog.blp:188 data/ui/one-time-dialog.blp:178
 #: src/oneTimeDialog.js:65
 msgid "Pill(s)"
-msgstr ""
+msgstr "顆"
 
 #: data/ui/med-dialog.blp:196
 msgid "Icon"
-msgstr ""
+msgstr "圖示"
 
 #. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
 #: data/ui/med-dialog.blp:228
 msgid "Pill"
-msgstr ""
+msgstr "藥丸"
 
 #: data/ui/med-dialog.blp:244
 msgid "Alternative pill"
-msgstr ""
+msgstr "替代藥丸"
 
 #: data/ui/med-dialog.blp:260
 msgid "Capsule"
-msgstr ""
+msgstr "膠囊"
 
 #: data/ui/med-dialog.blp:276
 msgid "Round pill"
-msgstr ""
+msgstr "圓形藥丸"
 
 #: data/ui/med-dialog.blp:292
 msgid "Alternative round pill"
-msgstr ""
+msgstr "替代圓形藥丸"
 
 #: data/ui/med-dialog.blp:308
 msgid "Ampoule"
-msgstr ""
+msgstr "安瓿"
 
 #: data/ui/med-dialog.blp:324
 msgid "Injection"
-msgstr ""
+msgstr "注射"
 
 #: data/ui/med-dialog.blp:340
 msgid "Square pill"
-msgstr ""
+msgstr "方形藥丸"
 
 #: data/ui/med-dialog.blp:356
 msgid "Alternative square pill"
-msgstr ""
+msgstr "替代方形藥丸"
 
 #: data/ui/med-dialog.blp:372
 msgid "Triangle pill"
-msgstr ""
+msgstr "三角形藥丸"
 
 #: data/ui/med-dialog.blp:388
 msgid "Alternative triangle pill"
-msgstr ""
+msgstr "替代三角形藥丸"
 
 #: data/ui/med-dialog.blp:404
 msgid "Bottle"
-msgstr ""
+msgstr "藥瓶"
 
 #: data/ui/med-dialog.blp:420
 msgid "Drops"
-msgstr ""
+msgstr "點滴"
 
 #: data/ui/med-dialog.blp:436
 msgid "Potion"
-msgstr ""
+msgstr "藥水"
 
 #: data/ui/med-dialog.blp:445
 msgid "Notes"
-msgstr ""
+msgstr "註記"
 
 #: data/ui/med-dialog.blp:446
 msgid "After meal"
-msgstr ""
+msgstr "飯後服用"
 
 #: data/ui/med-dialog.blp:455 src/medDialog.js:489
 msgid "Frequency"
-msgstr ""
+msgstr "頻率"
 
 #: data/ui/med-dialog.blp:460
 msgid "Every day"
-msgstr ""
+msgstr "每天"
 
 #: data/ui/med-dialog.blp:461 src/medDialog.js:478
 msgid "Specific days"
-msgstr ""
+msgstr "特定幾天"
 
 #: data/ui/med-dialog.blp:462 src/medDialog.js:450
 msgid "Day of the month"
-msgstr ""
+msgstr "每月第幾天"
 
 #: data/ui/med-dialog.blp:463 src/medDialog.js:485 src/treatmentsFactory.js:265
 msgid "Cycle"
-msgstr ""
+msgstr "週期"
 
 #: data/ui/med-dialog.blp:464 src/todayFactory.js:45
 #: src/treatmentsFactory.js:268
 msgid "When necessary"
-msgstr ""
+msgstr "必要時"
 
 #: data/ui/med-dialog.blp:476
 msgid "Choose days"
-msgstr ""
+msgstr "選擇星期"
 
 #: data/ui/med-dialog.blp:576
 msgid "Choose day"
-msgstr ""
+msgstr "選擇天數"
 
 #: data/ui/med-dialog.blp:622
 msgid "Change cycle"
-msgstr ""
+msgstr "更改週期"
 
 #: data/ui/med-dialog.blp:648
 msgid "Days active"
-msgstr ""
+msgstr "用藥天數"
 
 #: data/ui/med-dialog.blp:662
 msgid "Days inactive"
-msgstr ""
+msgstr "停藥天數"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-dialog.blp:677
 msgid "Today is cycle day…"
-msgstr ""
+msgstr "今天是第…"
 
 #: data/ui/med-dialog.blp:710
 msgid "Increase notification priority"
-msgstr ""
+msgstr "提升通知優先權"
 
 #: data/ui/med-dialog.blp:711
 msgid "Show in fullscreen mode or with 'Do Not Disturb' enabled"
-msgstr ""
+msgstr "在全螢幕模式下顯示或是「禁止打擾」模式啟動時"
 
 #: data/ui/med-dialog.blp:715
 msgid "Recurring notifications"
-msgstr ""
+msgstr "反復通知"
 
 #: data/ui/med-dialog.blp:716
 msgid "Renotify until it's confirmed or skipped"
-msgstr ""
+msgstr "重複提醒直到已確認或是跳過"
 
 #: data/ui/med-dialog.blp:721
 msgid "Interval in minutes"
-msgstr ""
+msgstr "幾分鐘提醒一次"
 
 #: data/ui/med-dialog.blp:734 data/ui/refill-dialog.blp:36
 msgid "Inventory"
-msgstr ""
+msgstr "庫存"
 
 #: data/ui/med-dialog.blp:735
 msgid "Manage your stock"
-msgstr ""
+msgstr "管理藥品庫存"
 
 #: data/ui/med-dialog.blp:741
 msgid "Current"
-msgstr ""
+msgstr "現有"
 
 #: data/ui/med-dialog.blp:754
 msgid "Remind me at"
-msgstr ""
+msgstr "低於多少提醒"
 
 #: data/ui/med-dialog.blp:767
 msgid "Refill amount"
-msgstr ""
+msgstr "補充量"
 
 #: data/ui/med-dialog.blp:780
 msgid "Duration"
-msgstr ""
+msgstr "期間"
 
 #: data/ui/med-dialog.blp:781
 msgid "Set start and end dates"
-msgstr ""
+msgstr "設定開始和結束日期"
 
 #. TRANSLATORS: label for when duration is enabled
 #: data/ui/med-dialog.blp:791 src/treatmentsFactory.js:224
 msgid "Starts on"
-msgstr ""
+msgstr "開始日期"
 
 #: data/ui/med-dialog.blp:801 data/ui/med-dialog.blp:844
 #: data/ui/one-time-dialog.blp:243
 msgid "Choose date"
-msgstr ""
+msgstr "選擇日期"
 
 #: data/ui/med-dialog.blp:834
 msgid "Ends on"
-msgstr ""
+msgstr "結束日期"
 
 #: data/ui/med-dialog.blp:873
 msgid "Mark as confirmed"
-msgstr ""
+msgstr "標記爲已確認"
 
 #: data/ui/med-dialog.blp:874
 msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
-msgstr ""
+msgstr "如果沒有手動點選已確認或是跳過，將會在歷史記錄列為已確認，庫存也會減少"
 
 #: data/ui/med-dialog.blp:883 src/medDialog.js:585 src/treatmentsFactory.js:188
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
 #: data/ui/one-time-dialog.blp:7 data/ui/window.blp:122 src/window.js:1083
 msgid "One-time entry"
-msgstr ""
+msgstr "單次輸入"
 
 #: data/ui/one-time-dialog.blp:43
 msgid "From treatment list"
-msgstr ""
+msgstr "從處方箋挑選"
 
 #: data/ui/one-time-dialog.blp:182
 msgid "Amount"
-msgstr ""
+msgstr "數量"
 
 #: data/ui/one-time-dialog.blp:183 src/prefsDialog.js:137
 msgid "Dose"
-msgstr ""
+msgstr "劑量"
 
 #: data/ui/one-time-dialog.blp:199 src/prefsDialog.js:137
 msgid "Time"
-msgstr ""
+msgstr "時間"
 
 #: data/ui/one-time-dialog.blp:232 src/prefsDialog.js:137
 msgid "Date"
-msgstr ""
+msgstr "日期"
 
 #: data/ui/one-time-dialog.blp:287 data/ui/preferences.blp:95 src/window.js:887
 #: src/window.js:1083
 msgid "Confirm"
-msgstr ""
+msgstr "確認"
 
 #: data/ui/preferences.blp:7 data/ui/window.blp:289
 msgid "Preferences"
-msgstr ""
+msgstr "偏好設定"
 
 #: data/ui/preferences.blp:19
 msgid "Auto-start at login"
-msgstr ""
+msgstr "登入後自動啟動"
 
 #: data/ui/preferences.blp:35
 msgid "Auto-clear history"
-msgstr ""
+msgstr "自動清除歷史記錄"
 
 #: data/ui/preferences.blp:36
 msgid "Keeps a maximum of 30 days"
-msgstr ""
+msgstr "只保留30天內的紀錄"
 
 #: data/ui/preferences.blp:52
 msgid "Low stock notification"
-msgstr ""
+msgstr "低於存量通知"
 
 #: data/ui/preferences.blp:53
 msgid "Send reminders when treatments are low in stock"
-msgstr ""
+msgstr "當處方箋庫存低於安全存量時通知"
 
 #: data/ui/preferences.blp:69
 msgid "Notification sound"
-msgstr ""
+msgstr "通知音效"
 
 #: data/ui/preferences.blp:85
 msgid "Notification buttons"
-msgstr ""
+msgstr "通知按鈕"
 
 #: data/ui/preferences.blp:86
 msgid "Show or hide confirm/skip"
-msgstr ""
+msgstr "顯示或隱藏確認/跳過"
 
 #: data/ui/preferences.blp:111 data/ui/window.blp:134 src/window.js:888
 msgid "Skip"
-msgstr ""
+msgstr "跳過"
 
 #: data/ui/preferences.blp:128
 msgid "Export history as CSV"
-msgstr ""
+msgstr "將歷史記錄輸出爲 CSV"
 
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:186
 msgid "Refill"
-msgstr ""
+msgstr "補充"
 
 #: data/ui/window.blp:23
 msgid "Show/Hide 'When necessary'"
-msgstr ""
+msgstr "顯示/隱藏「按需服用」"
 
 #: data/ui/window.blp:31
 msgid "Search"
-msgstr ""
+msgstr "搜尋"
 
 #: data/ui/window.blp:40
 msgid "Main Menu"
-msgstr ""
+msgstr "主選單"
 
 #: data/ui/window.blp:53
 msgid "Search…"
-msgstr ""
+msgstr "搜尋…"
 
 #: data/ui/window.blp:63
 msgid "Today"
-msgstr ""
+msgstr "今天"
 
 #: data/ui/window.blp:109 data/ui/window.blp:199
 msgid "Unselect"
-msgstr ""
+msgstr "取消選取"
 
 #: data/ui/window.blp:144 src/prefsDialog.js:114
 msgid "History"
-msgstr ""
+msgstr "歷史記錄"
 
 #: data/ui/window.blp:209
 msgid "Remove entries"
-msgstr ""
+msgstr "刪除項目"
 
 #: data/ui/window.blp:223 src/prefsDialog.js:114
 msgid "Treatments"
-msgstr ""
+msgstr "處方箋"
 
 #: data/ui/window.blp:249
 msgid "Click the button below to add some"
-msgstr ""
+msgstr "請按下方按鈕新增項目"
 
 #: data/ui/window.blp:294
 msgid "About Dosage"
-msgstr ""
+msgstr "關於 Dosage"
 
 #: data/ui/window.blp:299 src/window.js:1284
 msgid "Quit"
-msgstr ""
+msgstr "離開"
 
 #: src/editHistDialog.js:51 src/editHistDialog.js:64 src/editHistDialog.js:83
 msgid "Confirmed at"
-msgstr ""
+msgstr "何時確認"
 
 #: src/editHistDialog.js:60 src/historyFactory.js:172 src/prefsDialog.js:173
 msgid "Auto-confirmed"
-msgstr ""
+msgstr "自動確認"
 
 #: src/editHistDialog.js:68 src/editHistDialog.js:91
 msgid "Skipped at"
-msgstr ""
+msgstr "何時跳過"
 
 #: src/editHistDialog.js:71 src/historyFactory.js:179 src/prefsDialog.js:163
 msgid "Missed"
-msgstr ""
+msgstr "錯過"
 
 #: src/editHistDialog.js:78 src/prefsDialog.js:176
 msgid "Time unknown"
-msgstr ""
+msgstr "時間未知"
 
 #: src/historyFactory.js:45
 msgid "Select to be removed"
-msgstr ""
+msgstr "勾選以刪除"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
 msgid "translator-credits"
-msgstr ""
+msgstr "Chung-Wei Chung <webb790709@proton.me>"
 
 #: src/main.js:53
 msgid "Thanks to these projects!"
-msgstr ""
+msgstr "謝謝這些專案！"
 
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:89
 msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
+msgstr "接受已允許在背景中執行和接收通知"
 
 #: src/oneTimeDialog.js:54
 msgid "New"
-msgstr ""
+msgstr "新"
 
 #: src/oneTimeDialog.js:163 src/medDialog.js:549
 msgid "Name already on treatment list"
-msgstr ""
+msgstr "名稱已經存在處方箋清單"
 
 #: src/medDialog.js:113
 msgid "Edit treatment"
-msgstr ""
+msgstr "編輯處方箋"
 
 #: src/medDialog.js:128
 msgid "Copy"
-msgstr ""
+msgstr "複製"
 
 #: src/medDialog.js:233
 msgid "Add dose"
-msgstr ""
+msgstr "增加劑量"
 
 #: src/medDialog.js:441
 msgid "Choose"
-msgstr ""
+msgstr "選擇"
 
 #: src/medDialog.js:451 src/treatmentsFactory.js:244
 msgid "Day"
-msgstr ""
+msgstr "天"
 
 #: src/medDialog.js:522
 msgid "Empty name"
-msgstr ""
+msgstr "沒有輸入名稱"
 
 #: src/medDialog.js:528
 msgid "Empty unit"
-msgstr ""
+msgstr "沒有輸入單位"
 
 #: src/medDialog.js:535
 msgid "Choose at least one day"
-msgstr ""
+msgstr "至少要選擇一天"
 
 #: src/medDialog.js:564
 msgid "Duplicated time"
-msgstr ""
+msgstr "時間重複"
 
 #: src/medDialog.js:580
 msgid "Are you sure?"
-msgstr ""
+msgstr "您確定嗎？"
 
 #: src/medDialog.js:581
 msgid "will be deleted"
-msgstr ""
+msgstr "將被刪除"
 
 #: src/prefsDialog.js:137
 msgid "Status"
-msgstr ""
+msgstr "狀態"
 
 #: src/prefsDialog.js:137
 msgid "Time Confirmed"
-msgstr ""
+msgstr "確認時間"
 
 #: src/todayFactory.js:130
 msgid "Change dose"
-msgstr ""
+msgstr "改變劑量"
 
 #: src/timeDoseRow.js:34
 msgid "Remove dose"
-msgstr ""
+msgstr "刪除劑量"
 
 #: src/treatmentsFactory.js:85
 msgid "Refill stock"
-msgstr ""
+msgstr "補充庫存"
 
 #: src/treatmentsFactory.js:111
 msgid "Options"
-msgstr ""
+msgstr "選項"
 
 #: src/treatmentsFactory.js:185
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 #: src/treatmentsFactory.js:187
 msgid "Duplicate"
-msgstr ""
+msgstr "複製"
 
 #: src/treatmentsFactory.js:214
 msgid "Remaining"
-msgstr ""
+msgstr "剩餘數量"
 
 #: src/treatmentsFactory.js:218
 msgid "Low stock"
-msgstr ""
+msgstr "低庫存"
 
 #: src/treatmentsFactory.js:225
 msgid "Until"
-msgstr ""
+msgstr "直到"
 
 #: src/treatmentsFactory.js:226
 msgid "Ended on"
-msgstr ""
+msgstr "結束於"
 
 #: src/treatmentsFactory.js:238 src/utils.js:51
 msgid "Daily"
-msgstr ""
+msgstr "每天"
 
 #: src/treatmentsFactory.js:253 src/treatmentsFactory.js:256
 msgid "Next dose"
-msgstr ""
+msgstr "下一劑量"
 
 #: src/utils.js:47
 msgid "Weekends"
-msgstr ""
+msgstr "週末"
 
 #: src/utils.js:49
 msgid "Weekdays"
-msgstr ""
+msgstr "平日"
 
 #: src/window.js:172 src/window.js:924
 msgid "Reminder"
-msgstr ""
+msgstr "提醒"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:174
 msgid "You have treatments low in stock"
-msgstr ""
+msgstr "您的處方箋庫存偏低"
 
 #: src/window.js:257
 msgid "An issue has occurred"
-msgstr ""
+msgstr "發生問題"
 
 #: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
 msgid "Close"
-msgstr ""
+msgstr "關閉"
 
 #: src/window.js:480
 msgid "Show all"
-msgstr ""
+msgstr "顯示全部"
 
 #: src/window.js:503
 msgid "Show less"
-msgstr ""
+msgstr "顯示較少"
 
 #: src/window.js:635
 msgid "No results found"
-msgstr ""
+msgstr "沒有結果"
 
 #: src/window.js:635 src/window.js:1506
 msgid "Empty history"
-msgstr ""
+msgstr "清空歷史記錄"
 
 #: src/window.js:798
 msgid "No treatments added yet"
-msgstr ""
+msgstr "還沒有加入處方箋"
 
 #: src/window.js:799
 msgid "All done for today"
-msgstr ""
+msgstr "今天的藥物已服用完畢"
 
 #: src/window.js:887
 msgid "Confirm all"
-msgstr ""
+msgstr "確認全部"
 
 #: src/window.js:888
 msgid "Skip all"
-msgstr ""
+msgstr "跳過全部"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:919
 #, javascript-format
 msgid "and %d more"
-msgstr ""
+msgstr "增加 %d 更多"
