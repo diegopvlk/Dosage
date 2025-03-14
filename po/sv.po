@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-25 15:34-0300\n"
-"PO-Revision-Date: 2025-02-11 21:43+0000\n"
+"PO-Revision-Date: 2025-03-14 12:55+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -364,10 +364,8 @@ msgid "Remind me at"
 msgstr "Påminna mig på"
 
 #: data/ui/med-dialog.blp:767
-#, fuzzy
-#| msgid "Refill stock"
 msgid "Refill amount"
-msgstr "Fyll på"
+msgstr "Påfyllningsmängd"
 
 #: data/ui/med-dialog.blp:780
 msgid "Duration"
@@ -477,10 +475,8 @@ msgid "Skip"
 msgstr "Hoppa över"
 
 #: data/ui/preferences.blp:128
-#, fuzzy
-#| msgid "Empty history"
 msgid "Export history as CSV"
-msgstr "Tom historik"
+msgstr "Exportera historik som CSV"
 
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:186
 msgid "Refill"
@@ -552,7 +548,7 @@ msgstr "Glömd"
 
 #: src/editHistDialog.js:78 src/prefsDialog.js:176
 msgid "Time unknown"
-msgstr ""
+msgstr "Tid okänd"
 
 #: src/historyFactory.js:45
 msgid "Select to be removed"
@@ -626,13 +622,11 @@ msgstr "kommer att raderas"
 
 #: src/prefsDialog.js:137
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: src/prefsDialog.js:137
-#, fuzzy
-#| msgid "Confirmed"
 msgid "Time Confirmed"
-msgstr "Bekräftad"
+msgstr "Tid bekräftad"
 
 #: src/todayFactory.js:130
 msgid "Change dose"
