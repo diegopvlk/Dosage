@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-25 15:34-0300\n"
-"PO-Revision-Date: 2025-03-12 07:02+0000\n"
+"PO-Revision-Date: 2025-03-14 05:05+0000\n"
 "Last-Translator: Chung-Wei Chung <webb790709@proton.me>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/dosage/dosage/zh_Hant/>\n"
@@ -17,14 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/window.blp:6
 #: src/main.js:40 src/prefsDialog.js:113 src/window.js:1041
 msgid "Dosage"
-msgstr "Dosage"
+msgstr "藥記"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 msgid "Keep track of your treatments"
@@ -35,9 +35,8 @@ msgid ""
 "Easily manage and track treatments with Dosage: notifications, history, "
 "multiple doses, flexible frequency, customization, stock monitoring, and "
 "duration control"
-msgstr "使用 Dosage "
-"來輕鬆的管理和追蹤處方箋：主動通知、歷史記錄、多種劑量、頻率彈性、自定性高、"
-"庫存監控和控管療程"
+msgstr "使用「藥記」來輕鬆的管理和追蹤處方箋：主動通知、歷史記錄、多種劑量、頻率彈性"
+"、自定性高、庫存監控和控管療程"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid "Features:"
@@ -74,19 +73,19 @@ msgstr "療程時長 — 設定開始與結束日期"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage today window in light theme"
-msgstr "Dosage 在亮色模式下的今日頁面"
+msgstr "「藥記」在亮色模式下的今日頁面"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage preferences window in light theme"
-msgstr "Dosage 在亮色模式下的偏好設定"
+msgstr "「藥記」在亮色模式下的偏好設定"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:54
 msgid "Dosage edit treatment window in light theme"
-msgstr "Dosage 在亮色模式下的編輯處方箋視窗"
+msgstr "「藥記」在亮色模式下的編輯處方箋視窗"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:59
 msgid "Dosage today window in dark theme"
-msgstr "Dosage 在暗色模式下的今日視窗"
+msgstr "「藥記」在暗色模式下的今日視窗"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
@@ -515,7 +514,7 @@ msgstr "請按下方按鈕新增項目"
 
 #: data/ui/window.blp:294
 msgid "About Dosage"
-msgstr "關於 Dosage"
+msgstr "關於藥記"
 
 #: data/ui/window.blp:299 src/window.js:1284
 msgid "Quit"
