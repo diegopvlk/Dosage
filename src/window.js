@@ -4,7 +4,7 @@
  */
 'use strict';
 
-import Adw from 'gi://Adw?version=1';
+import Adw from 'gi://Adw';
 import Gdk from 'gi://Gdk';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';

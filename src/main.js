@@ -4,12 +4,12 @@
  */
 'use strict';
 
-import Adw from 'gi://Adw?version=1';
+import Adw from 'gi://Adw';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
-import Xdp from 'gi://Xdp?version=1.0';
+import Xdp from 'gi://Xdp';
 
 import openPrefsDialog from './prefsDialog.js';
 import { DosageWindow } from './window.js';

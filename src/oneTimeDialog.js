@@ -1,6 +1,6 @@
 'use strict';
 
-import Adw from 'gi://Adw?version=1';
+import Adw from 'gi://Adw';
 import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
 
