@@ -132,10 +132,6 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 	const item = listItem.get_item().obj;
 	const box = listItem.box;
 	const row = box.parent;
-	const nameLabel = listItem.nameLabel;
-	const doseLabel = listItem.doseLabel;
-	const takenLabel = listItem.takenLabel;
-	const takenIcon = listItem.takenIcon;
 
 	if (!listItem.controllerAndSignal) {
 		row.add_controller(listItem.keyController);
@@ -145,46 +141,49 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 		});
 
 		listItem.item.connect('notify::obj', () => {
-			setLabels();
+			setLabels(listItem);
 		});
 
 		listItem.controllerAndSignal = true;
 	}
 
-	function setLabels() {
-		const itemTakenDate = GLib.DateTime.new_from_unix_local(item.taken[0] / 1000);
-		const itemTime = GLib.DateTime.new_local(1, 1, 1, item.time[0], item.time[1], 1);
-		const time = itemTime.format(timeFormat);
-		const timeTaken = itemTakenDate.format(timeFormat);
-
-		nameLabel.label = item.name;
-		doseLabel.label = `${item.dose} ${item.unit} · ${time}`;
-
-		const isConfirmed = item.taken[1] === 1 || item.taken[1] === 2 || item.taken[1] === 3;
-		takenIcon.visible = isConfirmed;
-
-		switch (item.taken[1]) {
-			case 1:
-				takenLabel.label = timeTaken;
-				takenIcon.icon_name = 'check-confirmed-symbolic';
-				break;
-			case 2:
-				takenLabel.label = _('Auto-confirmed');
-				takenIcon.icon_name = 'check-auto-confirmed-symbolic';
-				break;
-			case 0:
-				takenLabel.label = _('Skipped');
-				break;
-			case -1:
-				takenLabel.label = _('Missed');
-				break;
-			case 3:
-				takenLabel.label = _('Confirmed');
-				takenIcon.icon_name = 'check-confirmed-symbolic';
-		}
-	}
-
-	setLabels();
+	setLabels(listItem);
 
 	box.css_classes = ['item-box', item.color];
 });
+
+function setLabels(listItem) {
+	const { nameLabel, doseLabel, takenLabel, takenIcon } = listItem;
+	const item = listItem.get_item().obj;
+
+	const itemTakenDate = GLib.DateTime.new_from_unix_local(item.taken[0] / 1000);
+	const itemTime = GLib.DateTime.new_local(1, 1, 1, item.time[0], item.time[1], 1);
+	const time = itemTime.format(timeFormat);
+	const timeTaken = itemTakenDate.format(timeFormat);
+
+	nameLabel.label = item.name;
+	doseLabel.label = `${item.dose} ${item.unit} · ${time}`;
+
+	const isConfirmed = item.taken[1] === 1 || item.taken[1] === 2 || item.taken[1] === 3;
+	takenIcon.visible = isConfirmed;
+
+	switch (item.taken[1]) {
+		case 1:
+			takenLabel.label = timeTaken;
+			takenIcon.icon_name = 'check-confirmed-symbolic';
+			break;
+		case 2:
+			takenLabel.label = _('Auto-confirmed');
+			takenIcon.icon_name = 'check-auto-confirmed-symbolic';
+			break;
+		case 0:
+			takenLabel.label = _('Skipped');
+			break;
+		case -1:
+			takenLabel.label = _('Missed');
+			break;
+		case 3:
+			takenLabel.label = _('Confirmed');
+			takenIcon.icon_name = 'check-confirmed-symbolic';
+	}
+}

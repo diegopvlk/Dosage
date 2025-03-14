@@ -691,7 +691,7 @@ export const DosageWindow = GObject.registerClass(
 				this._todayList.set_factory(todayItemFactory);
 
 				this.todayFilter = Gtk.CustomFilter.new(it => {
-					return this._btnWhenNeeded.active || it.obj.frequency !== 'when-needed';
+					return settings.get_boolean('show-when-needed') || it.obj.frequency !== 'when-needed';
 				});
 
 				this.todayLS = Gio.ListStore.new(MedicationObject);
@@ -1045,22 +1045,9 @@ export const DosageWindow = GObject.registerClass(
 
 		setShowWhenNeeded() {
 			this.unselectTodayItems();
-
 			const btn = this._btnWhenNeeded;
-			const showWhenNeeded = btn.active;
-
-			settings.set_boolean('show-when-needed', showWhenNeeded);
-
-			this.todayFilter.set_filter_func(it => {
-				return showWhenNeeded || it.obj.frequency !== 'when-needed';
-			});
-
-			const noItems = this.sortedTodayModel.get_n_items() === 0;
-			this._emptyToday.set_visible(noItems);
-
-			if (showWhenNeeded) {
-				this._todayList.scroll_to(0, null, null);
-			}
+			settings.set_boolean('show-when-needed', btn.active);
+			this.loadToday();
 		}
 
 		selectTodayItems(list, position, groupCheck) {

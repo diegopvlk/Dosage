@@ -27,13 +27,8 @@ todayHeaderFactory.connect('setup', (factory, listHeader) => {
 
 	listHeader.selectTimeGroupBtn.connect('clicked', _btn => {
 		const DW = DosageApplication.get_default().activeWindow;
-		const item = listHeader.item.obj;
-		const position = item.position;
 
-		// listHeader .start and .end gives wrong positions at the start
-		const [start, end] = DW.todayMultiSelect.get_section(position);
-
-		for (let pos = start; pos < end; pos++) {
+		for (let pos = listHeader.start; pos < listHeader.end; pos++) {
 			DW.selectTodayItems(null, pos, true);
 		}
 	});

@@ -17,6 +17,7 @@ import { openRefillDialog } from './refillDialog.js';
 export const treatmentsFactory = new Gtk.SignalListItemFactory();
 
 let delayDialog = false;
+let ref = 0;
 
 treatmentsFactory.connect('setup', (factory, listItem) => {
 	listItem.box = new Gtk.Box();
@@ -99,6 +100,18 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 
 	listItem.optionsMenu = new Gio.Menu();
 
+	listItem.optionsMenu.append(_('Edit'), `app.edit${ref}`);
+	listItem.optionsMenu.append(_('Refill'), `app.refill${ref}`);
+	listItem.optionsMenu.append(_('Duplicate'), `app.dup${ref}`);
+	listItem.optionsMenu.append(_('Delete'), `app.del${ref}`);
+
+	listItem.editAct = new Gio.SimpleAction({ name: `edit${ref}` });
+	listItem.refillAct = new Gio.SimpleAction({ name: `refill${ref}` });
+	listItem.duplicateAct = new Gio.SimpleAction({ name: `dup${ref}` });
+	listItem.deleteAct = new Gio.SimpleAction({ name: `del${ref}` });
+
+	ref++;
+
 	listItem.popoverMenu = new Gtk.PopoverMenu({
 		halign: Gtk.Align.START,
 		has_arrow: false,
@@ -131,70 +144,63 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 		}
 	});
 
-	listItem.controllerAdded = false;
+	listItem.controllerAndSignals = false;
 });
 
 treatmentsFactory.connect('bind', (factory, listItem) => {
-	const DosageWindow = DosageApplication.get_default().activeWindow;
-	const app = DosageWindow.application;
-
-	const { box, nameLabel, optionsMenu, icon } = listItem;
+	const { box, nameLabel, icon } = listItem;
 	const item = listItem.item.obj;
-	const pos = listItem.position;
-	const row = box.parent;
-	const inv = item.inventory;
 
-	if (!listItem.controllerAdded) {
+	if (!listItem.controllerAndSignals) {
+		const DosageWindow = DosageApplication.get_default().activeWindow;
+		const app = DosageWindow.application;
+		const row = box.parent;
+
 		row.add_controller(listItem.keyController);
 
-		listItem.activateItem = () => {
+		row.connect('unrealize', () => {
+			app.remove_action(listItem.editAct.get_name());
+			app.remove_action(listItem.refillAct.get_name());
+			app.remove_action(listItem.duplicateAct.get_name());
+			app.remove_action(listItem.deleteAct.get_name());
+		});
+
+		listItem.item.connect('notify::obj', () => {
+			setInventoryAndDateLabels(listItem);
+		});
+
+		listItem.editAct.connect('activate', () => {
 			const listView = row.parent;
-			listView.emit('activate', pos);
-		};
+			listView.emit('activate', listItem.position);
+		});
 
-		listItem.controllerAdded = true;
+		if (item.inventory.enabled) {
+			listItem.refillAct.connect('activate', () => {
+				openRefillDialog(listItem, listItem.position);
+			});
+			app.add_action(listItem.refillAct);
+		}
+
+		listItem.duplicateAct.connect('activate', () => {
+			const list = DosageWindow._treatmentsList;
+			DosageWindow.openMedDialog(list, listItem.position, 'duplicate');
+		});
+
+		listItem.deleteAct.connect('activate', () => {
+			confirmDeleteDialog(item, listItem.position, DosageWindow);
+		});
+
+		app.add_action(listItem.editAct);
+		app.add_action(listItem.duplicateAct);
+		app.add_action(listItem.deleteAct);
+
+		listItem.controllerAndSignals = true;
 	}
-
-	app.remove_action(`edit${pos}`);
-	app.remove_action(`refill${pos}`);
-	app.remove_action(`duplicate${pos}`);
-	app.remove_action(`delete${pos}`);
-	optionsMenu.remove_all();
-
-	const editAct = new Gio.SimpleAction({ name: `edit${pos}` });
-	editAct.connect('activate', () => listItem.activateItem());
-	app.add_action(editAct);
-
-	if (inv.enabled) {
-		const refillAct = new Gio.SimpleAction({ name: `refill${pos}` });
-		refillAct.connect('activate', () => openRefillDialog(listItem, pos));
-		app.add_action(refillAct);
-	}
-
-	const duplicateAct = new Gio.SimpleAction({ name: `duplicate${pos}` });
-	duplicateAct.connect('activate', () => {
-		const list = DosageWindow._treatmentsList;
-		DosageWindow.openMedDialog(list, pos, 'duplicate');
-	});
-	app.add_action(duplicateAct);
-
-	const deleteAct = new Gio.SimpleAction({ name: `delete${pos}` });
-	deleteAct.connect('activate', () => confirmDeleteDialog(item, pos, DosageWindow));
-	app.add_action(deleteAct);
-
-	optionsMenu.append(_('Edit'), `app.edit${pos}`);
-	optionsMenu.append(_('Refill'), `app.refill${pos}`);
-	optionsMenu.append(_('Duplicate'), `app.duplicate${pos}`);
-	optionsMenu.append(_('Delete'), `app.delete${pos}`);
 
 	nameLabel.label = item.name;
 	icon.icon_name = item.icon;
 
 	setInventoryAndDateLabels(listItem);
-
-	listItem.item.connect('notify::obj', () => {
-		setInventoryAndDateLabels(listItem);
-	});
 
 	box.css_classes = ['item-box', item.color];
 });
