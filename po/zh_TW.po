@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-25 15:34-0300\n"
-"PO-Revision-Date: 2025-03-14 05:05+0000\n"
+"PO-Revision-Date: 2025-03-17 10:10+0000\n"
 "Last-Translator: Chung-Wei Chung <webb790709@proton.me>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/dosage/dosage/zh_Hant/>\n"
@@ -85,7 +85,7 @@ msgstr "「藥記」在亮色模式下的編輯處方箋視窗"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:59
 msgid "Dosage today window in dark theme"
-msgstr "「藥記」在暗色模式下的今日視窗"
+msgstr "「藥記」在暗色模式下的今日頁面"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
@@ -139,7 +139,7 @@ msgstr "跳過"
 #: data/ui/edit-hist-dialog.blp:130 src/editHistDialog.js:77
 #: src/historyFactory.js:182 src/prefsDialog.js:166 src/prefsDialog.js:176
 msgid "Confirmed"
-msgstr "已服用"
+msgstr "已確認"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
@@ -292,7 +292,7 @@ msgstr "週期"
 #: data/ui/med-dialog.blp:464 src/todayFactory.js:45
 #: src/treatmentsFactory.js:268
 msgid "When necessary"
-msgstr "必要時"
+msgstr "按需服用"
 
 #: data/ui/med-dialog.blp:476
 msgid "Choose days"
@@ -329,7 +329,7 @@ msgstr "在全螢幕模式下顯示或是「禁止打擾」模式啟動時"
 
 #: data/ui/med-dialog.blp:715
 msgid "Recurring notifications"
-msgstr "反復通知"
+msgstr "重複通知"
 
 #: data/ui/med-dialog.blp:716
 msgid "Renotify until it's confirmed or skipped"
@@ -705,7 +705,7 @@ msgstr "沒有結果"
 
 #: src/window.js:635 src/window.js:1506
 msgid "Empty history"
-msgstr "清空歷史記錄"
+msgstr "歷史記錄空白"
 
 #: src/window.js:798
 msgid "No treatments added yet"
