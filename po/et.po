@@ -8,24 +8,27 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-25 15:34-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-03-19 15:24+0000\n"
+"Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
+"Language-Team: Estonian <https://hosted.weblate.org/projects/dosage/dosage/"
+"et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:4 data/ui/window.blp:6
 #: src/main.js:40 src/prefsDialog.js:113 src/window.js:1041
 msgid "Dosage"
-msgstr ""
+msgstr "Ravimiannused"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 msgid "Keep track of your treatments"
-msgstr ""
+msgstr "Pea arvet oma ravimite annuste üle"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:24
 msgid ""
