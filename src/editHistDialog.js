@@ -19,8 +19,7 @@ export function openEditHistDialog(DosageWindow, list, position) {
 	const saveButton = builder.get_object('saveButton');
 	const nameDoseSpinRow = builder.get_object('nameDoseSpinRow');
 	const takenRow = builder.get_object('takenRow');
-	const histBtnSkipped = builder.get_object('histBtnSkipped');
-	const histBtnConfirmed = builder.get_object('histBtnConfirmed');
+	const takenButtons = builder.get_object('takenButtons');
 	const popoverScrollTime = builder.get_object('popoverScrollTime');
 	const date = new Date(item.taken[0]);
 
@@ -47,7 +46,9 @@ export function openEditHistDialog(DosageWindow, list, position) {
 		if (takenRow.subtitle != e.text) {
 			takenRow.subtitle = e.text;
 
-			if (histBtnConfirmed.active) {
+			const confirmActive = takenButtons.active_name === 'confirmed';
+
+			if (confirmActive) {
 				takenRow.title = _('Confirmed at');
 				confirmActivated = true;
 			}
@@ -56,43 +57,41 @@ export function openEditHistDialog(DosageWindow, list, position) {
 
 	switch (item.taken[1]) {
 		case 2:
-			histBtnConfirmed.set_active(true);
+			takenButtons.active_name = 'confirmed';
 			takenRow.title = _('Auto-confirmed');
 			break;
 		case 1:
-			histBtnConfirmed.set_active(true);
+			takenButtons.active_name = 'confirmed';
 			takenRow.title = _('Confirmed at');
 			break;
 		case 0:
-			histBtnSkipped.set_active(true);
+			takenButtons.active_name = 'skipped';
 			takenRow.title = _('Skipped at');
 			break;
 		case -1:
+			takenButtons.active_name = 'skipped';
 			takenRow.title = _('Missed') + ' (?)';
-			histBtnSkipped.set_active(true);
 			saveButton.sensitive = false;
 			break;
 		case 3:
-			histBtnConfirmed.set_active(true);
+			takenButtons.active_name = 'confirmed';
 			takenRow.title = _('Confirmed');
 			takenRow.subtitle = _('Time unknown');
 			break;
 	}
 
-	histBtnConfirmed.connect('clicked', () => {
-		takenRow.title = _('Confirmed at');
-		histBtnSkipped.set_active(false);
-		histBtnConfirmed.set_active(true);
-		saveButton.sensitive = true;
-		confirmActivated = true;
-		takenRow.subtitle = timePicker.entry.text;
-	});
-	histBtnSkipped.connect('clicked', () => {
-		takenRow.title = _('Skipped at');
-		histBtnSkipped.set_active(true);
-		histBtnConfirmed.set_active(false);
+	takenButtons.connect('notify::active', () => {
 		saveButton.sensitive = true;
 		takenRow.subtitle = timePicker.entry.text;
+
+		switch (takenButtons.active_name) {
+			case 'confirmed':
+				takenRow.title = _('Confirmed at');
+				confirmActivated = true;
+				break;
+			case 'skipped':
+				takenRow.title = _('Skipped at');
+		}
 	});
 
 	cancelButton.connect('clicked', () => editHistDialog.force_close());
@@ -128,8 +127,8 @@ export function openEditHistDialog(DosageWindow, list, position) {
 				confirmedDose = +item.dose;
 		}
 
-		const skipActive = histBtnSkipped.active;
-		const confirmActive = histBtnConfirmed.active;
+		const skipActive = takenButtons.active_name === 'skipped';
+		const confirmActive = takenButtons.active_name === 'confirmed';
 
 		if (skipActive) item.taken[1] = 0;
 		else if (confirmActivated && confirmActive) item.taken[1] = 1;

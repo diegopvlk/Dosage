@@ -1,5 +1,6 @@
 'use strict';
 
+import Adw from 'gi://Adw';
 import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
 import GObject from 'gi://GObject';
@@ -76,36 +77,32 @@ const TimePicker = GObject.registerClass(
 				adjustment: this.adjM,
 			});
 
-			const buttonsAmPm = new Gtk.Box({
-				css_classes: ['linked-custom'],
-				orientation: Gtk.Orientation.VERTICAL,
+			this.buttonsAmPm = new Adw.ToggleGroup({
 				margin_start: 6,
 				halign: Gtk.Align.CENTER,
 				valign: Gtk.Align.CENTER,
 				visible: clockIs12,
-				spacing: 2,
+				orientation: Gtk.Orientation.VERTICAL,
 			});
 
-			this.btnAM = new Gtk.ToggleButton({
-				css_classes: ['flat'],
+			this.btnAM = new Adw.Toggle({
 				label: amPmStr[0],
-				active: !hours12.isPM,
+				name: 'am',
 			});
 
-			this.btnPM = new Gtk.ToggleButton({
-				css_classes: ['flat'],
+			this.btnPM = new Adw.Toggle({
 				label: amPmStr[1],
-				active: hours12.isPM,
-				group: this.btnAM,
+				name: 'pm',
 			});
 
 			hoursMinutesBox.append(spinBtnHours);
 			hoursMinutesBox.append(spinBtnSeparator);
 			hoursMinutesBox.append(spinBtnMinutes);
 			this.append(hoursMinutesBox);
-			buttonsAmPm.append(this.btnAM);
-			buttonsAmPm.append(this.btnPM);
-			this.append(buttonsAmPm);
+			this.buttonsAmPm.add(this.btnAM);
+			this.buttonsAmPm.add(this.btnPM);
+			this.buttonsAmPm.active_name = hours12.isPM ? 'pm' : 'am';
+			this.append(this.buttonsAmPm);
 
 			spinBtnHours.connect('output', h => {
 				h.text = clockIs12 ? String(this.adjH.value) : addLeadZero(this.adjH.value);
@@ -119,13 +116,13 @@ const TimePicker = GObject.registerClass(
 				return true;
 			});
 
-			this.btnAM.connect('clicked', () => this.setTime());
-			this.btnPM.connect('clicked', () => this.setTime());
+			this.buttonsAmPm.connect('notify::active', () => this.setTime());
 		}
 
 		setTime() {
 			if (clockIs12) {
-				const hours24 = this.convert12To24(this.adjH.value, this.btnPM.active);
+				const pmActive = this.buttonsAmPm.active_name === 'pm';
+				const hours24 = this.convert12To24(this.adjH.value, pmActive);
 				this.time = GLib.DateTime.new_local(1, 1, 1, hours24, this.adjM.value, 1);
 			} else {
 				this.time = GLib.DateTime.new_local(1, 1, 1, this.adjH.value, this.adjM.value, 1);

@@ -100,35 +100,19 @@ Adw.Dialog editHistDialog {
 									};
 								}
 
-								Box takenButtons {
+								Adw.ToggleGroup takenButtons {
 									valign: center;
-									spacing: 2;
 
-									styles [
-										"linked-custom"
-									]
-
-									ToggleButton histBtnSkipped {
-										active: false;
-
-										styles [
-											"flat"
-										]
-
+									Adw.Toggle {
 										icon-name: "med-skipped-symbolic";
-										tooltip-text: _("Skipped");
-										group: histBtnConfirmed;
+										tooltip: _("Skipped");
+										name: 'skipped';
 									}
 
-									ToggleButton histBtnConfirmed {
-										active: false;
-
-										styles [
-											"flat"
-										]
-
-										tooltip-text: _("Confirmed");
+									Adw.Toggle {
+										tooltip: _("Confirmed");
 										icon-name: "med-confirmed-symbolic";
+										name: 'confirmed';
 									}
 								}
 							}
