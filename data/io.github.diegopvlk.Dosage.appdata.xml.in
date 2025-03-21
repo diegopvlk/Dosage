@@ -43,22 +43,22 @@
 		<screenshot type="default">
 			<caption>Dosage today window in light theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/c83a4585c1df60aa3fa199c2d5df60c033bfe797/screenshots/today-light.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/923eae8de14b1f22365968b3602f9e5711e138c4/screenshots/today-light.png</image>
 		</screenshot>
 		<screenshot>
 			<caption>Dosage preferences window in light theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/c83a4585c1df60aa3fa199c2d5df60c033bfe797/screenshots/preferences.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/923eae8de14b1f22365968b3602f9e5711e138c4/screenshots/preferences.png</image>
 		</screenshot>
 		<screenshot>
 			<caption>Dosage edit treatment window in light theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/c83a4585c1df60aa3fa199c2d5df60c033bfe797/screenshots/med-dialog.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/923eae8de14b1f22365968b3602f9e5711e138c4/screenshots/med-dialog.png</image>
 		</screenshot>
 		<screenshot>
 			<caption>Dosage today window in dark theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/c83a4585c1df60aa3fa199c2d5df60c033bfe797/screenshots/today-dark.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/923eae8de14b1f22365968b3602f9e5711e138c4/screenshots/today-dark.png</image>
 		</screenshot>
 	</screenshots>
 
@@ -73,6 +73,14 @@
 	</recommends>
 
 	<releases>
+		<release version="1.9.5" date="2025-03-21">
+			<description translate="no">
+				<ul>
+					<li>Updated GNOME Runtime to 48</li>
+					<li>Updated Turkish and Chinese translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.9.4" date="2025-03-14">
 			<description translate="no">
 				<ul>
