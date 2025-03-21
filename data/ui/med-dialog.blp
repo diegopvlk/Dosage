@@ -24,7 +24,7 @@ Adw.Dialog medDialog {
 				[end]
 				Button saveButton {
 					styles [
-						'suggested-action'
+						'suggested-action',
 					]
 
 					label: _("Add");
@@ -35,7 +35,7 @@ Adw.Dialog medDialog {
 
 			content: ScrolledWindow {
 				styles [
-					'scrollbar-visible'
+					'scrollbar-visible',
 				]
 
 				Adw.Clamp medDialogClamp {
@@ -50,7 +50,7 @@ Adw.Dialog medDialog {
 						// spacing: 12;
 						ListBox {
 							styles [
-								'boxed-list-separate'
+								'boxed-list-separate',
 							]
 
 							selection-mode: none;
@@ -70,8 +70,7 @@ Adw.Dialog medDialog {
 
 									popover: Popover dosageColorPopover {
 										styles [
-											"menu",
-											"popover-scrolled"
+											"popover-scrolled",
 										]
 
 										ScrolledWindow {
@@ -84,7 +83,7 @@ Adw.Dialog medDialog {
 												Button {
 													styles [
 														'circular',
-														'default-clr'
+														'default-clr',
 													]
 
 													valign: center;
@@ -97,7 +96,7 @@ Adw.Dialog medDialog {
 												Button {
 													styles [
 														'circular',
-														'red-clr'
+														'red-clr',
 													]
 
 													valign: center;
@@ -109,7 +108,7 @@ Adw.Dialog medDialog {
 												Button {
 													styles [
 														'circular',
-														'orange-clr'
+														'orange-clr',
 													]
 
 													valign: center;
@@ -121,7 +120,7 @@ Adw.Dialog medDialog {
 												Button {
 													styles [
 														'circular',
-														'yellow-clr'
+														'yellow-clr',
 													]
 
 													valign: center;
@@ -133,7 +132,7 @@ Adw.Dialog medDialog {
 												Button {
 													styles [
 														'circular',
-														'green-clr'
+														'green-clr',
 													]
 
 													valign: center;
@@ -145,7 +144,7 @@ Adw.Dialog medDialog {
 												Button {
 													styles [
 														'circular',
-														'cyan-clr'
+														'cyan-clr',
 													]
 
 													valign: center;
@@ -157,7 +156,7 @@ Adw.Dialog medDialog {
 												Button {
 													styles [
 														'circular',
-														'blue-clr'
+														'blue-clr',
 													]
 
 													valign: center;
@@ -169,7 +168,7 @@ Adw.Dialog medDialog {
 												Button {
 													styles [
 														'circular',
-														'purple-clr'
+														'purple-clr',
 													]
 
 													valign: center;
@@ -198,8 +197,7 @@ Adw.Dialog medDialog {
 
 									popover: Popover dosageIconPopover {
 										styles [
-											"menu",
-											"popover-scrolled"
+											"popover-scrolled",
 										]
 
 										ScrolledWindow {
@@ -207,8 +205,6 @@ Adw.Dialog medDialog {
 											propagate-natural-width: true;
 
 											Grid dosageIconBox {
-												margin-top: 3;
-												margin-bottom: 3;
 												row-spacing: 3;
 
 												Button {
@@ -219,7 +215,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -236,7 +232,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -252,7 +248,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -268,7 +264,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -284,7 +280,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -300,7 +296,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -316,7 +312,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -332,7 +328,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -348,7 +344,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -364,7 +360,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -380,7 +376,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -396,7 +392,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -412,7 +408,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -428,7 +424,7 @@ Adw.Dialog medDialog {
 
 													styles [
 														'flat',
-														'circular'
+														'circular',
 													]
 
 													valign: center;
@@ -449,7 +445,7 @@ Adw.Dialog medDialog {
 							Adw.ComboRow frequencyMenu {
 								styles [
 									'property',
-									'numeric'
+									'numeric',
 								]
 
 								title: _("Frequency");
@@ -468,7 +464,7 @@ Adw.Dialog medDialog {
 								[prefix]
 								MenuButton frequencySpecificDays {
 									styles [
-										'circular'
+										'circular',
 									]
 
 									visible: false;
@@ -481,8 +477,7 @@ Adw.Dialog medDialog {
 
 									popover: Popover {
 										styles [
-											"menu",
-											"popover-scrolled"
+											"popover-scrolled",
 										]
 
 										ScrolledWindow {
@@ -494,7 +489,7 @@ Adw.Dialog medDialog {
 												ToggleButton {
 													styles [
 														'flat',
-														'specific-day'
+														'specific-day',
 													]
 
 													valign: center;
@@ -504,7 +499,7 @@ Adw.Dialog medDialog {
 												ToggleButton {
 													styles [
 														'flat',
-														'specific-day'
+														'specific-day',
 													]
 
 													valign: center;
@@ -514,7 +509,7 @@ Adw.Dialog medDialog {
 												ToggleButton {
 													styles [
 														'flat',
-														'specific-day'
+														'specific-day',
 													]
 
 													valign: center;
@@ -524,7 +519,7 @@ Adw.Dialog medDialog {
 												ToggleButton {
 													styles [
 														'flat',
-														'specific-day'
+														'specific-day',
 													]
 
 													valign: center;
@@ -534,7 +529,7 @@ Adw.Dialog medDialog {
 												ToggleButton {
 													styles [
 														'flat',
-														'specific-day'
+														'specific-day',
 													]
 
 													valign: center;
@@ -544,7 +539,7 @@ Adw.Dialog medDialog {
 												ToggleButton {
 													styles [
 														'flat',
-														'specific-day'
+														'specific-day',
 													]
 
 													valign: center;
@@ -554,7 +549,7 @@ Adw.Dialog medDialog {
 												ToggleButton {
 													styles [
 														'flat',
-														'specific-day'
+														'specific-day',
 													]
 
 													valign: center;
@@ -568,7 +563,7 @@ Adw.Dialog medDialog {
 								[prefix]
 								MenuButton frequencyDayOfMonth {
 									styles [
-										'circular'
+										'circular',
 									]
 
 									visible: false;
@@ -581,8 +576,7 @@ Adw.Dialog medDialog {
 
 									popover: Popover {
 										styles [
-											"menu",
-											"popover-scrolled"
+											"popover-scrolled",
 										]
 
 										ScrolledWindow {
@@ -591,7 +585,7 @@ Adw.Dialog medDialog {
 
 											Box {
 												styles [
-													'spin-box'
+													'spin-box',
 												]
 
 												Adw.SpinRow dayOfMonth {
@@ -614,7 +608,7 @@ Adw.Dialog medDialog {
 								[prefix]
 								MenuButton frequencyCycle {
 									styles [
-										'circular'
+										'circular',
 									]
 
 									visible: false;
@@ -627,8 +621,7 @@ Adw.Dialog medDialog {
 
 									popover: Popover {
 										styles [
-											"menu",
-											"popover-scrolled"
+											"popover-scrolled",
 										]
 
 										ScrolledWindow {
@@ -637,7 +630,7 @@ Adw.Dialog medDialog {
 
 											Box {
 												styles [
-													'spin-box'
+													'spin-box',
 												]
 
 												orientation: vertical;
@@ -693,7 +686,7 @@ Adw.Dialog medDialog {
 
 						ListBox dosageList {
 							styles [
-								"boxed-list"
+								"boxed-list",
 							]
 
 							selection-mode: none;
@@ -701,7 +694,7 @@ Adw.Dialog medDialog {
 
 						ListBox {
 							styles [
-								"boxed-list-separate"
+								"boxed-list-separate",
 							]
 
 							selection-mode: none;
@@ -785,7 +778,7 @@ Adw.Dialog medDialog {
 								Adw.ActionRow calendarStartRow {
 									styles [
 										'property',
-										'numeric'
+										'numeric',
 									]
 
 									title: _("Starts on");
@@ -801,14 +794,13 @@ Adw.Dialog medDialog {
 										tooltip-text: _("Choose date");
 
 										styles [
-											'circular'
+											'circular',
 										]
 
 										popover: Popover {
 											styles [
-												"menu",
 												"popover-scrolled",
-												"popover-calendar"
+												"popover-calendar",
 											]
 
 											ScrolledWindow {
@@ -828,7 +820,7 @@ Adw.Dialog medDialog {
 								Adw.ActionRow calendarEndRow {
 									styles [
 										'property',
-										'numeric'
+										'numeric',
 									]
 
 									title: _("Ends on");
@@ -844,14 +836,13 @@ Adw.Dialog medDialog {
 										tooltip-text: _("Choose date");
 
 										styles [
-											'circular'
+											'circular',
 										]
 
 										popover: Popover {
 											styles [
-												"menu",
 												"popover-scrolled",
-												"popover-calendar"
+												"popover-calendar",
 											]
 
 											ScrolledWindow {
@@ -876,7 +867,7 @@ Adw.Dialog medDialog {
 
 							Adw.ButtonRow deleteMedication {
 								styles [
-									'destructive-action'
+									'destructive-action',
 								]
 
 								start-icon-name: 'user-trash-symbolic';

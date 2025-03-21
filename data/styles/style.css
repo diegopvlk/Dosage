@@ -3,10 +3,13 @@
 :root {
   --card-bg-color: color-mix(in srgb, #ebebed 99%, var(--accent-color));
 
-  --list-border-radius: 8px;
+  --list-border-radius: 9px;
   --list-border: inset 0 0 0 1px
     rgb(from var(--border-color) r g b / calc(alpha * 0.35));
-  --list-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.065);
+  --list-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.055);
+
+  --cubic-bezier: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --background-transition: background 200ms var(--cubic-bezier);
 }
 
 .scrollbar-visible > scrollbar.vertical:dir(ltr),
@@ -46,33 +49,27 @@ dialog.about .main-page box.vertical {
 dialog.about sheet scrolledwindow clamp {
   padding: 0 3px;
 }
-listview > header {
-  padding: 2px;
-  padding-top: 14px;
-  padding-bottom: 0px;
-  min-height: 21px;
-}
 
-.item-box {
+item-box {
   box-shadow: var(--list-border), var(--list-shadow);
   border-radius: var(--list-border-radius);
   min-height: 46px;
   padding: 5px 0;
 }
-.item-box > box > label.title:first-child {
+item-box label.title:first-child {
   margin-top: -4px;
 }
-.item-box > box > label.subtitle:last-child {
+item-box label.subtitle:last-child {
   margin-bottom: -4px;
 }
 
-.dosage-list > row .item-box {
-  transition: background 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.dosage-list > row item-box {
+  transition: var(--background-transition);
 }
-.dosage-list > row:hover .item-box {
+.dosage-list > row:hover item-box {
   background-image: image(color-mix(in srgb, currentColor 3%, transparent));
 }
-.dosage-list > row:active .item-box {
+.dosage-list > row:active item-box {
   background-image: image(color-mix(in srgb, currentColor 8%, transparent));
 }
 
@@ -92,6 +89,13 @@ listview > header {
   box-shadow: var(--list-border), var(--list-shadow),
     inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.13));
 }
+
+.dosage-list > header {
+  padding: 2px;
+  padding-top: 14px;
+  padding-bottom: 0px;
+  min-height: 21px;
+}
 .dosage-list > header,
 .dosage-list > row {
   margin-left: 10px;
@@ -102,10 +106,7 @@ listview > header {
   background: none;
 }
 .dosage-list {
-  padding-bottom: 20px;
   background-color: transparent;
-}
-.dosage-list {
   padding-bottom: 69px;
 }
 .list-no-extra-padding-bottom {
@@ -145,11 +146,11 @@ list.boxed-list-separate
 }
 button.specific-day {
   min-width: 40px;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 1px;
+  padding-right: 1px;
 }
-.popover-scrolled > contents {
-  padding: 5px 10px;
+.popover-scrolled > contents scrollbar.vertical > range > trough > slider {
+  min-height: 16px;
 }
 .one-time-menu popover contents:dir(ltr) {
   padding: 6px;
@@ -175,7 +176,7 @@ row.combo .dropdown-arrow {
   min-height: 34px;
   padding: 0 9px;
   border-radius: 99px;
-  transition: background-color 300ms;
+  transition: var(--background-transition);
 }
 row.combo .dropdown-arrow:hover {
   background-color: rgb(from currentColor r g b / calc(alpha * 0.15));
@@ -194,27 +195,41 @@ listview.scroll-to-top-hack > :nth-child(2) {
   margin-top: 35px;
 }
 
-button.time-group-selection {
-  transition: all 150ms;
+time-group-selection {
+  transition: all 200ms var(--cubic-bezier);
   min-height: 21px;
   padding: 0 2px;
   margin: 0 -2px 0px;
-  background-size: 10px;
+  background-size: 0.75em;
   background-repeat: no-repeat;
 }
-button.time-group-selection:dir(ltr) {
+time-group-selection label {
+  text-decoration: underline;
+  text-decoration-color: var(--window-bg-color);
+  transition: 200ms var(--cubic-bezier);
+}
+time-group-selection:hover label {
+  text-decoration: underline;
+  color: currentColor;
+}
+time-group-selection:active label {
+  text-decoration: underline;
+  color: rgb(from currentColor r g b / calc(alpha * 0.65));
+  transition: none;
+}
+time-group-selection:dir(ltr) {
   background-position: 92% 50%;
 }
-button.time-group-selection:dir(rtl) {
+time-group-selection:dir(rtl) {
   background-position: 6% 50%;
 }
-button.time-group-selection:hover:dir(ltr) {
-  padding-right: 18px;
+time-group-selection:hover:dir(ltr) {
+  padding-right: 1.25em;
 }
-button.time-group-selection:hover:dir(rtl) {
-  padding-left: 18px;
+time-group-selection:hover:dir(rtl) {
+  padding-left: 1.25em;
 }
-button.time-group-selection:hover {
+time-group-selection:hover {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 16 16'%3E%3Cpath fill='%23823a5f' d='m14.983 3.5-1-1-7.469 7.516L3.1 6.539l-2 2 5.414 5.477L15.983 4.5z' style='fill:%232f2f34'/%3E%3C/svg%3E");
 }
 
@@ -224,106 +239,81 @@ button.time-group-selection:hover {
 .t-d-row box.suffixes > spinbutton > text:dir(rtl) {
   margin-right: -18px;
 }
-.time-picker-box spinbutton {
+
+time-picker button {
   border-radius: 99px;
-  margin: 4px 0;
   padding: 3px;
-  outline: none;
 }
-.time-picker-box spinbutton text {
-  margin: 4px 0;
-  transition: all 150ms;
-}
-row.spin .time-picker-box spinbutton {
-  margin: 0;
-}
-row.spin .time-picker-box spinbutton text {
-  margin: -2px 0;
-}
-.time-picker-box spinbutton button {
-  padding: 0;
-  margin: 0;
-  min-height: 30px;
-  min-width: 30px;
-  border-radius: 99px;
-  border-bottom: none;
-  background-color: rgb(from currentColor r g b / calc(alpha * 0.1));
-}
-.time-picker-box spinbutton button:hover {
-  background-color: rgb(from currentColor r g b / calc(alpha * 0.15));
-}
-.time-picker-box spinbutton button:active {
-  background-color: rgb(from currentColor r g b / calc(alpha * 0.2));
+time-picker time-spinbutton text {
+  padding: 6px 0px;
+  margin: 2px;
 }
 
 .today-amount > button {
   min-width: 30px;
   min-height: 30px;
 }
+.spin-box row.spin {
+  outline: none;
+}
 .spin-box > row.spin > box {
-  margin: -3px 4px -3px 8px;
+  margin: -4px 4px;
+}
+.spin-box:dir(ltr) > row.spin > box {
+  margin-left: 10px;
+}
+.spin-box:dir(rtl) > row.spin > box {
+  margin-right: 10px;
 }
 .spin-today-amount:dir(ltr) > row.spin > box {
   margin-left: -16px;
 }
-.spin-box row.spin {
-  outline: none;
+.spin-today-amount:dir(rtl) > row.spin > box {
+  margin-right: -16px;
 }
 
-button.badge-box:hover {
-  background-color: rgb(from currentColor r g b / calc(alpha * 0.2));
+badge-box label,
+badge-button label {
+  padding: 5px 8px;
 }
-button.badge-box:active {
-  background-color: rgb(from currentColor r g b / calc(alpha * 0.3));
-}
-.badge-box.low-stock {
-  box-shadow: inset 0 0 0 1px rgb(from currentColor r g b / calc(alpha * 0.2));
-  color: currentColor;
-}
-.badge-box {
-  color: rgb(from currentColor r g b / calc(alpha * 0.85));
-  min-height: 16px;
-  background-color: rgb(from currentColor r g b / calc(alpha * 0.13));
+badge-box,
+badge-button {
+  background-color: rgb(from currentColor r g b / calc(alpha * 0.1));
   border-radius: 99px;
+  font-weight: 550;
+  font-size: 0.9016em;
 }
-.badge-content {
-  padding: 4px 8px;
-  border-radius: 99px;
-  text-transform: capitalize;
-  font-weight: 500;
-  font-size: 0.94em;
-}
-.history .badge-content {
-  text-transform: none;
-}
-.badge-icon {
+badge-icon {
   background-color: rgb(from currentColor r g b / calc(alpha * 0.1));
   padding: 0 5px;
 }
-.badge-icon:dir(ltr) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+badge-icon:dir(ltr) {
+  border-top-right-radius: 99px;
+  border-bottom-right-radius: 99px;
   padding-left: 4px;
   margin-left: -4px;
 }
-.badge-icon:dir(rtl) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+badge-icon:dir(rtl) {
+  border-top-left-radius: 99px;
+  border-bottom-left-radius: 99px;
   padding-right: 4px;
   margin-right: -4px;
 }
-
-.empty-history,
-.empty-today,
-.empty-treatments {
-  font-size: 24px;
-  font-weight: 700;
+badge-button label {
+  text-transform: capitalize;
 }
-.empty-icon {
-  margin-top: 2px;
-  margin-bottom: 16px;
-  -gtk-icon-size: 64px;
-  opacity: 0.75;
+badge-button {
+  transition: var(--background-transition);
+}
+badge-button:hover {
+  background-color: rgb(from currentColor r g b / calc(alpha * 0.15));
+}
+badge-button:active {
+  background-color: rgb(from currentColor r g b / calc(alpha * 0.2));
+}
+badge-button.low-stock {
+  box-shadow: inset 0 0 0 1px rgb(from currentColor r g b / calc(alpha * 0.2));
+  color: currentColor;
 }
 
 button.secondary.floating {
@@ -335,7 +325,7 @@ button.floating.secondary image {
 }
 button.floating {
   box-shadow: 0 0 0 1px rgba(90, 90, 90, 0.1),
-    0 1px 2px 1px rgba(90, 90, 90, 0.09);
+    0 1px 2px 1px rgba(90, 90, 90, 0.1);
   margin: 10px 4px;
 }
 button.floating:hover {
@@ -400,7 +390,7 @@ calendar .day-number {
   min-height: 28px;
 }
 .calendar-error {
-  border-radius: 10px;
+  border-radius: 14px;
   animation: flashCalendar 0.8s;
 }
 @keyframes flashCalendar {

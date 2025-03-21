@@ -21,7 +21,8 @@ todayHeaderFactory.connect('setup', (factory, listHeader) => {
 	});
 
 	listHeader.selectTimeGroupBtn = new Gtk.Button({
-		css_classes: ['time-group-selection', 'flat'],
+		css_name: 'time-group-selection',
+		css_classes: ['flat'],
 		valign: Gtk.Align.START,
 	});
 
@@ -69,7 +70,9 @@ todayHeaderFactory.connect('bind', (factory, listHeader) => {
 });
 
 todayItemFactory.connect('setup', (factory, listItem) => {
-	listItem.box = new Gtk.Box();
+	listItem.box = new Gtk.Box({
+		css_name: 'item-box',
+	});
 
 	listItem.icon = new Gtk.Image({
 		margin_start: 17,
@@ -130,7 +133,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 		margin_end: 10,
 		visible: false,
 		popover: new Gtk.Popover({
-			css_classes: ['menu', 'popover-scrolled'],
+			css_classes: ['popover-scrolled'],
 			child: new Gtk.ScrolledWindow({
 				propagate_natural_height: true,
 				propagate_natural_width: true,
@@ -213,7 +216,7 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 		listItem.setDoseAndNotes = () => {
 			doseAndNotes.label = `${item.dose} ${item.unit}`;
 			if (item.notes !== '') {
-				doseAndNotes.label += ` · ${item.notes}`;
+				doseAndNotes.label += ` ⦁ ${item.notes}`;
 			}
 		};
 
@@ -227,13 +230,13 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	amtSpinRow.set_value(item.dose);
 
 	icon.icon_name = item.icon;
-	box.css_classes = ['item-box', 'card-stripe', item.color];
+	box.css_classes = ['card-stripe', item.color];
 
 	if (item.frequency === 'when-needed') {
-		box.css_classes = ['item-box', 'card-stripe-w-n', item.color];
+		box.css_classes = ['card-stripe-w-n', item.color];
 		box.opacity = 0.75;
 	} else {
-		box.css_classes = ['item-box', 'card-stripe', item.color];
+		box.css_classes = ['card-stripe', item.color];
 		box.opacity = 1;
 	}
 });

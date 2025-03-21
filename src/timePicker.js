@@ -19,9 +19,9 @@ const TimePicker = GObject.registerClass(
 	},
 	class TimePicker extends Gtk.Box {
 		constructor(ts) {
-			super({});
-
-			this.add_css_class('time-picker-box');
+			super({
+				css_name: 'time-picker',
+			});
 
 			const dTime = GLib.DateTime;
 			this.time = ts ? dTime.new_from_unix_local(ts / 1000) : dTime.new_now_local();
@@ -49,7 +49,7 @@ const TimePicker = GObject.registerClass(
 			});
 
 			const spinBtnHours = new Gtk.SpinButton({
-				css_classes: ['flat'],
+				css_name: 'time-spinbutton',
 				orientation: Gtk.Orientation.VERTICAL,
 				valign: Gtk.Align.CENTER,
 				numeric: true,
@@ -58,7 +58,7 @@ const TimePicker = GObject.registerClass(
 			});
 
 			const spinBtnSeparator = new Gtk.Label({
-				label: timeDot ? ' . ' : ' : ',
+				label: timeDot ? ' . ' : ' ∶ ',
 			});
 
 			this.adjM = new Gtk.Adjustment({
@@ -69,7 +69,7 @@ const TimePicker = GObject.registerClass(
 			});
 
 			const spinBtnMinutes = new Gtk.SpinButton({
-				css_classes: ['flat'],
+				css_name: 'time-spinbutton',
 				orientation: Gtk.Orientation.VERTICAL,
 				valign: Gtk.Align.CENTER,
 				numeric: true,
@@ -78,7 +78,7 @@ const TimePicker = GObject.registerClass(
 			});
 
 			this.buttonsAmPm = new Adw.ToggleGroup({
-				margin_start: 6,
+				margin_start: 8,
 				halign: Gtk.Align.CENTER,
 				valign: Gtk.Align.CENTER,
 				visible: clockIs12,

@@ -24,7 +24,7 @@
   --default-fg: var(--card-fg-color);
 }
 
-.item-box checkbutton check:checked {
+item-box checkbutton check:checked {
   color: var(--window-bg-color);
 }
 

@@ -14,7 +14,7 @@ Adw.Dialog oneTimeDialog {
 			content: Overlay {
 				ScrolledWindow {
 					styles [
-						"scrollbar-visible"
+						"scrollbar-visible",
 					]
 
 					Adw.Clamp oneTimeDialogClamp {
@@ -37,7 +37,7 @@ Adw.Dialog oneTimeDialog {
 									sensitive: false;
 
 									styles [
-										"one-time-menu"
+										"one-time-menu",
 									]
 
 									title: _("From treatment list");
@@ -50,7 +50,7 @@ Adw.Dialog oneTimeDialog {
 									[suffix]
 									MenuButton colorButton {
 										styles [
-											"circular"
+											"circular",
 										]
 
 										valign: center;
@@ -60,8 +60,7 @@ Adw.Dialog oneTimeDialog {
 
 										popover: Popover colorPopover {
 											styles [
-												"menu",
-												"popover-scrolled"
+												"popover-scrolled",
 											]
 
 											ScrolledWindow {
@@ -74,7 +73,7 @@ Adw.Dialog oneTimeDialog {
 													Button {
 														styles [
 															"circular",
-															"default-clr"
+															"default-clr",
 														]
 
 														valign: center;
@@ -87,7 +86,7 @@ Adw.Dialog oneTimeDialog {
 													Button {
 														styles [
 															"circular",
-															"red-clr"
+															"red-clr",
 														]
 
 														valign: center;
@@ -99,7 +98,7 @@ Adw.Dialog oneTimeDialog {
 													Button {
 														styles [
 															"circular",
-															"orange-clr"
+															"orange-clr",
 														]
 
 														valign: center;
@@ -111,7 +110,7 @@ Adw.Dialog oneTimeDialog {
 													Button {
 														styles [
 															"circular",
-															"yellow-clr"
+															"yellow-clr",
 														]
 
 														valign: center;
@@ -123,7 +122,7 @@ Adw.Dialog oneTimeDialog {
 													Button {
 														styles [
 															"circular",
-															"green-clr"
+															"green-clr",
 														]
 
 														valign: center;
@@ -135,7 +134,7 @@ Adw.Dialog oneTimeDialog {
 													Button {
 														styles [
 															"circular",
-															"cyan-clr"
+															"cyan-clr",
 														]
 
 														valign: center;
@@ -147,7 +146,7 @@ Adw.Dialog oneTimeDialog {
 													Button {
 														styles [
 															"circular",
-															"blue-clr"
+															"blue-clr",
 														]
 
 														valign: center;
@@ -159,7 +158,7 @@ Adw.Dialog oneTimeDialog {
 													Button {
 														styles [
 															"circular",
-															"purple-clr"
+															"purple-clr",
 														]
 
 														valign: center;
@@ -193,7 +192,7 @@ Adw.Dialog oneTimeDialog {
 
 								Adw.ActionRow medTime {
 									styles [
-										"property"
+										"property",
 									]
 
 									title: _("Time");
@@ -226,7 +225,7 @@ Adw.Dialog oneTimeDialog {
 								Adw.ActionRow dateOneEntry {
 									styles [
 										"property",
-										"numeric"
+										"numeric",
 									]
 
 									title: _("Date");
@@ -243,14 +242,12 @@ Adw.Dialog oneTimeDialog {
 										tooltip-text: _("Choose date");
 
 										styles [
-											"circular"
+											"circular",
 										]
 
 										popover: Popover {
 											styles [
-												"menu",
-												"popover-scrolled",
-												"popover-calendar"
+												"popover-calendar",
 											]
 
 											ScrolledWindow {
@@ -281,7 +278,7 @@ Adw.Dialog oneTimeDialog {
 						styles [
 							"suggested-action",
 							"floating",
-							"pill"
+							"pill",
 						]
 
 						label: _("Confirm");
@@ -295,7 +292,7 @@ Adw.Dialog oneTimeDialog {
 
 Popover oneTimePopover {
 	styles [
-		"menu"
+		"menu",
 	]
 
 	visible: false;

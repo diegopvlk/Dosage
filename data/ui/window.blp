@@ -66,7 +66,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 				child: Overlay {
 					ScrolledWindow {
 						styles [
-							'scrollbar-visible'
+							'scrollbar-visible',
 						]
 
 						Adw.ClampScrollable {
@@ -74,7 +74,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 								styles [
 									'dosage-list',
 									'scroll-to-top-hack',
-									'today'
+									'today',
 								]
 
 								activate => $selectTodayItems();
@@ -102,7 +102,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 							styles [
 								'pill',
 								'secondary',
-								'floating'
+								'floating',
 							]
 
 							clicked => $unselectTodayItems();
@@ -114,7 +114,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 						Button entryBtn {
 							styles [
 								'pill',
-								'floating'
+								'floating',
 							]
 
 							clicked => $addTodayToHistory();
@@ -126,7 +126,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 							styles [
 								'pill',
 								'secondary',
-								'floating'
+								'floating',
 							]
 
 							clicked => $addTodayToHistory();
@@ -147,15 +147,14 @@ template $DosageWindow: Adw.ApplicationWindow {
 				child: Overlay historyOverlay {
 					ScrolledWindow {
 						styles [
-							'scrollbar-visible'
+							'scrollbar-visible',
 						]
 
 						Adw.ClampScrollable {
 							ListView historyList {
 								styles [
 									'dosage-list',
-									'history',
-									'scroll-to-top-hack'
+									'scroll-to-top-hack',
 								]
 
 								activate => $editHistoryItem();
@@ -184,7 +183,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 
 							styles [
 								'pill',
-								'floating'
+								'floating',
 							]
 						}
 
@@ -192,7 +191,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 							styles [
 								'pill',
 								'secondary',
-								'floating'
+								'floating',
 							]
 
 							clicked => $unselectHistItems();
@@ -211,7 +210,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 							styles [
 								'pill',
 								'floating',
-								'destructive-action'
+								'destructive-action',
 							]
 						}
 					}
@@ -226,7 +225,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 				child: Overlay {
 					ScrolledWindow {
 						styles [
-							'scrollbar-visible'
+							'scrollbar-visible',
 						]
 
 						Adw.ClampScrollable {
@@ -235,7 +234,6 @@ template $DosageWindow: Adw.ApplicationWindow {
 							ListView treatmentsList {
 								styles [
 									'dosage-list',
-									'treatments'
 								]
 
 								activate => $openMedDialog();
@@ -265,7 +263,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 							styles [
 								'pill',
 								'suggested-action',
-								'floating'
+								'floating',
 							]
 
 							child: Adw.ButtonContent {

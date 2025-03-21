@@ -24,7 +24,7 @@
 
   --list-border: inset 0 0 0 1px
     rgb(from var(--border-color) r g b / calc(alpha * 0.3));
-  --list-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+  --list-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
 
 .boxed-list,
@@ -73,6 +73,6 @@ button.floating.destructive-action:active {
   background-color: #834a4a;
 }
 
-button.time-group-selection:hover {
+time-group-selection:hover {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 16 16'%3E%3Cpath fill='%23823a5f' d='m14.983 3.5-1-1-7.469 7.516L3.1 6.539l-2 2 5.414 5.477L15.983 4.5z' style='fill:%23ffffff'/%3E%3C/svg%3E");
 }

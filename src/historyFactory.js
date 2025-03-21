@@ -35,7 +35,9 @@ historyHeaderFactory.connect('bind', (factory, listHeader) => {
 });
 
 historyItemFactory.connect('setup', (factory, listItem) => {
-	listItem.box = new Gtk.Box();
+	listItem.box = new Gtk.Box({
+		css_name: 'item-box',
+	});
 
 	listItem.checkButton = new Gtk.CheckButton({
 		css_classes: ['selection-mode'],
@@ -94,19 +96,18 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	listItem.labelsBox.append(listItem.doseLabel);
 
 	listItem.takenBox = new Gtk.Box({
-		css_classes: ['badge-box'],
+		css_name: 'badge-box',
 		valign: Gtk.Align.CENTER,
 		margin_end: 14,
 	});
 
 	listItem.takenLabel = new Gtk.Label({
-		css_classes: ['badge-content'],
 		valign: Gtk.Align.CENTER,
 		ellipsize: Pango.EllipsizeMode.END,
 	});
 
 	listItem.takenIcon = new Gtk.Image({
-		css_classes: ['badge-content', 'badge-icon'],
+		css_name: 'badge-icon',
 	});
 
 	listItem.takenBox.append(listItem.takenLabel);
@@ -149,7 +150,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 
 	setLabels(listItem);
 
-	box.css_classes = ['item-box', item.color];
+	box.css_classes = [item.color];
 });
 
 function setLabels(listItem) {
@@ -162,7 +163,7 @@ function setLabels(listItem) {
 	const timeTaken = itemTakenDate.format(timeFormat);
 
 	nameLabel.label = item.name;
-	doseLabel.label = `${item.dose} ${item.unit} · ${time}`;
+	doseLabel.label = `${item.dose} ${item.unit} ⦁ ${time}`;
 
 	const isConfirmed = item.taken[1] === 1 || item.taken[1] === 2 || item.taken[1] === 3;
 	takenIcon.visible = isConfirmed;

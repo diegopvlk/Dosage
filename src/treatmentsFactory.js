@@ -20,7 +20,9 @@ let delayDialog = false;
 let ref = 0;
 
 treatmentsFactory.connect('setup', (factory, listItem) => {
-	listItem.box = new Gtk.Box();
+	listItem.box = new Gtk.Box({
+		css_name: 'item-box',
+	});
 
 	listItem.altClick = new Gtk.GestureClick({ button: 3 });
 
@@ -79,7 +81,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 	listItem.labelsBox.append(listItem.durationNextDateLabel);
 
 	listItem.invLabelBtn = new Gtk.Button({
-		css_classes: ['badge-box', 'badge-content'],
+		css_name: 'badge-button',
 		valign: Gtk.Align.CENTER,
 		margin_end: 5,
 		visible: false,
@@ -202,7 +204,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 
 	setInventoryAndDateLabels(listItem);
 
-	box.css_classes = ['item-box', item.color];
+	box.css_classes = [item.color];
 });
 
 function setInventoryAndDateLabels(listItem) {
@@ -256,7 +258,7 @@ function setInventoryAndDateLabels(listItem) {
 			if (item.duration.enabled) {
 				durationNextDateLabel.label = untilLabel;
 				if (nextDt > today && nextDt <= end) {
-					durationNextDateLabel.label += ' · ' + _('Next dose') + `: ${nextDate}`;
+					durationNextDateLabel.label += ' ⦁ ' + _('Next dose') + `: ${nextDate}`;
 				}
 			} else if (nextDt > today) {
 				durationNextDateLabel.label = _('Next dose') + `: ${nextDate}`;
@@ -268,14 +270,14 @@ function setInventoryAndDateLabels(listItem) {
 				durationNextDateLabel.visible = true;
 			}
 
-			infoLabel.label = `${_('Cycle')} · ${item.cycle[0]} ⊷ ${item.cycle[1]}`;
+			infoLabel.label = `${_('Cycle')} ⦁ ${item.cycle[0]} ⊷ ${item.cycle[1]}`;
 			break;
 		case 'when-needed':
 			infoLabel.label = _('When necessary');
 			break;
 	}
 
-	if (item.notes !== '') infoLabel.label += ` · ${item.notes}`;
+	if (item.notes !== '') infoLabel.label += ` ⦁ ${item.notes}`;
 
 	if (item.duration.enabled && (end < today || end < start)) {
 		durationNextDateLabel.label = endedLabel;
