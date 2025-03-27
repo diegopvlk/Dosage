@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-25 15:34-0300\n"
-"PO-Revision-Date: 2025-03-27 13:37+0000\n"
+"PO-Revision-Date: 2025-03-27 13:45+0000\n"
 "Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/dosage/dosage/"
 "et/>\n"
@@ -207,7 +207,7 @@ msgstr "Ühik"
 #: data/ui/med-dialog.blp:188 data/ui/one-time-dialog.blp:178
 #: src/oneTimeDialog.js:65
 msgid "Pill(s)"
-msgstr "Tabletid"
+msgstr "ravim"
 
 #: data/ui/med-dialog.blp:196
 msgid "Icon"
@@ -420,15 +420,15 @@ msgstr "Kogus"
 
 #: data/ui/one-time-dialog.blp:183 src/prefsDialog.js:137
 msgid "Dose"
-msgstr ""
+msgstr "Ravimidoos"
 
 #: data/ui/one-time-dialog.blp:199 src/prefsDialog.js:137
 msgid "Time"
-msgstr ""
+msgstr "Aeg"
 
 #: data/ui/one-time-dialog.blp:232 src/prefsDialog.js:137
 msgid "Date"
-msgstr ""
+msgstr "Kuupäev"
 
 #: data/ui/one-time-dialog.blp:287 data/ui/preferences.blp:95 src/window.js:887
 #: src/window.js:1083
@@ -481,23 +481,23 @@ msgstr "Ekspordi ajalugu csv-failina"
 
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:186
 msgid "Refill"
-msgstr ""
+msgstr "Lisa ravimivarusid"
 
 #: data/ui/window.blp:23
 msgid "Show/Hide 'When necessary'"
-msgstr ""
+msgstr "Näita/peida „Siis, kui vaja“"
 
 #: data/ui/window.blp:31
 msgid "Search"
-msgstr ""
+msgstr "Otsi"
 
 #: data/ui/window.blp:40
 msgid "Main Menu"
-msgstr ""
+msgstr "Põhimenüü"
 
 #: data/ui/window.blp:53
 msgid "Search…"
-msgstr ""
+msgstr "Otsi…"
 
 #: data/ui/window.blp:63
 msgid "Today"
@@ -505,7 +505,7 @@ msgstr "Täna"
 
 #: data/ui/window.blp:109 data/ui/window.blp:199
 msgid "Unselect"
-msgstr ""
+msgstr "Eemalda valik"
 
 #: data/ui/window.blp:144 src/prefsDialog.js:114
 msgid "History"
@@ -513,7 +513,7 @@ msgstr "Ajalugu"
 
 #: data/ui/window.blp:209
 msgid "Remove entries"
-msgstr ""
+msgstr "Eemalda kirjed"
 
 #: data/ui/window.blp:223 src/prefsDialog.js:114
 msgid "Treatments"
@@ -521,48 +521,48 @@ msgstr "Ravikuurid"
 
 #: data/ui/window.blp:249
 msgid "Click the button below to add some"
-msgstr ""
+msgstr "Lisamiseks klõpsi allolevat nuppu"
 
 #: data/ui/window.blp:294
 msgid "About Dosage"
-msgstr ""
+msgstr "Rakenduse teave: Ravimiannused"
 
 #: data/ui/window.blp:299 src/window.js:1284
 msgid "Quit"
-msgstr ""
+msgstr "Välju"
 
 #: src/editHistDialog.js:51 src/editHistDialog.js:64 src/editHistDialog.js:83
 msgid "Confirmed at"
-msgstr ""
+msgstr "Kinnitatud kell"
 
 #: src/editHistDialog.js:60 src/historyFactory.js:172 src/prefsDialog.js:173
 msgid "Auto-confirmed"
-msgstr ""
+msgstr "Automaatselt kinnitatud"
 
 #: src/editHistDialog.js:68 src/editHistDialog.js:91
 msgid "Skipped at"
-msgstr ""
+msgstr "Vahelejäetud kell"
 
 #: src/editHistDialog.js:71 src/historyFactory.js:179 src/prefsDialog.js:163
 msgid "Missed"
-msgstr ""
+msgstr "Jäänud märkamata"
 
 #: src/editHistDialog.js:78 src/prefsDialog.js:176
 msgid "Time unknown"
-msgstr ""
+msgstr "Aeg poel teada"
 
 #: src/historyFactory.js:45
 msgid "Select to be removed"
-msgstr ""
+msgstr "Vali eemaldatav"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
 msgid "translator-credits"
-msgstr ""
+msgstr "Priit Jõerüüt 2025"
 
 #: src/main.js:53
 msgid "Thanks to these projects!"
-msgstr ""
+msgstr "Suur tänu järgnevatele projektidele!"
 
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:89
