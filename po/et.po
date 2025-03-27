@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-25 15:34-0300\n"
-"PO-Revision-Date: 2025-03-19 15:24+0000\n"
+"PO-Revision-Date: 2025-03-27 13:09+0000\n"
 "Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/dosage/dosage/"
 "et/>\n"
@@ -36,172 +36,182 @@ msgid ""
 "multiple doses, flexible frequency, customization, stock monitoring, and "
 "duration control"
 msgstr ""
+"Ravimiannuste rakendus aitab sul mugavalt pidada arvet oma ravikuuride üle: "
+"teavitused, erinevad annustused, ajalugu, paindlik sagedus, kohandamine, "
+"varude seis ka kestuse haldus"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid "Features:"
-msgstr ""
+msgstr "Funktsionaalsused:"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:27
 msgid "Notifications — Get reminders at the right time"
-msgstr ""
+msgstr "Teavitused - saad meeldetuletusi õigel ajal"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:28
 msgid "History — See which medications you took, skipped or missed"
 msgstr ""
+"Ajalugu - näed, mis ravimeid sa oled võtnud, vahele jätnud või unustanud"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
 msgid "Dosage management — Multiple doses with different times"
-msgstr ""
+msgstr "Annuste haldus - võid kasutada eri annuseid eri aegadel"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid ""
 "Frequency modes — Every day, specific days, cycle or just when necessary"
 msgstr ""
+"Erinevad sageduste võimalused - iga päev, kindlatel päevadel, tsüklite kaupa "
+"või just siis, kui vaja"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
 msgid "Color and icon — Give a shape for your treatment"
-msgstr ""
+msgstr "Värvid ja ikoonid - säti ravikuuri välimus vastavaks oma eelistustele"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:32
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
+"Laovarude arvestus - jälgi, mis sul varudes lediub ning saa teavitusi, kui "
+"need lõppema hakkavad"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
 msgid "Duration — Define the start and end dates"
-msgstr ""
+msgstr "Kestus - vali algus- ja lõppkuupäevad"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage today window in light theme"
-msgstr ""
+msgstr "Tänased ravimiannused heledas kujunduses"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage preferences window in light theme"
-msgstr ""
+msgstr "Rakenduse eelistuste vaade heledas kujunduses"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:54
 msgid "Dosage edit treatment window in light theme"
-msgstr ""
+msgstr "Uue ravi muutmisvaade heledas kujunduses"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:59
 msgid "Dosage today window in dark theme"
-msgstr ""
+msgstr "Tänased ravimiannused tumedas kujunduses"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:11
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
+"Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;ravim;annustus;annustamine;ravimid;ravimiannus;ravimiannused;tablett;tabletid;"
+""
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Üldised"
 
 #: data/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Preferences"
-msgstr ""
+msgstr "Eelistused"
 
 #: data/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Näita kiirklahve"
 
 #: data/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Välju"
 
 #: data/ui/edit-hist-dialog.blp:7
 msgid "Edit entry"
-msgstr ""
+msgstr "Muuda kirjet"
 
 #: data/ui/edit-hist-dialog.blp:18 data/ui/med-dialog.blp:19
 #: src/medDialog.js:584
 msgid "Cancel"
-msgstr ""
+msgstr "Katkesta"
 
 #: data/ui/edit-hist-dialog.blp:29 data/ui/refill-dialog.blp:65
 #: src/medDialog.js:114
 msgid "Save"
-msgstr ""
+msgstr "Salvesta"
 
 #: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:210
 #: src/timeDoseRow.js:40
 msgid "Change time"
-msgstr ""
+msgstr "Muuda aega"
 
 #: data/ui/edit-hist-dialog.blp:119 src/historyFactory.js:176
 #: src/prefsDialog.js:160
 msgid "Skipped"
-msgstr ""
+msgstr "Vahelejäetud"
 
 #: data/ui/edit-hist-dialog.blp:130 src/editHistDialog.js:77
 #: src/historyFactory.js:182 src/prefsDialog.js:166 src/prefsDialog.js:176
 msgid "Confirmed"
-msgstr ""
+msgstr "Kinnitatud"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
-msgstr ""
+msgstr "Uus ravikuur"
 
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:272
 msgid "Add"
-msgstr ""
+msgstr "Lisa"
 
 #: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
 #: src/prefsDialog.js:137
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #: data/ui/med-dialog.blp:67 data/ui/one-time-dialog.blp:57
 msgid "Color"
-msgstr ""
+msgstr "Värv"
 
 #. TRANSLATORS: Tooltip for the colors (from Default until Purple)
 #: data/ui/med-dialog.blp:93 data/ui/one-time-dialog.blp:83
 msgid "Default"
-msgstr ""
+msgstr "Vaikimisi värv"
 
 #: data/ui/med-dialog.blp:105 data/ui/one-time-dialog.blp:95
 msgid "Red"
-msgstr ""
+msgstr "Punane"
 
 #: data/ui/med-dialog.blp:117 data/ui/one-time-dialog.blp:107
 msgid "Orange"
-msgstr ""
+msgstr "Oranž"
 
 #: data/ui/med-dialog.blp:129 data/ui/one-time-dialog.blp:119
 msgid "Yellow"
-msgstr ""
+msgstr "Kollane"
 
 #: data/ui/med-dialog.blp:141 data/ui/one-time-dialog.blp:131
 msgid "Green"
-msgstr ""
+msgstr "Roheline"
 
 #: data/ui/med-dialog.blp:153 data/ui/one-time-dialog.blp:143
 msgid "Cyan"
-msgstr ""
+msgstr "Rohekassinine"
 
 #: data/ui/med-dialog.blp:165 data/ui/one-time-dialog.blp:155
 msgid "Blue"
-msgstr ""
+msgstr "Sinine"
 
 #: data/ui/med-dialog.blp:177 data/ui/one-time-dialog.blp:167
 msgid "Purple"
-msgstr ""
+msgstr "Purpurpunane"
 
 #: data/ui/med-dialog.blp:187 data/ui/one-time-dialog.blp:177
 msgid "Unit"
-msgstr ""
+msgstr "Ühik"
 
 #: data/ui/med-dialog.blp:188 data/ui/one-time-dialog.blp:178
 #: src/oneTimeDialog.js:65
 msgid "Pill(s)"
-msgstr ""
+msgstr "Tabletid"
 
 #: data/ui/med-dialog.blp:196
 msgid "Icon"
-msgstr ""
+msgstr "Ikoon"
 
 #. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
 #: data/ui/med-dialog.blp:228
@@ -270,19 +280,19 @@ msgstr ""
 
 #: data/ui/med-dialog.blp:455 src/medDialog.js:489
 msgid "Frequency"
-msgstr ""
+msgstr "Sagedus"
 
 #: data/ui/med-dialog.blp:460
 msgid "Every day"
-msgstr ""
+msgstr "Iga päev"
 
 #: data/ui/med-dialog.blp:461 src/medDialog.js:478
 msgid "Specific days"
-msgstr ""
+msgstr "Kindlatel päevadel"
 
 #: data/ui/med-dialog.blp:462 src/medDialog.js:450
 msgid "Day of the month"
-msgstr ""
+msgstr "Kuu konkreetsel päeval"
 
 #: data/ui/med-dialog.blp:463 src/medDialog.js:485 src/treatmentsFactory.js:265
 msgid "Cycle"
@@ -708,22 +718,22 @@ msgstr ""
 
 #: src/window.js:798
 msgid "No treatments added yet"
-msgstr ""
+msgstr "Sa pole veel ühtegi ravikuuri lisanud"
 
 #: src/window.js:799
 msgid "All done for today"
-msgstr ""
+msgstr "Tänaseks on kõik tehtud"
 
 #: src/window.js:887
 msgid "Confirm all"
-msgstr ""
+msgstr "Kinnita kõik"
 
 #: src/window.js:888
 msgid "Skip all"
-msgstr ""
+msgstr "Jäta kõik vahele"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:919
 #, javascript-format
 msgid "and %d more"
-msgstr ""
+msgstr "ja veel %d"
