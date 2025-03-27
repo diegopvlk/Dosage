@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-25 15:34-0300\n"
-"PO-Revision-Date: 2025-03-27 13:45+0000\n"
+"PO-Revision-Date: 2025-03-27 18:55+0000\n"
 "Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/dosage/dosage/"
 "et/>\n"
@@ -207,7 +207,7 @@ msgstr "Ühik"
 #: data/ui/med-dialog.blp:188 data/ui/one-time-dialog.blp:178
 #: src/oneTimeDialog.js:65
 msgid "Pill(s)"
-msgstr "ravim"
+msgstr "sisesta siia ravimiühiku nimi"
 
 #: data/ui/med-dialog.blp:196
 msgid "Icon"
@@ -567,15 +567,15 @@ msgstr "Suur tänu järgnevatele projektidele!"
 #. TRANSLATORS: Confirmation message to allow background permission
 #: src/main.js:89
 msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
+msgstr "Nõustu sellega võimaldamaks tööd taustateenusena ja teavituste saatmist"
 
 #: src/oneTimeDialog.js:54
 msgid "New"
-msgstr ""
+msgstr "Uus"
 
 #: src/oneTimeDialog.js:163 src/medDialog.js:549
 msgid "Name already on treatment list"
-msgstr "Selline nim on juba ravikuuride loendis"
+msgstr "Selline nimi on juba ravikuuride loendis"
 
 #: src/medDialog.js:113
 msgid "Edit treatment"
@@ -583,111 +583,111 @@ msgstr "Muuda ravikuuri"
 
 #: src/medDialog.js:128
 msgid "Copy"
-msgstr ""
+msgstr "Kopeeri"
 
 #: src/medDialog.js:233
 msgid "Add dose"
-msgstr ""
+msgstr "Lisa ravimiannus"
 
 #: src/medDialog.js:441
 msgid "Choose"
-msgstr ""
+msgstr "Vali"
 
 #: src/medDialog.js:451 src/treatmentsFactory.js:244
 msgid "Day"
-msgstr ""
+msgstr "Päev"
 
 #: src/medDialog.js:522
 msgid "Empty name"
-msgstr ""
+msgstr "Tühi nimi"
 
 #: src/medDialog.js:528
 msgid "Empty unit"
-msgstr ""
+msgstr "Tühi ühik"
 
 #: src/medDialog.js:535
 msgid "Choose at least one day"
-msgstr ""
+msgstr "Palun vali vähemalt üks päev"
 
 #: src/medDialog.js:564
 msgid "Duplicated time"
-msgstr ""
+msgstr "Kattuv aeg"
 
 #: src/medDialog.js:580
 msgid "Are you sure?"
-msgstr ""
+msgstr "Kas oled kindel?"
 
 #: src/medDialog.js:581
 msgid "will be deleted"
-msgstr ""
+msgstr "kuulub kustutamisele"
 
 #: src/prefsDialog.js:137
 msgid "Status"
-msgstr ""
+msgstr "Olek"
 
 #: src/prefsDialog.js:137
 msgid "Time Confirmed"
-msgstr ""
+msgstr "Aeg on kinnitatud"
 
 #: src/todayFactory.js:130
 msgid "Change dose"
-msgstr ""
+msgstr "Muuda ravimiannust"
 
 #: src/timeDoseRow.js:34
 msgid "Remove dose"
-msgstr ""
+msgstr "Eemalda ravimiannus"
 
 #: src/treatmentsFactory.js:85
 msgid "Refill stock"
-msgstr ""
+msgstr "Täienda laovarusid"
 
 #: src/treatmentsFactory.js:111
 msgid "Options"
-msgstr ""
+msgstr "Valikud"
 
 #: src/treatmentsFactory.js:185
 msgid "Edit"
-msgstr ""
+msgstr "Muuda"
 
 #: src/treatmentsFactory.js:187
 msgid "Duplicate"
-msgstr ""
+msgstr "Tee koopia"
 
 #: src/treatmentsFactory.js:214
 msgid "Remaining"
-msgstr ""
+msgstr "Alles"
 
 #: src/treatmentsFactory.js:218
 msgid "Low stock"
-msgstr ""
+msgstr "Ravimivarud on lõppemas"
 
 #: src/treatmentsFactory.js:225
 msgid "Until"
-msgstr ""
+msgstr "Kuni"
 
 #: src/treatmentsFactory.js:226
 msgid "Ended on"
-msgstr ""
+msgstr "Lõppes"
 
 #: src/treatmentsFactory.js:238 src/utils.js:51
 msgid "Daily"
-msgstr ""
+msgstr "Iga päev"
 
 #: src/treatmentsFactory.js:253 src/treatmentsFactory.js:256
 msgid "Next dose"
-msgstr ""
+msgstr "Järgmine ravimiannus"
 
 #: src/utils.js:47
 msgid "Weekends"
-msgstr ""
+msgstr "Nädalavahetuse päevad"
 
 #: src/utils.js:49
 msgid "Weekdays"
-msgstr ""
+msgstr "Tööpäevad"
 
 #: src/window.js:172 src/window.js:924
 msgid "Reminder"
-msgstr ""
+msgstr "Meeldetuletus"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:174
@@ -696,23 +696,23 @@ msgstr "Ravikuuriks vajalikud ravimid hakkavad lõppema"
 
 #: src/window.js:257
 msgid "An issue has occurred"
-msgstr ""
+msgstr "Tekkis viga"
 
 #: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
 msgid "Close"
-msgstr ""
+msgstr "Sulge"
 
 #: src/window.js:480
 msgid "Show all"
-msgstr ""
+msgstr "Näita kõiki"
 
 #: src/window.js:503
 msgid "Show less"
-msgstr ""
+msgstr "Näita vähem"
 
 #: src/window.js:635
 msgid "No results found"
-msgstr ""
+msgstr "Tulemusi ei leidu"
 
 #: src/window.js:635 src/window.js:1506
 msgid "Empty history"
