@@ -11,3 +11,4 @@ Keywords=Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;
 X-GNOME-UsesNotifications=true
 # Translators: Do NOT translate or transliterate this text (these are enum types)!
 X-Purism-FormFactor=Workstation;Mobile;
+StartupNotify=true
