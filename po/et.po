@@ -97,7 +97,9 @@ msgstr "Tänased ravimiannused tumedas kujunduses"
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:10
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
-msgstr "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;ravim;annustus;annustamine;ravimid;ravimiannus;ravimiannused;tablett;tabletid;"
+msgstr ""
+"Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;ravim;annustus;"
+"annustamine;ravimid;ravimiannus;ravimiannused;tablett;tabletid;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"

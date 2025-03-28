@@ -651,6 +651,7 @@ msgstr "Options"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/treatmentsFactory.js:223
+#, javascript-format
 msgid "%d Remaining"
 msgstr "%d Remaining"
 

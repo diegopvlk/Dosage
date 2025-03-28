@@ -100,7 +100,10 @@ msgstr "Розділ \"Сьогодні\" Дозування у темному �
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:10
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
-msgstr "Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;лікування;курс;аптечка;пігулка;таблетка;нагадати;згадати;прийом;пігулка;доза;дозування;процедура;"
+msgstr ""
+"Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;"
+"лікування;курс;аптечка;пігулка;таблетка;нагадати;згадати;прийом;пігулка;доза;"
+"дозування;процедура;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -660,6 +663,7 @@ msgstr "Опції"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/treatmentsFactory.js:223
+#, javascript-format
 msgid "%d Remaining"
 msgstr "%d Залишилося"
 

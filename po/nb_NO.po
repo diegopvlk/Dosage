@@ -94,7 +94,8 @@ msgstr "I dag-vinduet med mørk drakt"
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:10
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
-msgstr "Medisin;Sporing;Påminnelse;Idag;Behandlinger;Tablett;Legemiddel;Løsning;"
+msgstr ""
+"Medisin;Sporing;Påminnelse;Idag;Behandlinger;Tablett;Legemiddel;Løsning;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -660,6 +661,7 @@ msgstr "Alternativer"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/treatmentsFactory.js:223
+#, javascript-format
 msgid "%d Remaining"
 msgstr "%d Gjenstående"
 
