@@ -219,7 +219,8 @@ function setInventoryAndDateLabels(listItem) {
 		let currInv = inv.current < 0 ? 0 : inv.current;
 
 		invLabelBtn.visible = true;
-		invLabelBtn.label = `${currInv} ` + _('Remaining');
+		// TRANSLATORS: keep the %d it's where the number goes
+		invLabelBtn.label = _('%d Remaining').replace('%d', currInv);
 		invLabelBtn.remove_css_class('low-stock');
 
 		if (inv.current <= inv.reminder) {
