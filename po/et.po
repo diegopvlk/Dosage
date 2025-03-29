@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-28 14:34-0300\n"
-"PO-Revision-Date: 2025-03-27 18:55+0000\n"
+"PO-Revision-Date: 2025-03-29 07:41+0000\n"
 "Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/dosage/dosage/"
 "et/>\n"
@@ -656,10 +656,9 @@ msgstr "Valikud"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/treatmentsFactory.js:223
-#, fuzzy, javascript-format
-#| msgid "Remaining"
+#, javascript-format
 msgid "%d Remaining"
-msgstr "Alles"
+msgstr "%d on alles"
 
 #: src/treatmentsFactory.js:227
 msgid "Low stock"
