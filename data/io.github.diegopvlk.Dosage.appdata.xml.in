@@ -73,6 +73,15 @@
 	</recommends>
 
 	<releases>
+		<release version="1.9.6" date="2025-03-31">
+			<description translate="no">
+				<ul>
+					<li>The time now follows GNOME Settings time format</li>
+					<li>Added Estonian translation</li>
+					<li>Updated Persian translation</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.9.5" date="2025-03-21">
 			<description translate="no">
 				<ul>
