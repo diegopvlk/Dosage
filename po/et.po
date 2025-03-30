@@ -207,7 +207,7 @@ msgstr "Ühik"
 #: data/ui/med-dialog.blp:187 data/ui/one-time-dialog.blp:177
 #: src/oneTimeDialog.js:65
 msgid "Pill(s)"
-msgstr "sisesta siia ravimiühiku nimi"
+msgstr "Tablett(id)"
 
 #: data/ui/med-dialog.blp:195
 msgid "Icon"
