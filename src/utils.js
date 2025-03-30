@@ -9,6 +9,7 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
+import Xdp from 'gi://Xdp';
 
 const decoder = new TextDecoder();
 
@@ -113,6 +114,10 @@ function checkLocale() {
 	let dateFormat = getDateFormat(locale);
 
 	try {
+		const portal = new Xdp.Portal();
+		const currentDesktop = GLib.getenv('XDG_CURRENT_DESKTOP');
+		const isGnome = currentDesktop && currentDesktop === 'GNOME';
+
 		const [, outputAmPm] = GLib.spawn_command_line_sync('locale am_pm');
 		const [, outputTimeFmt] = GLib.spawn_command_line_sync('locale t_fmt');
 		const outTimeFormat = decoder.decode(outputTimeFmt).replace('\n', '');
@@ -123,6 +128,12 @@ function checkLocale() {
 
 		is12 =
 			outTimeFormat.includes('%r') || outTimeFormat.includes('%p') || outTimeFormat.includes('%P');
+
+		if (isGnome) {
+			const sett = portal.get_settings();
+			const clockFormat = sett.read_string('org.gnome.desktop.interface', 'clock-format', null);
+			is12 = clockFormat === '12h' ? true : false;
+		}
 
 		timeFormat = is12 ? '%-I:%M %p' : '%H:%M';
 
