@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-28 14:34-0300\n"
-"PO-Revision-Date: 2025-03-29 07:41+0000\n"
+"PO-Revision-Date: 2025-04-01 11:03+0000\n"
 "Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/dosage/dosage/"
 "et/>\n"
@@ -71,7 +71,7 @@ msgstr "Värvid ja ikoonid - säti ravikuuri välimus vastavaks oma eelistustele
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:32
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
-"Laovarude arvestus - jälgi, mis sul varudes lediub ning saa teavitusi, kui "
+"Laovarude arvestus - jälgi, mis sul varudes leidub ning saa teavitusi, kui "
 "need lõppema hakkavad"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
@@ -207,7 +207,7 @@ msgstr "Ühik"
 #: data/ui/med-dialog.blp:187 data/ui/one-time-dialog.blp:177
 #: src/oneTimeDialog.js:65
 msgid "Pill(s)"
-msgstr "Tablett(id)"
+msgstr "Tablett(i)"
 
 #: data/ui/med-dialog.blp:195
 msgid "Icon"
