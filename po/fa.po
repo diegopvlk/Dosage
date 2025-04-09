@@ -8,8 +8,9 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-28 14:34-0300\n"
-"PO-Revision-Date: 2025-04-03 16:55+0000\n"
-"Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
+"PO-Revision-Date: 2025-04-10 15:05+0000\n"
+"Last-Translator: Parsa Nobahari "
+"<89968726+ParsaNobahari@users.noreply.github.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/dosage/dosage/fa/"
 ">\n"
 "Language: fa\n"
@@ -201,7 +202,7 @@ msgstr "واحد"
 #: data/ui/med-dialog.blp:187 data/ui/one-time-dialog.blp:177
 #: src/oneTimeDialog.js:65
 msgid "Pill(s)"
-msgstr "قرص"
+msgstr "قرص(ها)"
 
 #: data/ui/med-dialog.blp:195
 msgid "Icon"
