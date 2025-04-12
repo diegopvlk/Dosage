@@ -25,7 +25,7 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.desktop.in:3 data/ui/window.blp:6
 #: src/main.js:40 src/prefsDialog.js:113 src/window.js:1041
 msgid "Dosage"
-msgstr "چنده ‏گذاری"
+msgstr "دوز مصرفی"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 msgid "Keep track of your treatments"
@@ -37,8 +37,8 @@ msgid ""
 "multiple doses, flexible frequency, customization, stock monitoring, and "
 "duration control"
 msgstr ""
-"مدیریت و پیگیری آسان داروها با چنده گذاری: آگاهی‌ها، تاریخچه، چندین چنده، "
-"بسامد انعطاف‌پذیر، شخصی‌سازی، پایش موجودی و واپایش دوره"
+"مدیریت و پیگیری آسان داروها با دوز مصرفی: آگاهی‌ها، تاریخچه، چندین دوز، دوره مصرف "
+"انعطاف‌پذیر، نظارت موجودی و کنترل مدّت"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid "Features:"
@@ -50,11 +50,11 @@ msgstr "آگاهی — گرفتن یادآوری در زمان درست"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:28
 msgid "History — See which medications you took, skipped or missed"
-msgstr "تاریخچه — دیدن داروهایی که گرفتید، پریدید یا از دست دادید"
+msgstr "تاریخچه — دیدن داروهایی که گرفتید، رد شد یا از دست دادید"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
 msgid "Dosage management — Multiple doses with different times"
-msgstr "مدیریت چنده — چندین چنده با زمان‌های متفاوت"
+msgstr "مدیریت دوز مصرفی — چندین دوز با زمان‌های متفاوت"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid ""
@@ -67,27 +67,27 @@ msgstr "رنگ و نقشک — دادن طرحی از دارویتان"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:32
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
-msgstr "ردیابی موجودی — پایش مانده و گرفتن یادآوری هنگام کم بودنش"
+msgstr "پیگیری انبار — موجودی خود را نظارت و زمانی که کم است یادآوری شوید"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
 msgid "Duration — Define the start and end dates"
-msgstr "دوره — تعیین تاریخ‌های آغاز و پایان"
+msgstr "مدّت — تعیین تاریخ‌های آغاز و پایان"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage today window in light theme"
-msgstr "پنجرهٔ امروز چنده گذاری در زمینهٔ روشن"
+msgstr "پنجرهٔ امروز دوز مصرفی در زمینهٔ روشن"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage preferences window in light theme"
-msgstr "پنجرهٔ ترجیحات چنده گذاری در زمینهٔ روشن"
+msgstr "پنجرهٔ ترجیحات دوز مصرفی در زمینهٔ روشن"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:54
 msgid "Dosage edit treatment window in light theme"
-msgstr "پنجرهٔ ویرایش داروی چنده گذاری در زمینهٔ روشن"
+msgstr "پنجرهٔ ویرایش دارو دوز مصرفی در زمینهٔ روشن"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:59
 msgid "Dosage today window in dark theme"
-msgstr "پنجرهٔ امروز چنده گذاری در زمینهٔ تیره"
+msgstr "پنجرهٔ امروز دوز مصرفی در زمینهٔ تیره"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:10
@@ -138,12 +138,12 @@ msgstr "تغییر زمان"
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
 #: src/prefsDialog.js:160
 msgid "Skipped"
-msgstr "پریده"
+msgstr "رد شد"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
 #: src/historyFactory.js:187 src/prefsDialog.js:166 src/prefsDialog.js:176
 msgid "Confirmed"
-msgstr "تأیید شده"
+msgstr "تأیید شد"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
@@ -337,7 +337,7 @@ msgstr "آگاهی‌های تکرار شونده"
 
 #: data/ui/med-dialog.blp:709
 msgid "Renotify until it's confirmed or skipped"
-msgstr "آگاهی دوباره تا زمان تأیید یا پرش"
+msgstr "مجددا آگاهی کنید تا زمانی که تأیید یا رد شد"
 
 #: data/ui/med-dialog.blp:714
 msgid "Interval in minutes"
@@ -345,11 +345,11 @@ msgstr "دوره به دقیقه"
 
 #: data/ui/med-dialog.blp:727 data/ui/refill-dialog.blp:36
 msgid "Inventory"
-msgstr "موجودی"
+msgstr "انبار"
 
 #: data/ui/med-dialog.blp:728
 msgid "Manage your stock"
-msgstr "مدیریت مانده‌تان"
+msgstr "مدیریت موجودی‌‌تان"
 
 #: data/ui/med-dialog.blp:734
 msgid "Current"
@@ -357,15 +357,15 @@ msgstr "کنونی"
 
 #: data/ui/med-dialog.blp:747
 msgid "Remind me at"
-msgstr "یاد آوری در"
+msgstr "یادآوری در"
 
 #: data/ui/med-dialog.blp:760
 msgid "Refill amount"
-msgstr "مقدار پر کردن دوباره"
+msgstr "مقدار پر کردن"
 
 #: data/ui/med-dialog.blp:773
 msgid "Duration"
-msgstr "دوره"
+msgstr "مدّت"
 
 #: data/ui/med-dialog.blp:774
 msgid "Set start and end dates"
@@ -387,15 +387,15 @@ msgstr "پایان در"
 
 #: data/ui/med-dialog.blp:864
 msgid "Mark as confirmed"
-msgstr "علامت به تأیید شده"
+msgstr "بعنوان تأیید شده علامت بزن"
 
 #: data/ui/med-dialog.blp:865
 msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
 msgstr ""
-"اگر به صورت دستی تأیید یا رد نشود، به عنوان تأیید شده در تاریخچه ثبت شده و "
-"مانده را در صورت به کار افتاده بودن می‌کاهد"
+"اگر به صورت دستی تأیید یا رد نشود، به عنوان تأیید شده در تاریخچه ثبت می شود "
+"و در صورت فعال بودن، موجودی کاهش می یابد"
 
 #: data/ui/med-dialog.blp:874 src/medDialog.js:585 src/treatmentsFactory.js:108
 msgid "Delete"
@@ -415,7 +415,7 @@ msgstr "مقدار"
 
 #: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:137
 msgid "Dose"
-msgstr "چنده"
+msgstr "دوز"
 
 #: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:137
 msgid "Time"
@@ -440,7 +440,7 @@ msgstr "آغاز خودکار هنگام ورود"
 
 #: data/ui/preferences.blp:35
 msgid "Auto-clear history"
-msgstr "پاک سازی خودکار تاریخچه"
+msgstr "پاک‌سازی خودکار تاریخچه"
 
 #: data/ui/preferences.blp:36
 msgid "Keeps a maximum of 30 days"
@@ -448,11 +448,11 @@ msgstr "نگه داشتن بیشینه ۳۰ روز"
 
 #: data/ui/preferences.blp:52
 msgid "Low stock notification"
-msgstr "آگاهی کمبود مانده"
+msgstr "آگاهی کمبود موجودی"
 
 #: data/ui/preferences.blp:53
 msgid "Send reminders when treatments are low in stock"
-msgstr "فرستادن یادآورهایی هنگام کم بودن ماندهٔ داروها"
+msgstr "فرستادن یادآورهایی هنگام کم بودن موجودی داروها"
 
 #: data/ui/preferences.blp:69
 msgid "Notification sound"
@@ -464,15 +464,15 @@ msgstr "دکمه‌های آگاهی"
 
 #: data/ui/preferences.blp:86
 msgid "Show or hide confirm/skip"
-msgstr "نمایش یا نهفتن تأیید و پرش"
+msgstr "نمایش یا نهفتن تأیید یا رد"
 
 #: data/ui/preferences.blp:111 data/ui/window.blp:134 src/window.js:888
 msgid "Skip"
-msgstr "پرش"
+msgstr "رد"
 
 #: data/ui/preferences.blp:128
 msgid "Export history as CSV"
-msgstr "برون‌ریزی تاریخچه به شکل CSV"
+msgstr "خروجی گرفتن تاریخچه بعنوان CSV"
 
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:106
 msgid "Refill"
@@ -484,7 +484,7 @@ msgstr "نمایش یا نهفتن «هنگام نیاز»"
 
 #: data/ui/window.blp:31
 msgid "Search"
-msgstr "جست‌وجو"
+msgstr "جستجو"
 
 #: data/ui/window.blp:40
 msgid "Main Menu"
@@ -500,7 +500,7 @@ msgstr "امروز"
 
 #: data/ui/window.blp:109 data/ui/window.blp:198
 msgid "Unselect"
-msgstr "ناگزینش"
+msgstr "لغو انتخاب"
 
 #: data/ui/window.blp:144 src/prefsDialog.js:114
 msgid "History"
@@ -508,7 +508,7 @@ msgstr "تاریخچه"
 
 #: data/ui/window.blp:208
 msgid "Remove entries"
-msgstr "حذف ورودی‌ها"
+msgstr "حذف ورودی"
 
 #: data/ui/window.blp:222 src/prefsDialog.js:114
 msgid "Treatments"
@@ -520,7 +520,7 @@ msgstr "زدن دکمهٔ زیر برای افزودن"
 
 #: data/ui/window.blp:293
 msgid "About Dosage"
-msgstr "دربارهٔ چنده گذاری"
+msgstr "دربارهٔ دوز مصرفی"
 
 #: data/ui/window.blp:298 src/window.js:1271
 msgid "Quit"
@@ -532,11 +532,11 @@ msgstr "تأیید شده در"
 
 #: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:173
 msgid "Auto-confirmed"
-msgstr "تأیید شده به صورت خودکار"
+msgstr "بصورت خودکار تأیید شد"
 
 #: src/editHistDialog.js:69 src/editHistDialog.js:93
 msgid "Skipped at"
-msgstr "پریده در"
+msgstr "رد شد در"
 
 #: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:163
 msgid "Missed"
@@ -544,16 +544,18 @@ msgstr "از دست رفته"
 
 #: src/editHistDialog.js:79 src/prefsDialog.js:176
 msgid "Time unknown"
-msgstr "زمان نامشخّص"
+msgstr "زمان نامشخص"
 
 #: src/historyFactory.js:47
 msgid "Select to be removed"
-msgstr "گزیده برای برداشته شدن"
+msgstr "برای حذف‌شدن انتخاب کنید"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
 msgid "translator-credits"
-msgstr "دانیال بهزادی <dani.behzi@ubuntu.com>"
+msgstr ""
+"دانیال بهزادی <dani.behzi@ubuntu.com>\n"
+"Parsa Nobahari"
 
 #: src/main.js:53
 msgid "Thanks to these projects!"
@@ -582,7 +584,7 @@ msgstr "کپی"
 
 #: src/medDialog.js:233
 msgid "Add dose"
-msgstr "افزودن چنده"
+msgstr "افزودن دوز"
 
 #: src/medDialog.js:441
 msgid "Choose"
@@ -626,15 +628,15 @@ msgstr "زمان تأیید شد"
 
 #: src/todayFactory.js:128
 msgid "Change dose"
-msgstr "تغییر چنده"
+msgstr "تغییر دوز"
 
 #: src/timeDoseRow.js:34
 msgid "Remove dose"
-msgstr "برداشتن چنده"
+msgstr "حذف دوز"
 
 #: src/treatmentsFactory.js:88
 msgid "Refill stock"
-msgstr "پر کردن دوبارهٔ مانده"
+msgstr "پر کردن موجودی"
 
 #: src/treatmentsFactory.js:105
 msgid "Edit"
@@ -656,7 +658,7 @@ msgstr "%d مانده"
 
 #: src/treatmentsFactory.js:227
 msgid "Low stock"
-msgstr "کم مانده"
+msgstr "موجودی کم"
 
 #: src/treatmentsFactory.js:234
 msgid "Until"
@@ -672,7 +674,7 @@ msgstr "روزانه"
 
 #: src/treatmentsFactory.js:262 src/treatmentsFactory.js:265
 msgid "Next dose"
-msgstr "چندهٔ بعدی"
+msgstr "دوز بعدی"
 
 #: src/utils.js:47
 msgid "Weekends"
@@ -689,11 +691,11 @@ msgstr "یادآور"
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:174
 msgid "You have treatments low in stock"
-msgstr "دارویی ماندهٔ کم دارد"
+msgstr "کم داروهایی در موجودی دارید"
 
 #: src/window.js:257
 msgid "An issue has occurred"
-msgstr "مشکلی رخ داد"
+msgstr "یک مشکلی رخ داد"
 
 #: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
 msgid "Close"
@@ -729,7 +731,7 @@ msgstr "تأیید همه"
 
 #: src/window.js:888
 msgid "Skip all"
-msgstr "پرش از همه"
+msgstr "رد کردن همه"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:919
