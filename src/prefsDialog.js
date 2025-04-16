@@ -8,7 +8,7 @@ import Gtk from 'gi://Gtk';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import { historyLS, treatmentsLS } from './window.js';
-import { createTempObj } from './utils.js';
+import { clockIs12, createTempObj } from './utils.js';
 
 export default function openPrefsDialog(DosageApplication) {
 	const container = GLib.getenv('container');
@@ -144,6 +144,7 @@ function getHistoryCSV(history) {
 		const timeString = time.toLocaleTimeString(undefined, {
 			hour: 'numeric',
 			minute: 'numeric',
+			hour12: clockIs12,
 		});
 
 		const dateString = new Date(med.taken[0]).toLocaleDateString(undefined, {
@@ -156,17 +157,18 @@ function getHistoryCSV(history) {
 
 		let status;
 		switch (med.taken[1]) {
-			case 0:
-				status = _('Skipped');
-				break;
 			case -1:
 				status = _('Missed');
+				break;
+			case 0:
+				status = _('Skipped');
 				break;
 			case 1:
 				status = _('Confirmed');
 				timeConfirmedStr = new Date(med.taken[0]).toLocaleTimeString(undefined, {
 					hour: 'numeric',
 					minute: 'numeric',
+					hour12: clockIs12,
 				});
 				break;
 			case 2:
