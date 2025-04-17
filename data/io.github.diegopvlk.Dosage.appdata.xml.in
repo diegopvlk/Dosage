@@ -73,6 +73,14 @@
 	</recommends>
 
 	<releases>
+		<release version="1.9.7" date="2025-04-17">
+			<description translate="no">
+				<ul>
+					<li>Fixed the time not following 24h/12h preference when exporting CSV</li>
+					<li>Updated Estonian and Persian translation</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.9.6" date="2025-03-31">
 			<description translate="no">
 				<ul>
