@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-28 14:34-0300\n"
-"PO-Revision-Date: 2025-04-19 06:01+0000\n"
+"PO-Revision-Date: 2025-05-02 02:47+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/dosage/dosage/fa/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.11.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -36,8 +36,8 @@ msgid ""
 "multiple doses, flexible frequency, customization, stock monitoring, and "
 "duration control"
 msgstr ""
-"مدیریت و پیگیری آسان داروها با دوز مصرفی: آگاهی‌ها، تاریخچه، چندین دوز، دوره مصرف "
-"انعطاف‌پذیر، نظارت موجودی و کنترل مدّت"
+"مدیریت و پیگیری آسان داروها با چنده گذاری: آگاهی‌ها، تاریخچه، چندین چنده، "
+"بسامد انعطاف‌پذیر، سفارشی سازی، پایش مانده و واپایش دوره"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid "Features:"
@@ -74,19 +74,19 @@ msgstr "دوره — تعیین تاریخ‌های آغاز و پایان"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage today window in light theme"
-msgstr "پنجرهٔ امروز دوز مصرفی در زمینهٔ روشن"
+msgstr "پنجرهٔ امروز چنده گذاری در زمینهٔ روشن"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage preferences window in light theme"
-msgstr "پنجرهٔ ترجیحات دوز مصرفی در زمینهٔ روشن"
+msgstr "پنجرهٔ ترجیحات چنده گذاری در زمینهٔ روشن"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:54
 msgid "Dosage edit treatment window in light theme"
-msgstr "پنجرهٔ ویرایش دارو دوز مصرفی در زمینهٔ روشن"
+msgstr "پنجرهٔ ویرایش داروی چنده گذاری در زمینهٔ روشن"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:59
 msgid "Dosage today window in dark theme"
-msgstr "پنجرهٔ امروز دوز مصرفی در زمینهٔ تیره"
+msgstr "پنجرهٔ امروز چنده گذاری در زمینهٔ تیره"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:10
@@ -519,7 +519,7 @@ msgstr "زدن دکمهٔ زیر برای افزودن"
 
 #: data/ui/window.blp:293
 msgid "About Dosage"
-msgstr "دربارهٔ دوز مصرفی"
+msgstr "دربارهٔ چنده گذاری"
 
 #: data/ui/window.blp:298 src/window.js:1271
 msgid "Quit"
