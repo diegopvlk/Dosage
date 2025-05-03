@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-28 14:34-0300\n"
-"PO-Revision-Date: 2025-02-10 23:31+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
-"Language-Team: Tamil <https://hosted.weblate.org/projects/dosage/dosage/ta/"
-">\n"
+"PO-Revision-Date: 2025-05-06 14:06+0000\n"
+"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/dosage/dosage/ta/>"
+"\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -135,7 +135,7 @@ msgstr "சேமி"
 #: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:209
 #: src/timeDoseRow.js:40
 msgid "Change time"
-msgstr ""
+msgstr "நேரத்தை மாற்றவும்"
 
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
 #: src/prefsDialog.js:160
@@ -144,10 +144,8 @@ msgstr "தவிர்க்கப்பட்டது"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
 #: src/historyFactory.js:187 src/prefsDialog.js:166 src/prefsDialog.js:176
-#, fuzzy
-#| msgid "Confirm"
 msgid "Confirmed"
-msgstr "உறுதிப்படுத்தவும்"
+msgstr "உறுதிப்படுத்தப்பட்டது"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
@@ -235,7 +233,7 @@ msgstr "மாற்று சுற்று மாத்திரை"
 
 #: data/ui/med-dialog.blp:304
 msgid "Ampoule"
-msgstr "Ampoule"
+msgstr "ஆம்பூல்"
 
 #: data/ui/med-dialog.blp:320
 msgid "Injection"
@@ -366,10 +364,8 @@ msgid "Remind me at"
 msgstr "என்னை நினைவூட்டுங்கள்"
 
 #: data/ui/med-dialog.blp:760
-#, fuzzy
-#| msgid "Refill"
 msgid "Refill amount"
-msgstr "மீண்டும் நிரப்பவும்"
+msgstr "நிரப்புதல் தொகை"
 
 #: data/ui/med-dialog.blp:773
 msgid "Duration"
@@ -395,13 +391,15 @@ msgstr "முடிவடைகிறது"
 
 #: data/ui/med-dialog.blp:864
 msgid "Mark as confirmed"
-msgstr ""
+msgstr "உறுதிப்படுத்தப்பட்டபடி குறி"
 
 #: data/ui/med-dialog.blp:865
 msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
 msgstr ""
+"கைமுறையாக உறுதிப்படுத்தப்படாவிட்டால் அல்லது தவிர்க்கப்படாவிட்டால், அது வரலாற்றில் "
+"உறுதிப்படுத்தப்பட்டபடி பதிவு செய்யப்படும், இயக்கப்பட்டால் பங்கைக் குறைக்கும்"
 
 #: data/ui/med-dialog.blp:874 src/medDialog.js:585 src/treatmentsFactory.js:108
 msgid "Delete"
@@ -417,15 +415,15 @@ msgstr "மருத்தீடு பட்டியலிலிருந்�
 
 #: data/ui/one-time-dialog.blp:181
 msgid "Amount"
-msgstr ""
+msgstr "தொகை"
 
 #: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:137
 msgid "Dose"
-msgstr ""
+msgstr "டோச்"
 
 #: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:137
 msgid "Time"
-msgstr ""
+msgstr "நேரம்"
 
 #: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:137
 msgid "Date"
@@ -477,20 +475,16 @@ msgid "Skip"
 msgstr "தவிர்"
 
 #: data/ui/preferences.blp:128
-#, fuzzy
-#| msgid "Empty history"
 msgid "Export history as CSV"
-msgstr "வெற்று வரலாறு"
+msgstr "காபிம ஆக ஏற்றுமதி வரலாறு"
 
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:106
 msgid "Refill"
 msgstr "மீண்டும் நிரப்பவும்"
 
 #: data/ui/window.blp:23
-#, fuzzy
-#| msgid "When necessary"
 msgid "Show/Hide 'When necessary'"
-msgstr "தேவைப்படும்போது"
+msgstr "'தேவைப்படும்போது' காட்டு/மறைக்க"
 
 #: data/ui/window.blp:31
 msgid "Search"
@@ -518,7 +512,7 @@ msgstr "வரலாறு"
 
 #: data/ui/window.blp:208
 msgid "Remove entries"
-msgstr ""
+msgstr "உள்ளீடுகளை அகற்று"
 
 #: data/ui/window.blp:222 src/prefsDialog.js:114
 msgid "Treatments"
@@ -542,7 +536,7 @@ msgstr "இல் உறுதிப்படுத்தப்பட்டத�
 
 #: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:173
 msgid "Auto-confirmed"
-msgstr ""
+msgstr "தானாக உறுதிப்படுத்தப்பட்ட"
 
 #: src/editHistDialog.js:69 src/editHistDialog.js:93
 msgid "Skipped at"
@@ -554,11 +548,11 @@ msgstr "தவறவிட்டது"
 
 #: src/editHistDialog.js:79 src/prefsDialog.js:176
 msgid "Time unknown"
-msgstr ""
+msgstr "நேரம் தெரியவில்லை"
 
 #: src/historyFactory.js:47
 msgid "Select to be removed"
-msgstr ""
+msgstr "அகற்றத் தேர்ந்தெடுக்கவும்"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:49
@@ -628,13 +622,11 @@ msgstr "நீக்கப்படும்"
 
 #: src/prefsDialog.js:137
 msgid "Status"
-msgstr ""
+msgstr "நிலை"
 
 #: src/prefsDialog.js:137
-#, fuzzy
-#| msgid "Confirm"
 msgid "Time Confirmed"
-msgstr "உறுதிப்படுத்தவும்"
+msgstr "நேரம் உறுதிப்படுத்தப்பட்டது"
 
 #: src/todayFactory.js:128
 msgid "Change dose"
@@ -642,11 +634,11 @@ msgstr "அளவை மாற்றவும்"
 
 #: src/timeDoseRow.js:34
 msgid "Remove dose"
-msgstr ""
+msgstr "அளவை அகற்று"
 
 #: src/treatmentsFactory.js:88
 msgid "Refill stock"
-msgstr ""
+msgstr "ரீஃபில் பங்கு"
 
 #: src/treatmentsFactory.js:105
 msgid "Edit"
@@ -705,11 +697,11 @@ msgstr "உங்களிடம் சிகிச்சைகள் குற�
 
 #: src/window.js:257
 msgid "An issue has occurred"
-msgstr ""
+msgstr "ஒரு சிக்கல் ஏற்பட்டுள்ளது"
 
 #: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
 msgid "Close"
-msgstr ""
+msgstr "மூடு"
 
 #: src/window.js:480
 msgid "Show all"
@@ -747,7 +739,7 @@ msgstr "அனைத்தையும் தவிர்க்கவும்"
 #: src/window.js:919
 #, javascript-format
 msgid "and %d more"
-msgstr "மேலும் %d மேலும்"
+msgstr "மற்றும் %d மேலும்"
 
 #~ msgid "Form"
 #~ msgstr "வடிவம்"
