@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-28 14:34-0300\n"
-"PO-Revision-Date: 2025-02-14 15:51+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"PO-Revision-Date: 2025-05-09 11:24+0000\n"
+"Last-Translator: Tiago Lucas Flach <tiagolucas9830@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "dosage/dosage/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -216,7 +216,7 @@ msgstr "Comprimido"
 
 #: data/ui/med-dialog.blp:240
 msgid "Alternative pill"
-msgstr "Comprimido Alt."
+msgstr "Comprimido alternativo"
 
 #: data/ui/med-dialog.blp:256
 msgid "Capsule"
@@ -228,7 +228,7 @@ msgstr "Comprimido redondo"
 
 #: data/ui/med-dialog.blp:288
 msgid "Alternative round pill"
-msgstr "Comprimido redondo alt."
+msgstr "Comprimido redondo alternativo"
 
 #: data/ui/med-dialog.blp:304
 msgid "Ampoule"
@@ -244,7 +244,7 @@ msgstr "Comprimido quadrado"
 
 #: data/ui/med-dialog.blp:352
 msgid "Alternative square pill"
-msgstr "Comprimido quadrado alt."
+msgstr "Comprimido quadrado alternativo"
 
 #: data/ui/med-dialog.blp:368
 msgid "Triangle pill"
@@ -252,7 +252,7 @@ msgstr "Comprimido retangular"
 
 #: data/ui/med-dialog.blp:384
 msgid "Alternative triangle pill"
-msgstr "Comprimido retangular alt."
+msgstr "Comprimido retangular alternativo"
 
 #: data/ui/med-dialog.blp:400
 msgid "Bottle"
