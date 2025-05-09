@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-28 14:34-0300\n"
+"POT-Creation-Date: 2025-05-09 08:58-0300\n"
 "PO-Revision-Date: 2025-02-10 23:31+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/dosage/dosage/ko/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3 data/ui/window.blp:6
-#: src/main.js:40 src/prefsDialog.js:113 src/window.js:1041
+#: src/main.js:39 src/prefsDialog.js:137 src/window.js:1041
 msgid "Dosage"
 msgstr "복용량"
 
@@ -133,12 +133,12 @@ msgid "Change time"
 msgstr ""
 
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
-#: src/prefsDialog.js:160
+#: src/prefsDialog.js:188
 msgid "Skipped"
 msgstr "건너뜀"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
-#: src/historyFactory.js:187 src/prefsDialog.js:166 src/prefsDialog.js:176
+#: src/historyFactory.js:187 src/prefsDialog.js:191 src/prefsDialog.js:202
 #, fuzzy
 #| msgid "Confirm"
 msgid "Confirmed"
@@ -153,7 +153,7 @@ msgid "Add"
 msgstr "추가"
 
 #: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 msgid "Name"
 msgstr "이름"
 
@@ -414,15 +414,15 @@ msgstr "치료 목록에서"
 msgid "Amount"
 msgstr ""
 
-#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:161
 msgid "Dose"
 msgstr ""
 
-#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:161
 msgid "Time"
 msgstr ""
 
-#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:161
 msgid "Date"
 msgstr "날짜"
 
@@ -507,7 +507,7 @@ msgstr "오늘"
 msgid "Unselect"
 msgstr "선택 해제"
 
-#: data/ui/window.blp:144 src/prefsDialog.js:114
+#: data/ui/window.blp:144 src/prefsDialog.js:138
 msgid "History"
 msgstr "기록"
 
@@ -515,7 +515,7 @@ msgstr "기록"
 msgid "Remove entries"
 msgstr ""
 
-#: data/ui/window.blp:222 src/prefsDialog.js:114
+#: data/ui/window.blp:222 src/prefsDialog.js:138
 msgid "Treatments"
 msgstr "치료"
 
@@ -535,7 +535,7 @@ msgstr "종료"
 msgid "Confirmed at"
 msgstr "확인된 시간"
 
-#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:173
+#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:199
 msgid "Auto-confirmed"
 msgstr ""
 
@@ -543,11 +543,11 @@ msgstr ""
 msgid "Skipped at"
 msgstr "건너뛴 시간"
 
-#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:163
+#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:185
 msgid "Missed"
 msgstr "놓친"
 
-#: src/editHistDialog.js:79 src/prefsDialog.js:176
+#: src/editHistDialog.js:79 src/prefsDialog.js:202
 msgid "Time unknown"
 msgstr ""
 
@@ -556,18 +556,13 @@ msgid "Select to be removed"
 msgstr ""
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:49
+#: src/main.js:48
 msgid "translator-credits"
 msgstr "Diego Povliuk <diego.pvlk@gmail.com>"
 
-#: src/main.js:53
+#: src/main.js:52
 msgid "Thanks to these projects!"
 msgstr "이 프로젝트들에 감사드립니다!"
-
-#. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:89
-msgid "Accept to allow running in the background and receive notifications"
-msgstr "백그라운드에서 실행하고 알림을 받으려면 수락하세요"
 
 #: src/oneTimeDialog.js:54
 msgid "New"
@@ -621,11 +616,24 @@ msgstr "확실합니까?"
 msgid "will be deleted"
 msgstr "삭제됩니다"
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:51
+msgid "Accept to allow running in the background and receive notifications"
+msgstr "백그라운드에서 실행하고 알림을 받으려면 수락하세요"
+
+#: src/prefsDialog.js:62 src/window.js:257
+msgid "An issue has occurred"
+msgstr ""
+
+#: src/prefsDialog.js:65 src/window.js:265 src/window.js:287 src/window.js:309
+#: src/window.js:327
+msgid "Close"
+msgstr ""
+
+#: src/prefsDialog.js:161
 msgid "Status"
 msgstr ""
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 #, fuzzy
 #| msgid "Confirm"
 msgid "Time Confirmed"
@@ -673,7 +681,7 @@ msgstr "까지"
 msgid "Ended on"
 msgstr "종료일"
 
-#: src/treatmentsFactory.js:247 src/utils.js:51
+#: src/treatmentsFactory.js:247 src/utils.js:52
 msgid "Daily"
 msgstr "매일"
 
@@ -681,11 +689,11 @@ msgstr "매일"
 msgid "Next dose"
 msgstr "다음 복용량"
 
-#: src/utils.js:47
+#: src/utils.js:48
 msgid "Weekends"
 msgstr "주말"
 
-#: src/utils.js:49
+#: src/utils.js:50
 msgid "Weekdays"
 msgstr "평일"
 
@@ -697,14 +705,6 @@ msgstr "알림"
 #: src/window.js:174
 msgid "You have treatments low in stock"
 msgstr "재고가 부족한 치료가 있습니다"
-
-#: src/window.js:257
-msgid "An issue has occurred"
-msgstr ""
-
-#: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
-msgid "Close"
-msgstr ""
 
 #: src/window.js:480
 msgid "Show all"

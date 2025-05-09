@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-28 14:34-0300\n"
+"POT-Creation-Date: 2025-05-09 08:58-0300\n"
 "PO-Revision-Date: 2025-05-02 02:47+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/dosage/dosage/fa/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3 data/ui/window.blp:6
-#: src/main.js:40 src/prefsDialog.js:113 src/window.js:1041
+#: src/main.js:39 src/prefsDialog.js:137 src/window.js:1041
 msgid "Dosage"
 msgstr "چنده ‏گذاری"
 
@@ -92,8 +92,8 @@ msgstr "پنجرهٔ امروز چنده گذاری در زمینهٔ تیره"
 #: data/io.github.diegopvlk.Dosage.desktop.in:10
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
-"Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;درمان;دارو;ردیاب;یادآور;امروز;قرص;دوا;"
-""
+"Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;درمان;دارو;"
+"ردیاب;یادآور;امروز;قرص;دوا;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -135,12 +135,12 @@ msgid "Change time"
 msgstr "تغییر زمان"
 
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
-#: src/prefsDialog.js:160
+#: src/prefsDialog.js:188
 msgid "Skipped"
 msgstr "پریده"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
-#: src/historyFactory.js:187 src/prefsDialog.js:166 src/prefsDialog.js:176
+#: src/historyFactory.js:187 src/prefsDialog.js:191 src/prefsDialog.js:202
 msgid "Confirmed"
 msgstr "تأیید شده"
 
@@ -153,7 +153,7 @@ msgid "Add"
 msgstr "افزودن"
 
 #: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 msgid "Name"
 msgstr "نام"
 
@@ -412,15 +412,15 @@ msgstr "از سیاههٔ دارو"
 msgid "Amount"
 msgstr "مقدار"
 
-#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:161
 msgid "Dose"
 msgstr "چنده"
 
-#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:161
 msgid "Time"
 msgstr "زمان"
 
-#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:161
 msgid "Date"
 msgstr "تاریخ"
 
@@ -501,7 +501,7 @@ msgstr "امروز"
 msgid "Unselect"
 msgstr "ناگزینش"
 
-#: data/ui/window.blp:144 src/prefsDialog.js:114
+#: data/ui/window.blp:144 src/prefsDialog.js:138
 msgid "History"
 msgstr "تاریخچه"
 
@@ -509,7 +509,7 @@ msgstr "تاریخچه"
 msgid "Remove entries"
 msgstr "حذف ورودی‌ها"
 
-#: data/ui/window.blp:222 src/prefsDialog.js:114
+#: data/ui/window.blp:222 src/prefsDialog.js:138
 msgid "Treatments"
 msgstr "داروها"
 
@@ -529,7 +529,7 @@ msgstr "خروج"
 msgid "Confirmed at"
 msgstr "تأیید شده در"
 
-#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:173
+#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:199
 msgid "Auto-confirmed"
 msgstr "تأیید شده به صورت خودکار"
 
@@ -537,11 +537,11 @@ msgstr "تأیید شده به صورت خودکار"
 msgid "Skipped at"
 msgstr "پریده در"
 
-#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:163
+#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:185
 msgid "Missed"
 msgstr "از دست رفته"
 
-#: src/editHistDialog.js:79 src/prefsDialog.js:176
+#: src/editHistDialog.js:79 src/prefsDialog.js:202
 msgid "Time unknown"
 msgstr "زمان نامشخّص"
 
@@ -550,20 +550,15 @@ msgid "Select to be removed"
 msgstr "گزیدن برای برداشته شدن"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:49
+#: src/main.js:48
 msgid "translator-credits"
 msgstr ""
 "دانیال بهزادی <dani.behzi@ubuntu.com>\n"
 "پارسا نوبهاری <parsa.nobahari@gmail.com>"
 
-#: src/main.js:53
+#: src/main.js:52
 msgid "Thanks to these projects!"
 msgstr "با سپاس از این پروژه‌ها!"
-
-#. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:89
-msgid "Accept to allow running in the background and receive notifications"
-msgstr "پذیرش برای اجازهٔ اجرا در پس‌زمینه و دریافت آگاهی‌ها"
 
 #: src/oneTimeDialog.js:54
 msgid "New"
@@ -617,11 +612,24 @@ msgstr "مطمئنید؟"
 msgid "will be deleted"
 msgstr "حذف خواهد شد"
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:51
+msgid "Accept to allow running in the background and receive notifications"
+msgstr "پذیرش برای اجازهٔ اجرا در پس‌زمینه و دریافت آگاهی‌ها"
+
+#: src/prefsDialog.js:62 src/window.js:257
+msgid "An issue has occurred"
+msgstr "مشکلی رخ داد"
+
+#: src/prefsDialog.js:65 src/window.js:265 src/window.js:287 src/window.js:309
+#: src/window.js:327
+msgid "Close"
+msgstr "بستن"
+
+#: src/prefsDialog.js:161
 msgid "Status"
 msgstr "وضعیت"
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 msgid "Time Confirmed"
 msgstr "زمان تأیید شد"
 
@@ -667,7 +675,7 @@ msgstr "تا"
 msgid "Ended on"
 msgstr "به پایان رسید در"
 
-#: src/treatmentsFactory.js:247 src/utils.js:51
+#: src/treatmentsFactory.js:247 src/utils.js:52
 msgid "Daily"
 msgstr "روزانه"
 
@@ -675,11 +683,11 @@ msgstr "روزانه"
 msgid "Next dose"
 msgstr "چندهٔ بعدی"
 
-#: src/utils.js:47
+#: src/utils.js:48
 msgid "Weekends"
 msgstr "پایان‌هفته‌ها"
 
-#: src/utils.js:49
+#: src/utils.js:50
 msgid "Weekdays"
 msgstr "روزهای هفته"
 
@@ -691,14 +699,6 @@ msgstr "یادآور"
 #: src/window.js:174
 msgid "You have treatments low in stock"
 msgstr "دارویی ماندهٔ کم دارد"
-
-#: src/window.js:257
-msgid "An issue has occurred"
-msgstr "مشکلی رخ داد"
-
-#: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
-msgid "Close"
-msgstr "بستن"
 
 #: src/window.js:480
 msgid "Show all"

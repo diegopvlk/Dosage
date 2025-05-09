@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-28 14:34-0300\n"
+"POT-Creation-Date: 2025-05-09 08:58-0300\n"
 "PO-Revision-Date: 2025-02-10 23:31+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -23,7 +23,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3 data/ui/window.blp:6
-#: src/main.js:40 src/prefsDialog.js:113 src/window.js:1041
+#: src/main.js:39 src/prefsDialog.js:137 src/window.js:1041
 msgid "Dosage"
 msgstr "Дозировка"
 
@@ -138,12 +138,12 @@ msgid "Change time"
 msgstr ""
 
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
-#: src/prefsDialog.js:160
+#: src/prefsDialog.js:188
 msgid "Skipped"
 msgstr "Пропуснати"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
-#: src/historyFactory.js:187 src/prefsDialog.js:166 src/prefsDialog.js:176
+#: src/historyFactory.js:187 src/prefsDialog.js:191 src/prefsDialog.js:202
 #, fuzzy
 #| msgid "Confirm"
 msgid "Confirmed"
@@ -158,7 +158,7 @@ msgid "Add"
 msgstr "Добавяне"
 
 #: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 msgid "Name"
 msgstr "Име"
 
@@ -419,15 +419,15 @@ msgstr "От списъка за лечения"
 msgid "Amount"
 msgstr ""
 
-#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:161
 msgid "Dose"
 msgstr ""
 
-#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:161
 msgid "Time"
 msgstr ""
 
-#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:161
 msgid "Date"
 msgstr "Дата"
 
@@ -512,7 +512,7 @@ msgstr "Днес"
 msgid "Unselect"
 msgstr "Демаркиране"
 
-#: data/ui/window.blp:144 src/prefsDialog.js:114
+#: data/ui/window.blp:144 src/prefsDialog.js:138
 msgid "History"
 msgstr "История"
 
@@ -520,7 +520,7 @@ msgstr "История"
 msgid "Remove entries"
 msgstr ""
 
-#: data/ui/window.blp:222 src/prefsDialog.js:114
+#: data/ui/window.blp:222 src/prefsDialog.js:138
 msgid "Treatments"
 msgstr "Лечения"
 
@@ -540,7 +540,7 @@ msgstr "Спиране на програмата"
 msgid "Confirmed at"
 msgstr "Потвърдено в"
 
-#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:173
+#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:199
 msgid "Auto-confirmed"
 msgstr ""
 
@@ -548,11 +548,11 @@ msgstr ""
 msgid "Skipped at"
 msgstr "Пропуснати в"
 
-#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:163
+#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:185
 msgid "Missed"
 msgstr "Изпуснати"
 
-#: src/editHistDialog.js:79 src/prefsDialog.js:176
+#: src/editHistDialog.js:79 src/prefsDialog.js:202
 msgid "Time unknown"
 msgstr ""
 
@@ -561,19 +561,13 @@ msgid "Select to be removed"
 msgstr ""
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:49
+#: src/main.js:48
 msgid "translator-credits"
 msgstr "twlvnn <kraft_werk@tutanota.com>"
 
-#: src/main.js:53
+#: src/main.js:52
 msgid "Thanks to these projects!"
 msgstr "Благодарение на тези проекти!"
-
-#. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:89
-msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
-"Приемете, за да позволите работа във фонов режим и получаване на известия"
 
 #: src/oneTimeDialog.js:54
 msgid "New"
@@ -627,11 +621,25 @@ msgstr "Сигурни ли сте?"
 msgid "will be deleted"
 msgstr "ще бъде изтрит"
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:51
+msgid "Accept to allow running in the background and receive notifications"
+msgstr ""
+"Приемете, за да позволите работа във фонов режим и получаване на известия"
+
+#: src/prefsDialog.js:62 src/window.js:257
+msgid "An issue has occurred"
+msgstr ""
+
+#: src/prefsDialog.js:65 src/window.js:265 src/window.js:287 src/window.js:309
+#: src/window.js:327
+msgid "Close"
+msgstr ""
+
+#: src/prefsDialog.js:161
 msgid "Status"
 msgstr ""
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 #, fuzzy
 #| msgid "Confirm"
 msgid "Time Confirmed"
@@ -679,7 +687,7 @@ msgstr "До"
 msgid "Ended on"
 msgstr "Завършено на"
 
-#: src/treatmentsFactory.js:247 src/utils.js:51
+#: src/treatmentsFactory.js:247 src/utils.js:52
 msgid "Daily"
 msgstr "Ежедневно"
 
@@ -687,11 +695,11 @@ msgstr "Ежедневно"
 msgid "Next dose"
 msgstr "Следваща доза"
 
-#: src/utils.js:47
+#: src/utils.js:48
 msgid "Weekends"
 msgstr "Почивни дни"
 
-#: src/utils.js:49
+#: src/utils.js:50
 msgid "Weekdays"
 msgstr "Делнични дни"
 
@@ -703,14 +711,6 @@ msgstr "Напомняне"
 #: src/window.js:174
 msgid "You have treatments low in stock"
 msgstr "Имате лечения с малко запас"
-
-#: src/window.js:257
-msgid "An issue has occurred"
-msgstr ""
-
-#: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
-msgid "Close"
-msgstr ""
 
 #: src/window.js:480
 msgid "Show all"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-28 14:34-0300\n"
+"POT-Creation-Date: 2025-05-09 08:58-0300\n"
 "PO-Revision-Date: 2025-02-24 18:10+0000\n"
 "Last-Translator: MiniClemme <mcle@dtu.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/dosage/dosage/da/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3 data/ui/window.blp:6
-#: src/main.js:40 src/prefsDialog.js:113 src/window.js:1041
+#: src/main.js:39 src/prefsDialog.js:137 src/window.js:1041
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -139,12 +139,12 @@ msgid "Change time"
 msgstr "Ændre tid"
 
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
-#: src/prefsDialog.js:160
+#: src/prefsDialog.js:188
 msgid "Skipped"
 msgstr "Sprunget over"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
-#: src/historyFactory.js:187 src/prefsDialog.js:166 src/prefsDialog.js:176
+#: src/historyFactory.js:187 src/prefsDialog.js:191 src/prefsDialog.js:202
 msgid "Confirmed"
 msgstr "Bekræftet"
 
@@ -157,7 +157,7 @@ msgid "Add"
 msgstr "Tilføj"
 
 #: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 msgid "Name"
 msgstr "Navn"
 
@@ -417,15 +417,15 @@ msgstr "Fra behandlingslisten"
 msgid "Amount"
 msgstr "Antal"
 
-#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:161
 msgid "Dose"
 msgstr "Dosis"
 
-#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:161
 msgid "Time"
 msgstr "Tid"
 
-#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:161
 msgid "Date"
 msgstr "Dato"
 
@@ -506,7 +506,7 @@ msgstr "Idag"
 msgid "Unselect"
 msgstr "Fjern markeringen"
 
-#: data/ui/window.blp:144 src/prefsDialog.js:114
+#: data/ui/window.blp:144 src/prefsDialog.js:138
 msgid "History"
 msgstr "Historik"
 
@@ -514,7 +514,7 @@ msgstr "Historik"
 msgid "Remove entries"
 msgstr "Fjern indtastninger"
 
-#: data/ui/window.blp:222 src/prefsDialog.js:114
+#: data/ui/window.blp:222 src/prefsDialog.js:138
 msgid "Treatments"
 msgstr "Behandlinger"
 
@@ -534,7 +534,7 @@ msgstr "Stop"
 msgid "Confirmed at"
 msgstr "Bekræftet"
 
-#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:173
+#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:199
 msgid "Auto-confirmed"
 msgstr "Automatisk bekræftet"
 
@@ -542,11 +542,11 @@ msgstr "Automatisk bekræftet"
 msgid "Skipped at"
 msgstr "Sprunget over"
 
-#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:163
+#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:185
 msgid "Missed"
 msgstr "Misset"
 
-#: src/editHistDialog.js:79 src/prefsDialog.js:176
+#: src/editHistDialog.js:79 src/prefsDialog.js:202
 msgid "Time unknown"
 msgstr "Tidspunkt ukendt"
 
@@ -555,18 +555,13 @@ msgid "Select to be removed"
 msgstr "Vælg hvad der skal fjernes"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:49
+#: src/main.js:48
 msgid "translator-credits"
 msgstr "Magnus C. <mcle@dtu.dk>"
 
-#: src/main.js:53
+#: src/main.js:52
 msgid "Thanks to these projects!"
 msgstr "Tak til følgende projekter!"
-
-#. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:89
-msgid "Accept to allow running in the background and receive notifications"
-msgstr "Tillad Dosering at køre i baggrunden og at modtage notifikationer"
 
 #: src/oneTimeDialog.js:54
 msgid "New"
@@ -620,11 +615,24 @@ msgstr "Er du sikker?"
 msgid "will be deleted"
 msgstr "Vil blive slettet"
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:51
+msgid "Accept to allow running in the background and receive notifications"
+msgstr "Tillad Dosering at køre i baggrunden og at modtage notifikationer"
+
+#: src/prefsDialog.js:62 src/window.js:257
+msgid "An issue has occurred"
+msgstr "Der skete en fejl"
+
+#: src/prefsDialog.js:65 src/window.js:265 src/window.js:287 src/window.js:309
+#: src/window.js:327
+msgid "Close"
+msgstr "Luk"
+
+#: src/prefsDialog.js:161
 msgid "Status"
 msgstr "Status"
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 msgid "Time Confirmed"
 msgstr "Tid bekræftet"
 
@@ -670,7 +678,7 @@ msgstr "Indtil"
 msgid "Ended on"
 msgstr "Sluttede den"
 
-#: src/treatmentsFactory.js:247 src/utils.js:51
+#: src/treatmentsFactory.js:247 src/utils.js:52
 msgid "Daily"
 msgstr "Daglig"
 
@@ -678,11 +686,11 @@ msgstr "Daglig"
 msgid "Next dose"
 msgstr "Næste dosis"
 
-#: src/utils.js:47
+#: src/utils.js:48
 msgid "Weekends"
 msgstr "Weekender"
 
-#: src/utils.js:49
+#: src/utils.js:50
 msgid "Weekdays"
 msgstr "Hverdage"
 
@@ -694,14 +702,6 @@ msgstr "Påmindelse"
 #: src/window.js:174
 msgid "You have treatments low in stock"
 msgstr "Du har behandlinger der er ved at løbe tør for dossier"
-
-#: src/window.js:257
-msgid "An issue has occurred"
-msgstr "Der skete en fejl"
-
-#: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
-msgid "Close"
-msgstr "Luk"
 
 #: src/window.js:480
 msgid "Show all"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-28 14:34-0300\n"
+"POT-Creation-Date: 2025-05-09 08:58-0300\n"
 "PO-Revision-Date: 2025-02-14 15:51+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3 data/ui/window.blp:6
-#: src/main.js:40 src/prefsDialog.js:113 src/window.js:1041
+#: src/main.js:39 src/prefsDialog.js:137 src/window.js:1041
 msgid "Dosage"
 msgstr "Dosagem"
 
@@ -136,12 +136,12 @@ msgid "Change time"
 msgstr "Mudar hora"
 
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
-#: src/prefsDialog.js:160
+#: src/prefsDialog.js:188
 msgid "Skipped"
 msgstr "Ignorado"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
-#: src/historyFactory.js:187 src/prefsDialog.js:166 src/prefsDialog.js:176
+#: src/historyFactory.js:187 src/prefsDialog.js:191 src/prefsDialog.js:202
 msgid "Confirmed"
 msgstr "Confirmado"
 
@@ -154,7 +154,7 @@ msgid "Add"
 msgstr "Adicionar"
 
 #: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 msgid "Name"
 msgstr "Nome"
 
@@ -414,15 +414,15 @@ msgstr "Da lista de tratamentos"
 msgid "Amount"
 msgstr "Quantidade"
 
-#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:161
 msgid "Dose"
 msgstr "Dose"
 
-#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:161
 msgid "Time"
 msgstr "Hora"
 
-#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:161
 msgid "Date"
 msgstr "Data"
 
@@ -503,7 +503,7 @@ msgstr "Hoje"
 msgid "Unselect"
 msgstr "Desmarcar"
 
-#: data/ui/window.blp:144 src/prefsDialog.js:114
+#: data/ui/window.blp:144 src/prefsDialog.js:138
 msgid "History"
 msgstr "Histórico"
 
@@ -511,7 +511,7 @@ msgstr "Histórico"
 msgid "Remove entries"
 msgstr "Remover entradas"
 
-#: data/ui/window.blp:222 src/prefsDialog.js:114
+#: data/ui/window.blp:222 src/prefsDialog.js:138
 msgid "Treatments"
 msgstr "Tratamentos"
 
@@ -531,7 +531,7 @@ msgstr "Sair"
 msgid "Confirmed at"
 msgstr "Confirmado às"
 
-#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:173
+#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:199
 msgid "Auto-confirmed"
 msgstr "Auto-confirmado"
 
@@ -539,11 +539,11 @@ msgstr "Auto-confirmado"
 msgid "Skipped at"
 msgstr "Ignorado às"
 
-#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:163
+#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:185
 msgid "Missed"
 msgstr "Perdido"
 
-#: src/editHistDialog.js:79 src/prefsDialog.js:176
+#: src/editHistDialog.js:79 src/prefsDialog.js:202
 msgid "Time unknown"
 msgstr "Hora desconhecida"
 
@@ -552,21 +552,15 @@ msgid "Select to be removed"
 msgstr "Selecionar para remover"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:49
+#: src/main.js:48
 msgid "translator-credits"
 msgstr ""
 "Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Silvério Santos <ssantos@web.de>"
 
-#: src/main.js:53
+#: src/main.js:52
 msgid "Thanks to these projects!"
 msgstr "Obrigado à esses projetos!"
-
-#. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:89
-msgid "Accept to allow running in the background and receive notifications"
-msgstr ""
-"Aceite para permitir a execução em segundo plano e receber notificações"
 
 #: src/oneTimeDialog.js:54
 msgid "New"
@@ -620,11 +614,25 @@ msgstr "Tem certeza?"
 msgid "will be deleted"
 msgstr "será excluído"
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:51
+msgid "Accept to allow running in the background and receive notifications"
+msgstr ""
+"Aceite para permitir a execução em segundo plano e receber notificações"
+
+#: src/prefsDialog.js:62 src/window.js:257
+msgid "An issue has occurred"
+msgstr "Ocorreu um erro"
+
+#: src/prefsDialog.js:65 src/window.js:265 src/window.js:287 src/window.js:309
+#: src/window.js:327
+msgid "Close"
+msgstr "Fechar"
+
+#: src/prefsDialog.js:161
 msgid "Status"
 msgstr "Status"
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 msgid "Time Confirmed"
 msgstr "Hora Confirmada"
 
@@ -670,7 +678,7 @@ msgstr "Até"
 msgid "Ended on"
 msgstr "Terminado em"
 
-#: src/treatmentsFactory.js:247 src/utils.js:51
+#: src/treatmentsFactory.js:247 src/utils.js:52
 msgid "Daily"
 msgstr "Diariamente"
 
@@ -678,11 +686,11 @@ msgstr "Diariamente"
 msgid "Next dose"
 msgstr "Próxima dose"
 
-#: src/utils.js:47
+#: src/utils.js:48
 msgid "Weekends"
 msgstr "Finais de semana"
 
-#: src/utils.js:49
+#: src/utils.js:50
 msgid "Weekdays"
 msgstr "Dias da semana"
 
@@ -694,14 +702,6 @@ msgstr "Lembrete"
 #: src/window.js:174
 msgid "You have treatments low in stock"
 msgstr "Tem tratamentos com pouco estoque"
-
-#: src/window.js:257
-msgid "An issue has occurred"
-msgstr "Ocorreu um erro"
-
-#: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
-msgid "Close"
-msgstr "Fechar"
 
 #: src/window.js:480
 msgid "Show all"

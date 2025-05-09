@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-28 14:34-0300\n"
+"POT-Creation-Date: 2025-05-09 08:58-0300\n"
 "PO-Revision-Date: 2025-05-06 14:06+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
-"Language-Team: Tamil <https://hosted.weblate.org/projects/dosage/dosage/ta/>"
-"\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/dosage/dosage/ta/"
+">\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3 data/ui/window.blp:6
-#: src/main.js:40 src/prefsDialog.js:113 src/window.js:1041
+#: src/main.js:39 src/prefsDialog.js:137 src/window.js:1041
 msgid "Dosage"
 msgstr "அளவு"
 
@@ -138,12 +138,12 @@ msgid "Change time"
 msgstr "நேரத்தை மாற்றவும்"
 
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
-#: src/prefsDialog.js:160
+#: src/prefsDialog.js:188
 msgid "Skipped"
 msgstr "தவிர்க்கப்பட்டது"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
-#: src/historyFactory.js:187 src/prefsDialog.js:166 src/prefsDialog.js:176
+#: src/historyFactory.js:187 src/prefsDialog.js:191 src/prefsDialog.js:202
 msgid "Confirmed"
 msgstr "உறுதிப்படுத்தப்பட்டது"
 
@@ -156,7 +156,7 @@ msgid "Add"
 msgstr "கூட்டு"
 
 #: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 msgid "Name"
 msgstr "பெயர்"
 
@@ -417,15 +417,15 @@ msgstr "மருத்தீடு பட்டியலிலிருந்�
 msgid "Amount"
 msgstr "தொகை"
 
-#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:161
 msgid "Dose"
 msgstr "டோச்"
 
-#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:161
 msgid "Time"
 msgstr "நேரம்"
 
-#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:161
 msgid "Date"
 msgstr "திகதி"
 
@@ -506,7 +506,7 @@ msgstr "இன்று"
 msgid "Unselect"
 msgstr "தேர்வு செய்யப்படாதது"
 
-#: data/ui/window.blp:144 src/prefsDialog.js:114
+#: data/ui/window.blp:144 src/prefsDialog.js:138
 msgid "History"
 msgstr "வரலாறு"
 
@@ -514,7 +514,7 @@ msgstr "வரலாறு"
 msgid "Remove entries"
 msgstr "உள்ளீடுகளை அகற்று"
 
-#: data/ui/window.blp:222 src/prefsDialog.js:114
+#: data/ui/window.blp:222 src/prefsDialog.js:138
 msgid "Treatments"
 msgstr "சிகிச்சைகள்"
 
@@ -534,7 +534,7 @@ msgstr "வெளியேறு"
 msgid "Confirmed at"
 msgstr "இல் உறுதிப்படுத்தப்பட்டது"
 
-#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:173
+#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:199
 msgid "Auto-confirmed"
 msgstr "தானாக உறுதிப்படுத்தப்பட்ட"
 
@@ -542,11 +542,11 @@ msgstr "தானாக உறுதிப்படுத்தப்பட்�
 msgid "Skipped at"
 msgstr "தவிர்க்கப்பட்டது"
 
-#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:163
+#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:185
 msgid "Missed"
 msgstr "தவறவிட்டது"
 
-#: src/editHistDialog.js:79 src/prefsDialog.js:176
+#: src/editHistDialog.js:79 src/prefsDialog.js:202
 msgid "Time unknown"
 msgstr "நேரம் தெரியவில்லை"
 
@@ -555,18 +555,13 @@ msgid "Select to be removed"
 msgstr "அகற்றத் தேர்ந்தெடுக்கவும்"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:49
+#: src/main.js:48
 msgid "translator-credits"
 msgstr "TamilNeram <anishprabu.t@gmail.com>"
 
-#: src/main.js:53
+#: src/main.js:52
 msgid "Thanks to these projects!"
 msgstr "இந்த திட்டங்களுக்கு நன்றி!"
-
-#. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:89
-msgid "Accept to allow running in the background and receive notifications"
-msgstr "பின்னணியில் இயங்க அனுமதிப்பதை ஏற்றுக்கொண்டு அறிவிப்புகளைப் பெறுங்கள்"
 
 #: src/oneTimeDialog.js:54
 msgid "New"
@@ -620,11 +615,24 @@ msgstr "நீங்கள் உறுதியாக இருக்கிற�
 msgid "will be deleted"
 msgstr "நீக்கப்படும்"
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:51
+msgid "Accept to allow running in the background and receive notifications"
+msgstr "பின்னணியில் இயங்க அனுமதிப்பதை ஏற்றுக்கொண்டு அறிவிப்புகளைப் பெறுங்கள்"
+
+#: src/prefsDialog.js:62 src/window.js:257
+msgid "An issue has occurred"
+msgstr "ஒரு சிக்கல் ஏற்பட்டுள்ளது"
+
+#: src/prefsDialog.js:65 src/window.js:265 src/window.js:287 src/window.js:309
+#: src/window.js:327
+msgid "Close"
+msgstr "மூடு"
+
+#: src/prefsDialog.js:161
 msgid "Status"
 msgstr "நிலை"
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 msgid "Time Confirmed"
 msgstr "நேரம் உறுதிப்படுத்தப்பட்டது"
 
@@ -670,7 +678,7 @@ msgstr "வரை"
 msgid "Ended on"
 msgstr "முடிந்தது"
 
-#: src/treatmentsFactory.js:247 src/utils.js:51
+#: src/treatmentsFactory.js:247 src/utils.js:52
 msgid "Daily"
 msgstr "நாள்தோறும்"
 
@@ -678,11 +686,11 @@ msgstr "நாள்தோறும்"
 msgid "Next dose"
 msgstr "அடுத்த டோச்"
 
-#: src/utils.js:47
+#: src/utils.js:48
 msgid "Weekends"
 msgstr "வார இறுதி நாட்கள்"
 
-#: src/utils.js:49
+#: src/utils.js:50
 msgid "Weekdays"
 msgstr "வார நாட்கள்"
 
@@ -694,14 +702,6 @@ msgstr "நினைவூட்டல்"
 #: src/window.js:174
 msgid "You have treatments low in stock"
 msgstr "உங்களிடம் சிகிச்சைகள் குறைவாக உள்ளன"
-
-#: src/window.js:257
-msgid "An issue has occurred"
-msgstr "ஒரு சிக்கல் ஏற்பட்டுள்ளது"
-
-#: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
-msgid "Close"
-msgstr "மூடு"
 
 #: src/window.js:480
 msgid "Show all"

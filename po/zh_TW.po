@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-28 14:34-0300\n"
+"POT-Creation-Date: 2025-05-09 08:58-0300\n"
 "PO-Revision-Date: 2025-03-17 10:10+0000\n"
 "Last-Translator: Chung-Wei Chung <webb790709@proton.me>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -22,7 +22,7 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3 data/ui/window.blp:6
-#: src/main.js:40 src/prefsDialog.js:113 src/window.js:1041
+#: src/main.js:39 src/prefsDialog.js:137 src/window.js:1041
 msgid "Dosage"
 msgstr "藥記"
 
@@ -133,12 +133,12 @@ msgid "Change time"
 msgstr "更改時間"
 
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
-#: src/prefsDialog.js:160
+#: src/prefsDialog.js:188
 msgid "Skipped"
 msgstr "跳過"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
-#: src/historyFactory.js:187 src/prefsDialog.js:166 src/prefsDialog.js:176
+#: src/historyFactory.js:187 src/prefsDialog.js:191 src/prefsDialog.js:202
 msgid "Confirmed"
 msgstr "已確認"
 
@@ -151,7 +151,7 @@ msgid "Add"
 msgstr "新增"
 
 #: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 msgid "Name"
 msgstr "名稱"
 
@@ -408,15 +408,15 @@ msgstr "從處方箋挑選"
 msgid "Amount"
 msgstr "數量"
 
-#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:161
 msgid "Dose"
 msgstr "劑量"
 
-#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:161
 msgid "Time"
 msgstr "時間"
 
-#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:137
+#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:161
 msgid "Date"
 msgstr "日期"
 
@@ -497,7 +497,7 @@ msgstr "今天"
 msgid "Unselect"
 msgstr "取消選取"
 
-#: data/ui/window.blp:144 src/prefsDialog.js:114
+#: data/ui/window.blp:144 src/prefsDialog.js:138
 msgid "History"
 msgstr "歷史記錄"
 
@@ -505,7 +505,7 @@ msgstr "歷史記錄"
 msgid "Remove entries"
 msgstr "刪除項目"
 
-#: data/ui/window.blp:222 src/prefsDialog.js:114
+#: data/ui/window.blp:222 src/prefsDialog.js:138
 msgid "Treatments"
 msgstr "處方箋"
 
@@ -525,7 +525,7 @@ msgstr "離開"
 msgid "Confirmed at"
 msgstr "何時確認"
 
-#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:173
+#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:199
 msgid "Auto-confirmed"
 msgstr "自動確認"
 
@@ -533,11 +533,11 @@ msgstr "自動確認"
 msgid "Skipped at"
 msgstr "何時跳過"
 
-#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:163
+#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:185
 msgid "Missed"
 msgstr "錯過"
 
-#: src/editHistDialog.js:79 src/prefsDialog.js:176
+#: src/editHistDialog.js:79 src/prefsDialog.js:202
 msgid "Time unknown"
 msgstr "時間未知"
 
@@ -546,18 +546,13 @@ msgid "Select to be removed"
 msgstr "勾選以刪除"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:49
+#: src/main.js:48
 msgid "translator-credits"
 msgstr "Chung-Wei Chung <webb790709@proton.me>"
 
-#: src/main.js:53
+#: src/main.js:52
 msgid "Thanks to these projects!"
 msgstr "謝謝這些專案！"
-
-#. TRANSLATORS: Confirmation message to allow background permission
-#: src/main.js:89
-msgid "Accept to allow running in the background and receive notifications"
-msgstr "接受已允許在背景中執行和接收通知"
 
 #: src/oneTimeDialog.js:54
 msgid "New"
@@ -611,11 +606,24 @@ msgstr "您確定嗎？"
 msgid "will be deleted"
 msgstr "將被刪除"
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:51
+msgid "Accept to allow running in the background and receive notifications"
+msgstr "接受已允許在背景中執行和接收通知"
+
+#: src/prefsDialog.js:62 src/window.js:257
+msgid "An issue has occurred"
+msgstr "發生問題"
+
+#: src/prefsDialog.js:65 src/window.js:265 src/window.js:287 src/window.js:309
+#: src/window.js:327
+msgid "Close"
+msgstr "關閉"
+
+#: src/prefsDialog.js:161
 msgid "Status"
 msgstr "狀態"
 
-#: src/prefsDialog.js:137
+#: src/prefsDialog.js:161
 msgid "Time Confirmed"
 msgstr "確認時間"
 
@@ -661,7 +669,7 @@ msgstr "直到"
 msgid "Ended on"
 msgstr "結束於"
 
-#: src/treatmentsFactory.js:247 src/utils.js:51
+#: src/treatmentsFactory.js:247 src/utils.js:52
 msgid "Daily"
 msgstr "每天"
 
@@ -669,11 +677,11 @@ msgstr "每天"
 msgid "Next dose"
 msgstr "下一劑量"
 
-#: src/utils.js:47
+#: src/utils.js:48
 msgid "Weekends"
 msgstr "週末"
 
-#: src/utils.js:49
+#: src/utils.js:50
 msgid "Weekdays"
 msgstr "平日"
 
@@ -685,14 +693,6 @@ msgstr "提醒"
 #: src/window.js:174
 msgid "You have treatments low in stock"
 msgstr "您的處方箋庫存偏低"
-
-#: src/window.js:257
-msgid "An issue has occurred"
-msgstr "發生問題"
-
-#: src/window.js:265 src/window.js:287 src/window.js:309 src/window.js:327
-msgid "Close"
-msgstr "關閉"
 
 #: src/window.js:480
 msgid "Show all"
