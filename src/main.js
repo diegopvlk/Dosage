@@ -9,7 +9,6 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
-import Xdp from 'gi://Xdp';
 
 import openPrefsDialog from './prefsDialog.js';
 import { DosageWindow } from './window.js';
@@ -76,20 +75,6 @@ export const DosageApplication = GObject.registerClass(
 				GLib.OptionFlags.NONE,
 				GLib.OptionArg.NONE,
 				'Start app hidden at startup',
-				null,
-			);
-		}
-
-		_requestBackground(autostart) {
-			const portal = new Xdp.Portal();
-			const setAutostart = autostart ? Xdp.BackgroundFlags.AUTOSTART : Xdp.BackgroundFlags.NONE;
-			portal.request_background(
-				null,
-				// TRANSLATORS: Confirmation message to allow background permission
-				_('Accept to allow running in the background and receive notifications'),
-				['io.github.diegopvlk.Dosage', '--startup'],
-				setAutostart,
-				null,
 				null,
 			);
 		}

@@ -4,9 +4,11 @@
  */
 'use strict';
 
+import Adw from 'gi://Adw';
 import Gtk from 'gi://Gtk';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
+import Xdp from 'gi://Xdp';
 import { historyLS, treatmentsLS } from './window.js';
 import { clockIs12, createTempObj } from './utils.js';
 
@@ -42,7 +44,29 @@ export default function openPrefsDialog(DosageApplication) {
 		settings.set_boolean('autostart', state);
 
 		if (container === 'flatpak') {
-			DosageApplication._requestBackground(state);
+			const portal = new Xdp.Portal();
+			const autostartState = state ? Xdp.BackgroundFlags.AUTOSTART : Xdp.BackgroundFlags.NONE;
+			portal.request_background(
+				null,
+				_('Accept to allow running in the background and receive notifications'),
+				['io.github.diegopvlk.Dosage', '--startup'],
+				autostartState,
+				null,
+				(_portal, result) => {
+					try {
+						portal.request_background_finish(result);
+					} catch (err) {
+						console.error(err);
+						if (!state) return;
+						const alertDialog = new Adw.AlertDialog({
+							heading: _('An issue has occurred'),
+							body: err.message,
+						});
+						alertDialog.add_response('close', _('Close'));
+						alertDialog.present(prefsDialog);
+					}
+				},
+			);
 		} else {
 			const autostartFilePath = GLib.build_filenamev([
 				GLib.get_home_dir(),
