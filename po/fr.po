@@ -416,7 +416,7 @@ msgstr "Quantité"
 
 #: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:161
 msgid "Dose"
-msgstr "Dose"
+msgstr "Dosage"
 
 #: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:161
 msgid "Time"
