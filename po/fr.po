@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-09 08:58-0300\n"
-"PO-Revision-Date: 2025-02-10 23:31+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/dosage/dosage/fr/"
-">\n"
+"PO-Revision-Date: 2025-07-06 04:02+0000\n"
+"Last-Translator: Lumiraptor <hmtz@gmx.fr>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/dosage/dosage/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -132,7 +132,7 @@ msgstr "Sauvegarder"
 #: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:209
 #: src/timeDoseRow.js:40
 msgid "Change time"
-msgstr ""
+msgstr "Modifier l'heure"
 
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
 #: src/prefsDialog.js:188
@@ -141,10 +141,8 @@ msgstr "Sauté"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
 #: src/historyFactory.js:187 src/prefsDialog.js:191 src/prefsDialog.js:202
-#, fuzzy
-#| msgid "Confirm"
 msgid "Confirmed"
-msgstr "Confirmer"
+msgstr "Confirmé"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
@@ -392,7 +390,7 @@ msgstr "S’achève le"
 
 #: data/ui/med-dialog.blp:864
 msgid "Mark as confirmed"
-msgstr ""
+msgstr "Marquer comme confirmé"
 
 #: data/ui/med-dialog.blp:865
 msgid ""
@@ -414,15 +412,15 @@ msgstr "Depuis la liste des traitements"
 
 #: data/ui/one-time-dialog.blp:181
 msgid "Amount"
-msgstr ""
+msgstr "Quantité"
 
 #: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:161
 msgid "Dose"
-msgstr ""
+msgstr "Dose"
 
 #: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:161
 msgid "Time"
-msgstr ""
+msgstr "Heure"
 
 #: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:161
 msgid "Date"
@@ -474,20 +472,16 @@ msgid "Skip"
 msgstr "Sauter"
 
 #: data/ui/preferences.blp:128
-#, fuzzy
-#| msgid "Empty history"
 msgid "Export history as CSV"
-msgstr "Historique vide"
+msgstr "Exporter l'historique au format CSV"
 
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:106
 msgid "Refill"
 msgstr "Recharger"
 
 #: data/ui/window.blp:23
-#, fuzzy
-#| msgid "When necessary"
 msgid "Show/Hide 'When necessary'"
-msgstr "Au besoin"
+msgstr "Afficher/Masquer 'Quand nécessaire\""
 
 #: data/ui/window.blp:31
 msgid "Search"
@@ -515,7 +509,7 @@ msgstr "Historique"
 
 #: data/ui/window.blp:208
 msgid "Remove entries"
-msgstr ""
+msgstr "Supprimer les entrées"
 
 #: data/ui/window.blp:222 src/prefsDialog.js:138
 msgid "Treatments"
