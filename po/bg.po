@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-09 08:58-0300\n"
-"PO-Revision-Date: 2025-02-10 23:31+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"PO-Revision-Date: 2025-07-28 02:00+0000\n"
+"Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/dosage/dosage/"
 "bg/>\n"
 "Language: bg\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -70,8 +70,8 @@ msgstr "Цвят и иконка - Дайте форма на лечението
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:32
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
-"Следене на запаса - Следете запаса си и получавайте напомняне, когато е "
-"близо до изчерпване."
+"Следене на запаса — Следете запаса си и получавайте напомняне, когато е "
+"близо до изчерпване"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
 msgid "Duration — Define the start and end dates"
@@ -135,7 +135,7 @@ msgstr "Запазване"
 #: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:209
 #: src/timeDoseRow.js:40
 msgid "Change time"
-msgstr ""
+msgstr "Променяне на часа"
 
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
 #: src/prefsDialog.js:188
@@ -144,10 +144,8 @@ msgstr "Пропуснати"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
 #: src/historyFactory.js:187 src/prefsDialog.js:191 src/prefsDialog.js:202
-#, fuzzy
-#| msgid "Confirm"
 msgid "Confirmed"
-msgstr "Потвърждаване"
+msgstr "Потвърдено"
 
 #: data/ui/med-dialog.blp:7
 msgid "New treatment"
@@ -335,7 +333,7 @@ msgstr "Увеличаване на приоритета на известият
 msgid "Show in fullscreen mode or with 'Do Not Disturb' enabled"
 msgstr ""
 "Прави така, че известието да се показва в режим на цял екран или дори ако "
-"режим „Не безпокойте!“ е активирано."
+"режим „Не безпокойте!“ е активирано"
 
 #: data/ui/med-dialog.blp:708
 msgid "Recurring notifications"
@@ -366,10 +364,8 @@ msgid "Remind me at"
 msgstr "Напомнете ме в"
 
 #: data/ui/med-dialog.blp:760
-#, fuzzy
-#| msgid "Refill"
 msgid "Refill amount"
-msgstr "Презареди"
+msgstr "Презареждане на бройката"
 
 #: data/ui/med-dialog.blp:773
 msgid "Duration"
@@ -395,13 +391,15 @@ msgstr "Прикличва на"
 
 #: data/ui/med-dialog.blp:864
 msgid "Mark as confirmed"
-msgstr ""
+msgstr "Маркиране като потвърдено"
 
 #: data/ui/med-dialog.blp:865
 msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
 msgstr ""
+"Ако не бъде потвърдено ръчно или пропуснато, то ще бъде записано като "
+"потвърдено в историята, като ще намали запасите, ако е включено"
 
 #: data/ui/med-dialog.blp:874 src/medDialog.js:585 src/treatmentsFactory.js:108
 msgid "Delete"
@@ -417,15 +415,15 @@ msgstr "От списъка за лечения"
 
 #: data/ui/one-time-dialog.blp:181
 msgid "Amount"
-msgstr ""
+msgstr "Брой"
 
 #: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:161
 msgid "Dose"
-msgstr ""
+msgstr "Доза"
 
 #: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:161
 msgid "Time"
-msgstr ""
+msgstr "Час"
 
 #: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:161
 msgid "Date"
@@ -477,20 +475,16 @@ msgid "Skip"
 msgstr "Пропускане"
 
 #: data/ui/preferences.blp:128
-#, fuzzy
-#| msgid "Empty history"
 msgid "Export history as CSV"
-msgstr "Изчистване на историята"
+msgstr "Изнасяне на историята като CSV"
 
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:106
 msgid "Refill"
 msgstr "Презареди"
 
 #: data/ui/window.blp:23
-#, fuzzy
-#| msgid "When necessary"
 msgid "Show/Hide 'When necessary'"
-msgstr "При необходимост"
+msgstr "Показване/скриване „при необходимост“"
 
 #: data/ui/window.blp:31
 msgid "Search"
@@ -518,7 +512,7 @@ msgstr "История"
 
 #: data/ui/window.blp:208
 msgid "Remove entries"
-msgstr ""
+msgstr "Премахване на записите"
 
 #: data/ui/window.blp:222 src/prefsDialog.js:138
 msgid "Treatments"
@@ -542,7 +536,7 @@ msgstr "Потвърдено в"
 
 #: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:199
 msgid "Auto-confirmed"
-msgstr ""
+msgstr "Автоматично потвърдено"
 
 #: src/editHistDialog.js:69 src/editHistDialog.js:93
 msgid "Skipped at"
@@ -554,11 +548,11 @@ msgstr "Изпуснати"
 
 #: src/editHistDialog.js:79 src/prefsDialog.js:202
 msgid "Time unknown"
-msgstr ""
+msgstr "Времето е неизвестно"
 
 #: src/historyFactory.js:47
 msgid "Select to be removed"
-msgstr ""
+msgstr "Изберете за изтриване"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:48
@@ -628,22 +622,20 @@ msgstr ""
 
 #: src/prefsDialog.js:62 src/window.js:257
 msgid "An issue has occurred"
-msgstr ""
+msgstr "Възникна проблем"
 
 #: src/prefsDialog.js:65 src/window.js:265 src/window.js:287 src/window.js:309
 #: src/window.js:327
 msgid "Close"
-msgstr ""
+msgstr "Затваряне"
 
 #: src/prefsDialog.js:161
 msgid "Status"
-msgstr ""
+msgstr "Състояние"
 
 #: src/prefsDialog.js:161
-#, fuzzy
-#| msgid "Confirm"
 msgid "Time Confirmed"
-msgstr "Потвърждаване"
+msgstr "Часът е потвърден"
 
 #: src/todayFactory.js:128
 msgid "Change dose"
@@ -651,11 +643,11 @@ msgstr "Променяне на дозата"
 
 #: src/timeDoseRow.js:34
 msgid "Remove dose"
-msgstr ""
+msgstr "Премахване на дозата"
 
 #: src/treatmentsFactory.js:88
 msgid "Refill stock"
-msgstr ""
+msgstr "Презареждане на стоката"
 
 #: src/treatmentsFactory.js:105
 msgid "Edit"
