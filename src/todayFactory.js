@@ -88,6 +88,8 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 		orientation: Gtk.Orientation.VERTICAL,
 		margin_start: 9,
 		margin_end: 12,
+		margin_top: 4,
+		margin_bottom: 4,
 	});
 
 	listItem.box.append(listItem.labelsBox);
@@ -104,7 +106,9 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	listItem.doseAndNotes = new Gtk.Label({
 		css_classes: ['subtitle'],
 		halign: Gtk.Align.START,
-		ellipsize: Pango.EllipsizeMode.END,
+		justify: Gtk.Justification.FILL,
+		wrap: true,
+		natural_wrap_mode: Gtk.NaturalWrapMode.NONE,
 	});
 
 	listItem.labelsBox.append(listItem.doseAndNotes);

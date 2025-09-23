@@ -49,6 +49,8 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 		orientation: Gtk.Orientation.VERTICAL,
 		margin_start: 8,
 		margin_end: 11,
+		margin_top: 2,
+		margin_bottom: 2,
 	});
 
 	listItem.box.append(listItem.labelsBox);
@@ -65,7 +67,9 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 	listItem.infoLabel = new Gtk.Label({
 		css_classes: ['subtitle'],
 		halign: Gtk.Align.START,
-		ellipsize: Pango.EllipsizeMode.END,
+		justify: Gtk.Justification.FILL,
+		wrap: true,
+		natural_wrap_mode: Gtk.NaturalWrapMode.NONE,
 	});
 
 	listItem.labelsBox.append(listItem.infoLabel);
