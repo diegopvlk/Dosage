@@ -73,6 +73,14 @@
 	</recommends>
 
 	<releases>
+		<release version="1.9.11" date="2025-09-24">
+			<description translate="no">
+				<ul>
+					<li>Long treatment notes are now displayed on multiple lines</li>
+					<li>Updated German translation</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.9.10" date="2025-08-01">
 			<description translate="no">
 				<ul>
