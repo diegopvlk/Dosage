@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-09 08:58-0300\n"
 "PO-Revision-Date: 2025-10-10 15:05+0000\n"
-"Last-Translator: stefanolomo <stefanolomo@gmail.com>\n"
+"Last-Translator: Deleted User <noreply+48943@weblate.org>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/es/"
 ">\n"
 "Language: es\n"
@@ -60,7 +60,7 @@ msgstr "Gestión de la dosificación — Múltiples dosis con diferentes tiempos
 msgid ""
 "Frequency modes — Every day, specific days, cycle or just when necessary"
 msgstr ""
-"Modos de frecuencia — todos los días, días concretos, ciclo o sólo cuando "
+"Modos de frecuencia - Todos los días, días concretos,un ciclo o sólo cuando "
 "sea necesario"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
