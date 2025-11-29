@@ -1,7 +1,7 @@
 {
   "app-id": "io.github.diegopvlk.Dosage",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "48",
+  "runtime-version": "49",
   "sdk": "org.gnome.Sdk",
   "command": "io.github.diegopvlk.Dosage",
   "finish-args": [
@@ -33,18 +33,6 @@
           "type": "git",
           "url": "https://github.com/flatpak/libportal",
           "tag": "0.9.1"
-        }
-      ]
-    },
-    {
-      "name": "blueprint-compiler",
-      "cleanup": ["*"],
-      "buildsystem": "meson",
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-          "tag": "v0.16.0"
         }
       ]
     },
