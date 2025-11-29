@@ -254,7 +254,7 @@ export const DosageWindow = GObject.registerClass(
 			const decoder = new TextDecoder('utf8');
 
 			this.errDialog = new Adw.AlertDialog({
-				heading: _('An issue has occurred'),
+				heading: _('An Issue Has Occurred'),
 			});
 
 			try {
@@ -477,7 +477,7 @@ export const DosageWindow = GObject.registerClass(
 			const moreThan30 = historyLS.n_items > 30;
 
 			this._toggleHistAmountBtn.visible = moreThan30;
-			this._toggleHistAmountBtn.label = _('Show all');
+			this._toggleHistAmountBtn.label = _('Show All');
 
 			if (moreThan30) {
 				this._historyList.remove_css_class('list-no-extra-padding-bottom');
@@ -500,7 +500,7 @@ export const DosageWindow = GObject.registerClass(
 					return count <= 7;
 				});
 			} else if (this.showAllHist) {
-				this._toggleHistAmountBtn.label = _('Show less');
+				this._toggleHistAmountBtn.label = _('Show Less');
 				this.historyFilter.set_filter_func(null);
 			} else {
 				this._toggleHistAmountBtn.visible = false;
@@ -632,7 +632,7 @@ export const DosageWindow = GObject.registerClass(
 			this.filterHistoryModel.connect('items-changed', () => {
 				let noResults = !this.filterHistoryModel.get_item(0);
 				this._emptyHistory.visible = noResults ? true : false;
-				this._emptyHistory.title = noResults ? _('No results found') : _('Empty history');
+				this._emptyHistory.title = noResults ? _('No Results Found') : _('Empty History');
 			});
 
 			this._searchEntry.connect('search-changed', () => {
@@ -794,9 +794,7 @@ export const DosageWindow = GObject.registerClass(
 			this._emptyTreatments.set_visible(noTreatments);
 			this._emptyToday.set_visible(noItems);
 			this._emptyToday.icon_name = noTreatments ? 'pill-symbolic' : 'all-done-symbolic';
-			this._emptyToday.title = noTreatments
-				? _('No treatments added yet')
-				: _('All done for today');
+			this._emptyToday.title = noTreatments ? _('No Treatments Added') : _('All Done for Today');
 
 			const todayVisible = this._viewStack.visible_child_name === 'today-page';
 			this._btnWhenNeeded.visible = todayVisible && this.hasWhenNeeded;
@@ -884,8 +882,8 @@ export const DosageWindow = GObject.registerClass(
 				const seconds = now.getSeconds();
 				const dateTime = GLib.DateTime.new_from_unix_local(+dateKey / 1000);
 				const isSingleItem = groupedObj[dateKey].length === 1;
-				const confirmStr = isSingleItem ? _('Confirm') : _('Confirm all');
-				const skipStr = isSingleItem ? _('Skip') : _('Skip all');
+				const confirmStr = isSingleItem ? _('Confirm') : _('Confirm All');
+				const skipStr = isSingleItem ? _('Skip') : _('Skip All');
 
 				const itemHour = dateTime.get_hour();
 				const itemMin = dateTime.get_minute();
@@ -1067,7 +1065,7 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		updateEntryBtn(hasTodayItems) {
-			this._entryBtn.label = hasTodayItems ? _('Confirm') : _('One-time entry');
+			this._entryBtn.label = hasTodayItems ? _('Confirm') : _('One-Time Entry');
 			this._skipBtn.set_visible(hasTodayItems);
 			this._unselectBtn.set_visible(hasTodayItems);
 
@@ -1490,7 +1488,7 @@ export const DosageWindow = GObject.registerClass(
 
 		setEmptyHistStatus() {
 			if (!historyLS.get_item(0)) {
-				this._emptyHistory.title = _('Empty history');
+				this._emptyHistory.title = _('Empty History');
 				this._emptyHistory.visible = true;
 				this._buttonSearch.sensitive = false;
 				this._searchBar.search_mode_enabled = false;

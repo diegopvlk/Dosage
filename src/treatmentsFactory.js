@@ -89,7 +89,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 		valign: Gtk.Align.CENTER,
 		margin_end: 5,
 		visible: false,
-		tooltip_text: _('Refill stock'),
+		tooltip_text: _('Refill Stock'),
 	});
 
 	listItem.invLabelBtn.connect('clicked', btn => {
@@ -228,15 +228,15 @@ function setInventoryAndDateLabels(listItem) {
 		invLabelBtn.remove_css_class('low-stock');
 
 		if (inv.current <= inv.reminder) {
-			invLabelBtn.label = `${currInv} ↓ ` + _('Low stock');
+			invLabelBtn.label = `${currInv} ↓ ` + _('Low Stock');
 			invLabelBtn.add_css_class('low-stock');
 		}
 	}
 
 	// TRANSLATORS: label for when duration is enabled
-	const startLabel = _('Starts on') + ` ${formatDate(item.duration.start)}`;
+	const startLabel = _('Starts On') + ` ${formatDate(item.duration.start)}`;
 	const untilLabel = _('Until') + ` ${formatDate(item.duration.end)}`;
-	const endedLabel = _('Ended on') + ` ${formatDate(item.duration.end)}`;
+	const endedLabel = _('Ended On') + ` ${formatDate(item.duration.end)}`;
 
 	if (item.duration.enabled && item.frequency !== 'when-needed') {
 		durationNextDateLabel.visible = true;
@@ -263,10 +263,10 @@ function setInventoryAndDateLabels(listItem) {
 			if (item.duration.enabled) {
 				durationNextDateLabel.label = untilLabel;
 				if (nextDt > today && nextDt <= end) {
-					durationNextDateLabel.label += ' ⦁ ' + _('Next dose') + `: ${nextDate}`;
+					durationNextDateLabel.label += ' ⦁ ' + _('Next Dose') + `: ${nextDate}`;
 				}
 			} else if (nextDt > today) {
-				durationNextDateLabel.label = _('Next dose') + `: ${nextDate}`;
+				durationNextDateLabel.label = _('Next Dose') + `: ${nextDate}`;
 			}
 
 			if (nextDt <= today && !item.duration.enabled) {
@@ -278,7 +278,7 @@ function setInventoryAndDateLabels(listItem) {
 			infoLabel.label = `${_('Cycle')} ⦁ ${item.cycle[0]} ⊷ ${item.cycle[1]}`;
 			break;
 		case 'when-needed':
-			infoLabel.label = _('When necessary');
+			infoLabel.label = _('As Needed');
 			break;
 	}
 

@@ -110,7 +110,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 	const existingTreatment = (list && position >= 0) || duplicate;
 	if (existingTreatment) {
 		if (!duplicate) {
-			medDialog.title = _('Edit treatment');
+			medDialog.title = _('Edit Treatment');
 			saveButton.label = _('Save');
 			deleteButton.set_visible(true);
 		}
@@ -230,7 +230,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 		valign: Gtk.Align.CENTER,
 		margin_end: 3,
 		icon_name: 'list-add-symbolic',
-		tooltip_text: _('Add dose'),
+		tooltip_text: _('Add Dose'),
 	});
 
 	addDoseBtn.connect('clicked', () => {
@@ -447,7 +447,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 	}
 
 	function handleDayOfMonthLabels() {
-		frequencyMenu.title = _('Day of the month');
+		frequencyMenu.title = _('Day of the Month');
 		frequencyMenu.subtitle = _('Day') + `: ${dayOfMonth.value}`;
 	}
 
@@ -475,7 +475,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 
 			switch (selected) {
 				case 1:
-					frequencyMenu.title = _('Specific days');
+					frequencyMenu.title = _('Specific Days');
 					setSpecificDaysFreqLabel();
 					break;
 				case 2:
@@ -519,20 +519,20 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 
 		if (emptyName) {
 			toast.dismiss();
-			toast.title = _('Empty name');
+			toast.title = _('Empty Name');
 			toastOverlay.add_toast(toast);
 			medName.add_css_class('error');
 			return;
 		} else if (emptyUnit) {
 			toast.dismiss();
-			toast.title = _('Empty unit');
+			toast.title = _('Empty Unit');
 			toastOverlay.add_toast(toast);
 			medUnit.add_css_class('error');
 			return;
 		}
 
 		if (frequencySpecificDays.get_visible() && getSpecificDays().length == 0) {
-			toast.title = _('Choose at least one day');
+			toast.title = _('Choose at Least One Day');
 			toast.dismiss();
 			toastOverlay.add_toast(toast);
 			return;
@@ -546,7 +546,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 			}
 			if (i.name.toLowerCase() === medName.text.trim().toLowerCase()) {
 				toast.dismiss();
-				toast.title = _('Name already on treatment list');
+				toast.title = _('Name Already on Treatment List');
 				toastOverlay.add_toast(toast);
 				medName.add_css_class('error');
 				return;
@@ -561,7 +561,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 
 			if (rows.includes(time)) {
 				toast.dismiss();
-				toast.title = _('Duplicated time');
+				toast.title = _('Duplicated Time');
 				toastOverlay.add_toast(toast);
 				return;
 			} else {
@@ -577,7 +577,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 export function confirmDeleteDialog(item, position, DosageWindow, medDialog) {
 	const alertDialog = new Adw.AlertDialog({
 		body_use_markup: true,
-		heading: _('Are you sure?'),
+		heading: _('Are You Sure?'),
 		body: `<b>${item.name}</b> ` + _('will be deleted'),
 	});
 

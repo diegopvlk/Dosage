@@ -38,7 +38,7 @@ todayHeaderFactory.connect('setup', (factory, listHeader) => {
 		halign: Gtk.Align.START,
 		ellipsize: Pango.EllipsizeMode.END,
 		opacity: 0.75,
-		label: _('When necessary'),
+		label: _('As Needed'),
 	});
 
 	listHeader.pinIcon = new Gtk.Image({
@@ -129,7 +129,7 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	listItem.amountBox.append(listItem.amtSpinRow);
 
 	listItem.amountBtn = new Gtk.MenuButton({
-		tooltip_text: _('Change dose'),
+		tooltip_text: _('Change Dose'),
 		css_classes: ['circular', 'today-amount'],
 		icon_name: 'view-more-horizontal-symbolic',
 		valign: Gtk.Align.CENTER,

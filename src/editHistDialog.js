@@ -49,7 +49,7 @@ export function openEditHistDialog(DosageWindow, list, position) {
 			const confirmActive = takenButtons.active_name === 'confirmed';
 
 			if (confirmActive) {
-				takenRow.title = _('Confirmed at');
+				takenRow.title = _('Confirmed At');
 				confirmActivated = true;
 			}
 		}
@@ -58,15 +58,15 @@ export function openEditHistDialog(DosageWindow, list, position) {
 	switch (item.taken[1]) {
 		case 2:
 			takenButtons.active_name = 'confirmed';
-			takenRow.title = _('Auto-confirmed');
+			takenRow.title = _('Auto-Confirmed');
 			break;
 		case 1:
 			takenButtons.active_name = 'confirmed';
-			takenRow.title = _('Confirmed at');
+			takenRow.title = _('Confirmed At');
 			break;
 		case 0:
 			takenButtons.active_name = 'skipped';
-			takenRow.title = _('Skipped at');
+			takenRow.title = _('Skipped At');
 			break;
 		case -1:
 			takenButtons.active_name = 'skipped';
@@ -76,7 +76,7 @@ export function openEditHistDialog(DosageWindow, list, position) {
 		case 3:
 			takenButtons.active_name = 'confirmed';
 			takenRow.title = _('Confirmed');
-			takenRow.subtitle = _('Time unknown');
+			takenRow.subtitle = _('Time Unknown');
 			break;
 	}
 
@@ -86,11 +86,11 @@ export function openEditHistDialog(DosageWindow, list, position) {
 
 		switch (takenButtons.active_name) {
 			case 'confirmed':
-				takenRow.title = _('Confirmed at');
+				takenRow.title = _('Confirmed At');
 				confirmActivated = true;
 				break;
 			case 'skipped':
-				takenRow.title = _('Skipped at');
+				takenRow.title = _('Skipped At');
 		}
 	});
 

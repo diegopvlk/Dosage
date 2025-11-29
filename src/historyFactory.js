@@ -44,7 +44,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 		valign: Gtk.Align.CENTER,
 		halign: Gtk.Align.CENTER,
 		margin_start: 11,
-		tooltip_text: _('Select to be removed'),
+		tooltip_text: _('Select to be Removed'),
 	});
 
 	listItem.checkButton.connect('toggled', btn => {
@@ -174,7 +174,7 @@ function setLabels(listItem) {
 			takenIcon.icon_name = 'check-confirmed-symbolic';
 			break;
 		case 2:
-			takenLabel.label = _('Auto-confirmed');
+			takenLabel.label = _('Auto-Confirmed');
 			takenIcon.icon_name = 'check-auto-confirmed-symbolic';
 			break;
 		case 0:

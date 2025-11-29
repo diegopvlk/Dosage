@@ -4,7 +4,7 @@ using Adw 1;
 Adw.Dialog editHistDialog {
 	name: "edit-hist-dialog";
 	content-width: 394;
-	title: _("Edit entry");
+	title: _("Edit Entry");
 
 	Adw.ToolbarView {
 		[top]
@@ -23,7 +23,7 @@ Adw.Dialog editHistDialog {
 			[end]
 			Button saveButton {
 				styles [
-					"suggested-action"
+					"suggested-action",
 				]
 
 				label: _("Save");
@@ -34,7 +34,7 @@ Adw.Dialog editHistDialog {
 
 		content: ScrolledWindow {
 			styles [
-				"scrollbar-visible"
+				"scrollbar-visible",
 			]
 
 			Adw.Clamp editHistDialogClamp {
@@ -69,7 +69,7 @@ Adw.Dialog editHistDialog {
 
 						Adw.ActionRow takenRow {
 							styles [
-								"property"
+								"property",
 							]
 
 							title: "confirmed/skipped at";
@@ -85,7 +85,7 @@ Adw.Dialog editHistDialog {
 									]
 
 									valign: center;
-									tooltip-text: _("Change time");
+									tooltip-text: _("Change Time");
 									icon-name: "clock-symbolic";
 
 									popover: Popover {

@@ -4,7 +4,7 @@ using Adw 1;
 Adw.Dialog medDialog {
 	name: 'medication-dialog';
 	content-width: 442;
-	title: _("New treatment");
+	title: _("New Treatment");
 
 	Adw.ToastOverlay toastOverlay {
 		Adw.ToolbarView {
@@ -237,7 +237,7 @@ Adw.Dialog medDialog {
 
 													valign: center;
 													icon-name: 'pill-alt-symbolic';
-													tooltip-text: _("Alternative pill");
+													tooltip-text: _("Alternative Pill");
 												}
 
 												Button {
@@ -269,7 +269,7 @@ Adw.Dialog medDialog {
 
 													valign: center;
 													icon-name: 'pill-round-symbolic';
-													tooltip-text: _("Round pill");
+													tooltip-text: _("Round Pill");
 												}
 
 												Button {
@@ -285,7 +285,7 @@ Adw.Dialog medDialog {
 
 													valign: center;
 													icon-name: 'pill-round-alt-symbolic';
-													tooltip-text: _("Alternative round pill");
+													tooltip-text: _("Alternative Round Pill");
 												}
 
 												Button {
@@ -333,7 +333,7 @@ Adw.Dialog medDialog {
 
 													valign: center;
 													icon-name: 'pill-square-symbolic';
-													tooltip-text: _("Square pill");
+													tooltip-text: _("Square Pill");
 												}
 
 												Button {
@@ -349,7 +349,7 @@ Adw.Dialog medDialog {
 
 													valign: center;
 													icon-name: 'pill-square-alt-symbolic';
-													tooltip-text: _("Alternative square pill");
+													tooltip-text: _("Alternative Square Pill");
 												}
 
 												Button {
@@ -381,7 +381,7 @@ Adw.Dialog medDialog {
 
 													valign: center;
 													icon-name: 'pill-triangle-alt-symbolic';
-													tooltip-text: _("Alternative triangle pill");
+													tooltip-text: _("Alternative Triangle Pill");
 												}
 
 												Button {
@@ -453,11 +453,11 @@ Adw.Dialog medDialog {
 
 								model: StringList {
 									strings [
-										_("Every day"),
-										_("Specific days"),
-										_("Day of the month"),
+										_("Every Day"),
+										_("Specific Days"),
+										_("Day of the Month"),
 										_("Cycle"),
-										_("When necessary"),
+										_("As Needed"),
 									]
 								};
 
@@ -469,7 +469,7 @@ Adw.Dialog medDialog {
 
 									visible: false;
 									valign: center;
-									tooltip-text: _("Choose days");
+									tooltip-text: _("Choose Days");
 
 									Adw.ButtonContent {
 										icon-name: 'view-more-horizontal-symbolic';
@@ -568,7 +568,7 @@ Adw.Dialog medDialog {
 
 									visible: false;
 									valign: center;
-									tooltip-text: _("Choose day");
+									tooltip-text: _("Choose Day");
 
 									Adw.ButtonContent {
 										icon-name: 'view-more-horizontal-symbolic';
@@ -613,7 +613,7 @@ Adw.Dialog medDialog {
 
 									visible: false;
 									valign: center;
-									tooltip-text: _("Change cycle");
+									tooltip-text: _("Change Cycle");
 
 									Adw.ButtonContent {
 										icon-name: 'view-more-horizontal-symbolic';
@@ -638,7 +638,7 @@ Adw.Dialog medDialog {
 												Adw.SpinRow cycleActive {
 													activatable: false;
 													selectable: false;
-													title: _("Days active");
+													title: _("Days Active");
 													climb-rate: 0.2;
 
 													adjustment: Adjustment {
@@ -652,7 +652,7 @@ Adw.Dialog medDialog {
 												Adw.SpinRow cycleInactive {
 													activatable: false;
 													selectable: false;
-													title: _("Days inactive");
+													title: _("Days Inactive");
 													climb-rate: 0.2;
 
 													adjustment: Adjustment {
@@ -667,7 +667,7 @@ Adw.Dialog medDialog {
 													activatable: false;
 													selectable: false;
 													// TRANSLATORS: Day in cycle, try to keep it short
-													title: _("Today is cycle day…");
+													title: _("Today is Cycle Day…");
 													climb-rate: 0.2;
 
 													adjustment: Adjustment {
@@ -700,18 +700,18 @@ Adw.Dialog medDialog {
 							selection-mode: none;
 
 							Adw.SwitchRow increasePriority {
-								title: _("Increase notification priority");
+								title: _("Increase Notification Priority");
 								subtitle: _("Show in fullscreen mode or with 'Do Not Disturb' enabled");
 							}
 
 							Adw.ExpanderRow recurringNotif {
-								title: _("Recurring notifications");
+								title: _("Recurring Notifications");
 								subtitle: _("Renotify until it's confirmed or skipped");
 								show-enable-switch: true;
 								enable-expansion: false;
 
 								Adw.SpinRow {
-									title: _("Interval in minutes");
+									title: _("Interval in Minutes");
 									climb-rate: 0.2;
 
 									adjustment: Adjustment recurringInterval {
@@ -744,7 +744,7 @@ Adw.Dialog medDialog {
 								}
 
 								Adw.SpinRow {
-									title: _("Remind me at");
+									title: _("Remind Me At");
 									climb-rate: 0.2;
 									digits: 2;
 
@@ -757,7 +757,7 @@ Adw.Dialog medDialog {
 								}
 
 								Adw.SpinRow {
-									title: _("Refill amount");
+									title: _("Refill Amount");
 									climb-rate: 0.2;
 
 									adjustment: Adjustment refillAmount {
@@ -781,7 +781,7 @@ Adw.Dialog medDialog {
 										'numeric',
 									]
 
-									title: _("Starts on");
+									title: _("Starts On");
 									activatable-widget: calendarStartBtn;
 
 									[suffix]
@@ -791,7 +791,7 @@ Adw.Dialog medDialog {
 										}
 
 										valign: center;
-										tooltip-text: _("Choose date");
+										tooltip-text: _("Choose Date");
 
 										styles [
 											'circular',
@@ -823,7 +823,7 @@ Adw.Dialog medDialog {
 										'numeric',
 									]
 
-									title: _("Ends on");
+									title: _("Ends On");
 									activatable-widget: calendarEndBtn;
 
 									[suffix]
@@ -833,7 +833,7 @@ Adw.Dialog medDialog {
 										}
 
 										valign: center;
-										tooltip-text: _("Choose date");
+										tooltip-text: _("Choose Date");
 
 										styles [
 											'circular',
@@ -861,7 +861,7 @@ Adw.Dialog medDialog {
 							}
 
 							Adw.SwitchRow markAsConfirmed {
-								title: _("Mark as confirmed");
+								title: _("Mark as Confirmed");
 								subtitle: _("If not manually confirmed or skipped, it will be recorded as confirmed in history, reducing stock if enabled");
 							}
 

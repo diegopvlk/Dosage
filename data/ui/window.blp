@@ -20,7 +20,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 			[start]
 			ToggleButton btnWhenNeeded {
 				icon-name: "show-when-needed-symbolic";
-				tooltip-text: _("Show/Hide 'When necessary'");
+				tooltip-text: _("Show/Hide 'As Needed'");
 				toggled => $setShowWhenNeeded();
 				visible: false;
 			}
@@ -119,7 +119,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 
 							clicked => $addTodayToHistory();
 							name: '1';
-							label: _("One-time entry");
+							label: _("One-Time Entry");
 						}
 
 						Button skipBtn {
@@ -205,7 +205,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 							valign: end;
 							clicked => $removeHistItems();
 							visible: false;
-							label: _("Remove entries");
+							label: _("Remove Entries");
 
 							styles [
 								'pill',
@@ -244,8 +244,8 @@ template $DosageWindow: Adw.ApplicationWindow {
 
 					[overlay]
 					Adw.StatusPage emptyTreatments {
-						icon-name: 'plus-circle-outline-symbolic';
-						title: _("Click the button below to add some");
+						icon-name: 'treatments-symbolic';
+						title: _("Empty Treatments");
 						visible: false;
 					}
 

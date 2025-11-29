@@ -160,7 +160,7 @@ export function openOneTimeDialog(DosageWindow) {
 		for (const it of treatmentsLS) {
 			const i = it.obj;
 			if (i.name.toLowerCase() === medName.text.trim().toLowerCase()) {
-				toast.title = _('Name already on treatment list');
+				toast.title = _('Name Already on Treatment List');
 				toastOverlay.add_toast(toast);
 				medName.add_css_class('error');
 				return;

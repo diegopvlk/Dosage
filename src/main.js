@@ -49,7 +49,7 @@ export const DosageApplication = GObject.registerClass(
 					release_notes: releaseNotes,
 				};
 				const aboutDialog = new Adw.AboutDialog(aboutParams);
-				aboutDialog.add_acknowledgement_section(_('Thanks to these projects!'), [
+				aboutDialog.add_acknowledgement_section(_('Thanks to These Projects!'), [
 					'GNOME https://www.gnome.org/',
 					'GTK https://www.gtk.org/',
 					'Libadwaita https://gnome.pages.gitlab.gnome.org/libadwaita/',

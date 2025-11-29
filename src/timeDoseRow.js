@@ -31,13 +31,13 @@ export class TimeDoseRow {
 			valign: Gtk.Align.CENTER,
 			margin_end: 3,
 			icon_name: 'user-trash-symbolic',
-			tooltip_text: _('Remove dose'),
+			tooltip_text: _('Remove Dose'),
 		});
 
 		this.timeBtn = new Gtk.MenuButton({
 			can_shrink: true,
 			css_classes: ['flat', 'numeric'],
-			tooltip_text: _('Change time'),
+			tooltip_text: _('Change Time'),
 			label: this.timePicker.entry.text,
 			valign: Gtk.Align.CENTER,
 			halign: Gtk.Align.START,

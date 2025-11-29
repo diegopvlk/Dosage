@@ -59,7 +59,7 @@ export default function openPrefsDialog(DosageApplication) {
 						console.error(err);
 						if (!state) return;
 						const alertDialog = new Adw.AlertDialog({
-							heading: _('An issue has occurred'),
+							heading: _('An Issue Has Occurred'),
 							body: err.message,
 						});
 						alertDialog.add_response('close', _('Close'));
@@ -196,10 +196,10 @@ function getHistoryCSV(history) {
 				});
 				break;
 			case 2:
-				status = _('Auto-confirmed');
+				status = _('Auto-Confirmed');
 				break;
 			case 3:
-				status = _('Confirmed') + ` (${_('Time unknown')})`;
+				status = _('Confirmed') + ` (${_('Time Unknown')})`;
 				break;
 		}
 
