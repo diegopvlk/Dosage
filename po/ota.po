@@ -110,7 +110,7 @@ msgid "Quit"
 msgstr ""
 
 #: data/ui/edit-hist-dialog.blp:7
-msgid "Edit entry"
+msgid "Edit Entry"
 msgstr ""
 
 #: data/ui/edit-hist-dialog.blp:18 data/ui/med-dialog.blp:19
@@ -125,7 +125,7 @@ msgstr ""
 
 #: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:209
 #: src/timeDoseRow.js:40
-msgid "Change time"
+msgid "Change Time"
 msgstr ""
 
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
@@ -139,7 +139,7 @@ msgid "Confirmed"
 msgstr ""
 
 #: data/ui/med-dialog.blp:7
-msgid "New treatment"
+msgid "New Treatment"
 msgstr ""
 
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:271
@@ -207,7 +207,7 @@ msgid "Pill"
 msgstr ""
 
 #: data/ui/med-dialog.blp:240
-msgid "Alternative pill"
+msgid "Alternative Pill"
 msgstr ""
 
 #: data/ui/med-dialog.blp:256
@@ -215,11 +215,11 @@ msgid "Capsule"
 msgstr ""
 
 #: data/ui/med-dialog.blp:272
-msgid "Round pill"
+msgid "Round Pill"
 msgstr ""
 
 #: data/ui/med-dialog.blp:288
-msgid "Alternative round pill"
+msgid "Alternative Round Pill"
 msgstr ""
 
 #: data/ui/med-dialog.blp:304
@@ -231,11 +231,11 @@ msgid "Injection"
 msgstr ""
 
 #: data/ui/med-dialog.blp:336
-msgid "Square pill"
+msgid "Square Pill"
 msgstr ""
 
 #: data/ui/med-dialog.blp:352
-msgid "Alternative square pill"
+msgid "Alternative Square Pill"
 msgstr ""
 
 #: data/ui/med-dialog.blp:368
@@ -243,7 +243,7 @@ msgid "Triangle pill"
 msgstr ""
 
 #: data/ui/med-dialog.blp:384
-msgid "Alternative triangle pill"
+msgid "Alternative Triangle Pill"
 msgstr ""
 
 #: data/ui/med-dialog.blp:400
@@ -271,15 +271,15 @@ msgid "Frequency"
 msgstr ""
 
 #: data/ui/med-dialog.blp:456
-msgid "Every day"
+msgid "Every Day"
 msgstr ""
 
 #: data/ui/med-dialog.blp:457 src/medDialog.js:478
-msgid "Specific days"
+msgid "Specific Days"
 msgstr ""
 
 #: data/ui/med-dialog.blp:458 src/medDialog.js:450
-msgid "Day of the month"
+msgid "Day of the Month"
 msgstr ""
 
 #: data/ui/med-dialog.blp:459 src/medDialog.js:485 src/treatmentsFactory.js:274
@@ -288,36 +288,36 @@ msgstr ""
 
 #: data/ui/med-dialog.blp:460 src/todayFactory.js:41
 #: src/treatmentsFactory.js:277
-msgid "When necessary"
+msgid "As Needed"
 msgstr ""
 
 #: data/ui/med-dialog.blp:472
-msgid "Choose days"
+msgid "Choose Days"
 msgstr ""
 
 #: data/ui/med-dialog.blp:571
-msgid "Choose day"
+msgid "Choose Day"
 msgstr ""
 
 #: data/ui/med-dialog.blp:616
-msgid "Change cycle"
+msgid "Change Cycle"
 msgstr ""
 
 #: data/ui/med-dialog.blp:641
-msgid "Days active"
+msgid "Days Active"
 msgstr ""
 
 #: data/ui/med-dialog.blp:655
-msgid "Days inactive"
+msgid "Days Inactive"
 msgstr ""
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-dialog.blp:670
-msgid "Today is cycle day…"
+msgid "Today is Cycle Day…"
 msgstr ""
 
 #: data/ui/med-dialog.blp:703
-msgid "Increase notification priority"
+msgid "Increase Notification Priority"
 msgstr ""
 
 #: data/ui/med-dialog.blp:704
@@ -325,7 +325,7 @@ msgid "Show in fullscreen mode or with 'Do Not Disturb' enabled"
 msgstr ""
 
 #: data/ui/med-dialog.blp:708
-msgid "Recurring notifications"
+msgid "Recurring Notifications"
 msgstr ""
 
 #: data/ui/med-dialog.blp:709
@@ -333,7 +333,7 @@ msgid "Renotify until it's confirmed or skipped"
 msgstr ""
 
 #: data/ui/med-dialog.blp:714
-msgid "Interval in minutes"
+msgid "Interval in Minutes"
 msgstr ""
 
 #: data/ui/med-dialog.blp:727 data/ui/refill-dialog.blp:36
@@ -349,11 +349,11 @@ msgid "Current"
 msgstr ""
 
 #: data/ui/med-dialog.blp:747
-msgid "Remind me at"
+msgid "Remind Me At"
 msgstr ""
 
 #: data/ui/med-dialog.blp:760
-msgid "Refill amount"
+msgid "Refill Amount"
 msgstr ""
 
 #: data/ui/med-dialog.blp:773
@@ -366,20 +366,20 @@ msgstr ""
 
 #. TRANSLATORS: label for when duration is enabled
 #: data/ui/med-dialog.blp:784 src/treatmentsFactory.js:233
-msgid "Starts on"
+msgid "Starts On"
 msgstr ""
 
 #: data/ui/med-dialog.blp:794 data/ui/med-dialog.blp:836
 #: data/ui/one-time-dialog.blp:242
-msgid "Choose date"
+msgid "Choose Date"
 msgstr ""
 
 #: data/ui/med-dialog.blp:826
-msgid "Ends on"
+msgid "Ends On"
 msgstr ""
 
 #: data/ui/med-dialog.blp:864
-msgid "Mark as confirmed"
+msgid "Mark as Confirmed"
 msgstr ""
 
 #: data/ui/med-dialog.blp:865
@@ -393,11 +393,11 @@ msgid "Delete"
 msgstr ""
 
 #: data/ui/one-time-dialog.blp:7 data/ui/window.blp:122 src/window.js:1070
-msgid "One-time entry"
+msgid "One-Time Entry"
 msgstr ""
 
 #: data/ui/one-time-dialog.blp:43
-msgid "From treatment list"
+msgid "From Treatment List"
 msgstr ""
 
 #: data/ui/one-time-dialog.blp:181
@@ -426,11 +426,11 @@ msgid "Preferences"
 msgstr ""
 
 #: data/ui/preferences.blp:19
-msgid "Auto-start at login"
+msgid "Auto-Start at Login"
 msgstr ""
 
 #: data/ui/preferences.blp:35
-msgid "Auto-clear history"
+msgid "Auto-Clear History"
 msgstr ""
 
 #: data/ui/preferences.blp:36
@@ -438,7 +438,7 @@ msgid "Keeps a maximum of 30 days"
 msgstr ""
 
 #: data/ui/preferences.blp:52
-msgid "Low stock notification"
+msgid "Low Stock Notification"
 msgstr ""
 
 #: data/ui/preferences.blp:53
@@ -446,11 +446,11 @@ msgid "Send reminders when treatments are low in stock"
 msgstr ""
 
 #: data/ui/preferences.blp:69
-msgid "Notification sound"
+msgid "Notification Sound"
 msgstr ""
 
 #: data/ui/preferences.blp:85
-msgid "Notification buttons"
+msgid "Notification Buttons"
 msgstr ""
 
 #: data/ui/preferences.blp:86
@@ -462,7 +462,7 @@ msgid "Skip"
 msgstr ""
 
 #: data/ui/preferences.blp:128
-msgid "Export history as CSV"
+msgid "Export History as CSV"
 msgstr ""
 
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:106
@@ -470,7 +470,7 @@ msgid "Refill"
 msgstr ""
 
 #: data/ui/window.blp:23
-msgid "Show/Hide 'When necessary'"
+msgid "Show/Hide 'As Needed'"
 msgstr ""
 
 #: data/ui/window.blp:31
@@ -498,7 +498,7 @@ msgid "History"
 msgstr ""
 
 #: data/ui/window.blp:208
-msgid "Remove entries"
+msgid "Remove Entries"
 msgstr ""
 
 #: data/ui/window.blp:222 src/prefsDialog.js:138
@@ -506,7 +506,7 @@ msgid "Treatments"
 msgstr ""
 
 #: data/ui/window.blp:248
-msgid "Click the button below to add some"
+msgid "Empty Treatments"
 msgstr ""
 
 #: data/ui/window.blp:293
@@ -518,15 +518,15 @@ msgid "Quit"
 msgstr ""
 
 #: src/editHistDialog.js:52 src/editHistDialog.js:65 src/editHistDialog.js:89
-msgid "Confirmed at"
+msgid "Confirmed At"
 msgstr ""
 
 #: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:199
-msgid "Auto-confirmed"
+msgid "Auto-Confirmed"
 msgstr ""
 
 #: src/editHistDialog.js:69 src/editHistDialog.js:93
-msgid "Skipped at"
+msgid "Skipped At"
 msgstr ""
 
 #: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:185
@@ -534,11 +534,11 @@ msgid "Missed"
 msgstr ""
 
 #: src/editHistDialog.js:79 src/prefsDialog.js:202
-msgid "Time unknown"
+msgid "Time Unknown"
 msgstr ""
 
 #: src/historyFactory.js:47
-msgid "Select to be removed"
+msgid "Select to be Removed"
 msgstr ""
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
@@ -547,7 +547,7 @@ msgid "translator-credits"
 msgstr ""
 
 #: src/main.js:52
-msgid "Thanks to these projects!"
+msgid "Thanks to These Projects!"
 msgstr ""
 
 #: src/oneTimeDialog.js:54
@@ -555,11 +555,11 @@ msgid "New"
 msgstr ""
 
 #: src/oneTimeDialog.js:163 src/medDialog.js:549
-msgid "Name already on treatment list"
+msgid "Name Already on Treatment List"
 msgstr ""
 
 #: src/medDialog.js:113
-msgid "Edit treatment"
+msgid "Edit Treatment"
 msgstr ""
 
 #: src/medDialog.js:128
@@ -567,7 +567,7 @@ msgid "Copy"
 msgstr ""
 
 #: src/medDialog.js:233
-msgid "Add dose"
+msgid "Add Dose"
 msgstr ""
 
 #: src/medDialog.js:441
@@ -579,23 +579,23 @@ msgid "Day"
 msgstr ""
 
 #: src/medDialog.js:522
-msgid "Empty name"
+msgid "Empty Name"
 msgstr ""
 
 #: src/medDialog.js:528
-msgid "Empty unit"
+msgid "Empty Unit"
 msgstr ""
 
 #: src/medDialog.js:535
-msgid "Choose at least one day"
+msgid "Choose at Least One Day"
 msgstr ""
 
 #: src/medDialog.js:564
-msgid "Duplicated time"
+msgid "Duplicated Time"
 msgstr ""
 
 #: src/medDialog.js:580
-msgid "Are you sure?"
+msgid "Are You Sure?"
 msgstr ""
 
 #: src/medDialog.js:581
@@ -607,7 +607,7 @@ msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 
 #: src/prefsDialog.js:62 src/window.js:257
-msgid "An issue has occurred"
+msgid "An Issue Has Occurred"
 msgstr ""
 
 #: src/prefsDialog.js:65 src/window.js:265 src/window.js:287 src/window.js:309
@@ -624,15 +624,15 @@ msgid "Time Confirmed"
 msgstr ""
 
 #: src/todayFactory.js:128
-msgid "Change dose"
+msgid "Change Dose"
 msgstr ""
 
 #: src/timeDoseRow.js:34
-msgid "Remove dose"
+msgid "Remove Dose"
 msgstr ""
 
 #: src/treatmentsFactory.js:88
-msgid "Refill stock"
+msgid "Refill Stock"
 msgstr ""
 
 #: src/treatmentsFactory.js:105
@@ -654,7 +654,7 @@ msgid "%d Remaining"
 msgstr ""
 
 #: src/treatmentsFactory.js:227
-msgid "Low stock"
+msgid "Low Stock"
 msgstr ""
 
 #: src/treatmentsFactory.js:234
@@ -662,7 +662,7 @@ msgid "Until"
 msgstr ""
 
 #: src/treatmentsFactory.js:235
-msgid "Ended on"
+msgid "Ended On"
 msgstr ""
 
 #: src/treatmentsFactory.js:247 src/utils.js:52
@@ -670,7 +670,7 @@ msgid "Daily"
 msgstr ""
 
 #: src/treatmentsFactory.js:262 src/treatmentsFactory.js:265
-msgid "Next dose"
+msgid "Next Dose"
 msgstr ""
 
 #: src/utils.js:48
@@ -691,35 +691,35 @@ msgid "You have treatments low in stock"
 msgstr ""
 
 #: src/window.js:480
-msgid "Show all"
+msgid "Show All"
 msgstr ""
 
 #: src/window.js:503
-msgid "Show less"
+msgid "Show Less"
 msgstr ""
 
 #: src/window.js:635
-msgid "No results found"
+msgid "No Results Found"
 msgstr ""
 
 #: src/window.js:635 src/window.js:1493
-msgid "Empty history"
+msgid "Empty History"
 msgstr ""
 
 #: src/window.js:798
-msgid "No treatments added yet"
+msgid "No Treatments Added"
 msgstr ""
 
 #: src/window.js:799
-msgid "All done for today"
+msgid "All Done for Today"
 msgstr ""
 
 #: src/window.js:887
-msgid "Confirm all"
+msgid "Confirm All"
 msgstr ""
 
 #: src/window.js:888
-msgid "Skip all"
+msgid "Skip All"
 msgstr ""
 
 #. TRANSLATORS: keep the %d it's where the number goes
