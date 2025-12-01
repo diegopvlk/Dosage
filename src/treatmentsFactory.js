@@ -36,9 +36,11 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 	listItem.box.add_controller(listItem.altClick);
 
 	listItem.icon = new Gtk.Image({
-		margin_start: 16,
-		margin_end: 6,
+		margin_start: 14,
+		margin_end: 1,
 		icon_name: 'pill-symbolic',
+		css_classes: ['med-icon'],
+		valign: Gtk.Align.CENTER,
 	});
 
 	listItem.box.append(listItem.icon);
@@ -47,7 +49,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 		valign: Gtk.Align.CENTER,
 		hexpand: true,
 		orientation: Gtk.Orientation.VERTICAL,
-		margin_start: 8,
+		margin_start: 9,
 		margin_end: 11,
 		margin_top: 2,
 		margin_bottom: 2,

@@ -3,8 +3,6 @@
   <gresource prefix="/io/github/diegopvlk/Dosage">
     <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
     <file alias="style.css">styles/style.css</file>
-    <file alias="style-hc.css">styles/style-hc.css</file>
-    <file alias="style-dark.css">styles/style-dark.css</file>
     <file alias="card-colors.css">styles/card-colors.css</file>
     <file>sounds/ding.ogg</file>
     <file>ui/edit-hist-dialog.ui</file>

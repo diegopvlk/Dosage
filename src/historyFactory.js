@@ -43,7 +43,7 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 		css_classes: ['selection-mode'],
 		valign: Gtk.Align.CENTER,
 		halign: Gtk.Align.CENTER,
-		margin_start: 11,
+		margin_start: 13,
 		tooltip_text: _('Select to be Removed'),
 	});
 
@@ -154,7 +154,7 @@ historyItemFactory.connect('bind', (factory, listItem) => {
 });
 
 function setLabels(listItem) {
-	const { nameLabel, doseLabel, takenLabel, takenIcon } = listItem;
+	const { nameLabel, doseLabel, takenBox, takenLabel, takenIcon } = listItem;
 	const item = listItem.get_item().obj;
 
 	const itemTakenDate = GLib.DateTime.new_from_unix_local(item.taken[0] / 1000);
@@ -172,19 +172,24 @@ function setLabels(listItem) {
 		case 1:
 			takenLabel.label = timeTaken;
 			takenIcon.icon_name = 'check-confirmed-symbolic';
+			takenBox.css_classes = ['confirmed'];
 			break;
 		case 2:
 			takenLabel.label = _('Auto-Confirmed');
 			takenIcon.icon_name = 'check-auto-confirmed-symbolic';
+			takenBox.css_classes = ['confirmed'];
 			break;
 		case 0:
 			takenLabel.label = _('Skipped');
+			takenBox.css_classes = ['skipped'];
 			break;
 		case -1:
 			takenLabel.label = _('Missed');
+			takenBox.css_classes = ['missed'];
 			break;
 		case 3:
 			takenLabel.label = _('Confirmed');
 			takenIcon.icon_name = 'check-confirmed-symbolic';
+			takenBox.css_classes = ['confirmed'];
 	}
 }

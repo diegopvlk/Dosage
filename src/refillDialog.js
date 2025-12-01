@@ -47,7 +47,7 @@ export function openRefillDialog(listItem, position) {
 
 	const refillDialogClamp = builder.get_object('refillDialogClamp');
 	const [refillDialogClampHeight] = refillDialogClamp.measure(Gtk.Orientation.VERTICAL, -1);
-	refillDialog.content_height = refillDialogClampHeight + 48;
+	refillDialog.content_height = refillDialogClampHeight + 50;
 
 	refillDialog.present(DosageWindow);
 }

@@ -28,14 +28,7 @@ export default function openPrefsDialog(DosageApplication) {
 	const exportHistory = builder.get_object('exportHistory');
 
 	const notifBtnsHeader = notifBtns.get_first_child().get_first_child().get_first_child();
-	const notifBtnsExpanderBtn = notifBtnsHeader
-		.get_first_child()
-		.get_last_child()
-		.get_first_child()
-		.get_next_sibling()
-		.get_next_sibling();
 	notifBtnsHeader.set_activatable(false);
-	notifBtnsExpanderBtn.set_visible(false);
 
 	autostartSwitch.set_active(settings.get_boolean('autostart'));
 

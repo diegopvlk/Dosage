@@ -1,12 +1,10 @@
 @import "./card-colors.css";
 
-:root {
-  --card-bg-color: color-mix(in srgb, #ebebed 99%, var(--accent-color));
-
-  --list-border-radius: 9px;
+* {
+  --list-border-radius: 11px;
   --list-border: inset 0 0 0 1px
-    rgb(from var(--border-color) r g b / calc(alpha * 0.35));
-  --list-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.055);
+    rgb(from var(--card-shade-color) r g b / calc(alpha * 0.6));
+  --list-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.07), var(--list-border);
 
   --cubic-bezier: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --background-transition: background 200ms var(--cubic-bezier);
@@ -21,11 +19,6 @@ preferencespage scrolledwindow > scrollbar.vertical:dir(rtl) {
   margin-right: -11px;
 }
 
-#medication-dialog row#delete {
-  --list-border: inset 0 0 0 1px
-    rgb(from var(--card-fg-color) r g b / calc(alpha * 0.043));
-}
-
 statuspage .icon {
   margin-top: -30px;
 }
@@ -34,27 +27,24 @@ statuspage .title {
 }
 
 #preferences scrolledwindow viewport clamp {
-  margin-top: -26px;
+  margin-top: -24px;
   margin-bottom: -6px;
 }
 
-dialog.about .boxed-list,
-#edit-hist-dialog .boxed-list {
-  box-shadow: var(--list-border), var(--list-shadow);
-  border-radius: var(--list-border-radius);
-}
-dialog.about .main-page box.vertical {
-  border-spacing: 5px;
-}
-dialog.about sheet scrolledwindow clamp {
-  padding: 0 3px;
-}
-
 item-box {
-  box-shadow: var(--list-border), var(--list-shadow);
-  border-radius: var(--list-border-radius);
   min-height: 46px;
   padding: 5px 0;
+  color: var(--card-fg-color);
+}
+item-box:dir(ltr) {
+  box-shadow: var(--list-border), var(--list-shadow),
+    inset 53px 0 0 -50px rgb(from var(--med-color) r g b / calc(alpha * 0.75));
+  border-radius: var(--list-border-radius);
+}
+item-box:dir(rtl) {
+  box-shadow: var(--list-border), var(--list-shadow),
+    inset -53px 0 0 -50px rgb(from var(--med-color) r g b / calc(alpha * 0.75));
+  border-radius: var(--list-border-radius);
 }
 item-box label.title:first-child {
   margin-top: -4px;
@@ -64,6 +54,7 @@ item-box label.subtitle:last-child {
 }
 
 .dosage-list > row item-box {
+  background-color: var(--card-bg-color);
   transition: var(--background-transition);
 }
 .dosage-list > row:hover item-box {
@@ -71,23 +62,6 @@ item-box label.subtitle:last-child {
 }
 .dosage-list > row:active item-box {
   background-image: image(color-mix(in srgb, currentColor 8%, transparent));
-}
-
-.card-stripe:dir(ltr) {
-  box-shadow: var(--list-border), var(--list-shadow),
-    inset 23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.3));
-}
-.card-stripe:dir(rtl) {
-  box-shadow: var(--list-border), var(--list-shadow),
-    inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.3));
-}
-.card-stripe-w-n:dir(ltr) {
-  box-shadow: var(--list-border), var(--list-shadow),
-    inset 23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.13));
-}
-.card-stripe-w-n:dir(rtl) {
-  box-shadow: var(--list-border), var(--list-shadow),
-    inset -23px 0 0 -20px rgb(from currentColor r g b / calc(alpha * 0.13));
 }
 
 .dosage-list > header {
@@ -107,7 +81,7 @@ item-box label.subtitle:last-child {
 }
 .dosage-list {
   background-color: transparent;
-  padding-bottom: 69px;
+  padding-bottom: 75px;
 }
 .list-no-extra-padding-bottom {
   padding-bottom: 20px;
@@ -116,34 +90,14 @@ row.expander row.spin:focus-within {
   outline: 2px solid rgb(from var(--accent-color) r g b / calc(alpha * 0.5));
   outline-offset: -2px;
 }
-list.boxed-list > row:first-child,
-list.boxed-list-separate > row.expander row.header {
-  border-top-left-radius: var(--list-border-radius);
-  border-top-right-radius: var(--list-border-radius);
-}
-list.boxed-list > row:last-child {
-  border-bottom-left-radius: var(--list-border-radius);
-  border-bottom-right-radius: var(--list-border-radius);
-}
-list.boxed-list-separate > row.expander:not(:checked) row.header,
-list.boxed-list-separate > row.expander.expander:checked list.nested,
-list.boxed-list-separate
-  > row.expander.expander:checked
-  list.nested
-  > row:last-child {
-  border-bottom-left-radius: var(--list-border-radius);
-  border-bottom-right-radius: var(--list-border-radius);
-}
-.boxed-list-separate > row {
-  box-shadow: var(--list-border), var(--list-shadow);
-  border-radius: var(--list-border-radius);
+
+#preferences .boxed-list,
+#med-dialog .boxed-list,
+#one-time-dialog .boxed-list,
+#refill-dialog .boxed-list {
   margin: 2px 0;
 }
-.boxed-list {
-  box-shadow: var(--list-border), var(--list-shadow);
-  border-radius: var(--list-border-radius);
-  margin: 2px 0;
-}
+
 button.specific-day {
   min-width: 40px;
   padding-left: 1px;
@@ -160,7 +114,6 @@ button.specific-day {
   padding: 6px;
   padding-left: 0;
 }
-button.arrow-button,
 button.one-time-name {
   font-weight: 400;
 }
@@ -180,6 +133,15 @@ row.combo .dropdown-arrow {
 }
 row.combo .dropdown-arrow:hover {
   background-color: rgb(from currentColor r g b / calc(alpha * 0.15));
+}
+
+#med-dialog-dosage-list {
+  margin: -2px;
+  margin-bottom: -3px;
+  background-color: #f6f6f6;
+}
+#med-dialog-dosage-list row {
+  border-color: var(--card-shade-color);
 }
 
 /*
@@ -210,12 +172,13 @@ time-group-selection label {
 }
 time-group-selection:hover label {
   text-decoration: underline;
-  color: currentColor;
+  text-decoration-color: currentColor;
 }
 time-group-selection:active label {
   text-decoration: underline;
   color: rgb(from currentColor r g b / calc(alpha * 0.65));
   transition: none;
+  text-decoration-color: currentColor;
 }
 time-group-selection:dir(ltr) {
   background-position: 92% 50%;
@@ -228,9 +191,6 @@ time-group-selection:hover:dir(ltr) {
 }
 time-group-selection:hover:dir(rtl) {
   padding-left: 1.25em;
-}
-time-group-selection:hover {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 16 16'%3E%3Cpath fill='%23823a5f' d='m14.983 3.5-1-1-7.469 7.516L3.1 6.539l-2 2 5.414 5.477L15.983 4.5z' style='fill:%232f2f34'/%3E%3C/svg%3E");
 }
 
 .t-d-row box.suffixes > spinbutton > text:dir(ltr) {
@@ -312,7 +272,7 @@ badge-button:active {
   background-color: rgb(from currentColor r g b / calc(alpha * 0.2));
 }
 badge-button.low-stock {
-  box-shadow: inset 0 0 0 1px rgb(from currentColor r g b / calc(alpha * 0.2));
+  box-shadow: inset 0 0 0 1px rgb(from currentColor r g b / calc(alpha * 0.135));
   color: currentColor;
 }
 
@@ -324,31 +284,7 @@ button.floating.secondary image {
   min-width: 1.2em;
 }
 button.floating {
-  box-shadow: 0 0 0 1px rgba(90, 90, 90, 0.1),
-    0 1px 2px 1px rgba(90, 90, 90, 0.1);
-  margin: 10px 4px;
-}
-button.floating:hover {
-  box-shadow: 0 0 0 1px rgba(90, 90, 90, 0.15),
-    0 1px 2px 1px rgba(90, 90, 90, 0.15);
-}
-button.floating:not(.suggested-action) {
-  background-color: color-mix(in srgb, #ebebed 99%, var(--accent-color));
-}
-button.floating:not(.suggested-action):hover {
-  background-color: color-mix(in srgb, #e3e3e5 99%, var(--accent-color));
-}
-button.floating:not(.suggested-action):active {
-  background-color: color-mix(in srgb, #dadadc 99%, var(--accent-color));
-}
-button.floating.destructive-action {
-  background-color: #f2d5d5;
-}
-button.floating.destructive-action:hover {
-  background-color: #efc8c9;
-}
-button.floating.destructive-action:active {
-  background-color: #e7a3a3;
+  margin: 13px 4px;
 }
 
 #medication-dialog headerbar button,
@@ -398,5 +334,100 @@ calendar .day-number {
     background-color: rgb(
       from var(--error-bg-color) r g b / calc(alpha * 0.33)
     );
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  button.floating:not(.suggested-action) {
+    background-color: #e6e6e7;
+  }
+  button.floating:not(.suggested-action):hover {
+    background-color: #dcdcde;
+  }
+  button.floating:not(.suggested-action):active {
+    background-color: #bebec0;
+  }
+  button.floating.destructive-action {
+    background-color: #f2d5d5;
+  }
+  button.floating.destructive-action:hover {
+    background-color: #efc8c9;
+  }
+  button.floating.destructive-action:active {
+    background-color: #e7a3a3;
+  }
+  time-group-selection:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 16 16'%3E%3Cpath fill='%23823a5f' d='m14.983 3.5-1-1-7.469 7.516L3.1 6.539l-2 2 5.414 5.477L15.983 4.5z' style='fill:%232f2f34'/%3E%3C/svg%3E");
+  }
+  badge-box.confirmed {
+    color: #048a4e;
+  }
+  badge-box.missed {
+    color: #a51d2d;
+  }
+  badge-button.low-stock {
+    color: #c64600;
+  }
+}
+@media (prefers-color-scheme: dark) and (prefers-contrast: no-preference) {
+  button.floating {
+    box-shadow: 0 1px 3px 0px rgba(10, 10, 10, 0.2);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  button.floating:not(.suggested-action) {
+    background-color: #48484b;
+  }
+  button.floating:not(.suggested-action):hover {
+    background-color: #525255;
+  }
+  button.floating:not(.suggested-action):active {
+    background-color: #717173;
+  }
+  button.floating.destructive-action {
+    background-color: #5b4244;
+  }
+  button.floating.destructive-action:hover {
+    background-color: #684748;
+  }
+  button.floating.destructive-action:active {
+    background-color: #8f5555;
+  }
+  time-group-selection:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 16 16'%3E%3Cpath fill='%23823a5f' d='m14.983 3.5-1-1-7.469 7.516L3.1 6.539l-2 2 5.414 5.477L15.983 4.5z' style='fill:%23ffffff'/%3E%3C/svg%3E");
+  }
+  *,
+  item-box.default {
+    --list-border: 0 0 0 transparent;
+    --list-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.22);
+  }
+  #med-dialog-dosage-list {
+    background-color: #2b2b2e;
+  }
+  badge-box.confirmed {
+    color: #57e389;
+  }
+  badge-box.missed {
+    color: #ff938b;
+  }
+  badge-button.low-stock {
+    color: #ffbe6f;
+  }
+}
+
+@media (prefers-contrast: more) {
+  *,
+  item-box.default {
+    --list-border: inset 0 0 0 1px var(--border-color);
+  }
+  badge-button {
+    box-shadow: inset 0 0 0 1px
+      rgb(from var(--border-color) r g b / calc(alpha * 0.5));
+  }
+  badge-button.low-stock {
+    box-shadow: inset 0 0 0 1px var(--border-color);
+  }
+  row.combo .dropdown-arrow {
+    box-shadow: inset 0 0 0 1px rgb(from currentColor r g b / calc(alpha * 0.6));
   }
 }

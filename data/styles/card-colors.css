@@ -1,34 +1,85 @@
-:root {
-  --red-bg: color-mix(in srgb, #f4d9d8 97%, var(--accent-color));
-  --red-fg: #680014;
-
-  --orange-bg: color-mix(in srgb, #fae0bd 97%, var(--accent-color));
-  --orange-fg: #4d2700;
-
-  --yellow-bg: color-mix(in srgb, #f4efc5 97%, var(--accent-color));
-  --yellow-fg: #3a3000;
-
-  --green-bg: color-mix(in srgb, #dcefdd 97%, var(--accent-color));
-  --green-fg: #03391c;
-
-  --cyan-bg: color-mix(in srgb, #ceebf0 97%, var(--accent-color));
-  --cyan-fg: #00363d;
-
-  --blue-bg: color-mix(in srgb, #d6e4f7 97%, var(--accent-color));
-  --blue-fg: #003355;
-
-  --purple-bg: color-mix(in srgb, #dcdcf5 97%, var(--accent-color));
-  --purple-fg: #361f73;
-
-  --default-bg: var(--card-bg-color);
-  --default-fg: var(--card-fg-color);
+@media (prefers-color-scheme: light) {
+  .red,
+  .red-clr {
+    --med-color: #f66151;
+  }
+  .orange,
+  .orange-clr {
+    --med-color: #ff7800;
+  }
+  .yellow,
+  .yellow-clr {
+    --med-color: #e0a004;
+  }
+  .green,
+  .green-clr {
+    --med-color: #26a269;
+  }
+  .cyan,
+  .cyan-clr {
+    --med-color: #00c4cf;
+  }
+  .blue,
+  .blue-clr {
+    --med-color: #1c71d8;
+  }
+  .purple,
+  .purple-clr {
+    --med-color: #9141ac;
+  }
+  .default,
+  .default-clr {
+    --med-color: #6b6d6e;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .red,
+  .red-clr {
+    --med-color: #ff7f70;
+  }
+  .orange,
+  .orange-clr {
+    --med-color: #ffa348;
+  }
+  .yellow,
+  .yellow-clr {
+    --med-color: #f8e45c;
+  }
+  .green,
+  .green-clr {
+    --med-color: #57e389;
+  }
+  .cyan,
+  .cyan-clr {
+    --med-color: #4be2eb;
+  }
+  .blue,
+  .blue-clr {
+    --med-color: #73a9ff;
+  }
+  .purple,
+  .purple-clr {
+    --med-color: #ad7cfd;
+  }
+  .default,
+  .default-clr {
+    --med-color: #d0d0d6;
+  }
 }
 
 item-box checkbutton check:checked {
   color: var(--window-bg-color);
+  background-color: var(--med-color);
 }
 
-/* buttons */
+.med-icon {
+  background-color: rgb(from var(--med-color) r g b / calc(alpha * 0.135));
+  color: var(--med-color);
+  padding: 8px;
+  border-radius: 99px;
+}
+
+/* med dialog buttons */
 .red-clr,
 .orange-clr,
 .yellow-clr,
@@ -37,8 +88,9 @@ item-box checkbutton check:checked {
 .blue-clr,
 .purple-clr {
   border-radius: 99px;
-  box-shadow: inset 0 0 5px 1px
-    color-mix(in srgb, currentColor 12%, transparent);
+  color: var(--med-color);
+  box-shadow: inset 0 0 10px 1px
+    color-mix(in srgb, currentColor 20%, transparent);
 }
 .red-clr:not(menubutton):hover,
 .orange-clr:not(menubutton):hover,
@@ -48,98 +100,29 @@ item-box checkbutton check:checked {
 .blue-clr:not(menubutton):hover,
 .purple-clr:not(menubutton):hover {
   box-shadow: inset 0 0 10px 1px
-    color-mix(in srgb, currentColor 42%, transparent);
+    color-mix(in srgb, currentColor 50%, transparent);
 }
-
-.red-clr {
-  background-image: image(var(--red-bg));
-  color: color-mix(in srgb, var(--red-fg) 70%, transparent);
-}
-.orange-clr {
-  background-image: image(var(--orange-bg));
-  color: color-mix(in srgb, var(--orange-fg) 70%, transparent);
-}
-.yellow-clr {
-  background-image: image(var(--yellow-bg));
-  color: color-mix(in srgb, var(--yellow-fg) 70%, transparent);
-}
-.green-clr {
-  background-image: image(var(--green-bg));
-  color: color-mix(in srgb, var(--green-fg) 70%, transparent);
-}
-.cyan-clr {
-  background-image: image(var(--cyan-bg));
-  color: color-mix(in srgb, var(--cyan-fg) 70%, transparent);
-}
-.blue-clr {
-  background-image: image(var(--blue-bg));
-  color: color-mix(in srgb, var(--blue-fg) 70%, transparent);
-}
-.purple-clr {
-  background-image: image(var(--purple-bg));
-  color: color-mix(in srgb, var(--purple-fg) 70%, transparent);
-}
-
-.red {
-  background-color: color-mix(in srgb, var(--red-bg) 75%, transparent);
-  color: var(--red-fg);
-}
-.red checkbutton check:checked {
-  background-color: rgb(from var(--red-fg) r g b / calc(alpha * 0.9));
-}
-
-.orange {
-  background-color: color-mix(in srgb, var(--orange-bg) 75%, transparent);
-  color: var(--orange-fg);
-}
-.orange checkbutton check:checked {
-  background-color: rgb(from var(--orange-fg) r g b / calc(alpha * 0.9));
-}
-
-.yellow {
-  background-color: color-mix(in srgb, var(--yellow-bg) 75%, transparent);
-  color: var(--yellow-fg);
-}
-.yellow checkbutton check:checked {
-  background-color: rgb(from var(--yellow-fg) r g b / calc(alpha * 0.9));
-}
-
-.green {
-  background-color: color-mix(in srgb, var(--green-bg) 75%, transparent);
-  color: var(--green-fg);
-}
-.green checkbutton check:checked {
-  background-color: rgb(from var(--green-fg) r g b / calc(alpha * 0.9));
-}
-
-.cyan {
-  background-color: color-mix(in srgb, var(--cyan-bg) 75%, transparent);
-  color: var(--cyan-fg);
-}
-.cyan checkbutton check:checked {
-  background-color: rgb(from var(--cyan-fg) r g b / calc(alpha * 0.9));
-}
-
-.blue {
-  background-color: color-mix(in srgb, var(--blue-bg) 75%, transparent);
-  color: var(--blue-fg);
-}
-.blue checkbutton check:checked {
-  background-color: rgb(from var(--blue-fg) r g b / calc(alpha * 0.9));
-}
-
-.purple {
-  background-color: color-mix(in srgb, var(--purple-bg) 75%, transparent);
-  color: var(--purple-fg);
-}
-.purple checkbutton check:checked {
-  background-color: rgb(from var(--purple-fg) r g b / calc(alpha * 0.9));
-}
-
-.default {
-  background-color: var(--default-bg);
-  color: var(--default-fg);
-}
-.default checkbutton check:checked {
-  background-color: rgb(from var(--default-fg) r g b / calc(alpha * 0.9));
+@media (prefers-contrast: more) {
+  .red-clr,
+  .orange-clr,
+  .yellow-clr,
+  .green-clr,
+  .cyan-clr,
+  .blue-clr,
+  .purple-clr {
+    box-shadow: inset 0 0 0 1px
+        rgb(from currentColor r g b / calc(alpha * 0.85)),
+      inset 0 0 10px 1px color-mix(in srgb, currentColor 20%, transparent);
+  }
+  .red-clr:not(menubutton):hover,
+  .orange-clr:not(menubutton):hover,
+  .yellow-clr:not(menubutton):hover,
+  .green-clr:not(menubutton):hover,
+  .cyan-clr:not(menubutton):hover,
+  .blue-clr:not(menubutton):hover,
+  .purple-clr:not(menubutton):hover {
+    box-shadow: inset 0 0 0 1px
+        rgb(from currentColor r g b / calc(alpha * 0.85)),
+      inset 0 0 10px 1px color-mix(in srgb, currentColor 50%, transparent);
+  }
 }

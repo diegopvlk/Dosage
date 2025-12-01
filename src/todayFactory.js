@@ -75,9 +75,11 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 	});
 
 	listItem.icon = new Gtk.Image({
-		margin_start: 17,
-		margin_end: 4,
+		margin_start: 14,
+		margin_end: 1,
 		icon_name: 'pill-symbolic',
+		css_classes: ['med-icon'],
+		valign: Gtk.Align.CENTER,
 	});
 
 	listItem.box.append(listItem.icon);
@@ -237,10 +239,8 @@ todayItemFactory.connect('bind', (factory, listItem) => {
 	box.css_classes = ['card-stripe', item.color];
 
 	if (item.frequency === 'when-needed') {
-		box.css_classes = ['card-stripe-w-n', item.color];
 		box.opacity = 0.75;
 	} else {
-		box.css_classes = ['card-stripe', item.color];
 		box.opacity = 1;
 	}
 });

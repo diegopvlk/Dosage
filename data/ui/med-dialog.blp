@@ -50,7 +50,7 @@ Adw.Dialog medDialog {
 						// spacing: 12;
 						ListBox {
 							styles [
-								'boxed-list-separate',
+								'boxed-list',
 							]
 
 							selection-mode: none;
@@ -682,22 +682,12 @@ Adw.Dialog medDialog {
 									};
 								}
 							}
-						}
 
-						ListBox dosageList {
-							styles [
-								"boxed-list",
-							]
-
-							selection-mode: none;
-						}
-
-						ListBox {
-							styles [
-								"boxed-list-separate",
-							]
-
-							selection-mode: none;
+							ListBox dosageList {
+								selection-mode: none;
+								show-separators: true;
+								name: "med-dialog-dosage-list";
+							}
 
 							Adw.SwitchRow increasePriority {
 								title: _("Increase Notification Priority");

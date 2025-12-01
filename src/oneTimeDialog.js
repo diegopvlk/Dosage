@@ -132,7 +132,7 @@ export function openOneTimeDialog(DosageWindow) {
 	});
 
 	const [oneTimeDialogClampHeight] = oneTimeDialogClamp.measure(Gtk.Orientation.VERTICAL, -1);
-	oneTimeDialog.content_height = oneTimeDialogClampHeight + 48;
+	oneTimeDialog.content_height = oneTimeDialogClampHeight + 58;
 	oneTimeDialog.present(DosageWindow);
 
 	const setConfirmBtn = () => {
