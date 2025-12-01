@@ -25,7 +25,8 @@ export default function openPrefsDialog(DosageApplication) {
 	const confirmSwitch = builder.get_object('confirmSwitch');
 	const skipSwitch = builder.get_object('skipSwitch');
 	const notifBtns = builder.get_object('notifBtns');
-	const exportHistory = builder.get_object('exportHistory');
+	const exportHistoryFormat = builder.get_object('exportHistoryFormat');
+	const saveHistory = builder.get_object('saveHistory');
 
 	const notifBtnsHeader = notifBtns.get_first_child().get_first_child().get_first_child();
 	notifBtnsHeader.set_activatable(false);
@@ -117,40 +118,50 @@ export default function openPrefsDialog(DosageApplication) {
 
 	const DosageWindow = DosageApplication.activeWindow;
 
-	exportHistory.sensitive = historyLS.n_items > 0;
+	saveHistory.sensitive = historyLS.n_items > 0;
 
-	exportHistory.connect('activated', () => {
-		saveFile('history', DosageWindow).catch(console.error);
+	exportHistoryFormat.set_selected(settings.get_int('export-history-format'));
+
+	exportHistoryFormat.connect('notify::selected-item', () => {
+		const selected = exportHistoryFormat.get_selected();
+		settings.set_int('export-history-format', selected);
+	});
+
+	saveHistory.connect('activated', () => {
+		let isISO = false;
+		let isHTML = false;
+
+		const selected = exportHistoryFormat.get_selected();
+		if (selected === 1 || selected === 3) isISO = true;
+		if (selected === 2 || selected === 3) isHTML = true;
+
+		saveHistFile(isISO, isHTML, DosageWindow).catch(console.error);
 	});
 
 	prefsDialog.present(DosageWindow);
 }
 
-async function saveFile(type, DosageWindow) {
-	let name = _('Dosage') + '_';
-	name += type === 'history' ? _('History') : _('Treatments');
+async function saveHistFile(isISO, isHTML, DosageWindow) {
+	let name = _('Dosage') + '_' + _('History') + (isISO ? '_ISO' : '');
 
 	const fileDialog = new Gtk.FileDialog({
-		initial_name: name + '.csv',
+		initial_name: name + (isHTML ? '.html' : '.csv'),
 	});
 
 	const file = await fileDialog.save(DosageWindow, null);
 
-	let tempObj, csv;
+	let tempObj, fileToSave;
 
-	if (type === 'history') {
-		tempObj = createTempObj('history', historyLS);
-		csv = getHistoryCSV(tempObj.history);
-	} else {
-		// tempObj = createTempObj('treatments', treatmentsLS);
-		// csv = getTreatmentsCSV(tempObj.treatments);
-	}
+	tempObj = createTempObj('history', historyLS);
+	fileToSave = isHTML
+		? getHistoryHTML(tempObj.history, isISO)
+		: getHistoryCSV(tempObj.history, isISO);
 
-	const contents = new TextEncoder().encode(csv);
+	const contents = new TextEncoder().encode(fileToSave);
 	await file.replace_contents_async(contents, null, false, Gio.FileCreateFlags.NONE, null);
 }
 
-function getHistoryCSV(history) {
+function getHistoryCSV(history, isISO) {
 	const header = [_('Date'), _('Time'), _('Name'), _('Dose'), _('Status'), _('Time Confirmed')];
 
 	const rows = history.map(med => {
@@ -164,11 +175,15 @@ function getHistoryCSV(history) {
 			hour12: clockIs12,
 		});
 
-		const dateString = new Date(med.taken[0]).toLocaleDateString(undefined, {
-			year: 'numeric',
-			month: '2-digit',
-			day: '2-digit',
-		});
+		const dateTaken = new Date(med.taken[0]);
+
+		const dateString = isISO
+			? dateTaken.toISOString().split('T')[0]
+			: dateTaken.toLocaleDateString(undefined, {
+					year: 'numeric',
+					month: '2-digit',
+					day: '2-digit',
+			  });
 
 		let timeConfirmedStr = '';
 
@@ -209,4 +224,146 @@ function getHistoryCSV(history) {
 	});
 
 	return [header.join(','), ...rows].join('\n');
+}
+
+function getHistoryHTML(history, isISO) {
+	const escapeHTML = str =>
+		String(str)
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;')
+			.replace(/'/g, '&#39;');
+
+	const header = [_('Date'), _('Time'), _('Name'), _('Dose'), _('Status'), _('Time Confirmed')];
+
+	const thead = `
+	<thead>
+			<tr>
+					${header.map(label => `<th>${escapeHTML(label)}</th>`).join('')}
+			</tr>
+	</thead>`;
+
+	const tbodyRows = history
+		.map(med => {
+			const time = new Date();
+			time.setHours(med.time[0]);
+			time.setMinutes(med.time[1]);
+
+			const timeString = time.toLocaleTimeString(undefined, {
+				hour: 'numeric',
+				minute: 'numeric',
+				hour12: clockIs12,
+			});
+
+			const dateTaken = new Date(med.taken[0]);
+			const dateString = isISO
+				? dateTaken.toISOString().split('T')[0]
+				: dateTaken.toLocaleDateString(undefined, {
+						year: 'numeric',
+						month: '2-digit',
+						day: '2-digit',
+				  });
+
+			let status;
+			let timeConfirmedStr = '';
+			let statusClass = '';
+
+			switch (med.taken[1]) {
+				case -1:
+					status = _('Missed');
+					statusClass = 'status-missed';
+					break;
+				case 0:
+					status = _('Skipped');
+					statusClass = 'status-skipped';
+					break;
+				case 1:
+					status = _('Confirmed');
+					statusClass = 'status-confirmed';
+					timeConfirmedStr = new Date(med.taken[0]).toLocaleTimeString(undefined, {
+						hour: 'numeric',
+						minute: 'numeric',
+						hour12: clockIs12,
+					});
+					break;
+				case 2:
+					status = _('Auto-Confirmed');
+					statusClass = 'status-confirmed';
+					break;
+				case 3:
+					status = _('Confirmed') + ` (${_('Time Unknown')})`;
+					statusClass = 'status-confirmed';
+					break;
+			}
+
+			const doseUnit = `${med.dose} ${med.unit}`;
+
+			const cells = [dateString, timeString, med.name, doseUnit, status, timeConfirmedStr].map(
+				escapeHTML,
+			);
+
+			const statusCell = `<td class="${statusClass}">${cells[4]}</td>`;
+
+			return `
+			<tr>
+					<td>${cells[0]}</td>
+					<td>${cells[1]}</td>
+					<td>${cells[2]}</td>
+					<td>${cells[3]}</td>
+					${statusCell}
+					<td>${cells[5]}</td>
+			</tr>`;
+		})
+		.join('\n');
+
+	const tbody = `<tbody>\n${tbodyRows}\n</tbody>`;
+
+	const style = `
+	<style>
+		:root {
+			color-scheme: light dark;
+		}
+		.history-table {
+			width: 100%;
+			border-collapse: collapse;
+			font-family: system-ui, Arial, sans-serif;
+			overflow-x: auto;
+		}
+		.history-table th,
+		.history-table td {
+			padding: 0.4rem;
+			border: 1px solid light-dark(#77767B, #5E5C64);
+		}
+		.history-table thead th {
+			background-color: light-dark(#5E5C64, #9A9996);
+			color: light-dark(#FFFFFF, #000000);
+			font-weight: 700;
+			position: sticky;
+			top: 0;
+			z-index: 2;
+		}
+		.history-table tbody tr:nth-child(even) {
+			background-color: light-dark(#F6F5F4, #2b2b2b);
+		}
+		.history-table tbody tr:hover {
+			background-color: light-dark(#C0BFBC, #4c4c4c);
+		}
+		.status-missed   { color: light-dark(#C01C28, #ff6b6b); font-weight: 600; }
+		.status-skipped  { color: light-dark(#3D3846, #DEDDDA); font-weight: 600; }
+		.status-confirmed{ color: light-dark(#26A269, #2EC27E); font-weight: 600; }
+	</style>`;
+
+	return minifyHTML(`${style}
+	<table class="history-table">
+	${thead}
+	${tbody}
+	</table>`);
+}
+
+function minifyHTML(html) {
+	return html
+		.replace(/\s+/g, ' ')
+		.replace(/\s*(<[^>]+>)\s*/g, '$1')
+		.trim();
 }

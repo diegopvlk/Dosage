@@ -121,10 +121,27 @@ Adw.Dialog prefsDialog {
 							}
 						}
 					}
+				}
 
-					Adw.ButtonRow exportHistory {
-						title: _("Export History as CSV");
+				Adw.PreferencesGroup {
+					Adw.ComboRow exportHistoryFormat {
+						title: _("Export History As");
+						icon-name: "history-symbolic";
+
+						model: StringList list {
+							strings [
+								"CSV",
+								"CSV (ISO)",
+								"HTML",
+								"HTML (ISO)",
+							]
+						};
+					}
+
+					Adw.ButtonRow saveHistory {
+						title: _("Save");
 						sensitive: false;
+						end-icon-name: "document-save-symbolic";
 					}
 				}
 			}

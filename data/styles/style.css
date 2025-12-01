@@ -31,6 +31,10 @@ statuspage .title {
   margin-bottom: -6px;
 }
 
+#preferences preferencespage preferencesgroup:first-child {
+  margin-bottom: -8px;
+}
+
 item-box {
   min-height: 46px;
   padding: 5px 0;
@@ -92,7 +96,6 @@ row.expander row.spin:focus-within {
 }
 
 #preferences .boxed-list,
-#med-dialog .boxed-list,
 #one-time-dialog .boxed-list,
 #refill-dialog .boxed-list {
   margin: 2px 0;
@@ -121,17 +124,14 @@ row.combo popover > contents listview row {
   padding-top: 8px;
   padding-bottom: 8px;
 }
-#medication-dialog.one-time .time > .arrow-button {
-  margin-left: -6px;
-}
-row.combo .dropdown-arrow {
+#medication-dialog row.combo .dropdown-arrow {
   background-color: rgb(from currentColor r g b / calc(alpha * 0.1));
   min-height: 34px;
   padding: 0 9px;
   border-radius: 99px;
   transition: var(--background-transition);
 }
-row.combo .dropdown-arrow:hover {
+#medication-dialog row.combo .dropdown-arrow:hover {
   background-color: rgb(from currentColor r g b / calc(alpha * 0.15));
 }
 

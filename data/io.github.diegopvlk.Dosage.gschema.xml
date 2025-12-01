@@ -35,5 +35,8 @@
     <key name="treatments-sorting" type="s">
       <default>'name-ascending'</default>
     </key>
+    <key name="export-history-format" type="i">
+      <default>0</default>
+    </key>
   </schema>
 </schemalist>
