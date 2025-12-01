@@ -172,24 +172,23 @@ function setLabels(listItem) {
 		case 1:
 			takenLabel.label = timeTaken;
 			takenIcon.icon_name = 'check-confirmed-symbolic';
-			takenBox.css_classes = ['confirmed'];
+			takenBox.css_classes = ['success'];
 			break;
 		case 2:
 			takenLabel.label = _('Auto-Confirmed');
 			takenIcon.icon_name = 'check-auto-confirmed-symbolic';
-			takenBox.css_classes = ['confirmed'];
+			takenBox.css_classes = ['success'];
 			break;
 		case 0:
 			takenLabel.label = _('Skipped');
-			takenBox.css_classes = ['skipped'];
 			break;
 		case -1:
 			takenLabel.label = _('Missed');
-			takenBox.css_classes = ['missed'];
+			takenBox.css_classes = ['error'];
 			break;
 		case 3:
 			takenLabel.label = _('Confirmed');
 			takenIcon.icon_name = 'check-confirmed-symbolic';
-			takenBox.css_classes = ['confirmed'];
+			takenBox.css_classes = ['success'];
 	}
 }

@@ -1,69 +1,87 @@
 @media (prefers-color-scheme: light) {
   .red,
   .red-clr {
-    --med-color: #f66151;
+    --med-color: var(--accent-red);
   }
   .orange,
   .orange-clr {
-    --med-color: #ff9100;
+    --med-color: var(--accent-orange);
   }
   .yellow,
   .yellow-clr {
-    --med-color: #e0a004;
+    --med-color: var(--accent-yellow);
   }
   .green,
   .green-clr {
-    --med-color: #26a269;
+    --med-color: var(--accent-green);
   }
   .cyan,
   .cyan-clr {
-    --med-color: #00c4cf;
+    --med-color: var(--accent-teal);
   }
   .blue,
   .blue-clr {
-    --med-color: #1c71d8;
+    --med-color: var(--accent-blue);
   }
   .purple,
   .purple-clr {
-    --med-color: #9141ac;
+    --med-color: var(--accent-purple);
   }
   .default,
   .default-clr {
-    --med-color: #6b6d6e;
+    --med-color: #4a4a52;
   }
 }
 @media (prefers-color-scheme: dark) {
   .red,
+  .red-clr,
+  .orange,
+  .orange-clr,
+  .yellow,
+  .yellow-clr,
+  .green,
+  .green-clr,
+  .cyan,
+  .cyan-clr,
+  .blue,
+  .blue-clr,
+  .purple,
+  .purple-clr,
+  .default,
+  .default-clr {
+    --standalone-color-oklab: max(l, 0.78) a b;
+  }
+  .red,
   .red-clr {
-    --med-color: #ff7f70;
+    --med-color: oklab(from var(--accent-red) var(--standalone-color-oklab));
   }
   .orange,
   .orange-clr {
-    --med-color: #ffa348;
+    --med-color: oklab(from var(--accent-orange) var(--standalone-color-oklab));
   }
   .yellow,
   .yellow-clr {
-    --med-color: #f8e45c;
+    --med-color: oklab(from var(--accent-yellow) var(--standalone-color-oklab));
   }
   .green,
   .green-clr {
-    --med-color: #57e389;
+    --med-color: oklab(from var(--accent-green) var(--standalone-color-oklab));
   }
   .cyan,
   .cyan-clr {
-    --med-color: #4be2eb;
+    --med-color: oklab(from var(--accent-teal) var(--standalone-color-oklab));
   }
   .blue,
   .blue-clr {
-    --med-color: #73a9ff;
+    --med-color: oklab(from var(--accent-blue) var(--standalone-color-oklab));
   }
   .purple,
   .purple-clr {
-    --med-color: #ad7cfd;
+    --med-color: oklab(from var(--accent-purple) var(--standalone-color-oklab));
   }
   .default,
   .default-clr {
-    --med-color: #d0d0d6;
+    --med-color: #dfe0eb;
   }
 }
 

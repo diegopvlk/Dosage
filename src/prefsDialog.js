@@ -405,14 +405,14 @@ function getTreatmentsHTML(treatments) {
 
 	const mapColorToCSS = color => {
 		const colorMap = {
-			blue: 'light-dark(#1c71d8, #73a9ff)',
-			red: 'light-dark(#f66151, #ff7f70)',
-			yellow: 'light-dark(#e0a004, #f8e45c)',
-			purple: 'light-dark(#9141ac, #ad7cfd)',
-			cyan: 'light-dark(#00c4cf, #4be2eb)',
-			green: 'light-dark(#26a269, #57e389)',
-			orange: 'light-dark(#ff9100, #ffa348)',
-			default: 'light-dark(#6b6d6e, #d0d0d6)',
+			blue: 'light-dark(#3584e4, #6ab9ff)',
+			red: 'light-dark(#e62d42, #ff7077)',
+			yellow: 'light-dark(#c88800, #eba93d)',
+			purple: 'light-dark(#9141ac, #e391ff)',
+			cyan: 'light-dark(#2190a4, #64c8dd)',
+			green: 'light-dark(#3a944a, #57e389)',
+			orange: 'light-dark(#ed5b00, #ff8542)',
+			default: 'light-dark(#4a4a52, #dfe0eb)',
 		};
 		return colorMap[color];
 	};

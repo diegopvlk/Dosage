@@ -227,11 +227,11 @@ function setInventoryAndDateLabels(listItem) {
 		invLabelBtn.visible = true;
 		// TRANSLATORS: keep the %d it's where the number goes
 		invLabelBtn.label = _('%d Remaining').replace('%d', currInv);
-		invLabelBtn.remove_css_class('low-stock');
+		invLabelBtn.remove_css_class('warning');
 
 		if (inv.current <= inv.reminder) {
 			invLabelBtn.label = `${currInv} ↓ ` + _('Low Stock');
-			invLabelBtn.add_css_class('low-stock');
+			invLabelBtn.add_css_class('warning');
 		}
 	}
 
