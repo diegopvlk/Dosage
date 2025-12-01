@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-28 12:15-0300\n"
+"POT-Creation-Date: 2025-12-01 22:25-0300\n"
 "PO-Revision-Date: 2025-03-16 00:02+0000\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
@@ -24,7 +24,8 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3 data/ui/window.blp:6
-#: src/main.js:39 src/prefsDialog.js:137 src/window.js:1039
+#: src/main.js:57 src/prefsDialog.js:145 src/prefsDialog.js:165
+#: src/prefsDialog.js:546 src/window.js:1042
 msgid "Dosage"
 msgstr "Doz"
 
@@ -123,12 +124,13 @@ msgid "Edit Entry"
 msgstr "Girdiyi Düzenle"
 
 #: data/ui/edit-hist-dialog.blp:18 data/ui/med-dialog.blp:19
-#: src/medDialog.js:584
+#: src/medDialog.js:581
 msgid "Cancel"
 msgstr "İptal"
 
-#: data/ui/edit-hist-dialog.blp:29 data/ui/refill-dialog.blp:65
-#: src/medDialog.js:114
+#: data/ui/edit-hist-dialog.blp:29 data/ui/preferences.blp:142
+#: data/ui/preferences.blp:161 data/ui/refill-dialog.blp:65
+#: src/medDialog.js:115
 msgid "Save"
 msgstr "Kaydet"
 
@@ -137,13 +139,14 @@ msgstr "Kaydet"
 msgid "Change Time"
 msgstr "Zamanı Değiştir"
 
-#: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
-#: src/prefsDialog.js:188
+#: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:183
+#: src/prefsDialog.js:214 src/prefsDialog.js:296
 msgid "Skipped"
 msgstr "Atlandı"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
-#: src/historyFactory.js:187 src/prefsDialog.js:191 src/prefsDialog.js:202
+#: src/historyFactory.js:191 src/prefsDialog.js:217 src/prefsDialog.js:228
+#: src/prefsDialog.js:300 src/prefsDialog.js:313
 msgid "Confirmed"
 msgstr "Onaylandı"
 
@@ -151,12 +154,12 @@ msgstr "Onaylandı"
 msgid "New Treatment"
 msgstr "Yeni İlaç"
 
-#: data/ui/med-dialog.blp:30 data/ui/window.blp:271
+#: data/ui/med-dialog.blp:30 data/ui/window.blp:279
 msgid "Add"
 msgstr "Ekle"
 
 #: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
-#: src/prefsDialog.js:161
+#: src/prefsDialog.js:183 src/prefsDialog.js:256
 msgid "Name"
 msgstr "Ad"
 
@@ -202,7 +205,7 @@ msgid "Unit"
 msgstr "Birim"
 
 #: data/ui/med-dialog.blp:187 data/ui/one-time-dialog.blp:177
-#: src/oneTimeDialog.js:65
+#: src/oneTimeDialog.js:66
 msgid "Pill(s)"
 msgstr "Hap"
 
@@ -267,7 +270,7 @@ msgstr "Damla"
 msgid "Potion"
 msgstr "Karışım"
 
-#: data/ui/med-dialog.blp:441
+#: data/ui/med-dialog.blp:441 src/prefsDialog.js:462
 msgid "Notes"
 msgstr "Notlar"
 
@@ -275,7 +278,7 @@ msgstr "Notlar"
 msgid "After meal"
 msgstr "Yemekten Sonra"
 
-#: data/ui/med-dialog.blp:451 src/medDialog.js:489
+#: data/ui/med-dialog.blp:451 src/medDialog.js:486
 msgid "Frequency"
 msgstr "Sıklık"
 
@@ -283,20 +286,20 @@ msgstr "Sıklık"
 msgid "Every Day"
 msgstr "Her Gün"
 
-#: data/ui/med-dialog.blp:457 src/medDialog.js:478
+#: data/ui/med-dialog.blp:457 src/medDialog.js:475
 msgid "Specific Days"
 msgstr "Belirli Günler"
 
-#: data/ui/med-dialog.blp:458 src/medDialog.js:450
-msgid "Day of the Month"
+#: data/ui/med-dialog.blp:458 src/medDialog.js:447 src/prefsDialog.js:475
+msgid "Day of Month"
 msgstr "Ayın Günü"
 
-#: data/ui/med-dialog.blp:459 src/medDialog.js:485 src/treatmentsFactory.js:278
+#: data/ui/med-dialog.blp:459 src/medDialog.js:482 src/treatmentsFactory.js:280
 msgid "Cycle"
 msgstr "Döngü"
 
-#: data/ui/med-dialog.blp:460 src/todayFactory.js:41
-#: src/treatmentsFactory.js:281
+#: data/ui/med-dialog.blp:460 src/prefsDialog.js:495 src/todayFactory.js:41
+#: src/treatmentsFactory.js:283
 msgid "As Needed"
 msgstr "Gerektiğinde"
 
@@ -325,75 +328,78 @@ msgstr "Aktif Olmayan Günler"
 msgid "Today is Cycle Day…"
 msgstr "Bugün Döngü Günü…"
 
-#: data/ui/med-dialog.blp:703
+#: data/ui/med-dialog.blp:693
 msgid "Increase Notification Priority"
 msgstr "Bildirim Önceliğini Artır"
 
-#: data/ui/med-dialog.blp:704
+#: data/ui/med-dialog.blp:694
 msgid "Show in fullscreen mode or with 'Do Not Disturb' enabled"
 msgstr ""
 "Masaüstünde bildirimin tam ekran kipinde ya da 'Rahatsız Etme' kipi etkin "
 "olsa bile gösterilmesini sağlar"
 
-#: data/ui/med-dialog.blp:708
+#: data/ui/med-dialog.blp:698
 msgid "Recurring Notifications"
 msgstr "Yinelenen Bildirimler"
 
-#: data/ui/med-dialog.blp:709
+#: data/ui/med-dialog.blp:699
 msgid "Renotify until it's confirmed or skipped"
 msgstr "Onaylanana ya da atlanana kadar yeniden bildir"
 
-#: data/ui/med-dialog.blp:714
+#: data/ui/med-dialog.blp:704
 msgid "Interval in Minutes"
 msgstr "Aralık (Dakika Olarak)"
 
-#: data/ui/med-dialog.blp:727 data/ui/refill-dialog.blp:36
+#: data/ui/med-dialog.blp:717 data/ui/refill-dialog.blp:36
 msgid "Inventory"
 msgstr "Envanter"
 
-#: data/ui/med-dialog.blp:728
+#: data/ui/med-dialog.blp:718
 msgid "Manage your stock"
 msgstr "Stoğunuzu yönetin"
 
-#: data/ui/med-dialog.blp:734
+#: data/ui/med-dialog.blp:724
 msgid "Current"
 msgstr "Geçerli"
 
-#: data/ui/med-dialog.blp:747
+#: data/ui/med-dialog.blp:737
 msgid "Remind Me At"
 msgstr "Bana Hatırlat"
 
-#: data/ui/med-dialog.blp:760
+#: data/ui/med-dialog.blp:750
 msgid "Refill Amount"
 msgstr "Yeniden Doldurma Miktarı"
 
-#: data/ui/med-dialog.blp:773
+#: data/ui/med-dialog.blp:763 src/prefsDialog.js:505
 msgid "Duration"
 msgstr "Süre"
 
-#: data/ui/med-dialog.blp:774
+#: data/ui/med-dialog.blp:764
 msgid "Set start and end dates"
 msgstr "Başlangıç ve bitiş tarihi belirle"
 
-#. TRANSLATORS: label for when duration is enabled
-#: data/ui/med-dialog.blp:784 src/treatmentsFactory.js:237
-msgid "Starts On"
+#: data/ui/med-dialog.blp:774 src/prefsDialog.js:509
+#, fuzzy
+#| msgid "Starts On"
+msgid "Start"
 msgstr "Başlangıç"
 
-#: data/ui/med-dialog.blp:794 data/ui/med-dialog.blp:836
+#: data/ui/med-dialog.blp:784 data/ui/med-dialog.blp:826
 #: data/ui/one-time-dialog.blp:242
 msgid "Choose Date"
 msgstr "Tarih Seç"
 
-#: data/ui/med-dialog.blp:826
-msgid "Ends On"
+#: data/ui/med-dialog.blp:816 src/prefsDialog.js:511
+#, fuzzy
+#| msgid "Ends On"
+msgid "End"
 msgstr "Bitiş"
 
-#: data/ui/med-dialog.blp:864
+#: data/ui/med-dialog.blp:854
 msgid "Mark as Confirmed"
 msgstr "Onaylandı Olarak İmle"
 
-#: data/ui/med-dialog.blp:865
+#: data/ui/med-dialog.blp:855
 msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
@@ -401,11 +407,11 @@ msgstr ""
 "Elle olarak onaylanmamışsa ya da atlanmışsa, geçmişte onaylanmış olarak "
 "kaydedilecek ve etkinleştirilmişse stok azaltılacak"
 
-#: data/ui/med-dialog.blp:874 src/medDialog.js:585 src/treatmentsFactory.js:112
+#: data/ui/med-dialog.blp:864 src/medDialog.js:582 src/treatmentsFactory.js:114
 msgid "Delete"
 msgstr "Sil"
 
-#: data/ui/one-time-dialog.blp:7 data/ui/window.blp:122 src/window.js:1068
+#: data/ui/one-time-dialog.blp:7 data/ui/window.blp:130 src/window.js:1071
 msgid "One-Time Entry"
 msgstr "Tek Seferlik Girdi"
 
@@ -417,68 +423,79 @@ msgstr "İlaç Listesinden"
 msgid "Amount"
 msgstr "Miktar"
 
-#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:161
+#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:183
+#: src/prefsDialog.js:256
 msgid "Dose"
 msgstr "Doz"
 
-#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:161
+#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:183
+#: src/prefsDialog.js:256
 msgid "Time"
 msgstr "Zaman"
 
-#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:161
+#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:183
+#: src/prefsDialog.js:256
 msgid "Date"
 msgstr "Tarih"
 
-#: data/ui/one-time-dialog.blp:284 data/ui/preferences.blp:95 src/window.js:885
-#: src/window.js:1068
+#: data/ui/one-time-dialog.blp:284 data/ui/preferences.blp:93 src/window.js:888
+#: src/window.js:1071
 msgid "Confirm"
 msgstr "Onayla"
 
-#: data/ui/preferences.blp:7 data/ui/window.blp:288
+#: data/ui/preferences.blp:7 data/ui/window.blp:316
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: data/ui/preferences.blp:19
+#: data/ui/preferences.blp:17
 msgid "Auto-Start at Login"
 msgstr "Girişte Kendiliğinden Başlat"
 
-#: data/ui/preferences.blp:35
+#: data/ui/preferences.blp:33
 msgid "Auto-Clear History"
 msgstr "Geçmişi Kendiliğinden Temizle"
 
-#: data/ui/preferences.blp:36
+#: data/ui/preferences.blp:34
 msgid "Keeps a maximum of 30 days"
 msgstr "Azami 30 günü koru"
 
-#: data/ui/preferences.blp:52
+#: data/ui/preferences.blp:50
 msgid "Low Stock Notification"
 msgstr "Düşük Stok Bildirimi"
 
-#: data/ui/preferences.blp:53
+#: data/ui/preferences.blp:51
 msgid "Send reminders when treatments are low in stock"
 msgstr "Tedaviler düşük stokta olduğunda hatırlatmalar gönder"
 
-#: data/ui/preferences.blp:69
+#: data/ui/preferences.blp:67
 msgid "Notification Sound"
 msgstr "Bildirim Sesi"
 
-#: data/ui/preferences.blp:85
+#: data/ui/preferences.blp:83
 msgid "Notification Buttons"
 msgstr "Bildirim Düğmeleri"
 
-#: data/ui/preferences.blp:86
+#: data/ui/preferences.blp:84
 msgid "Show or hide confirm/skip"
 msgstr "Onayla/atla düğmelerini göster ya da gizle"
 
-#: data/ui/preferences.blp:111 data/ui/window.blp:134 src/window.js:886
+#: data/ui/preferences.blp:109 data/ui/window.blp:142 src/window.js:889
 msgid "Skip"
 msgstr "Atla"
 
 #: data/ui/preferences.blp:128
-msgid "Export History as CSV"
+#, fuzzy
+#| msgid "Export History as CSV"
+msgid "Export History As"
 msgstr "Geçmişi CSV Olarak Dışa Aktar"
 
-#: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:110
+#: data/ui/preferences.blp:150
+#, fuzzy
+#| msgid "Empty Treatments"
+msgid "Export Treatments As"
+msgstr "Boş Tedaviler"
+
+#: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:112
 msgid "Refill"
 msgstr "Yeniden doldur"
 
@@ -490,43 +507,61 @@ msgstr "'Gerektiğinde' Göster/Gizle"
 msgid "Search"
 msgstr "Ara"
 
-#: data/ui/window.blp:40
+#: data/ui/window.blp:39
+#, fuzzy
+#| msgid "Treatments"
+msgid "Sort Treatments"
+msgstr "İlaçlar"
+
+#: data/ui/window.blp:48
 msgid "Main Menu"
 msgstr "Ana Menü"
 
-#: data/ui/window.blp:53
+#: data/ui/window.blp:61
 msgid "Search…"
 msgstr "Ara…"
 
-#: data/ui/window.blp:63
+#: data/ui/window.blp:71
 msgid "Today"
 msgstr "Bugün"
 
-#: data/ui/window.blp:109 data/ui/window.blp:198
+#: data/ui/window.blp:117 data/ui/window.blp:206
 msgid "Unselect"
 msgstr "Seçimi Kaldır"
 
-#: data/ui/window.blp:144 src/prefsDialog.js:138
+#: data/ui/window.blp:152 src/prefsDialog.js:145
 msgid "History"
 msgstr "Geçmiş"
 
-#: data/ui/window.blp:208
+#: data/ui/window.blp:216
 msgid "Remove Entries"
 msgstr "Girdileri Kaldır"
 
-#: data/ui/window.blp:222 src/prefsDialog.js:138
+#: data/ui/window.blp:230 src/prefsDialog.js:165 src/prefsDialog.js:546
 msgid "Treatments"
 msgstr "İlaçlar"
 
-#: data/ui/window.blp:248
+#: data/ui/window.blp:256
 msgid "Empty Treatments"
 msgstr "Boş Tedaviler"
 
-#: data/ui/window.blp:293
+#: data/ui/window.blp:296
+msgid "Name Ascending"
+msgstr ""
+
+#: data/ui/window.blp:302
+msgid "Stock Remaining (Lowest First)"
+msgstr ""
+
+#: data/ui/window.blp:308
+msgid "Stock Remaining (Highest First)"
+msgstr ""
+
+#: data/ui/window.blp:321
 msgid "About Dosage"
 msgstr "Doz Hakkında"
 
-#: data/ui/window.blp:298 src/window.js:1269
+#: data/ui/window.blp:326 src/window.js:1272
 msgid "Quit"
 msgstr "Çık"
 
@@ -534,7 +569,8 @@ msgstr "Çık"
 msgid "Confirmed At"
 msgstr "Onaylandı"
 
-#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:199
+#: src/editHistDialog.js:61 src/historyFactory.js:178 src/prefsDialog.js:225
+#: src/prefsDialog.js:309
 msgid "Auto-Confirmed"
 msgstr "Kendiliğinden Onaylanmış"
 
@@ -542,11 +578,12 @@ msgstr "Kendiliğinden Onaylanmış"
 msgid "Skipped At"
 msgstr "Atlandı"
 
-#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:185
+#: src/editHistDialog.js:73 src/historyFactory.js:187 src/prefsDialog.js:211
+#: src/prefsDialog.js:292
 msgid "Missed"
 msgstr "Unutuldu"
 
-#: src/editHistDialog.js:79 src/prefsDialog.js:202
+#: src/editHistDialog.js:79 src/prefsDialog.js:228 src/prefsDialog.js:313
 msgid "Time Unknown"
 msgstr "Zaman Bilinmiyor"
 
@@ -555,88 +592,138 @@ msgid "Select to be Removed"
 msgstr "Kaldırılacakları Seç"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:48
+#: src/main.js:66
 msgid "translator-credits"
 msgstr "Sabri Ünal <yakushabb@gmail.com>"
 
-#: src/main.js:52
+#: src/main.js:70
 msgid "Thanks to These Projects!"
 msgstr "Bu Projeler Sayesinde!"
 
-#: src/oneTimeDialog.js:54
+#: src/oneTimeDialog.js:55
 msgid "New"
 msgstr "Yeni"
 
-#: src/oneTimeDialog.js:163 src/medDialog.js:549
+#: src/oneTimeDialog.js:173 src/medDialog.js:546
 msgid "Name Already on Treatment List"
 msgstr "İsim Zaten Tedavi Listesinde"
 
-#: src/medDialog.js:113
+#: src/medDialog.js:114
 msgid "Edit Treatment"
 msgstr "İlaç Düzenle"
 
-#: src/medDialog.js:128
+#: src/medDialog.js:129
 msgid "Copy"
 msgstr "Kopyala"
 
-#: src/medDialog.js:233
+#: src/medDialog.js:234
 msgid "Add Dose"
 msgstr "Doz Ekle"
 
-#: src/medDialog.js:441
+#: src/medDialog.js:438
 msgid "Choose"
 msgstr "Seç"
 
-#: src/medDialog.js:451 src/treatmentsFactory.js:257
+#: src/medDialog.js:448 src/treatmentsFactory.js:259
 msgid "Day"
 msgstr "Gün"
 
-#: src/medDialog.js:522
+#: src/medDialog.js:519
 msgid "Empty Name"
 msgstr "Boş Ad"
 
-#: src/medDialog.js:528
+#: src/medDialog.js:525
 msgid "Empty Unit"
 msgstr "Boş Birim"
 
-#: src/medDialog.js:535
+#: src/medDialog.js:532
 msgid "Choose at Least One Day"
 msgstr "En Az Bir Gün Seçin"
 
-#: src/medDialog.js:564
+#: src/medDialog.js:561
 msgid "Duplicated Time"
 msgstr "Yinelenen Zaman"
 
-#: src/medDialog.js:580
+#: src/medDialog.js:577
 msgid "Are You Sure?"
 msgstr "Emin Misiniz?"
 
-#: src/medDialog.js:581
+#: src/medDialog.js:578
 msgid "will be deleted"
 msgstr "silinecek"
 
-#: src/prefsDialog.js:51
+#: src/prefsDialog.js:42
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Arka planda çalışmaya izin vermeyi ve bildirim almayı kabul et"
 
-#: src/prefsDialog.js:62 src/window.js:257
+#: src/prefsDialog.js:53 src/window.js:257
 msgid "An Issue Has Occurred"
 msgstr "Bir Hata Oluştu"
 
-#: src/prefsDialog.js:65 src/window.js:265 src/window.js:287 src/window.js:309
+#: src/prefsDialog.js:56 src/window.js:265 src/window.js:287 src/window.js:309
 #: src/window.js:327
 msgid "Close"
 msgstr "Kapat"
 
-#: src/prefsDialog.js:161
+#: src/prefsDialog.js:183 src/prefsDialog.js:256
 msgid "Status"
 msgstr "Durum"
 
-#: src/prefsDialog.js:161
+#: src/prefsDialog.js:183 src/prefsDialog.js:256
 msgid "Time Confirmed"
 msgstr "Zaman Onaylandı"
 
-#: src/todayFactory.js:132
+#. TRANSLATORS: Context: 1 Pill at 19:00
+#: src/prefsDialog.js:442
+#, fuzzy
+#| msgid "Date"
+msgid "at"
+msgstr "Tarih"
+
+#: src/prefsDialog.js:469 src/treatmentsFactory.js:253 src/utils.js:52
+msgid "Daily"
+msgstr "Günlük"
+
+#. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
+#: src/prefsDialog.js:482
+msgid "day(s) on"
+msgstr ""
+
+#. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
+#: src/prefsDialog.js:484
+msgid "day(s) off"
+msgstr ""
+
+#: src/prefsDialog.js:508
+#, fuzzy
+#| msgid "Starts On"
+msgid "Started on"
+msgstr "Başlangıç"
+
+#: src/prefsDialog.js:511 src/treatmentsFactory.js:241
+msgid "Ended on"
+msgstr "Sona erdi"
+
+#: src/prefsDialog.js:557
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "General"
+msgid "Generated on"
+msgstr "Genel"
+
+#: src/prefsDialog.js:560
+msgid "Ongoing"
+msgstr ""
+
+#: src/prefsDialog.js:561
+msgid "Non-scheduled"
+msgstr ""
+
+#: src/prefsDialog.js:562
+msgid "Finished"
+msgstr ""
+
+#: src/todayFactory.js:134
 msgid "Change Dose"
 msgstr "Dozu Değiştir"
 
@@ -644,45 +731,42 @@ msgstr "Dozu Değiştir"
 msgid "Remove Dose"
 msgstr "Dozu Kaldır"
 
-#: src/treatmentsFactory.js:92
+#: src/treatmentsFactory.js:94
 msgid "Refill Stock"
 msgstr "Stoğu Yeniden Doldur"
 
-#: src/treatmentsFactory.js:109
+#: src/treatmentsFactory.js:111
 msgid "Edit"
 msgstr "Düzenle"
 
-#: src/treatmentsFactory.js:111
+#: src/treatmentsFactory.js:113
 msgid "Duplicate"
 msgstr "Çoğalt"
 
-#: src/treatmentsFactory.js:130
+#: src/treatmentsFactory.js:132
 msgid "Options"
 msgstr "Seçenekler"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/treatmentsFactory.js:227
+#: src/treatmentsFactory.js:229
 #, javascript-format
 msgid "%d Remaining"
 msgstr "%d Kalan"
 
-#: src/treatmentsFactory.js:231
+#: src/treatmentsFactory.js:233
 msgid "Low Stock"
 msgstr "Düşük Stok"
 
-#: src/treatmentsFactory.js:238
+#. TRANSLATORS: label for when duration is enabled
+#: src/treatmentsFactory.js:239
+msgid "Starts on"
+msgstr "Başlangıç"
+
+#: src/treatmentsFactory.js:240
 msgid "Until"
 msgstr "Bitiş Tarihi"
 
-#: src/treatmentsFactory.js:239
-msgid "Ended On"
-msgstr "Sona Erdi"
-
-#: src/treatmentsFactory.js:251 src/utils.js:52
-msgid "Daily"
-msgstr "Günlük"
-
-#: src/treatmentsFactory.js:266 src/treatmentsFactory.js:269
+#: src/treatmentsFactory.js:268 src/treatmentsFactory.js:271
 msgid "Next Dose"
 msgstr "Sonraki Doz"
 
@@ -694,7 +778,7 @@ msgstr "Hafta Sonları"
 msgid "Weekdays"
 msgstr "Hafta İçi"
 
-#: src/window.js:172 src/window.js:922
+#: src/window.js:172 src/window.js:925
 msgid "Reminder"
 msgstr "Hatırlatıcı"
 
@@ -703,40 +787,40 @@ msgstr "Hatırlatıcı"
 msgid "You have treatments low in stock"
 msgstr "Stok sayısı azalmış ilaçlarınız var"
 
-#: src/window.js:480
+#: src/window.js:476
 msgid "Show All"
 msgstr "Tümünü Göster"
 
-#: src/window.js:503
+#: src/window.js:499
 msgid "Show Less"
 msgstr "Daha Azını Göster"
 
-#: src/window.js:635
+#: src/window.js:631
 msgid "No Results Found"
 msgstr "Sonuç Bulunamadı"
 
-#: src/window.js:635 src/window.js:1491
+#: src/window.js:631 src/window.js:1494
 msgid "Empty History"
 msgstr "Geçmiş Boş"
 
-#: src/window.js:797
+#: src/window.js:800
 msgid "No Treatments Added"
 msgstr "Hiçbir İlaç Eklenmedi"
 
-#: src/window.js:797
+#: src/window.js:800
 msgid "All Done for Today"
 msgstr "Bugünlük Her Şey Bitti"
 
-#: src/window.js:885
+#: src/window.js:888
 msgid "Confirm All"
 msgstr "Tümünü Onayla"
 
-#: src/window.js:886
+#: src/window.js:889
 msgid "Skip All"
 msgstr "Tümünü Atla"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:917
+#: src/window.js:920
 #, javascript-format
 msgid "and %d more"
 msgstr "ve %d daha"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-28 12:15-0300\n"
+"POT-Creation-Date: 2025-12-01 22:25-0300\n"
 "PO-Revision-Date: 2025-02-24 18:10+0000\n"
 "Last-Translator: MiniClemme <mcle@dtu.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/dosage/dosage/da/"
@@ -22,7 +22,8 @@ msgstr ""
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3 data/ui/window.blp:6
-#: src/main.js:39 src/prefsDialog.js:137 src/window.js:1039
+#: src/main.js:57 src/prefsDialog.js:145 src/prefsDialog.js:165
+#: src/prefsDialog.js:546 src/window.js:1042
 msgid "Dosage"
 msgstr "Dosering"
 
@@ -95,9 +96,7 @@ msgstr "Dosering idag vindue i mørk tema"
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:10
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
-msgstr ""
-"Medicin;Tracker;Påmindelse;Idag;Behandlinger;Pille;Lægemiddel;Middel;"
-"Dosering;"
+msgstr "Medicin;Tracker;Påmindelse;Idag;Behandlinger;Pille;Lægemiddel;Middel;Dosering;"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -124,12 +123,13 @@ msgid "Edit Entry"
 msgstr "Rediger Indtastning"
 
 #: data/ui/edit-hist-dialog.blp:18 data/ui/med-dialog.blp:19
-#: src/medDialog.js:584
+#: src/medDialog.js:581
 msgid "Cancel"
 msgstr "Afbryd"
 
-#: data/ui/edit-hist-dialog.blp:29 data/ui/refill-dialog.blp:65
-#: src/medDialog.js:114
+#: data/ui/edit-hist-dialog.blp:29 data/ui/preferences.blp:142
+#: data/ui/preferences.blp:161 data/ui/refill-dialog.blp:65
+#: src/medDialog.js:115
 msgid "Save"
 msgstr "Gem"
 
@@ -138,13 +138,14 @@ msgstr "Gem"
 msgid "Change Time"
 msgstr "Ændre Tid"
 
-#: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:181
-#: src/prefsDialog.js:188
+#: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:183
+#: src/prefsDialog.js:214 src/prefsDialog.js:296
 msgid "Skipped"
 msgstr "Sprunget over"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
-#: src/historyFactory.js:187 src/prefsDialog.js:191 src/prefsDialog.js:202
+#: src/historyFactory.js:191 src/prefsDialog.js:217 src/prefsDialog.js:228
+#: src/prefsDialog.js:300 src/prefsDialog.js:313
 msgid "Confirmed"
 msgstr "Bekræftet"
 
@@ -152,12 +153,12 @@ msgstr "Bekræftet"
 msgid "New Treatment"
 msgstr "Ny Behandling"
 
-#: data/ui/med-dialog.blp:30 data/ui/window.blp:271
+#: data/ui/med-dialog.blp:30 data/ui/window.blp:279
 msgid "Add"
 msgstr "Tilføj"
 
 #: data/ui/med-dialog.blp:59 data/ui/one-time-dialog.blp:48
-#: src/prefsDialog.js:161
+#: src/prefsDialog.js:183 src/prefsDialog.js:256
 msgid "Name"
 msgstr "Navn"
 
@@ -203,7 +204,7 @@ msgid "Unit"
 msgstr "Enhed"
 
 #: data/ui/med-dialog.blp:187 data/ui/one-time-dialog.blp:177
-#: src/oneTimeDialog.js:65
+#: src/oneTimeDialog.js:66
 msgid "Pill(s)"
 msgstr "Pille(r)"
 
@@ -268,7 +269,7 @@ msgstr "Dråbe"
 msgid "Potion"
 msgstr "Drik"
 
-#: data/ui/med-dialog.blp:441
+#: data/ui/med-dialog.blp:441 src/prefsDialog.js:462
 msgid "Notes"
 msgstr "Noter"
 
@@ -276,7 +277,7 @@ msgstr "Noter"
 msgid "After meal"
 msgstr "Efter måltid"
 
-#: data/ui/med-dialog.blp:451 src/medDialog.js:489
+#: data/ui/med-dialog.blp:451 src/medDialog.js:486
 msgid "Frequency"
 msgstr "Frekvens"
 
@@ -284,20 +285,20 @@ msgstr "Frekvens"
 msgid "Every Day"
 msgstr "Hver Dag"
 
-#: data/ui/med-dialog.blp:457 src/medDialog.js:478
+#: data/ui/med-dialog.blp:457 src/medDialog.js:475
 msgid "Specific Days"
 msgstr "Specifikke Dage"
 
-#: data/ui/med-dialog.blp:458 src/medDialog.js:450
-msgid "Day of the Month"
+#: data/ui/med-dialog.blp:458 src/medDialog.js:447 src/prefsDialog.js:475
+msgid "Day of Month"
 msgstr "Dag på Måneden"
 
-#: data/ui/med-dialog.blp:459 src/medDialog.js:485 src/treatmentsFactory.js:278
+#: data/ui/med-dialog.blp:459 src/medDialog.js:482 src/treatmentsFactory.js:280
 msgid "Cycle"
 msgstr "Cyklus"
 
-#: data/ui/med-dialog.blp:460 src/todayFactory.js:41
-#: src/treatmentsFactory.js:281
+#: data/ui/med-dialog.blp:460 src/prefsDialog.js:495 src/todayFactory.js:41
+#: src/treatmentsFactory.js:283
 msgid "As Needed"
 msgstr "Efter Behov"
 
@@ -326,73 +327,76 @@ msgstr "Inaktive Dage"
 msgid "Today is Cycle Day…"
 msgstr "Idag er det dag nr.…"
 
-#: data/ui/med-dialog.blp:703
+#: data/ui/med-dialog.blp:693
 msgid "Increase Notification Priority"
 msgstr "Forøg Meddelelsesprioritet"
 
-#: data/ui/med-dialog.blp:704
+#: data/ui/med-dialog.blp:694
 msgid "Show in fullscreen mode or with 'Do Not Disturb' enabled"
 msgstr "Vis i fuldskærm eller med 'Forstyr ikke' tilstand"
 
-#: data/ui/med-dialog.blp:708
+#: data/ui/med-dialog.blp:698
 msgid "Recurring Notifications"
 msgstr "Gentagende Notifikationer"
 
-#: data/ui/med-dialog.blp:709
+#: data/ui/med-dialog.blp:699
 msgid "Renotify until it's confirmed or skipped"
 msgstr "Bliv ved med at påminde indtil bekræftet eller sprunget over"
 
-#: data/ui/med-dialog.blp:714
+#: data/ui/med-dialog.blp:704
 msgid "Interval in Minutes"
 msgstr "Interval i Minutter"
 
-#: data/ui/med-dialog.blp:727 data/ui/refill-dialog.blp:36
+#: data/ui/med-dialog.blp:717 data/ui/refill-dialog.blp:36
 msgid "Inventory"
 msgstr "Lager"
 
-#: data/ui/med-dialog.blp:728
+#: data/ui/med-dialog.blp:718
 msgid "Manage your stock"
 msgstr "Administrer dit lager"
 
-#: data/ui/med-dialog.blp:734
+#: data/ui/med-dialog.blp:724
 msgid "Current"
 msgstr "Nuværende"
 
-#: data/ui/med-dialog.blp:747
+#: data/ui/med-dialog.blp:737
 msgid "Remind Me At"
 msgstr "Påmind Mig"
 
-#: data/ui/med-dialog.blp:760
+#: data/ui/med-dialog.blp:750
 msgid "Refill Amount"
 msgstr "Mængde til Genopfyldning"
 
-#: data/ui/med-dialog.blp:773
+#: data/ui/med-dialog.blp:763 src/prefsDialog.js:505
 msgid "Duration"
 msgstr "Varighed"
 
-#: data/ui/med-dialog.blp:774
+#: data/ui/med-dialog.blp:764
 msgid "Set start and end dates"
 msgstr "Sæt start- og slutdato"
 
-#. TRANSLATORS: label for when duration is enabled
-#: data/ui/med-dialog.blp:784 src/treatmentsFactory.js:237
-msgid "Starts On"
+#: data/ui/med-dialog.blp:774 src/prefsDialog.js:509
+#, fuzzy
+#| msgid "Starts On"
+msgid "Start"
 msgstr "Starter Den"
 
-#: data/ui/med-dialog.blp:794 data/ui/med-dialog.blp:836
+#: data/ui/med-dialog.blp:784 data/ui/med-dialog.blp:826
 #: data/ui/one-time-dialog.blp:242
 msgid "Choose Date"
 msgstr "Vælg Dato"
 
-#: data/ui/med-dialog.blp:826
-msgid "Ends On"
+#: data/ui/med-dialog.blp:816 src/prefsDialog.js:511
+#, fuzzy
+#| msgid "Ends On"
+msgid "End"
 msgstr "Slutter Den"
 
-#: data/ui/med-dialog.blp:864
+#: data/ui/med-dialog.blp:854
 msgid "Mark as Confirmed"
 msgstr "Markér som Bekræftet"
 
-#: data/ui/med-dialog.blp:865
+#: data/ui/med-dialog.blp:855
 msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
@@ -401,11 +405,11 @@ msgstr ""
 "bekræftet i historikken, hvilket reducerer lagerbeholdningen, hvis det er "
 "aktiveret"
 
-#: data/ui/med-dialog.blp:874 src/medDialog.js:585 src/treatmentsFactory.js:112
+#: data/ui/med-dialog.blp:864 src/medDialog.js:582 src/treatmentsFactory.js:114
 msgid "Delete"
 msgstr "Slet"
 
-#: data/ui/one-time-dialog.blp:7 data/ui/window.blp:122 src/window.js:1068
+#: data/ui/one-time-dialog.blp:7 data/ui/window.blp:130 src/window.js:1071
 msgid "One-Time Entry"
 msgstr "Engangsindtastning"
 
@@ -417,68 +421,79 @@ msgstr "Fra Behandlingslisten"
 msgid "Amount"
 msgstr "Antal"
 
-#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:161
+#: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:183
+#: src/prefsDialog.js:256
 msgid "Dose"
 msgstr "Dosis"
 
-#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:161
+#: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:183
+#: src/prefsDialog.js:256
 msgid "Time"
 msgstr "Tid"
 
-#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:161
+#: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:183
+#: src/prefsDialog.js:256
 msgid "Date"
 msgstr "Dato"
 
-#: data/ui/one-time-dialog.blp:284 data/ui/preferences.blp:95 src/window.js:885
-#: src/window.js:1068
+#: data/ui/one-time-dialog.blp:284 data/ui/preferences.blp:93 src/window.js:888
+#: src/window.js:1071
 msgid "Confirm"
 msgstr "Bekræft"
 
-#: data/ui/preferences.blp:7 data/ui/window.blp:288
+#: data/ui/preferences.blp:7 data/ui/window.blp:316
 msgid "Preferences"
 msgstr "Præferencer"
 
-#: data/ui/preferences.blp:19
+#: data/ui/preferences.blp:17
 msgid "Auto-Start at Login"
 msgstr "Begynd Automatisk ved Login"
 
-#: data/ui/preferences.blp:35
+#: data/ui/preferences.blp:33
 msgid "Auto-Clear History"
 msgstr "Ryd Historikken Automatisk"
 
-#: data/ui/preferences.blp:36
+#: data/ui/preferences.blp:34
 msgid "Keeps a maximum of 30 days"
 msgstr "Gemmer maks 30 dage"
 
-#: data/ui/preferences.blp:52
+#: data/ui/preferences.blp:50
 msgid "Low Stock Notification"
 msgstr "Få Tilbage Notifikation"
 
-#: data/ui/preferences.blp:53
+#: data/ui/preferences.blp:51
 msgid "Send reminders when treatments are low in stock"
 msgstr "Send påmindelser når lagerbeholdningen er lav"
 
-#: data/ui/preferences.blp:69
+#: data/ui/preferences.blp:67
 msgid "Notification Sound"
 msgstr "Notifikationslyd"
 
-#: data/ui/preferences.blp:85
+#: data/ui/preferences.blp:83
 msgid "Notification Buttons"
 msgstr "Notifikationsknapper"
 
-#: data/ui/preferences.blp:86
+#: data/ui/preferences.blp:84
 msgid "Show or hide confirm/skip"
 msgstr "Vis eller skjul bekræft/spring over"
 
-#: data/ui/preferences.blp:111 data/ui/window.blp:134 src/window.js:886
+#: data/ui/preferences.blp:109 data/ui/window.blp:142 src/window.js:889
 msgid "Skip"
 msgstr "Spring Over"
 
 #: data/ui/preferences.blp:128
-msgid "Export History as CSV"
+#, fuzzy
+#| msgid "Export History as CSV"
+msgid "Export History As"
 msgstr "Eksporter Historik som CSV"
 
-#: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:110
+#: data/ui/preferences.blp:150
+#, fuzzy
+#| msgid "Empty Treatments"
+msgid "Export Treatments As"
+msgstr "Tomme Behandlinger"
+
+#: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:112
 msgid "Refill"
 msgstr "Genopfyld"
 
@@ -490,43 +505,61 @@ msgstr "Vis/Skjul 'Efter Behov'"
 msgid "Search"
 msgstr "Søg"
 
-#: data/ui/window.blp:40
+#: data/ui/window.blp:39
+#, fuzzy
+#| msgid "Treatments"
+msgid "Sort Treatments"
+msgstr "Behandlinger"
+
+#: data/ui/window.blp:48
 msgid "Main Menu"
 msgstr "Hovedmenu"
 
-#: data/ui/window.blp:53
+#: data/ui/window.blp:61
 msgid "Search…"
 msgstr "Søg…"
 
-#: data/ui/window.blp:63
+#: data/ui/window.blp:71
 msgid "Today"
 msgstr "Idag"
 
-#: data/ui/window.blp:109 data/ui/window.blp:198
+#: data/ui/window.blp:117 data/ui/window.blp:206
 msgid "Unselect"
 msgstr "Fjern markeringen"
 
-#: data/ui/window.blp:144 src/prefsDialog.js:138
+#: data/ui/window.blp:152 src/prefsDialog.js:145
 msgid "History"
 msgstr "Historik"
 
-#: data/ui/window.blp:208
+#: data/ui/window.blp:216
 msgid "Remove Entries"
 msgstr "Fjern Indtastninger"
 
-#: data/ui/window.blp:222 src/prefsDialog.js:138
+#: data/ui/window.blp:230 src/prefsDialog.js:165 src/prefsDialog.js:546
 msgid "Treatments"
 msgstr "Behandlinger"
 
-#: data/ui/window.blp:248
+#: data/ui/window.blp:256
 msgid "Empty Treatments"
 msgstr "Tomme Behandlinger"
 
-#: data/ui/window.blp:293
+#: data/ui/window.blp:296
+msgid "Name Ascending"
+msgstr ""
+
+#: data/ui/window.blp:302
+msgid "Stock Remaining (Lowest First)"
+msgstr ""
+
+#: data/ui/window.blp:308
+msgid "Stock Remaining (Highest First)"
+msgstr ""
+
+#: data/ui/window.blp:321
 msgid "About Dosage"
 msgstr "Om Dosering"
 
-#: data/ui/window.blp:298 src/window.js:1269
+#: data/ui/window.blp:326 src/window.js:1272
 msgid "Quit"
 msgstr "Stop"
 
@@ -534,7 +567,8 @@ msgstr "Stop"
 msgid "Confirmed At"
 msgstr "Bekræftet"
 
-#: src/editHistDialog.js:61 src/historyFactory.js:177 src/prefsDialog.js:199
+#: src/editHistDialog.js:61 src/historyFactory.js:178 src/prefsDialog.js:225
+#: src/prefsDialog.js:309
 msgid "Auto-Confirmed"
 msgstr "Automatisk Bekræftet"
 
@@ -542,11 +576,12 @@ msgstr "Automatisk Bekræftet"
 msgid "Skipped At"
 msgstr "Sprunget Over"
 
-#: src/editHistDialog.js:73 src/historyFactory.js:184 src/prefsDialog.js:185
+#: src/editHistDialog.js:73 src/historyFactory.js:187 src/prefsDialog.js:211
+#: src/prefsDialog.js:292
 msgid "Missed"
 msgstr "Misset"
 
-#: src/editHistDialog.js:79 src/prefsDialog.js:202
+#: src/editHistDialog.js:79 src/prefsDialog.js:228 src/prefsDialog.js:313
 msgid "Time Unknown"
 msgstr "Tidspunkt Ukendt"
 
@@ -555,88 +590,138 @@ msgid "Select to be Removed"
 msgstr "Vælg Hvad der Skal Fjernes"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
-#: src/main.js:48
+#: src/main.js:66
 msgid "translator-credits"
 msgstr "Magnus C. <mcle@dtu.dk>"
 
-#: src/main.js:52
+#: src/main.js:70
 msgid "Thanks to These Projects!"
 msgstr "Tak til Følgende Projekter!"
 
-#: src/oneTimeDialog.js:54
+#: src/oneTimeDialog.js:55
 msgid "New"
 msgstr "Ny"
 
-#: src/oneTimeDialog.js:163 src/medDialog.js:549
+#: src/oneTimeDialog.js:173 src/medDialog.js:546
 msgid "Name Already on Treatment List"
 msgstr "Dette Navn er Allerede på Behandlingslisten"
 
-#: src/medDialog.js:113
+#: src/medDialog.js:114
 msgid "Edit Treatment"
 msgstr "Rediger Behandling"
 
-#: src/medDialog.js:128
+#: src/medDialog.js:129
 msgid "Copy"
 msgstr "Kopier"
 
-#: src/medDialog.js:233
+#: src/medDialog.js:234
 msgid "Add Dose"
 msgstr "Tilføj Dosis"
 
-#: src/medDialog.js:441
+#: src/medDialog.js:438
 msgid "Choose"
 msgstr "Vælg"
 
-#: src/medDialog.js:451 src/treatmentsFactory.js:257
+#: src/medDialog.js:448 src/treatmentsFactory.js:259
 msgid "Day"
 msgstr "Dag"
 
-#: src/medDialog.js:522
+#: src/medDialog.js:519
 msgid "Empty Name"
 msgstr "Tomt Navn"
 
-#: src/medDialog.js:528
+#: src/medDialog.js:525
 msgid "Empty Unit"
 msgstr "Tom Enhed"
 
-#: src/medDialog.js:535
+#: src/medDialog.js:532
 msgid "Choose at Least One Day"
 msgstr "Vælg Minimum Én Dag"
 
-#: src/medDialog.js:564
+#: src/medDialog.js:561
 msgid "Duplicated Time"
 msgstr "Dobbelt Tid"
 
-#: src/medDialog.js:580
+#: src/medDialog.js:577
 msgid "Are You Sure?"
 msgstr "Er Du Sikker?"
 
-#: src/medDialog.js:581
+#: src/medDialog.js:578
 msgid "will be deleted"
 msgstr "Vil blive slettet"
 
-#: src/prefsDialog.js:51
+#: src/prefsDialog.js:42
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Tillad Dosering at køre i baggrunden og at modtage notifikationer"
 
-#: src/prefsDialog.js:62 src/window.js:257
+#: src/prefsDialog.js:53 src/window.js:257
 msgid "An Issue Has Occurred"
 msgstr "Der Skete en Fejl"
 
-#: src/prefsDialog.js:65 src/window.js:265 src/window.js:287 src/window.js:309
+#: src/prefsDialog.js:56 src/window.js:265 src/window.js:287 src/window.js:309
 #: src/window.js:327
 msgid "Close"
 msgstr "Luk"
 
-#: src/prefsDialog.js:161
+#: src/prefsDialog.js:183 src/prefsDialog.js:256
 msgid "Status"
 msgstr "Status"
 
-#: src/prefsDialog.js:161
+#: src/prefsDialog.js:183 src/prefsDialog.js:256
 msgid "Time Confirmed"
 msgstr "Tid Bekræftet"
 
-#: src/todayFactory.js:132
+#. TRANSLATORS: Context: 1 Pill at 19:00
+#: src/prefsDialog.js:442
+#, fuzzy
+#| msgid "Date"
+msgid "at"
+msgstr "Dato"
+
+#: src/prefsDialog.js:469 src/treatmentsFactory.js:253 src/utils.js:52
+msgid "Daily"
+msgstr "Daglig"
+
+#. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
+#: src/prefsDialog.js:482
+msgid "day(s) on"
+msgstr ""
+
+#. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
+#: src/prefsDialog.js:484
+msgid "day(s) off"
+msgstr ""
+
+#: src/prefsDialog.js:508
+#, fuzzy
+#| msgid "Starts On"
+msgid "Started on"
+msgstr "Starter Den"
+
+#: src/prefsDialog.js:511 src/treatmentsFactory.js:241
+msgid "Ended on"
+msgstr "Sluttede den"
+
+#: src/prefsDialog.js:557
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "General"
+msgid "Generated on"
+msgstr "Generelt"
+
+#: src/prefsDialog.js:560
+msgid "Ongoing"
+msgstr ""
+
+#: src/prefsDialog.js:561
+msgid "Non-scheduled"
+msgstr ""
+
+#: src/prefsDialog.js:562
+msgid "Finished"
+msgstr ""
+
+#: src/todayFactory.js:134
 msgid "Change Dose"
 msgstr "Ændre Dosis"
 
@@ -644,45 +729,42 @@ msgstr "Ændre Dosis"
 msgid "Remove Dose"
 msgstr "Fjern Dosis"
 
-#: src/treatmentsFactory.js:92
+#: src/treatmentsFactory.js:94
 msgid "Refill Stock"
 msgstr "Genopfyld Lager"
 
-#: src/treatmentsFactory.js:109
+#: src/treatmentsFactory.js:111
 msgid "Edit"
 msgstr "Ændre"
 
-#: src/treatmentsFactory.js:111
+#: src/treatmentsFactory.js:113
 msgid "Duplicate"
 msgstr "Duplikat"
 
-#: src/treatmentsFactory.js:130
+#: src/treatmentsFactory.js:132
 msgid "Options"
 msgstr "Indstillinger"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/treatmentsFactory.js:227
+#: src/treatmentsFactory.js:229
 #, javascript-format
 msgid "%d Remaining"
 msgstr "%d Tilbage"
 
-#: src/treatmentsFactory.js:231
+#: src/treatmentsFactory.js:233
 msgid "Low Stock"
 msgstr "Få Tilbage"
 
-#: src/treatmentsFactory.js:238
+#. TRANSLATORS: label for when duration is enabled
+#: src/treatmentsFactory.js:239
+msgid "Starts on"
+msgstr "Starter den"
+
+#: src/treatmentsFactory.js:240
 msgid "Until"
 msgstr "Indtil"
 
-#: src/treatmentsFactory.js:239
-msgid "Ended On"
-msgstr "Sluttede Den"
-
-#: src/treatmentsFactory.js:251 src/utils.js:52
-msgid "Daily"
-msgstr "Daglig"
-
-#: src/treatmentsFactory.js:266 src/treatmentsFactory.js:269
+#: src/treatmentsFactory.js:268 src/treatmentsFactory.js:271
 msgid "Next Dose"
 msgstr "Næste Dosis"
 
@@ -694,7 +776,7 @@ msgstr "Weekender"
 msgid "Weekdays"
 msgstr "Hverdage"
 
-#: src/window.js:172 src/window.js:922
+#: src/window.js:172 src/window.js:925
 msgid "Reminder"
 msgstr "Påmindelse"
 
@@ -703,40 +785,40 @@ msgstr "Påmindelse"
 msgid "You have treatments low in stock"
 msgstr "Du har behandlinger der er ved at løbe tør for dossier"
 
-#: src/window.js:480
+#: src/window.js:476
 msgid "Show All"
 msgstr "Vis Alle"
 
-#: src/window.js:503
+#: src/window.js:499
 msgid "Show Less"
 msgstr "Vis Mindre"
 
-#: src/window.js:635
+#: src/window.js:631
 msgid "No Results Found"
 msgstr "Ingen Resultater Fundet"
 
-#: src/window.js:635 src/window.js:1491
+#: src/window.js:631 src/window.js:1494
 msgid "Empty History"
 msgstr "Tom Historik"
 
-#: src/window.js:797
+#: src/window.js:800
 msgid "No Treatments Added"
 msgstr "Ingen Behandlinger Tilføjet"
 
-#: src/window.js:797
+#: src/window.js:800
 msgid "All Done for Today"
 msgstr "Færdig for i Dag"
 
-#: src/window.js:885
+#: src/window.js:888
 msgid "Confirm All"
 msgstr "Bekræft Alle"
 
-#: src/window.js:886
+#: src/window.js:889
 msgid "Skip All"
 msgstr "Spring Alle Over"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:917
+#: src/window.js:920
 #, javascript-format
 msgid "and %d more"
 msgstr "og %d flere"
