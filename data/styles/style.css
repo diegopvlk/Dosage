@@ -38,12 +38,12 @@ item-box {
 }
 item-box:dir(ltr) {
   box-shadow: var(--list-border), var(--list-shadow),
-    inset 53px 0 0 -50px rgb(from var(--med-color) r g b / calc(alpha * 0.75));
+    inset 53px 0 0 -50px var(--med-color);
   border-radius: var(--list-border-radius);
 }
 item-box:dir(rtl) {
   box-shadow: var(--list-border), var(--list-shadow),
-    inset -53px 0 0 -50px rgb(from var(--med-color) r g b / calc(alpha * 0.75));
+    inset -53px 0 0 -50px var(--med-color);
   border-radius: var(--list-border-radius);
 }
 item-box label.title:first-child {
@@ -138,10 +138,19 @@ row.combo .dropdown-arrow:hover {
 #med-dialog-dosage-list {
   margin: -2px;
   margin-bottom: -3px;
-  background-color: #f6f6f6;
+  background-color: var(--card-bg-color);
+  border-radius: 12px;
 }
 #med-dialog-dosage-list row {
   border-color: var(--card-shade-color);
+}
+#med-dialog-dosage-list row:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+#med-dialog-dosage-list row:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 /*
@@ -402,7 +411,7 @@ calendar .day-number {
     --list-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.22);
   }
   #med-dialog-dosage-list {
-    background-color: #2b2b2e;
+    background-color: #343437;
   }
   badge-box.confirmed {
     color: #57e389;
