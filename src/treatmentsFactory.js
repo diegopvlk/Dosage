@@ -236,9 +236,9 @@ function setInventoryAndDateLabels(listItem) {
 	}
 
 	// TRANSLATORS: label for when duration is enabled
-	const startLabel = _('Starts On') + ` ${formatDate(item.duration.start)}`;
+	const startLabel = _('Starts on') + ` ${formatDate(item.duration.start)}`;
 	const untilLabel = _('Until') + ` ${formatDate(item.duration.end)}`;
-	const endedLabel = _('Ended On') + ` ${formatDate(item.duration.end)}`;
+	const endedLabel = _('Ended on') + ` ${formatDate(item.duration.end)}`;
 
 	if (item.duration.enabled && item.frequency !== 'when-needed') {
 		durationNextDateLabel.visible = true;

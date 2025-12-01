@@ -411,7 +411,7 @@ function getTreatmentsHTML(treatments) {
 			purple: 'light-dark(#9141ac, #ad7cfd)',
 			cyan: 'light-dark(#00c4cf, #4be2eb)',
 			green: 'light-dark(#26a269, #57e389)',
-			orange: 'light-dark(#ff7800, #ffa348)',
+			orange: 'light-dark(#ff9100, #ffa348)',
 			default: 'light-dark(#6b6d6e, #d0d0d6)',
 		};
 		return colorMap[color];
@@ -458,9 +458,9 @@ function getTreatmentsHTML(treatments) {
 		treatmentsArray.forEach(med => {
 			const cardColor = mapColorToCSS(med.color);
 			const notes = med.notes
-				? `<p style="font-style: italic; color: light-dark(#555, #aaa);"><b>Notes:</b> ${escapeHTML(
-						med.notes,
-				  )}</p>`
+				? `<p style="font-style: italic; color: light-dark(#555, #aaa);"><b>${escapeHTML(
+						_('Notes'),
+				  )}:</b> ${escapeHTML(med.notes)}</p>`
 				: '';
 
 			let frequencyDisplay = '';

@@ -444,7 +444,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 	}
 
 	function handleDayOfMonthLabels() {
-		frequencyMenu.title = _('Day of the Month');
+		frequencyMenu.title = _('Day of Month');
 		frequencyMenu.subtitle = _('Day') + `: ${dayOfMonth.value}`;
 	}
 
