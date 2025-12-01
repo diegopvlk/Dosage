@@ -10,7 +10,7 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import Xdp from 'gi://Xdp';
 import { historyLS, treatmentsLS } from './window.js';
-import { clockIs12, createTempObj } from './utils.js';
+import { clockIs12, createTempObj, getDayLabel } from './utils.js';
 
 export default function openPrefsDialog(DosageApplication) {
 	const container = GLib.getenv('container');
@@ -24,12 +24,9 @@ export default function openPrefsDialog(DosageApplication) {
 	const notifSoundSwitch = builder.get_object('notifSoundSwitch');
 	const confirmSwitch = builder.get_object('confirmSwitch');
 	const skipSwitch = builder.get_object('skipSwitch');
-	const notifBtns = builder.get_object('notifBtns');
 	const exportHistoryFormat = builder.get_object('exportHistoryFormat');
 	const saveHistory = builder.get_object('saveHistory');
-
-	const notifBtnsHeader = notifBtns.get_first_child().get_first_child().get_first_child();
-	notifBtnsHeader.set_activatable(false);
+	const saveTreatments = builder.get_object('saveTreatments');
 
 	autostartSwitch.set_active(settings.get_boolean('autostart'));
 
@@ -119,6 +116,7 @@ export default function openPrefsDialog(DosageApplication) {
 	const DosageWindow = DosageApplication.activeWindow;
 
 	saveHistory.sensitive = historyLS.n_items > 0;
+	saveTreatments.sensitive = treatmentsLS.n_items > 0;
 
 	exportHistoryFormat.set_selected(settings.get_int('export-history-format'));
 
@@ -138,6 +136,8 @@ export default function openPrefsDialog(DosageApplication) {
 		saveHistFile(isISO, isHTML, DosageWindow).catch(console.error);
 	});
 
+	saveTreatments.connect('activated', () => saveTreatFile(DosageWindow));
+
 	prefsDialog.present(DosageWindow);
 }
 
@@ -156,6 +156,24 @@ async function saveHistFile(isISO, isHTML, DosageWindow) {
 	fileToSave = isHTML
 		? getHistoryHTML(tempObj.history, isISO)
 		: getHistoryCSV(tempObj.history, isISO);
+
+	const contents = new TextEncoder().encode(fileToSave);
+	await file.replace_contents_async(contents, null, false, Gio.FileCreateFlags.NONE, null);
+}
+
+async function saveTreatFile(DosageWindow) {
+	let name = _('Dosage') + '_' + _('Treatments');
+
+	const fileDialog = new Gtk.FileDialog({
+		initial_name: name + '.html',
+	});
+
+	const file = await fileDialog.save(DosageWindow, null);
+
+	let tempObj, fileToSave;
+
+	tempObj = createTempObj('treatments', treatmentsLS);
+	fileToSave = getTreatmentsHTML(tempObj.treatments);
 
 	const contents = new TextEncoder().encode(fileToSave);
 	await file.replace_contents_async(contents, null, false, Gio.FileCreateFlags.NONE, null);
@@ -226,15 +244,15 @@ function getHistoryCSV(history, isISO) {
 	return [header.join(','), ...rows].join('\n');
 }
 
-function getHistoryHTML(history, isISO) {
-	const escapeHTML = str =>
-		String(str)
-			.replace(/&/g, '&amp;')
-			.replace(/</g, '&lt;')
-			.replace(/>/g, '&gt;')
-			.replace(/"/g, '&quot;')
-			.replace(/'/g, '&#39;');
+const escapeHTML = str =>
+	String(str)
+		.replace(/&/g, '&amp;')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;')
+		.replace(/"/g, '&quot;')
+		.replace(/'/g, '&#39;');
 
+function getHistoryHTML(history, isISO) {
 	const header = [_('Date'), _('Time'), _('Name'), _('Dose'), _('Status'), _('Time Confirmed')];
 
 	const thead = `
@@ -366,4 +384,184 @@ function minifyHTML(html) {
 		.replace(/\s+/g, ' ')
 		.replace(/\s*(<[^>]+>)\s*/g, '$1')
 		.trim();
+}
+
+function getTreatmentsHTML(treatments) {
+	const now = Date.now();
+
+	const ongoingTreatments = [];
+	const endedTreatments = [];
+
+	const nonWhenNeededTreatments = treatments.filter(med => med.frequency !== 'when-needed');
+	const whenNeededTreatments = treatments.filter(med => med.frequency === 'when-needed');
+
+	nonWhenNeededTreatments.forEach(med => {
+		if (med.duration.enabled && med.duration.end < now) {
+			endedTreatments.push(med);
+		} else {
+			ongoingTreatments.push(med);
+		}
+	});
+
+	const mapColorToCSS = color => {
+		const colorMap = {
+			blue: 'light-dark(#1c71d8, #73a9ff)',
+			red: 'light-dark(#f66151, #ff7f70)',
+			yellow: 'light-dark(#e0a004, #f8e45c)',
+			purple: 'light-dark(#9141ac, #ad7cfd)',
+			cyan: 'light-dark(#00c4cf, #4be2eb)',
+			green: 'light-dark(#26a269, #57e389)',
+			orange: 'light-dark(#ff7800, #ffa348)',
+			default: 'light-dark(#6b6d6e, #d0d0d6)',
+		};
+		return colorMap[color];
+	};
+
+	const formatDate = timestamp => {
+		return new Date(timestamp).toLocaleDateString(undefined, {
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric',
+		});
+	};
+
+	const formatDosage = (dosage, unit) => {
+		return dosage
+			.map(d => {
+				const timeFmt = new Intl.DateTimeFormat(undefined, {
+					hour: 'numeric',
+					minute: 'numeric',
+					hour12: clockIs12,
+				});
+
+				const time = new Date();
+				time.setHours(d.time[0]);
+				time.setMinutes(d.time[1]);
+
+				// TRANSLATORS: Context: 1 Pill at 19:00
+				return `<b>${d.dose} ${escapeHTML(unit)}</b> ${escapeHTML(_('at'))} ${timeFmt.format(
+					time,
+				)}`;
+			})
+			.join('<br>');
+	};
+
+	const createTreatmentGroupHTML = (title, treatmentsArray, isWhenNeeded, hasEnded = false) => {
+		if (treatmentsArray.length === 0) return '';
+
+		let html = `<div style="padding-top: 24px;">`;
+		html += `<h2 style="margin-bottom: 8px; color: light-dark(#555, #ccc); break-before: page;">${escapeHTML(
+			title,
+		)}</h2>`;
+		html += `<div style="display: flex; flex-wrap: wrap; gap: 12px;">`;
+
+		treatmentsArray.forEach(med => {
+			const cardColor = mapColorToCSS(med.color);
+			const notes = med.notes
+				? `<p style="font-style: italic; color: light-dark(#555, #aaa);"><b>Notes:</b> ${escapeHTML(
+						med.notes,
+				  )}</p>`
+				: '';
+
+			let frequencyDisplay = '';
+			switch (med.frequency) {
+				case 'daily':
+					frequencyDisplay = escapeHTML(_('Daily'));
+					break;
+				case 'specific-days':
+					frequencyDisplay = med.days.map(day => getDayLabel(day, 'long')).join(', ');
+					break;
+				case 'day-of-month':
+					frequencyDisplay = escapeHTML(_('Day of Month')) + ': ' + med.monthDay;
+					break;
+				case 'cycle':
+					const daysActive = med.cycle[0];
+					const daysInactive = med.cycle[1];
+					frequencyDisplay = `${daysActive} ${escapeHTML(
+						// TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
+						_('day(s) on'),
+						// TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
+					)}, ${daysInactive} ${escapeHTML(_('day(s) off'))}`;
+					break;
+				default:
+					frequencyDisplay = '';
+			}
+
+			let dosageHtml = '';
+			let durationHtml = '';
+
+			if (isWhenNeeded) {
+				dosageHtml = `<p><b>${med.dosage[0].dose} ${escapeHTML(med.unit)}</b> ${escapeHTML(
+					_('As Needed'),
+				)}</p>`;
+			} else {
+				dosageHtml = `<p>${formatDosage(med.dosage, med.unit)}</p>`;
+
+				if (med.duration.enabled) {
+					const startDate = formatDate(med.duration.start);
+					const endDate = formatDate(med.duration.end);
+					durationHtml = `
+						<p>
+								<b>${escapeHTML(_('Duration'))}:</b><br>
+								${
+									hasEnded
+										? `${escapeHTML(_('Started on'))} ${startDate}<br>`
+										: `${escapeHTML(_('Start'))}: ${startDate}<br>`
+								}
+								${hasEnded ? `${escapeHTML(_('Ended on'))} ${endDate}` : ` ${escapeHTML(_('End'))}: ${endDate}`}
+						</p>
+					`;
+				}
+			}
+
+			html += `
+			<div style="
+				border: 1px solid light-dark(#ccc, rgba(0,0,0,0.3));
+				border-left: 5px solid ${cardColor};
+				padding: 10px 10px 0 10px;
+				border-radius: 12px;
+				width: 286px;
+				box-shadow: 2px 2px 8px light-dark(rgba(0,0,0,0.15), rgba(0,0,0,0.3));
+				background-color: light-dark(#ffffff, #343437);
+				color: light-dark(#000, #eee);
+				break-inside: avoid;
+			">
+				<h3 style="margin-top: -4px; margin-bottom: 6px; color: light-dark(#333, #fff);">${escapeHTML(
+					med.name,
+				)}</h3> 
+				<hr style="border: none; border-bottom: 1px solid light-dark(#ccc, #17171a); margin: 0 -10px 8px -10px;">
+				<p>${hasEnded ? '' : `<b>${escapeHTML(frequencyDisplay)}</b>`}</p>
+				${dosageHtml}
+				${notes} 
+				${durationHtml}
+			</div>
+		`;
+		});
+
+		html += `</div></div>`;
+
+		return html;
+	};
+
+	let title = escapeHTML(_('Dosage')) + ' - ' + escapeHTML(_('Treatments'));
+	let fullHTML = `
+		<style>
+			p {margin: 8px auto; font-size: 14px;}
+			:root {color-scheme: light dark;}
+			* {font-family: system-ui, Arial, sans-serif;}
+			body {background-color: light-dark(#fafafb, #222226)}
+		</style>
+		<title>${title}</title><br>
+		<div style="padding: 0 16px 16px 16px; color: light-dark(#000, #eee);"> 
+		<h1>${title}</h1>
+		<h2>${escapeHTML(_('Generated on')) + ' ' + formatDate(Date.now())}</h2>
+	`;
+
+	fullHTML += createTreatmentGroupHTML(escapeHTML(_('Ongoing')), ongoingTreatments, false);
+	fullHTML += createTreatmentGroupHTML(escapeHTML(_('Non-scheduled')), whenNeededTreatments, true);
+	fullHTML += createTreatmentGroupHTML(escapeHTML(_('Finished')), endedTreatments, false, true);
+
+	fullHTML += `</div>`;
+
+	return fullHTML;
 }

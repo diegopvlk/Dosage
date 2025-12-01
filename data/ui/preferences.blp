@@ -79,10 +79,10 @@ Adw.Dialog prefsDialog {
 						}
 					}
 
-					Adw.ExpanderRow notifBtns {
+					Adw.ExpanderRow {
 						title: _("Notification Buttons");
 						subtitle: _("Show or hide confirm/skip");
-						expanded: true;
+						expanded: false;
 
 						[prefix]
 						Image {
@@ -128,7 +128,7 @@ Adw.Dialog prefsDialog {
 						title: _("Export History As");
 						icon-name: "history-symbolic";
 
-						model: StringList list {
+						model: StringList {
 							strings [
 								"CSV",
 								"CSV (ISO)",
@@ -139,6 +139,25 @@ Adw.Dialog prefsDialog {
 					}
 
 					Adw.ButtonRow saveHistory {
+						title: _("Save");
+						sensitive: false;
+						end-icon-name: "document-save-symbolic";
+					}
+				}
+
+				Adw.PreferencesGroup {
+					Adw.ComboRow exportTreatmentsFormat {
+						title: _("Export Treatments As");
+						icon-name: "treatments-symbolic";
+
+						model: StringList {
+							strings [
+								"HTML",
+							]
+						};
+					}
+
+					Adw.ButtonRow saveTreatments {
 						title: _("Save");
 						sensitive: false;
 						end-icon-name: "document-save-symbolic";

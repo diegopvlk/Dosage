@@ -265,7 +265,12 @@ export function createTempObj(type, listStore, lsIsEmpty) {
 		else break;
 	}
 
-	if (isValid) return tempObj;
+	if (isValid) {
+		if (type === 'treatments') {
+			tempObj.treatments.sort((a, b) => a.name.localeCompare(b.name));
+		}
+		return tempObj;
+	}
 }
 
 export function handleCalendarSelect(calendar, calendarRow, oneTime) {

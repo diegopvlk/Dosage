@@ -31,8 +31,9 @@ statuspage .title {
   margin-bottom: -6px;
 }
 
-#preferences preferencespage preferencesgroup:first-child {
-  margin-bottom: -8px;
+#preferences preferencespage preferencesgroup:first-child,
+#preferences preferencespage preferencesgroup:nth-child(2) {
+  margin-bottom: -10px;
 }
 
 item-box {
