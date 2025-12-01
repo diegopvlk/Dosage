@@ -21,6 +21,7 @@ import { MedicationObject } from './medication.js';
 import { treatmentsLS } from './window.js';
 
 import { TimeDoseRow } from './timeDoseRow.js';
+import { sortTreatFunc } from './treatmentsSorter.js';
 
 const frequencies = ['daily', 'specific-days', 'day-of-month', 'cycle', 'when-needed'];
 
@@ -388,11 +389,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 			},
 		});
 
-		treatmentsLS.insert_sorted(newIt, (a, b) => {
-			const name1 = a.obj.name;
-			const name2 = b.obj.name;
-			return name1.localeCompare(name2);
-		});
+		treatmentsLS.insert_sorted(newIt, sortTreatFunc(settings.get_string('treatments-sorting')));
 
 		updatedItemPosition = treatmentsLS.find(newIt)[1];
 	}

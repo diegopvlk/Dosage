@@ -8,6 +8,7 @@ import Gtk from 'gi://Gtk';
 
 import { DosageApplication } from './main.js';
 import { addSaveKeyControllerToDialog } from './utils.js';
+import { sortTreatments } from './treatmentsSorter.js';
 
 export function openRefillDialog(listItem, position) {
 	const item = listItem.get_item().obj;
@@ -37,6 +38,7 @@ export function openRefillDialog(listItem, position) {
 		// trigger signal to update labels
 		listItem.get_item().notify('obj');
 
+		sortTreatments(settings.get_string('treatments-sorting'));
 		DosageWindow.updateEverything({ skipHistUp: true, skipCycleUp: true });
 		const pos = Math.max(0, position - 1);
 		DosageWindow._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);

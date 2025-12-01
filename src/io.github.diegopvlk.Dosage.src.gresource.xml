@@ -14,6 +14,7 @@
     <file>timePicker.js</file>
     <file>todayFactory.js</file>
     <file>treatmentsFactory.js</file>
+    <file>treatmentsSorter.js</file>
     <file>upgradeItems.js</file>
     <file>utils.js</file>
     <file>window.js</file>

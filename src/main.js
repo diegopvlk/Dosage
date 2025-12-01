@@ -13,6 +13,7 @@ import Gtk from 'gi://Gtk';
 import openPrefsDialog from './prefsDialog.js';
 import { DosageWindow } from './window.js';
 import { releaseNotes } from './releaseNotes.js';
+import { sortTreatments } from './treatmentsSorter.js';
 
 pkg.initGettext();
 pkg.initFormat();
@@ -27,6 +28,23 @@ export const DosageApplication = GObject.registerClass(
 			});
 
 			this.hidden = false;
+
+			const appId = this.get_application_id();
+			globalThis.settings = new Gio.Settings({ schemaId: appId });
+
+			const treatmentsSorterAction = new Gio.SimpleAction({
+				enabled: true,
+				name: 'treatments-sorter',
+				state: new GLib.Variant('s', settings.get_string('treatments-sorting')),
+				parameter_type: new GLib.VariantType('s'),
+			});
+			treatmentsSorterAction.connect('activate', (action, parameter) => {
+				treatmentsSorterAction.state = parameter;
+				const sorting = parameter.get_string()[0];
+				settings.set_string('treatments-sorting', sorting);
+				sortTreatments(sorting);
+			});
+			this.add_action(treatmentsSorterAction);
 
 			const showPrefAction = new Gio.SimpleAction({ name: 'preferences' });
 			showPrefAction.connect('activate', () => openPrefsDialog(this));

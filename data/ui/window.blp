@@ -32,6 +32,14 @@ template $DosageWindow: Adw.ApplicationWindow {
 				visible: false;
 			}
 
+			[start]
+			MenuButton buttonTreatmentsSorter {
+				menu-model: menuTreatmentsSorter;
+				icon-name: 'dosage-treatments-sorting-symbolic';
+				tooltip-text: _("Sort Treatments");
+				visible: false;
+			}
+
 			[end]
 			MenuButton buttonMenu {
 				menu-model: appMenu;
@@ -281,6 +289,26 @@ template $DosageWindow: Adw.ApplicationWindow {
 			stack: viewStack;
 		}
 	};
+}
+
+menu menuTreatmentsSorter {
+	item {
+		label: _("Name Ascending");
+		action: "app.treatments-sorter";
+		target: "name-ascending";
+	}
+
+	item {
+		label: _("Stock Remaining (Less First)");
+		action: "app.treatments-sorter";
+		target: "amount-remaining-less";
+	}
+
+	item {
+		label: _("Stock Remaining (More First)");
+		action: "app.treatments-sorter";
+		target: "amount-remaining-more";
+	}
 }
 
 menu appMenu {

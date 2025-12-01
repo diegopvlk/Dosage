@@ -31,6 +31,7 @@ import {
 	isValidTreatmentItem,
 	isValidHistoryItem,
 } from './utils.js';
+import { sortTreatFunc } from './treatmentsSorter.js';
 
 export const historyLS = Gio.ListStore.new(MedicationObject);
 export const treatmentsLS = Gio.ListStore.new(MedicationObject);
@@ -47,6 +48,7 @@ export const DosageWindow = GObject.registerClass(
 			'historyList',
 			'treatmentsList',
 			'treatmentsPage',
+			'buttonTreatmentsSorter',
 			'emptyToday',
 			'emptyHistory',
 			'emptyTreatments',
@@ -71,8 +73,6 @@ export const DosageWindow = GObject.registerClass(
 
 		#loadSettings() {
 			this.app = this.get_application();
-			const appId = this.app.get_application_id();
-			globalThis.settings = new Gio.Settings({ schemaId: appId });
 			settings.bind('window-width', this, 'default-width', Gio.SettingsBindFlags.DEFAULT);
 			settings.bind('window-height', this, 'default-height', Gio.SettingsBindFlags.DEFAULT);
 			settings.connect('changed::clear-old-hist', (sett, key) => {
@@ -354,11 +354,7 @@ export const DosageWindow = GObject.registerClass(
 									markConfirmed: med.markConfirmed,
 								},
 							}),
-							(a, b) => {
-								const name1 = a.obj.name;
-								const name2 = b.obj.name;
-								return name1.localeCompare(name2);
-							},
+							sortTreatFunc(settings.get_string('treatments-sorting')),
 						);
 					});
 
@@ -672,6 +668,9 @@ export const DosageWindow = GObject.registerClass(
 				this._buttonSearch.visible = histVisible;
 				this._searchBar.visible = histVisible;
 
+				const treatmentsVisible = viewStack.visible_child_name === 'treatments-page';
+				this._buttonTreatmentsSorter.visible = treatmentsVisible;
+
 				if (histVisible) {
 					this.showSearchAction.connect('activate', () => {
 						this._searchBar.search_mode_enabled = true;
@@ -787,6 +786,10 @@ export const DosageWindow = GObject.registerClass(
 			}
 
 			this.todayLS.splice(0, 0, tempList);
+
+			this.todayLS.sort((a, b) => {
+				return a.obj.name.localeCompare(b.obj.name);
+			});
 
 			const noItems = this.sortedTodayModel.get_n_items() === 0;
 			const noTreatments = this._treatmentsList.model.get_n_items() === 0;

@@ -1,6 +1,7 @@
 'use strict';
 
 import Adw from 'gi://Adw';
+import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
 
@@ -82,7 +83,16 @@ export function openOneTimeDialog(DosageWindow) {
 
 	if (DosageWindow._treatmentsList.model.get_n_items() > 0) {
 		oneTimeBtnRow.sensitive = true;
+
+		const tempTreatmentsLS = Gio.ListStore.new(MedicationObject);
+
 		for (const it of treatmentsLS) {
+			tempTreatmentsLS.insert_sorted(it, (a, b) => {
+				return a.obj.name.localeCompare(b.obj.name);
+			});
+		}
+
+		for (const it of tempTreatmentsLS) {
 			const item = it.obj;
 			const btn = new Gtk.Button({
 				css_classes: ['flat', 'one-time-name'],

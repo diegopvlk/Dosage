@@ -32,5 +32,8 @@
 		<key name="show-when-needed" type="b">
       <default>false</default>
     </key>
+    <key name="treatments-sorting" type="s">
+      <default>'name-ascending'</default>
+    </key>
   </schema>
 </schemalist>
