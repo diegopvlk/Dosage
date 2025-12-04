@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-01 22:25-0300\n"
+"POT-Creation-Date: 2025-12-04 17:46-0300\n"
 "PO-Revision-Date: 2025-07-28 02:00+0000\n"
 "Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -24,7 +24,7 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3 data/ui/window.blp:6
 #: src/main.js:57 src/prefsDialog.js:145 src/prefsDialog.js:165
-#: src/prefsDialog.js:546 src/window.js:1042
+#: src/prefsDialog.js:550 src/window.js:1042
 msgid "Dosage"
 msgstr "Дозировка"
 
@@ -145,7 +145,7 @@ msgid "Skipped"
 msgstr "Пропуснати"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
-#: src/historyFactory.js:191 src/prefsDialog.js:217 src/prefsDialog.js:228
+#: src/historyFactory.js:190 src/prefsDialog.js:217 src/prefsDialog.js:228
 #: src/prefsDialog.js:300 src/prefsDialog.js:313
 msgid "Confirmed"
 msgstr "Потвърдено"
@@ -270,7 +270,7 @@ msgstr "Капки"
 msgid "Potion"
 msgstr "Отвара"
 
-#: data/ui/med-dialog.blp:441 src/prefsDialog.js:462
+#: data/ui/med-dialog.blp:441 src/prefsDialog.js:463
 msgid "Notes"
 msgstr "Бележки"
 
@@ -290,7 +290,7 @@ msgstr "Всяки ден"
 msgid "Specific Days"
 msgstr "Конкретни дни"
 
-#: data/ui/med-dialog.blp:458 src/medDialog.js:447 src/prefsDialog.js:475
+#: data/ui/med-dialog.blp:458 src/medDialog.js:447 src/prefsDialog.js:476
 msgid "Day of Month"
 msgstr "Ден от месеца"
 
@@ -298,7 +298,7 @@ msgstr "Ден от месеца"
 msgid "Cycle"
 msgstr "Цикъл"
 
-#: data/ui/med-dialog.blp:460 src/prefsDialog.js:495 src/todayFactory.js:41
+#: data/ui/med-dialog.blp:460 src/prefsDialog.js:496 src/todayFactory.js:41
 #: src/treatmentsFactory.js:283
 msgid "As Needed"
 msgstr "При необходимост"
@@ -370,7 +370,7 @@ msgstr "Напомнете ме в"
 msgid "Refill Amount"
 msgstr "Презареждане на бройката"
 
-#: data/ui/med-dialog.blp:763 src/prefsDialog.js:505
+#: data/ui/med-dialog.blp:763 src/prefsDialog.js:509
 msgid "Duration"
 msgstr "Продължителност"
 
@@ -378,7 +378,7 @@ msgstr "Продължителност"
 msgid "Set start and end dates"
 msgstr "Задаване на начална и крайна дата"
 
-#: data/ui/med-dialog.blp:774 src/prefsDialog.js:509
+#: data/ui/med-dialog.blp:774 src/prefsDialog.js:513
 #, fuzzy
 #| msgid "Starts On"
 msgid "Start"
@@ -389,7 +389,7 @@ msgstr "Започва от"
 msgid "Choose Date"
 msgstr "Избиране на дата"
 
-#: data/ui/med-dialog.blp:816 src/prefsDialog.js:511
+#: data/ui/med-dialog.blp:816 src/prefsDialog.js:515
 #, fuzzy
 #| msgid "Ends On"
 msgid "End"
@@ -537,7 +537,7 @@ msgstr "История"
 msgid "Remove Entries"
 msgstr "Премахване на записите"
 
-#: data/ui/window.blp:230 src/prefsDialog.js:165 src/prefsDialog.js:546
+#: data/ui/window.blp:230 src/prefsDialog.js:165 src/prefsDialog.js:550
 msgid "Treatments"
 msgstr "Лечения"
 
@@ -550,11 +550,11 @@ msgid "Name Ascending"
 msgstr ""
 
 #: data/ui/window.blp:302
-msgid "Stock Remaining (Lowest First)"
+msgid "Remaining Stock (Lowest First)"
 msgstr ""
 
 #: data/ui/window.blp:308
-msgid "Stock Remaining (Highest First)"
+msgid "Remaining Stock (Highest First)"
 msgstr ""
 
 #: data/ui/window.blp:321
@@ -578,7 +578,7 @@ msgstr "Автоматично потвърдено"
 msgid "Skipped At"
 msgstr "Пропуснати в"
 
-#: src/editHistDialog.js:73 src/historyFactory.js:187 src/prefsDialog.js:211
+#: src/editHistDialog.js:73 src/historyFactory.js:186 src/prefsDialog.js:211
 #: src/prefsDialog.js:292
 msgid "Missed"
 msgstr "Изпуснати"
@@ -675,52 +675,52 @@ msgid "Time Confirmed"
 msgstr "Часът е потвърден"
 
 #. TRANSLATORS: Context: 1 Pill at 19:00
-#: src/prefsDialog.js:442
+#: src/prefsDialog.js:443
 #, fuzzy
 #| msgid "Date"
 msgid "at"
 msgstr "Дата"
 
-#: src/prefsDialog.js:469 src/treatmentsFactory.js:253 src/utils.js:52
+#: src/prefsDialog.js:470 src/treatmentsFactory.js:253 src/utils.js:52
 msgid "Daily"
 msgstr "Ежедневно"
 
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
-#: src/prefsDialog.js:482
+#: src/prefsDialog.js:483
 msgid "day(s) on"
 msgstr ""
 
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
-#: src/prefsDialog.js:484
+#: src/prefsDialog.js:485
 msgid "day(s) off"
 msgstr ""
 
-#: src/prefsDialog.js:508
+#: src/prefsDialog.js:512
 #, fuzzy
 #| msgid "Starts On"
 msgid "Started on"
 msgstr "Започва от"
 
-#: src/prefsDialog.js:511 src/treatmentsFactory.js:241
+#: src/prefsDialog.js:515 src/treatmentsFactory.js:241
 msgid "Ended on"
 msgstr "Завършено на"
 
-#: src/prefsDialog.js:557
+#: src/prefsDialog.js:561
 #, fuzzy
 #| msgctxt "shortcut window"
 #| msgid "General"
 msgid "Generated on"
 msgstr "Общи"
 
-#: src/prefsDialog.js:560
+#: src/prefsDialog.js:564
 msgid "Ongoing"
 msgstr ""
 
-#: src/prefsDialog.js:561
+#: src/prefsDialog.js:565
 msgid "Non-scheduled"
 msgstr ""
 
-#: src/prefsDialog.js:562
+#: src/prefsDialog.js:566
 msgid "Finished"
 msgstr ""
 

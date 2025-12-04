@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-01 22:25-0300\n"
+"POT-Creation-Date: 2025-12-04 17:46-0300\n"
 "PO-Revision-Date: 2025-02-10 23:31+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/dosage/dosage/ko/"
@@ -23,7 +23,7 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3 data/ui/window.blp:6
 #: src/main.js:57 src/prefsDialog.js:145 src/prefsDialog.js:165
-#: src/prefsDialog.js:546 src/window.js:1042
+#: src/prefsDialog.js:550 src/window.js:1042
 msgid "Dosage"
 msgstr "복용량"
 
@@ -140,7 +140,7 @@ msgid "Skipped"
 msgstr "건너뜀"
 
 #: data/ui/edit-hist-dialog.blp:113 src/editHistDialog.js:78
-#: src/historyFactory.js:191 src/prefsDialog.js:217 src/prefsDialog.js:228
+#: src/historyFactory.js:190 src/prefsDialog.js:217 src/prefsDialog.js:228
 #: src/prefsDialog.js:300 src/prefsDialog.js:313
 msgid "Confirmed"
 msgstr "확인됨"
@@ -265,7 +265,7 @@ msgstr "액"
 msgid "Potion"
 msgstr "약물"
 
-#: data/ui/med-dialog.blp:441 src/prefsDialog.js:462
+#: data/ui/med-dialog.blp:441 src/prefsDialog.js:463
 msgid "Notes"
 msgstr "메모"
 
@@ -285,7 +285,7 @@ msgstr "매일"
 msgid "Specific Days"
 msgstr "특정 요일"
 
-#: data/ui/med-dialog.blp:458 src/medDialog.js:447 src/prefsDialog.js:475
+#: data/ui/med-dialog.blp:458 src/medDialog.js:447 src/prefsDialog.js:476
 msgid "Day of Month"
 msgstr "월의 날짜"
 
@@ -293,7 +293,7 @@ msgstr "월의 날짜"
 msgid "Cycle"
 msgstr "주기"
 
-#: data/ui/med-dialog.blp:460 src/prefsDialog.js:495 src/todayFactory.js:41
+#: data/ui/med-dialog.blp:460 src/prefsDialog.js:496 src/todayFactory.js:41
 #: src/treatmentsFactory.js:283
 msgid "As Needed"
 msgstr "필요할 때"
@@ -365,7 +365,7 @@ msgstr "나에게 알림"
 msgid "Refill Amount"
 msgstr "재충전량"
 
-#: data/ui/med-dialog.blp:763 src/prefsDialog.js:505
+#: data/ui/med-dialog.blp:763 src/prefsDialog.js:509
 msgid "Duration"
 msgstr "기간"
 
@@ -373,7 +373,7 @@ msgstr "기간"
 msgid "Set start and end dates"
 msgstr "시작 및 종료 날짜 설정"
 
-#: data/ui/med-dialog.blp:774 src/prefsDialog.js:509
+#: data/ui/med-dialog.blp:774 src/prefsDialog.js:513
 #, fuzzy
 #| msgid "Starts On"
 msgid "Start"
@@ -384,7 +384,7 @@ msgstr "시작일"
 msgid "Choose Date"
 msgstr "날짜 선택"
 
-#: data/ui/med-dialog.blp:816 src/prefsDialog.js:511
+#: data/ui/med-dialog.blp:816 src/prefsDialog.js:515
 #, fuzzy
 #| msgid "Ends On"
 msgid "End"
@@ -532,7 +532,7 @@ msgstr "기록"
 msgid "Remove Entries"
 msgstr "항목 제거"
 
-#: data/ui/window.blp:230 src/prefsDialog.js:165 src/prefsDialog.js:546
+#: data/ui/window.blp:230 src/prefsDialog.js:165 src/prefsDialog.js:550
 msgid "Treatments"
 msgstr "치료"
 
@@ -545,11 +545,11 @@ msgid "Name Ascending"
 msgstr ""
 
 #: data/ui/window.blp:302
-msgid "Stock Remaining (Lowest First)"
+msgid "Remaining Stock (Lowest First)"
 msgstr ""
 
 #: data/ui/window.blp:308
-msgid "Stock Remaining (Highest First)"
+msgid "Remaining Stock (Highest First)"
 msgstr ""
 
 #: data/ui/window.blp:321
@@ -573,7 +573,7 @@ msgstr "자동 확인됨"
 msgid "Skipped At"
 msgstr "건너뛴 시간"
 
-#: src/editHistDialog.js:73 src/historyFactory.js:187 src/prefsDialog.js:211
+#: src/editHistDialog.js:73 src/historyFactory.js:186 src/prefsDialog.js:211
 #: src/prefsDialog.js:292
 msgid "Missed"
 msgstr "놓친"
@@ -669,52 +669,52 @@ msgid "Time Confirmed"
 msgstr "확인 시간"
 
 #. TRANSLATORS: Context: 1 Pill at 19:00
-#: src/prefsDialog.js:442
+#: src/prefsDialog.js:443
 #, fuzzy
 #| msgid "Date"
 msgid "at"
 msgstr "날짜"
 
-#: src/prefsDialog.js:469 src/treatmentsFactory.js:253 src/utils.js:52
+#: src/prefsDialog.js:470 src/treatmentsFactory.js:253 src/utils.js:52
 msgid "Daily"
 msgstr "매일"
 
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
-#: src/prefsDialog.js:482
+#: src/prefsDialog.js:483
 msgid "day(s) on"
 msgstr ""
 
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
-#: src/prefsDialog.js:484
+#: src/prefsDialog.js:485
 msgid "day(s) off"
 msgstr ""
 
-#: src/prefsDialog.js:508
+#: src/prefsDialog.js:512
 #, fuzzy
 #| msgid "Starts On"
 msgid "Started on"
 msgstr "시작일"
 
-#: src/prefsDialog.js:511 src/treatmentsFactory.js:241
+#: src/prefsDialog.js:515 src/treatmentsFactory.js:241
 msgid "Ended on"
 msgstr "종료일"
 
-#: src/prefsDialog.js:557
+#: src/prefsDialog.js:561
 #, fuzzy
 #| msgctxt "shortcut window"
 #| msgid "General"
 msgid "Generated on"
 msgstr "일반"
 
-#: src/prefsDialog.js:560
+#: src/prefsDialog.js:564
 msgid "Ongoing"
 msgstr ""
 
-#: src/prefsDialog.js:561
+#: src/prefsDialog.js:565
 msgid "Non-scheduled"
 msgstr ""
 
-#: src/prefsDialog.js:562
+#: src/prefsDialog.js:566
 msgid "Finished"
 msgstr ""
 
