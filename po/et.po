@@ -122,7 +122,7 @@ msgstr "Välju"
 
 #: data/ui/edit-hist-dialog.blp:7
 msgid "Edit Entry"
-msgstr "Muuda Kirjet"
+msgstr "Muuda kirjet"
 
 #: data/ui/edit-hist-dialog.blp:18 data/ui/med-dialog.blp:19
 #: src/medDialog.js:581
@@ -138,7 +138,7 @@ msgstr "Salvesta"
 #: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:209
 #: src/timeDoseRow.js:40
 msgid "Change Time"
-msgstr "Muuda Aega"
+msgstr "Muuda aega"
 
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:183
 #: src/prefsDialog.js:214 src/prefsDialog.js:296
@@ -153,7 +153,7 @@ msgstr "Kinnitatud"
 
 #: data/ui/med-dialog.blp:7
 msgid "New Treatment"
-msgstr "Uus Ravikuur"
+msgstr "Uus ravikuur"
 
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:279
 msgid "Add"
@@ -221,7 +221,7 @@ msgstr "Tablett"
 
 #: data/ui/med-dialog.blp:240
 msgid "Alternative Pill"
-msgstr "Tableti Teine Variant"
+msgstr "Tableti teine variant"
 
 #: data/ui/med-dialog.blp:256
 msgid "Capsule"
@@ -229,11 +229,11 @@ msgstr "Kapsel"
 
 #: data/ui/med-dialog.blp:272
 msgid "Round Pill"
-msgstr "Ümmargune Tablett"
+msgstr "Ümmargune tablett"
 
 #: data/ui/med-dialog.blp:288
 msgid "Alternative Round Pill"
-msgstr "Ümmarguse Tableti Teine Variant"
+msgstr "Ümmarguse tableti teine variant"
 
 #: data/ui/med-dialog.blp:304
 msgid "Ampoule"
@@ -245,11 +245,11 @@ msgstr "Süst"
 
 #: data/ui/med-dialog.blp:336
 msgid "Square Pill"
-msgstr "Kandiline Tablett"
+msgstr "Kandiline tablett"
 
 #: data/ui/med-dialog.blp:352
 msgid "Alternative Square Pill"
-msgstr "Kandilise Tableti Teine Variant"
+msgstr "Kandilise tableti teine variant"
 
 #: data/ui/med-dialog.blp:368
 msgid "Triangle pill"
@@ -257,7 +257,7 @@ msgstr "Kolmnurkne tablett"
 
 #: data/ui/med-dialog.blp:384
 msgid "Alternative Triangle Pill"
-msgstr "Kolmnurkse Tableti Teine Variant"
+msgstr "Kolmnurkse tableti teine variant"
 
 #: data/ui/med-dialog.blp:400
 msgid "Bottle"
@@ -285,15 +285,15 @@ msgstr "Sagedus"
 
 #: data/ui/med-dialog.blp:456
 msgid "Every Day"
-msgstr "Iga Päev"
+msgstr "Iga päev"
 
 #: data/ui/med-dialog.blp:457 src/medDialog.js:475
 msgid "Specific Days"
-msgstr "Kindlatel Päevadel"
+msgstr "Kindlatel päevadel"
 
 #: data/ui/med-dialog.blp:458 src/medDialog.js:447 src/prefsDialog.js:476
 msgid "Day of Month"
-msgstr "Kuu Konkreetsel Päeval"
+msgstr "Kuu konkreetsel päeval"
 
 #: data/ui/med-dialog.blp:459 src/medDialog.js:482 src/treatmentsFactory.js:280
 msgid "Cycle"
@@ -302,36 +302,36 @@ msgstr "Tsüklitena"
 #: data/ui/med-dialog.blp:460 src/prefsDialog.js:496 src/todayFactory.js:41
 #: src/treatmentsFactory.js:283
 msgid "As Needed"
-msgstr "Siis, Kui Vaja"
+msgstr "Vastavalt vajadusele"
 
 #: data/ui/med-dialog.blp:472
 msgid "Choose Days"
-msgstr "Vali Päevad"
+msgstr "Vali päevad"
 
 #: data/ui/med-dialog.blp:571
 msgid "Choose Day"
-msgstr "Vali Päev"
+msgstr "Vali päev"
 
 #: data/ui/med-dialog.blp:616
 msgid "Change Cycle"
-msgstr "Muuda Tsüklit"
+msgstr "Muuda tsüklit"
 
 #: data/ui/med-dialog.blp:641
 msgid "Days Active"
-msgstr "Aktiivseid Päevi"
+msgstr "Aktiivseid päevi"
 
 #: data/ui/med-dialog.blp:655
 msgid "Days Inactive"
-msgstr "Mitteaktiivseid Päevi"
+msgstr "Mitteaktiivseid päevi"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-dialog.blp:670
 msgid "Today is Cycle Day…"
-msgstr "Täna on Tsükli Päev…"
+msgstr "Täna on tsükli päev…"
 
 #: data/ui/med-dialog.blp:693
 msgid "Increase Notification Priority"
-msgstr "Suurenda Teavituse Olulisust"
+msgstr "Suurenda teavituse olulisust"
 
 #: data/ui/med-dialog.blp:694
 msgid "Show in fullscreen mode or with 'Do Not Disturb' enabled"
@@ -339,7 +339,7 @@ msgstr "Näita täisekraanivaates või siis, kui „Ära sega“ režiim on kasu
 
 #: data/ui/med-dialog.blp:698
 msgid "Recurring Notifications"
-msgstr "Teavita Korduvalt"
+msgstr "Teavita korduvalt"
 
 #: data/ui/med-dialog.blp:699
 msgid "Renotify until it's confirmed or skipped"
@@ -347,7 +347,7 @@ msgstr "Teavita uuesti kuni kinnitamiseni või vahelejätmiseni"
 
 #: data/ui/med-dialog.blp:704
 msgid "Interval in Minutes"
-msgstr "Välp Minutites"
+msgstr "Välp minutites"
 
 #: data/ui/med-dialog.blp:717 data/ui/refill-dialog.blp:36
 msgid "Inventory"
@@ -367,7 +367,7 @@ msgstr "Teavita, kui varuks on vaid"
 
 #: data/ui/med-dialog.blp:750
 msgid "Refill Amount"
-msgstr "Juurdelisatav Kogus"
+msgstr "Juurdelisatav kogus"
 
 #: data/ui/med-dialog.blp:763 src/prefsDialog.js:509
 msgid "Duration"
@@ -378,8 +378,6 @@ msgid "Set start and end dates"
 msgstr "Lisa alguse ja lõpu kuupäevad"
 
 #: data/ui/med-dialog.blp:774 src/prefsDialog.js:513
-#, fuzzy
-#| msgid "Starts On"
 msgid "Start"
 msgstr "Algab"
 
@@ -389,14 +387,12 @@ msgid "Choose Date"
 msgstr "Vali Kuupäev"
 
 #: data/ui/med-dialog.blp:816 src/prefsDialog.js:515
-#, fuzzy
-#| msgid "Ends On"
 msgid "End"
 msgstr "Lõppeb"
 
 #: data/ui/med-dialog.blp:854
 msgid "Mark as Confirmed"
-msgstr "Märgi Kinnitatuks"
+msgstr "Märgi kinnitatuks"
 
 #: data/ui/med-dialog.blp:855
 msgid ""
@@ -412,11 +408,11 @@ msgstr "Kustuta"
 
 #: data/ui/one-time-dialog.blp:7 data/ui/window.blp:130 src/window.js:1071
 msgid "One-Time Entry"
-msgstr "Ühekordne Kirje"
+msgstr "Ühekordne kirje"
 
 #: data/ui/one-time-dialog.blp:43
 msgid "From Treatment List"
-msgstr "Ravikuuride Loendist"
+msgstr "Ravikuuride loendist"
 
 #: data/ui/one-time-dialog.blp:181
 msgid "Amount"
@@ -448,11 +444,11 @@ msgstr "Eelistused"
 
 #: data/ui/preferences.blp:17
 msgid "Auto-Start at Login"
-msgstr "Käivita Sisselogimisel Automaatselt"
+msgstr "Käivita sisselogimisel automaatselt"
 
 #: data/ui/preferences.blp:33
 msgid "Auto-Clear History"
-msgstr "Kustuta Ajalugu Automaatselt"
+msgstr "Kustuta ajalugu automaatselt"
 
 #: data/ui/preferences.blp:34
 msgid "Keeps a maximum of 30 days"
@@ -460,7 +456,7 @@ msgstr "Sel juhul säilib ajalugu kuni 30 päeva"
 
 #: data/ui/preferences.blp:50
 msgid "Low Stock Notification"
-msgstr "Teavita Varude Lõppemisest"
+msgstr "Teavita varude lõppemisest"
 
 #: data/ui/preferences.blp:51
 msgid "Send reminders when treatments are low in stock"
@@ -468,11 +464,11 @@ msgstr "Teavita, kui laovarud hakkavad lõppema"
 
 #: data/ui/preferences.blp:67
 msgid "Notification Sound"
-msgstr "Teavituse Heli"
+msgstr "Teavituse heli"
 
 #: data/ui/preferences.blp:83
 msgid "Notification Buttons"
-msgstr "Teavituse Nupud"
+msgstr "Teavituse nupud"
 
 #: data/ui/preferences.blp:84
 msgid "Show or hide confirm/skip"
@@ -480,19 +476,15 @@ msgstr "Näita või peida kinnituse ja vahelejätmise nupud"
 
 #: data/ui/preferences.blp:109 data/ui/window.blp:142 src/window.js:889
 msgid "Skip"
-msgstr "Jäta Vahele"
+msgstr "Jäta vahele"
 
 #: data/ui/preferences.blp:128
-#, fuzzy
-#| msgid "Export History as CSV"
 msgid "Export History As"
-msgstr "Ekspordi Ajalugu CSV-failina"
+msgstr "Ekspordi ajalugu kui"
 
 #: data/ui/preferences.blp:150
-#, fuzzy
-#| msgid "Empty Treatments"
 msgid "Export Treatments As"
-msgstr "Lisamiseks Klõpsi Allolevat Nuppu"
+msgstr "Ekspordi ravikuur kui"
 
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:112
 msgid "Refill"
@@ -500,17 +492,15 @@ msgstr "Lisa ravimivarusid"
 
 #: data/ui/window.blp:23
 msgid "Show/Hide 'As Needed'"
-msgstr "Näita/Peida „Siis, Kui Vaja“"
+msgstr "Näita/peida „Vastavalt vajadusele“"
 
 #: data/ui/window.blp:31
 msgid "Search"
 msgstr "Otsi"
 
 #: data/ui/window.blp:39
-#, fuzzy
-#| msgid "Treatments"
 msgid "Sort Treatments"
-msgstr "Ravikuurid"
+msgstr "Järjesta ravikuure"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
@@ -526,7 +516,7 @@ msgstr "Täna"
 
 #: data/ui/window.blp:117 data/ui/window.blp:206
 msgid "Unselect"
-msgstr "Eemalda Valik"
+msgstr "Eemalda valik"
 
 #: data/ui/window.blp:152 src/prefsDialog.js:145
 msgid "History"
@@ -534,7 +524,7 @@ msgstr "Ajalugu"
 
 #: data/ui/window.blp:216
 msgid "Remove Entries"
-msgstr "Eemalda Kirjed"
+msgstr "Eemalda kirjed"
 
 #: data/ui/window.blp:230 src/prefsDialog.js:165 src/prefsDialog.js:550
 msgid "Treatments"
@@ -542,11 +532,11 @@ msgstr "Ravikuurid"
 
 #: data/ui/window.blp:256
 msgid "Empty Treatments"
-msgstr "Lisamiseks Klõpsi Allolevat Nuppu"
+msgstr "Lisamiseks klõpsi allolevat nuppu"
 
 #: data/ui/window.blp:296
 msgid "Name Ascending"
-msgstr ""
+msgstr "Nime järgi kahanevalt"
 
 #: data/ui/window.blp:302
 msgid "Remaining Stock (Lowest First)"
@@ -566,16 +556,16 @@ msgstr "Välju"
 
 #: src/editHistDialog.js:52 src/editHistDialog.js:65 src/editHistDialog.js:89
 msgid "Confirmed At"
-msgstr "Kinnitatud Kell"
+msgstr "Kinnitatud kell"
 
 #: src/editHistDialog.js:61 src/historyFactory.js:178 src/prefsDialog.js:225
 #: src/prefsDialog.js:309
 msgid "Auto-Confirmed"
-msgstr "Automaatselt Kinnitatud"
+msgstr "Automaatselt kinnitatud"
 
 #: src/editHistDialog.js:69 src/editHistDialog.js:93
 msgid "Skipped At"
-msgstr "Vahelejäetud Kell"
+msgstr "Vahelejäetud kell"
 
 #: src/editHistDialog.js:73 src/historyFactory.js:186 src/prefsDialog.js:211
 #: src/prefsDialog.js:292
@@ -584,11 +574,11 @@ msgstr "Jäänud märkamata"
 
 #: src/editHistDialog.js:79 src/prefsDialog.js:228 src/prefsDialog.js:313
 msgid "Time Unknown"
-msgstr "Aeg Pole Teada"
+msgstr "Aeg pole teada"
 
 #: src/historyFactory.js:47
 msgid "Select to be Removed"
-msgstr "Vali Eemaldatav"
+msgstr "Vali eemaldatav"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:66
@@ -597,7 +587,7 @@ msgstr "Priit Jõerüüt 2025"
 
 #: src/main.js:70
 msgid "Thanks to These Projects!"
-msgstr "Suur Tänu Järgnevatele Projektidele!"
+msgstr "Suur tänu järgnevatele projektidele!"
 
 #: src/oneTimeDialog.js:55
 msgid "New"
@@ -605,11 +595,11 @@ msgstr "Uus"
 
 #: src/oneTimeDialog.js:173 src/medDialog.js:546
 msgid "Name Already on Treatment List"
-msgstr "Selline Nimi on Juba Ravikuuride Loendis"
+msgstr "Selline nimi on juba ravikuuride loendis"
 
 #: src/medDialog.js:114
 msgid "Edit Treatment"
-msgstr "Muuda Ravikuuri"
+msgstr "Muuda ravikuuri"
 
 #: src/medDialog.js:129
 msgid "Copy"
@@ -617,7 +607,7 @@ msgstr "Kopeeri"
 
 #: src/medDialog.js:234
 msgid "Add Dose"
-msgstr "Lisa Ravimiannus"
+msgstr "Lisa ravimiannus"
 
 #: src/medDialog.js:438
 msgid "Choose"
@@ -629,23 +619,23 @@ msgstr "Päev"
 
 #: src/medDialog.js:519
 msgid "Empty Name"
-msgstr "Tühi Nimi"
+msgstr "Tühi nimi"
 
 #: src/medDialog.js:525
 msgid "Empty Unit"
-msgstr "Tühi Ühik"
+msgstr "Tühi ühik"
 
 #: src/medDialog.js:532
 msgid "Choose at Least One Day"
-msgstr "Palun Vali Vähemalt Üks Päev"
+msgstr "Palun vali vähemalt üks päev"
 
 #: src/medDialog.js:561
 msgid "Duplicated Time"
-msgstr "Kattuv Aeg"
+msgstr "Kattuv aeg"
 
 #: src/medDialog.js:577
 msgid "Are You Sure?"
-msgstr "Kas Oled Kindel?"
+msgstr "Kas oled kindel?"
 
 #: src/medDialog.js:578
 msgid "will be deleted"
@@ -658,7 +648,7 @@ msgstr ""
 
 #: src/prefsDialog.js:53 src/window.js:257
 msgid "An Issue Has Occurred"
-msgstr "Tekkis Viga"
+msgstr "Tekkis viga"
 
 #: src/prefsDialog.js:56 src/window.js:265 src/window.js:287 src/window.js:309
 #: src/window.js:327
@@ -675,10 +665,8 @@ msgstr "Aeg on kinnitatud"
 
 #. TRANSLATORS: Context: 1 Pill at 19:00
 #: src/prefsDialog.js:443
-#, fuzzy
-#| msgid "Date"
 msgid "at"
-msgstr "Kuupäev"
+msgstr "kell"
 
 #: src/prefsDialog.js:470 src/treatmentsFactory.js:253 src/utils.js:52
 msgid "Daily"
@@ -687,53 +675,48 @@ msgstr "Iga päev"
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/prefsDialog.js:483
 msgid "day(s) on"
-msgstr ""
+msgstr "päev(a) sissevõtmiseks"
 
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/prefsDialog.js:485
 msgid "day(s) off"
-msgstr ""
+msgstr "päev(a) vahelejätmiseks"
 
 #: src/prefsDialog.js:512
-#, fuzzy
-#| msgid "Starts On"
 msgid "Started on"
-msgstr "Algab"
+msgstr "Algas"
 
 #: src/prefsDialog.js:515 src/treatmentsFactory.js:241
 msgid "Ended on"
 msgstr "Lõppes"
 
 #: src/prefsDialog.js:561
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "Generated on"
-msgstr "Üldised"
+msgstr "Loodud"
 
 #: src/prefsDialog.js:564
 msgid "Ongoing"
-msgstr ""
+msgstr "Kestmas"
 
 #: src/prefsDialog.js:565
 msgid "Non-scheduled"
-msgstr ""
+msgstr "Pole ajastatud"
 
 #: src/prefsDialog.js:566
 msgid "Finished"
-msgstr ""
+msgstr "Lõpetatud"
 
 #: src/todayFactory.js:134
 msgid "Change Dose"
-msgstr "Muuda Ravimiannust"
+msgstr "Muuda ravimiannust"
 
 #: src/timeDoseRow.js:34
 msgid "Remove Dose"
-msgstr "Eemalda Ravimiannus"
+msgstr "Eemalda ravimiannus"
 
 #: src/treatmentsFactory.js:94
 msgid "Refill Stock"
-msgstr "Täienda Laovarusid"
+msgstr "Täienda laovarusid"
 
 #: src/treatmentsFactory.js:111
 msgid "Edit"
@@ -755,7 +738,7 @@ msgstr "%d on alles"
 
 #: src/treatmentsFactory.js:233
 msgid "Low Stock"
-msgstr "Ravimivarud on Lõppemas"
+msgstr "Ravimivarud on lõppemas"
 
 #. TRANSLATORS: label for when duration is enabled
 #: src/treatmentsFactory.js:239
@@ -768,11 +751,11 @@ msgstr "Kuni"
 
 #: src/treatmentsFactory.js:268 src/treatmentsFactory.js:271
 msgid "Next Dose"
-msgstr "Järgmine Ravimiannus"
+msgstr "Järgmine ravimiannus"
 
 #: src/utils.js:48
 msgid "Weekends"
-msgstr "Nädalavahetuse Päevad"
+msgstr "Nädalavahetuse päevad"
 
 #: src/utils.js:50
 msgid "Weekdays"
@@ -789,15 +772,15 @@ msgstr "Ravikuuriks vajalikud ravimid hakkavad lõppema"
 
 #: src/window.js:476
 msgid "Show All"
-msgstr "Näita Kõiki"
+msgstr "Näita kõiki"
 
 #: src/window.js:499
 msgid "Show Less"
-msgstr "Näita Vähem"
+msgstr "Näita vähem"
 
 #: src/window.js:631
 msgid "No Results Found"
-msgstr "Tulemusi Ei Leidu"
+msgstr "Tulemusi ei leidu"
 
 #: src/window.js:631 src/window.js:1494
 msgid "Empty History"
@@ -805,19 +788,19 @@ msgstr "Ajalugu on tühi"
 
 #: src/window.js:800
 msgid "No Treatments Added"
-msgstr "Ravi Pole Lisatud"
+msgstr "Ravi pole lisatud"
 
 #: src/window.js:800
 msgid "All Done for Today"
-msgstr "Tänaseks on Kõik Tehtud"
+msgstr "Tänaseks on kõik tehtud"
 
 #: src/window.js:888
 msgid "Confirm All"
-msgstr "Kinnita Kõik"
+msgstr "Kinnita kõik"
 
 #: src/window.js:889
 msgid "Skip All"
-msgstr "Jäta Kõik Vahele"
+msgstr "Jäta kõik vahele"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:920

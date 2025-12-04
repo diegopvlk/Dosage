@@ -372,10 +372,8 @@ msgid "Set start and end dates"
 msgstr "تنظیم تاریخ‌های آغاز و پایان"
 
 #: data/ui/med-dialog.blp:774 src/prefsDialog.js:513
-#, fuzzy
-#| msgid "Starts On"
 msgid "Start"
-msgstr "آغاز در"
+msgstr "آغاز"
 
 #: data/ui/med-dialog.blp:784 data/ui/med-dialog.blp:826
 #: data/ui/one-time-dialog.blp:242
@@ -383,10 +381,8 @@ msgid "Choose Date"
 msgstr "گزینش تاریخ"
 
 #: data/ui/med-dialog.blp:816 src/prefsDialog.js:515
-#, fuzzy
-#| msgid "Ends On"
 msgid "End"
-msgstr "پایان در"
+msgstr "پایان"
 
 #: data/ui/med-dialog.blp:854
 msgid "Mark as Confirmed"
@@ -477,16 +473,12 @@ msgid "Skip"
 msgstr "پرش"
 
 #: data/ui/preferences.blp:128
-#, fuzzy
-#| msgid "Export History as CSV"
 msgid "Export History As"
-msgstr "برون‌ریزی تاریخچه به شکل CSV"
+msgstr "برون‌ریزی تاریخچه به شکل"
 
 #: data/ui/preferences.blp:150
-#, fuzzy
-#| msgid "Empty Treatments"
 msgid "Export Treatments As"
-msgstr "درمان‌های خالی"
+msgstr "برون‌ریزی داروها به شکل".
 
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:112
 msgid "Refill"
@@ -501,10 +493,8 @@ msgid "Search"
 msgstr "جست‌وجو"
 
 #: data/ui/window.blp:39
-#, fuzzy
-#| msgid "Treatments"
 msgid "Sort Treatments"
-msgstr "داروها"
+msgstr "چینش داروها"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
@@ -540,7 +530,7 @@ msgstr "درمان‌های خالی"
 
 #: data/ui/window.blp:296
 msgid "Name Ascending"
-msgstr ""
+msgstr "نام افزایشی"
 
 #: data/ui/window.blp:302
 msgid "Remaining Stock (Lowest First)"
@@ -670,10 +660,8 @@ msgstr "زمان تأیید شد"
 
 #. TRANSLATORS: Context: 1 Pill at 19:00
 #: src/prefsDialog.js:443
-#, fuzzy
-#| msgid "Date"
 msgid "at"
-msgstr "تاریخ"
+msgstr "در"
 
 #: src/prefsDialog.js:470 src/treatmentsFactory.js:253 src/utils.js:52
 msgid "Daily"
@@ -682,41 +670,36 @@ msgstr "روزانه"
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/prefsDialog.js:483
 msgid "day(s) on"
-msgstr ""
+msgstr "روز گرفتن"
 
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/prefsDialog.js:485
 msgid "day(s) off"
-msgstr ""
+msgstr "روز وقفه"
 
 #: src/prefsDialog.js:512
-#, fuzzy
-#| msgid "Starts On"
 msgid "Started on"
-msgstr "آغاز در"
+msgstr "آغاز شده در"
 
 #: src/prefsDialog.js:515 src/treatmentsFactory.js:241
 msgid "Ended on"
 msgstr "به پایان رسید در"
 
 #: src/prefsDialog.js:561
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "Generated on"
-msgstr "کلی"
+msgstr "ایجاد شده در".
 
 #: src/prefsDialog.js:564
 msgid "Ongoing"
-msgstr ""
+msgstr "ادامه دار"
 
 #: src/prefsDialog.js:565
 msgid "Non-scheduled"
-msgstr ""
+msgstr "زمان‌بندی نشده"
 
 #: src/prefsDialog.js:566
 msgid "Finished"
-msgstr ""
+msgstr "پایان یافته"
 
 #: src/todayFactory.js:134
 msgid "Change Dose"
