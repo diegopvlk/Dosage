@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-04 17:46-0300\n"
-"PO-Revision-Date: 2025-12-04 22:22+0000\n"
+"PO-Revision-Date: 2025-12-04 22:40+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/dosage/dosage/"
 "fa/>\n"
@@ -534,11 +534,11 @@ msgstr "نام افزایشی"
 
 #: data/ui/window.blp:302
 msgid "Remaining Stock (Lowest First)"
-msgstr "ماندهٔ باقیمانده (کمترین، اول)"
+msgstr "ماندهٔ باقیمانده (کمترین به بالاترین)"
 
 #: data/ui/window.blp:308
 msgid "Remaining Stock (Highest First)"
-msgstr "ماندهٔ باقیمانده (بیشترین، اول)"
+msgstr "ماندهٔ باقیمانده (بالاترین به کمترین)"
 
 #: data/ui/window.blp:321
 msgid "About Dosage"
