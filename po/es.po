@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-04 17:46-0300\n"
-"PO-Revision-Date: 2025-10-10 15:05+0000\n"
-"Last-Translator: Deleted User <noreply+48943@weblate.org>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/es/"
-">\n"
+"PO-Revision-Date: 2025-12-04 22:46+0000\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/dosage/dosage/"
+"es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -541,11 +541,11 @@ msgstr "Nombre Ascendente"
 
 #: data/ui/window.blp:302
 msgid "Remaining Stock (Lowest First)"
-msgstr "Stock Restante (Más Bajo Primero)"
+msgstr "Stock Restante (Menor Cantidad Primero)"
 
 #: data/ui/window.blp:308
 msgid "Remaining Stock (Highest First)"
-msgstr "Stock Restante (Más Alto Primero)"
+msgstr "Stock Restante (Mayor Cantidad Primero)"
 
 #: data/ui/window.blp:321
 msgid "About Dosage"
