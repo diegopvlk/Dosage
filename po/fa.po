@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-04 17:46-0300\n"
-"PO-Revision-Date: 2025-05-02 02:47+0000\n"
-"Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
-"Language-Team: Persian <https://hosted.weblate.org/projects/dosage/dosage/fa/"
-">\n"
+"PO-Revision-Date: 2025-12-04 22:22+0000\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"Language-Team: Persian <https://hosted.weblate.org/projects/dosage/dosage/"
+"fa/>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -478,7 +478,7 @@ msgstr "برون‌ریزی تاریخچه به شکل"
 
 #: data/ui/preferences.blp:150
 msgid "Export Treatments As"
-msgstr "برون‌ریزی داروها به شکل".
+msgstr "برون‌ریزی داروها به شکل"
 
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:112
 msgid "Refill"
@@ -534,11 +534,11 @@ msgstr "نام افزایشی"
 
 #: data/ui/window.blp:302
 msgid "Remaining Stock (Lowest First)"
-msgstr ""
+msgstr "ماندهٔ باقیمانده (کمترین، اول)"
 
 #: data/ui/window.blp:308
 msgid "Remaining Stock (Highest First)"
-msgstr ""
+msgstr "ماندهٔ باقیمانده (بیشترین، اول)"
 
 #: data/ui/window.blp:321
 msgid "About Dosage"
@@ -687,7 +687,7 @@ msgstr "به پایان رسید در"
 
 #: src/prefsDialog.js:561
 msgid "Generated on"
-msgstr "ایجاد شده در".
+msgstr "ایجاد شده در"
 
 #: src/prefsDialog.js:564
 msgid "Ongoing"
