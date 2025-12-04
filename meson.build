@@ -1,6 +1,6 @@
 project(
 	'dosage',
-	version: '1.9.11',
+	version: '2.0.0',
 	meson_version: '>= 0.62.0',
 	default_options: [
 		'warning_level=2',

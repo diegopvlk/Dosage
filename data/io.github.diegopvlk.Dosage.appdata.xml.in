@@ -43,22 +43,22 @@
 		<screenshot type="default">
 			<caption>Dosage today window in light theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/923eae8de14b1f22365968b3602f9e5711e138c4/screenshots/today-light.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/2bfc40f370418bcf1a72112582a2390836262de1/screenshots/today-light.png</image>
 		</screenshot>
 		<screenshot>
 			<caption>Dosage preferences window in light theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/923eae8de14b1f22365968b3602f9e5711e138c4/screenshots/preferences.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/2bfc40f370418bcf1a72112582a2390836262de1/screenshots/preferences.png</image>
 		</screenshot>
 		<screenshot>
 			<caption>Dosage edit treatment window in light theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/923eae8de14b1f22365968b3602f9e5711e138c4/screenshots/med-dialog.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/2bfc40f370418bcf1a72112582a2390836262de1/screenshots/med-dialog.png</image>
 		</screenshot>
 		<screenshot>
 			<caption>Dosage today window in dark theme</caption>
 			<image>
-				https://raw.githubusercontent.com/diegopvlk/Dosage/923eae8de14b1f22365968b3602f9e5711e138c4/screenshots/today-dark.png</image>
+				https://raw.githubusercontent.com/diegopvlk/Dosage/2bfc40f370418bcf1a72112582a2390836262de1/screenshots/today-dark.png</image>
 		</screenshot>
 	</screenshots>
 
@@ -73,6 +73,20 @@
 	</recommends>
 
 	<releases>
+		<release version="2.0.0" date="2025-12-02">
+			<description translate="no">
+				<ul>
+					<li>New: Sort treaments by remaining stock</li>
+					<li>New: Export treatments as HTML</li>
+					<li>New: Export history as HTML</li>
+					<li>New: Export history using ISO date</li>
+					<li>Updated design to better match GNOME's style</li>
+					<li>Added Vietnamese translation</li>
+					<li>Updated translations</li>
+					<li>Updated GNOME Runtime to 49</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.9.11" date="2025-09-24">
 			<description translate="no">
 				<ul>
