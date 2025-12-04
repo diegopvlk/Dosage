@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-04 17:46-0300\n"
-"PO-Revision-Date: 2025-04-01 11:03+0000\n"
-"Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
+"PO-Revision-Date: 2025-12-04 22:22+0000\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/dosage/dosage/"
 "et/>\n"
 "Language: et\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -540,11 +540,11 @@ msgstr "Nime järgi kahanevalt"
 
 #: data/ui/window.blp:302
 msgid "Remaining Stock (Lowest First)"
-msgstr ""
+msgstr "Järelejäänud varud (madalamad enne)"
 
 #: data/ui/window.blp:308
 msgid "Remaining Stock (Highest First)"
-msgstr ""
+msgstr "Järelejäänud varud (kõrgemad enne)"
 
 #: data/ui/window.blp:321
 msgid "About Dosage"
