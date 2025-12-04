@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-04 17:46-0300\n"
-"PO-Revision-Date: 2025-12-04 22:22+0000\n"
+"PO-Revision-Date: 2025-12-04 22:40+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/dosage/dosage/"
 "vi/>\n"
@@ -694,7 +694,7 @@ msgstr "Được tạo vào"
 
 #: src/prefsDialog.js:564
 msgid "Ongoing"
-msgstr "Đang Diễn Ra"
+msgstr "Đang"
 
 #: src/prefsDialog.js:565
 msgid "Non-scheduled"
