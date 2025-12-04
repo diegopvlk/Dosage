@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-04 17:46-0300\n"
-"PO-Revision-Date: 2025-11-28 19:27+0000\n"
-"Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
+"PO-Revision-Date: 2025-12-04 22:22+0000\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/dosage/dosage/"
 "vi/>\n"
 "Language: vi\n"
@@ -539,11 +539,11 @@ msgstr "Tên Tăng Dần"
 
 #: data/ui/window.blp:302
 msgid "Remaining Stock (Lowest First)"
-msgstr ""
+msgstr "Lượng Dự Trữ Còn Lại (Thấp Nhất Trước)"
 
 #: data/ui/window.blp:308
 msgid "Remaining Stock (Highest First)"
-msgstr ""
+msgstr "Lượng Dự Trữ Còn Lại (Cao Nhất Trước)"
 
 #: data/ui/window.blp:321
 msgid "About Dosage"
@@ -694,7 +694,7 @@ msgstr "Được tạo vào"
 
 #: src/prefsDialog.js:564
 msgid "Ongoing"
-msgstr ""Đang tiếp diễn
+msgstr "Đang Diễn Ra"
 
 #: src/prefsDialog.js:565
 msgid "Non-scheduled"
