@@ -462,7 +462,21 @@ export const DosageWindow = GObject.registerClass(
 			this.histItemsToRm.length = 0;
 			this._removeHistItemsBtn.visible = false;
 			this._unselectHistItemsBtn.visible = false;
-			this._toggleHistAmountBtn.visible = historyLS.n_items > 30 && !this.histQuery;
+			this._toggleHistAmountBtn.visible = this.histMoreThan7Sect && !this.histQuery;
+		}
+
+		histHasMoreThan7Sect() {
+			const dates = new Set();
+			const itemDate = new Date();
+
+			for (const it of historyLS) {
+				itemDate.setTime(it.obj.taken[0]);
+				const date = itemDate.setHours(0, 0, 0, 0);
+
+				if (!dates.has(date)) dates.add(date);
+
+				if (dates.size > 7) return true;
+			}
 		}
 
 		setShowHistoryAmount() {
@@ -470,30 +484,30 @@ export const DosageWindow = GObject.registerClass(
 
 			this.unselectHistItems();
 
-			const moreThan30 = historyLS.n_items > 30;
+			const moreThan7Sect = this.histMoreThan7Sect;
 
-			this._toggleHistAmountBtn.visible = moreThan30;
+			this._toggleHistAmountBtn.visible = moreThan7Sect;
 			this._toggleHistAmountBtn.label = _('Show All');
 
-			if (moreThan30) {
+			if (moreThan7Sect) {
 				this._historyList.remove_css_class('list-no-extra-padding-bottom');
 			} else {
 				this._historyList.add_css_class('list-no-extra-padding-bottom');
 			}
 
-			if (!this.showAllHist && moreThan30) {
+			if (!this.showAllHist && moreThan7Sect) {
 				const dates = new Set();
-				let count = 0;
+				const itemDate = new Date();
 
 				this.historyFilter.set_filter_func(item => {
-					const itemDate = new Date(item.obj.taken[0]).setHours(0, 0, 0, 0);
+					itemDate.setTime(item.obj.taken[0]);
+					const date = itemDate.setHours(0, 0, 0, 0);
 
-					if (!dates.has(itemDate)) {
-						dates.add(itemDate);
-						count++;
+					if (!dates.has(date)) {
+						dates.add(date);
 					}
 
-					return count <= 7;
+					return dates.size <= 7;
 				});
 			} else if (this.showAllHist) {
 				this._toggleHistAmountBtn.label = _('Show Less');
@@ -565,7 +579,7 @@ export const DosageWindow = GObject.registerClass(
 							this._removeHistItemsBtn.visible = !noItems;
 							this._unselectHistItemsBtn.visible = !noItems;
 							this._toggleHistAmountBtn.visible =
-								noItems && historyLS.n_items > 30 && !this.histQuery;
+								noItems && this.histMoreThan7Sect && !this.histQuery;
 						});
 					});
 
@@ -589,6 +603,7 @@ export const DosageWindow = GObject.registerClass(
 							this._buttonSearch.sensitive = true;
 							this._buttonSearch.visible = histVisible;
 							app.add_action(this.showSearchAction);
+							this.histMoreThan7Sect = this.histHasMoreThan7Sect();
 						}
 					});
 
