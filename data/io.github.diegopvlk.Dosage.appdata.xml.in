@@ -73,7 +73,15 @@
 	</recommends>
 
 	<releases>
-		<release version="2.0.0" date="2025-12-02">
+		<release version="2.0.1" date="2025-12-09">
+			<description translate="no">
+				<ul>
+					<li>Improvements and fixes</li>
+					<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
+		<release version="2.0.0" date="2025-12-04">
 			<description translate="no">
 				<ul>
 					<li>New: Sort treaments by remaining stock</li>

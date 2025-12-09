@@ -58,7 +58,7 @@ export const DosageApplication = GObject.registerClass(
 					application_icon: 'io.github.diegopvlk.Dosage',
 					developer_name: 'Diego Povliuk',
 					developers: ['Diego Povliuk'],
-					version: '2.0.0',
+					version: '2.0.1',
 					issue_url: 'https://github.com/diegopvlk/Dosage/issues',
 					license_type: Gtk.License.GPL_3_0_ONLY,
 					copyright: '© 2023 Diego Povliuk',
