@@ -136,7 +136,7 @@ export default function openPrefsDialog(DosageApplication) {
 		saveHistFile(isISO, isHTML, DosageWindow).catch(console.error);
 	});
 
-	saveTreatments.connect('activated', () => saveTreatFile(DosageWindow));
+	saveTreatments.connect('activated', () => saveTreatFile(DosageWindow).catch(console.error));
 
 	prefsDialog.present(DosageWindow);
 }
