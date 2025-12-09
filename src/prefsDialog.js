@@ -496,10 +496,7 @@ function getTreatmentsHTML(treatments) {
 					_('As Needed'),
 				)}</p>`;
 			} else {
-				dosageHtml = `<p style="font-feature-settings: 'tnum';">${formatDosage(
-					med.dosage,
-					med.unit,
-				)}</p>`;
+				dosageHtml = `<p>${formatDosage(med.dosage, med.unit)}</p>`;
 
 				if (med.duration.enabled) {
 					const startDate = formatDate(med.duration.start);
@@ -552,7 +549,7 @@ function getTreatmentsHTML(treatments) {
 		<style>
 			p {margin: 8px auto; font-size: 14px;}
 			:root {color-scheme: light dark;}
-			* {font-family: 'Adwaita Sans', Inter, Roboto, Arial, system-ui, sans-serif;}
+			* {font-family: 'Adwaita Sans', Inter, Roboto, Arial, system-ui, sans-serif;font-feature-settings: 'tnum';}
 			body {background-color: light-dark(#fafafb, #222226)}
 		</style>
 		<title>${title}</title><br>
