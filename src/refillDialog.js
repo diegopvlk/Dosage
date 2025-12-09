@@ -38,7 +38,10 @@ export function openRefillDialog(listItem, position) {
 		// trigger signal to update labels
 		listItem.get_item().notify('obj');
 
-		sortTreatments(settings.get_string('treatments-sorting'));
+		const treatSort = settings.get_string('treatments-sorting');
+		if (treatSort !== 'name-ascending') {
+			sortTreatments(treatSort);
+		}
 		DosageWindow.updateEverything({ skipHistUp: true, skipCycleUp: true });
 		const pos = Math.max(0, position - 1);
 		DosageWindow._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);

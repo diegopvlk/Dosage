@@ -1,9 +1,14 @@
 'use strict';
 
+import Gtk from 'gi://Gtk';
+
+import { DosageApplication } from './main.js';
 import { treatmentsLS } from './window.js';
 
 export function sortTreatments(sortingType) {
 	treatmentsLS.sort(sortTreatFunc(sortingType));
+	const DosageWindow = DosageApplication.get_default().activeWindow;
+	DosageWindow._treatmentsList.scroll_to(0, Gtk.ListScrollFlags.FOCUS, null);
 }
 
 export function sortTreatFunc(sortingType) {

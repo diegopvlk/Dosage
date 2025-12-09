@@ -93,7 +93,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 		valign: Gtk.Align.CENTER,
 		margin_end: 5,
 		visible: false,
-		tooltip_text: _('Refill Stock'),
+		tooltip_text: _('Refill'),
 		child: listItem.invLabelBox,
 	});
 
@@ -108,7 +108,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 
 	listItem.invLabelBtn.connect('clicked', btn => {
 		if (!delayDialog) {
-			openRefillDialog(listItem, listItem.item);
+			openRefillDialog(listItem, listItem.position);
 			delayDialog = true;
 			setTimeout(() => {
 				delayDialog = false;
