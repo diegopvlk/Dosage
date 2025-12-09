@@ -24,6 +24,7 @@
 		<file alias="show-when-needed-symbolic.svg">icons/ui/show-when-needed-symbolic.svg</file>
 		<file alias="pin-symbolic.svg">icons/ui/pin-symbolic.svg</file>
 		<file alias="dosage-treatments-sorting-symbolic.svg">icons/ui/dosage-treatments-sorting-symbolic.svg</file>
+		<file alias="dosage-stock-warning-symbolic.svg">icons/ui/dosage-stock-warning-symbolic.svg</file>
 
     <file alias="cross-large-symbolic.svg">icons/ui/cross-large-symbolic.svg</file>
     <file alias="color-filled-symbolic.svg">icons/ui/color-filled-symbolic.svg</file>

@@ -86,13 +86,25 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 
 	listItem.labelsBox.append(listItem.durationNextDateLabel);
 
+	listItem.invLabelBox = new Gtk.Box({});
+
 	listItem.invLabelBtn = new Gtk.Button({
 		css_name: 'badge-button',
 		valign: Gtk.Align.CENTER,
 		margin_end: 5,
 		visible: false,
 		tooltip_text: _('Refill Stock'),
+		child: listItem.invLabelBox,
 	});
+
+	listItem.invLabel = new Gtk.Label({});
+
+	listItem.invWarningIcon = new Gtk.Image({
+		icon_name: 'dosage-stock-warning-symbolic',
+	});
+
+	listItem.invLabelBox.append(listItem.invLabel);
+	listItem.invLabelBox.append(listItem.invWarningIcon);
 
 	listItem.invLabelBtn.connect('clicked', btn => {
 		if (!delayDialog) {
@@ -215,7 +227,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 
 function setInventoryAndDateLabels(listItem) {
 	const item = listItem.item.obj;
-	const { infoLabel, durationNextDateLabel, invLabelBtn } = listItem;
+	const { infoLabel, durationNextDateLabel, invLabelBtn, invWarningIcon } = listItem;
 	const today = new Date().setHours(0, 0, 0, 0);
 	const start = new Date(item.duration.start).setHours(0, 0, 0, 0);
 	const end = new Date(item.duration.end).setHours(0, 0, 0, 0);
@@ -225,12 +237,13 @@ function setInventoryAndDateLabels(listItem) {
 		let currInv = inv.current < 0 ? 0 : inv.current;
 
 		invLabelBtn.visible = true;
+		invWarningIcon.visible = false;
 		// TRANSLATORS: keep the %d it's where the number goes
-		invLabelBtn.label = _('%d Remaining').replace('%d', currInv);
+		listItem.invLabel.label = _('%d Remaining').replace('%d', currInv);
 		invLabelBtn.remove_css_class('warning');
 
 		if (inv.current <= inv.reminder) {
-			invLabelBtn.label = `${currInv} ↓ ` + _('Low Stock');
+			invWarningIcon.visible = true;
 			invLabelBtn.add_css_class('warning');
 		}
 	}
