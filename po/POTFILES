@@ -1,7 +1,6 @@
 data/io.github.diegopvlk.Dosage.appdata.xml.in
 data/io.github.diegopvlk.Dosage.desktop.in
 
-data/gtk/help-overlay.blp
 data/ui/edit-hist-dialog.blp
 data/ui/med-dialog.blp
 data/ui/one-time-dialog.blp

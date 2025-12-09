@@ -4,7 +4,6 @@ datadir = get_option('prefix') / get_option('datadir')
 blueprints = custom_target(
 	'blueprints',
 	input: files(
-		'gtk/help-overlay.blp',
 		'ui/edit-hist-dialog.blp',
 		'ui/med-dialog.blp',
 		'ui/one-time-dialog.blp',
