@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-08 21:05-0300\n"
-"PO-Revision-Date: 2025-12-04 22:40+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"PO-Revision-Date: 2025-12-11 23:05+0000\n"
+"Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/dosage/dosage/"
 "vi/>\n"
 "Language: vi\n"
@@ -25,7 +25,7 @@ msgstr ""
 #: src/main.js:57 src/prefsDialog.js:145 src/prefsDialog.js:165
 #: src/prefsDialog.js:547 src/window.js:1057
 msgid "Dosage"
-msgstr "Liều Lượng"
+msgstr "Dosage"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 msgid "Keep track of your treatments"
@@ -37,9 +37,9 @@ msgid ""
 "multiple doses, flexible frequency, customization, stock monitoring, and "
 "duration control"
 msgstr ""
-"Dễ dàng quản lý và theo dõi các phương pháp điều trị bằng Liều Lượng: thông "
-"báo, lịch sử, nhiều liều, tần suất linh hoạt, tùy chỉnh, theo dõi lượng dự "
-"trữ và kiểm soát thời gian"
+"Dễ dàng quản lý và theo dõi các phương pháp điều trị với Dosage: thông báo, "
+"lịch sử, nhiều liều, tần suất linh hoạt, tùy chỉnh, theo dõi lượng dự trữ và "
+"kiểm soát thời gian"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid "Features:"
@@ -55,7 +55,7 @@ msgstr "Lịch sử — Xem những loại thuốc bạn đã dùng, bỏ qua ho
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
 msgid "Dosage management — Multiple doses with different times"
-msgstr "Quản lý liều lượng — Nhiều liều với thời gian khác nhau"
+msgstr "Quản lý Dosage — Nhiều liều với thời gian khác nhau"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid ""
@@ -78,30 +78,30 @@ msgstr "Thời lượng — Xác định ngày bắt đầu và ngày kết thú
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage today window in light theme"
-msgstr "Cửa sổ Liều Lượng ngày hôm nay ở chủ đề sáng"
+msgstr "Cửa sổ Dosage ngày hôm nay ở chủ đề sáng"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage preferences window in light theme"
-msgstr "Cửa sổ tùy chọn Liều Lượng trong chủ đề sáng"
+msgstr "Cửa sổ tùy chọn Dosage trong chủ đề sáng"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:54
 msgid "Dosage edit treatment window in light theme"
-msgstr "Cửa sổ điều trị chỉnh sửa Liều Lượng trong chủ đề sáng"
+msgstr "Cửa sổ điều trị chỉnh sửa Dosage trong chủ đề sáng"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:59
 msgid "Dosage today window in dark theme"
-msgstr "Cửa sổ Liều Lượng ngày hôm nay ở chủ đề tối"
+msgstr "Cửa sổ Dosage ngày hôm nay ở chủ đề tối"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:10
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
-"Thuốc;Theo dõi;Nhắc nhở;Hôm nay;Phương pháp điều trị;Thuốc uống;Thuốc;Phương "
-"thuốc;"
+"Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;Theo dõi;Nhắc "
+"nhở;Hôm nay;Phương pháp điều trị;Thuốc uống;Phương thuốc;"
 
 #: data/ui/edit-hist-dialog.blp:7
 msgid "Edit Entry"
-msgstr "Chỉnh Sửa Mục Nhập"
+msgstr "Chỉnh sửa mục nhập"
 
 #: data/ui/edit-hist-dialog.blp:18 data/ui/med-dialog.blp:19
 #: src/medDialog.js:581
@@ -117,7 +117,7 @@ msgstr "Lưu"
 #: data/ui/edit-hist-dialog.blp:88 data/ui/one-time-dialog.blp:209
 #: src/timeDoseRow.js:40
 msgid "Change Time"
-msgstr "Thay Đổi Thời Gian"
+msgstr "Thay đổi thời gian"
 
 #: data/ui/edit-hist-dialog.blp:108 src/historyFactory.js:183
 #: src/prefsDialog.js:214 src/prefsDialog.js:296
@@ -132,7 +132,7 @@ msgstr "Đã xác nhận"
 
 #: data/ui/med-dialog.blp:7
 msgid "New Treatment"
-msgstr "Điều Trị Mới"
+msgstr "Điều trị mới"
 
 #: data/ui/med-dialog.blp:30 data/ui/window.blp:279
 msgid "Add"
@@ -145,12 +145,12 @@ msgstr "Tên"
 
 #: data/ui/med-dialog.blp:67 data/ui/one-time-dialog.blp:57
 msgid "Color"
-msgstr "Màu Sắc"
+msgstr "Màu sắc"
 
 #. TRANSLATORS: Tooltip for the colors (from Default until Purple)
 #: data/ui/med-dialog.blp:92 data/ui/one-time-dialog.blp:82
 msgid "Default"
-msgstr "Mặc Định"
+msgstr "Mặc định"
 
 #: data/ui/med-dialog.blp:104 data/ui/one-time-dialog.blp:94
 msgid "Red"
@@ -166,7 +166,7 @@ msgstr "Vàng"
 
 #: data/ui/med-dialog.blp:140 data/ui/one-time-dialog.blp:130
 msgid "Green"
-msgstr "Xanh Lá"
+msgstr "Xanh lá"
 
 #: data/ui/med-dialog.blp:152 data/ui/one-time-dialog.blp:142
 msgid "Cyan"
@@ -182,7 +182,7 @@ msgstr "Tím"
 
 #: data/ui/med-dialog.blp:186 data/ui/one-time-dialog.blp:176
 msgid "Unit"
-msgstr "Đơn Vị"
+msgstr "Đơn vị"
 
 #: data/ui/med-dialog.blp:187 data/ui/one-time-dialog.blp:177
 #: src/oneTimeDialog.js:66
@@ -191,32 +191,32 @@ msgstr "Viên thuốc"
 
 #: data/ui/med-dialog.blp:195
 msgid "Icon"
-msgstr "Biểu Tượng"
+msgstr "Biểu tượng"
 
 #. TRANSLATORS: Tooltip for the icons (from Pill until Potion)
 #: data/ui/med-dialog.blp:224
 msgid "Pill"
-msgstr "Viên Thuốc"
+msgstr "Viên thuốc"
 
 #: data/ui/med-dialog.blp:240
 msgid "Alternative Pill"
-msgstr "Viên Thuốc Thay Thế"
+msgstr "Viên thuốc thay thế"
 
 #: data/ui/med-dialog.blp:256
 msgid "Capsule"
-msgstr "Viên Nang"
+msgstr "Viên nang"
 
 #: data/ui/med-dialog.blp:272
 msgid "Round Pill"
-msgstr "Viên Thuốc Tròn"
+msgstr "Viên thuốc tròn"
 
 #: data/ui/med-dialog.blp:288
 msgid "Alternative Round Pill"
-msgstr "Viên Tròn Thay Thế"
+msgstr "Viên tròn thay thế"
 
 #: data/ui/med-dialog.blp:304
 msgid "Ampoule"
-msgstr "Thuốc Ống Tiêm"
+msgstr "Thuốc ống tiêm"
 
 #: data/ui/med-dialog.blp:320
 msgid "Injection"
@@ -224,23 +224,23 @@ msgstr "Tiêm"
 
 #: data/ui/med-dialog.blp:336
 msgid "Square Pill"
-msgstr "Viên Thuốc Vuông"
+msgstr "Viên thuốc vuông"
 
 #: data/ui/med-dialog.blp:352
 msgid "Alternative Square Pill"
-msgstr "Viên Thuốc Vuông Thay Thế"
+msgstr "Viên thuốc vuông thay thế"
 
 #: data/ui/med-dialog.blp:368
 msgid "Triangle pill"
-msgstr "Viên Thuốc Tam Giác"
+msgstr "Viên thuốc tam giác"
 
 #: data/ui/med-dialog.blp:384
 msgid "Alternative Triangle Pill"
-msgstr "Viên Thuốc Tam Giác Thay Thế"
+msgstr "Viên thuốc tam giác thay thế"
 
 #: data/ui/med-dialog.blp:400
 msgid "Bottle"
-msgstr "Cái Chai"
+msgstr "Cái chai"
 
 #: data/ui/med-dialog.blp:416
 msgid "Drops"
@@ -248,65 +248,65 @@ msgstr "Giọt"
 
 #: data/ui/med-dialog.blp:432
 msgid "Potion"
-msgstr "Phân Lượng"
+msgstr "Phân lượng"
 
 #: data/ui/med-dialog.blp:441 src/prefsDialog.js:463
 msgid "Notes"
-msgstr "Ghi Chú"
+msgstr "Ghi chú"
 
 #: data/ui/med-dialog.blp:450 src/medDialog.js:486
 msgid "Frequency"
-msgstr "Tần Suất"
+msgstr "Tần suất"
 
 #: data/ui/med-dialog.blp:455
 msgid "Every Day"
-msgstr "Mỗi Ngày"
+msgstr "Mỗi ngày"
 
 #: data/ui/med-dialog.blp:456 src/medDialog.js:475
 msgid "Specific Days"
-msgstr "Ngày Cụ Thể"
+msgstr "Ngày cụ thể"
 
 #: data/ui/med-dialog.blp:457 src/medDialog.js:447 src/prefsDialog.js:476
 msgid "Day of Month"
-msgstr "Ngày Trong Tháng"
+msgstr "Ngày trong tháng"
 
 #: data/ui/med-dialog.blp:458 src/medDialog.js:482 src/treatmentsFactory.js:293
 msgid "Cycle"
-msgstr "Chu Kỳ"
+msgstr "Chu kỳ"
 
 #: data/ui/med-dialog.blp:459 src/prefsDialog.js:496 src/todayFactory.js:41
 #: src/treatmentsFactory.js:296
 msgid "As Needed"
-msgstr "Khi Cần Thiết"
+msgstr "Khi cần thiết"
 
 #: data/ui/med-dialog.blp:471
 msgid "Choose Days"
-msgstr "Chọn Ngày"
+msgstr "Chọn các ngày"
 
 #: data/ui/med-dialog.blp:570
 msgid "Choose Day"
-msgstr "Chọn Ngày"
+msgstr "Chọn ngày"
 
 #: data/ui/med-dialog.blp:615
 msgid "Change Cycle"
-msgstr "Thay Đổi Chu Kỳ"
+msgstr "Thay đổi chu kỳ"
 
 #: data/ui/med-dialog.blp:640
 msgid "Days Active"
-msgstr "Số Ngày Hoạt Động"
+msgstr "Số ngày hoạt động"
 
 #: data/ui/med-dialog.blp:654
 msgid "Days Inactive"
-msgstr "Số Ngày Không Hoạt Động"
+msgstr "Số ngày không hoạt động"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-dialog.blp:669
 msgid "Today is Cycle Day…"
-msgstr "Hôm nay là Ngày Chu Kỳ…"
+msgstr "Hôm nay là Ngày chu kỳ…"
 
 #: data/ui/med-dialog.blp:692
 msgid "Increase Notification Priority"
-msgstr "Tăng Mức Độ Ưu Tiên Thông Báo"
+msgstr "Tăng mức độ ưu tiên thông báo"
 
 #: data/ui/med-dialog.blp:693
 msgid "Show in fullscreen mode or with 'Do Not Disturb' enabled"
@@ -314,7 +314,7 @@ msgstr "Hiển thị ở chế độ toàn màn hình hoặc bật 'Không làm 
 
 #: data/ui/med-dialog.blp:697
 msgid "Recurring Notifications"
-msgstr "Thông Báo Định Kỳ"
+msgstr "Thông báo định kỳ"
 
 #: data/ui/med-dialog.blp:698
 msgid "Renotify until it's confirmed or skipped"
@@ -322,11 +322,11 @@ msgstr "Thông báo lại cho đến khi được xác nhận hoặc bị bỏ q
 
 #: data/ui/med-dialog.blp:703
 msgid "Interval in Minutes"
-msgstr "Khoảng Thời Gian Tính Bằng Phút"
+msgstr "Khoảng thời gian tính bằng phút"
 
 #: data/ui/med-dialog.blp:716 data/ui/refill-dialog.blp:36
 msgid "Inventory"
-msgstr "Dự Trữ"
+msgstr "Dự trữ"
 
 #: data/ui/med-dialog.blp:717
 msgid "Manage your stock"
@@ -334,19 +334,19 @@ msgstr "Quản lý lượng dự trữ của bạn"
 
 #: data/ui/med-dialog.blp:723
 msgid "Current"
-msgstr "Hiện Tại"
+msgstr "Hiện tại"
 
 #: data/ui/med-dialog.blp:736
 msgid "Remind Me At"
-msgstr "Nhắc Tôi Lúc"
+msgstr "Nhắc tôi lúc"
 
 #: data/ui/med-dialog.blp:749
 msgid "Refill Amount"
-msgstr "Số Lượng Làm Đầy"
+msgstr "Số lượng làm đầy"
 
 #: data/ui/med-dialog.blp:762 src/prefsDialog.js:506
 msgid "Duration"
-msgstr "Khoảng Thời Gian"
+msgstr "Khoảng thời gian"
 
 #: data/ui/med-dialog.blp:763
 msgid "Set start and end dates"
@@ -354,20 +354,20 @@ msgstr "Đặt ngày bắt đầu và ngày kết thúc"
 
 #: data/ui/med-dialog.blp:773 src/prefsDialog.js:510
 msgid "Start"
-msgstr "Bắt Đầu"
+msgstr "Bắt đầu"
 
 #: data/ui/med-dialog.blp:783 data/ui/med-dialog.blp:825
 #: data/ui/one-time-dialog.blp:242
 msgid "Choose Date"
-msgstr "Chọn Ngày"
+msgstr "Chọn ngày"
 
 #: data/ui/med-dialog.blp:815 src/prefsDialog.js:512
 msgid "End"
-msgstr "Kết Thúc"
+msgstr "Kết thúc"
 
 #: data/ui/med-dialog.blp:853
 msgid "Mark as Confirmed"
-msgstr "Đánh Dấu Là Đã Xác Nhận"
+msgstr "Đánh dấu là Đã xác nhận"
 
 #: data/ui/med-dialog.blp:854
 msgid ""
@@ -383,25 +383,25 @@ msgstr "Xóa"
 
 #: data/ui/one-time-dialog.blp:7 data/ui/window.blp:130 src/window.js:1086
 msgid "One-Time Entry"
-msgstr "Mục Nhập Một Lần"
+msgstr "Mục nhập một lần"
 
 #: data/ui/one-time-dialog.blp:43
 msgid "From Treatment List"
-msgstr "Từ Danh Sách Điều Trị"
+msgstr "Từ Danh sách điều trị"
 
 #: data/ui/one-time-dialog.blp:181
 msgid "Amount"
-msgstr "Số Lượng"
+msgstr "Số lượng"
 
 #: data/ui/one-time-dialog.blp:182 src/prefsDialog.js:183
 #: src/prefsDialog.js:256
 msgid "Dose"
-msgstr "Liều Thuốc"
+msgstr "Liều thuốc"
 
 #: data/ui/one-time-dialog.blp:198 src/prefsDialog.js:183
 #: src/prefsDialog.js:256
 msgid "Time"
-msgstr "Thời Gian"
+msgstr "Thời gian"
 
 #: data/ui/one-time-dialog.blp:231 src/prefsDialog.js:183
 #: src/prefsDialog.js:256
@@ -411,19 +411,19 @@ msgstr "Ngày"
 #: data/ui/one-time-dialog.blp:284 data/ui/preferences.blp:93 src/window.js:903
 #: src/window.js:1086
 msgid "Confirm"
-msgstr "Xác Nhận"
+msgstr "Xác nhận"
 
 #: data/ui/preferences.blp:7 data/ui/window.blp:316
 msgid "Preferences"
-msgstr "Tùy Chọn"
+msgstr "Tùy chọn"
 
 #: data/ui/preferences.blp:17
 msgid "Auto-Start at Login"
-msgstr "Tự Động Khởi Động Khi Đăng Nhập"
+msgstr "Tự động khởi động khi đăng nhập"
 
 #: data/ui/preferences.blp:33
 msgid "Auto-Clear History"
-msgstr "Tự Động Xóa Lịch Sử"
+msgstr "Tự động xóa lịch sử"
 
 #: data/ui/preferences.blp:34
 msgid "Keeps a maximum of 30 days"
@@ -431,7 +431,7 @@ msgstr "Giữ tối đa 30 ngày"
 
 #: data/ui/preferences.blp:50
 msgid "Low Stock Notification"
-msgstr "Thông Báo Lượng Dự Trữ Sắp Hết"
+msgstr "Thông báo lượng dự trữ sắp hết"
 
 #: data/ui/preferences.blp:51
 msgid "Send reminders when treatments are low in stock"
@@ -439,11 +439,11 @@ msgstr "Gửi lời nhắc khi phương pháp điều trị sắp hết"
 
 #: data/ui/preferences.blp:67
 msgid "Notification Sound"
-msgstr "Âm Thanh Thông Báo"
+msgstr "Âm thanh thông báo"
 
 #: data/ui/preferences.blp:83
 msgid "Notification Buttons"
-msgstr "Nút Thông Báo"
+msgstr "Nút thông báo"
 
 #: data/ui/preferences.blp:84
 msgid "Show or hide confirm/skip"
@@ -451,80 +451,80 @@ msgstr "Hiển thị hoặc ẩn xác nhận/bỏ qua"
 
 #: data/ui/preferences.blp:109 data/ui/window.blp:142 src/window.js:904
 msgid "Skip"
-msgstr "Bỏ Qua"
+msgstr "Bỏ qua"
 
 #: data/ui/preferences.blp:128
 msgid "Export History As"
-msgstr "Xuất Lịch Sử Như"
+msgstr "Xuất Lịch sử như"
 
 #: data/ui/preferences.blp:150
 msgid "Export Treatments As"
-msgstr "Xuất Phương Pháp Điều Trị Thành"
+msgstr "Xuất Phương pháp điều trị như"
 
 #: data/ui/refill-dialog.blp:7 src/treatmentsFactory.js:96
 #: src/treatmentsFactory.js:124
 msgid "Refill"
-msgstr "Làm Đầy"
+msgstr "Làm đầy"
 
 #: data/ui/window.blp:23
 msgid "Show/Hide 'As Needed'"
-msgstr "Hiển Thị/Ẩn 'Khi Cần Thiết'"
+msgstr "Hiện/Ẩn 'Khi cần thiết'"
 
 #: data/ui/window.blp:31
 msgid "Search"
-msgstr "Tìm Kiếm"
+msgstr "Tìm kiếm"
 
 #: data/ui/window.blp:39
 msgid "Sort Treatments"
-msgstr "Sắp Xếp Phương Pháp Điều Trị"
+msgstr "Sắp xếp phương pháp điều trị"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
-msgstr "Menu Chính"
+msgstr "Menu chính"
 
 #: data/ui/window.blp:61
 msgid "Search…"
-msgstr "Tìm Kiếm…"
+msgstr "Tìm kiếm…"
 
 #: data/ui/window.blp:71
 msgid "Today"
-msgstr "Hôm Nay"
+msgstr "Hôm nay"
 
 #: data/ui/window.blp:117 data/ui/window.blp:206
 msgid "Unselect"
-msgstr "Bỏ Chọn"
+msgstr "Bỏ chọn"
 
 #: data/ui/window.blp:152 src/prefsDialog.js:145
 msgid "History"
-msgstr "Lịch Sử"
+msgstr "Lịch sử"
 
 #: data/ui/window.blp:216
 msgid "Remove Entries"
-msgstr "Xóa Mục Nhập"
+msgstr "Xóa mục nhập"
 
 #: data/ui/window.blp:230 src/prefsDialog.js:165 src/prefsDialog.js:547
 msgid "Treatments"
-msgstr "Phương Pháp Điều Trị"
+msgstr "Phương pháp đIều trị"
 
 #: data/ui/window.blp:256
 msgid "Empty Treatments"
-msgstr "Chưa Có Phương Pháp Điều Trị"
+msgstr "Chưa có phương pháp đIều trị"
 
 #: data/ui/window.blp:296
 msgid "Name Ascending"
-msgstr "Tên Tăng Dần"
+msgstr "Tên tăng dần"
 
 #: data/ui/window.blp:302
 msgid "Remaining Stock (Lowest First)"
-msgstr "Lượng Dự Trữ Còn Lại (Thấp Nhất Trước)"
+msgstr "Lượng dự trữ còn lại (Thấp nhất trước)"
 
 #: data/ui/window.blp:308
 msgid "Remaining Stock (Highest First)"
-msgstr "Lượng Dự Trữ Còn Lại (Cao Nhất Trước)"
+msgstr "Lượng dự trữ còn lại (Cao nhất trước)"
 
 #: data/ui/window.blp:321
 msgid "About Dosage"
-msgstr "Về Liều Lượng"
+msgstr "Giới thiệu về Dosage"
 
 #: data/ui/window.blp:326 src/window.js:1287
 msgid "Quit"
@@ -532,16 +532,16 @@ msgstr "Thoát"
 
 #: src/editHistDialog.js:52 src/editHistDialog.js:65 src/editHistDialog.js:89
 msgid "Confirmed At"
-msgstr "Xác Nhận Tại"
+msgstr "Xác nhận tại"
 
 #: src/editHistDialog.js:61 src/historyFactory.js:178 src/prefsDialog.js:225
 #: src/prefsDialog.js:309
 msgid "Auto-Confirmed"
-msgstr "Tự Động Xác Nhận"
+msgstr "Tự động xác nhận"
 
 #: src/editHistDialog.js:69 src/editHistDialog.js:93
 msgid "Skipped At"
-msgstr "Bỏ Qua Lúc"
+msgstr "Bỏ qua lúc"
 
 #: src/editHistDialog.js:73 src/historyFactory.js:186 src/prefsDialog.js:211
 #: src/prefsDialog.js:292
@@ -550,20 +550,22 @@ msgstr "Bỏ lỡ"
 
 #: src/editHistDialog.js:79 src/prefsDialog.js:228 src/prefsDialog.js:313
 msgid "Time Unknown"
-msgstr "Thời Gian Không Xác Định"
+msgstr "Thời gian không xác định"
 
 #: src/historyFactory.js:47
 msgid "Select to be Removed"
-msgstr "Chọn Để Loại Bỏ"
+msgstr "Chọn để xóa"
 
 #. TRANSLATORS: 'Your Name <your@email.com>'
 #: src/main.js:66
 msgid "translator-credits"
-msgstr "Loccun <huynhloc.contact@gmail.com>"
+msgstr ""
+"Vietnam Linux L10n <https://github.com/linux-l10n-vi>\n"
+"Loc Huynh <https://github.com/hthienloc>"
 
 #: src/main.js:70
 msgid "Thanks to These Projects!"
-msgstr "Cảm Ơn Những Dự Án Này!"
+msgstr "Cảm ơn những dự án này!"
 
 #: src/oneTimeDialog.js:55
 msgid "New"
@@ -571,19 +573,19 @@ msgstr "Mới"
 
 #: src/oneTimeDialog.js:173 src/medDialog.js:546
 msgid "Name Already on Treatment List"
-msgstr "Tên Đã Có Trong Danh Sách Điều Trị"
+msgstr "Tên đã có trong Danh sách điều trị"
 
 #: src/medDialog.js:114
 msgid "Edit Treatment"
-msgstr "Chỉnh Sửa Điều Trị"
+msgstr "Chỉnh sửa điều trị"
 
 #: src/medDialog.js:129
 msgid "Copy"
-msgstr "Sao Chép"
+msgstr "Sao chép"
 
 #: src/medDialog.js:234
 msgid "Add Dose"
-msgstr "Thêm Liều Thuốc"
+msgstr "Thêm liều thuốc"
 
 #: src/medDialog.js:438
 msgid "Choose"
@@ -595,19 +597,19 @@ msgstr "Ngày"
 
 #: src/medDialog.js:519
 msgid "Empty Name"
-msgstr "Tên Trống"
+msgstr "Tên trống"
 
 #: src/medDialog.js:525
 msgid "Empty Unit"
-msgstr "Đơn Vị Trống"
+msgstr "Đơn vị trống"
 
 #: src/medDialog.js:532
 msgid "Choose at Least One Day"
-msgstr "Chọn Ít Nhất Một Ngày"
+msgstr "Chọn ít nhất một ngày"
 
 #: src/medDialog.js:561
 msgid "Duplicated Time"
-msgstr "Thời Gian Trùng Lặp"
+msgstr "Thời gian trùng lặp"
 
 #: src/medDialog.js:577
 msgid "Are You Sure?"
@@ -623,7 +625,7 @@ msgstr "Chấp nhận cho phép chạy ngầm và nhận thông báo"
 
 #: src/prefsDialog.js:53 src/window.js:257
 msgid "An Issue Has Occurred"
-msgstr "Đã Xảy Ra Sự Cố"
+msgstr "Đã xảy ra sự cố"
 
 #: src/prefsDialog.js:56 src/window.js:265 src/window.js:287 src/window.js:309
 #: src/window.js:327
@@ -632,11 +634,11 @@ msgstr "Đóng"
 
 #: src/prefsDialog.js:183 src/prefsDialog.js:256
 msgid "Status"
-msgstr "Trạng Thái"
+msgstr "Trạng thái"
 
 #: src/prefsDialog.js:183 src/prefsDialog.js:256
 msgid "Time Confirmed"
-msgstr "Thời Gian Được Xác Nhận"
+msgstr "Thời gian được xác nhận"
 
 #. TRANSLATORS: Context: 1 Pill at 19:00
 #: src/prefsDialog.js:443
@@ -645,7 +647,7 @@ msgstr "lúc"
 
 #: src/prefsDialog.js:470 src/treatmentsFactory.js:266 src/utils.js:52
 msgid "Daily"
-msgstr "Hằng Ngày"
+msgstr "Hằng ngày"
 
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/prefsDialog.js:483
@@ -683,23 +685,23 @@ msgstr "Hoàn thành"
 
 #: src/todayFactory.js:134
 msgid "Change Dose"
-msgstr "Thay Đổi Liều Thuốc"
+msgstr "Thay đổi liều thuốc"
 
 #: src/timeDoseRow.js:34
 msgid "Remove Dose"
-msgstr "Loại Bỏ Liều Thuốc"
+msgstr "Loại bỏ liều thuốc"
 
 #: src/treatmentsFactory.js:123
 msgid "Edit"
-msgstr "Chỉnh Sửa"
+msgstr "Chỉnh sửa"
 
 #: src/treatmentsFactory.js:125
 msgid "Duplicate"
-msgstr "Nhân Bản"
+msgstr "Nhân bản"
 
 #: src/treatmentsFactory.js:144
 msgid "Options"
-msgstr "Tùy Chọn"
+msgstr "Tùy chọn"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/treatmentsFactory.js:242
@@ -714,23 +716,23 @@ msgstr "Bắt đầu vào"
 
 #: src/treatmentsFactory.js:253
 msgid "Until"
-msgstr "Cho Đến Khi"
+msgstr "Cho đến khi"
 
 #: src/treatmentsFactory.js:281 src/treatmentsFactory.js:284
 msgid "Next Dose"
-msgstr "Liều Thuốc Tiếp Theo"
+msgstr "Liều thuốc tiếp theo"
 
 #: src/utils.js:48
 msgid "Weekends"
-msgstr "Cuối Tuần"
+msgstr "Cuối tuần"
 
 #: src/utils.js:50
 msgid "Weekdays"
-msgstr "Các Ngày Trong Tuần"
+msgstr "Các ngày trong tuần"
 
 #: src/window.js:172 src/window.js:940
 msgid "Reminder"
-msgstr "Lời Nhắc"
+msgstr "Lời nhắc"
 
 #. TRANSLATORS: Notification text for when the inventory is low
 #: src/window.js:174
@@ -739,35 +741,35 @@ msgstr "Bạn có phương pháp điều trị sắp hết trong lượng dự t
 
 #: src/window.js:490
 msgid "Show All"
-msgstr "Hiển Thị Tất Cả"
+msgstr "Hiện tất cả"
 
 #: src/window.js:513
 msgid "Show Less"
-msgstr "Hiển Thị Ít Hơn"
+msgstr "Hiện ít hơn"
 
 #: src/window.js:646
 msgid "No Results Found"
-msgstr "Không Tìm Thấy Kết Quả Nào"
+msgstr "Không tìm thấy kết quả nào"
 
 #: src/window.js:646 src/window.js:1509
 msgid "Empty History"
-msgstr "Lịch Sử Trống"
+msgstr "Lịch sử trống"
 
 #: src/window.js:815
 msgid "No Treatments Added"
-msgstr "Chưa Thêm Phương Pháp Điều Trị Nào"
+msgstr "Chưa thêm phương pháp điều trị nào"
 
 #: src/window.js:815
 msgid "All Done for Today"
-msgstr "Tất Cả Đã Xong Cho Ngày Hôm Nay"
+msgstr "Tất cả đã xong cho hôm nay"
 
 #: src/window.js:903
 msgid "Confirm All"
-msgstr "Xác Nhận Tất Cả"
+msgstr "Xác nhận tất cả"
 
 #: src/window.js:904
 msgid "Skip All"
-msgstr "Bỏ Qua Tất Cả"
+msgstr "Bỏ qua tất cả"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:935
