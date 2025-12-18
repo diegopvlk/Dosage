@@ -644,7 +644,7 @@ export const DosageWindow = GObject.registerClass(
 			this.filterHistoryModel.connect('items-changed', () => {
 				let noResults = !this.filterHistoryModel.get_item(0);
 				this._emptyHistory.visible = noResults ? true : false;
-				this._emptyHistory.title = noResults ? _('No Results Found') : _('Empty History');
+				this._emptyHistory.title = noResults ? _('No Results Found') : _('No History');
 			});
 
 			this._searchEntry.connect('search-changed', () => {
@@ -813,7 +813,7 @@ export const DosageWindow = GObject.registerClass(
 			this._emptyTreatments.set_visible(noTreatments);
 			this._emptyToday.set_visible(noItems);
 			this._emptyToday.icon_name = noTreatments ? 'pill-symbolic' : 'all-done-symbolic';
-			this._emptyToday.title = noTreatments ? _('No Treatments Added') : _('All Done for Today');
+			this._emptyToday.title = noTreatments ? _('No Treatments') : _('All Done for Today');
 
 			const todayVisible = this._viewStack.visible_child_name === 'today-page';
 			this._btnWhenNeeded.visible = todayVisible && this.hasWhenNeeded;
@@ -1512,7 +1512,7 @@ export const DosageWindow = GObject.registerClass(
 
 		setEmptyHistStatus() {
 			if (!historyLS.get_item(0)) {
-				this._emptyHistory.title = _('Empty History');
+				this._emptyHistory.title = _('No History');
 				this._emptyHistory.visible = true;
 				this._buttonSearch.sensitive = false;
 				this._searchBar.search_mode_enabled = false;
