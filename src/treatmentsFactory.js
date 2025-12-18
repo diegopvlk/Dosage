@@ -89,9 +89,9 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 	listItem.invLabelBox = new Gtk.Box({});
 
 	listItem.invLabelBtn = new Gtk.Button({
-		css_name: 'badge-button',
+		css_classes: ['badge-button'],
 		valign: Gtk.Align.CENTER,
-		margin_end: 5,
+		margin_end: 4,
 		visible: false,
 		tooltip_text: _('Refill'),
 		child: listItem.invLabelBox,

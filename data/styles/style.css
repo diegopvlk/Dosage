@@ -242,12 +242,10 @@ time-picker time-spinbutton text {
   margin-right: -16px;
 }
 
-badge-box label,
-badge-button label {
+badge-box label {
   padding: 5px 8px;
 }
-badge-box,
-badge-button {
+badge-box {
   background-color: rgb(from currentColor r g b / calc(alpha * 0.1));
   border-radius: 99px;
   font-weight: 600;
@@ -269,32 +267,35 @@ badge-icon:dir(rtl) {
   padding-right: 4px;
   margin-right: -4px;
 }
-badge-button label {
+
+.badge-button {
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 0.902em;
+  padding: 1px 9px;
+}
+.badge-button label {
   text-transform: capitalize;
 }
-badge-button {
-  transition: var(--background-transition);
+.badge-button.warning:dir(ltr) {
+  padding-right: 0;
 }
-badge-button:hover {
-  background-color: rgb(from currentColor r g b / calc(alpha * 0.15));
+.badge-button.warning:dir(rtl) {
+  padding-left: 0;
 }
-badge-button:active {
-  background-color: rgb(from currentColor r g b / calc(alpha * 0.2));
-}
-
-badge-button.warning image:dir(ltr) {
+.badge-button.warning image:dir(ltr) {
   background-color: rgb(from currentColor r g b / calc(alpha * 0.1));
   border-top-right-radius: 99px;
   border-bottom-right-radius: 99px;
-  margin-left: -4px;
+  margin: -1px 0 -1px 4px;
   padding-left: 4px;
   padding-right: 5px;
 }
-badge-button.warning image:dir(rtl) {
+.badge-button.warning image:dir(rtl) {
   background-color: rgb(from currentColor r g b / calc(alpha * 0.1));
   border-top-left-radius: 99px;
   border-bottom-left-radius: 99px;
-  margin-right: -4px;
+  margin: -1px 4px -1px 0;
   padding-right: 4px;
   padding-left: 5px;
 }
@@ -424,9 +425,6 @@ calendar .day-number {
   *,
   item-box.default {
     --list-border: inset 0 0 0 1px var(--border-color);
-  }
-  badge-button {
-    box-shadow: inset 0 0 0 1px var(--border-color);
   }
   row.combo .dropdown-arrow {
     box-shadow: inset 0 0 0 1px rgb(from currentColor r g b / calc(alpha * 0.6));
