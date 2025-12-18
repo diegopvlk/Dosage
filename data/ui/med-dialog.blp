@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-Adw.Dialog medDialog {
+template $MedDialog: Adw.Dialog {
 	name: 'medication-dialog';
 	content-width: 442;
 	title: _("New Treatment");
@@ -19,6 +19,7 @@ Adw.Dialog medDialog {
 					label: _("Cancel");
 					name: 'cancel';
 					can-shrink: true;
+					clicked => $_close();
 				}
 
 				[end]
@@ -30,6 +31,7 @@ Adw.Dialog medDialog {
 					label: _("Add");
 					name: 'save';
 					can-shrink: true;
+					clicked => $_save();
 				}
 			}
 
@@ -55,7 +57,7 @@ Adw.Dialog medDialog {
 
 							selection-mode: none;
 
-							Adw.EntryRow name {
+							Adw.EntryRow medName {
 								title: _("Name");
 
 								MenuButton dosageColorButton {
@@ -182,7 +184,7 @@ Adw.Dialog medDialog {
 								}
 							}
 
-							Adw.EntryRow unit {
+							Adw.EntryRow medUnit {
 								title: _("Unit");
 								text: _("Pill(s)");
 
@@ -437,7 +439,7 @@ Adw.Dialog medDialog {
 								}
 							}
 
-							Adw.EntryRow notes {
+							Adw.EntryRow medNotes {
 								title: _("Notes");
 							}
 
@@ -712,7 +714,7 @@ Adw.Dialog medDialog {
 								}
 							}
 
-							Adw.ExpanderRow inventory {
+							Adw.ExpanderRow medInventory {
 								title: _("Inventory");
 								subtitle: _("Manage your stock");
 								show-enable-switch: true;
@@ -724,7 +726,7 @@ Adw.Dialog medDialog {
 									climb-rate: 0.2;
 									digits: 2;
 
-									adjustment: Adjustment currentInventory {
+									adjustment: Adjustment medCurrrentInv {
 										lower: 0;
 										upper: 99999;
 										step-increment: 1;
@@ -737,7 +739,7 @@ Adw.Dialog medDialog {
 									climb-rate: 0.2;
 									digits: 2;
 
-									adjustment: Adjustment reminderInventory {
+									adjustment: Adjustment medReminderInv {
 										lower: 0;
 										upper: 99999;
 										step-increment: 1;
@@ -758,7 +760,7 @@ Adw.Dialog medDialog {
 								}
 							}
 
-							Adw.ExpanderRow duration {
+							Adw.ExpanderRow medDuration {
 								title: _("Duration");
 								subtitle: _("Set start and end dates");
 								show-enable-switch: true;
@@ -854,7 +856,7 @@ Adw.Dialog medDialog {
 								subtitle: _("If not manually confirmed or skipped, it will be recorded as confirmed in history, reducing stock if enabled");
 							}
 
-							Adw.ButtonRow deleteMedication {
+							Adw.ButtonRow deleteButton {
 								styles [
 									'destructive-action',
 								]

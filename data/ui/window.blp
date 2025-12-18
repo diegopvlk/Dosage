@@ -248,7 +248,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 									'dosage-list',
 								]
 
-								activate => $openMedDialog();
+								activate => $_presentMedDialog();
 								single-click-activate: true;
 							}
 						}
@@ -270,7 +270,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 							halign: center;
 							valign: end;
 							margin-bottom: 3;
-							clicked => $openMedDialog();
+							clicked => $_presentMedDialog();
 
 							styles [
 								'pill',

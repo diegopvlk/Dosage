@@ -101,7 +101,7 @@ export const DosageApplication = GObject.registerClass(
 
 			const newTreatAction = new Gio.SimpleAction({ name: 'new-treatment' });
 			newTreatAction.connect('activate', () => {
-				this.activeWindow.openMedDialog();
+				this.activeWindow._presentMedDialog();
 				this.activeWindow._viewStack.visible_child_name = 'treatments-page';
 			});
 			this.add_action(newTreatAction);

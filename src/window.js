@@ -13,7 +13,7 @@ import Gtk from 'gi://Gtk?version=4.0';
 
 import { EditHistDialog } from './editHistDialog.js';
 import { historyHeaderFactory, historyItemFactory } from './historyFactory.js';
-import { openMedicationDialog } from './medDialog.js';
+import { MedDialog } from './medDialog.js';
 import { MedicationObject } from './medication.js';
 import { OneTimeDialog } from './oneTimeDialog.js';
 import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
@@ -1537,10 +1537,11 @@ export const DosageWindow = GObject.registerClass(
 			if (!skipHistUp) this.updateJsonFile('history', historyLS, histIsEmpty);
 		}
 
-		openMedDialog(list, position, duplicate) {
+		_presentMedDialog(list, position, duplicate) {
 			// artificial delay to avoid opening multiple dialogs when double clicking button
 			if (!this.delayDialog) {
-				openMedicationDialog(this, list, position, duplicate);
+				const medDialog = new MedDialog(list, position, duplicate);
+				medDialog.present(this);
 				this.delayDialog = true;
 				setTimeout(() => {
 					this.delayDialog = false;

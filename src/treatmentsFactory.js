@@ -147,7 +147,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 		css_classes: ['circular', 'flat'],
 		valign: Gtk.Align.CENTER,
 		margin_start: 5,
-		margin_end: 12,
+		margin_end: 11,
 		icon_name: 'view-more-symbolic',
 		menu_model: listItem.optionsMenu,
 	});
@@ -205,7 +205,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 
 		listItem.duplicateAct.connect('activate', () => {
 			const list = getDosageWindow()._treatmentsList;
-			getDosageWindow().openMedDialog(list, listItem.position, 'duplicate');
+			getDosageWindow()._presentMedDialog(list, listItem.position, 'duplicate');
 		});
 
 		listItem.deleteAct.connect('activate', () => {
