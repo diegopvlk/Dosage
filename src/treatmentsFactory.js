@@ -142,7 +142,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 
 	listItem.optionsButton = new Gtk.MenuButton({
 		tooltip_text: _('Options'),
-		css_classes: ['circular'],
+		css_classes: ['circular', 'flat'],
 		valign: Gtk.Align.CENTER,
 		margin_start: 5,
 		margin_end: 12,
