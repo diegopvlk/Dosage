@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/github/diegopvlk/Dosage/js">
+    <file>utils/getHistoryExportFile.js</file>
+    <file>utils/getTreatmentsExportFile.js</file>
+    <file>utils/helpers.js</file>
+    <file>utils/locale.js</file>
+    <file>utils/saveFiles.js</file>
+    <file>utils/upgradeItems.js</file>
     <file>editHistDialog.js</file>
     <file>historyFactory.js</file>
     <file>main.js</file>
@@ -15,8 +21,6 @@
     <file>todayFactory.js</file>
     <file>treatmentsFactory.js</file>
     <file>treatmentsSorter.js</file>
-    <file>upgradeItems.js</file>
-    <file>utils.js</file>
     <file>window.js</file>
   </gresource>
 </gresources>

@@ -10,10 +10,10 @@ import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
-import openPrefsDialog from './prefsDialog.js';
-import { DosageWindow } from './window.js';
+import { PrefsDialog } from './prefsDialog.js';
 import { releaseNotes } from './releaseNotes.js';
 import { sortTreatments } from './treatmentsSorter.js';
+import { DosageWindow } from './window.js';
 
 pkg.initGettext();
 pkg.initFormat();
@@ -40,14 +40,17 @@ export const DosageApplication = GObject.registerClass(
 			});
 			treatmentsSorterAction.connect('activate', (action, parameter) => {
 				treatmentsSorterAction.state = parameter;
-				const sorting = parameter.get_string()[0];
-				settings.set_string('treatments-sorting', sorting);
-				sortTreatments(sorting);
+				const sortingOrder = parameter.get_string()[0];
+				settings.set_string('treatments-sorting', sortingOrder);
+				sortTreatments(sortingOrder);
 			});
 			this.add_action(treatmentsSorterAction);
 
 			const showPrefAction = new Gio.SimpleAction({ name: 'preferences' });
-			showPrefAction.connect('activate', () => openPrefsDialog(this));
+			showPrefAction.connect('activate', () => {
+				const prefsDialog = new PrefsDialog();
+				prefsDialog.present(this.activeWindow);
+			});
 			this.add_action(showPrefAction);
 			this.set_accels_for_action('app.preferences', ['<primary>comma']);
 
@@ -62,7 +65,7 @@ export const DosageApplication = GObject.registerClass(
 					issue_url: 'https://github.com/diegopvlk/Dosage/issues',
 					license_type: Gtk.License.GPL_3_0_ONLY,
 					copyright: '© 2023 Diego Povliuk',
-					// TRANSLATORS: 'Your Name <your@email.com>'
+					// TRANSLATORS: "Your Name <your@email.com>"
 					translator_credits: _('translator-credits'),
 					release_notes: releaseNotes,
 				};
@@ -131,3 +134,5 @@ export function main(argv) {
 	const application = new DosageApplication();
 	return application.runAsync(argv);
 }
+
+export const getDosageWindow = () => DosageApplication.get_default().activeWindow;

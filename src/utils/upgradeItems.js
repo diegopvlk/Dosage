@@ -1,6 +1,6 @@
 // change old versions for compatibility
 
-export default function upgradeItems(json, type) {
+export function upgradeItems(json, type) {
 	if (type === 'treatments') {
 		return updateContents(json.version, treatmentsUpdates, json);
 	} else {

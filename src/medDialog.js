@@ -8,26 +8,22 @@ import Adw from 'gi://Adw';
 import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
 
-import {
-	addLeadZero,
-	handleCalendarSelect,
-	getDayLabel,
-	firstWeekday,
-	getSpecificDaysLabel,
-	addSaveKeyControllerToDialog,
-} from './utils.js';
-
 import { MedicationObject } from './medication.js';
-import { treatmentsLS } from './window.js';
-
 import { TimeDoseRow } from './timeDoseRow.js';
 import { sortTreatFunc } from './treatmentsSorter.js';
+import {
+	addLeadZero,
+	addSaveKeyControllerToDialog,
+	handleCalendarSelect,
+} from './utils/helpers.js';
+import { firstWeekday, getDayLabel, getSpecificDaysLabel } from './utils/locale.js';
+import { treatmentsLS } from './window.js';
 
 const frequencies = ['daily', 'specific-days', 'day-of-month', 'cycle', 'when-needed'];
 
 export let dosageList;
 
-export function openMedicationDialog(DosageWindow, list, position, duplicate) {
+export function openMedicationDialog(dosageWindow, list, position, duplicate) {
 	const builder = Gtk.Builder.new_from_resource('/io/github/diegopvlk/Dosage/ui/med-dialog.ui');
 
 	const toastOverlay = builder.get_object('toastOverlay');
@@ -218,7 +214,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 		}
 
 		deleteButton.connect('activated', () => {
-			confirmDeleteDialog(item, position, DosageWindow, medDialog);
+			confirmDeleteDialog(item, position, dosageWindow, medDialog);
 		});
 	} else {
 		const timeDoseRow = new TimeDoseRow({ time: [12, 30], dose: 1 });
@@ -261,7 +257,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 	const medDialogClamp = builder.get_object('medDialogClamp');
 	const [medDialogClampHeight] = medDialogClamp.measure(Gtk.Orientation.VERTICAL, -1);
 	medDialog.content_height = medDialogClampHeight + 48;
-	medDialog.present(DosageWindow);
+	medDialog.present(dosageWindow);
 
 	cancelButton.connect('clicked', () => medDialog.force_close());
 
@@ -271,11 +267,11 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 		if (!isValidInput(isUpdate)) return;
 
 		addOrUpdateTreatment();
-		DosageWindow.updateEverything({ skipHistUp: true });
+		dosageWindow.updateEverything({ skipHistUp: true });
 		const pos = Math.max(0, updatedItemPosition - 1);
-		DosageWindow._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
+		dosageWindow._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
 		medDialog.force_close();
-		DosageWindow.scheduleNotifications('saving');
+		dosageWindow.scheduleNotifications('saving');
 	});
 
 	let updatedItemPosition = 0;
@@ -571,7 +567,7 @@ export function openMedicationDialog(DosageWindow, list, position, duplicate) {
 	}
 }
 
-export function confirmDeleteDialog(item, position, DosageWindow, medDialog) {
+export function confirmDeleteDialog(item, position, dosageWindow, medDialog) {
 	const alertDialog = new Adw.AlertDialog({
 		body_use_markup: true,
 		heading: _('Are You Sure?'),
@@ -585,22 +581,22 @@ export function confirmDeleteDialog(item, position, DosageWindow, medDialog) {
 	if (medDialog) {
 		alertDialog.present(medDialog);
 	} else {
-		alertDialog.present(DosageWindow);
+		alertDialog.present(dosageWindow);
 	}
 
 	alertDialog.connect('response', (_self, response) => {
 		if (response === 'delete') {
-			const it = DosageWindow._treatmentsList.model.get_item(position);
+			const it = dosageWindow._treatmentsList.model.get_item(position);
 			const deletePos = treatmentsLS.find(it)[1];
 			treatmentsLS.remove(deletePos);
 			if (medDialog) medDialog.force_close();
-			DosageWindow.updateEverything({
+			dosageWindow.updateEverything({
 				skipHistUp: true,
 				skipCycleUp: true,
 				treatIsEmpty: treatmentsLS.n_items === 0,
 			});
-			DosageWindow.scheduleNotifications('deleting');
-			DosageWindow._treatmentsList.scroll_to(
+			dosageWindow.scheduleNotifications('deleting');
+			dosageWindow._treatmentsList.scroll_to(
 				Math.max(0, position - 1),
 				Gtk.ListScrollFlags.FOCUS,
 				null,

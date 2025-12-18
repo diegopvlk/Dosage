@@ -3,243 +3,257 @@
 import Adw from 'gi://Adw';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
+import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
-import { historyLS, treatmentsLS } from './window.js';
+import { getDosageWindow } from './main.js';
 import { MedicationObject } from './medication.js';
-import { handleCalendarSelect } from './utils.js';
 import TimePicker from './timePicker.js';
+import { handleCalendarSelect } from './utils/helpers.js';
+import { historyLS, treatmentsLS } from './window.js';
 
-export function openOneTimeDialog(DosageWindow) {
-	const builder = Gtk.Builder.new_from_resource(
-		'/io/github/diegopvlk/Dosage/ui/one-time-dialog.ui',
-	);
+export const OneTimeDialog = GObject.registerClass(
+	{
+		GTypeName: 'OneTimeDialog',
+		Template: 'resource:///io/github/diegopvlk/Dosage/ui/one-time-dialog.ui',
+		InternalChildren: [
+			'toastOverlay',
+			'oneTimeDialogClamp',
+			'medName',
+			'colorBox',
+			'colorButton',
+			'colorPopover',
+			'medUnit',
+			'medAmount',
+			'medTime',
+			'dateOneEntry',
+			'calOneEntry',
+			'oneTimePopover',
+			'confirmBtn',
+			'oneTimeBtnRow',
+			'oneTimeEntries',
+			'popoverScrollTime',
+		],
+	},
+	class OneTimeDialog extends Adw.Dialog {
+		constructor() {
+			super({});
+			this._toast = new Adw.Toast();
+			this._timePicker = new TimePicker();
+			this._popoverScrollTime.set_child(this._timePicker);
+			this._initOneTimeDialog();
+			this._setTreatmentsBtnList();
+		}
 
-	const toastOverlay = builder.get_object('toastOverlay');
-	const toast = new Adw.Toast();
-	const oneTimeDialog = builder.get_object('oneTimeDialog');
-	const oneTimeDialogClamp = builder.get_object('oneTimeDialogClamp');
-	const medName = builder.get_object('medName');
-	const colorBox = builder.get_object('colorBox');
-	const colorButton = builder.get_object('colorButton');
-	const colorPopover = builder.get_object('colorPopover');
-	const medUnit = builder.get_object('medUnit');
-	const medAmount = builder.get_object('medAmount');
-	const medTime = builder.get_object('medTime');
-	const dateOneEntry = builder.get_object('dateOneEntry');
-	const calOneEntry = builder.get_object('calOneEntry');
-	const oneTimePopover = builder.get_object('oneTimePopover');
-	const confirmBtn = builder.get_object('confirmBtn');
-	const oneTimeBtnRow = builder.get_object('oneTimeBtnRow');
+		_initOneTimeDialog() {
+			const dosageWindow = getDosageWindow();
+			const calendarDate = GLib.DateTime.new_now_local();
+			const calDate = calendarDate.format('%x');
 
-	const oneTimeEntries = builder.get_object('oneTimeEntries');
-	const popoverScrollTime = builder.get_object('popoverScrollTime');
-	const timePicker = new TimePicker();
-	popoverScrollTime.set_child(timePicker);
+			for (const clr of this._colorBox) {
+				clr.connect('clicked', () => {
+					const cssClasses = [clr.get_name() + '-clr', 'circular'];
+					this._colorButton.set_css_classes(cssClasses);
+					this._colorButton.name = clr.get_name();
+					this._colorPopover.popdown();
+				});
+			}
 
-	const calendarDate = GLib.DateTime.new_now_local();
-	const calDate = calendarDate.format('%x');
+			this._dateOneEntry.subtitle = calDate;
+			handleCalendarSelect(this._calOneEntry, this._dateOneEntry, true);
 
-	for (const clr of colorBox) {
-		clr.connect('clicked', () => {
-			const cssClasses = [clr.get_name() + '-clr', 'circular'];
-			colorButton.set_css_classes(cssClasses);
-			colorButton.name = clr.get_name();
-			colorPopover.popdown();
-		});
-	}
+			this._medTime.subtitle = this._timePicker.entry.text;
 
-	const btnNew = new Gtk.Button({
-		css_classes: ['flat'],
-		can_shrink: true,
-		label: _('New'),
-	});
+			this._timePicker.entry.connect('changed', e => {
+				this._medTime.subtitle = e.text;
+			});
 
-	btnNew.remove_css_class('text-button');
-	btnNew.get_first_child().set_halign(Gtk.Align.START);
-	btnNew.get_first_child().set_max_width_chars(50);
-	oneTimeEntries.append(btnNew);
+			this._confirmBtn.connect('clicked', () => {
+				if (!this._isValidInput()) return;
+				this._addSingleItemToHistory();
+				dosageWindow.updateEverything({ skipCycleUp: true });
+				this.force_close();
+				dosageWindow.scheduleNotifications('saving');
+			});
 
-	btnNew.connect('clicked', () => {
-		oneTimePopover.popdown();
-		medName.text = '';
-		medUnit.text = _('Pill(s)');
-		colorButton.set_css_classes(['circular']);
-		colorButton.name = 'default';
-		medAmount.value = 1;
-		medName.sensitive = true;
-		medUnit.sensitive = true;
-		existingEntry = false;
-		toast.dismiss();
-	});
+			const [oneTimeDialogClampHeight] = this._oneTimeDialogClamp.measure(
+				Gtk.Orientation.VERTICAL,
+				-1,
+			);
+			this.content_height = oneTimeDialogClampHeight + 58;
+			this.present(dosageWindow);
 
-	dateOneEntry.subtitle = calDate;
-	handleCalendarSelect(calOneEntry, dateOneEntry, true);
+			const setConfirmBtn = () => {
+				if (this._medName.text.trim() == '' || this._medUnit.text.trim() == '') {
+					this._confirmBtn.sensitive = false;
+				} else {
+					this._confirmBtn.sensitive = true;
+				}
+			};
 
-	oneTimeBtnRow.get_child().append(oneTimePopover);
-	oneTimeBtnRow.connect('activated', _ => oneTimePopover.popup());
-
-	let existingEntry = false;
-
-	if (DosageWindow._treatmentsList.model.get_n_items() > 0) {
-		oneTimeBtnRow.sensitive = true;
-
-		const tempTreatmentsLS = Gio.ListStore.new(MedicationObject);
-
-		for (const it of treatmentsLS) {
-			tempTreatmentsLS.insert_sorted(it, (a, b) => {
-				return a.obj.name.localeCompare(b.obj.name);
+			this._medName.connect('changed', name => {
+				name.remove_css_class('error');
+				setConfirmBtn();
+				this._toast.dismiss();
+			});
+			this._medUnit.connect('changed', unit => {
+				unit.remove_css_class('error');
+				setConfirmBtn();
+				this._toast.dismiss();
 			});
 		}
 
-		for (const it of tempTreatmentsLS) {
-			const item = it.obj;
-			const btn = new Gtk.Button({
-				css_classes: ['flat', 'one-time-name'],
+		_setTreatmentsBtnList() {
+			const btnNew = new Gtk.Button({
+				css_classes: ['flat'],
 				can_shrink: true,
-				label: item.name,
-				width_request: 120,
+				label: _('New'),
 			});
 
-			btn.get_first_child().set_max_width_chars(50);
-			btn.remove_css_class('text-button');
-			btn.get_first_child().set_halign(Gtk.Align.START);
+			btnNew.remove_css_class('text-button');
+			btnNew.get_first_child().set_halign(Gtk.Align.START);
+			btnNew.get_first_child().set_max_width_chars(50);
+			this._oneTimeEntries.append(btnNew);
 
-			btn.connect('clicked', () => {
-				const cssClasses = [item.color + '-clr', 'circular'];
-				colorButton.set_css_classes(cssClasses);
-				oneTimePopover.popdown();
-
-				medName.text = item.name;
-				medUnit.text = item.unit;
-				colorButton.name = item.color;
-				medAmount.value = item.dosage[0].dose;
-
-				medName.sensitive = false;
-				medUnit.sensitive = false;
-				confirmBtn.sensitive = true;
-				existingEntry = true;
-				toast.dismiss();
+			btnNew.connect('clicked', () => {
+				this._oneTimePopover.popdown();
+				this._medName.text = '';
+				this._medUnit.text = _('Pill(s)');
+				this._colorButton.set_css_classes(['circular']);
+				this._colorButton.name = 'default';
+				this._medAmount.value = 1;
+				this._medName.sensitive = true;
+				this._medUnit.sensitive = true;
+				this._existingEntry = false;
+				this._toast.dismiss();
 			});
-			oneTimeEntries.append(btn);
-		}
-	}
 
-	oneTimeDialog.set_presentation_mode(2);
+			this._oneTimeBtnRow.get_child().append(this._oneTimePopover);
+			this._oneTimeBtnRow.connect('activated', _ => this._oneTimePopover.popup());
 
-	medTime.subtitle = timePicker.entry.text;
+			this._existingEntry = false;
 
-	timePicker.entry.connect('changed', e => {
-		medTime.subtitle = e.text;
-	});
+			if (getDosageWindow()._treatmentsList.model.get_n_items() > 0) {
+				this._oneTimeBtnRow.sensitive = true;
 
-	confirmBtn.connect('clicked', () => {
-		if (!isValidInput()) return;
-		addSingleItemToHistory();
-		DosageWindow.updateEverything({ skipCycleUp: true });
-		oneTimeDialog.force_close();
-		DosageWindow.scheduleNotifications('saving');
-	});
+				const tempTreatmentsLS = Gio.ListStore.new(MedicationObject);
 
-	const [oneTimeDialogClampHeight] = oneTimeDialogClamp.measure(Gtk.Orientation.VERTICAL, -1);
-	oneTimeDialog.content_height = oneTimeDialogClampHeight + 58;
-	oneTimeDialog.present(DosageWindow);
+				for (const it of treatmentsLS) {
+					tempTreatmentsLS.insert_sorted(it, (a, b) => {
+						return a.obj.name.localeCompare(b.obj.name);
+					});
+				}
 
-	const setConfirmBtn = () => {
-		if (medName.text.trim() == '' || medUnit.text.trim() == '') {
-			confirmBtn.sensitive = false;
-		} else {
-			confirmBtn.sensitive = true;
-		}
-	};
+				for (const it of tempTreatmentsLS) {
+					const item = it.obj;
+					const btn = new Gtk.Button({
+						css_classes: ['flat', 'one-time-name'],
+						can_shrink: true,
+						label: item.name,
+						width_request: 120,
+					});
 
-	medName.connect('changed', name => {
-		name.remove_css_class('error');
-		setConfirmBtn();
-		toast.dismiss();
-	});
-	medUnit.connect('changed', unit => {
-		unit.remove_css_class('error');
-		setConfirmBtn();
-		toast.dismiss();
-	});
+					btn.get_first_child().set_max_width_chars(50);
+					btn.remove_css_class('text-button');
+					btn.get_first_child().set_halign(Gtk.Align.START);
 
-	function isValidInput() {
-		if (existingEntry) return true;
+					btn.connect('clicked', () => {
+						const cssClasses = [item.color + '-clr', 'circular'];
+						this._colorButton.set_css_classes(cssClasses);
+						this._oneTimePopover.popdown();
 
-		for (const it of treatmentsLS) {
-			const i = it.obj;
-			if (i.name.toLowerCase() === medName.text.trim().toLowerCase()) {
-				toast.title = _('Name Already on Treatment List');
-				toastOverlay.add_toast(toast);
-				medName.add_css_class('error');
-				return;
+						this._medName.text = item.name;
+						this._medUnit.text = item.unit;
+						this._colorButton.name = item.color;
+						this._medAmount.value = item.dosage[0].dose;
+
+						this._medName.sensitive = false;
+						this._medUnit.sensitive = false;
+						this._confirmBtn.sensitive = true;
+						this._existingEntry = true;
+						this._toast.dismiss();
+					});
+					this._oneTimeEntries.append(btn);
+				}
 			}
 		}
 
-		return true;
-	}
+		_isValidInput() {
+			if (this._existingEntry) return true;
 
-	function addSingleItemToHistory() {
-		const calOneEntry = builder.get_object('calOneEntry');
-		const dt = +calOneEntry.get_date().format('%s') * 1000;
-		const entryDate = new Date(dt);
-		const dose = medAmount.value;
-		const h = timePicker.hours;
-		const m = timePicker.minutes;
-
-		entryDate.setHours(timePicker.hours);
-		entryDate.setMinutes(timePicker.minutes);
-		entryDate.setSeconds(new Date().getSeconds());
-
-		const item = new MedicationObject({
-			obj: {
-				name: medName.text.trim(),
-				unit: medUnit.text.trim(),
-				time: [h, m],
-				dose: dose,
-				color: colorButton.get_name(),
-				taken: [entryDate.getTime(), 1],
-			},
-		});
-
-		historyLS.insert_sorted(item, (a, b) => {
-			const dateA = a.obj.taken[0];
-			const dateB = b.obj.taken[0];
-			if (dateA < dateB) return 1;
-			else if (dateA > dateB) return -1;
-			else return 0;
-		});
-
-		const todayDt = new Date().setHours(0, 0, 0, 0);
-		const entryDt = entryDate.setHours(0, 0, 0, 0);
-
-		for (const it of treatmentsLS) {
-			const i = it.obj;
-			const newIt = item.obj;
-			const sameName = i.name === newIt.name;
-			const updateInv = sameName && i.inventory.enabled;
-
-			// if it's the time as of an existing item
-			// update lastTaken if entryDate is today
-			if (todayDt === entryDt) {
-				for (const timeDose of i.dosage) {
-					const sameTime = String(timeDose.time) === String(newIt.time);
-					if (sameName && sameTime) {
-						timeDose.lastTaken = new Date().toISOString();
-						const dateKey = new Date().setHours(h, m, 0, 0);
-						DosageWindow.app.withdraw_notification(String(dateKey));
-						break;
-					}
+			for (const it of treatmentsLS) {
+				const i = it.obj;
+				if (i.name.toLowerCase() === this._medName.text.trim().toLowerCase()) {
+					this._toast.title = _('Name Already on Treatment List');
+					this._toastOverlay.add_toast(this._toast);
+					this._medName.add_css_class('error');
+					return;
 				}
 			}
 
-			if (updateInv) {
-				i.inventory.current -= newIt.dose;
-				// trigger signal to update labels
-				it.notify('obj');
-				break;
+			return true;
+		}
+
+		_addSingleItemToHistory() {
+			const dt = +this._calOneEntry.get_date().format('%s') * 1000;
+			const entryDate = new Date(dt);
+			const dose = this._medAmount.value;
+			const h = this._timePicker.hours;
+			const m = this._timePicker.minutes;
+
+			entryDate.setHours(this._timePicker.hours);
+			entryDate.setMinutes(this._timePicker.minutes);
+			entryDate.setSeconds(new Date().getSeconds());
+
+			const item = new MedicationObject({
+				obj: {
+					name: this._medName.text.trim(),
+					unit: this._medUnit.text.trim(),
+					time: [h, m],
+					dose: dose,
+					color: this._colorButton.get_name(),
+					taken: [entryDate.getTime(), 1],
+				},
+			});
+
+			historyLS.insert_sorted(item, (a, b) => {
+				const dateA = a.obj.taken[0];
+				const dateB = b.obj.taken[0];
+				if (dateA < dateB) return 1;
+				else if (dateA > dateB) return -1;
+				else return 0;
+			});
+
+			const todayDt = new Date().setHours(0, 0, 0, 0);
+			const entryDt = entryDate.setHours(0, 0, 0, 0);
+
+			for (const it of treatmentsLS) {
+				const i = it.obj;
+				const newIt = item.obj;
+				const sameName = i.name === newIt.name;
+				const updateInv = sameName && i.inventory.enabled;
+
+				// if it's the time as of an existing item
+				// update lastTaken if entryDate is today
+				if (todayDt === entryDt) {
+					for (const timeDose of i.dosage) {
+						const sameTime = String(timeDose.time) === String(newIt.time);
+						if (sameName && sameTime) {
+							timeDose.lastTaken = new Date().toISOString();
+							const dateKey = new Date().setHours(h, m, 0, 0);
+							getDosageWindow().app.withdraw_notification(String(dateKey));
+							break;
+						}
+					}
+				}
+
+				if (updateInv) {
+					i.inventory.current -= newIt.dose;
+					// trigger signal to update labels
+					it.notify('obj');
+					break;
+				}
 			}
 		}
-	}
-}
+	},
+);

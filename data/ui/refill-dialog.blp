@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-Adw.Dialog refillDialog {
+template $RefillDialog: Adw.Dialog {
 	name: 'refill-dialog';
 	content-width: 420;
 	title: _("Refill");
@@ -54,6 +54,8 @@ Adw.Dialog refillDialog {
 								"numeric",
 								"pill",
 							]
+
+							clicked => $_refill();
 						}
 
 						Button saveButton {
@@ -65,6 +67,7 @@ Adw.Dialog refillDialog {
 							label: _("Save");
 							name: "save";
 							can-shrink: true;
+							clicked => $_save();
 						}
 					}
 				}

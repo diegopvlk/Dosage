@@ -9,10 +9,10 @@ import Gdk from 'gi://Gdk';
 import Gio from 'gi://Gio';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
-import { getSpecificDaysLabel } from './utils.js';
-import { DosageApplication } from './main.js';
+import { getDosageWindow } from './main.js';
 import { confirmDeleteDialog } from './medDialog.js';
-import { openRefillDialog } from './refillDialog.js';
+import { RefillDialog } from './refillDialog.js';
+import { getSpecificDaysLabel } from './utils/locale.js';
 
 export const treatmentsFactory = new Gtk.SignalListItemFactory();
 
@@ -108,7 +108,9 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 
 	listItem.invLabelBtn.connect('clicked', btn => {
 		if (!delayDialog) {
-			openRefillDialog(listItem, listItem.position);
+			const dosageWindow = getDosageWindow();
+			const refillDialog = new RefillDialog(listItem, listItem.position);
+			refillDialog.present(dosageWindow);
 			delayDialog = true;
 			setTimeout(() => {
 				delayDialog = false;
@@ -172,8 +174,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 	const item = listItem.item.obj;
 
 	if (!listItem.controllerAndSignals) {
-		const DosageWindow = DosageApplication.get_default().activeWindow;
-		const app = DosageWindow.application;
+		const app = getDosageWindow().application;
 		const row = box.parent;
 
 		row.add_controller(listItem.keyController);
@@ -196,18 +197,19 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 
 		if (item.inventory.enabled) {
 			listItem.refillAct.connect('activate', () => {
-				openRefillDialog(listItem, listItem.position);
+				const refillDialog = new RefillDialog(listItem, listItem.position);
+				refillDialog.present(getDosageWindow());
 			});
 			app.add_action(listItem.refillAct);
 		}
 
 		listItem.duplicateAct.connect('activate', () => {
-			const list = DosageWindow._treatmentsList;
-			DosageWindow.openMedDialog(list, listItem.position, 'duplicate');
+			const list = getDosageWindow()._treatmentsList;
+			getDosageWindow().openMedDialog(list, listItem.position, 'duplicate');
 		});
 
 		listItem.deleteAct.connect('activate', () => {
-			confirmDeleteDialog(item, listItem.position, DosageWindow);
+			confirmDeleteDialog(item, listItem.position, getDosageWindow());
 		});
 
 		app.add_action(listItem.editAct);

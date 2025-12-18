@@ -4,55 +4,70 @@
  */
 'use strict';
 
+import Adw from 'gi://Adw';
+import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
-import { DosageApplication } from './main.js';
-import { addSaveKeyControllerToDialog } from './utils.js';
+import { getDosageWindow } from './main.js';
 import { sortTreatments } from './treatmentsSorter.js';
+import { addSaveKeyControllerToDialog } from './utils/helpers.js';
 
-export function openRefillDialog(listItem, position) {
-	const item = listItem.get_item().obj;
-	const DosageWindow = DosageApplication.get_default().activeWindow;
-	const builder = Gtk.Builder.new_from_resource('/io/github/diegopvlk/Dosage/ui/refill-dialog.ui');
-
-	const refillDialog = builder.get_object('refillDialog');
-	const refillRow = builder.get_object('refillRow');
-	const refillInv = builder.get_object('refillInventory');
-	const saveButton = builder.get_object('saveButton');
-	const refillButton = builder.get_object('refillButton');
-
-	addSaveKeyControllerToDialog(refillDialog, saveButton);
-
-	refillRow.subtitle = item.name;
-
-	refillInv.value = item.inventory.current;
-	refillButton.label = '+' + item.inventory.refill;
-
-	refillButton.connect('clicked', () => {
-		refillInv.value += item.inventory.refill;
-	});
-
-	saveButton.connect('clicked', () => {
-		item.inventory.current = refillInv.value;
-
-		// trigger signal to update labels
-		listItem.get_item().notify('obj');
-
-		const treatSort = settings.get_string('treatments-sorting');
-		if (treatSort !== 'name-ascending') {
-			sortTreatments(treatSort);
+export const RefillDialog = GObject.registerClass(
+	{
+		GTypeName: 'RefillDialog',
+		Template: 'resource:///io/github/diegopvlk/Dosage/ui/refill-dialog.ui',
+		InternalChildren: [
+			'refillDialogClamp',
+			'refillRow',
+			'refillInventory',
+			'saveButton',
+			'refillButton',
+		],
+	},
+	class RefillDialog extends Adw.Dialog {
+		constructor(listItem, itemPosition) {
+			super({});
+			this._listItem = listItem;
+			this._itemPosition = itemPosition;
+			this._itemObj = listItem.get_item().obj;
+			this._initRefill();
 		}
-		DosageWindow.updateEverything({ skipHistUp: true, skipCycleUp: true });
-		const pos = Math.max(0, position - 1);
-		DosageWindow._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
-		DosageWindow.scheduleNotifications('saving');
 
-		refillDialog.force_close();
-	});
+		_initRefill() {
+			const itemObj = this._itemObj;
+			this._refillRow.subtitle = itemObj.name;
+			this._refillInventory.value = itemObj.inventory.current;
+			this._refillButton.label = '+' + itemObj.inventory.refill;
+			addSaveKeyControllerToDialog(this, this._saveButton);
 
-	const refillDialogClamp = builder.get_object('refillDialogClamp');
-	const [refillDialogClampHeight] = refillDialogClamp.measure(Gtk.Orientation.VERTICAL, -1);
-	refillDialog.content_height = refillDialogClampHeight + 50;
+			const [refillDialogClampHeight] = this._refillDialogClamp.measure(
+				Gtk.Orientation.VERTICAL,
+				-1,
+			);
+			this.content_height = refillDialogClampHeight + 50;
+		}
 
-	refillDialog.present(DosageWindow);
-}
+		_refill() {
+			this._refillInventory.value += this._itemObj.inventory.refill;
+		}
+
+		_save() {
+			const dosageWindow = getDosageWindow();
+
+			this._itemObj.inventory.current = this._refillInventory.value;
+
+			// trigger signal to update labels
+			this._listItem.get_item().notify('obj');
+
+			const treatSort = settings.get_string('treatments-sorting');
+			if (treatSort !== 'name-ascending') sortTreatments(treatSort);
+
+			dosageWindow.updateEverything({ skipHistUp: true, skipCycleUp: true });
+			const pos = Math.max(0, this._itemPosition - 1);
+			dosageWindow._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
+			dosageWindow.scheduleNotifications('saving');
+
+			this.force_close();
+		}
+	},
+);

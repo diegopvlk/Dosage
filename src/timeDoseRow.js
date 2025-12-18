@@ -2,8 +2,8 @@
 
 import Adw from 'gi://Adw';
 import Gtk from 'gi://Gtk';
-import TimePicker from './timePicker.js';
 import { dosageList } from './medDialog.js';
+import TimePicker from './timePicker.js';
 
 export class TimeDoseRow {
 	constructor(timeDose) {

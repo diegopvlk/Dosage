@@ -1,8 +1,8 @@
 using Gtk 4.0;
 using Adw 1;
 
-Adw.Dialog prefsDialog {
-	name: 'preferences';
+template $PrefsDialog: Adw.Dialog {
+	name: "preferences";
 	content-width: 472;
 	title: _("Preferences");
 
@@ -13,69 +13,49 @@ Adw.Dialog prefsDialog {
 		content: Adw.Clamp {
 			Adw.PreferencesPage prefsPage {
 				Adw.PreferencesGroup {
-					Adw.ActionRow {
+					Adw.SwitchRow autoStart {
 						title: _("Auto-Start at Login");
-						activatable-widget: autostartSwitch;
+						active: bind $_setSwitchStartStateFromKey("autostart", autoStart) as <bool>;
+						notify::active => $_handleAutostart();
 
 						[prefix]
 						Image {
 							icon-name: "dosage-auto-start-symbolic";
 						}
-
-						[suffix]
-						Switch autostartSwitch {
-							halign: center;
-							valign: center;
-						}
 					}
 
-					Adw.ActionRow {
+					Adw.SwitchRow autoClear {
 						title: _("Auto-Clear History");
 						subtitle: _("Keeps a maximum of 30 days");
-						activatable-widget: clearHistSwitch;
+						active: bind $_setSwitchStartStateFromKey("clear-old-hist", autoClear) as <bool>;
+						notify::active => $_setSwitchSettingsKey();
 
 						[prefix]
 						Image {
 							icon-name: "dosage-auto-clear-history-symbolic";
 						}
-
-						[suffix]
-						Switch clearHistSwitch {
-							halign: center;
-							valign: center;
-						}
 					}
 
-					Adw.ActionRow {
+					Adw.SwitchRow lowNotif {
 						title: _("Low Stock Notification");
 						subtitle: _("Send reminders when treatments are low in stock");
-						activatable-widget: notifStockSwitch;
+						active: bind $_setSwitchStartStateFromKey("low-stock-notif", lowNotif) as <bool>;
+						notify::active => $_setSwitchSettingsKey();
 
 						[prefix]
 						Image {
 							icon-name: "dosage-notification-low-stock-symbolic";
 						}
-
-						[suffix]
-						Switch notifStockSwitch {
-							halign: center;
-							valign: center;
-						}
 					}
 
-					Adw.ActionRow {
+					Adw.SwitchRow notifSound {
 						title: _("Notification Sound");
-						activatable-widget: notifSoundSwitch;
+						active: bind $_setSwitchStartStateFromKey("sound", notifSound) as <bool>;
+						notify::active => $_setSwitchSettingsKey();
 
 						[prefix]
 						Image {
 							icon-name: "dosage-notification-sound-symbolic";
-						}
-
-						[suffix]
-						Switch notifSoundSwitch {
-							halign: center;
-							valign: center;
 						}
 					}
 
@@ -89,42 +69,32 @@ Adw.Dialog prefsDialog {
 							icon-name: "dosage-notification-bell-symbolic";
 						}
 
-						Adw.ActionRow {
+						Adw.SwitchRow confirmBtn {
 							title: _("Confirm");
-							activatable-widget: confirmSwitch;
+							active: bind $_setSwitchStartStateFromKey("confirm-button", confirmBtn) as <bool>;
+							notify::active => $_setSwitchSettingsKey();
 
 							[prefix]
 							Image {
 								icon-name: "med-confirmed-symbolic";
 							}
-
-							[suffix]
-							Switch confirmSwitch {
-								halign: center;
-								valign: center;
-							}
 						}
 
-						Adw.ActionRow {
+						Adw.SwitchRow skipBtn {
 							title: _("Skip");
-							activatable-widget: skipSwitch;
+							active: bind $_setSwitchStartStateFromKey("skip-button", skipBtn) as <bool>;
+							notify::active => $_setSwitchSettingsKey();
 
 							[prefix]
 							Image {
 								icon-name: "med-skipped-symbolic";
-							}
-
-							[suffix]
-							Switch skipSwitch {
-								halign: center;
-								valign: center;
 							}
 						}
 					}
 				}
 
 				Adw.PreferencesGroup {
-					Adw.ComboRow exportHistoryFormat {
+					Adw.ComboRow exportHistFmt {
 						title: _("Export History As");
 						icon-name: "history-symbolic";
 
@@ -138,10 +108,11 @@ Adw.Dialog prefsDialog {
 						};
 					}
 
-					Adw.ButtonRow saveHistory {
+					Adw.ButtonRow saveHistoryBtn {
 						title: _("Save");
 						sensitive: false;
 						start-icon-name: "document-save-symbolic";
+						activated => $_saveHistory();
 					}
 				}
 
@@ -157,10 +128,11 @@ Adw.Dialog prefsDialog {
 						};
 					}
 
-					Adw.ButtonRow saveTreatments {
+					Adw.ButtonRow saveTreatmentsBtn {
 						title: _("Save");
 						sensitive: false;
 						start-icon-name: "document-save-symbolic";
+						activated => $_saveTreatments();
 					}
 				}
 			}

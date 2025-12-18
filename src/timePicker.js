@@ -2,9 +2,10 @@
 
 import Adw from 'gi://Adw';
 import GLib from 'gi://GLib';
-import Gtk from 'gi://Gtk';
 import GObject from 'gi://GObject';
-import { addLeadZero, amPmStr, clockIs12, timeDot, timeFormat } from './utils.js';
+import Gtk from 'gi://Gtk';
+import { addLeadZero } from './utils/helpers.js';
+import { amPmStr, clockIs12, timeDot, timeFormat } from './utils/locale.js';
 
 /**
  * A time picker widget with spin buttons.

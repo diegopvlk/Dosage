@@ -11,27 +11,27 @@ import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
-import { MedicationObject } from './medication.js';
-import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
+import { EditHistDialog } from './editHistDialog.js';
 import { historyHeaderFactory, historyItemFactory } from './historyFactory.js';
-import { treatmentsFactory } from './treatmentsFactory.js';
-import { openEditHistDialog } from './editHistDialog.js';
 import { openMedicationDialog } from './medDialog.js';
-import { openOneTimeDialog } from './oneTimeDialog.js';
-import upgradeItems from './upgradeItems.js';
+import { MedicationObject } from './medication.js';
+import { OneTimeDialog } from './oneTimeDialog.js';
+import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
+import { treatmentsFactory } from './treatmentsFactory.js';
+import { sortTreatFunc } from './treatmentsSorter.js';
+import { timeFormat } from './utils/locale.js';
+import { upgradeItems } from './utils/upgradeItems.js';
 
 import {
+	DataDir,
 	HistorySectionSorter,
 	TodaySectionSorter,
-	DataDir,
 	createTempObj,
-	isTodayMedDay,
 	datesPassedDiff,
-	timeFormat,
-	isValidTreatmentItem,
+	isTodayMedDay,
 	isValidHistoryItem,
-} from './utils.js';
-import { sortTreatFunc } from './treatmentsSorter.js';
+	isValidTreatmentItem,
+} from './utils/helpers.js';
 
 export const historyLS = Gio.ListStore.new(MedicationObject);
 export const treatmentsLS = Gio.ListStore.new(MedicationObject);
@@ -168,7 +168,7 @@ export const DosageWindow = GObject.registerClass(
 
 			app.withdraw_notification('low-stock');
 
-			if (!this.get_visible() && !isNotifAction && notify) {
+			if (!isNotifAction && notify) {
 				notification.set_title(_('Reminder'));
 				// TRANSLATORS: Notification text for when the inventory is low
 				notification.set_body(_('You have treatments low in stock'));
@@ -1144,7 +1144,8 @@ export const DosageWindow = GObject.registerClass(
 			} else {
 				// one-time entry
 				if (!this.delayDialog) {
-					openOneTimeDialog(this);
+					const oneTimeDialog = new OneTimeDialog();
+					oneTimeDialog.present(this);
 					this.delayDialog = true;
 					setTimeout(() => {
 						this.delayDialog = false;
@@ -1262,7 +1263,7 @@ export const DosageWindow = GObject.registerClass(
 			historyLS.splice(0, 0, itemsToAdd.reverse());
 		}
 
-		editHistoryItem(list, position) {
+		_editHistoryItem(listView, position) {
 			if (this.ctrlPressed) {
 				const isSelected = this.histMultiSelect.is_selected(position);
 
@@ -1273,7 +1274,8 @@ export const DosageWindow = GObject.registerClass(
 				}
 				return;
 			}
-			openEditHistDialog(this, list, position);
+			const editHistDialog = new EditHistDialog(listView, position);
+			editHistDialog.present(this);
 		}
 
 		updateJsonFile(type, listStore, lsIsEmpty) {

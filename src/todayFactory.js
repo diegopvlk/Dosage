@@ -9,8 +9,8 @@ import GLib from 'gi://GLib';
 import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 import Pango from 'gi://Pango';
-import { DosageApplication } from './main.js';
-import { timeFormat } from './utils.js';
+import { getDosageWindow } from './main.js';
+import { timeFormat } from './utils/locale.js';
 
 export const todayHeaderFactory = new Gtk.SignalListItemFactory();
 export const todayItemFactory = new Gtk.SignalListItemFactory();
@@ -27,10 +27,10 @@ todayHeaderFactory.connect('setup', (factory, listHeader) => {
 	});
 
 	listHeader.selectTimeGroupBtn.connect('clicked', _btn => {
-		const DW = DosageApplication.get_default().activeWindow;
+		const dosageWindow = getDosageWindow();
 
 		for (let pos = listHeader.start; pos < listHeader.end; pos++) {
-			DW.selectTodayItems(null, pos, true);
+			dosageWindow.selectTodayItems(null, pos, true);
 		}
 	});
 

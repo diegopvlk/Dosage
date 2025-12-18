@@ -4,13 +4,13 @@
  */
 'use strict';
 
+import Gdk from 'gi://Gdk';
 import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk';
-import Gdk from 'gi://Gdk';
 import Pango from 'gi://Pango';
 
-import { dateFormat, timeFormat } from './utils.js';
-import { DosageApplication } from './main.js';
+import { getDosageWindow } from './main.js';
+import { dateFormat, timeFormat } from './utils/locale.js';
 
 export const historyHeaderFactory = new Gtk.SignalListItemFactory();
 export const historyItemFactory = new Gtk.SignalListItemFactory();
@@ -48,13 +48,13 @@ historyItemFactory.connect('setup', (factory, listItem) => {
 	});
 
 	listItem.checkButton.connect('toggled', btn => {
-		const DW = DosageApplication.get_default().activeWindow;
+		const dosageWindow = getDosageWindow();
 		const pos = listItem.position;
 
 		if (btn.active) {
-			DW.histMultiSelect.select_item(pos, false);
+			dosageWindow.histMultiSelect.select_item(pos, false);
 		} else {
-			DW.histMultiSelect.unselect_item(pos);
+			dosageWindow.histMultiSelect.unselect_item(pos);
 		}
 
 		btn.active = listItem.selected;

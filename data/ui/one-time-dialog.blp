@@ -1,10 +1,11 @@
 using Gtk 4.0;
 using Adw 1;
 
-Adw.Dialog oneTimeDialog {
+template $OneTimeDialog: Adw.Dialog {
 	name: "one-time-dialog";
 	content-width: 424;
 	title: _("One-Time Entry");
+	presentation-mode: bottom_sheet;
 
 	Adw.ToastOverlay toastOverlay {
 		Adw.ToolbarView {
