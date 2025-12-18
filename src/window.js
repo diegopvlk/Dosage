@@ -810,6 +810,7 @@ export const DosageWindow = GObject.registerClass(
 			const noItems = this.sortedTodayModel.get_n_items() === 0;
 			const noTreatments = this._treatmentsList.model.get_n_items() === 0;
 
+			this._buttonTreatmentsSorter.set_sensitive(!noTreatments);
 			this._emptyTreatments.set_visible(noTreatments);
 			this._emptyToday.set_visible(noItems);
 			this._emptyToday.icon_name = noTreatments ? 'pill-symbolic' : 'all-done-symbolic';
