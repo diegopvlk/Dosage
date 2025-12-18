@@ -81,6 +81,11 @@ export const DosageApplication = GObject.registerClass(
 					'Flatpak https://github.com/flatpak/',
 				]);
 				aboutDialog.add_link('Donate', 'https://github.com/diegopvlk/Dosage#donate');
+				aboutDialog.add_other_app(
+					'io.github.diegopvlk.Tomatillo',
+					'Tomatillo',
+					'Focus better, work smarter',
+				);
 				aboutDialog.present(this.activeWindow);
 			});
 			this.add_action(showAboutAction);
