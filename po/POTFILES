@@ -1,24 +1,33 @@
-data/io.github.diegopvlk.Dosage.appdata.xml.in
-data/io.github.diegopvlk.Dosage.desktop.in
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
 
 data/ui/edit-hist-dialog.blp
 data/ui/med-dialog.blp
 data/ui/one-time-dialog.blp
 data/ui/preferences.blp
 data/ui/refill-dialog.blp
+data/ui/shortcuts-dialog.blp
 data/ui/window.blp
 
+data/io.github.diegopvlk.Dosage.appdata.xml.in
+data/io.github.diegopvlk.Dosage.desktop.in
+
+src/utils/getHistoryExportFile.js
+src/utils/getTreatmentsExportFile.js
+src/utils/helpers.js
+src/utils/locale.js
+src/utils/saveFiles.js
+src/utils/upgradeItems.js
 src/editHistDialog.js
 src/historyFactory.js
 src/main.js
+src/medDialog.js
 src/medication.js
 src/oneTimeDialog.js
-src/medDialog.js
 src/prefsDialog.js
-src/todayFactory.js
+src/refillDialog.js
 src/timeDoseRow.js
 src/timePicker.js
 src/todayFactory.js
 src/treatmentsFactory.js
-src/utils.js
 src/window.js
