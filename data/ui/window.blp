@@ -127,7 +127,11 @@ template $DosageWindow: Adw.ApplicationWindow {
 
 							clicked => $addTodayOrOneTimeToHist();
 							name: '1';
-							label: _("One-Time Entry");
+
+							child: Adw.ButtonContent entryBtnContent {
+								icon-name: 'list-add-symbolic';
+								label: _("One-Time Entry");
+							};
 						}
 
 						Button skipBtn {

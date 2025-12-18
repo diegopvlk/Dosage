@@ -55,6 +55,7 @@ export const DosageWindow = GObject.registerClass(
 			'spinnerToday',
 			'skipBtn',
 			'entryBtn',
+			'entryBtnContent',
 			'unselectBtn',
 			'viewStack',
 			'btnWhenNeeded',
@@ -1084,7 +1085,9 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		updateEntryBtn(hasTodayItems) {
-			this._entryBtn.label = hasTodayItems ? _('Confirm') : _('One-Time Entry');
+			this._entryBtnContent.label = hasTodayItems ? _('Confirm') : _('One-Time Entry');
+			const entryBtnIcon = this._entryBtnContent.get_first_child().get_first_child();
+			entryBtnIcon.set_visible(!hasTodayItems);
 			this._skipBtn.set_visible(hasTodayItems);
 			this._unselectBtn.set_visible(hasTodayItems);
 
