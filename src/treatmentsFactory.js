@@ -4,11 +4,11 @@
  */
 'use strict';
 
-import GLib from 'gi://GLib';
-import Gdk from 'gi://Gdk';
-import Gio from 'gi://Gio';
-import Gtk from 'gi://Gtk';
-import Pango from 'gi://Pango';
+import GLib from 'gi://GLib?version=2.0';
+import Gdk from 'gi://Gdk?version=4.0';
+import Gio from 'gi://Gio?version=2.0';
+import Gtk from 'gi://Gtk?version=4.0';
+import Pango from 'gi://Pango?version=1.0';
 import { getDosageWindow } from './main.js';
 import { confirmDeleteDialog } from './medDialog.js';
 import { RefillDialog } from './refillDialog.js';

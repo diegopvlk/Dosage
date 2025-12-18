@@ -4,7 +4,7 @@
  */
 'use strict';
 
-import GObject from 'gi://GObject';
+import GObject from 'gi://GObject?version=2.0';
 
 export const MedicationObject = GObject.registerClass(
 	{

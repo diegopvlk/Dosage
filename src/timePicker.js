@@ -1,9 +1,9 @@
 'use strict';
 
-import Adw from 'gi://Adw';
-import GLib from 'gi://GLib';
-import GObject from 'gi://GObject';
-import Gtk from 'gi://Gtk';
+import Adw from 'gi://Adw?version=1';
+import GLib from 'gi://GLib?version=2.0';
+import GObject from 'gi://GObject?version=2.0';
+import Gtk from 'gi://Gtk?version=4.0';
 import { addLeadZero } from './utils/helpers.js';
 import { amPmStr, clockIs12, timeDot, timeFormat } from './utils/locale.js';
 

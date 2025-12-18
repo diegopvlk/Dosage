@@ -4,10 +4,10 @@
  */
 'use strict';
 
-import Gdk from 'gi://Gdk';
-import GLib from 'gi://GLib';
-import Gtk from 'gi://Gtk';
-import Pango from 'gi://Pango';
+import Gdk from 'gi://Gdk?version=4.0';
+import GLib from 'gi://GLib?version=2.0';
+import Gtk from 'gi://Gtk?version=4.0';
+import Pango from 'gi://Pango?version=1.0';
 
 import { getDosageWindow } from './main.js';
 import { dateFormat, timeFormat } from './utils/locale.js';

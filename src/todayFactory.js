@@ -4,11 +4,11 @@
  */
 'use strict';
 
-import Adw from 'gi://Adw';
-import GLib from 'gi://GLib';
-import Gdk from 'gi://Gdk';
-import Gtk from 'gi://Gtk';
-import Pango from 'gi://Pango';
+import Adw from 'gi://Adw?version=1';
+import GLib from 'gi://GLib?version=2.0';
+import Gdk from 'gi://Gdk?version=4.0';
+import Gtk from 'gi://Gtk?version=4.0';
+import Pango from 'gi://Pango?version=1.0';
 import { getDosageWindow } from './main.js';
 import { timeFormat } from './utils/locale.js';
 

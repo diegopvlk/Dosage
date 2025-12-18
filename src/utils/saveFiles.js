@@ -1,5 +1,5 @@
-import Gio from 'gi://Gio';
-import Gtk from 'gi://Gtk';
+import Gio from 'gi://Gio?version=2.0';
+import Gtk from 'gi://Gtk?version=4.0';
 
 import { getDosageWindow } from '../main.js';
 import { historyLS, treatmentsLS } from '../window.js';

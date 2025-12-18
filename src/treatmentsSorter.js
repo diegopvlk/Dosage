@@ -1,6 +1,6 @@
 'use strict';
 
-import Gtk from 'gi://Gtk';
+import Gtk from 'gi://Gtk?version=4.0';
 
 import { getDosageWindow } from './main.js';
 import { treatmentsLS } from './window.js';

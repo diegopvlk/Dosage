@@ -4,8 +4,8 @@
  */
 'use strict';
 
-import GLib from 'gi://GLib';
-import Xdp from 'gi://Xdp';
+import GLib from 'gi://GLib?version=2.0';
+import Xdp from 'gi://Xdp?version=1.0';
 
 const decoder = new TextDecoder();
 

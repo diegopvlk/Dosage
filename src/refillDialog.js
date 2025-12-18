@@ -4,9 +4,9 @@
  */
 'use strict';
 
-import Adw from 'gi://Adw';
-import GObject from 'gi://GObject';
-import Gtk from 'gi://Gtk';
+import Adw from 'gi://Adw?version=1';
+import GObject from 'gi://GObject?version=2.0';
+import Gtk from 'gi://Gtk?version=4.0';
 
 import { getDosageWindow } from './main.js';
 import { sortTreatments } from './treatmentsSorter.js';

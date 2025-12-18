@@ -4,12 +4,12 @@
  */
 'use strict';
 
-import Adw from 'gi://Adw';
-import Gio from 'gi://Gio';
-import GLib from 'gi://GLib';
-import GObject from 'gi://GObject';
-import Gtk from 'gi://Gtk';
-import Xdp from 'gi://Xdp';
+import Adw from 'gi://Adw?version=1';
+import Gio from 'gi://Gio?version=2.0';
+import GLib from 'gi://GLib?version=2.0';
+import GObject from 'gi://GObject?version=2.0';
+import Gtk from 'gi://Gtk?version=4.0';
+import Xdp from 'gi://Xdp?version=1.0';
 import { saveHistFile, saveTreatFile } from './utils/saveFiles.js';
 import { historyLS, treatmentsLS } from './window.js';
 
