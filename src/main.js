@@ -82,6 +82,11 @@ export const DosageApplication = GObject.registerClass(
 			});
 			this.add_action(showAboutAction);
 
+			const closeAction = new Gio.SimpleAction({ name: 'close' });
+			closeAction.connect('activate', () => this.activeWindow.close());
+			this.add_action(closeAction);
+			this.set_accels_for_action('app.close', ['<primary>w']);
+
 			const quitAction = new Gio.SimpleAction({ name: 'quit' });
 			quitAction.connect('activate', () => this.quit());
 			this.add_action(quitAction);
