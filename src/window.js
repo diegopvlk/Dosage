@@ -1059,9 +1059,10 @@ export const DosageWindow = GObject.registerClass(
 			return [notification, app];
 		}
 
-		setShowWhenNeeded() {
-			this.unselectTodayItems();
+		setShowWhenNeeded(_btn, isAction) {
 			const btn = this._btnWhenNeeded;
+			if (isAction) btn.active = !btn.active;
+			this.unselectTodayItems();
 			settings.set_boolean('show-when-needed', btn.active);
 			this.loadToday();
 		}
@@ -1097,7 +1098,7 @@ export const DosageWindow = GObject.registerClass(
 			}
 		}
 
-		addTodayToHistory(btn) {
+		addTodayOrOneTimeToHist(btn = this._entryBtn) {
 			const taken = +btn.get_name(); // 1 or 0
 			const app = this.app;
 			const itemsToAdd = [];

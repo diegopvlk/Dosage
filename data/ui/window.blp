@@ -125,7 +125,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 								'floating',
 							]
 
-							clicked => $addTodayToHistory();
+							clicked => $addTodayOrOneTimeToHist();
 							name: '1';
 							label: _("One-Time Entry");
 						}
@@ -137,7 +137,7 @@ template $DosageWindow: Adw.ApplicationWindow {
 								'floating',
 							]
 
-							clicked => $addTodayToHistory();
+							clicked => $addTodayOrOneTimeToHist();
 							name: '0';
 							tooltip-text: _("Skip");
 							visible: false;
@@ -315,6 +315,11 @@ menu appMenu {
 	item {
 		label: _("Preferences");
 		action: 'app.preferences';
+	}
+
+	item {
+		label: _("Keyboard Shortcuts");
+		action: "app.shortcuts";
 	}
 
 	item {

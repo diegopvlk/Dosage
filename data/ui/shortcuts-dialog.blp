@@ -1,0 +1,33 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.ShortcutsDialog shortcuts_dialog {
+  Adw.ShortcutsSection {
+    title: _("Shortcuts");
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Show/Hide 'As Needed'");
+      action-name: "app.sh-when-needed";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "New One-Time Entry");
+      action-name: "app.new-one-time";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Add New Treatment");
+      action-name: "app.new-treatment";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Show Shortcuts");
+      action-name: "app.shortcuts";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Quit");
+      action-name: "app.quit";
+    }
+  }
+}

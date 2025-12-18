@@ -9,6 +9,7 @@ blueprints = custom_target(
 		'ui/one-time-dialog.blp',
 		'ui/preferences.blp',
 		'ui/refill-dialog.blp',
+		'ui/shortcuts-dialog.blp',
 		'ui/window.blp',
 	),
 	output: '.',

@@ -85,15 +85,34 @@ export const DosageApplication = GObject.registerClass(
 			});
 			this.add_action(showAboutAction);
 
-			const closeAction = new Gio.SimpleAction({ name: 'close' });
-			closeAction.connect('activate', () => this.activeWindow.close());
-			this.add_action(closeAction);
-			this.set_accels_for_action('app.close', ['<primary>w']);
+			const newOneTimeAction = new Gio.SimpleAction({ name: 'new-one-time' });
+			newOneTimeAction.connect('activate', () => {
+				this.activeWindow.unselectTodayItems();
+				this.activeWindow.addTodayOrOneTimeToHist();
+				this.activeWindow._viewStack.visible_child_name = 'today-page';
+			});
+			this.add_action(newOneTimeAction);
+			this.set_accels_for_action('app.new-one-time', ['<primary>t']);
+
+			const newTreatAction = new Gio.SimpleAction({ name: 'new-treatment' });
+			newTreatAction.connect('activate', () => {
+				this.activeWindow.openMedDialog();
+				this.activeWindow._viewStack.visible_child_name = 'treatments-page';
+			});
+			this.add_action(newTreatAction);
+			this.set_accels_for_action('app.new-treatment', ['<primary>n']);
+
+			const shWhenNeededAction = new Gio.SimpleAction({ name: 'sh-when-needed' });
+			shWhenNeededAction.connect('activate', () => {
+				this.activeWindow.setShowWhenNeeded(null, true);
+			});
+			this.add_action(shWhenNeededAction);
+			this.set_accels_for_action('app.sh-when-needed', ['<primary>h']);
 
 			const quitAction = new Gio.SimpleAction({ name: 'quit' });
 			quitAction.connect('activate', () => this.quit());
 			this.add_action(quitAction);
-			this.set_accels_for_action('app.quit', ['<primary>q']);
+			this.set_accels_for_action('app.quit', ['<primary>q', '<primary>w']);
 
 			this.add_main_option(
 				'startup',
