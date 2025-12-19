@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-18 16:36-0300\n"
-"PO-Revision-Date: 2025-12-04 22:40+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"PO-Revision-Date: 2025-12-19 19:21+0000\n"
+"Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/dosage/dosage/"
 "et/>\n"
 "Language: et\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -433,16 +433,12 @@ msgid "No Results Found"
 msgstr "Tulemusi ei leidu"
 
 #: src/window.js:647 src/window.js:1516
-#, fuzzy
-#| msgid "History"
 msgid "No History"
-msgstr "Ajalugu"
+msgstr "Ajalugu pole"
 
 #: src/window.js:817 data/ui/window.blp:260
-#, fuzzy
-#| msgid "Treatments"
 msgid "No Treatments"
-msgstr "Ravikuurid"
+msgstr "Ravikuure pole"
 
 #: src/window.js:817
 msgid "All Done for Today"
@@ -736,32 +732,23 @@ msgid "Export Treatments As"
 msgstr "Ekspordi ravikuur kui"
 
 #: data/ui/shortcuts-dialog.blp:8
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Shortcuts"
-msgstr "Näita kiirklahve"
+msgstr "Kiirklahvid"
 
 #: data/ui/shortcuts-dialog.blp:11
-#, fuzzy
-#| msgid "Show/Hide 'As Needed'"
 msgctxt "shortcut window"
 msgid "Show/Hide 'As Needed'"
 msgstr "Näita/peida „Vastavalt vajadusele“"
 
 #: data/ui/shortcuts-dialog.blp:16
-#, fuzzy
-#| msgid "One-Time Entry"
 msgctxt "shortcut window"
 msgid "New One-Time Entry"
-msgstr "Ühekordne kirje"
+msgstr "Uus ühekordne kirje"
 
 #: data/ui/shortcuts-dialog.blp:21
-#, fuzzy
-#| msgid "New Treatment"
 msgctxt "shortcut window"
 msgid "Add New Treatment"
-msgstr "Uus ravikuur"
+msgstr "Lisa uus ravikuur"
 
 #: data/ui/shortcuts-dialog.blp:26
 msgctxt "shortcut window"
@@ -818,11 +805,8 @@ msgid "Remaining Stock (Highest First)"
 msgstr "Järelejäänud varu (suurim enne)"
 
 #: data/ui/window.blp:325
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Keyboard Shortcuts"
-msgstr "Näita kiirklahve"
+msgstr "Klaviatuuri kiirklahvid"
 
 #: data/ui/window.blp:330
 msgid "About Dosage"
