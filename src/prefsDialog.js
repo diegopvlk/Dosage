@@ -67,12 +67,6 @@ export const PrefsDialog = GObject.registerClass(
 					(_portal, result) => {
 						try {
 							portal.request_background_finish(result);
-							const alertDialog = new Adw.AlertDialog({
-								heading: _('An Issue Has Occurred'),
-								body: err.message,
-							});
-							alertDialog.add_response('close', _('Close'));
-							alertDialog.present(this);
 						} catch (err) {
 							console.error(err);
 							if (!state) return;
