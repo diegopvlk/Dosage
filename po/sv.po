@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-18 16:36-0300\n"
+"POT-Creation-Date: 2025-12-19 16:12-0300\n"
 "PO-Revision-Date: 2025-03-14 12:55+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
@@ -23,7 +23,7 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3
 #: src/utils/getTreatmentsExportFile.js:173 src/utils/saveFiles.js:22
-#: src/utils/saveFiles.js:44 src/main.js:60 src/window.js:1059
+#: src/utils/saveFiles.js:44 src/main.js:60 src/window.js:1060
 #: data/ui/window.blp:6
 msgid "Dosage"
 msgstr "Dosering"
@@ -360,12 +360,12 @@ msgstr "Piller"
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Acceptera för att tillåta körning i bakgrunden och ta emot aviseringar"
 
-#: src/prefsDialog.js:71 src/prefsDialog.js:80 src/window.js:258
+#: src/prefsDialog.js:74 src/window.js:259
 msgid "An Issue Has Occurred"
 msgstr "Ett Problem Har Uppstått"
 
-#: src/prefsDialog.js:74 src/prefsDialog.js:83 src/window.js:266
-#: src/window.js:288 src/window.js:310 src/window.js:328
+#: src/prefsDialog.js:77 src/window.js:267 src/window.js:289 src/window.js:311
+#: src/window.js:329
 msgid "Close"
 msgstr "Stäng"
 
@@ -418,7 +418,7 @@ msgstr "Till"
 msgid "Next Dose"
 msgstr "Nästa Dos"
 
-#: src/window.js:173 src/window.js:942
+#: src/window.js:173 src/window.js:943
 msgid "Reminder"
 msgstr "Påminnelse"
 
@@ -427,62 +427,62 @@ msgstr "Påminnelse"
 msgid "You have treatments low in stock"
 msgstr "Du har behandlingar som har lågt lager"
 
-#: src/window.js:491
+#: src/window.js:492
 msgid "Show All"
 msgstr "Visa Alla"
 
-#: src/window.js:514
+#: src/window.js:515
 msgid "Show Less"
 msgstr "Visa Mindre"
 
-#: src/window.js:647
+#: src/window.js:648
 msgid "No Results Found"
 msgstr "Inga Resultat Hittades"
 
-#: src/window.js:647 src/window.js:1516
+#: src/window.js:648 src/window.js:1517
 #, fuzzy
 #| msgid "History"
 msgid "No History"
 msgstr "Historik"
 
-#: src/window.js:817 data/ui/window.blp:260
+#: src/window.js:818 data/ui/window.blp:260
 #, fuzzy
 #| msgid "Treatments"
 msgid "No Treatments"
 msgstr "Behandlingar"
 
-#: src/window.js:817
+#: src/window.js:818
 msgid "All Done for Today"
 msgstr "Färdig För I Dag"
 
-#: src/window.js:905 src/window.js:1089 data/ui/one-time-dialog.blp:285
+#: src/window.js:906 src/window.js:1090 data/ui/one-time-dialog.blp:285
 #: data/ui/preferences.blp:73
 msgid "Confirm"
 msgstr "Bekräfta"
 
-#: src/window.js:905
+#: src/window.js:906
 msgid "Confirm All"
 msgstr "Bekräfta Alla"
 
-#: src/window.js:906 data/ui/preferences.blp:84 data/ui/window.blp:146
+#: src/window.js:907 data/ui/preferences.blp:84 data/ui/window.blp:146
 msgid "Skip"
 msgstr "Hoppa Över"
 
-#: src/window.js:906
+#: src/window.js:907
 msgid "Skip All"
 msgstr "Hoppa Över Alla"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:937
+#: src/window.js:938
 #, javascript-format
 msgid "and %d more"
 msgstr "och %d till"
 
-#: src/window.js:1089 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
+#: src/window.js:1090 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
 msgid "One-Time Entry"
 msgstr "Engångsinträde"
 
-#: src/window.js:1294 data/ui/window.blp:335
+#: src/window.js:1295 data/ui/window.blp:353
 msgid "Quit"
 msgstr "Avsluta"
 
@@ -700,7 +700,7 @@ msgstr "Från Behandlingslistan"
 msgid "Amount"
 msgstr "Mängd"
 
-#: data/ui/preferences.blp:7 data/ui/window.blp:320
+#: data/ui/preferences.blp:7 data/ui/window.blp:338
 msgid "Preferences"
 msgstr "Inställningar"
 
@@ -832,11 +832,29 @@ msgstr ""
 msgid "Remaining Stock (Highest First)"
 msgstr ""
 
-#: data/ui/window.blp:325
+#: data/ui/window.blp:318
+#, fuzzy
+#| msgid "As Needed"
+msgid "As Needed Last"
+msgstr "Vid Behov"
+
+#: data/ui/window.blp:324
+#, fuzzy
+#| msgid "Ended on"
+msgid "Ended Last"
+msgstr "Avslutades på"
+
+#: data/ui/window.blp:330
+#, fuzzy
+#| msgid "As Needed"
+msgid "As Needed/Ended Last"
+msgstr "Vid Behov"
+
+#: data/ui/window.blp:343
 msgid "Keyboard Shortcuts"
 msgstr "Tangentbordsgenvägar"
 
-#: data/ui/window.blp:330
+#: data/ui/window.blp:348
 msgid "About Dosage"
 msgstr "Om Dosering"
 

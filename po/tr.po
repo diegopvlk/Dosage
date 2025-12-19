@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-18 16:36-0300\n"
+"POT-Creation-Date: 2025-12-19 16:12-0300\n"
 "PO-Revision-Date: 2025-12-06 10:48+0000\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
@@ -25,7 +25,7 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3
 #: src/utils/getTreatmentsExportFile.js:173 src/utils/saveFiles.js:22
-#: src/utils/saveFiles.js:44 src/main.js:60 src/window.js:1059
+#: src/utils/saveFiles.js:44 src/main.js:60 src/window.js:1060
 #: data/ui/window.blp:6
 msgid "Dosage"
 msgstr "Doz"
@@ -351,12 +351,12 @@ msgstr "Hap"
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Arka planda çalışmaya izin vermeyi ve bildirim almayı kabul et"
 
-#: src/prefsDialog.js:71 src/prefsDialog.js:80 src/window.js:258
+#: src/prefsDialog.js:74 src/window.js:259
 msgid "An Issue Has Occurred"
 msgstr "Bir Hata Oluştu"
 
-#: src/prefsDialog.js:74 src/prefsDialog.js:83 src/window.js:266
-#: src/window.js:288 src/window.js:310 src/window.js:328
+#: src/prefsDialog.js:77 src/window.js:267 src/window.js:289 src/window.js:311
+#: src/window.js:329
 msgid "Close"
 msgstr "Kapat"
 
@@ -409,7 +409,7 @@ msgstr "Bitiş Tarihi"
 msgid "Next Dose"
 msgstr "Sonraki Doz"
 
-#: src/window.js:173 src/window.js:942
+#: src/window.js:173 src/window.js:943
 msgid "Reminder"
 msgstr "Hatırlatıcı"
 
@@ -418,62 +418,62 @@ msgstr "Hatırlatıcı"
 msgid "You have treatments low in stock"
 msgstr "Stok sayısı azalmış ilaçlarınız var"
 
-#: src/window.js:491
+#: src/window.js:492
 msgid "Show All"
 msgstr "Tümünü Göster"
 
-#: src/window.js:514
+#: src/window.js:515
 msgid "Show Less"
 msgstr "Daha Azını Göster"
 
-#: src/window.js:647
+#: src/window.js:648
 msgid "No Results Found"
 msgstr "Sonuç Bulunamadı"
 
-#: src/window.js:647 src/window.js:1516
+#: src/window.js:648 src/window.js:1517
 #, fuzzy
 #| msgid "History"
 msgid "No History"
 msgstr "Geçmiş"
 
-#: src/window.js:817 data/ui/window.blp:260
+#: src/window.js:818 data/ui/window.blp:260
 #, fuzzy
 #| msgid "Treatments"
 msgid "No Treatments"
 msgstr "İlaçlar"
 
-#: src/window.js:817
+#: src/window.js:818
 msgid "All Done for Today"
 msgstr "Bugünlük Her Şey Bitti"
 
-#: src/window.js:905 src/window.js:1089 data/ui/one-time-dialog.blp:285
+#: src/window.js:906 src/window.js:1090 data/ui/one-time-dialog.blp:285
 #: data/ui/preferences.blp:73
 msgid "Confirm"
 msgstr "Onayla"
 
-#: src/window.js:905
+#: src/window.js:906
 msgid "Confirm All"
 msgstr "Tümünü Onayla"
 
-#: src/window.js:906 data/ui/preferences.blp:84 data/ui/window.blp:146
+#: src/window.js:907 data/ui/preferences.blp:84 data/ui/window.blp:146
 msgid "Skip"
 msgstr "Atla"
 
-#: src/window.js:906
+#: src/window.js:907
 msgid "Skip All"
 msgstr "Tümünü Atla"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:937
+#: src/window.js:938
 #, javascript-format
 msgid "and %d more"
 msgstr "ve %d daha"
 
-#: src/window.js:1089 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
+#: src/window.js:1090 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
 msgid "One-Time Entry"
 msgstr "Tek Seferlik Giriş"
 
-#: src/window.js:1294 data/ui/window.blp:335
+#: src/window.js:1295 data/ui/window.blp:353
 msgid "Quit"
 msgstr "Çık"
 
@@ -691,7 +691,7 @@ msgstr "İlaç Listesinden"
 msgid "Amount"
 msgstr "Miktar"
 
-#: data/ui/preferences.blp:7 data/ui/window.blp:320
+#: data/ui/preferences.blp:7 data/ui/window.blp:338
 msgid "Preferences"
 msgstr "Tercihler"
 
@@ -817,11 +817,29 @@ msgstr "Kalan Stok (Önce En Düşük)"
 msgid "Remaining Stock (Highest First)"
 msgstr "Kalan Stok (Önce En Yüksek)"
 
-#: data/ui/window.blp:325
+#: data/ui/window.blp:318
+#, fuzzy
+#| msgid "As Needed"
+msgid "As Needed Last"
+msgstr "Gerektiğinde"
+
+#: data/ui/window.blp:324
+#, fuzzy
+#| msgid "Ended on"
+msgid "Ended Last"
+msgstr "Sona erdi"
+
+#: data/ui/window.blp:330
+#, fuzzy
+#| msgid "As Needed"
+msgid "As Needed/Ended Last"
+msgstr "Gerektiğinde"
+
+#: data/ui/window.blp:343
 msgid "Keyboard Shortcuts"
 msgstr "Klavye Kısayolları"
 
-#: data/ui/window.blp:330
+#: data/ui/window.blp:348
 msgid "About Dosage"
 msgstr "Doz Hakkında"
 

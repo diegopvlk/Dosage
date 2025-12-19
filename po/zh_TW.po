@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-18 16:36-0300\n"
+"POT-Creation-Date: 2025-12-19 16:12-0300\n"
 "PO-Revision-Date: 2025-03-17 10:10+0000\n"
 "Last-Translator: Chung-Wei Chung <webb790709@proton.me>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -23,7 +23,7 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3
 #: src/utils/getTreatmentsExportFile.js:173 src/utils/saveFiles.js:22
-#: src/utils/saveFiles.js:44 src/main.js:60 src/window.js:1059
+#: src/utils/saveFiles.js:44 src/main.js:60 src/window.js:1060
 #: data/ui/window.blp:6
 msgid "Dosage"
 msgstr "藥記"
@@ -357,12 +357,12 @@ msgstr "顆"
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "接受已允許在背景中執行和接收通知"
 
-#: src/prefsDialog.js:71 src/prefsDialog.js:80 src/window.js:258
+#: src/prefsDialog.js:74 src/window.js:259
 msgid "An Issue Has Occurred"
 msgstr "發生問題"
 
-#: src/prefsDialog.js:74 src/prefsDialog.js:83 src/window.js:266
-#: src/window.js:288 src/window.js:310 src/window.js:328
+#: src/prefsDialog.js:77 src/window.js:267 src/window.js:289 src/window.js:311
+#: src/window.js:329
 msgid "Close"
 msgstr "關閉"
 
@@ -417,7 +417,7 @@ msgstr "直到"
 msgid "Next Dose"
 msgstr "下一劑量"
 
-#: src/window.js:173 src/window.js:942
+#: src/window.js:173 src/window.js:943
 msgid "Reminder"
 msgstr "提醒"
 
@@ -426,62 +426,62 @@ msgstr "提醒"
 msgid "You have treatments low in stock"
 msgstr "您的處方箋庫存偏低"
 
-#: src/window.js:491
+#: src/window.js:492
 msgid "Show All"
 msgstr "顯示全部"
 
-#: src/window.js:514
+#: src/window.js:515
 msgid "Show Less"
 msgstr "顯示較少"
 
-#: src/window.js:647
+#: src/window.js:648
 msgid "No Results Found"
 msgstr "沒有結果"
 
-#: src/window.js:647 src/window.js:1516
+#: src/window.js:648 src/window.js:1517
 #, fuzzy
 #| msgid "History"
 msgid "No History"
 msgstr "歷史記錄"
 
-#: src/window.js:817 data/ui/window.blp:260
+#: src/window.js:818 data/ui/window.blp:260
 #, fuzzy
 #| msgid "Treatments"
 msgid "No Treatments"
 msgstr "處方箋"
 
-#: src/window.js:817
+#: src/window.js:818
 msgid "All Done for Today"
 msgstr "今天的藥物已服用完畢"
 
-#: src/window.js:905 src/window.js:1089 data/ui/one-time-dialog.blp:285
+#: src/window.js:906 src/window.js:1090 data/ui/one-time-dialog.blp:285
 #: data/ui/preferences.blp:73
 msgid "Confirm"
 msgstr "確認"
 
-#: src/window.js:905
+#: src/window.js:906
 msgid "Confirm All"
 msgstr "確認全部"
 
-#: src/window.js:906 data/ui/preferences.blp:84 data/ui/window.blp:146
+#: src/window.js:907 data/ui/preferences.blp:84 data/ui/window.blp:146
 msgid "Skip"
 msgstr "跳過"
 
-#: src/window.js:906
+#: src/window.js:907
 msgid "Skip All"
 msgstr "跳過全部"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:937
+#: src/window.js:938
 #, javascript-format
 msgid "and %d more"
 msgstr "增加 %d 更多"
 
-#: src/window.js:1089 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
+#: src/window.js:1090 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
 msgid "One-Time Entry"
 msgstr "單次輸入"
 
-#: src/window.js:1294 data/ui/window.blp:335
+#: src/window.js:1295 data/ui/window.blp:353
 msgid "Quit"
 msgstr "離開"
 
@@ -695,7 +695,7 @@ msgstr "從處方箋挑選"
 msgid "Amount"
 msgstr "數量"
 
-#: data/ui/preferences.blp:7 data/ui/window.blp:320
+#: data/ui/preferences.blp:7 data/ui/window.blp:338
 msgid "Preferences"
 msgstr "偏好設定"
 
@@ -827,14 +827,32 @@ msgstr ""
 msgid "Remaining Stock (Highest First)"
 msgstr ""
 
-#: data/ui/window.blp:325
+#: data/ui/window.blp:318
+#, fuzzy
+#| msgid "As Needed"
+msgid "As Needed Last"
+msgstr "按需服用"
+
+#: data/ui/window.blp:324
+#, fuzzy
+#| msgid "Ended on"
+msgid "Ended Last"
+msgstr "結束於"
+
+#: data/ui/window.blp:330
+#, fuzzy
+#| msgid "As Needed"
+msgid "As Needed/Ended Last"
+msgstr "按需服用"
+
+#: data/ui/window.blp:343
 #, fuzzy
 #| msgctxt "shortcut window"
 #| msgid "Show Shortcuts"
 msgid "Keyboard Shortcuts"
 msgstr "顯示捷徑"
 
-#: data/ui/window.blp:330
+#: data/ui/window.blp:348
 msgid "About Dosage"
 msgstr "關於藥記"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-18 16:36-0300\n"
+"POT-Creation-Date: 2025-12-19 16:12-0300\n"
 "PO-Revision-Date: 2025-05-06 14:06+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/dosage/dosage/ta/"
@@ -23,7 +23,7 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3
 #: src/utils/getTreatmentsExportFile.js:173 src/utils/saveFiles.js:22
-#: src/utils/saveFiles.js:44 src/main.js:60 src/window.js:1059
+#: src/utils/saveFiles.js:44 src/main.js:60 src/window.js:1060
 #: data/ui/window.blp:6
 msgid "Dosage"
 msgstr "அளவு"
@@ -362,12 +362,12 @@ msgstr "மாத்திரை (கள்)"
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "பின்னணியில் இயங்க அனுமதிப்பதை ஏற்றுக்கொண்டு அறிவிப்புகளைப் பெறுங்கள்"
 
-#: src/prefsDialog.js:71 src/prefsDialog.js:80 src/window.js:258
+#: src/prefsDialog.js:74 src/window.js:259
 msgid "An Issue Has Occurred"
 msgstr "ஒரு சிக்கல் ஏற்பட்டுள்ளது"
 
-#: src/prefsDialog.js:74 src/prefsDialog.js:83 src/window.js:266
-#: src/window.js:288 src/window.js:310 src/window.js:328
+#: src/prefsDialog.js:77 src/window.js:267 src/window.js:289 src/window.js:311
+#: src/window.js:329
 msgid "Close"
 msgstr "மூடு"
 
@@ -420,7 +420,7 @@ msgstr "வரை"
 msgid "Next Dose"
 msgstr "அடுத்த டோச்"
 
-#: src/window.js:173 src/window.js:942
+#: src/window.js:173 src/window.js:943
 msgid "Reminder"
 msgstr "நினைவூட்டல்"
 
@@ -429,62 +429,62 @@ msgstr "நினைவூட்டல்"
 msgid "You have treatments low in stock"
 msgstr "உங்களிடம் சிகிச்சைகள் குறைவாக உள்ளன"
 
-#: src/window.js:491
+#: src/window.js:492
 msgid "Show All"
 msgstr "அனைத்தையும் காட்டு"
 
-#: src/window.js:514
+#: src/window.js:515
 msgid "Show Less"
 msgstr "குறைவாக காட்டு"
 
-#: src/window.js:647
+#: src/window.js:648
 msgid "No Results Found"
 msgstr "முடிவுகள் எதுவும் கிடைக்கவில்லை"
 
-#: src/window.js:647 src/window.js:1516
+#: src/window.js:648 src/window.js:1517
 #, fuzzy
 #| msgid "History"
 msgid "No History"
 msgstr "வரலாறு"
 
-#: src/window.js:817 data/ui/window.blp:260
+#: src/window.js:818 data/ui/window.blp:260
 #, fuzzy
 #| msgid "Treatments"
 msgid "No Treatments"
 msgstr "சிகிச்சைகள்"
 
-#: src/window.js:817
+#: src/window.js:818
 msgid "All Done for Today"
 msgstr "அனைத்தும் இன்று செய்யப்படுகின்றன"
 
-#: src/window.js:905 src/window.js:1089 data/ui/one-time-dialog.blp:285
+#: src/window.js:906 src/window.js:1090 data/ui/one-time-dialog.blp:285
 #: data/ui/preferences.blp:73
 msgid "Confirm"
 msgstr "உறுதிப்படுத்தவும்"
 
-#: src/window.js:905
+#: src/window.js:906
 msgid "Confirm All"
 msgstr "அனைத்தையும் உறுதிப்படுத்தவும்"
 
-#: src/window.js:906 data/ui/preferences.blp:84 data/ui/window.blp:146
+#: src/window.js:907 data/ui/preferences.blp:84 data/ui/window.blp:146
 msgid "Skip"
 msgstr "தவிர்"
 
-#: src/window.js:906
+#: src/window.js:907
 msgid "Skip All"
 msgstr "அனைத்தையும் தவிர்க்கவும்"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:937
+#: src/window.js:938
 #, javascript-format
 msgid "and %d more"
 msgstr "மற்றும் %d மேலும்"
 
-#: src/window.js:1089 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
+#: src/window.js:1090 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
 msgid "One-Time Entry"
 msgstr "ஒரு முறை நுழைவு"
 
-#: src/window.js:1294 data/ui/window.blp:335
+#: src/window.js:1295 data/ui/window.blp:353
 msgid "Quit"
 msgstr "வெளியேறு"
 
@@ -702,7 +702,7 @@ msgstr "மருத்தீடு பட்டியலிலிருந்�
 msgid "Amount"
 msgstr "தொகை"
 
-#: data/ui/preferences.blp:7 data/ui/window.blp:320
+#: data/ui/preferences.blp:7 data/ui/window.blp:338
 msgid "Preferences"
 msgstr "விருப்பத்தேர்வுகள்"
 
@@ -834,14 +834,32 @@ msgstr ""
 msgid "Remaining Stock (Highest First)"
 msgstr ""
 
-#: data/ui/window.blp:325
+#: data/ui/window.blp:318
+#, fuzzy
+#| msgid "As Needed"
+msgid "As Needed Last"
+msgstr "தேவைப்படும்போது"
+
+#: data/ui/window.blp:324
+#, fuzzy
+#| msgid "Ended on"
+msgid "Ended Last"
+msgstr "முடிந்தது"
+
+#: data/ui/window.blp:330
+#, fuzzy
+#| msgid "As Needed"
+msgid "As Needed/Ended Last"
+msgstr "தேவைப்படும்போது"
+
+#: data/ui/window.blp:343
 #, fuzzy
 #| msgctxt "shortcut window"
 #| msgid "Show Shortcuts"
 msgid "Keyboard Shortcuts"
 msgstr "குறுக்குவழிகளைக் காட்டு"
 
-#: data/ui/window.blp:330
+#: data/ui/window.blp:348
 msgid "About Dosage"
 msgstr "அளவு பற்றி"
 

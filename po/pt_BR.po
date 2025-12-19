@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-19 16:02-0300\n"
+"POT-Creation-Date: 2025-12-19 16:12-0300\n"
 "PO-Revision-Date: 2025-12-19 12:22+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -812,7 +812,9 @@ msgid "Ended Last"
 msgstr "Terminados em Último"
 
 #: data/ui/window.blp:330
-msgid "As Needed and Ended Last"
+#, fuzzy
+#| msgid "As Needed and Ended Last"
+msgid "As Needed/Ended Last"
 msgstr "Quando Necessários/Terminados em Último"
 
 #: data/ui/window.blp:343
