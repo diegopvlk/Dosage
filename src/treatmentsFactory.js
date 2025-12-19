@@ -109,7 +109,7 @@ treatmentsFactory.connect('setup', (factory, listItem) => {
 	listItem.invLabelBtn.connect('clicked', btn => {
 		if (!delayDialog) {
 			const dosageWindow = getDosageWindow();
-			const refillDialog = new RefillDialog(listItem, listItem.position);
+			const refillDialog = new RefillDialog(listItem);
 			refillDialog.present(dosageWindow);
 			delayDialog = true;
 			setTimeout(() => {
@@ -197,7 +197,7 @@ treatmentsFactory.connect('bind', (factory, listItem) => {
 
 		if (item.inventory.enabled) {
 			listItem.refillAct.connect('activate', () => {
-				const refillDialog = new RefillDialog(listItem, listItem.position);
+				const refillDialog = new RefillDialog(listItem);
 				refillDialog.present(getDosageWindow());
 			});
 			app.add_action(listItem.refillAct);

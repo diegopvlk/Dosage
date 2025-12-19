@@ -12,6 +12,8 @@ export function sortTreatments(sortingType) {
 }
 
 export function sortTreatFunc(sortingType) {
+	const today = new Date();
+	today.setHours(0, 0, 0, 0);
 	switch (sortingType) {
 		case 'name-ascending':
 			return (a, b) => {
@@ -64,6 +66,57 @@ export function sortTreatFunc(sortingType) {
 				}
 
 				return nameA.localeCompare(nameB);
+			};
+		case 'when-needed-last':
+			return (a, b) => {
+				const isNeededA = a.obj.frequency === 'when-needed';
+				const isNeededB = b.obj.frequency === 'when-needed';
+
+				if (isNeededA !== isNeededB) {
+					return isNeededA ? 1 : -1;
+				}
+				return a.obj.name.localeCompare(b.obj.name);
+			};
+		case 'ended-last':
+			return (a, b) => {
+				const durA = a.obj.duration;
+				const durB = b.obj.duration;
+
+				const enabledA = durA.enabled && a.obj.frequency !== 'when-needed';
+				const enabledB = durB.enabled && b.obj.frequency !== 'when-needed';
+
+				if (enabledA !== enabledB) return enabledB ? -1 : 1;
+
+				if (enabledA && enabledB) {
+					const endA = new Date(durA.end).setHours(0, 0, 0, 0);
+					const endB = new Date(durB.end).setHours(0, 0, 0, 0);
+
+					const pastA = endA < today;
+					const pastB = endB < today;
+
+					if (pastA !== pastB) return pastB ? 1 : -1;
+				}
+
+				return a.obj.name.localeCompare(b.obj.name);
+			};
+		case 'when-needed-ended-last':
+			return (a, b) => {
+				const isNeededA = a.obj.frequency === 'when-needed';
+				const isNeededB = b.obj.frequency === 'when-needed';
+
+				const durA = a.obj.duration;
+				const durB = b.obj.duration;
+
+				const isEndedA =
+					!isNeededA && durA.enabled && new Date(durA.end).setHours(0, 0, 0, 0) < today;
+				const isEndedB =
+					!isNeededB && durB.enabled && new Date(durB.end).setHours(0, 0, 0, 0) < today;
+
+				if (isEndedA !== isEndedB) return isEndedA ? 1 : -1;
+
+				if (isNeededA !== isNeededB) return isNeededA ? 1 : -1;
+
+				return a.obj.name.localeCompare(b.obj.name);
 			};
 		default:
 			return (a, b) => {

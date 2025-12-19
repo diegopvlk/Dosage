@@ -25,10 +25,9 @@ export const RefillDialog = GObject.registerClass(
 		],
 	},
 	class RefillDialog extends Adw.Dialog {
-		constructor(listItem, itemPosition) {
+		constructor(listItem) {
 			super({});
 			this._listItem = listItem;
-			this._itemPosition = itemPosition;
 			this._itemObj = listItem.get_item().obj;
 			this._initRefill();
 		}
@@ -60,10 +59,12 @@ export const RefillDialog = GObject.registerClass(
 			this._listItem.get_item().notify('obj');
 
 			const treatSort = settings.get_string('treatments-sorting');
-			if (treatSort !== 'name-ascending') sortTreatments(treatSort);
+			if (treatSort === 'amount-remaining-more' || treatSort === 'amount-remaining-less') {
+				sortTreatments(treatSort);
+			}
 
 			dosageWindow.updateEverything({ skipHistUp: true, skipCycleUp: true });
-			const pos = Math.max(0, this._itemPosition - 1);
+			const pos = Math.max(0, this._listItem.position - 1);
 			dosageWindow._treatmentsList.scroll_to(pos, Gtk.ListScrollFlags.FOCUS, null);
 			dosageWindow.scheduleNotifications('saving');
 

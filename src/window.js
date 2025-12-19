@@ -18,7 +18,7 @@ import { MedicationObject } from './medication.js';
 import { OneTimeDialog } from './oneTimeDialog.js';
 import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
-import { sortTreatFunc } from './treatmentsSorter.js';
+import { sortTreatFunc, sortTreatments } from './treatmentsSorter.js';
 import { timeFormat } from './utils/locale.js';
 import { upgradeItems } from './utils/upgradeItems.js';
 
@@ -190,6 +190,7 @@ export const DosageWindow = GObject.registerClass(
 					this.updateEverything();
 					this.scrollHistToTop();
 					this.scheduleNotifications();
+					sortTreatments(settings.get_string('treatments-sorting'));
 					lastDate = now;
 				}
 			};
