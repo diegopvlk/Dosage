@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2025-12-19 19:21+0000\n"
+"PO-Revision-Date: 2025-12-22 17:18+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/dosage/dosage/"
 "et/>\n"
@@ -805,22 +805,16 @@ msgid "Remaining Stock (Highest First)"
 msgstr "Järelejäänud varu (suurim enne)"
 
 #: data/ui/window.blp:318
-#, fuzzy
-#| msgid "As Needed"
 msgid "As Needed Last"
-msgstr "Vastavalt vajadusele"
+msgstr "Vastavalt vajadusele viimasena"
 
 #: data/ui/window.blp:324
-#, fuzzy
-#| msgid "Ended on"
 msgid "Ended Last"
-msgstr "Lõppes"
+msgstr "Lõppes viimasena"
 
 #: data/ui/window.blp:330
-#, fuzzy
-#| msgid "As Needed"
 msgid "As Needed/Ended Last"
-msgstr "Vastavalt vajadusele"
+msgstr "Vastavalt vajadusele või lõppes viimasena"
 
 #: data/ui/window.blp:343
 msgid "Keyboard Shortcuts"
