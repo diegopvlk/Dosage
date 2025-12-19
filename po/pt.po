@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2025-12-19 12:22+0000\n"
+"PO-Revision-Date: 2025-12-22 17:18+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/dosage/dosage/"
 "pt/>\n"
@@ -538,7 +538,7 @@ msgstr "Comprimido"
 
 #: data/ui/med-dialog.blp:242
 msgid "Alternative Pill"
-msgstr "Comprimido Alt."
+msgstr "Comprimido Alternativo"
 
 #: data/ui/med-dialog.blp:258
 msgid "Capsule"
@@ -550,7 +550,7 @@ msgstr "Comprimido Redondo"
 
 #: data/ui/med-dialog.blp:290
 msgid "Alternative Round Pill"
-msgstr "Comprimido Redondo Alt."
+msgstr "Comprimido Redondo Alternativo"
 
 #: data/ui/med-dialog.blp:306
 msgid "Ampoule"
@@ -566,7 +566,7 @@ msgstr "Comprimido Quadrado"
 
 #: data/ui/med-dialog.blp:354
 msgid "Alternative Square Pill"
-msgstr "Comprimido Quadrado Alt."
+msgstr "Comprimido Quadrado Alternativo"
 
 #: data/ui/med-dialog.blp:370
 msgid "Triangle pill"
@@ -574,7 +574,7 @@ msgstr "Comprimido Triangular"
 
 #: data/ui/med-dialog.blp:386
 msgid "Alternative Triangle Pill"
-msgstr "Comprimido Triangular Alt."
+msgstr "Comprimido Triangular Alternativo"
 
 #: data/ui/med-dialog.blp:402
 msgid "Bottle"
