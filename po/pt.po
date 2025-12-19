@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-18 16:36-0300\n"
+"POT-Creation-Date: 2025-12-19 16:12-0300\n"
 "PO-Revision-Date: 2025-12-19 12:22+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -23,7 +23,7 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3
 #: src/utils/getTreatmentsExportFile.js:173 src/utils/saveFiles.js:22
-#: src/utils/saveFiles.js:44 src/main.js:60 src/window.js:1059
+#: src/utils/saveFiles.js:44 src/main.js:60 src/window.js:1060
 #: data/ui/window.blp:6
 msgid "Dosage"
 msgstr "Dosagem"
@@ -352,12 +352,12 @@ msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 "Aceite para permitir a execução em segundo plano e receber notificações"
 
-#: src/prefsDialog.js:71 src/prefsDialog.js:80 src/window.js:258
+#: src/prefsDialog.js:74 src/window.js:259
 msgid "An Issue Has Occurred"
 msgstr "Ocorreu um Erro"
 
-#: src/prefsDialog.js:74 src/prefsDialog.js:83 src/window.js:266
-#: src/window.js:288 src/window.js:310 src/window.js:328
+#: src/prefsDialog.js:77 src/window.js:267 src/window.js:289 src/window.js:311
+#: src/window.js:329
 msgid "Close"
 msgstr "Fechar"
 
@@ -410,7 +410,7 @@ msgstr "Até"
 msgid "Next Dose"
 msgstr "Próxima Dose"
 
-#: src/window.js:173 src/window.js:942
+#: src/window.js:173 src/window.js:943
 msgid "Reminder"
 msgstr "Lembrete"
 
@@ -419,58 +419,58 @@ msgstr "Lembrete"
 msgid "You have treatments low in stock"
 msgstr "Você tem tratamentos em baixo estoque"
 
-#: src/window.js:491
+#: src/window.js:492
 msgid "Show All"
 msgstr "Mostrar Todos"
 
-#: src/window.js:514
+#: src/window.js:515
 msgid "Show Less"
 msgstr "Mostrar Menos"
 
-#: src/window.js:647
+#: src/window.js:648
 msgid "No Results Found"
 msgstr "Nenhum Resultado Encontrado"
 
-#: src/window.js:647 src/window.js:1516
+#: src/window.js:648 src/window.js:1517
 msgid "No History"
 msgstr "Histórico Vazio"
 
-#: src/window.js:817 data/ui/window.blp:260
+#: src/window.js:818 data/ui/window.blp:260
 msgid "No Treatments"
 msgstr "Sem Tratamentos"
 
-#: src/window.js:817
+#: src/window.js:818
 msgid "All Done for Today"
 msgstr "Tudo Feito Por Hoje"
 
-#: src/window.js:905 src/window.js:1089 data/ui/one-time-dialog.blp:285
+#: src/window.js:906 src/window.js:1090 data/ui/one-time-dialog.blp:285
 #: data/ui/preferences.blp:73
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: src/window.js:905
+#: src/window.js:906
 msgid "Confirm All"
 msgstr "Confirmar Todos"
 
-#: src/window.js:906 data/ui/preferences.blp:84 data/ui/window.blp:146
+#: src/window.js:907 data/ui/preferences.blp:84 data/ui/window.blp:146
 msgid "Skip"
 msgstr "Ignorar"
 
-#: src/window.js:906
+#: src/window.js:907
 msgid "Skip All"
 msgstr "Ignorar Todos"
 
 #. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:937
+#: src/window.js:938
 #, javascript-format
 msgid "and %d more"
 msgstr "e mais %d"
 
-#: src/window.js:1089 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
+#: src/window.js:1090 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
 msgid "One-Time Entry"
 msgstr "Registo Único"
 
-#: src/window.js:1294 data/ui/window.blp:335
+#: src/window.js:1295 data/ui/window.blp:353
 msgid "Quit"
 msgstr "Sair"
 
@@ -687,7 +687,7 @@ msgstr "Da Lista de Tratamentos"
 msgid "Amount"
 msgstr "Quantidade"
 
-#: data/ui/preferences.blp:7 data/ui/window.blp:320
+#: data/ui/preferences.blp:7 data/ui/window.blp:338
 msgid "Preferences"
 msgstr "Preferências"
 
@@ -804,11 +804,23 @@ msgstr "Estoque Restante (Menor Primeiro)"
 msgid "Remaining Stock (Highest First)"
 msgstr "Estoque Restante (Maior Primeiro)"
 
-#: data/ui/window.blp:325
+#: data/ui/window.blp:318
+msgid "As Needed Last"
+msgstr "Quando Necessários em Último"
+
+#: data/ui/window.blp:324
+msgid "Ended Last"
+msgstr "Terminados em Últimos"
+
+#: data/ui/window.blp:330
+msgid "As Needed/Ended Last"
+msgstr "Quando Necessários/Terminados em Último"
+
+#: data/ui/window.blp:343
 msgid "Keyboard Shortcuts"
 msgstr "Atalhos de Teclado"
 
-#: data/ui/window.blp:330
+#: data/ui/window.blp:348
 msgid "About Dosage"
 msgstr "Sobre o Dosagem"
 
