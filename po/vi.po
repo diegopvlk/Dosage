@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2025-12-11 23:05+0000\n"
+"PO-Revision-Date: 2025-12-22 17:18+0000\n"
 "Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/dosage/dosage/"
 "vi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -433,16 +433,12 @@ msgid "No Results Found"
 msgstr "Không tìm thấy kết quả nào"
 
 #: src/window.js:648 src/window.js:1517
-#, fuzzy
-#| msgid "History"
 msgid "No History"
-msgstr "Lịch sử"
+msgstr "Không lịch sử"
 
 #: src/window.js:818 data/ui/window.blp:260
-#, fuzzy
-#| msgid "Treatments"
 msgid "No Treatments"
-msgstr "Phương pháp đIều trị"
+msgstr "Không phương pháp điều trị"
 
 #: src/window.js:818
 msgid "All Done for Today"
@@ -736,32 +732,23 @@ msgid "Export Treatments As"
 msgstr "Xuất Phương pháp điều trị như"
 
 #: data/ui/shortcuts-dialog.blp:8
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Shortcuts"
-msgstr "Hiển Thị Phím Tắt"
+msgstr "Phím tắt"
 
 #: data/ui/shortcuts-dialog.blp:11
-#, fuzzy
-#| msgid "Show/Hide 'As Needed'"
 msgctxt "shortcut window"
 msgid "Show/Hide 'As Needed'"
 msgstr "Hiện/Ẩn 'Khi cần thiết'"
 
 #: data/ui/shortcuts-dialog.blp:16
-#, fuzzy
-#| msgid "One-Time Entry"
 msgctxt "shortcut window"
 msgid "New One-Time Entry"
-msgstr "Mục nhập một lần"
+msgstr "Mục nhập một lần mới"
 
 #: data/ui/shortcuts-dialog.blp:21
-#, fuzzy
-#| msgid "New Treatment"
 msgctxt "shortcut window"
 msgid "Add New Treatment"
-msgstr "Điều trị mới"
+msgstr "Thêm điều trị mới"
 
 #: data/ui/shortcuts-dialog.blp:26
 msgctxt "shortcut window"
@@ -818,29 +805,20 @@ msgid "Remaining Stock (Highest First)"
 msgstr "Lượng dự trữ còn lại (Cao nhất trước)"
 
 #: data/ui/window.blp:318
-#, fuzzy
-#| msgid "As Needed"
 msgid "As Needed Last"
-msgstr "Khi cần thiết"
+msgstr "Khi cần thiết cuối cùng"
 
 #: data/ui/window.blp:324
-#, fuzzy
-#| msgid "Ended on"
 msgid "Ended Last"
-msgstr "Đã kết thúc vào"
+msgstr "Đã kết thúc cuối"
 
 #: data/ui/window.blp:330
-#, fuzzy
-#| msgid "As Needed"
 msgid "As Needed/Ended Last"
-msgstr "Khi cần thiết"
+msgstr "Khi cần thiết cuối cùng"
 
 #: data/ui/window.blp:343
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Keyboard Shortcuts"
-msgstr "Hiển Thị Phím Tắt"
+msgstr "Phím tắt"
 
 #: data/ui/window.blp:348
 msgid "About Dosage"
