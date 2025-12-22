@@ -73,6 +73,17 @@
 	</recommends>
 
 	<releases>
+		<release version="2.1.0" date="2025-12-22">
+			<description translate="no">
+				<ul>
+					<li>New options for sorting treatments</li>
+					<li>New keyboard shortcuts</li>
+					<li>Improvements and fixes</li>
+					<li>Added Catalan translation</li>
+					<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.0.1" date="2025-12-09">
 			<description translate="no">
 				<ul>
