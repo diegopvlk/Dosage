@@ -249,7 +249,7 @@ badge-box {
   background-color: rgb(from currentColor r g b / calc(alpha * 0.1));
   border-radius: 99px;
   font-weight: 600;
-  font-size: 0.9016em;
+  font-size: 0.902em;
 }
 badge-icon {
   background-color: rgb(from currentColor r g b / calc(alpha * 0.1));
