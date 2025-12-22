@@ -115,7 +115,10 @@ export const DosageApplication = GObject.registerClass(
 			this.set_accels_for_action('app.sh-when-needed', ['<primary>h']);
 
 			const quitAction = new Gio.SimpleAction({ name: 'quit' });
-			quitAction.connect('activate', () => this.quit());
+			quitAction.connect('activate', () => {
+				this.activeWindow.withdrawPastNotifications();
+				this.quit();
+			});
 			this.add_action(quitAction);
 			this.set_accels_for_action('app.quit', ['<primary>q', '<primary>w']);
 
