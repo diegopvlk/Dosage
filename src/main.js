@@ -93,16 +93,16 @@ export const DosageApplication = GObject.registerClass(
 			const newOneTimeAction = new Gio.SimpleAction({ name: 'new-one-time' });
 			newOneTimeAction.connect('activate', () => {
 				this.activeWindow.unselectTodayItems();
-				this.activeWindow.addTodayOrOneTimeToHist();
 				this.activeWindow._viewStack.visible_child_name = 'today-page';
+				this.activeWindow.addTodayOrOneTimeToHist();
 			});
 			this.add_action(newOneTimeAction);
 			this.set_accels_for_action('app.new-one-time', ['<primary>t']);
 
 			const newTreatAction = new Gio.SimpleAction({ name: 'new-treatment' });
 			newTreatAction.connect('activate', () => {
-				this.activeWindow._presentMedDialog();
 				this.activeWindow._viewStack.visible_child_name = 'treatments-page';
+				this.activeWindow._presentMedDialog();
 			});
 			this.add_action(newTreatAction);
 			this.set_accels_for_action('app.new-treatment', ['<primary>n']);
