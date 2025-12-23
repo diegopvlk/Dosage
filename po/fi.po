@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2025-02-20 14:20+0000\n"
-"Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
-"Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/fi/"
-">\n"
+"PO-Revision-Date: 2026-01-11 16:48+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/dosage/dosage/"
+"fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -118,7 +118,7 @@ msgstr "Nimi"
 #: src/utils/getHistoryExportFile.js:10 src/utils/getHistoryExportFile.js:81
 #: data/ui/one-time-dialog.blp:183
 msgid "Dose"
-msgstr "Tehty"
+msgstr "Annos"
 
 #: src/utils/getHistoryExportFile.js:10 src/utils/getHistoryExportFile.js:81
 msgid "Status"
@@ -148,19 +148,17 @@ msgstr "Vahvistettu"
 #: src/utils/getHistoryExportFile.js:52 src/utils/getHistoryExportFile.js:134
 #: src/editHistDialog.js:56 src/historyFactory.js:178
 msgid "Auto-Confirmed"
-msgstr "Itse Vahvistettu"
+msgstr "Automaattisesti vahvistettu"
 
 #: src/utils/getHistoryExportFile.js:55 src/utils/getHistoryExportFile.js:138
 #: src/editHistDialog.js:74
 msgid "Time Unknown"
-msgstr "Aika Tuntematon"
+msgstr "Tuntematon aika"
 
 #. TRANSLATORS: Context: 1 Pill at 19:00
 #: src/utils/getTreatmentsExportFile.js:69
-#, fuzzy
-#| msgid "Date"
 msgid "at"
-msgstr "Päivämäärä"
+msgstr "klo"
 
 #: src/utils/getTreatmentsExportFile.js:89 data/ui/med-dialog.blp:443
 msgid "Notes"
@@ -174,7 +172,7 @@ msgstr "Päivittäin"
 #: src/utils/getTreatmentsExportFile.js:102 src/medDialog.js:428
 #: data/ui/med-dialog.blp:459
 msgid "Day of Month"
-msgstr "Kuukauden Päivä"
+msgstr "Kuukauden päivä"
 
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/utils/getTreatmentsExportFile.js:109
@@ -196,10 +194,8 @@ msgid "Duration"
 msgstr "Kesto"
 
 #: src/utils/getTreatmentsExportFile.js:135
-#, fuzzy
-#| msgid "Starts On"
 msgid "Started on"
-msgstr "Alkaa"
+msgstr "Alkoi"
 
 #: src/utils/getTreatmentsExportFile.js:136 data/ui/med-dialog.blp:775
 #, fuzzy
@@ -231,15 +227,15 @@ msgstr "Yleiset"
 
 #: src/utils/getTreatmentsExportFile.js:187
 msgid "Ongoing"
-msgstr ""
+msgstr "Meneillään"
 
 #: src/utils/getTreatmentsExportFile.js:188
 msgid "Non-scheduled"
-msgstr ""
+msgstr "Ei ajastettu"
 
 #: src/utils/getTreatmentsExportFile.js:189
 msgid "Finished"
-msgstr ""
+msgstr "Valmistunut"
 
 #: src/utils/locale.js:33
 msgid "Weekends"
@@ -255,15 +251,15 @@ msgstr "Historia"
 
 #: src/editHistDialog.js:60 src/editHistDialog.js:89 src/editHistDialog.js:110
 msgid "Confirmed At"
-msgstr "Vahvistettu Klo"
+msgstr "Vahvistettu"
 
 #: src/editHistDialog.js:64 src/editHistDialog.js:114
 msgid "Skipped At"
-msgstr "Ohitettu Klo"
+msgstr "Ohitettu"
 
 #: src/historyFactory.js:47
 msgid "Select to be Removed"
-msgstr "Valitse Poistettava"
+msgstr "Valitse poistettava"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
 #: src/main.js:69
@@ -274,11 +270,11 @@ msgstr ""
 
 #: src/main.js:73
 msgid "Thanks to These Projects!"
-msgstr "Kiitos Näille Projekteille!"
+msgstr "Kiitos näille projekteille!"
 
 #: src/medDialog.js:99
 msgid "Edit Treatment"
-msgstr "Muokkaa Hoitoa"
+msgstr "Muokkaa hoitoa"
 
 #: src/medDialog.js:100 data/ui/edit-hist-dialog.blp:30
 #: data/ui/preferences.blp:112 data/ui/preferences.blp:132
@@ -292,7 +288,7 @@ msgstr "Kopio"
 
 #: src/medDialog.js:217
 msgid "Add Dose"
-msgstr "Lisää Annos"
+msgstr "Lisää annos"
 
 #: src/medDialog.js:419
 msgid "Choose"
@@ -304,7 +300,7 @@ msgstr "Päivä"
 
 #: src/medDialog.js:456 data/ui/med-dialog.blp:458
 msgid "Specific Days"
-msgstr "Valitut Päivät"
+msgstr "Valitut päivät"
 
 #: src/medDialog.js:463 src/treatmentsFactory.js:295 data/ui/med-dialog.blp:460
 msgid "Cycle"
@@ -312,35 +308,35 @@ msgstr "Sykli"
 
 #: src/medDialog.js:467 data/ui/med-dialog.blp:452
 msgid "Frequency"
-msgstr "Taajuus"
+msgstr "Toistuvuus"
 
 #: src/medDialog.js:500
 msgid "Empty Name"
-msgstr "Tyhjä Nimi"
+msgstr "Tyhjä nimi"
 
 #: src/medDialog.js:506
 msgid "Empty Unit"
-msgstr "Tyhjä Yksikkö"
+msgstr "Tyhjä yksikkö"
 
 #: src/medDialog.js:513
 msgid "Choose at Least One Day"
-msgstr "Valitse Vähintään Yksi Päivä"
+msgstr "Valitse vähintään yksi päivä"
 
 #: src/medDialog.js:527 src/oneTimeDialog.js:187
 msgid "Name Already on Treatment List"
-msgstr "Nimi Jo Hoitolistalla"
+msgstr "Nimi on jo hoitolistalla"
 
 #: src/medDialog.js:542
 msgid "Duplicated Time"
-msgstr "Päällekkäinen Aika"
+msgstr "Päällekkäinen aika"
 
 #: src/medDialog.js:582
 msgid "Are You Sure?"
-msgstr "Oletko Varma?"
+msgstr "Oletko varma?"
 
 #: src/medDialog.js:583
 msgid "will be deleted"
-msgstr "tullaan poistetaan"
+msgstr "tullaan poistamaan"
 
 #: src/medDialog.js:586 data/ui/edit-hist-dialog.blp:18
 #: data/ui/med-dialog.blp:19
@@ -367,7 +363,7 @@ msgstr ""
 
 #: src/prefsDialog.js:74 src/window.js:259
 msgid "An Issue Has Occurred"
-msgstr "Ongelma On Ilmennyt"
+msgstr "Ongelma on ilmennyt"
 
 #: src/prefsDialog.js:77 src/window.js:267 src/window.js:289 src/window.js:311
 #: src/window.js:329
@@ -376,16 +372,16 @@ msgstr "Sulje"
 
 #: src/timeDoseRow.js:34
 msgid "Remove Dose"
-msgstr "Poista Annos"
+msgstr "Poista annos"
 
 #: src/timeDoseRow.js:40 data/ui/edit-hist-dialog.blp:90
 #: data/ui/one-time-dialog.blp:210
 msgid "Change Time"
-msgstr "Muuta Aikaa"
+msgstr "Muuta aikaa"
 
 #: src/todayFactory.js:134
 msgid "Change Dose"
-msgstr "Muuta Annos"
+msgstr "Muuta annosta"
 
 #: src/treatmentsFactory.js:96 src/treatmentsFactory.js:126
 #: data/ui/refill-dialog.blp:7
@@ -398,7 +394,7 @@ msgstr "Muokkaa"
 
 #: src/treatmentsFactory.js:127
 msgid "Duplicate"
-msgstr "Kaksoistaa"
+msgstr "Monista"
 
 #: src/treatmentsFactory.js:146
 msgid "Options"
@@ -408,7 +404,7 @@ msgstr "Vaihtoehdot"
 #: src/treatmentsFactory.js:244
 #, javascript-format
 msgid "%d Remaining"
-msgstr "%d Jäljellä"
+msgstr "%d jäljellä"
 
 #. TRANSLATORS: label for when duration is enabled
 #: src/treatmentsFactory.js:254
@@ -421,7 +417,7 @@ msgstr "Asti"
 
 #: src/treatmentsFactory.js:283 src/treatmentsFactory.js:286
 msgid "Next Dose"
-msgstr "Seuraava Annos"
+msgstr "Seuraava annos"
 
 #: src/window.js:173 src/window.js:943
 msgid "Reminder"
@@ -442,23 +438,19 @@ msgstr "Näytä vähemmän"
 
 #: src/window.js:648
 msgid "No Results Found"
-msgstr "Ei Tuloksia Löytynyt"
+msgstr "Tuloksia ei löytynyt"
 
 #: src/window.js:648 src/window.js:1517
-#, fuzzy
-#| msgid "History"
 msgid "No History"
-msgstr "Historia"
+msgstr "Ei historiaa"
 
 #: src/window.js:818 data/ui/window.blp:260
-#, fuzzy
-#| msgid "Treatments"
 msgid "No Treatments"
-msgstr "Hoidot"
+msgstr "Ei hoitoja"
 
 #: src/window.js:818
 msgid "All Done for Today"
-msgstr "Kaikki Kunnossa Tämän Päivän Osalta"
+msgstr "Kaikki kunnossa tämän päivän osalta"
 
 #: src/window.js:906 src/window.js:1090 data/ui/one-time-dialog.blp:285
 #: data/ui/preferences.blp:73
@@ -467,7 +459,7 @@ msgstr "Vahvista"
 
 #: src/window.js:906
 msgid "Confirm All"
-msgstr "Vahvista Kaikki"
+msgstr "Vahvista kaikki"
 
 #: src/window.js:907 data/ui/preferences.blp:84 data/ui/window.blp:146
 msgid "Skip"
@@ -475,7 +467,7 @@ msgstr "Ohita"
 
 #: src/window.js:907
 msgid "Skip All"
-msgstr "Ohita Kaikki"
+msgstr "Ohita kaikki"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:938
@@ -493,11 +485,11 @@ msgstr "Lopeta"
 
 #: data/ui/edit-hist-dialog.blp:7
 msgid "Edit Entry"
-msgstr "Muokkaa Merkintä"
+msgstr "Muokkaa merkintää"
 
 #: data/ui/med-dialog.blp:7
 msgid "New Treatment"
-msgstr "Uusi Hoito"
+msgstr "Uusi hoito"
 
 #: data/ui/med-dialog.blp:31 data/ui/window.blp:283
 msgid "Add"
@@ -555,7 +547,7 @@ msgstr "Pilleri"
 
 #: data/ui/med-dialog.blp:242
 msgid "Alternative Pill"
-msgstr "Vaihtoehtoinen Pilleri"
+msgstr "Vaihtoehtoinen pilleri"
 
 #: data/ui/med-dialog.blp:258
 msgid "Capsule"
@@ -563,11 +555,11 @@ msgstr "Kapseli"
 
 #: data/ui/med-dialog.blp:274
 msgid "Round Pill"
-msgstr "Pyöreä Pilleri"
+msgstr "Pyöreä pilleri"
 
 #: data/ui/med-dialog.blp:290
 msgid "Alternative Round Pill"
-msgstr "Vaihtoehtoinen Pyöreä Pilleri"
+msgstr "Vaihtoehtoinen pyöreä pilleri"
 
 #: data/ui/med-dialog.blp:306
 msgid "Ampoule"
@@ -579,11 +571,11 @@ msgstr "Injektio"
 
 #: data/ui/med-dialog.blp:338
 msgid "Square Pill"
-msgstr "Neliömäinen Pilleri"
+msgstr "Neliömäinen pilleri"
 
 #: data/ui/med-dialog.blp:354
 msgid "Alternative Square Pill"
-msgstr "Vaihtoehtoinen Neliömäinen Pilleri"
+msgstr "Vaihtoehtoinen neliömäinen pilleri"
 
 #: data/ui/med-dialog.blp:370
 msgid "Triangle pill"
@@ -591,7 +583,7 @@ msgstr "Kolmiomainen pilleri"
 
 #: data/ui/med-dialog.blp:386
 msgid "Alternative Triangle Pill"
-msgstr "Vaihtoehtoinen Kolmiomainen Pilleri"
+msgstr "Vaihtoehtoinen kolmiomainen pilleri"
 
 #: data/ui/med-dialog.blp:402
 msgid "Bottle"
@@ -611,23 +603,23 @@ msgstr "Päivittäin"
 
 #: data/ui/med-dialog.blp:473
 msgid "Choose Days"
-msgstr "Valitse Päivät"
+msgstr "Valitse päivät"
 
 #: data/ui/med-dialog.blp:572
 msgid "Choose Day"
-msgstr "Valitse Päivä"
+msgstr "Valitse päivä"
 
 #: data/ui/med-dialog.blp:617
 msgid "Change Cycle"
-msgstr "Vaihda Sykli"
+msgstr "Vaihda sykli"
 
 #: data/ui/med-dialog.blp:642
 msgid "Days Active"
-msgstr "Aktiiviset Päivät"
+msgstr "Aktiiviset päivät"
 
 #: data/ui/med-dialog.blp:656
 msgid "Days Inactive"
-msgstr "Passiiviset Päivät"
+msgstr "Passiiviset päivät"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-dialog.blp:671
@@ -636,7 +628,7 @@ msgstr "Tänään syklin päivä…"
 
 #: data/ui/med-dialog.blp:694
 msgid "Increase Notification Priority"
-msgstr "Korota Ilmoituksen Tärkeysastetta"
+msgstr "Korota ilmoituksen tärkeysastetta"
 
 #: data/ui/med-dialog.blp:695
 msgid "Show in fullscreen mode or with 'Do Not Disturb' enabled"
@@ -646,7 +638,7 @@ msgstr ""
 
 #: data/ui/med-dialog.blp:699
 msgid "Recurring Notifications"
-msgstr "Toistuvat Ilmoitukset"
+msgstr "Toistuvat ilmoitukset"
 
 #: data/ui/med-dialog.blp:700
 msgid "Renotify until it's confirmed or skipped"
@@ -654,7 +646,7 @@ msgstr "Muistuta uudelleen, kunnes on saatu vahvistus tai ohitus"
 
 #: data/ui/med-dialog.blp:705
 msgid "Interval in Minutes"
-msgstr "Väli Minuuteissa"
+msgstr "Väli minuuteissa"
 
 #: data/ui/med-dialog.blp:718 data/ui/refill-dialog.blp:36
 msgid "Inventory"
@@ -670,7 +662,7 @@ msgstr "Nykyinen"
 
 #: data/ui/med-dialog.blp:738
 msgid "Remind Me At"
-msgstr "Muistuta Kun Jäljellä"
+msgstr "Muistuta kun jäljellä"
 
 #: data/ui/med-dialog.blp:751
 msgid "Refill Amount"
@@ -687,7 +679,7 @@ msgstr "Valitse päivämäärä"
 
 #: data/ui/med-dialog.blp:855
 msgid "Mark as Confirmed"
-msgstr "Merkitse Vahvistetuksi"
+msgstr "Merkitse vahvistetuksi"
 
 #: data/ui/med-dialog.blp:856
 msgid ""
@@ -695,7 +687,7 @@ msgid ""
 "history, reducing stock if enabled"
 msgstr ""
 "Jos sitä ei vahvisteta tai ohiteta manuaalisesti, se kirjataan vahvistetuksi "
-"historiaan, mikä vähentää varastoa, jos se on otettu käyttöön"
+"historiaan, mikä vähentää varastoa, jos varasto on otettu käyttöön"
 
 #: data/ui/one-time-dialog.blp:44
 msgid "From Treatment List"
@@ -711,11 +703,11 @@ msgstr "Asetukset"
 
 #: data/ui/preferences.blp:17
 msgid "Auto-Start at Login"
-msgstr "Käynnistä Kirjautumisen Yhteydessä"
+msgstr "Käynnistä kirjautumisen yhteydessä"
 
 #: data/ui/preferences.blp:28
 msgid "Auto-Clear History"
-msgstr "Automaattinen Historian Tyhjennys"
+msgstr "Automaattinen historian tyhjennys"
 
 #: data/ui/preferences.blp:29
 msgid "Keeps a maximum of 30 days"
@@ -723,7 +715,7 @@ msgstr "Säilyy enintään 30 päivää"
 
 #: data/ui/preferences.blp:40
 msgid "Low Stock Notification"
-msgstr "Alhaisen Varaston Ilmoitus"
+msgstr "Vähäisen varaston ilmoitus"
 
 #: data/ui/preferences.blp:41
 msgid "Send reminders when treatments are low in stock"
@@ -731,55 +723,42 @@ msgstr "Lähetä muistutuksia, kun hoidot ovat alhaiset varastossa"
 
 #: data/ui/preferences.blp:52
 msgid "Notification Sound"
-msgstr "Ilmoituksen Ääni"
+msgstr "Ilmoituksen ääni"
 
 #: data/ui/preferences.blp:63
 msgid "Notification Buttons"
-msgstr "Ilmoituksen Painikkeet"
+msgstr "Ilmoituksen painikkeet"
 
 #: data/ui/preferences.blp:64
 msgid "Show or hide confirm/skip"
 msgstr "Näytä tai piilota vahvistus- ja ohituspainikkeet"
 
 #: data/ui/preferences.blp:98
-#, fuzzy
-#| msgid "Export History as CSV"
 msgid "Export History As"
-msgstr "Vie Historia CSV-Muodossa"
+msgstr "Historian viennin muoto"
 
 #: data/ui/preferences.blp:121
-#, fuzzy
-#| msgid "Empty Treatments"
 msgid "Export Treatments As"
-msgstr "Tyhjät hoidot"
+msgstr "Hoitojen viennin muoto"
 
 #: data/ui/shortcuts-dialog.blp:8
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Shortcuts"
-msgstr "Näytä pikanäppäimet"
+msgstr "Pikanäppäimet"
 
 #: data/ui/shortcuts-dialog.blp:11
-#, fuzzy
-#| msgid "Show/Hide 'As Needed'"
 msgctxt "shortcut window"
 msgid "Show/Hide 'As Needed'"
-msgstr "Näytä/Piilota Tarvittaessa"
+msgstr "Näytä/piilota \"Tarvittaessa\""
 
 #: data/ui/shortcuts-dialog.blp:16
-#, fuzzy
-#| msgid "One-Time Entry"
 msgctxt "shortcut window"
 msgid "New One-Time Entry"
-msgstr "Kertakirjaus"
+msgstr "Uusi kertakirjaus"
 
 #: data/ui/shortcuts-dialog.blp:21
-#, fuzzy
-#| msgid "New Treatment"
 msgctxt "shortcut window"
 msgid "Add New Treatment"
-msgstr "Uusi Hoito"
+msgstr "Lisää uusi hoito"
 
 #: data/ui/shortcuts-dialog.blp:26
 msgctxt "shortcut window"
@@ -793,17 +772,15 @@ msgstr "Lopeta"
 
 #: data/ui/window.blp:23
 msgid "Show/Hide 'As Needed'"
-msgstr "Näytä/Piilota Tarvittaessa"
+msgstr "Näytä/piilota \"Tarvittaessa\""
 
 #: data/ui/window.blp:31
 msgid "Search"
 msgstr "Haku"
 
 #: data/ui/window.blp:39
-#, fuzzy
-#| msgid "Treatments"
 msgid "Sort Treatments"
-msgstr "Hoidot"
+msgstr "Järjestä hoidot"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
@@ -823,25 +800,23 @@ msgstr "Älä valitse"
 
 #: data/ui/window.blp:220
 msgid "Remove Entries"
-msgstr "Poista Merkinnät"
+msgstr "Poista merkinnät"
 
 #: data/ui/window.blp:300
 msgid "Name Ascending"
-msgstr ""
+msgstr "Nimi nousevasti"
 
 #: data/ui/window.blp:306
 msgid "Remaining Stock (Lowest First)"
-msgstr ""
+msgstr "Määrä jäljellä (vähäisin ensin)"
 
 #: data/ui/window.blp:312
 msgid "Remaining Stock (Highest First)"
-msgstr ""
+msgstr "Määrä jäljellä (eniten ensin)"
 
 #: data/ui/window.blp:318
-#, fuzzy
-#| msgid "As Needed"
 msgid "As Needed Last"
-msgstr "Tarvittaessa"
+msgstr "Viimeksi tarvittu"
 
 #: data/ui/window.blp:324
 #, fuzzy
@@ -856,11 +831,8 @@ msgid "As Needed/Ended Last"
 msgstr "Tarvittaessa"
 
 #: data/ui/window.blp:343
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Keyboard Shortcuts"
-msgstr "Näytä pikanäppäimet"
+msgstr "Pikanäppäimet"
 
 #: data/ui/window.blp:348
 msgid "About Dosage"
