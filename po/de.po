@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2025-09-23 11:12+0000\n"
-"Last-Translator: \"Max T.\" <max.timmermann@student.hpi.uni-potsdam.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/dosage/dosage/de/"
-">\n"
+"PO-Revision-Date: 2026-01-11 16:48+0000\n"
+"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/dosage/dosage/de/>"
+"\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -157,10 +157,8 @@ msgstr "Uhrzeit Unbekannt"
 
 #. TRANSLATORS: Context: 1 Pill at 19:00
 #: src/utils/getTreatmentsExportFile.js:69
-#, fuzzy
-#| msgid "Date"
 msgid "at"
-msgstr "Datum"
+msgstr "um"
 
 #: src/utils/getTreatmentsExportFile.js:89 data/ui/med-dialog.blp:443
 msgid "Notes"
@@ -179,12 +177,12 @@ msgstr "Tag des Monats"
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/utils/getTreatmentsExportFile.js:109
 msgid "day(s) on"
-msgstr ""
+msgstr "Tag(e) ein"
 
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/utils/getTreatmentsExportFile.js:111
 msgid "day(s) off"
-msgstr ""
+msgstr "Tag(e) aus"
 
 #: src/utils/getTreatmentsExportFile.js:122 src/todayFactory.js:41
 #: src/treatmentsFactory.js:298 data/ui/med-dialog.blp:461
@@ -196,26 +194,20 @@ msgid "Duration"
 msgstr "Dauer"
 
 #: src/utils/getTreatmentsExportFile.js:135
-#, fuzzy
-#| msgid "Starts On"
 msgid "Started on"
-msgstr "Beginnt Am"
+msgstr "Begonnen am"
 
 #: src/utils/getTreatmentsExportFile.js:136 data/ui/med-dialog.blp:775
-#, fuzzy
-#| msgid "Starts On"
 msgid "Start"
-msgstr "Beginnt Am"
+msgstr "Beginn"
 
 #: src/utils/getTreatmentsExportFile.js:138 src/treatmentsFactory.js:256
 msgid "Ended on"
 msgstr "Beendet am"
 
 #: src/utils/getTreatmentsExportFile.js:138 data/ui/med-dialog.blp:817
-#, fuzzy
-#| msgid "Ends On"
 msgid "End"
-msgstr "Endet Am"
+msgstr "Ende"
 
 #: src/utils/getTreatmentsExportFile.js:173 src/utils/saveFiles.js:44
 #: data/ui/window.blp:234
@@ -223,11 +215,8 @@ msgid "Treatments"
 msgstr "Behandlungen"
 
 #: src/utils/getTreatmentsExportFile.js:184
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "Generated on"
-msgstr "Allgemein"
+msgstr "Erzeugt am"
 
 #: src/utils/getTreatmentsExportFile.js:187
 msgid "Ongoing"
@@ -235,11 +224,11 @@ msgstr ""
 
 #: src/utils/getTreatmentsExportFile.js:188
 msgid "Non-scheduled"
-msgstr ""
+msgstr "Nicht geplant"
 
 #: src/utils/getTreatmentsExportFile.js:189
 msgid "Finished"
-msgstr ""
+msgstr "Abgeschlossen"
 
 #: src/utils/locale.js:33
 msgid "Weekends"
@@ -442,16 +431,12 @@ msgid "No Results Found"
 msgstr "Keine Ergebnisse Gefunden"
 
 #: src/window.js:648 src/window.js:1517
-#, fuzzy
-#| msgid "History"
 msgid "No History"
-msgstr "Verlauf"
+msgstr "Kein Verlauf"
 
 #: src/window.js:818 data/ui/window.blp:260
-#, fuzzy
-#| msgid "Treatments"
 msgid "No Treatments"
-msgstr "Behandlungen"
+msgstr "Keine Behandlungen"
 
 #: src/window.js:818
 msgid "All Done for Today"
@@ -740,44 +725,31 @@ msgid "Show or hide confirm/skip"
 msgstr "„Überspringen“ anzeigen oder verstecken"
 
 #: data/ui/preferences.blp:98
-#, fuzzy
-#| msgid "Export History as CSV"
 msgid "Export History As"
-msgstr "Verlauf Als CSV Exportieren"
+msgstr "Verlauf exportieren als"
 
 #: data/ui/preferences.blp:121
-#, fuzzy
-#| msgid "Empty Treatments"
 msgid "Export Treatments As"
-msgstr "Leere Behandlungen"
+msgstr "Behandlungen exportieren als"
 
 #: data/ui/shortcuts-dialog.blp:8
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Shortcuts"
-msgstr "Kurzbefehle anzeigen"
+msgstr "Kurzbefehle"
 
 #: data/ui/shortcuts-dialog.blp:11
-#, fuzzy
-#| msgid "Show/Hide 'As Needed'"
 msgctxt "shortcut window"
 msgid "Show/Hide 'As Needed'"
-msgstr "Zeige/Verstecke „Nach Bedarf“"
+msgstr "„Nach Bedarf“ anzeigen/ausblenden"
 
 #: data/ui/shortcuts-dialog.blp:16
-#, fuzzy
-#| msgid "One-Time Entry"
 msgctxt "shortcut window"
 msgid "New One-Time Entry"
-msgstr "Einmal-Eintrag"
+msgstr "Neuer Einmal-Eintrag"
 
 #: data/ui/shortcuts-dialog.blp:21
-#, fuzzy
-#| msgid "New Treatment"
 msgctxt "shortcut window"
 msgid "Add New Treatment"
-msgstr "Neue Behandlung"
+msgstr "Neue Behandlung hinzufügen"
 
 #: data/ui/shortcuts-dialog.blp:26
 msgctxt "shortcut window"
@@ -798,10 +770,8 @@ msgid "Search"
 msgstr "Suche"
 
 #: data/ui/window.blp:39
-#, fuzzy
-#| msgid "Treatments"
 msgid "Sort Treatments"
-msgstr "Behandlungen"
+msgstr "Behandlungen sortieren"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
@@ -825,7 +795,7 @@ msgstr "Einträge Entfernen"
 
 #: data/ui/window.blp:300
 msgid "Name Ascending"
-msgstr ""
+msgstr "Name aufsteigend"
 
 #: data/ui/window.blp:306
 msgid "Remaining Stock (Lowest First)"
