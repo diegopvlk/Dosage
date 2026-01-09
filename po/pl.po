@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2025-02-10 23:31+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/dosage/dosage/pl/"
-">\n"
+"PO-Revision-Date: 2026-01-11 16:48+0000\n"
+"Last-Translator: Karol Putyra <karol23145@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/dosage/dosage/pl/>"
+"\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -39,9 +39,9 @@ msgid ""
 "multiple doses, flexible frequency, customization, stock monitoring, and "
 "duration control"
 msgstr ""
-"Łatwo zarządzaj swoją farmakoterapią z Dosage: Powiadomienia, Historia, "
-"Liczne Dawki, Elastyczna Częstotliwość, Personalizacja, Monitoring Zapasu, i "
-"Kontrola Długości (?)"
+"Łatwo zarządzaj swoją farmakoterapią za pomocą aplikacji Dawkowanie: "
+"powiadomienia, historia, wiele dawek, elastyczna częstotliwość, "
+"personalizacja, monitoring zapasów, i kontrola czasu trwania kuracji."
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid "Features:"
@@ -159,10 +159,8 @@ msgstr "Czas Nieznany"
 
 #. TRANSLATORS: Context: 1 Pill at 19:00
 #: src/utils/getTreatmentsExportFile.js:69
-#, fuzzy
-#| msgid "Date"
 msgid "at"
-msgstr "Data"
+msgstr "o"
 
 #: src/utils/getTreatmentsExportFile.js:89 data/ui/med-dialog.blp:443
 msgid "Notes"
@@ -181,67 +179,58 @@ msgstr "Dzień Miesiąca"
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/utils/getTreatmentsExportFile.js:109
 msgid "day(s) on"
-msgstr ""
+msgstr "dzień/dni przyjmowania"
 
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/utils/getTreatmentsExportFile.js:111
 msgid "day(s) off"
-msgstr ""
+msgstr "dzień/dni przerwy"
 
 #: src/utils/getTreatmentsExportFile.js:122 src/todayFactory.js:41
 #: src/treatmentsFactory.js:298 data/ui/med-dialog.blp:461
 msgid "As Needed"
-msgstr "Gdy potrzeba"
+msgstr "Gdy Potrzeba"
 
 #: src/utils/getTreatmentsExportFile.js:132 data/ui/med-dialog.blp:764
 msgid "Duration"
-msgstr "Czas trwania"
+msgstr "Czas Trwania"
 
 #: src/utils/getTreatmentsExportFile.js:135
-#, fuzzy
-#| msgid "Starts On"
 msgid "Started on"
-msgstr "Zaczyna Się"
+msgstr "Rozpoczęte o"
 
 #: src/utils/getTreatmentsExportFile.js:136 data/ui/med-dialog.blp:775
-#, fuzzy
-#| msgid "Starts On"
 msgid "Start"
-msgstr "Zaczyna Się"
+msgstr "Rozpoczyna Się"
 
 #: src/utils/getTreatmentsExportFile.js:138 src/treatmentsFactory.js:256
 msgid "Ended on"
 msgstr "Zakończono w"
 
 #: src/utils/getTreatmentsExportFile.js:138 data/ui/med-dialog.blp:817
-#, fuzzy
-#| msgid "Ends On"
 msgid "End"
-msgstr "Kończy Się"
+msgstr "Koniec"
 
 #: src/utils/getTreatmentsExportFile.js:173 src/utils/saveFiles.js:44
 #: data/ui/window.blp:234
 msgid "Treatments"
-msgstr "Leczenia"
+msgstr "Farmakoterapia"
 
 #: src/utils/getTreatmentsExportFile.js:184
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "Generated on"
-msgstr "Ogólne"
+msgstr "Wygenerowano w"
 
 #: src/utils/getTreatmentsExportFile.js:187
 msgid "Ongoing"
-msgstr ""
+msgstr "W Trakcie"
 
 #: src/utils/getTreatmentsExportFile.js:188
 msgid "Non-scheduled"
-msgstr ""
+msgstr "Niezaplanowane"
 
 #: src/utils/getTreatmentsExportFile.js:189
 msgid "Finished"
-msgstr ""
+msgstr "Zakończone"
 
 #: src/utils/locale.js:33
 msgid "Weekends"
@@ -272,15 +261,16 @@ msgstr "Wybierz Do Usunięcia"
 msgid "translator-credits"
 msgstr ""
 "Michael Ł <micheal.labus@gmail.com>\n"
-"Diego Povliuk <diego.pvlk@gmail.com>"
+"Diego Povliuk <diego.pvlk@gmail.com>\n"
+"Karol Putyra<karol.putyra@tutanota.com>"
 
 #: src/main.js:73
 msgid "Thanks to These Projects!"
-msgstr "Dzięki Tym Projektom!"
+msgstr "Dzięki dla Tych Projektów!"
 
 #: src/medDialog.js:99
 msgid "Edit Treatment"
-msgstr "Edytuj Leczenie"
+msgstr "Edytuj Farmakologię"
 
 #: src/medDialog.js:100 data/ui/edit-hist-dialog.blp:30
 #: data/ui/preferences.blp:112 data/ui/preferences.blp:132
@@ -290,7 +280,7 @@ msgstr "Zapisz"
 
 #: src/medDialog.js:114
 msgid "Copy"
-msgstr "Kopie"
+msgstr "Kopiuj"
 
 #: src/medDialog.js:217
 msgid "Add Dose"
@@ -314,7 +304,7 @@ msgstr "Cykl"
 
 #: src/medDialog.js:467 data/ui/med-dialog.blp:452
 msgid "Frequency"
-msgstr "Frekwencja"
+msgstr "Częstotliwość"
 
 #: src/medDialog.js:500
 msgid "Empty Name"
@@ -338,7 +328,7 @@ msgstr "Zduplikowany Czas"
 
 #: src/medDialog.js:582
 msgid "Are You Sure?"
-msgstr "Na Pewno?"
+msgstr "Czy Jesteś Pewien?"
 
 #: src/medDialog.js:583
 msgid "will be deleted"
@@ -446,16 +436,12 @@ msgid "No Results Found"
 msgstr "Nie Znaleziono Wyników"
 
 #: src/window.js:648 src/window.js:1517
-#, fuzzy
-#| msgid "History"
 msgid "No History"
-msgstr "Historia"
+msgstr "Brak Historii"
 
 #: src/window.js:818 data/ui/window.blp:260
-#, fuzzy
-#| msgid "Treatments"
 msgid "No Treatments"
-msgstr "Leczenia"
+msgstr "Brak Farmakoterapii"
 
 #: src/window.js:818
 msgid "All Done for Today"
@@ -695,6 +681,9 @@ msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
 msgstr ""
+"Jeśli nie zostanie ręcznie potwierdzone lub pominięte, zostanie zapisane w "
+"historii jako potwierdzone i zredukuje stan zapasów, jeśli opcja jest "
+"włączona"
 
 #: data/ui/one-time-dialog.blp:44
 msgid "From Treatment List"
@@ -741,44 +730,31 @@ msgid "Show or hide confirm/skip"
 msgstr "Pokaż lub ukryj potwierdź/pomiń"
 
 #: data/ui/preferences.blp:98
-#, fuzzy
-#| msgid "Export History as CSV"
 msgid "Export History As"
-msgstr "Eksportuj Historię Jako CSV"
+msgstr "Eksportuj Historię Jako"
 
 #: data/ui/preferences.blp:121
-#, fuzzy
-#| msgid "Empty Treatments"
 msgid "Export Treatments As"
-msgstr "Brak Leczeń"
+msgstr "Eksportuj Farmakoterapię Jako"
 
 #: data/ui/shortcuts-dialog.blp:8
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Shortcuts"
-msgstr "Pokaż skróty"
+msgstr "Skróty"
 
 #: data/ui/shortcuts-dialog.blp:11
-#, fuzzy
-#| msgid "Show/Hide 'As Needed'"
 msgctxt "shortcut window"
 msgid "Show/Hide 'As Needed'"
-msgstr "Pokaż/Ukryj 'Gdy potrzeba'"
+msgstr "Pokaż/Ukryj 'Gdy Potrzeba'"
 
 #: data/ui/shortcuts-dialog.blp:16
-#, fuzzy
-#| msgid "One-Time Entry"
 msgctxt "shortcut window"
 msgid "New One-Time Entry"
-msgstr "Jednorazowy Wpis"
+msgstr "Nowy Jednorazowy Wpis"
 
 #: data/ui/shortcuts-dialog.blp:21
-#, fuzzy
-#| msgid "New Treatment"
 msgctxt "shortcut window"
 msgid "Add New Treatment"
-msgstr "Nowe Leczenie"
+msgstr "Dodaj Nową farmakoterapię"
 
 #: data/ui/shortcuts-dialog.blp:26
 msgctxt "shortcut window"
@@ -799,10 +775,8 @@ msgid "Search"
 msgstr "Szukaj"
 
 #: data/ui/window.blp:39
-#, fuzzy
-#| msgid "Treatments"
 msgid "Sort Treatments"
-msgstr "Leczenia"
+msgstr "Sortuj Terapie"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
@@ -826,15 +800,15 @@ msgstr "Usuń Wpisy"
 
 #: data/ui/window.blp:300
 msgid "Name Ascending"
-msgstr ""
+msgstr "Nazwa Rosnąco"
 
 #: data/ui/window.blp:306
 msgid "Remaining Stock (Lowest First)"
-msgstr ""
+msgstr "Pozostałe Zapasy (Od Najniższych)"
 
 #: data/ui/window.blp:312
 msgid "Remaining Stock (Highest First)"
-msgstr ""
+msgstr "Pozostałe Zapasy (Od Największych)"
 
 #: data/ui/window.blp:318
 #, fuzzy
