@@ -73,6 +73,13 @@
 	</recommends>
 
 	<releases>
+		<release version="2.1.1" date="2026-01-12">
+			<description translate="no">
+				<ul>
+					<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.1.0" date="2025-12-22">
 			<description translate="no">
 				<ul>
