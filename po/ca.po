@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2026-01-11 16:48+0000\n"
+"PO-Revision-Date: 2026-01-22 13:22+0000\n"
 "Last-Translator: Àlex Bravo <alexbravobosch@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/dosage/dosage/"
 "ca/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -77,7 +77,7 @@ msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
 msgid "Duration — Define the start and end dates"
-msgstr "Durada — Defineix les dates d'inici i de finalització"
+msgstr "Durada: Defineix les dates d'inici i de finalització"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage today window in light theme"
