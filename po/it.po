@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2025-12-04 22:46+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/it/"
-">\n"
+"PO-Revision-Date: 2026-01-25 07:48+0000\n"
+"Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/dosage/dosage/"
+"it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -431,16 +431,12 @@ msgid "No Results Found"
 msgstr "Nessun Risultato Trovato"
 
 #: src/window.js:648 src/window.js:1517
-#, fuzzy
-#| msgid "History"
 msgid "No History"
-msgstr "Cronologia"
+msgstr "Nessuna cronologia"
 
 #: src/window.js:818 data/ui/window.blp:260
-#, fuzzy
-#| msgid "Treatments"
 msgid "No Treatments"
-msgstr "Trattamenti"
+msgstr "Nessun trattamento"
 
 #: src/window.js:818
 msgid "All Done for Today"
@@ -736,32 +732,23 @@ msgid "Export Treatments As"
 msgstr "Esporta Trattamenti Come"
 
 #: data/ui/shortcuts-dialog.blp:8
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Shortcuts"
-msgstr "Mostra scorciatoie"
+msgstr "Scorciatoie"
 
 #: data/ui/shortcuts-dialog.blp:11
-#, fuzzy
-#| msgid "Show/Hide 'As Needed'"
 msgctxt "shortcut window"
 msgid "Show/Hide 'As Needed'"
-msgstr "Mostra/Nascondi 'Secondo Necessità'"
+msgstr "Mostra/Nascondi 'Se necessario'"
 
 #: data/ui/shortcuts-dialog.blp:16
-#, fuzzy
-#| msgid "One-Time Entry"
 msgctxt "shortcut window"
 msgid "New One-Time Entry"
-msgstr "Unica Voce"
+msgstr "Nuova voce una tantum"
 
 #: data/ui/shortcuts-dialog.blp:21
-#, fuzzy
-#| msgid "New Treatment"
 msgctxt "shortcut window"
 msgid "Add New Treatment"
-msgstr "Nuovo Trattamento"
+msgstr "Aggiungi Nuovo Trattamento"
 
 #: data/ui/shortcuts-dialog.blp:26
 msgctxt "shortcut window"
@@ -818,22 +805,16 @@ msgid "Remaining Stock (Highest First)"
 msgstr "Scorta Rimanente (Quantità Maggiore Prima)"
 
 #: data/ui/window.blp:318
-#, fuzzy
-#| msgid "As Needed"
 msgid "As Needed Last"
-msgstr "Secondo Necessità"
+msgstr "Se necessario alla fine"
 
 #: data/ui/window.blp:324
-#, fuzzy
-#| msgid "Ended on"
 msgid "Ended Last"
-msgstr "Terminato il"
+msgstr "Ultimo terminato"
 
 #: data/ui/window.blp:330
-#, fuzzy
-#| msgid "As Needed"
 msgid "As Needed/Ended Last"
-msgstr "Secondo Necessità"
+msgstr "Secondo necessità/Terminato per ultimo"
 
 #: data/ui/window.blp:343
 msgid "Keyboard Shortcuts"
