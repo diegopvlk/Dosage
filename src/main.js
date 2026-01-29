@@ -60,7 +60,6 @@ export const DosageApplication = GObject.registerClass(
 					application_name: _('Dosage'),
 					application_icon: 'io.github.diegopvlk.Dosage',
 					developer_name: 'Diego Povliuk',
-					developers: ['Diego Povliuk'],
 					version: pkg.version,
 					issue_url: 'https://github.com/diegopvlk/Dosage/issues',
 					license_type: Gtk.License.GPL_3_0_ONLY,
@@ -81,6 +80,7 @@ export const DosageApplication = GObject.registerClass(
 					'Flatpak https://github.com/flatpak/',
 				]);
 				aboutDialog.add_link('Donate', 'https://github.com/diegopvlk/Dosage#donate');
+				aboutDialog.add_other_app('io.github.diegopvlk.Cine', 'Cine', 'Play your videos');
 				aboutDialog.add_other_app(
 					'io.github.diegopvlk.Tomatillo',
 					'Tomatillo',

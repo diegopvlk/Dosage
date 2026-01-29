@@ -58,6 +58,7 @@
     <file alias="dosage-notification-low-stock-symbolic.svg">icons/ui/dosage-notification-low-stock-symbolic.svg</file>
   </gresource>
   <gresource prefix="/io/github/diegopvlk/Dosage/icons/scalable/apps">
+    <file alias="io.github.diegopvlk.Cine.svg">icons/scalable/apps/io.github.diegopvlk.Cine.svg</file>
     <file alias="io.github.diegopvlk.Tomatillo.svg">icons/scalable/apps/io.github.diegopvlk.Tomatillo.svg</file>
   </gresource>
 </gresources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg1" width="128" height="128" version="1.1" viewBox="0 0 33.867 33.867" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs id="defs1">
+  <linearGradient id="linearGradient1" x1="88.596" x2="536.6" y1="-449.39" y2="-449.39" gradientTransform="matrix(.061421 0 0 .087034 -2.2666 69.804)" gradientUnits="userSpaceOnUse">
+   <stop id="stop299" stop-color="#00798c" offset="0"/>
+   <stop id="stop300" stop-color="#00cff2" offset=".074"/>
+   <stop id="stop301" stop-color="#008093" offset=".138"/>
+   <stop id="stop302" stop-color="#04838f" offset=".355"/>
+   <stop id="stop303" stop-color="#0d8e80" offset=".73"/>
+   <stop id="stop304" stop-color="#118f7b" offset=".8817"/>
+   <stop id="stop413" stop-color="#16d8c6" offset=".9451"/>
+   <stop id="stop305" stop-color="#0d7b76" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient2" x1="-186.6" x2="-101.4" y1="263.83" y2="204.17" gradientTransform="matrix(.26458 0 0 .26458 55.033 -45.508)" gradientUnits="userSpaceOnUse">
+   <stop id="stop293" stop-color="#00afcb" offset="0"/>
+   <stop id="stop294" stop-color="#18d4b5" offset=".56228"/>
+   <stop id="stop295" stop-color="#00afef" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient298" x1="66" x2="66" y1="260" y2="228" gradientTransform="matrix(.28113 0 0 .26458 -1.3563 -45.508)" gradientUnits="userSpaceOnUse">
+   <stop id="stop297" stop-color="#d6d6d6" offset="0"/>
+   <stop id="stop298" stop-color="#fff" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g id="layer1">
+  <rect id="rect1048-7-2" x="3.175" y="4.2333" width="27.517" height="26.458" rx="2.1167" ry="2.1167" enable-background="new" fill="url(#linearGradient1)" style="paint-order:normal"/>
+  <rect id="rect929-36-9-1-0" x="3.175" y="3.175" width="27.517" height="26.458" rx="2.1167" ry="2.1167" enable-background="new" fill="url(#linearGradient2)" style="paint-order:normal"/>
+  <rect id="rect7-7-6" x="5.2917" y="10.583" width="23.283" height="16.933" ry="1.3303" enable-background="new" fill="#1a1622" fill-opacity=".9013" stroke-linecap="round" stroke-linejoin="bevel" stroke-width=".56256" style="mix-blend-mode:normal;paint-order:fill markers stroke"/>
+  <g id="g1" fill="#131019" fill-opacity=".90459" stroke-linecap="round" stroke-linejoin="bevel" stroke-width=".89148">
+   <rect id="rect69-6-1-9" x="5.2917" y="5.2917" width="3.4396" height="3.175" ry="1.4479" enable-background="new" style="mix-blend-mode:luminosity;paint-order:fill markers stroke"/>
+   <rect id="rect69-6-1-0-2" x="25.135" y="5.2917" width="3.4396" height="3.175" ry="1.4479" enable-background="new" style="mix-blend-mode:luminosity;paint-order:fill markers stroke"/>
+   <rect id="rect69-6-1-0-4-6" x="15.214" y="5.2917" width="3.4396" height="3.175" ry="1.4479" enable-background="new" style="mix-blend-mode:luminosity;paint-order:fill markers stroke"/>
+   <rect id="rect69-6-1-0-4-9-6" x="20.174" y="5.2917" width="3.4396" height="3.175" ry="1.4479" enable-background="new" style="mix-blend-mode:luminosity;paint-order:fill markers stroke"/>
+   <rect id="rect69-6-1-0-4-2-4" x="10.253" y="5.2917" width="3.4396" height="3.175" ry="1.4479" enable-background="new" style="mix-blend-mode:luminosity;paint-order:fill markers stroke"/>
+  </g>
+  <path id="path1-8-2" d="m12.7 22.999v-7.904c0-1.0778 1.0595-1.0722 1.0595-1.0722h0.11107c0.20276 0 0.40552 0.03931 0.58527 0.12631l6.6907 4.0222c0.36301 0.17121 0.54934 0.52488 0.54934 0.87853 0 0.35367-0.18644 0.70732-0.54934 0.88134l-6.6907 4.0222c-0.17986 0.08702-0.38262 0.12631-0.58527 0.12351h-0.11107s-1.0595 0-1.0595-1.0778z" enable-background="new" fill="url(#linearGradient298)" stroke-width=".77557" style="mix-blend-mode:normal"/>
+ </g>
+</svg>
