@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2025-02-10 23:31+0000\n"
+"PO-Revision-Date: 2026-02-04 00:16+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/ru/"
-">\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/dosage/dosage/"
+"ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -160,10 +160,8 @@ msgstr "Время неизвестно"
 
 #. TRANSLATORS: Context: 1 Pill at 19:00
 #: src/utils/getTreatmentsExportFile.js:69
-#, fuzzy
-#| msgid "Date"
 msgid "at"
-msgstr "Дата приема"
+msgstr "в"
 
 #: src/utils/getTreatmentsExportFile.js:89 data/ui/med-dialog.blp:443
 msgid "Notes"
@@ -199,26 +197,20 @@ msgid "Duration"
 msgstr "Длительность"
 
 #: src/utils/getTreatmentsExportFile.js:135
-#, fuzzy
-#| msgid "Starts On"
 msgid "Started on"
-msgstr "Начинается"
+msgstr "Началось"
 
 #: src/utils/getTreatmentsExportFile.js:136 data/ui/med-dialog.blp:775
-#, fuzzy
-#| msgid "Starts On"
 msgid "Start"
-msgstr "Начинается"
+msgstr "Начало"
 
 #: src/utils/getTreatmentsExportFile.js:138 src/treatmentsFactory.js:256
 msgid "Ended on"
 msgstr "Закончился"
 
 #: src/utils/getTreatmentsExportFile.js:138 data/ui/med-dialog.blp:817
-#, fuzzy
-#| msgid "Ends On"
 msgid "End"
-msgstr "Заканчивается"
+msgstr "Конец"
 
 #: src/utils/getTreatmentsExportFile.js:173 src/utils/saveFiles.js:44
 #: data/ui/window.blp:234
@@ -226,23 +218,20 @@ msgid "Treatments"
 msgstr "Курсы лечения"
 
 #: src/utils/getTreatmentsExportFile.js:184
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "Generated on"
-msgstr "Общие"
+msgstr "Генерировано в"
 
 #: src/utils/getTreatmentsExportFile.js:187
 msgid "Ongoing"
-msgstr ""
+msgstr "Текущий"
 
 #: src/utils/getTreatmentsExportFile.js:188
 msgid "Non-scheduled"
-msgstr ""
+msgstr "Незапланированные"
 
 #: src/utils/getTreatmentsExportFile.js:189
 msgid "Finished"
-msgstr ""
+msgstr "Законченно"
 
 #: src/utils/locale.js:33
 msgid "Weekends"
@@ -450,16 +439,12 @@ msgid "No Results Found"
 msgstr "Результатов не найдено"
 
 #: src/window.js:648 src/window.js:1517
-#, fuzzy
-#| msgid "History"
 msgid "No History"
-msgstr "История"
+msgstr "Нет истории"
 
 #: src/window.js:818 data/ui/window.blp:260
-#, fuzzy
-#| msgid "Treatments"
 msgid "No Treatments"
-msgstr "Курсы лечения"
+msgstr "Нет курсов лечения"
 
 #: src/window.js:818
 msgid "All Done for Today"
@@ -749,23 +734,16 @@ msgid "Show or hide confirm/skip"
 msgstr "Показать или скрыть подтвердить/пропустить"
 
 #: data/ui/preferences.blp:98
-#, fuzzy
-#| msgid "Export History as CSV"
 msgid "Export History As"
-msgstr "Экспортировать историю в CSV"
+msgstr "Экспортировать историю как"
 
 #: data/ui/preferences.blp:121
-#, fuzzy
-#| msgid "Empty Treatments"
 msgid "Export Treatments As"
-msgstr "Пустые курсы лечения"
+msgstr "Экспортировать курсы лечения как"
 
 #: data/ui/shortcuts-dialog.blp:8
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Shortcuts"
-msgstr "Показать комбинации клавиш"
+msgstr "Комбинации клавиш"
 
 #: data/ui/shortcuts-dialog.blp:11
 #, fuzzy
@@ -775,18 +753,14 @@ msgid "Show/Hide 'As Needed'"
 msgstr "Показать/Скрыть 'Когда нужно'"
 
 #: data/ui/shortcuts-dialog.blp:16
-#, fuzzy
-#| msgid "One-Time Entry"
 msgctxt "shortcut window"
 msgid "New One-Time Entry"
-msgstr "Одноразовый прием"
+msgstr "Новый одноразовый прием"
 
 #: data/ui/shortcuts-dialog.blp:21
-#, fuzzy
-#| msgid "New Treatment"
 msgctxt "shortcut window"
 msgid "Add New Treatment"
-msgstr "Новый курс лечения"
+msgstr "Добавить новый курс лечения"
 
 #: data/ui/shortcuts-dialog.blp:26
 msgctxt "shortcut window"
@@ -807,10 +781,8 @@ msgid "Search"
 msgstr "Поиск"
 
 #: data/ui/window.blp:39
-#, fuzzy
-#| msgid "Treatments"
 msgid "Sort Treatments"
-msgstr "Курсы лечения"
+msgstr "Сортировать курсы лечения"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
