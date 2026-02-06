@@ -11,7 +11,6 @@ import GObject from 'gi://GObject?version=2.0';
 import Gtk from 'gi://Gtk?version=4.0';
 
 import { PrefsDialog } from './prefsDialog.js';
-import { releaseNotes } from './releaseNotes.js';
 import { sortTreatments } from './treatmentsSorter.js';
 import { DosageWindow } from './window.js';
 
@@ -65,7 +64,6 @@ export const DosageApplication = GObject.registerClass(
 					copyright: '© 2023 Diego Povliuk',
 					// TRANSLATORS: "Your Name <your@email.com>"
 					translator_credits: _('translator-credits'),
-					release_notes: releaseNotes,
 				};
 				const aboutDialog = new Adw.AboutDialog(aboutParams);
 				aboutDialog.add_acknowledgement_section(_('Thanks to These Projects!'), [
