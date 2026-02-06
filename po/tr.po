@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2025-12-06 10:48+0000\n"
+"PO-Revision-Date: 2026-02-09 23:53+0000\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
-"Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/tr/"
-">\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/dosage/dosage/"
+"tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 "X-Project-Style: gnome\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
@@ -40,8 +40,8 @@ msgid ""
 "multiple doses, flexible frequency, customization, stock monitoring, and "
 "duration control"
 msgstr ""
-"Dozaj ile tedavi takibini kolayca yönetin: Bildirimler, Geçmiş, Çoklu "
-"Dozlar, Esnek Sıklık, Özelleştirme, Stok İzleme ve Süre Kontrolü"
+"Dozaj ile ilaç takibini kolayca yönetin: Bildirimler, Geçmiş, Çoklu Dozlar, "
+"Esnek Sıklık, Özelleştirme, Stok İzleme ve Süre Kontrolü"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid "Features:"
@@ -315,7 +315,7 @@ msgstr "En Az Bir Gün Seçin"
 
 #: src/medDialog.js:527 src/oneTimeDialog.js:187
 msgid "Name Already on Treatment List"
-msgstr "İsim Zaten Tedavi Listesinde"
+msgstr "Ad Zaten İlaç Listesinde"
 
 #: src/medDialog.js:542
 msgid "Duplicated Time"
@@ -376,7 +376,7 @@ msgstr "Dozu Değiştir"
 #: src/treatmentsFactory.js:96 src/treatmentsFactory.js:126
 #: data/ui/refill-dialog.blp:7
 msgid "Refill"
-msgstr "Yeniden doldur"
+msgstr "Yeniden Doldur"
 
 #: src/treatmentsFactory.js:125
 msgid "Edit"
@@ -431,16 +431,12 @@ msgid "No Results Found"
 msgstr "Sonuç Bulunamadı"
 
 #: src/window.js:648 src/window.js:1517
-#, fuzzy
-#| msgid "History"
 msgid "No History"
-msgstr "Geçmiş"
+msgstr "Geçmiş Yok"
 
 #: src/window.js:818 data/ui/window.blp:260
-#, fuzzy
-#| msgid "Treatments"
 msgid "No Treatments"
-msgstr "İlaçlar"
+msgstr "İlaç Yok"
 
 #: src/window.js:818
 msgid "All Done for Today"
@@ -713,7 +709,7 @@ msgstr "Düşük Stok Bildirimi"
 
 #: data/ui/preferences.blp:41
 msgid "Send reminders when treatments are low in stock"
-msgstr "Tedaviler düşük stokta olduğunda hatırlatmalar gönder"
+msgstr "İlaçların stoğu düştüğünde hatırlatıcı göster"
 
 #: data/ui/preferences.blp:52
 msgid "Notification Sound"
@@ -733,35 +729,26 @@ msgstr "Geçmişi Dışa Aktar"
 
 #: data/ui/preferences.blp:121
 msgid "Export Treatments As"
-msgstr "Tedavileri Dışa Aktar"
+msgstr "İlaçları Dışa Aktar"
 
 #: data/ui/shortcuts-dialog.blp:8
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Shortcuts"
-msgstr "Kısayolları Göster"
+msgstr "Kısayollar"
 
 #: data/ui/shortcuts-dialog.blp:11
-#, fuzzy
-#| msgid "Show/Hide 'As Needed'"
 msgctxt "shortcut window"
 msgid "Show/Hide 'As Needed'"
 msgstr "'Gerektiğinde' Göster/Gizle"
 
 #: data/ui/shortcuts-dialog.blp:16
-#, fuzzy
-#| msgid "One-Time Entry"
 msgctxt "shortcut window"
 msgid "New One-Time Entry"
-msgstr "Tek Seferlik Giriş"
+msgstr "Yeni Tek Seferlik Giriş"
 
 #: data/ui/shortcuts-dialog.blp:21
-#, fuzzy
-#| msgid "New Treatment"
 msgctxt "shortcut window"
 msgid "Add New Treatment"
-msgstr "Yeni İlaç"
+msgstr "Yeni İlaç Ekle"
 
 #: data/ui/shortcuts-dialog.blp:26
 msgctxt "shortcut window"
@@ -783,7 +770,7 @@ msgstr "Ara"
 
 #: data/ui/window.blp:39
 msgid "Sort Treatments"
-msgstr "Tedavileri Sırala"
+msgstr "İlaçları Sırala"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
@@ -818,22 +805,16 @@ msgid "Remaining Stock (Highest First)"
 msgstr "Kalan Stok (Önce En Yüksek)"
 
 #: data/ui/window.blp:318
-#, fuzzy
-#| msgid "As Needed"
 msgid "As Needed Last"
-msgstr "Gerektiğinde"
+msgstr "Gerektiğinde Sonda"
 
 #: data/ui/window.blp:324
-#, fuzzy
-#| msgid "Ended on"
 msgid "Ended Last"
-msgstr "Sona erdi"
+msgstr "Bitenler Sonda"
 
 #: data/ui/window.blp:330
-#, fuzzy
-#| msgid "As Needed"
 msgid "As Needed/Ended Last"
-msgstr "Gerektiğinde"
+msgstr "Gerektiğinde/Bitenler Sonda"
 
 #: data/ui/window.blp:343
 msgid "Keyboard Shortcuts"
