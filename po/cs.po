@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2026-03-04 12:34+0000\n"
+"PO-Revision-Date: 2026-03-04 14:51+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/>"
 "\n"
@@ -68,33 +68,33 @@ msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
 msgid "Color and icon — Give a shape for your treatment"
-msgstr "Barva a ikona – dejte své léčbě podobu"
+msgstr "Barva a ikona – odlište od sebe své léčby"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:32
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
 msgstr ""
-"Správa seznamu – sledujte své zásoby a dostaňte připomínku když vám začnou "
-"docházet"
+"Správa lékárničky – sledujte své zásoby a dostaňte připomínku když vám "
+"začnou docházet"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:33
 msgid "Duration — Define the start and end dates"
-msgstr "Doba trvání – nastavte si počáteční a koncové datum léčby"
+msgstr "Doba trvání – nastavte si datum začátku a dokončení léčby"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage today window in light theme"
-msgstr "Dávkování, okno „Dnes“ ve světlém vzhledu"
+msgstr "Dávkování – okno „Dnes“ (ve světlém vzhledu)"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage preferences window in light theme"
-msgstr "Dávkování, okno „Předvolby“ ve světlém vzhledu"
+msgstr "Dávkování – okno „Předvolby“ (ve světlém vzhledu)"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:54
 msgid "Dosage edit treatment window in light theme"
-msgstr "Dávkování, okno „Upravit léčbu“ ve světlém vzhledu"
+msgstr "Dávkování – okno „Upravit léčbu“ (ve světlém vzhledu)"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:59
 msgid "Dosage today window in dark theme"
-msgstr "Dávkování, okno \"Dnes\" v tmavém vzhledu"
+msgstr "Dávkování – okno \"Dnes\" (v tmavém vzhledu)"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:10
@@ -127,12 +127,12 @@ msgstr "Stav"
 
 #: src/utils/getHistoryExportFile.js:10 src/utils/getHistoryExportFile.js:81
 msgid "Time Confirmed"
-msgstr "Čas potvrzen"
+msgstr "Okamžik potvrzení"
 
 #: src/utils/getHistoryExportFile.js:38 src/utils/getHistoryExportFile.js:117
 #: src/editHistDialog.js:68 src/historyFactory.js:186
 msgid "Missed"
-msgstr "Zapomenutý"
+msgstr "Zapomenuto"
 
 #: src/utils/getHistoryExportFile.js:41 src/utils/getHistoryExportFile.js:121
 #: src/historyFactory.js:183 data/ui/edit-hist-dialog.blp:111
@@ -144,7 +144,7 @@ msgstr "Přeskočeno"
 #: src/editHistDialog.js:73 src/historyFactory.js:190
 #: data/ui/edit-hist-dialog.blp:116
 msgid "Confirmed"
-msgstr "Potvrzený"
+msgstr "Potvrzeno"
 
 #: src/utils/getHistoryExportFile.js:52 src/utils/getHistoryExportFile.js:134
 #: src/editHistDialog.js:56 src/historyFactory.js:178
@@ -245,11 +245,11 @@ msgstr "Historie"
 
 #: src/editHistDialog.js:60 src/editHistDialog.js:89 src/editHistDialog.js:110
 msgid "Confirmed At"
-msgstr "Potvrzený v"
+msgstr "Potvrzeno v"
 
 #: src/editHistDialog.js:64 src/editHistDialog.js:114
 msgid "Skipped At"
-msgstr "Přeskočený v"
+msgstr "Přeskočeno v"
 
 #: src/historyFactory.js:47
 msgid "Select to be Removed"
@@ -276,7 +276,7 @@ msgstr "Uložit"
 
 #: src/medDialog.js:114
 msgid "Copy"
-msgstr "Zkopírovat"
+msgstr "Kopie"
 
 #: src/medDialog.js:217
 msgid "Add Dose"
@@ -405,7 +405,7 @@ msgstr "Začíná"
 
 #: src/treatmentsFactory.js:255
 msgid "Until"
-msgstr "Dokud"
+msgstr "Až do"
 
 #: src/treatmentsFactory.js:283 src/treatmentsFactory.js:286
 msgid "Next Dose"
@@ -539,7 +539,7 @@ msgstr "Pilulka"
 
 #: data/ui/med-dialog.blp:242
 msgid "Alternative Pill"
-msgstr "Alternativní pilulka"
+msgstr "Jiná pilulka"
 
 #: data/ui/med-dialog.blp:258
 msgid "Capsule"
@@ -551,7 +551,7 @@ msgstr "Kulatá pilulka"
 
 #: data/ui/med-dialog.blp:290
 msgid "Alternative Round Pill"
-msgstr "Alternativní kulatá pilulka"
+msgstr "Jiná kulatá pilulka"
 
 #: data/ui/med-dialog.blp:306
 msgid "Ampoule"
@@ -567,7 +567,7 @@ msgstr "Čtvercová pilulka"
 
 #: data/ui/med-dialog.blp:354
 msgid "Alternative Square Pill"
-msgstr "Alternativní čtvercová pilulka"
+msgstr "Jiná čtvercová pilulka"
 
 #: data/ui/med-dialog.blp:370
 msgid "Triangle pill"
@@ -575,7 +575,7 @@ msgstr "Trojúhelníková pilulka"
 
 #: data/ui/med-dialog.blp:386
 msgid "Alternative Triangle Pill"
-msgstr "Alternativní trojúhelníková pilulka"
+msgstr "Jiná trojúhelníková pilulka"
 
 #: data/ui/med-dialog.blp:402
 msgid "Bottle"
@@ -625,8 +625,8 @@ msgstr "Zvýšit prioritu upomínky"
 #: data/ui/med-dialog.blp:695
 msgid "Show in fullscreen mode or with 'Do Not Disturb' enabled"
 msgstr ""
-"Způsobí, že se oznámení zobrazí v režimu celé obrazovky nebo i když je "
-"zapnutý režim „Nerušit“"
+"Zobrazit i přestože jiná aplikace zabírá celoobrazovkový režim a také "
+"nerespektovat režim „Nerušit“"
 
 #: data/ui/med-dialog.blp:699
 msgid "Recurring Notifications"
@@ -634,11 +634,11 @@ msgstr "Opakující se upomínky"
 
 #: data/ui/med-dialog.blp:700
 msgid "Renotify until it's confirmed or skipped"
-msgstr "Upomínat znovu dokud není potvrzený nebo přeskočený"
+msgstr "Upomínat znovu a znovu, dokud není potvrzeno nebo přeskočeno"
 
 #: data/ui/med-dialog.blp:705
 msgid "Interval in Minutes"
-msgstr "Interval v minutách"
+msgstr "Interval (v minutách)"
 
 #: data/ui/med-dialog.blp:718 data/ui/refill-dialog.blp:36
 msgid "Inventory"
@@ -654,11 +654,11 @@ msgstr "Momentálně"
 
 #: data/ui/med-dialog.blp:738
 msgid "Remind Me At"
-msgstr "Připomenout mi v"
+msgstr "Připomenout mi při"
 
 #: data/ui/med-dialog.blp:751
 msgid "Refill Amount"
-msgstr "Doplněné množství"
+msgstr "Množství v balení"
 
 #: data/ui/med-dialog.blp:765
 msgid "Set start and end dates"
@@ -678,8 +678,8 @@ msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
 msgstr ""
-"Pokud není ručně potvrzeno nebo přeskočeno, bude zaznamenáno jako potvrzeno "
-"v historii a sníží zásoby, pokud je povoleno"
+"Pokud zapnuto, pak i když není ručně potvrzeno nebo přeskočeno, bude i tak "
+"zaznamenáno jako potvrzeno v historii a snížena zásoba"
 
 #: data/ui/one-time-dialog.blp:44
 msgid "From Treatment List"
@@ -711,7 +711,8 @@ msgstr "Oznámení o nízkém stavu zásob"
 
 #: data/ui/preferences.blp:41
 msgid "Send reminders when treatments are low in stock"
-msgstr "Odesílat připomínky, pokud se u některé léčby tenčí zásoba léků"
+msgstr ""
+"Nechat zobrazovat připomínky, pokud se u některé léčby tenčí zásoba léků"
 
 #: data/ui/preferences.blp:52
 msgid "Notification Sound"
@@ -719,7 +720,7 @@ msgstr "Zvuk notifikace"
 
 #: data/ui/preferences.blp:63
 msgid "Notification Buttons"
-msgstr "Tlačítka notifikace"
+msgstr "Tlačítka akcí v notifikaci"
 
 #: data/ui/preferences.blp:64
 msgid "Show or hide confirm/skip"
@@ -772,7 +773,7 @@ msgstr "Hledat"
 
 #: data/ui/window.blp:39
 msgid "Sort Treatments"
-msgstr "Seřadit léčby"
+msgstr "Seřadit léčby:"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
@@ -796,27 +797,27 @@ msgstr "Odebrat položky"
 
 #: data/ui/window.blp:300
 msgid "Name Ascending"
-msgstr "Názvu vzestupně"
+msgstr "Podle názvu vzestupně"
 
 #: data/ui/window.blp:306
 msgid "Remaining Stock (Lowest First)"
-msgstr "Zbývající zásoba (nejnižší první)"
+msgstr "Od nejnižší zbývající zásoby"
 
 #: data/ui/window.blp:312
 msgid "Remaining Stock (Highest First)"
-msgstr "Zbývající zásoba (nejvyšší první)"
+msgstr "Od nejvyšší zbývající zásoby"
 
 #: data/ui/window.blp:318
 msgid "As Needed Last"
-msgstr "Dle potřeby poslední"
+msgstr "„Dle potřeby“ zobrazit nakonec"
 
 #: data/ui/window.blp:324
 msgid "Ended Last"
-msgstr "Ukončeno poslední"
+msgstr "„Dokončené“ zobrazit na konec"
 
 #: data/ui/window.blp:330
 msgid "As Needed/Ended Last"
-msgstr "Dle potřeby/ukončeno poslední"
+msgstr "„Dle potřeby / ukončené“ zobrazit nakonec"
 
 #: data/ui/window.blp:343
 msgid "Keyboard Shortcuts"
