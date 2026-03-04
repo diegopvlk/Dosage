@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2026-03-04 14:51+0000\n"
+"PO-Revision-Date: 2026-03-04 18:55+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/>"
 "\n"
@@ -276,7 +276,7 @@ msgstr "Uložit"
 
 #: src/medDialog.js:114
 msgid "Copy"
-msgstr "Kopie"
+msgstr "kopie"
 
 #: src/medDialog.js:217
 msgid "Add Dose"
@@ -324,11 +324,11 @@ msgstr "Duplikovaný čas"
 
 #: src/medDialog.js:582
 msgid "Are You Sure?"
-msgstr "Opravdu?"
+msgstr "Opravdu to tak chcete?"
 
 #: src/medDialog.js:583
 msgid "will be deleted"
-msgstr "bude smazán"
+msgstr "bude smazáno"
 
 #: src/medDialog.js:586 data/ui/edit-hist-dialog.blp:18
 #: data/ui/med-dialog.blp:19
@@ -351,7 +351,7 @@ msgstr "Pilulka(y)"
 #: src/prefsDialog.js:63
 msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
-"Potvrďte abyste umožnili aplikaci běžet na pozadí a zobrazovat notifikace"
+"Potvrďte abyste umožnili aplikaci běžet na pozadí a zobrazovat tak notifikace"
 
 #: src/prefsDialog.js:74 src/window.js:259
 msgid "An Issue Has Occurred"
@@ -378,7 +378,7 @@ msgstr "Změnit dávku"
 #: src/treatmentsFactory.js:96 src/treatmentsFactory.js:126
 #: data/ui/refill-dialog.blp:7
 msgid "Refill"
-msgstr "Doplnit"
+msgstr "Doplnit zásobu"
 
 #: src/treatmentsFactory.js:125
 msgid "Edit"
@@ -396,7 +396,7 @@ msgstr "Možnosti"
 #: src/treatmentsFactory.js:244
 #, javascript-format
 msgid "%d Remaining"
-msgstr "%d zbývá"
+msgstr "Zbývá %d dávek"
 
 #. TRANSLATORS: label for when duration is enabled
 #: src/treatmentsFactory.js:254
@@ -678,8 +678,8 @@ msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
 msgstr ""
-"Pokud zapnuto, pak i když není ručně potvrzeno nebo přeskočeno, bude i tak "
-"zaznamenáno jako potvrzeno v historii a snížena zásoba"
+"Pokud zapnuto, pak i když není ručně potvrzeno nebo přeskočeno, bude i tak v "
+"historii zaznamenáno jako potvrzené a příslušně o to snížena zásoba"
 
 #: data/ui/one-time-dialog.blp:44
 msgid "From Treatment List"
@@ -695,15 +695,15 @@ msgstr "Předvolby"
 
 #: data/ui/preferences.blp:17
 msgid "Auto-Start at Login"
-msgstr "Automaticky spustit při přihlášení do systému"
+msgstr "Automaticky spouštět po přihlášení do systému"
 
 #: data/ui/preferences.blp:28
 msgid "Auto-Clear History"
-msgstr "Automaticky vymazat historii"
+msgstr "Automaticky odmazávat historii"
 
 #: data/ui/preferences.blp:29
 msgid "Keeps a maximum of 30 days"
-msgstr "Uchovává nejvýše 30 dní"
+msgstr "Ponechává nejvýše 30 dnů"
 
 #: data/ui/preferences.blp:40
 msgid "Low Stock Notification"
@@ -720,7 +720,7 @@ msgstr "Zvuk notifikace"
 
 #: data/ui/preferences.blp:63
 msgid "Notification Buttons"
-msgstr "Tlačítka akcí v notifikaci"
+msgstr "Akce v notifikaci"
 
 #: data/ui/preferences.blp:64
 msgid "Show or hide confirm/skip"
@@ -746,7 +746,7 @@ msgstr "Zobrazit/skrýt „Dle potřeby“"
 #: data/ui/shortcuts-dialog.blp:16
 msgctxt "shortcut window"
 msgid "New One-Time Entry"
-msgstr "Nová jednorázová položka"
+msgstr "Nový jednorázový záznam"
 
 #: data/ui/shortcuts-dialog.blp:21
 msgctxt "shortcut window"
@@ -793,7 +793,7 @@ msgstr "Zrušit výběr"
 
 #: data/ui/window.blp:220
 msgid "Remove Entries"
-msgstr "Odebrat položky"
+msgstr "Odebrat záznam(y)"
 
 #: data/ui/window.blp:300
 msgid "Name Ascending"
@@ -817,7 +817,7 @@ msgstr "„Dokončené“ zobrazit na konec"
 
 #: data/ui/window.blp:330
 msgid "As Needed/Ended Last"
-msgstr "„Dle potřeby / ukončené“ zobrazit nakonec"
+msgstr "„Dle potřeby / dokončené“ zobrazit nakonec"
 
 #: data/ui/window.blp:343
 msgid "Keyboard Shortcuts"
