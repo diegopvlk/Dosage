@@ -15,13 +15,7 @@
   "cleanup": [
     "/include",
     "/lib/pkgconfig",
-    "/man",
-    "/share/doc",
-    "/share/gtk-doc",
-    "/share/man",
-    "/share/pkgconfig",
-    "*.la",
-    "*.a"
+    "/share/gir-1.0"
   ],
   "modules": [
     {
