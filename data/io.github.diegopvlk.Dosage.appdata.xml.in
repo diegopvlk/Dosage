@@ -73,24 +73,17 @@
 	</recommends>
 
 	<releases>
+		<release version="2.1.6" date="2026-04-07">
+			<description translate="no">
+				<ul>
+					<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.1.5" date="2026-03-26">
 			<description translate="no">
 				<ul>
 					<li>Update GNOME runtime to 50</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.1.4" date="2026-03-15">
-			<description translate="no">
-				<ul>
-					<li>Updated Czech translation</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.1.2" date="2026-02-06">
-			<description translate="no">
-				<ul>
-					<li>Updated translations</li>
 				</ul>
 			</description>
 		</release>
