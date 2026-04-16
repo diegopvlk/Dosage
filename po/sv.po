@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2025-03-14 12:55+0000\n"
+"PO-Revision-Date: 2026-04-17 12:39+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/sv/"
-">\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/dosage/dosage/"
+"sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -155,10 +155,8 @@ msgstr "Tid Okänd"
 
 #. TRANSLATORS: Context: 1 Pill at 19:00
 #: src/utils/getTreatmentsExportFile.js:69
-#, fuzzy
-#| msgid "Date"
 msgid "at"
-msgstr "Datum"
+msgstr "på"
 
 #: src/utils/getTreatmentsExportFile.js:89 data/ui/med-dialog.blp:443
 msgid "Notes"
@@ -177,12 +175,12 @@ msgstr "Dag I Månaden"
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/utils/getTreatmentsExportFile.js:109
 msgid "day(s) on"
-msgstr ""
+msgstr "dag(ar) på"
 
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/utils/getTreatmentsExportFile.js:111
 msgid "day(s) off"
-msgstr ""
+msgstr "dag(ar) av"
 
 #: src/utils/getTreatmentsExportFile.js:122 src/todayFactory.js:41
 #: src/treatmentsFactory.js:298 data/ui/med-dialog.blp:461
@@ -194,26 +192,20 @@ msgid "Duration"
 msgstr "Längd"
 
 #: src/utils/getTreatmentsExportFile.js:135
-#, fuzzy
-#| msgid "Starts On"
 msgid "Started on"
-msgstr "Börjar"
+msgstr "Började på"
 
 #: src/utils/getTreatmentsExportFile.js:136 data/ui/med-dialog.blp:775
-#, fuzzy
-#| msgid "Starts On"
 msgid "Start"
-msgstr "Börjar"
+msgstr "Börja"
 
 #: src/utils/getTreatmentsExportFile.js:138 src/treatmentsFactory.js:256
 msgid "Ended on"
 msgstr "Avslutades på"
 
 #: src/utils/getTreatmentsExportFile.js:138 data/ui/med-dialog.blp:817
-#, fuzzy
-#| msgid "Ends On"
 msgid "End"
-msgstr "Slutar"
+msgstr "Sluta"
 
 #: src/utils/getTreatmentsExportFile.js:173 src/utils/saveFiles.js:44
 #: data/ui/window.blp:234
@@ -221,23 +213,20 @@ msgid "Treatments"
 msgstr "Behandlingar"
 
 #: src/utils/getTreatmentsExportFile.js:184
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "Generated on"
-msgstr "Allmän"
+msgstr "Genererad på"
 
 #: src/utils/getTreatmentsExportFile.js:187
 msgid "Ongoing"
-msgstr ""
+msgstr "Pågående"
 
 #: src/utils/getTreatmentsExportFile.js:188
 msgid "Non-scheduled"
-msgstr ""
+msgstr "Icke schemalagd"
 
 #: src/utils/getTreatmentsExportFile.js:189
 msgid "Finished"
-msgstr ""
+msgstr "Färdig"
 
 #: src/utils/locale.js:33
 msgid "Weekends"
@@ -354,7 +343,7 @@ msgstr "Ny"
 #: src/oneTimeDialog.js:121 data/ui/med-dialog.blp:189
 #: data/ui/one-time-dialog.blp:178
 msgid "Pill(s)"
-msgstr "Piller"
+msgstr "Pill(er)"
 
 #: src/prefsDialog.js:63
 msgid "Accept to allow running in the background and receive notifications"
@@ -440,16 +429,12 @@ msgid "No Results Found"
 msgstr "Inga Resultat Hittades"
 
 #: src/window.js:648 src/window.js:1517
-#, fuzzy
-#| msgid "History"
 msgid "No History"
-msgstr "Historik"
+msgstr "Ingen historik"
 
 #: src/window.js:818 data/ui/window.blp:260
-#, fuzzy
-#| msgid "Treatments"
 msgid "No Treatments"
-msgstr "Behandlingar"
+msgstr "Inga behandlingar"
 
 #: src/window.js:818
 msgid "All Done for Today"
@@ -737,44 +722,31 @@ msgid "Show or hide confirm/skip"
 msgstr "Visa eller dölj bekräfta/hoppa över"
 
 #: data/ui/preferences.blp:98
-#, fuzzy
-#| msgid "Export History as CSV"
 msgid "Export History As"
-msgstr "Exportera Historik Som CSV"
+msgstr "Exportera historik som"
 
 #: data/ui/preferences.blp:121
-#, fuzzy
-#| msgid "Empty Treatments"
 msgid "Export Treatments As"
-msgstr "Tomma Behandlingar"
+msgstr "Exportera behandlingar som"
 
 #: data/ui/shortcuts-dialog.blp:8
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Shortcuts"
-msgstr "Visa Genvägar"
+msgstr "Genvägar"
 
 #: data/ui/shortcuts-dialog.blp:11
-#, fuzzy
-#| msgid "Show/Hide 'As Needed'"
 msgctxt "shortcut window"
 msgid "Show/Hide 'As Needed'"
-msgstr "Visa/Dölj 'Vid Behov'"
+msgstr "Visa/Dölj 'efter behov'"
 
 #: data/ui/shortcuts-dialog.blp:16
-#, fuzzy
-#| msgid "One-Time Entry"
 msgctxt "shortcut window"
 msgid "New One-Time Entry"
-msgstr "Engångsinträde"
+msgstr "Ny engångsinmatning"
 
 #: data/ui/shortcuts-dialog.blp:21
-#, fuzzy
-#| msgid "New Treatment"
 msgctxt "shortcut window"
 msgid "Add New Treatment"
-msgstr "Ny Behandling"
+msgstr "Lägg till ny behandling"
 
 #: data/ui/shortcuts-dialog.blp:26
 msgctxt "shortcut window"
@@ -795,10 +767,8 @@ msgid "Search"
 msgstr "Söka"
 
 #: data/ui/window.blp:39
-#, fuzzy
-#| msgid "Treatments"
 msgid "Sort Treatments"
-msgstr "Behandlingar"
+msgstr "Sortera behandlingar"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
@@ -822,33 +792,27 @@ msgstr "Ta Bort Poster"
 
 #: data/ui/window.blp:300
 msgid "Name Ascending"
-msgstr ""
+msgstr "Namn stigande"
 
 #: data/ui/window.blp:306
 msgid "Remaining Stock (Lowest First)"
-msgstr ""
+msgstr "Återstående lager (lägsta först)"
 
 #: data/ui/window.blp:312
 msgid "Remaining Stock (Highest First)"
-msgstr ""
+msgstr "Återstående lager (högst först)"
 
 #: data/ui/window.blp:318
-#, fuzzy
-#| msgid "As Needed"
 msgid "As Needed Last"
-msgstr "Vid Behov"
+msgstr "Som behövs senast"
 
 #: data/ui/window.blp:324
-#, fuzzy
-#| msgid "Ended on"
 msgid "Ended Last"
-msgstr "Avslutades på"
+msgstr "Avslutade sist"
 
 #: data/ui/window.blp:330
-#, fuzzy
-#| msgid "As Needed"
 msgid "As Needed/Ended Last"
-msgstr "Vid Behov"
+msgstr "Vid behov/avslutades sist"
 
 #: data/ui/window.blp:343
 msgid "Keyboard Shortcuts"
