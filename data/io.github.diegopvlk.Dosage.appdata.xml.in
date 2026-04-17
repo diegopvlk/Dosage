@@ -73,9 +73,10 @@
 	</recommends>
 
 	<releases>
-		<release version="2.1.6" date="2026-04-07">
+		<release version="2.1.7" date="2026-04-17">
 			<description translate="no">
 				<ul>
+					<li>Added Indonesian translation</li>
 					<li>Updated translations</li>
 				</ul>
 			</description>
