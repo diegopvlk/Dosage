@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2026-06-16 08:46+0000\n"
+"PO-Revision-Date: 2026-06-22 03:12+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
 "uk/>\n"
@@ -31,7 +31,7 @@ msgstr "Дозування"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 msgid "Keep track of your treatments"
-msgstr "Слідкуйте за своїми курсами лікування"
+msgstr "Відстежуйте свої курси лікування"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:24
 msgid ""
@@ -57,20 +57,17 @@ msgstr ""
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:29
 msgid "Dosage management — Multiple doses with different times"
-msgstr "Керування дозами — кілька доз у різний час"
+msgstr "Керування дозуванням — кілька прийомів у різний час"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:30
 msgid ""
 "Frequency modes — Every day, specific days, cycle or just when necessary"
 msgstr ""
-"Частота прийомів — кожного дня, конкретні дні, цикли або просто коли треба "
-"прийняти"
+"Частота прийомів — щодня, конкретні дні, цикли або просто коли треба прийняти"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:31
 msgid "Color and icon — Give a shape for your treatment"
-msgstr ""
-"Колір та піктограма — щоб обрати колір і піктограму для запису в курсах "
-"лікування"
+msgstr "Колір і піктограма для курсу лікування"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:32
 msgid "Inventory tracking — Monitor your stock and get reminded when it's low"
@@ -102,7 +99,8 @@ msgstr "Розділ Сьогодні у темному стилі"
 #: data/io.github.diegopvlk.Dosage.desktop.in:10
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
-"Dosage;Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;лікування;курс;аптечка;пігулка;таблетка;нагадати;згадати;прийом;пігулка;доза;дозування;процедура;зідд;вщіфпу;ljpedfyyz;"
+"Dosage;Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;лікування;курс;аптечка;пігулка;таблетка;нагадати;згадати;прийом;доза;дозування;процедура;зідд;вщіфпу;ljpedfyyz; "
+"keyboard layout fallback"
 
 #: src/utils/getHistoryExportFile.js:10 src/utils/getHistoryExportFile.js:81
 #: data/ui/one-time-dialog.blp:232
@@ -152,7 +150,7 @@ msgstr "Підтверджено"
 #: src/utils/getHistoryExportFile.js:52 src/utils/getHistoryExportFile.js:134
 #: src/editHistDialog.js:56 src/historyFactory.js:178
 msgid "Auto-Confirmed"
-msgstr "Автоматично Підтверджено"
+msgstr "Автоматично підтверджено"
 
 #: src/utils/getHistoryExportFile.js:55 src/utils/getHistoryExportFile.js:138
 #: src/editHistDialog.js:74
@@ -210,10 +208,8 @@ msgid "Ended on"
 msgstr "Закінчився на"
 
 #: src/utils/getTreatmentsExportFile.js:138 data/ui/med-dialog.blp:817
-#, fuzzy
-#| msgid "Ends On"
 msgid "End"
-msgstr "Закінчується"
+msgstr "Кінець"
 
 #: src/utils/getTreatmentsExportFile.js:173 src/utils/saveFiles.js:44
 #: data/ui/window.blp:234
@@ -250,11 +246,11 @@ msgstr "Історія"
 
 #: src/editHistDialog.js:60 src/editHistDialog.js:89 src/editHistDialog.js:110
 msgid "Confirmed At"
-msgstr "Підтверджено В"
+msgstr "Підтверджено о"
 
 #: src/editHistDialog.js:64 src/editHistDialog.js:114
 msgid "Skipped At"
-msgstr "Пропущено В"
+msgstr "Пропущено о"
 
 #: src/historyFactory.js:47
 msgid "Select to be Removed"
@@ -530,7 +526,7 @@ msgstr "Фіолетовий"
 
 #: data/ui/med-dialog.blp:188 data/ui/one-time-dialog.blp:177
 msgid "Unit"
-msgstr "Одиниця виміру"
+msgstr "Одиниця"
 
 #: data/ui/med-dialog.blp:197
 msgid "Icon"
