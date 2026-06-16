@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2026-06-16 07:49+0000\n"
+"PO-Revision-Date: 2026-06-16 08:05+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
 "uk/>\n"
@@ -161,10 +161,8 @@ msgstr "Час Невідомий"
 
 #. TRANSLATORS: Context: 1 Pill at 19:00
 #: src/utils/getTreatmentsExportFile.js:69
-#, fuzzy
-#| msgid "Date"
 msgid "at"
-msgstr "Дата прийому"
+msgstr "о"
 
 #: src/utils/getTreatmentsExportFile.js:89 data/ui/med-dialog.blp:443
 msgid "Notes"
@@ -200,16 +198,12 @@ msgid "Duration"
 msgstr "Тривалість"
 
 #: src/utils/getTreatmentsExportFile.js:135
-#, fuzzy
-#| msgid "Starts On"
 msgid "Started on"
-msgstr "Розпочинається"
+msgstr "Почато"
 
 #: src/utils/getTreatmentsExportFile.js:136 data/ui/med-dialog.blp:775
-#, fuzzy
-#| msgid "Starts On"
 msgid "Start"
-msgstr "Розпочинається"
+msgstr "Початок"
 
 #: src/utils/getTreatmentsExportFile.js:138 src/treatmentsFactory.js:256
 msgid "Ended on"
@@ -227,23 +221,20 @@ msgid "Treatments"
 msgstr "Курси лікування"
 
 #: src/utils/getTreatmentsExportFile.js:184
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "Generated on"
-msgstr "Загальні"
+msgstr "Створено"
 
 #: src/utils/getTreatmentsExportFile.js:187
 msgid "Ongoing"
-msgstr ""
+msgstr "Триває"
 
 #: src/utils/getTreatmentsExportFile.js:188
 msgid "Non-scheduled"
-msgstr ""
+msgstr "Без розкладу"
 
 #: src/utils/getTreatmentsExportFile.js:189
 msgid "Finished"
-msgstr ""
+msgstr "Завершено"
 
 #: src/utils/locale.js:33
 msgid "Weekends"
@@ -448,16 +439,12 @@ msgid "No Results Found"
 msgstr "Не Знайдено Жодних Результатів"
 
 #: src/window.js:648 src/window.js:1517
-#, fuzzy
-#| msgid "History"
 msgid "No History"
-msgstr "Історія"
+msgstr "Немає історії"
 
 #: src/window.js:818 data/ui/window.blp:260
-#, fuzzy
-#| msgid "Treatments"
 msgid "No Treatments"
-msgstr "Курси лікування"
+msgstr "Немає курсів лікування"
 
 #: src/window.js:818
 msgid "All Done for Today"
@@ -745,44 +732,31 @@ msgid "Show or hide confirm/skip"
 msgstr "Показати чи приховати підтвердити/пропустити"
 
 #: data/ui/preferences.blp:98
-#, fuzzy
-#| msgid "Export History as CSV"
 msgid "Export History As"
-msgstr "Експорт Історії Як CSV"
+msgstr "Експорт історії як"
 
 #: data/ui/preferences.blp:121
-#, fuzzy
-#| msgid "Empty Treatments"
 msgid "Export Treatments As"
-msgstr "Порожні Курси Лікування"
+msgstr "Експорт курсів лікування як"
 
 #: data/ui/shortcuts-dialog.blp:8
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Shortcuts"
-msgstr "Показати клавіатурні скорочення"
+msgstr "Клавіатурні скорочення"
 
 #: data/ui/shortcuts-dialog.blp:11
-#, fuzzy
-#| msgid "Show/Hide 'As Needed'"
 msgctxt "shortcut window"
 msgid "Show/Hide 'As Needed'"
-msgstr "Показати/сховати \"Коли Треба\""
+msgstr "Показати/сховати «Коли треба»"
 
 #: data/ui/shortcuts-dialog.blp:16
-#, fuzzy
-#| msgid "One-Time Entry"
 msgctxt "shortcut window"
 msgid "New One-Time Entry"
-msgstr "Одноразовий Прийом"
+msgstr "Новий одноразовий прийом"
 
 #: data/ui/shortcuts-dialog.blp:21
-#, fuzzy
-#| msgid "New Treatment"
 msgctxt "shortcut window"
 msgid "Add New Treatment"
-msgstr "Новий Курс Лікування"
+msgstr "Додати новий курс лікування"
 
 #: data/ui/shortcuts-dialog.blp:26
 msgctxt "shortcut window"
@@ -803,10 +777,8 @@ msgid "Search"
 msgstr "Пошук"
 
 #: data/ui/window.blp:39
-#, fuzzy
-#| msgid "Treatments"
 msgid "Sort Treatments"
-msgstr "Курси лікування"
+msgstr "Сортування курсів лікування"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
@@ -830,33 +802,27 @@ msgstr "Видалити Записи"
 
 #: data/ui/window.blp:300
 msgid "Name Ascending"
-msgstr ""
+msgstr "За назвою"
 
 #: data/ui/window.blp:306
 msgid "Remaining Stock (Lowest First)"
-msgstr ""
+msgstr "Залишок запасу (від меншого)"
 
 #: data/ui/window.blp:312
 msgid "Remaining Stock (Highest First)"
-msgstr ""
+msgstr "Залишок запасу (від більшого)"
 
 #: data/ui/window.blp:318
-#, fuzzy
-#| msgid "As Needed"
 msgid "As Needed Last"
-msgstr "Коли Треба"
+msgstr "Коли Треба в кінці"
 
 #: data/ui/window.blp:324
-#, fuzzy
-#| msgid "Ended on"
 msgid "Ended Last"
-msgstr "Закінчився на"
+msgstr "Закінчені в кінці"
 
 #: data/ui/window.blp:330
-#, fuzzy
-#| msgid "As Needed"
 msgid "As Needed/Ended Last"
-msgstr "Коли Треба"
+msgstr "Коли Треба / Закінчені в кінці"
 
 #: data/ui/window.blp:343
 msgid "Keyboard Shortcuts"
