@@ -4,7 +4,7 @@
   --list-border-radius: 11px;
   --list-border: inset 0 0 0 1px
     rgb(from var(--card-shade-color) r g b / calc(alpha * 0.6));
-  --list-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.07), var(--list-border);
+  --list-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.066), var(--list-border);
 
   --cubic-bezier: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --background-transition: background 200ms var(--cubic-bezier);
@@ -42,12 +42,16 @@ item-box {
   color: var(--card-fg-color);
 }
 item-box:dir(ltr) {
-  box-shadow: var(--list-border), var(--list-shadow),
+  box-shadow:
+    var(--list-border),
+    var(--list-shadow),
     inset 53px 0 0 -50px var(--med-color);
   border-radius: var(--list-border-radius);
 }
 item-box:dir(rtl) {
-  box-shadow: var(--list-border), var(--list-shadow),
+  box-shadow:
+    var(--list-border),
+    var(--list-shadow),
     inset -53px 0 0 -50px var(--med-color);
   border-radius: var(--list-border-radius);
 }
@@ -169,26 +173,22 @@ listview.scroll-to-top-hack > :nth-child(2) {
 
 time-group-selection {
   transition: all 200ms var(--cubic-bezier);
-  min-height: 21px;
+  min-height: 0px;
   padding: 0 2px;
-  margin: 0 -2px 0px;
+  margin: 2px -2px 0px;
   background-size: 0.75em;
   background-repeat: no-repeat;
 }
+
 time-group-selection label {
-  text-decoration: underline;
-  text-decoration-color: var(--window-bg-color);
-  transition: 200ms var(--cubic-bezier);
+  border-bottom: 1.5px solid transparent;
+  transition: 150ms var(--cubic-bezier);
 }
 time-group-selection:hover label {
-  text-decoration: underline;
-  text-decoration-color: currentColor;
+  border-bottom: 1.5px solid currentColor;
 }
 time-group-selection:active label {
-  text-decoration: underline;
-  color: rgb(from currentColor r g b / calc(alpha * 0.65));
-  transition: none;
-  text-decoration-color: currentColor;
+  color: rgb(from currentColor r g b / calc(alpha * 0.55));
 }
 time-group-selection:dir(ltr) {
   background-position: 92% 50%;
@@ -300,6 +300,9 @@ badge-icon:dir(rtl) {
   padding-left: 5px;
 }
 
+button.floating:not(.suggested-action) {
+  backdrop-filter: blur(6px);
+}
 button.secondary.floating {
   padding-left: 10px;
   padding-right: 10px;
@@ -362,55 +365,16 @@ calendar .day-number {
 }
 
 @media (prefers-color-scheme: light) {
-  button.floating:not(.suggested-action) {
-    background-color: #e6e6e7;
-  }
-  button.floating:not(.suggested-action):hover {
-    background-color: #dcdcde;
-  }
-  button.floating:not(.suggested-action):active {
-    background-color: #bebec0;
-  }
-  button.floating.destructive-action {
-    background-color: #f2d5d5;
-  }
-  button.floating.destructive-action:hover {
-    background-color: #efc8c9;
-  }
-  button.floating.destructive-action:active {
-    background-color: #e7a3a3;
-  }
-  time-group-selection:hover {
+  /* this is not rendering correct in gnome 50 */
+  /* time-group-selection:hover {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 16 16'%3E%3Cpath fill='%23823a5f' d='m14.983 3.5-1-1-7.469 7.516L3.1 6.539l-2 2 5.414 5.477L15.983 4.5z' style='fill:%232f2f34'/%3E%3C/svg%3E");
-  }
-}
-@media (prefers-color-scheme: dark) and (prefers-contrast: no-preference) {
-  button.floating {
-    box-shadow: 0 1px 3px 0px rgba(10, 10, 10, 0.2);
-  }
+  } */
 }
 @media (prefers-color-scheme: dark) {
-  button.floating:not(.suggested-action) {
-    background-color: #48484b;
-  }
-  button.floating:not(.suggested-action):hover {
-    background-color: #525255;
-  }
-  button.floating:not(.suggested-action):active {
-    background-color: #717173;
-  }
-  button.floating.destructive-action {
-    background-color: #5b4244;
-  }
-  button.floating.destructive-action:hover {
-    background-color: #684748;
-  }
-  button.floating.destructive-action:active {
-    background-color: #8f5555;
-  }
-  time-group-selection:hover {
+  /* this is not rendering correct in gnome 50 */
+  /* time-group-selection:hover {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 16 16'%3E%3Cpath fill='%23823a5f' d='m14.983 3.5-1-1-7.469 7.516L3.1 6.539l-2 2 5.414 5.477L15.983 4.5z' style='fill:%23ffffff'/%3E%3C/svg%3E");
-  }
+  } */
   *,
   item-box.default {
     --list-border: 0 0 0 transparent;
