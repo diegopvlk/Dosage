@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
 "PO-Revision-Date: 2026-06-22 13:10+0000\n"
-"Last-Translator: Димко <Dymkovych@proton.me>\n"
+"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
 "uk/>\n"
 "Language: uk\n"
@@ -99,8 +99,7 @@ msgstr "Розділ Сьогодні у темному стилі"
 #: data/io.github.diegopvlk.Dosage.desktop.in:10
 msgid "Medication;Tracker;Reminder;Today;Treatments;Pill;Drug;Remedy;"
 msgstr ""
-"Dosage;Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;лікування;курс;аптечка;пігулка;таблетка;нагадати;згадати;прийом;доза;дозування;процедура;зідд;вщіфпу;ljpedfyyz; "
-"keyboard layout fallback"
+"Dosage;Medication;Tracker;Reminder;Today;History;Treatments;Pill;Drug;Remedy;лікування;курс;аптечка;пігулка;таблетка;нагадати;згадати;прийом;доза;дозування;процедура;зідд;вщіфпу;ljpedfyyz;"
 
 #: src/utils/getHistoryExportFile.js:10 src/utils/getHistoryExportFile.js:81
 #: data/ui/one-time-dialog.blp:232
