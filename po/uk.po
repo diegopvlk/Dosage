@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2026-06-22 13:10+0000\n"
-"Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
+"PO-Revision-Date: 2026-06-24 18:41+0000\n"
+"Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
 "uk/>\n"
 "Language: uk\n"
@@ -421,7 +421,7 @@ msgstr "У вас залишилося мало ліків у запасі"
 
 #: src/window.js:492
 msgid "Show All"
-msgstr "Показати Все"
+msgstr "Показати все"
 
 #: src/window.js:515
 msgid "Show Less"
@@ -468,7 +468,7 @@ msgstr "і ще %d"
 
 #: src/window.js:1090 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
 msgid "One-Time Entry"
-msgstr "Одноразовий Прийом"
+msgstr "Одноразовий прийом"
 
 #: src/window.js:1295 data/ui/window.blp:353
 msgid "Quit"
