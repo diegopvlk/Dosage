@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2026-01-11 16:48+0000\n"
+"PO-Revision-Date: 2026-06-22 13:10+0000\n"
 "Last-Translator: Karol Putyra <karol23145@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/dosage/dosage/pl/>"
 "\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -246,7 +246,7 @@ msgstr "Historia"
 
 #: src/editHistDialog.js:60 src/editHistDialog.js:89 src/editHistDialog.js:110
 msgid "Confirmed At"
-msgstr "Potwierdzone O"
+msgstr "Data potwierdzenia"
 
 #: src/editHistDialog.js:64 src/editHistDialog.js:114
 msgid "Skipped At"
