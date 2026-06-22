@@ -962,6 +962,7 @@ export const DosageWindow = GObject.registerClass(
 
 					const schedule = () => {
 						this.updateEverything({ isNotifAction: true, skipCycleUp: true });
+						app.withdraw_notification(`${dateKey}`);
 						this.scheduleNotifications();
 						this.scrollHistToTop();
 					};
