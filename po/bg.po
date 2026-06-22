@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2025-12-06 10:48+0000\n"
+"PO-Revision-Date: 2026-06-22 13:10+0000\n"
 "Last-Translator: Kiril Panayotov <eccyboo@protonmail.com>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/dosage/dosage/"
 "bg/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -177,12 +177,12 @@ msgstr "Ден от месеца"
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/utils/getTreatmentsExportFile.js:109
 msgid "day(s) on"
-msgstr ""
+msgstr "дни със"
 
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/utils/getTreatmentsExportFile.js:111
 msgid "day(s) off"
-msgstr ""
+msgstr "дни без"
 
 #: src/utils/getTreatmentsExportFile.js:122 src/todayFactory.js:41
 #: src/treatmentsFactory.js:298 data/ui/med-dialog.blp:461
