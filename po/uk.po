@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2026-06-22 03:12+0000\n"
+"PO-Revision-Date: 2026-06-22 13:10+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
 "uk/>\n"
@@ -305,7 +305,7 @@ msgstr "Частота"
 
 #: src/medDialog.js:500
 msgid "Empty Name"
-msgstr "Відсутня Назва Запису"
+msgstr "Назву не вказано"
 
 #: src/medDialog.js:506
 msgid "Empty Unit"
