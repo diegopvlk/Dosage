@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2026-06-24 18:41+0000\n"
+"PO-Revision-Date: 2026-07-13 15:00+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
 "uk/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -292,7 +292,7 @@ msgstr "День"
 
 #: src/medDialog.js:456 data/ui/med-dialog.blp:458
 msgid "Specific Days"
-msgstr "Конкретні Дні"
+msgstr "День тижня"
 
 #: src/medDialog.js:463 src/treatmentsFactory.js:295 data/ui/med-dialog.blp:460
 msgid "Cycle"
@@ -354,7 +354,7 @@ msgstr "Дозвольте працювати у фоновому режимі �
 
 #: src/prefsDialog.js:74 src/window.js:259
 msgid "An Issue Has Occurred"
-msgstr "Виникла Проблема"
+msgstr "Виникла проблема"
 
 #: src/prefsDialog.js:77 src/window.js:267 src/window.js:289 src/window.js:311
 #: src/window.js:329
@@ -476,7 +476,7 @@ msgstr "Вийти"
 
 #: data/ui/edit-hist-dialog.blp:7
 msgid "Edit Entry"
-msgstr "Редагувати Запис"
+msgstr "Змінити запис"
 
 #: data/ui/med-dialog.blp:7
 msgid "New Treatment"
@@ -590,27 +590,27 @@ msgstr "Мікстура"
 
 #: data/ui/med-dialog.blp:457
 msgid "Every Day"
-msgstr "Кожного Дня"
+msgstr "Щодня"
 
 #: data/ui/med-dialog.blp:473
 msgid "Choose Days"
-msgstr "Вибрати Дні"
+msgstr "Вибрати дні"
 
 #: data/ui/med-dialog.blp:572
 msgid "Choose Day"
-msgstr "Виберіть День"
+msgstr "Вибрати день"
 
 #: data/ui/med-dialog.blp:617
 msgid "Change Cycle"
-msgstr "Змінити Цикл"
+msgstr "Змінити цикл"
 
 #: data/ui/med-dialog.blp:642
 msgid "Days Active"
-msgstr "Активних Днів"
+msgstr "Активні дні"
 
 #: data/ui/med-dialog.blp:656
 msgid "Days Inactive"
-msgstr "Неактивних Днів"
+msgstr "Неактивні дні"
 
 #. TRANSLATORS: Day in cycle, try to keep it short
 #: data/ui/med-dialog.blp:671
@@ -619,28 +619,28 @@ msgstr "Сьогодні день циклу…"
 
 #: data/ui/med-dialog.blp:694
 msgid "Increase Notification Priority"
-msgstr "Збільшити Пріоритет Сповіщень"
+msgstr "Підвищити пріоритет сповіщень"
 
 #: data/ui/med-dialog.blp:695
 msgid "Show in fullscreen mode or with 'Do Not Disturb' enabled"
 msgstr ""
-"Відображає сповіщення в повноекранному режимі та з увімкненим Не турбувати"
+"Відображати сповіщення в повноекранному режимі та з увімкненим Не турбувати"
 
 #: data/ui/med-dialog.blp:699
 msgid "Recurring Notifications"
-msgstr "Повторювані Сповіщення"
+msgstr "Повторювані сповіщення"
 
 #: data/ui/med-dialog.blp:700
 msgid "Renotify until it's confirmed or skipped"
-msgstr "Повторно повідомляти, доки не буде підтверджено або пропущено"
+msgstr "Повторно сповіщати, доки не буде підтверджено або пропущено"
 
 #: data/ui/med-dialog.blp:705
 msgid "Interval in Minutes"
-msgstr "Інтервал У Хвилинах"
+msgstr "Інтервал у хвилинах"
 
 #: data/ui/med-dialog.blp:718 data/ui/refill-dialog.blp:36
 msgid "Inventory"
-msgstr "Запас"
+msgstr "Облік запасів"
 
 #: data/ui/med-dialog.blp:719
 msgid "Manage your stock"
@@ -648,11 +648,11 @@ msgstr "Керуйте запасом ліків"
 
 #: data/ui/med-dialog.blp:725
 msgid "Current"
-msgstr "Поточний запас ліків"
+msgstr "Поточний запас"
 
 #: data/ui/med-dialog.blp:738
 msgid "Remind Me At"
-msgstr "Сповістити мене, коли запас ліків зменшиться до"
+msgstr "Нагадати, коли запас зменшиться до"
 
 #: data/ui/med-dialog.blp:751
 msgid "Refill Amount"
@@ -660,24 +660,24 @@ msgstr "Кількість поповнення"
 
 #: data/ui/med-dialog.blp:765
 msgid "Set start and end dates"
-msgstr "Обрати початкову та кінцеві дати курсу лікування"
+msgstr "Обрати початкову та кінцеву дати"
 
 #: data/ui/med-dialog.blp:785 data/ui/med-dialog.blp:827
 #: data/ui/one-time-dialog.blp:243
 msgid "Choose Date"
-msgstr "Виберіть Дату"
+msgstr "Вибрати дату"
 
 #: data/ui/med-dialog.blp:855
 msgid "Mark as Confirmed"
-msgstr "Позначити Як Підтверджене"
+msgstr "Позначити як підтверджене"
 
 #: data/ui/med-dialog.blp:856
 msgid ""
 "If not manually confirmed or skipped, it will be recorded as confirmed in "
 "history, reducing stock if enabled"
 msgstr ""
-"Якщо не підтвердити вручну або пропустити, це буде записано як підтверджене "
-"в історії, зменшуючи запас, якщо ввімкнено"
+"Якщо не підтвердити вручну або не пропустити, запис буде додано до історії "
+"як підтверджений, а запас зменшиться, якщо ввімкнено"
 
 #: data/ui/one-time-dialog.blp:44
 msgid "From Treatment List"
@@ -693,43 +693,43 @@ msgstr "Налаштування"
 
 #: data/ui/preferences.blp:17
 msgid "Auto-Start at Login"
-msgstr "Автоматичний Запуск Додатку При Вході В Систему"
+msgstr "Запускати під час входу в систему"
 
 #: data/ui/preferences.blp:28
 msgid "Auto-Clear History"
-msgstr "Автоматичне Очищення Історії"
+msgstr "Очищати історію"
 
 #: data/ui/preferences.blp:29
 msgid "Keeps a maximum of 30 days"
-msgstr "Зберігає максимум 30 днів"
+msgstr "Видаляти записи через 30 днів"
 
 #: data/ui/preferences.blp:40
 msgid "Low Stock Notification"
-msgstr "Повідомлення Про Низький Запас"
+msgstr "Сповіщення про низький запас"
 
 #: data/ui/preferences.blp:41
 msgid "Send reminders when treatments are low in stock"
-msgstr "Надсилати нагадування, коли запаси лікування низькі"
+msgstr "Надсилати нагадування, коли препаратів залишається мало"
 
 #: data/ui/preferences.blp:52
 msgid "Notification Sound"
-msgstr "Звук Сповіщення"
+msgstr "Звук сповіщень"
 
 #: data/ui/preferences.blp:63
 msgid "Notification Buttons"
-msgstr "Кнопки Сповіщень"
+msgstr "Кнопки в сповіщеннях"
 
 #: data/ui/preferences.blp:64
 msgid "Show or hide confirm/skip"
-msgstr "Показати чи приховати підтвердити/пропустити"
+msgstr "Параметри кнопок у сповіщеннях"
 
 #: data/ui/preferences.blp:98
 msgid "Export History As"
-msgstr "Експорт історії як"
+msgstr "Формат експорту історії"
 
 #: data/ui/preferences.blp:121
 msgid "Export Treatments As"
-msgstr "Експорт курсів лікування як"
+msgstr "Формат експорту курсів лікування"
 
 #: data/ui/shortcuts-dialog.blp:8
 msgid "Shortcuts"
@@ -753,7 +753,7 @@ msgstr "Додати новий курс лікування"
 #: data/ui/shortcuts-dialog.blp:26
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr "Показати клавіатурні скорочення"
+msgstr "Скорочення"
 
 #: data/ui/shortcuts-dialog.blp:31
 msgctxt "shortcut window"
@@ -774,7 +774,7 @@ msgstr "Сортування курсів лікування"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
-msgstr "Головне Меню"
+msgstr "Головне меню"
 
 #: data/ui/window.blp:61
 msgid "Search…"
