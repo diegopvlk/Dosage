@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2026-07-13 15:00+0000\n"
+"PO-Revision-Date: 2026-07-30 19:11+0000\n"
 "Last-Translator: Hazel L <hazeltwink@gmail.com>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/dosage/dosage/el/>"
 "\n"
@@ -418,7 +418,7 @@ msgstr "Προβολή όλων"
 
 #: src/window.js:515
 msgid "Show Less"
-msgstr ""
+msgstr "Προβολή λιγότερων"
 
 #: src/window.js:648
 msgid "No Results Found"
@@ -473,11 +473,11 @@ msgstr ""
 
 #: data/ui/med-dialog.blp:7
 msgid "New Treatment"
-msgstr ""
+msgstr "Νέα αγωγή"
 
 #: data/ui/med-dialog.blp:31 data/ui/window.blp:283
 msgid "Add"
-msgstr ""
+msgstr "Προσθήκη"
 
 #: data/ui/med-dialog.blp:69 data/ui/one-time-dialog.blp:58
 msgid "Color"
@@ -518,7 +518,7 @@ msgstr "Μωβ"
 
 #: data/ui/med-dialog.blp:188 data/ui/one-time-dialog.blp:177
 msgid "Unit"
-msgstr ""
+msgstr "Μονάδα"
 
 #: data/ui/med-dialog.blp:197
 msgid "Icon"
@@ -547,7 +547,7 @@ msgstr "Στρογγυλό χάπι Β"
 
 #: data/ui/med-dialog.blp:306
 msgid "Ampoule"
-msgstr ""
+msgstr "Αμπούλα"
 
 #: data/ui/med-dialog.blp:322
 msgid "Injection"
@@ -571,7 +571,7 @@ msgstr "Τρίγωνο χάπι Β"
 
 #: data/ui/med-dialog.blp:402
 msgid "Bottle"
-msgstr ""
+msgstr "Φιαλίδιο"
 
 #: data/ui/med-dialog.blp:418
 msgid "Drops"
@@ -612,15 +612,17 @@ msgstr ""
 
 #: data/ui/med-dialog.blp:694
 msgid "Increase Notification Priority"
-msgstr ""
+msgstr "Αύξηση προτεραιότητας ειδοποιήσεων"
 
 #: data/ui/med-dialog.blp:695
 msgid "Show in fullscreen mode or with 'Do Not Disturb' enabled"
 msgstr ""
+"Εμφάνιση σε λειτουργία πλήρους οθόνης ή όταν η λειτουργία «Μην ενοχλείτε» "
+"είναι ενεργοποιημένη"
 
 #: data/ui/med-dialog.blp:699
 msgid "Recurring Notifications"
-msgstr ""
+msgstr "Επαναλαμβανόμενες ειδοποιήσεις"
 
 #: data/ui/med-dialog.blp:700
 msgid "Renotify until it's confirmed or skipped"
@@ -631,24 +633,28 @@ msgid "Interval in Minutes"
 msgstr ""
 
 #: data/ui/med-dialog.blp:718 data/ui/refill-dialog.blp:36
+#, fuzzy
 msgid "Inventory"
-msgstr ""
+msgstr "Κατάλογος"
 
 #: data/ui/med-dialog.blp:719
+#, fuzzy
 msgid "Manage your stock"
-msgstr ""
+msgstr "Διαχειριστείτε το απόθεμά σας"
 
 #: data/ui/med-dialog.blp:725
 msgid "Current"
-msgstr ""
+msgstr "Τρέχων"
 
 #: data/ui/med-dialog.blp:738
+#, fuzzy
 msgid "Remind Me At"
-msgstr ""
+msgstr "Υπενθύμιση στα"
 
 #: data/ui/med-dialog.blp:751
+#, fuzzy
 msgid "Refill Amount"
-msgstr ""
+msgstr "Ποσότητα ανανέωσης"
 
 #: data/ui/med-dialog.blp:765
 msgid "Set start and end dates"
@@ -671,11 +677,11 @@ msgstr ""
 
 #: data/ui/one-time-dialog.blp:44
 msgid "From Treatment List"
-msgstr ""
+msgstr "Από την λίστα αγωγών"
 
 #: data/ui/one-time-dialog.blp:182
 msgid "Amount"
-msgstr ""
+msgstr "Ποσότητα"
 
 #: data/ui/preferences.blp:7 data/ui/window.blp:338
 msgid "Preferences"
@@ -715,11 +721,11 @@ msgstr ""
 
 #: data/ui/preferences.blp:98
 msgid "Export History As"
-msgstr ""
+msgstr "Εξαγωγή ιστορικού ως"
 
 #: data/ui/preferences.blp:121
 msgid "Export Treatments As"
-msgstr ""
+msgstr "Εξαγωγή αγωγών ως"
 
 #: data/ui/shortcuts-dialog.blp:8
 msgid "Shortcuts"
@@ -738,7 +744,7 @@ msgstr ""
 #: data/ui/shortcuts-dialog.blp:21
 msgctxt "shortcut window"
 msgid "Add New Treatment"
-msgstr ""
+msgstr "Προσθήκη νέας αγωγής"
 
 #: data/ui/shortcuts-dialog.blp:26
 msgctxt "shortcut window"
@@ -788,11 +794,12 @@ msgstr ""
 
 #: data/ui/window.blp:306
 msgid "Remaining Stock (Lowest First)"
-msgstr ""
+msgstr "Υπολειπόμενο απόθεμα (χαμηλότερο πρώτα)"
 
 #: data/ui/window.blp:312
+#, fuzzy
 msgid "Remaining Stock (Highest First)"
-msgstr ""
+msgstr "Υπολειπόμενο απόθεμα (υψηλότερο πρώτα)"
 
 #: data/ui/window.blp:318
 msgid "As Needed Last"
