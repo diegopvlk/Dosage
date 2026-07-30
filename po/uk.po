@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 16:12-0300\n"
-"PO-Revision-Date: 2026-07-13 15:00+0000\n"
+"PO-Revision-Date: 2026-07-30 19:11+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/dosage/dosage/"
 "uk/>\n"
@@ -31,7 +31,7 @@ msgstr "Дозування"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:21
 msgid "Keep track of your treatments"
-msgstr "Відстежуйте свої курси лікування"
+msgstr "Відстежуйте курси лікування"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:24
 msgid ""
@@ -39,8 +39,8 @@ msgid ""
 "multiple doses, flexible frequency, customization, stock monitoring, and "
 "duration control"
 msgstr ""
-"Легко керуйте та відстежуйте лікування: сповіщення, історія, кілька доз на "
-"день, гнучка частота, підлаштування, контроль запасів і тривалості"
+"Зручний контроль лікування: сповіщення, історія, кілька доз на день, гнучка "
+"частота, підлаштування, облік запасів і тривалості"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:25
 msgid "Features:"
@@ -81,19 +81,19 @@ msgstr "Тривалість — визначте початкову та кін
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:44
 msgid "Dosage today window in light theme"
-msgstr "Розділ Сьогодні у світлому стилі"
+msgstr "Вікно сьогодні у світлій темі"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:49
 msgid "Dosage preferences window in light theme"
-msgstr "Розділ \"Налаштування\" Дозування у світлому стилі"
+msgstr "Вікно налаштувань у світлій темі"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:54
 msgid "Dosage edit treatment window in light theme"
-msgstr "«Дозування» у вікні «Курси лікування» у світлій темі"
+msgstr "Діалогове вікно Новий курс лікування у світлій темі"
 
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:59
 msgid "Dosage today window in dark theme"
-msgstr "Розділ Сьогодні у темному стилі"
+msgstr "Вікно сьогодні у темній темі"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.diegopvlk.Dosage.desktop.in:10
@@ -173,7 +173,7 @@ msgstr "Щодня"
 #: src/utils/getTreatmentsExportFile.js:102 src/medDialog.js:428
 #: data/ui/med-dialog.blp:459
 msgid "Day of Month"
-msgstr "День Місяця"
+msgstr "День місяця"
 
 #. TRANSLATORS: Context: 2 day(s) on, 1 day(s) off
 #: src/utils/getTreatmentsExportFile.js:109
@@ -258,15 +258,17 @@ msgstr "Виберіть Для Видалення"
 #. TRANSLATORS: "Your Name <your@email.com>"
 #: src/main.js:69
 msgid "translator-credits"
-msgstr "volkov <volkovissocool@gmail.com>"
+msgstr ""
+"volkov <volkovissocool@gmail.com>\n"
+"Dymko"
 
 #: src/main.js:73
 msgid "Thanks to These Projects!"
-msgstr "Велике Спасибі Цим Проектам!"
+msgstr "Спасибі цим проєктам!"
 
 #: src/medDialog.js:99
 msgid "Edit Treatment"
-msgstr "Редагувати Курс Лікування"
+msgstr "Редагувати Курс лікування"
 
 #: src/medDialog.js:100 data/ui/edit-hist-dialog.blp:30
 #: data/ui/preferences.blp:112 data/ui/preferences.blp:132
@@ -316,7 +318,7 @@ msgstr "Виберіть хоча б один день"
 
 #: src/medDialog.js:527 src/oneTimeDialog.js:187
 msgid "Name Already on Treatment List"
-msgstr "Ім'я Вже В Списку Лікування"
+msgstr "Ім'я вже в Списку лікування"
 
 #: src/medDialog.js:542
 msgid "Duplicated Time"
@@ -324,7 +326,7 @@ msgstr "Однакові Часи У Прийомів Доз"
 
 #: src/medDialog.js:582
 msgid "Are You Sure?"
-msgstr "Ви Впевнені?"
+msgstr "Ви впевнені?"
 
 #: src/medDialog.js:583
 msgid "will be deleted"
@@ -368,7 +370,7 @@ msgstr "Зняти Дозу"
 #: src/timeDoseRow.js:40 data/ui/edit-hist-dialog.blp:90
 #: data/ui/one-time-dialog.blp:210
 msgid "Change Time"
-msgstr "Змінити Час"
+msgstr "Змінити час"
 
 #: src/todayFactory.js:134
 msgid "Change Dose"
@@ -421,15 +423,15 @@ msgstr "У вас залишилося мало ліків у запасі"
 
 #: src/window.js:492
 msgid "Show All"
-msgstr "Показати все"
+msgstr "Розгорнути"
 
 #: src/window.js:515
 msgid "Show Less"
-msgstr "Показувати Менше"
+msgstr "Згорнути"
 
 #: src/window.js:648
 msgid "No Results Found"
-msgstr "Не Знайдено Жодних Результатів"
+msgstr "Результатів не знайдено"
 
 #: src/window.js:648 src/window.js:1517
 msgid "No History"
@@ -450,7 +452,7 @@ msgstr "Підтвердити"
 
 #: src/window.js:906
 msgid "Confirm All"
-msgstr "Підтвердити Все"
+msgstr "Підтвердити все"
 
 #: src/window.js:907 data/ui/preferences.blp:84 data/ui/window.blp:146
 msgid "Skip"
@@ -458,7 +460,7 @@ msgstr "Пропустити"
 
 #: src/window.js:907
 msgid "Skip All"
-msgstr "Пропустити Все"
+msgstr "Пропустити все"
 
 #. TRANSLATORS: keep the %d it's where the number goes
 #: src/window.js:938
@@ -480,7 +482,7 @@ msgstr "Змінити запис"
 
 #: data/ui/med-dialog.blp:7
 msgid "New Treatment"
-msgstr "Новий Курс Лікування"
+msgstr "Новий Курс лікування"
 
 #: data/ui/med-dialog.blp:31 data/ui/window.blp:283
 msgid "Add"
@@ -513,7 +515,7 @@ msgstr "Зелений"
 
 #: data/ui/med-dialog.blp:154 data/ui/one-time-dialog.blp:143
 msgid "Cyan"
-msgstr "Блакитний"
+msgstr "Ціановий"
 
 #: data/ui/med-dialog.blp:166 data/ui/one-time-dialog.blp:155
 msgid "Blue"
@@ -538,7 +540,7 @@ msgstr "Пігулка"
 
 #: data/ui/med-dialog.blp:242
 msgid "Alternative Pill"
-msgstr "Інший Вид Пігулки"
+msgstr "Інший вид пігулки"
 
 #: data/ui/med-dialog.blp:258
 msgid "Capsule"
@@ -546,11 +548,11 @@ msgstr "Капсула"
 
 #: data/ui/med-dialog.blp:274
 msgid "Round Pill"
-msgstr "Кругла Пігулка"
+msgstr "Кругла пігулка"
 
 #: data/ui/med-dialog.blp:290
 msgid "Alternative Round Pill"
-msgstr "Інша Кругла Пігулка"
+msgstr "Інша кругла пігулка"
 
 #: data/ui/med-dialog.blp:306
 msgid "Ampoule"
@@ -562,11 +564,11 @@ msgstr "Ін'єкція"
 
 #: data/ui/med-dialog.blp:338
 msgid "Square Pill"
-msgstr "Квадратна Пігулка"
+msgstr "Квадратна пігулка"
 
 #: data/ui/med-dialog.blp:354
 msgid "Alternative Square Pill"
-msgstr "Інша Квадратна Пігулка"
+msgstr "Інша квадратна пігулка"
 
 #: data/ui/med-dialog.blp:370
 msgid "Triangle pill"
@@ -681,7 +683,7 @@ msgstr ""
 
 #: data/ui/one-time-dialog.blp:44
 msgid "From Treatment List"
-msgstr "Із Списку Курсів Лікування"
+msgstr "Із списку курсів лікування"
 
 #: data/ui/one-time-dialog.blp:182
 msgid "Amount"
@@ -786,11 +788,11 @@ msgstr "Сьогодні"
 
 #: data/ui/window.blp:117 data/ui/window.blp:210
 msgid "Unselect"
-msgstr "Скасувати Вибір"
+msgstr "Скасувати вибір"
 
 #: data/ui/window.blp:220
 msgid "Remove Entries"
-msgstr "Видалити Записи"
+msgstr "Вилучити записи"
 
 #: data/ui/window.blp:300
 msgid "Name Ascending"
