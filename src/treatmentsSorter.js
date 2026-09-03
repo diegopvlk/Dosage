@@ -79,23 +79,16 @@ export function sortTreatFunc(sortingType) {
 			};
 		case 'ended-last':
 			return (a, b) => {
+				const isNeededA = a.obj.frequency === 'when-needed';
+				const isNeededB = b.obj.frequency === 'when-needed';
+
 				const durA = a.obj.duration;
 				const durB = b.obj.duration;
 
-				const enabledA = durA.enabled && a.obj.frequency !== 'when-needed';
-				const enabledB = durB.enabled && b.obj.frequency !== 'when-needed';
+				const isEndedA = !isNeededA && durA.enabled && new Date(durA.end).setHours(0, 0, 0, 0) < today;
+				const isEndedB = !isNeededB && durB.enabled && new Date(durB.end).setHours(0, 0, 0, 0) < today;
 
-				if (enabledA !== enabledB) return enabledB ? -1 : 1;
-
-				if (enabledA && enabledB) {
-					const endA = new Date(durA.end).setHours(0, 0, 0, 0);
-					const endB = new Date(durB.end).setHours(0, 0, 0, 0);
-
-					const pastA = endA < today;
-					const pastB = endB < today;
-
-					if (pastA !== pastB) return pastB ? 1 : -1;
-				}
+				if (isEndedA !== isEndedB) return isEndedB ? -1 : 1;
 
 				return a.obj.name.localeCompare(b.obj.name);
 			};
