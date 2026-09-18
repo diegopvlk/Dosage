@@ -9,6 +9,8 @@ import Gdk from 'gi://Gdk?version=4.0';
 import Gio from 'gi://Gio?version=2.0';
 import Gtk from 'gi://Gtk?version=4.0';
 import Pango from 'gi://Pango?version=1.0';
+import { ngettext } from 'gettext';
+
 import { getDosageWindow } from './main.js';
 import { confirmDeleteDialog } from './medDialog.js';
 import { RefillDialog } from './refillDialog.js';
@@ -241,7 +243,7 @@ function setInventoryAndDateLabels(listItem) {
 		invLabelBtn.visible = true;
 		invWarningIcon.visible = false;
 		// TRANSLATORS: keep the %d it's where the number goes
-		listItem.invLabel.label = _('%d Remaining').replace('%d', currInv);
+		listItem.invLabel.label = ngettext('%d Remaining', '%d Remaining', currInv).replace('%d', currInv);
 		invLabelBtn.remove_css_class('warning');
 
 		if (inv.current <= inv.reminder) {
