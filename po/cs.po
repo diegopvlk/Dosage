@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-19 16:12-0300\n"
+"POT-Creation-Date: 2026-09-19 15:35+0300\n"
 "PO-Revision-Date: 2026-03-04 18:55+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/>"
-"\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/"
+">\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3
 #: src/utils/getTreatmentsExportFile.js:173 src/utils/saveFiles.js:22
-#: src/utils/saveFiles.js:44 src/main.js:60 src/window.js:1060
+#: src/utils/saveFiles.js:44 src/main.js:59 src/window.js:1062
 #: data/ui/window.blp:6
 msgid "Dosage"
 msgstr "Dávkování"
@@ -166,7 +166,7 @@ msgid "Notes"
 msgstr "Poznámky"
 
 #: src/utils/getTreatmentsExportFile.js:96 src/utils/locale.js:37
-#: src/treatmentsFactory.js:268
+#: src/treatmentsFactory.js:270
 msgid "Daily"
 msgstr "Denně"
 
@@ -186,7 +186,7 @@ msgid "day(s) off"
 msgstr "den/dny/dnů ne"
 
 #: src/utils/getTreatmentsExportFile.js:122 src/todayFactory.js:41
-#: src/treatmentsFactory.js:298 data/ui/med-dialog.blp:461
+#: src/treatmentsFactory.js:300 data/ui/med-dialog.blp:461
 msgid "As Needed"
 msgstr "Dle potřeby"
 
@@ -202,7 +202,7 @@ msgstr "Zahájeno v"
 msgid "Start"
 msgstr "Začátek"
 
-#: src/utils/getTreatmentsExportFile.js:138 src/treatmentsFactory.js:256
+#: src/utils/getTreatmentsExportFile.js:138 src/treatmentsFactory.js:258
 msgid "Ended on"
 msgstr "Ukončeno dne"
 
@@ -256,11 +256,11 @@ msgid "Select to be Removed"
 msgstr "Vyberte k odstranění"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:69
+#: src/main.js:66
 msgid "translator-credits"
 msgstr "Jindřich Šilhan <jindrich@silhan.dev>"
 
-#: src/main.js:73
+#: src/main.js:69
 msgid "Thanks to These Projects!"
 msgstr "Děkujeme následujícím projektům!"
 
@@ -286,7 +286,7 @@ msgstr "Přidat dávku"
 msgid "Choose"
 msgstr "Vybrat"
 
-#: src/medDialog.js:429 src/treatmentsFactory.js:274
+#: src/medDialog.js:429 src/treatmentsFactory.js:276
 msgid "Day"
 msgstr "Den"
 
@@ -294,7 +294,7 @@ msgstr "Den"
 msgid "Specific Days"
 msgstr "Vybrané dny"
 
-#: src/medDialog.js:463 src/treatmentsFactory.js:295 data/ui/med-dialog.blp:460
+#: src/medDialog.js:463 src/treatmentsFactory.js:297 data/ui/med-dialog.blp:460
 msgid "Cycle"
 msgstr "Cyklus"
 
@@ -322,20 +322,23 @@ msgstr "Takový název už v seznamu léčeb existuje"
 msgid "Duplicated Time"
 msgstr "Duplikovaný čas"
 
-#: src/medDialog.js:582
+#: src/medDialog.js:583
 msgid "Are You Sure?"
 msgstr "Opravdu to tak chcete?"
 
-#: src/medDialog.js:583
-msgid "will be deleted"
+#. TRANSLATORS: %s is a placeholder for the name of the treatment
+#: src/medDialog.js:585
+#, fuzzy, javascript-format
+#| msgid "will be deleted"
+msgid "%s will be deleted"
 msgstr "bude smazáno"
 
-#: src/medDialog.js:586 data/ui/edit-hist-dialog.blp:18
+#: src/medDialog.js:588 data/ui/edit-hist-dialog.blp:18
 #: data/ui/med-dialog.blp:19
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: src/medDialog.js:587 src/treatmentsFactory.js:128 data/ui/med-dialog.blp:865
+#: src/medDialog.js:589 src/treatmentsFactory.js:130 data/ui/med-dialog.blp:865
 msgid "Delete"
 msgstr "Smazat"
 
@@ -353,12 +356,12 @@ msgid "Accept to allow running in the background and receive notifications"
 msgstr ""
 "Potvrďte abyste umožnili aplikaci běžet na pozadí a zobrazovat tak notifikace"
 
-#: src/prefsDialog.js:74 src/window.js:259
+#: src/prefsDialog.js:74 src/window.js:260
 msgid "An Issue Has Occurred"
 msgstr "Vyskytl se problém"
 
-#: src/prefsDialog.js:77 src/window.js:267 src/window.js:289 src/window.js:311
-#: src/window.js:329
+#: src/prefsDialog.js:77 src/window.js:268 src/window.js:290 src/window.js:312
+#: src/window.js:330
 msgid "Close"
 msgstr "Zavřít"
 
@@ -375,103 +378,111 @@ msgstr "Změnit čas"
 msgid "Change Dose"
 msgstr "Změnit dávku"
 
-#: src/treatmentsFactory.js:96 src/treatmentsFactory.js:126
+#: src/treatmentsFactory.js:98 src/treatmentsFactory.js:128
 #: data/ui/refill-dialog.blp:7
 msgid "Refill"
 msgstr "Doplnit zásobu"
 
-#: src/treatmentsFactory.js:125
+#: src/treatmentsFactory.js:127
 msgid "Edit"
 msgstr "Upravit"
 
-#: src/treatmentsFactory.js:127
+#: src/treatmentsFactory.js:129
 msgid "Duplicate"
 msgstr "Zduplikovat"
 
-#: src/treatmentsFactory.js:146
+#: src/treatmentsFactory.js:148
 msgid "Options"
 msgstr "Možnosti"
 
-#. TRANSLATORS: keep the %d it's where the number goes
-#: src/treatmentsFactory.js:244
-#, javascript-format
+#. TRANSLATORS: %d is a placeholder for the number of remaining inventory stock
+#: src/treatmentsFactory.js:246
+#, fuzzy, javascript-format
+#| msgid "%d Remaining"
 msgid "%d Remaining"
-msgstr "Zbývá %d dávek"
+msgid_plural "%d Remaining"
+msgstr[0] "Zbývá %d dávek"
+msgstr[1] "Zbývá %d dávek"
+msgstr[2] "Zbývá %d dávek"
 
 #. TRANSLATORS: label for when duration is enabled
-#: src/treatmentsFactory.js:254
+#: src/treatmentsFactory.js:256
 msgid "Starts on"
 msgstr "Začíná"
 
-#: src/treatmentsFactory.js:255
+#: src/treatmentsFactory.js:257
 msgid "Until"
 msgstr "Až do"
 
-#: src/treatmentsFactory.js:283 src/treatmentsFactory.js:286
+#: src/treatmentsFactory.js:285 src/treatmentsFactory.js:288
 msgid "Next Dose"
 msgstr "Další dávka"
 
-#: src/window.js:173 src/window.js:943
+#: src/window.js:174 src/window.js:944
 msgid "Reminder"
 msgstr "Připomínka"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:175
+#: src/window.js:176
 msgid "You have treatments low in stock"
 msgstr "Docházejí vám léky"
 
-#: src/window.js:492
+#: src/window.js:493
 msgid "Show All"
 msgstr "Zobrazit vše"
 
-#: src/window.js:515
+#: src/window.js:516
 msgid "Show Less"
 msgstr "Zobrazit méně"
 
-#: src/window.js:648
+#: src/window.js:649
 msgid "No Results Found"
 msgstr "Nenalezeny žádné výsledky"
 
-#: src/window.js:648 src/window.js:1517
+#: src/window.js:649 src/window.js:1519
 msgid "No History"
 msgstr "Žádná historie"
 
-#: src/window.js:818 data/ui/window.blp:260
+#: src/window.js:819 data/ui/window.blp:260
 msgid "No Treatments"
 msgstr "Žádné léčby"
 
-#: src/window.js:818
+#: src/window.js:819
 msgid "All Done for Today"
 msgstr "Pro dnešek vše splněno"
 
-#: src/window.js:906 src/window.js:1090 data/ui/one-time-dialog.blp:285
+#: src/window.js:907 src/window.js:1092 data/ui/one-time-dialog.blp:285
 #: data/ui/preferences.blp:73
 msgid "Confirm"
 msgstr "Potvrdit"
 
-#: src/window.js:906
+#: src/window.js:907
 msgid "Confirm All"
 msgstr "Potvrdit všechny"
 
-#: src/window.js:907 data/ui/preferences.blp:84 data/ui/window.blp:146
+#: src/window.js:908 data/ui/preferences.blp:84 data/ui/window.blp:146
 msgid "Skip"
 msgstr "Přeskočit"
 
-#: src/window.js:907
+#: src/window.js:908
 msgid "Skip All"
 msgstr "Přeskočit všechny"
 
-#. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:938
-#, javascript-format
+#. TRANSLATORS: %d is a placeholder for the number of collapsed treatments in a notification
+#: src/window.js:939
+#, fuzzy, javascript-format
+#| msgid "and %d more"
 msgid "and %d more"
-msgstr "a ještě %d"
+msgid_plural "and %d more"
+msgstr[0] "a ještě %d"
+msgstr[1] "a ještě %d"
+msgstr[2] "a ještě %d"
 
-#: src/window.js:1090 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
+#: src/window.js:1092 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
 msgid "One-Time Entry"
 msgstr "Jednorázový záznam"
 
-#: src/window.js:1295 data/ui/window.blp:353
+#: src/window.js:1297 data/ui/window.blp:353
 msgid "Quit"
 msgstr "Ukončit"
 
