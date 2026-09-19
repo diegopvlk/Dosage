@@ -242,7 +242,7 @@ function setInventoryAndDateLabels(listItem) {
 
 		invLabelBtn.visible = true;
 		invWarningIcon.visible = false;
-		// TRANSLATORS: keep the %d it's where the number goes
+		// TRANSLATORS: %d is a placeholder for the number of remaining inventory stock
 		listItem.invLabel.label = ngettext('%d Remaining', '%d Remaining', currInv).replace('%d', currInv);
 		invLabelBtn.remove_css_class('warning');
 

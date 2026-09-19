@@ -581,6 +581,7 @@ export function confirmDeleteDialog(item, position, dosageWindow, medDialog) {
 	const alertDialog = new Adw.AlertDialog({
 		body_use_markup: true,
 		heading: _('Are You Sure?'),
+		// TRANSLATORS: %s is a placeholder for the name of the treatment
 		body: _('%s will be deleted').replace('%s', '<b>' + escapedMedName + '</b>'),
 	});
 

@@ -935,7 +935,7 @@ export const DosageWindow = GObject.registerClass(
 					if (groupedObj[dateKey].length > maxLength) {
 						const moreItemsCount = groupedObj[dateKey].length - maxLength;
 						const text = `${itemsToDisplay.map(item => item.name).join(', ')} ${ngettext(
-							// TRANSLATORS: keep the %d it's where the number goes
+							// TRANSLATORS: %d is a placeholder for the number of collapsed treatments in a notification
 							'and %d more', 'and %d more', moreItemsCount,
 						).replace('%d', moreItemsCount)}`;
 						body = text;
