@@ -335,7 +335,7 @@ msgstr "Czy Jesteś Pewien?"
 #, fuzzy, javascript-format
 #| msgid "will be deleted"
 msgid "%s will be deleted"
-msgstr "zostanie usunięte"
+msgstr "%s zostanie usunięte"
 
 #: src/medDialog.js:588 data/ui/edit-hist-dialog.blp:18
 #: data/ui/med-dialog.blp:19

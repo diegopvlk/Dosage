@@ -329,7 +329,7 @@ msgstr "Είστε σίγουροι;"
 #, fuzzy, javascript-format
 #| msgid "will be deleted"
 msgid "%s will be deleted"
-msgstr "θα διαγραφεί"
+msgstr "%s θα διαγραφεί"
 
 #: src/medDialog.js:588 data/ui/edit-hist-dialog.blp:18
 #: data/ui/med-dialog.blp:19

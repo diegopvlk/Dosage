@@ -336,7 +336,7 @@ msgstr "확실합니까?"
 #, fuzzy, javascript-format
 #| msgid "will be deleted"
 msgid "%s will be deleted"
-msgstr "삭제됩니다"
+msgstr "%s 삭제됩니다"
 
 #: src/medDialog.js:588 data/ui/edit-hist-dialog.blp:18
 #: data/ui/med-dialog.blp:19

@@ -332,7 +332,7 @@ msgstr "Weet u het zeker?"
 #, fuzzy, javascript-format
 #| msgid "will be deleted"
 msgid "%s will be deleted"
-msgstr "zal worden verwijderd"
+msgstr "%s zal worden verwijderd"
 
 #: src/medDialog.js:588 data/ui/edit-hist-dialog.blp:18
 #: data/ui/med-dialog.blp:19

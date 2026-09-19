@@ -329,7 +329,7 @@ msgstr "Are You Sure?"
 #, fuzzy, javascript-format
 #| msgid "will be deleted"
 msgid "%s will be deleted"
-msgstr "will be deleted"
+msgstr "%s will be deleted"
 
 #: src/medDialog.js:588 data/ui/edit-hist-dialog.blp:18
 #: data/ui/med-dialog.blp:19
