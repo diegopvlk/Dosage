@@ -115,8 +115,9 @@ todayItemFactory.connect('setup', (factory, listItem) => {
 
 	listItem.labelsBox.append(listItem.doseAndNotes);
 
-	listItem.amountBox = new Gtk.Box({
-		css_classes: ['spin-box', 'spin-today-amount'],
+	listItem.amountBox = new Gtk.ListBox({
+		css_name: 'spinbox',
+		css_classes: ['spin-today-amount'],
 	});
 
 	listItem.amtSpinRow = new Adw.SpinRow({

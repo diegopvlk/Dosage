@@ -223,16 +223,16 @@ time-picker time-spinbutton text {
   min-width: 30px;
   min-height: 30px;
 }
-.spin-box row.spin {
+spinbox row.spin {
   outline: none;
 }
-.spin-box > row.spin > box {
+spinbox > row.spin > box {
   margin: -4px 4px;
 }
-.spin-box:dir(ltr) > row.spin > box {
+spinbox:dir(ltr) > row.spin > box {
   margin-left: 10px;
 }
-.spin-box:dir(rtl) > row.spin > box {
+spinbox:dir(rtl) > row.spin > box {
   margin-right: 10px;
 }
 .spin-today-amount:dir(ltr) > row.spin > box {
