@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-19 15:35+0300\n"
-"PO-Revision-Date: 2025-12-22 17:18+0000\n"
+"PO-Revision-Date: 2026-09-20 19:45+0000\n"
 "Last-Translator: Diego Povliuk <diego.pvlk@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "dosage/dosage/pt_BR/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -397,7 +397,7 @@ msgstr "Opções"
 #, javascript-format
 msgid "%d Remaining"
 msgid_plural "%d Remaining"
-msgstr[0] "%d Restantes"
+msgstr[0] "%d Restante"
 msgstr[1] "%d Restantes"
 
 #. TRANSLATORS: label for when duration is enabled
