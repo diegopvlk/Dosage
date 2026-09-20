@@ -173,22 +173,26 @@ listview.scroll-to-top-hack > :nth-child(2) {
 
 time-group-selection {
   transition: all 200ms var(--cubic-bezier);
-  min-height: 0px;
+  min-height: 21px;
   padding: 0 2px;
-  margin: 2px -2px 0px;
+  margin: 0 -2px 0px;
   background-size: 0.75em;
   background-repeat: no-repeat;
 }
-
 time-group-selection label {
-  border-bottom: 1.5px solid transparent;
-  transition: 150ms var(--cubic-bezier);
+  text-decoration: underline;
+  text-decoration-color: var(--window-bg-color);
+  transition: 200ms var(--cubic-bezier);
 }
 time-group-selection:hover label {
-  border-bottom: 1.5px solid currentColor;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
 }
 time-group-selection:active label {
-  color: rgb(from currentColor r g b / calc(alpha * 0.55));
+  text-decoration: underline;
+  color: rgb(from currentColor r g b / calc(alpha * 0.65));
+  transition: none;
+  text-decoration-color: currentColor;
 }
 time-group-selection:dir(ltr) {
   background-position: 92% 50%;
@@ -365,16 +369,14 @@ calendar .day-number {
 }
 
 @media (prefers-color-scheme: light) {
-  /* this is not rendering correct in gnome 50 */
-  /* time-group-selection:hover {
+  time-group-selection:hover {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 16 16'%3E%3Cpath fill='%23823a5f' d='m14.983 3.5-1-1-7.469 7.516L3.1 6.539l-2 2 5.414 5.477L15.983 4.5z' style='fill:%232f2f34'/%3E%3C/svg%3E");
-  } */
+  }
 }
 @media (prefers-color-scheme: dark) {
-  /* this is not rendering correct in gnome 50 */
-  /* time-group-selection:hover {
+  time-group-selection:hover {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 16 16'%3E%3Cpath fill='%23823a5f' d='m14.983 3.5-1-1-7.469 7.516L3.1 6.539l-2 2 5.414 5.477L15.983 4.5z' style='fill:%23ffffff'/%3E%3C/svg%3E");
-  } */
+  }
   *,
   item-box.default {
     --list-border: 0 0 0 transparent;
