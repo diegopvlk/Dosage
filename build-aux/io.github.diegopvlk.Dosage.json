@@ -1,7 +1,7 @@
 {
   "id": "io.github.diegopvlk.Dosage",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "50",
+  "runtime-version": "51",
   "sdk": "org.gnome.Sdk",
   "command": "io.github.diegopvlk.Dosage",
   "finish-args": [
@@ -26,7 +26,7 @@
         {
           "type": "git",
           "url": "https://github.com/flatpak/libportal",
-          "tag": "0.9.1"
+          "tag": "0.11.0"
         }
       ]
     },
