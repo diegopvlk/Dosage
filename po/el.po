@@ -1,15 +1,15 @@
-# SOME DESCRIPTIVE TITLE.
+# Greek Translation for Dosage
 # Copyright (C) 2023 Diego Povliuk
 # This file is distributed under the license GPLv3-or-later.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Fountoukia (Hazel) Leventi <hazeltwink@gmail.com>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-19 15:35+0300\n"
-"PO-Revision-Date: 2026-09-05 14:00+0000\n"
-"Last-Translator: Hazel L <hazeltwink@gmail.com>\n"
+"PO-Revision-Date: 2026-09-20 16:15+0300\n"
+"Last-Translator: Fountoukia (Hazel) Leventi <hazeltwink@gmail.com>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/dosage/dosage/el/"
 ">\n"
 "Language: el\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Poedit 3.9\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -211,7 +211,7 @@ msgstr "Λήξη"
 #: src/utils/getTreatmentsExportFile.js:173 src/utils/saveFiles.js:44
 #: data/ui/window.blp:234
 msgid "Treatments"
-msgstr "Φαρμακευτικές αγωγές"
+msgstr "Αγωγές"
 
 #: src/utils/getTreatmentsExportFile.js:184
 msgid "Generated on"
@@ -326,10 +326,9 @@ msgstr "Είστε σίγουροι;"
 
 #. TRANSLATORS: %s is a placeholder for the name of the treatment
 #: src/medDialog.js:585
-#, fuzzy, javascript-format
-#| msgid "will be deleted"
+#, javascript-format
 msgid "%s will be deleted"
-msgstr "%s θα διαγραφεί"
+msgstr "Το «%s» θα διαγραφεί"
 
 #: src/medDialog.js:588 data/ui/edit-hist-dialog.blp:18
 #: data/ui/med-dialog.blp:19
@@ -396,12 +395,11 @@ msgstr "Επιλογές"
 
 #. TRANSLATORS: %d is a placeholder for the number of remaining inventory stock
 #: src/treatmentsFactory.js:246
-#, fuzzy, javascript-format
-#| msgid "%d Remaining"
+#, javascript-format
 msgid "%d Remaining"
 msgid_plural "%d Remaining"
-msgstr[0] "%d απομένουν"
-msgstr[1] "%d απομένουν"
+msgstr[0] "Απομένει %d"
+msgstr[1] "Απομένουν %d"
 
 #. TRANSLATORS: label for when duration is enabled
 #: src/treatmentsFactory.js:256
@@ -468,12 +466,11 @@ msgstr "Παράβλεψη όλων"
 
 #. TRANSLATORS: %d is a placeholder for the number of collapsed treatments in a notification
 #: src/window.js:939
-#, fuzzy, javascript-format
-#| msgid "and %d more"
+#, javascript-format
 msgid "and %d more"
 msgid_plural "and %d more"
-msgstr[0] "και %d άλλες"
-msgstr[1] "και %d άλλες"
+msgstr[0] "και %d άλλο"
+msgstr[1] "και %d άλλα"
 
 #: src/window.js:1092 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
 msgid "One-Time Entry"
@@ -654,7 +651,7 @@ msgstr "Απόθεμα"
 
 #: data/ui/med-dialog.blp:719
 msgid "Manage your stock"
-msgstr "Διαχειριστείτε το απόθεμά φαρμάκων σας"
+msgstr "Διαχειριστείτε το απόθεμα φαρμάκων σας"
 
 #: data/ui/med-dialog.blp:725
 msgid "Current"
