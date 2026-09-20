@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-19 16:12-0300\n"
+"POT-Creation-Date: 2026-09-19 15:35+0300\n"
 "PO-Revision-Date: 2025-12-22 17:18+0000\n"
 "Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/dosage/dosage/"
@@ -23,7 +23,7 @@ msgstr ""
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
 #: data/io.github.diegopvlk.Dosage.desktop.in:3
 #: src/utils/getTreatmentsExportFile.js:173 src/utils/saveFiles.js:22
-#: src/utils/saveFiles.js:44 src/main.js:60 src/window.js:1060
+#: src/utils/saveFiles.js:44 src/main.js:59 src/window.js:1062
 #: data/ui/window.blp:6
 msgid "Dosage"
 msgstr "Dosage"
@@ -165,7 +165,7 @@ msgid "Notes"
 msgstr "Ghi chú"
 
 #: src/utils/getTreatmentsExportFile.js:96 src/utils/locale.js:37
-#: src/treatmentsFactory.js:268
+#: src/treatmentsFactory.js:270
 msgid "Daily"
 msgstr "Hằng ngày"
 
@@ -185,7 +185,7 @@ msgid "day(s) off"
 msgstr "ngày không dùng thuốc"
 
 #: src/utils/getTreatmentsExportFile.js:122 src/todayFactory.js:41
-#: src/treatmentsFactory.js:298 data/ui/med-dialog.blp:461
+#: src/treatmentsFactory.js:300 data/ui/med-dialog.blp:461
 msgid "As Needed"
 msgstr "Khi cần thiết"
 
@@ -201,7 +201,7 @@ msgstr "Đã bắt đầu lúc"
 msgid "Start"
 msgstr "Bắt đầu"
 
-#: src/utils/getTreatmentsExportFile.js:138 src/treatmentsFactory.js:256
+#: src/utils/getTreatmentsExportFile.js:138 src/treatmentsFactory.js:258
 msgid "Ended on"
 msgstr "Đã kết thúc vào"
 
@@ -255,13 +255,13 @@ msgid "Select to be Removed"
 msgstr "Chọn để xóa"
 
 #. TRANSLATORS: "Your Name <your@email.com>"
-#: src/main.js:69
+#: src/main.js:66
 msgid "translator-credits"
 msgstr ""
 "Vietnam Linux L10n <https://github.com/linux-l10n-vi>\n"
 "Loc Huynh <https://github.com/hthienloc>"
 
-#: src/main.js:73
+#: src/main.js:69
 msgid "Thanks to These Projects!"
 msgstr "Cảm ơn những dự án này!"
 
@@ -287,7 +287,7 @@ msgstr "Thêm liều thuốc"
 msgid "Choose"
 msgstr "Chọn"
 
-#: src/medDialog.js:429 src/treatmentsFactory.js:274
+#: src/medDialog.js:429 src/treatmentsFactory.js:276
 msgid "Day"
 msgstr "Ngày"
 
@@ -295,7 +295,7 @@ msgstr "Ngày"
 msgid "Specific Days"
 msgstr "Ngày cụ thể"
 
-#: src/medDialog.js:463 src/treatmentsFactory.js:295 data/ui/med-dialog.blp:460
+#: src/medDialog.js:463 src/treatmentsFactory.js:297 data/ui/med-dialog.blp:460
 msgid "Cycle"
 msgstr "Chu kỳ"
 
@@ -323,20 +323,23 @@ msgstr "Tên đã có trong Danh sách điều trị"
 msgid "Duplicated Time"
 msgstr "Thời gian trùng lặp"
 
-#: src/medDialog.js:582
+#: src/medDialog.js:583
 msgid "Are You Sure?"
 msgstr "Bạn có chắc không?"
 
-#: src/medDialog.js:583
-msgid "will be deleted"
-msgstr "sẽ bị xóa"
+#. TRANSLATORS: %s is a placeholder for the name of the treatment
+#: src/medDialog.js:585
+#, javascript-format
+#| msgid "will be deleted"
+msgid "%s will be deleted"
+msgstr "%s sẽ bị xóa"
 
-#: src/medDialog.js:586 data/ui/edit-hist-dialog.blp:18
+#: src/medDialog.js:588 data/ui/edit-hist-dialog.blp:18
 #: data/ui/med-dialog.blp:19
 msgid "Cancel"
 msgstr "Hủy"
 
-#: src/medDialog.js:587 src/treatmentsFactory.js:128 data/ui/med-dialog.blp:865
+#: src/medDialog.js:589 src/treatmentsFactory.js:130 data/ui/med-dialog.blp:865
 msgid "Delete"
 msgstr "Xóa"
 
@@ -353,12 +356,12 @@ msgstr "Viên thuốc"
 msgid "Accept to allow running in the background and receive notifications"
 msgstr "Chấp nhận cho phép chạy ngầm và nhận thông báo"
 
-#: src/prefsDialog.js:74 src/window.js:259
+#: src/prefsDialog.js:74 src/window.js:260
 msgid "An Issue Has Occurred"
 msgstr "Đã xảy ra sự cố"
 
-#: src/prefsDialog.js:77 src/window.js:267 src/window.js:289 src/window.js:311
-#: src/window.js:329
+#: src/prefsDialog.js:77 src/window.js:268 src/window.js:290 src/window.js:312
+#: src/window.js:330
 msgid "Close"
 msgstr "Đóng"
 
@@ -375,103 +378,107 @@ msgstr "Thay đổi thời gian"
 msgid "Change Dose"
 msgstr "Thay đổi liều thuốc"
 
-#: src/treatmentsFactory.js:96 src/treatmentsFactory.js:126
+#: src/treatmentsFactory.js:98 src/treatmentsFactory.js:128
 #: data/ui/refill-dialog.blp:7
 msgid "Refill"
 msgstr "Làm đầy"
 
-#: src/treatmentsFactory.js:125
+#: src/treatmentsFactory.js:127
 msgid "Edit"
 msgstr "Chỉnh sửa"
 
-#: src/treatmentsFactory.js:127
+#: src/treatmentsFactory.js:129
 msgid "Duplicate"
 msgstr "Nhân bản"
 
-#: src/treatmentsFactory.js:146
+#: src/treatmentsFactory.js:148
 msgid "Options"
 msgstr "Tùy chọn"
 
-#. TRANSLATORS: keep the %d it's where the number goes
-#: src/treatmentsFactory.js:244
+#. TRANSLATORS: %d is a placeholder for the number of remaining inventory stock
+#: src/treatmentsFactory.js:246
 #, javascript-format
+#| msgid "%d Remaining"
 msgid "%d Remaining"
-msgstr "%d Còn lại"
+msgid_plural "%d Remaining"
+msgstr[0] "%d Còn lại"
 
 #. TRANSLATORS: label for when duration is enabled
-#: src/treatmentsFactory.js:254
+#: src/treatmentsFactory.js:256
 msgid "Starts on"
 msgstr "Bắt đầu vào"
 
-#: src/treatmentsFactory.js:255
+#: src/treatmentsFactory.js:257
 msgid "Until"
 msgstr "Cho đến khi"
 
-#: src/treatmentsFactory.js:283 src/treatmentsFactory.js:286
+#: src/treatmentsFactory.js:285 src/treatmentsFactory.js:288
 msgid "Next Dose"
 msgstr "Liều thuốc tiếp theo"
 
-#: src/window.js:173 src/window.js:943
+#: src/window.js:174 src/window.js:944
 msgid "Reminder"
 msgstr "Lời nhắc"
 
 #. TRANSLATORS: Notification text for when the inventory is low
-#: src/window.js:175
+#: src/window.js:176
 msgid "You have treatments low in stock"
 msgstr "Bạn có phương pháp điều trị sắp hết trong lượng dự trữ"
 
-#: src/window.js:492
+#: src/window.js:493
 msgid "Show All"
 msgstr "Hiện tất cả"
 
-#: src/window.js:515
+#: src/window.js:516
 msgid "Show Less"
 msgstr "Hiện ít hơn"
 
-#: src/window.js:648
+#: src/window.js:649
 msgid "No Results Found"
 msgstr "Không tìm thấy kết quả nào"
 
-#: src/window.js:648 src/window.js:1517
+#: src/window.js:649 src/window.js:1519
 msgid "No History"
 msgstr "Không lịch sử"
 
-#: src/window.js:818 data/ui/window.blp:260
+#: src/window.js:819 data/ui/window.blp:260
 msgid "No Treatments"
 msgstr "Không phương pháp điều trị"
 
-#: src/window.js:818
+#: src/window.js:819
 msgid "All Done for Today"
 msgstr "Tất cả đã xong cho hôm nay"
 
-#: src/window.js:906 src/window.js:1090 data/ui/one-time-dialog.blp:285
+#: src/window.js:907 src/window.js:1092 data/ui/one-time-dialog.blp:285
 #: data/ui/preferences.blp:73
 msgid "Confirm"
 msgstr "Xác nhận"
 
-#: src/window.js:906
+#: src/window.js:907
 msgid "Confirm All"
 msgstr "Xác nhận tất cả"
 
-#: src/window.js:907 data/ui/preferences.blp:84 data/ui/window.blp:146
+#: src/window.js:908 data/ui/preferences.blp:84 data/ui/window.blp:146
 msgid "Skip"
 msgstr "Bỏ qua"
 
-#: src/window.js:907
+#: src/window.js:908
 msgid "Skip All"
 msgstr "Bỏ qua tất cả"
 
-#. TRANSLATORS: keep the %d it's where the number goes
-#: src/window.js:938
+#. TRANSLATORS: %d is a placeholder for the number of collapsed treatments in a notification
+#: src/window.js:939
 #, javascript-format
+#| msgid "and %d more"
 msgid "and %d more"
-msgstr "và %d nữa"
+msgid_plural "and %d more"
+msgstr[0] "và %d nữa"
 
-#: src/window.js:1090 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
+#: src/window.js:1092 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
 msgid "One-Time Entry"
 msgstr "Mục nhập một lần"
 
-#: src/window.js:1295 data/ui/window.blp:353
+#: src/window.js:1297 data/ui/window.blp:353
 msgid "Quit"
 msgstr "Thoát"
 

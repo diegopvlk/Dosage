@@ -577,10 +577,12 @@ export const MedDialog = GObject.registerClass(
 );
 
 export function confirmDeleteDialog(item, position, dosageWindow, medDialog) {
+    let escapedMedName = GLib.markup_escape_text(item.name, item.name.length);
 	const alertDialog = new Adw.AlertDialog({
 		body_use_markup: true,
 		heading: _('Are You Sure?'),
-		body: `<b>${item.name}</b> ` + _('will be deleted'),
+		// TRANSLATORS: %s is a placeholder for the name of the treatment
+		body: _('%s will be deleted').replace('%s', '<b>' + escapedMedName + '</b>'),
 	});
 
 	alertDialog.add_response('cancel', _('Cancel'));

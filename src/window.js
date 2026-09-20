@@ -10,6 +10,7 @@ import Gio from 'gi://Gio?version=2.0';
 import GLib from 'gi://GLib?version=2.0';
 import GObject from 'gi://GObject?version=2.0';
 import Gtk from 'gi://Gtk?version=4.0';
+import { ngettext } from 'gettext';
 
 import { EditHistDialog } from './editHistDialog.js';
 import { historyHeaderFactory, historyItemFactory } from './historyFactory.js';
@@ -933,9 +934,9 @@ export const DosageWindow = GObject.registerClass(
 
 					if (groupedObj[dateKey].length > maxLength) {
 						const moreItemsCount = groupedObj[dateKey].length - maxLength;
-						const text = `${itemsToDisplay.map(item => item.name).join(', ')} ${_(
-							// TRANSLATORS: keep the %d it's where the number goes
-							'and %d more',
+						const text = `${itemsToDisplay.map(item => item.name).join(', ')} ${ngettext(
+							// TRANSLATORS: %d is a placeholder for the number of collapsed treatments in a notification
+							'and %d more', 'and %d more', moreItemsCount,
 						).replace('%d', moreItemsCount)}`;
 						body = text;
 					}
