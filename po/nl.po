@@ -330,7 +330,6 @@ msgstr "Weet u het zeker?"
 #. TRANSLATORS: %s is a placeholder for the name of the treatment
 #: src/medDialog.js:585
 #, javascript-format
-#| msgid "will be deleted"
 msgid "%s will be deleted"
 msgstr "%s zal worden verwijderd"
 
@@ -400,7 +399,6 @@ msgstr "Opties"
 #. TRANSLATORS: %d is a placeholder for the number of remaining inventory stock
 #: src/treatmentsFactory.js:246
 #, javascript-format
-#| msgid "%d Remaining"
 msgid "%d Remaining"
 msgid_plural "%d Remaining"
 msgstr[0] "%d resterend"
@@ -472,7 +470,6 @@ msgstr "Alles over­slaan"
 #. TRANSLATORS: %d is a placeholder for the number of collapsed treatments in a notification
 #: src/window.js:939
 #, javascript-format
-#| msgid "and %d more"
 msgid "and %d more"
 msgid_plural "and %d more"
 msgstr[0] "en nog %d"

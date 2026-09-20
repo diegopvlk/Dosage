@@ -334,7 +334,6 @@ msgstr "확실합니까?"
 #. TRANSLATORS: %s is a placeholder for the name of the treatment
 #: src/medDialog.js:585
 #, javascript-format
-#| msgid "will be deleted"
 msgid "%s will be deleted"
 msgstr "%s 삭제됩니다"
 
@@ -402,7 +401,6 @@ msgstr "옵션"
 #. TRANSLATORS: %d is a placeholder for the number of remaining inventory stock
 #: src/treatmentsFactory.js:246
 #, javascript-format
-#| msgid "%d Remaining"
 msgid "%d Remaining"
 msgid_plural "%d Remaining"
 msgstr[0] "%d 남은"
@@ -477,7 +475,6 @@ msgstr "모두 건너뛰기"
 #. TRANSLATORS: %d is a placeholder for the number of collapsed treatments in a notification
 #: src/window.js:939
 #, javascript-format
-#| msgid "and %d more"
 msgid "and %d more"
 msgid_plural "and %d more"
 msgstr[0] "그리고 %d개 더"
