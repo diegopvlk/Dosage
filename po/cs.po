@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Dosage\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-19 15:35+0300\n"
-"PO-Revision-Date: 2026-03-04 18:55+0000\n"
+"PO-Revision-Date: 2026-10-02 21:10+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/"
-">\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/dosage/dosage/cs/>"
+"\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.10\n"
 
 #. TRANSLATORS: App name, translate to your language and follow the capitalization
 #: data/io.github.diegopvlk.Dosage.appdata.xml.in:20
@@ -399,8 +399,8 @@ msgstr "Možnosti"
 #, javascript-format
 msgid "%d Remaining"
 msgid_plural "%d Remaining"
-msgstr[0] "Zbývá %d dávek"
-msgstr[1] "Zbývá %d dávek"
+msgstr[0] "Zbývá %d dávka"
+msgstr[1] "Zbývají %d dávky"
 msgstr[2] "Zbývá %d dávek"
 
 #. TRANSLATORS: label for when duration is enabled
@@ -471,9 +471,9 @@ msgstr "Přeskočit všechny"
 #, javascript-format
 msgid "and %d more"
 msgid_plural "and %d more"
-msgstr[0] "a ještě %d"
-msgstr[1] "a ještě %d"
-msgstr[2] "a ještě %d"
+msgstr[0] "a ještě %d další"
+msgstr[1] "a ještě %d další"
+msgstr[2] "a ještě %d dalších"
 
 #: src/window.js:1092 data/ui/one-time-dialog.blp:7 data/ui/window.blp:133
 msgid "One-Time Entry"
