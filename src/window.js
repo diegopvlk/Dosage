@@ -231,6 +231,8 @@ export const DosageWindow = GObject.registerClass(
 		createNewFile(filePath, fileType) {
 			const file = Gio.File.new_for_path(filePath);
 			const flags = Gio.FileCreateFlags.NONE;
+			// the data directory may not exist yet, e.g. for a new user
+			GLib.mkdir_with_parents(GLib.path_get_dirname(filePath), 0o700);
 			const fileStream = file.create(flags, null);
 
 			if (!fileStream) {
