@@ -5,7 +5,7 @@
 'use strict';
 
 import GLib from 'gi://GLib?version=2.0';
-import Xdp from 'gi://Xdp?version=1.0';
+import { isMacOS, Xdp } from './platform.js';
 
 const decoder = new TextDecoder();
 
@@ -50,6 +50,18 @@ export function getSpecificDaysLabel(item) {
 function getWeekdays() {
 	let firstWeekday = 0;
 	let firstWorkDay = 1;
+
+	if (isMacOS) {
+		// Intl uses CLDR week data; macOS locale(1) lacks GNU's week keys.
+		const locale = new Intl.Locale(new Intl.DateTimeFormat().resolvedOptions().locale);
+		const week = locale.getWeekInfo?.() || locale.weekInfo;
+		if (week) {
+			firstWeekday = week.firstDay % 7;
+			firstWorkDay = Array.from({ length: 7 }, (_, i) => (firstWeekday + i) % 7)
+				.find(day => !week.weekend.includes(day || 7)) ?? 1;
+		}
+		return [firstWeekday, firstWorkDay];
+	}
 
 	try {
 		const [, weekdayOutput] = GLib.spawn_command_line_sync('locale first_weekday');
@@ -109,13 +121,23 @@ function checkLocale() {
 	const systemOpts = new Intl.DateTimeFormat().resolvedOptions();
 	const locale = systemOpts.locale;
 	let is12 = false;
-	let amPmStr = 'AM;PM';
+	let amPmStr = ['AM', 'PM'];
 	let timeDot = false;
 	let timeFormat = '%H:%M';
 	let dateFormat = getDateFormat(locale);
 
+	if (isMacOS) {
+		const formatter = new Intl.DateTimeFormat(locale, { hour: 'numeric', minute: '2-digit' });
+		is12 = formatter.resolvedOptions().hour12;
+		amPmStr = [9, 21].map(hour => formatter.formatToParts(new Date(2024, 0, 1, hour))
+			.find(part => part.type === 'dayPeriod')?.value || (hour === 9 ? 'AM' : 'PM'));
+		timeDot = formatter.formatToParts(new Date()).some(part => part.type === 'literal' && part.value === '.');
+		timeFormat = is12 ? '%-I:%M %p' : '%H:%M';
+		if (timeDot) timeFormat = timeFormat.replace(':', '.');
+		return [is12, amPmStr, timeDot, timeFormat, dateFormat];
+	}
+
 	try {
-		const portal = new Xdp.Portal();
 		const currentDesktop = GLib.getenv('XDG_CURRENT_DESKTOP');
 		const isGnome = currentDesktop && currentDesktop === 'GNOME';
 
@@ -124,14 +146,13 @@ function checkLocale() {
 		const outTimeFormat = decoder.decode(outputTimeFmt).replace('\n', '');
 		const outAmPm = decoder.decode(outputAmPm).replace('\n', '');
 
-		amPmStr = outAmPm === ';' ? amPmStr : outAmPm;
-		amPmStr = amPmStr.split(';');
+		if (outAmPm && outAmPm !== ';') amPmStr = outAmPm.split(';');
 
 		is12 =
 			outTimeFormat.includes('%r') || outTimeFormat.includes('%p') || outTimeFormat.includes('%P');
 
 		if (isGnome) {
-			const sett = portal.get_settings();
+			const sett = new Xdp.Portal().get_settings();
 			const clockFormat = sett.read_string('org.gnome.desktop.interface', 'clock-format', null);
 			is12 = clockFormat === '12h' ? true : false;
 		}

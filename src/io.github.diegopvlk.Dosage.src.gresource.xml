@@ -5,6 +5,7 @@
     <file>utils/getTreatmentsExportFile.js</file>
     <file>utils/helpers.js</file>
     <file>utils/locale.js</file>
+    <file>utils/platform.js</file>
     <file>utils/saveFiles.js</file>
     <file>utils/upgradeItems.js</file>
     <file>editHistDialog.js</file>

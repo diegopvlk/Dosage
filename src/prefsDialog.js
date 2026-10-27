@@ -9,7 +9,7 @@ import Gio from 'gi://Gio?version=2.0';
 import GLib from 'gi://GLib?version=2.0';
 import GObject from 'gi://GObject?version=2.0';
 import Gtk from 'gi://Gtk?version=4.0';
-import Xdp from 'gi://Xdp?version=1.0';
+import { isMacOS, Xdp, setMacAutostart } from './utils/platform.js';
 import { saveHistFile, saveTreatFile } from './utils/saveFiles.js';
 import { historyLS, treatmentsLS } from './window.js';
 
@@ -51,8 +51,21 @@ export const PrefsDialog = GObject.registerClass(
 
 		/** Autostart handling (flatpak or native) */
 		_handleAutostart(switchRow) {
-			settings.set_boolean(switchRow.settingsKey, switchRow.active);
 			const state = switchRow.active;
+			if (isMacOS) {
+				try {
+					setMacAutostart(state);
+					settings.set_boolean(switchRow.settingsKey, state);
+				} catch (error) {
+					console.error(error);
+					switchRow.active = settings.get_boolean(switchRow.settingsKey);
+					const dialog = new Adw.AlertDialog({ heading: _('An Issue Has Occurred'), body: error.message });
+					dialog.add_response('close', _('Close'));
+					dialog.present(this);
+				}
+				return;
+			}
+			settings.set_boolean(switchRow.settingsKey, state);
 
 			if (GLib.getenv('container') === 'flatpak') {
 				const portal = new Xdp.Portal();

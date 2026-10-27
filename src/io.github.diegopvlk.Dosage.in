@@ -1,13 +1,17 @@
 #!@GJS@ -m
 
+import GLib from "gi://GLib?version=2.0";
+
 import { exit, programArgs, programInvocationName } from "system";
+
+const prefix = GLib.getenv("DOSAGE_PREFIX") || "@prefix@";
 
 imports.package.init({
   name: "@PACKAGE_NAME@",
   version: "@PACKAGE_VERSION@",
-  prefix: "@prefix@",
-  libdir: "@libdir@",
-  datadir: "@datadir@",
+  prefix,
+  libdir: GLib.getenv("DOSAGE_PREFIX") ? `${prefix}/lib` : "@libdir@",
+  datadir: GLib.getenv("DOSAGE_PREFIX") ? `${prefix}/share` : "@datadir@",
 });
 
 const { main } = await import("resource://@resource_path@/js/main.js");
