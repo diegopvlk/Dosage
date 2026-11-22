@@ -35,7 +35,33 @@ with (app / 'Contents/Info.plist').open('wb') as stream:
         'CFBundleShortVersionString': version,
         'CFBundleVersion': version,
         'NSHighResolutionCapable': True,
+        # Disable App Nap so background reminder timers are not throttled.
+        'NSAppSleepDisabled': True,
     }, stream)
+# macOS labels notifications with the sending bundle's name and icon, so ship a
+# rebranded copy of terminal-notifier instead of calling Homebrew's directly.
+notifier_source = brew / 'opt/terminal-notifier/terminal-notifier.app'
+notifier_app = app / 'Contents/Helpers/Dosage.app'
+if notifier_app.exists():
+    shutil.rmtree(notifier_app)
+shutil.copytree(notifier_source, notifier_app, symlinks=True)
+notifier_plist = notifier_app / 'Contents/Info.plist'
+with notifier_plist.open('rb') as stream:
+    info = plistlib.load(stream)
+info.update({
+    'CFBundleName': 'Dosage',
+    'CFBundleDisplayName': 'Dosage',
+    'CFBundleIdentifier': 'io.github.diegopvlk.Dosage.notifier',
+    'LSUIElement': True,
+})
+if icon_name:
+    shutil.copy2(resources / icon_name, notifier_app / 'Contents/Resources' / icon_name)
+    info['CFBundleIconFile'] = icon_name
+    info.pop('CFBundleIconName', None)  # Asset-catalog icon would win over the .icns.
+with notifier_plist.open('wb') as stream:
+    plistlib.dump(info, stream)
+subprocess.run(['/usr/bin/codesign', '--force', '--deep', '--sign', '-', str(notifier_app)], check=True)
+notifier_executable = notifier_app / 'Contents/MacOS' / info['CFBundleExecutable']
 launcher = app / 'Contents/MacOS/Dosage'
 launcher.write_text('''#!/bin/bash
 set -euo pipefail
@@ -51,13 +77,13 @@ export GSETTINGS_SCHEMA_DIR="$resources/share/glib-2.0/schemas"
 export GSETTINGS_BACKEND=keyfile
 export DOSAGE_PREFIX="$resources"
 export DOSAGE_MACOS_LAUNCHER="$contents/MacOS/Dosage"
-export DOSAGE_NOTIFIER=BREW_NOTIFIER
+export DOSAGE_NOTIFIER="$contents/Helpers/Dosage.app/Contents/MacOS/NOTIFIER_EXEC"
 mkdir -p "$XDG_DATA_HOME" "$XDG_CONFIG_HOME"
 exec BREW_GJS -m "$resources/bin/io.github.diegopvlk.Dosage" "$@"
 '''.replace('BREW_BIN', shlex.quote(str(brew / 'bin')))
    .replace('BREW_TYPELIB', shlex.quote(str(brew / 'lib/girepository-1.0')))
    .replace('BREW_LIB', shlex.quote(str(brew / 'lib')))
    .replace('BREW_SHARE', str(brew / 'share'))
-   .replace('BREW_NOTIFIER', shlex.quote(str(brew / 'bin/terminal-notifier')))
+   .replace('NOTIFIER_EXEC', notifier_executable.name)
    .replace('BREW_GJS', shlex.quote(str(brew / 'bin/gjs'))))
 launcher.chmod(0o755)

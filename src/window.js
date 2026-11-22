@@ -206,7 +206,7 @@ export const DosageWindow = GObject.registerClass(
 				let previous = Date.now();
 				const timer = setInterval(() => {
 					const now = Date.now();
-					if (now - previous > 15000 || now < previous) {
+					if (now - previous > 60000 || now < previous) {
 						this.updateEverything();
 						this.scheduleNotifications('sleep');
 					}
