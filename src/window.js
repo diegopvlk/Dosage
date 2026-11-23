@@ -20,6 +20,7 @@ import { OneTimeDialog } from './oneTimeDialog.js';
 import { todayHeaderFactory, todayItemFactory } from './todayFactory.js';
 import { treatmentsFactory } from './treatmentsFactory.js';
 import { sortTreatFunc, sortTreatments } from './treatmentsSorter.js';
+import { isMacOS, MacNotification } from './utils/platform.js';
 import { timeFormat } from './utils/locale.js';
 import { upgradeItems } from './utils/upgradeItems.js';
 
@@ -200,6 +201,20 @@ export const DosageWindow = GObject.registerClass(
 		}
 
 		handleSuspension() {
+			if (isMacOS) {
+				// Timers pause in sleep. Detect wall-clock gaps on resume and reschedule.
+				let previous = Date.now();
+				const timer = setInterval(() => {
+					const now = Date.now();
+					if (now - previous > 60000 || now < previous) {
+						this.updateEverything();
+						this.scheduleNotifications('sleep');
+					}
+					previous = now;
+				}, 5000);
+				this.app.connect('shutdown', () => clearInterval(timer));
+				return;
+			}
 			const onWakingUp = () => this.scheduleNotifications('sleep');
 			this._connection = Gio.bus_get_sync(Gio.BusType.SYSTEM, null);
 			this._connection.signal_subscribe(
@@ -991,7 +1006,7 @@ export const DosageWindow = GObject.registerClass(
 					app.add_action(confirmAction);
 					app.add_action(skipAction);
 
-					if (settings.get_boolean('sound') && action != 'sleep' && !this.played) {
+					if (!isMacOS && settings.get_boolean('sound') && action != 'sleep' && !this.played) {
 						const ding = Gio.File.new_for_uri(
 							'resource:///io/github/diegopvlk/Dosage/sounds/ding.ogg',
 						);
@@ -1043,7 +1058,7 @@ export const DosageWindow = GObject.registerClass(
 
 		getNotification() {
 			const app = this.app;
-			const notification = new Gio.Notification();
+			const notification = isMacOS ? new MacNotification() : new Gio.Notification();
 			const openAction = new Gio.SimpleAction({ name: 'open' });
 
 			const icon = Gio.ThemedIcon.new_from_names([

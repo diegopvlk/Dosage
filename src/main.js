@@ -10,6 +10,8 @@ import GLib from 'gi://GLib?version=2.0';
 import GObject from 'gi://GObject?version=2.0';
 import Gtk from 'gi://Gtk?version=4.0';
 
+import { isMacOS, sendMacNotification, withdrawMacNotification, stopMacNotifications, acquireMacInstance } from './utils/platform.js';
+
 import { PrefsDialog } from './prefsDialog.js';
 import { sortTreatments } from './treatmentsSorter.js';
 import { DosageWindow } from './window.js';
@@ -22,7 +24,7 @@ export const DosageApplication = GObject.registerClass(
 		constructor() {
 			super({
 				application_id: 'io.github.diegopvlk.Dosage',
-				flags: Gio.ApplicationFlags.DEFAULT_FLAGS,
+				flags: isMacOS ? Gio.ApplicationFlags.NON_UNIQUE : Gio.ApplicationFlags.DEFAULT_FLAGS,
 				resource_base_path: '/io/github/diegopvlk/Dosage/',
 			});
 
@@ -133,6 +135,21 @@ export const DosageApplication = GObject.registerClass(
 			);
 		}
 
+		send_notification(id, notification) {
+			if (isMacOS) sendMacNotification(this, id, notification);
+			else super.send_notification(id, notification);
+		}
+
+		withdraw_notification(id) {
+			if (isMacOS) withdrawMacNotification(id);
+			else super.withdraw_notification(id);
+		}
+
+		vfunc_shutdown() {
+			if (isMacOS) stopMacNotifications();
+			super.vfunc_shutdown();
+		}
+
 		vfunc_handle_local_options(options) {
 			if (options.contains('startup')) {
 				this.hidden = true;
@@ -160,6 +177,7 @@ export const DosageApplication = GObject.registerClass(
 
 export function main(argv) {
 	const application = new DosageApplication();
+	if (isMacOS && !acquireMacInstance(application, argv.includes('--startup'))) return 0;
 	return application.runAsync(argv);
 }
 
