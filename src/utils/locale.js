@@ -56,8 +56,13 @@ function getWeekdays() {
 		const [, workDayOutput] = GLib.spawn_command_line_sync('locale first_workday');
 
 		// minus 1 because `locale` days are 1 to 7
-		firstWeekday = +decoder.decode(weekdayOutput) - 1;
-		firstWorkDay = +decoder.decode(workDayOutput) - 1;
+		const weekday = Number.parseInt(decoder.decode(weekdayOutput)) - 1;
+		const workDay = Number.parseInt(decoder.decode(workDayOutput)) - 1;
+
+		// some `locale` implementations (e.g. musl's) print nothing for these,
+		// keep the defaults if the output isn't a valid day
+		if (weekday >= 0 && weekday <= 6) firstWeekday = weekday;
+		if (workDay >= 0 && workDay <= 6) firstWorkDay = workDay;
 	} catch (error) {
 		console.error(error);
 	}
